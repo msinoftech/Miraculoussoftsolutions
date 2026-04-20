@@ -470,19 +470,13 @@ export default function MiraculousSoftLandingPage() {
             </p>
 
             <div className="flex flex-col gap-3">
-              <a
-                href="#contact"
-                className="group flex items-center justify-between rounded-[4px] border border-zinc-950 bg-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition hover:border-red-600 hover:bg-red-600"
-              >
+              <a href="#contact" className="group flex items-center justify-between rounded-[4px] border border-zinc-950 bg-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition hover:border-red-600 hover:bg-red-600">
                 Start Your Project
-                
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
               </a>
-              <a
-                href="#services"
-                className="group flex items-center justify-between rounded-[4px] border border-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-zinc-950 transition hover:bg-zinc-950 hover:text-white"
-              >
+              <a href="#services" className="group flex items-center justify-between rounded-[4px] border border-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-zinc-950 transition hover:bg-zinc-950 hover:text-white">
                 Explore Services
-                
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
               </a>
             </div>
           </div>
@@ -529,9 +523,9 @@ export default function MiraculousSoftLandingPage() {
               <div className="text-[110px] font-hero leading-none tracking-[0.02em] text-zinc-200">
                 {whyPoints[visibleWhyIndex].number}
               </div>
-              <h3 className="mt-4 text-[30px] tracking-[-0.03em] text-zinc-950">
+              <div className="mt-4 text-[30px] font-bold tracking-[-0.03em] text-zinc-950">
                 {whyPoints[visibleWhyIndex].title}
-              </h3>
+              </div>
               <p className="mt-4 max-w-md text-[15px] leading-8 text-zinc-500">
                 {whyPoints[visibleWhyIndex].description}
               </p>
@@ -569,7 +563,7 @@ export default function MiraculousSoftLandingPage() {
                           <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-red-600">Active</span>
                         )}
                       </div>
-                      <h3 className={`mt-4 text-[24px] tracking-[-0.03em] transition-all duration-500 sm:text-[26px] ${ isActive ? "text-zinc-950" : "text-zinc-700" }`}>{point.title}</h3>
+                      <div className={`mt-4 text-[24px] font-bold tracking-[-0.03em] transition-all duration-500 sm:text-[26px] ${ isActive ? "text-zinc-950" : "text-zinc-700" }`}>{point.title}</div>
                       <p className={`why-item-copy mt-3 max-w-md text-[15px] leading-7 text-zinc-500 ${ isActive ? "translate-x-0 opacity-100" : "translate-x-[2px] opacity-70" }`}>{point.description}</p>
                       <div className="mt-6 h-[2px] w-full overflow-hidden bg-black/5">
                         <div key={`why-progress-${index}-${visibleWhyIndex}-${hoveredWhyIndex ?? "auto"}`} className="why-progress-bar h-full bg-red-600" style={{ width: isActive ? "100%" : index < visibleWhyIndex ? "100%" : "0%" }}/>
@@ -608,7 +602,7 @@ export default function MiraculousSoftLandingPage() {
                   <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-[10px] border border-neutral-200 bg-white transition group-hover:border-red-600 group-hover:bg-red-600">
                     <span dangerouslySetInnerHTML={{ __html: service.icon }} />
                   </div>
-                  <h3 className="mb-3 text-xl text-zinc-950 transition group-hover:text-white">{service.title}</h3>
+                  <div className="mb-3 text-[18px] font-bold text-zinc-950 transition group-hover:text-white">{service.title}</div>
                   <p className="mb-6 text-[13px] leading-7 text-zinc-500 transition group-hover:text-white/55">{service.description}</p>
                   <div className="text-2xl text-neutral-200 transition group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-red-600">↗</div>
                 </div>

@@ -24,7 +24,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <h5 className="mb-4 text-base uppercase tracking-wide text-white">Services</h5>
+              <div className="mb-4 text-xs font-bold uppercase tracking-wide text-white">Services</div>
               <div className="flex flex-col gap-3">
                 {["SaaS Products", "B2B Platforms", "ERP Automation", "Mobile Apps"].map((item) => (
                   <a key={item} href="#services" className="text-[13px] text-white/45 transition hover:text-white">
@@ -35,7 +35,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <h5 className="mb-4 text-base uppercase tracking-wide text-white">Company</h5>
+              <div className="mb-4 text-xs font-bold uppercase tracking-wide text-white">Company</div>
               <div className="flex flex-col gap-3">
                 {["Technology", "Industries", "Process", "Clients"].map((item) => (
                   <a key={item} href={`#${item.toLowerCase()}`} className="text-[13px] text-white/45 transition hover:text-white">
@@ -46,10 +46,10 @@ export default function Footer() {
             </div>
 
             <div>
-              <h5 className="mb-4 text-base uppercase tracking-wide text-white">Contact</h5>
+              <div className="mb-4 text-xs font-bold uppercase tracking-wide text-white">Contact</div>
               <div className="flex flex-col gap-3">
-                <a href="mailto:hello@miraculoussoft.com" className="text-[13px] text-white/45 transition hover:text-white">
-                  hello@miraculoussoft.com
+                <a href="mailto:info@miraculoussoft.com" className="text-[13px] text-white/45 transition hover:text-white">
+                info@miraculoussoft.com
                 </a>
                 <a href="#contact" className="text-[13px] text-white/45 transition hover:text-white">
                   Book a Discovery Call
