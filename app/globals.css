@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --bg: #ffffff;
+  --off: #f7f5f0;
+  --off-2: #eeeae2;
+  --ink: #0c0c0c;
+  --muted: #7c7872;
+  --border: #e0dbd2;
+  --red: #e63322;
+  --blue: #0044ff;
+  --green: #00875a;
+  --hero: "Bebas Neue", sans-serif;
+  --serif: "Cormorant Garamond", serif;
+  --body: "Inter", sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-bebas-neue), Arial, sans-serif;
+}
+
+p {
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+.font-hero {
+  font-family: var(--hero);
+}
+
+.font-serif-display {
+  font-family: var(--serif);
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.cap-grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.hero-outline {
+  -webkit-text-stroke: 2.5px #0c0c0c;
+  color: transparent;
+}
+
+.ticker-track {
+  width: max-content;
+  animation: ticker 28s linear infinite;
+}
+
+.marquee-track {
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.orbit-1 {
+  animation: spin 14s linear infinite;
+  transform-origin: 230px 220px;
+}
+
+.orbit-2 {
+  animation: spin 26s linear infinite reverse;
+  transform-origin: 230px 230px;
+}
+
+.orbit-3 {
+  animation: spin 38s linear infinite;
+  transform-origin: 230px 230px;
+}
+
+.orbit-node {
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.orbit-node:hover {
+  transform: scale(1.06);
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.impact-node-pulse-red,
+.impact-node-pulse-blue,
+.impact-node-core {
+  transform-origin: center;
+  animation: impactPulse 2.8s ease-in-out infinite;
+}
+
+.impact-node-pulse-blue {
+  animation-delay: 0.45s;
+}
+
+.impact-node-core {
+  animation-delay: 0.2s;
+}
+
+.impact-edge-left-top,
+.impact-edge-left-bottom,
+.impact-edge-center-top,
+.impact-edge-center-bottom,
+.impact-edge-right-top-active,
+.impact-edge-right-bottom-active {
+  animation: impactGlow 3.2s ease-in-out infinite;
+}
+
+.impact-edge-right-top-active {
+  animation-delay: 0.45s;
+}
+
+.impact-edge-right-bottom-active {
+  animation-delay: 0.65s;
+}
+
+@keyframes impactPulse {
+  0%,
+  100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes impactGlow {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.cap-card-float {
+  animation: capabilityFloat 5.5s ease-in-out infinite;
+}
+
+.cap-card-float:nth-child(2n) {
+  animation-delay: 0.2s;
+}
+
+.cap-card-float:nth-child(3n) {
+  animation-delay: 0.4s;
+}
+
+.cap-card-float:nth-child(4n) {
+  animation-delay: 0.6s;
+}
+
+@keyframes capabilityFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes capabilitySweep {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(220%);
+    opacity: 0;
+  }
+}
