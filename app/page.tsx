@@ -27,26 +27,45 @@ const whyPoints = [
   {
     number: "01",
     title: "Reliability by design",
-    description:
-      "Engineered systems with predictable performance, fault tolerance, and long-term stability.",
+    description: "Engineered systems with predictable performance, fault tolerance, and long-term stability.",
   },
   {
     number: "02",
     title: "Embedded product thinking",
-    description:
-      "We operate as an extension of your team with full ownership and clarity in execution.",
+    description: "We operate as an extension of your team with full ownership and clarity in execution.",
   },
   {
     number: "03",
     title: "Scalable architecture",
-    description:
-      "Clean APIs and modular systems designed to support rapid growth without rewrites.",
+    description: "Clean APIs and modular systems designed to support rapid growth without rewrites.",
   },
   {
     number: "04",
     title: "Execution transparency",
+    description: "Clear communication, visible progress, and structured delivery at every stage.",
+  },
+];
+
+const whyPointsold = [
+  {
+    title: "Reliability by design, not by luck",
     description:
-      "Clear communication, visible progress, and structured delivery at every stage.",
+      "We architect for resilience from the start with clean infrastructure decisions, recovery paths, and long-term maintainability in mind.",
+  },
+  {
+    title: "A team embedded in your mission",
+    description:
+      "You get a focused product team that understands the business context, communicates clearly, and works like an ownership partner.",
+  },
+  {
+    title: "Built for 10× growth from day one",
+    description:
+      "Modular systems, clean APIs, and scalable foundations help your product evolve without constant rewrites or technical drag.",
+  },
+  {
+    title: "Transparent process, zero surprises",
+    description:
+      "Clear milestones, visible progress, and practical collaboration keep delivery aligned with both technical and business goals.",
   },
 ];
 
@@ -472,11 +491,11 @@ export default function MiraculousSoftLandingPage() {
             <div className="flex flex-col gap-3">
               <a href="#contact" className="group flex items-center justify-between rounded-[4px] border border-zinc-950 bg-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition hover:border-red-600 hover:bg-red-600">
                 Start Your Project
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
               </a>
               <a href="#services" className="group flex items-center justify-between rounded-[4px] border border-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-zinc-950 transition hover:bg-zinc-950 hover:text-white">
                 Explore Services
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
               </a>
             </div>
           </div>
@@ -496,7 +515,7 @@ export default function MiraculousSoftLandingPage() {
       </section>
       
       {/* Marquee Section */}
-      <section className="overflow-hidden border-y-1 border-neutral-200 bg-amber-50/30">
+      <section className="overflow-hidden border-y-2 border-neutral-200 bg-[var(--off)]">
         <div className="marquee-track flex">
           {marqueeLoop.map((item, index) => (
             <div key={`${item}-${index}`} className="flex shrink-0 items-center gap-3 border-r border-neutral-200 px-9 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-zinc-500 transition hover:text-zinc-950">
@@ -508,7 +527,39 @@ export default function MiraculousSoftLandingPage() {
       </section>
       
       {/* Why Miraculous Soft Section */}
-      <section className="overflow-hidden bg-amber-50/50 py-14 sm:py-20">
+      <section className="overflow-hidden bg-[var(--off)] py-24 lg:py-28">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-0 px-6 lg:grid-cols-2 lg:px-10">
+          <div className="border-b-2 border-[var(--border)] pb-12 lg:border-b-0 lg:border-r-2 lg:pb-0 lg:pr-14">
+            <SectionEyebrow>Why Miraculous Soft</SectionEyebrow>
+            <h2 className="font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[70px] lg:text-[88px]">
+              The Partner
+              <br />
+              Businesses
+              <br />
+              <span className="text-red-600">Choose.</span>
+            </h2>
+            <p className="mt-8 max-w-xl text-[15px] leading-8 text-zinc-500">
+              When the stakes are high and execution matters, growth-stage businesses and enterprise teams choose a partner that can think strategically and build reliably.
+            </p>
+          </div>
+
+          <div className="pt-12 lg:pl-14 lg:pt-0">
+            {whyPointsold.map((point, index) => (
+              <div key={point.title} className="grid grid-cols-[56px_1fr] gap-5 border-b border-[var(--border)] py-8 last:border-b-0 first:pt-0 last:pb-0">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-zinc-950 text-white transition hover:bg-red-600">
+                  <span className="font-hero text-[22px] uppercase tracking-[0.04em]">{String(index + 1).padStart(2, "0")}</span>
+                </div>
+                <div>
+                  <div className="text-[17px] font-extrabold tracking-[-0.02em] text-zinc-950">{point.title}</div>
+                  <p className="mt-2 text-[13px] leading-7 text-zinc-500">{point.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="overflow-hidden bg-[var(--off)] py-14 sm:py-20">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-4 lg:grid-cols-[0.92fr_1.08fr] lg:gap-20">
           <div className="border-b-2 border-[var(--border)] pb-12 lg:sticky lg:top-28 lg:h-fit lg:border-b-0 lg:pb-0 lg:pr-14">
             <SectionEyebrow>Why Miraculous Soft</SectionEyebrow>
@@ -594,17 +645,17 @@ export default function MiraculousSoftLandingPage() {
             </p>
           </div>
 
-          <div className="grid border-1 border-neutral-200 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid border-2 border-zinc-950 md:grid-cols-2 xl:grid-cols-3">
             {services.map((service, index) => {
               return (
-                <div key={service.title} className={`group border-neutral-200 p-8 transition duration-300 hover:bg-neutral-900 ${index % 3 !== 2 ? "xl:border-r" : ""} ${index < 3 ? "xl:border-b" : ""} ${index % 2 !== 1 ? "md:border-r xl:border-r" : ""} ${index < 4 ? "md:border-b xl:border-b" : ""}`}>
+                <div key={service.title} className={`group border-[var(--border)] p-8 transition duration-300 hover:bg-zinc-950 ${index % 3 !== 2 ? "xl:border-r" : ""} ${index < 3 ? "xl:border-b" : ""} ${index % 2 !== 1 ? "md:border-r xl:border-r" : ""} ${index < 4 ? "md:border-b xl:border-b" : ""}`}>
                   <div className="mb-6 text-[11px] font-bold uppercase tracking-[0.1em] text-zinc-500 transition group-hover:text-white/35">{service.number}</div>
-                  <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-[10px] border border-neutral-200 bg-white transition group-hover:border-red-600 group-hover:bg-red-600">
-                    <span dangerouslySetInnerHTML={{ __html: service.icon }} />
+                  <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-[10px] border border-[var(--border)] bg-[var(--off)] transition group-hover:border-red-600 group-hover:bg-red-600">
+                  <span dangerouslySetInnerHTML={{ __html: service.icon }} />
                   </div>
-                  <div className="mb-3 text-[18px] font-bold text-zinc-950 transition group-hover:text-white">{service.title}</div>
+                  <div className="mb-3 text-[18px] font-extrabold tracking-[-0.02em] text-zinc-950 transition group-hover:text-white">{service.title}</div>
                   <p className="mb-6 text-[13px] leading-7 text-zinc-500 transition group-hover:text-white/55">{service.description}</p>
-                  <div className="text-2xl text-neutral-200 transition group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-red-600">↗</div>
+                  <div className="text-2xl text-[var(--border)] transition group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-red-600">↗</div>
                 </div>
               );
             })}
@@ -613,7 +664,7 @@ export default function MiraculousSoftLandingPage() {
       </section>
           
       {/* Technology Stack Section */}
-      <section id="tech" className="bg-amber-50/50 py-14 lg:py-20">
+      <section id="tech" className="bg-[var(--off)] py-14 lg:py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-14 grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1.05fr] lg:items-end">
             <div>
@@ -875,7 +926,7 @@ export default function MiraculousSoftLandingPage() {
       </section>
 
       {/* clients */}
-      <section id="clients" className="bg-amber-50/50 py-14 sm:py-20">
+      <section id="clients" className="bg-[var(--off)] py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-14 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-end">
             <div>
@@ -931,7 +982,7 @@ export default function MiraculousSoftLandingPage() {
       </section>
 
       {/* process */}
-      <section id="process" className="bg-amber-50/50 py-14 sm:py-20">
+      <section id="process" className="bg-[var(--off)] py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-14">
             <SectionEyebrow>Process</SectionEyebrow>

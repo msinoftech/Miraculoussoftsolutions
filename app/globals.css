@@ -13,7 +13,6 @@
   --red: #e63322;
   --blue: #0044ff;
   --green: #00875a;
-  --hero: "Bebas Neue", sans-serif;
   --serif: "Cormorant Garamond", serif;
   --body: "Inter", sans-serif;
 }
@@ -33,14 +32,6 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-bebas-neue), Arial, sans-serif;
-}
-
-p {
-  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
-}
-
-.font-hero {
-  font-family: var(--hero);
 }
 
 .font-serif-display {
