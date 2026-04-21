@@ -1,6 +1,8 @@
 "use client";
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import Logo from "./components/Logo";
+import CommandCenterTopology from "./components/CommandCenterTopology";
+
 
 const marqueeItems = [
   "SaaS Product Development",
@@ -26,46 +28,23 @@ const tickerItems = [
 const whyPoints = [
   {
     number: "01",
-    title: "Reliability by design",
-    description: "Engineered systems with predictable performance, fault tolerance, and long-term stability.",
+    title: "Reliability by design, not by luck",
+    description: "We architect for resilience from the start with clean infrastructure decisions, recovery paths, and long-term maintainability in mind.",
   },
   {
     number: "02",
-    title: "Embedded product thinking",
-    description: "We operate as an extension of your team with full ownership and clarity in execution.",
+    title: "A team embedded in your mission",
+    description: "You get a focused product team that understands the business context, communicates clearly, and works like an ownership partner.",
   },
   {
     number: "03",
-    title: "Scalable architecture",
-    description: "Clean APIs and modular systems designed to support rapid growth without rewrites.",
+    title: "Built for 10× growth from day one",
+    description: "Modular systems, clean APIs, and scalable foundations help your product evolve without constant rewrites or technical drag.",
   },
   {
     number: "04",
-    title: "Execution transparency",
-    description: "Clear communication, visible progress, and structured delivery at every stage.",
-  },
-];
-
-const whyPointsold = [
-  {
-    title: "Reliability by design, not by luck",
-    description:
-      "We architect for resilience from the start with clean infrastructure decisions, recovery paths, and long-term maintainability in mind.",
-  },
-  {
-    title: "A team embedded in your mission",
-    description:
-      "You get a focused product team that understands the business context, communicates clearly, and works like an ownership partner.",
-  },
-  {
-    title: "Built for 10× growth from day one",
-    description:
-      "Modular systems, clean APIs, and scalable foundations help your product evolve without constant rewrites or technical drag.",
-  },
-  {
     title: "Transparent process, zero surprises",
-    description:
-      "Clear milestones, visible progress, and practical collaboration keep delivery aligned with both technical and business goals.",
+    description: "Clear milestones, visible progress, and practical collaboration keep delivery aligned with both technical and business goals.",
   },
 ];
 
@@ -148,40 +127,50 @@ const capabilities = [
     tone: "red" 
   },
   { 
-    label: "Multi-System Integrations", 
+    label: "Complex System Integrations", 
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-workflow transition-all duration-500 group-hover:rotate-6" aria-hidden="true" data-source-pos="1288:20-1288:140" data-source-name="Icon"><rect width="8" height="8" x="3" y="3" rx="2"></rect><path d="M7 11v4a2 2 0 0 0 2 2h4"></path><rect width="8" height="8" x="13" y="13" rx="2"></rect></svg>', 
     tone: "blue" 
   },
   { 
-    label: "API-First Engineering", 
+    label: "API-First Product Engineering", 
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rocket transition-all duration-500 group-hover:rotate-6" aria-hidden="true" data-source-pos="1288:20-1288:140" data-source-name="Icon"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"></path><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"></path></svg>', 
     tone: "red" 
   },
   { 
-    label: "Cloud Deployment & Scaling", 
+    label: "Cloud Infrastructure & Scaling", 
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud transition-all duration-500 group-hover:rotate-6" aria-hidden="true" data-source-pos="1288:20-1288:140" data-source-name="Icon"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>', 
     tone: "blue" 
   },
   { 
-    label: "Automation Workflows", 
+    label: "Intelligent Automation Workflows", 
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-column transition-all duration-500 group-hover:rotate-6" aria-hidden="true" data-source-pos="1288:20-1288:140" data-source-name="Icon"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg>', 
     tone: "red" 
   },
   { 
-    label: "Secure Backend Systems", 
+    label: "Secure Backend Architecture", 
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check transition-all duration-500 group-hover:rotate-6" aria-hidden="true" data-source-pos="1288:20-1288:140" data-source-name="Icon"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>', 
     tone: "blue" 
   },
   { 
-    label: "Role-Based Dashboards", 
+    label: "Role-Based Admin Dashboards", 
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor-smartphone transition-all duration-500 rotate-3 scale-105" aria-hidden="true" data-source-pos="1288:20-1288:140" data-source-name="Icon"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8"></path><path d="M10 19v-3.96 3.15"></path><path d="M7 19h5"></path><rect width="6" height="10" x="16" y="12" rx="2"></rect></svg>', 
     tone: "red" 
   },
   { 
-    label: "Enterprise-Grade Performance", 
+    label: "Enterprise-Scale Performance", 
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database transition-all duration-500 group-hover:rotate-6" aria-hidden="true" data-source-pos="1288:20-1288:140" data-source-name="Icon"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5V19A9 3 0 0 0 21 19V5"></path><path d="M3 12A9 3 0 0 0 21 12"></path></svg>', 
     tone: "blue" 
   },
+  // { 
+  //   label: "AI-Powered Solutions & Agentic Systems", 
+  //   icon: '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cpu transition-all duration-500 group-hover:rotate-6" aria-hidden="true" data-source-pos="1195:20-1195:140" data-source-name="Icon"><path d="M12 20v2"></path><path d="M12 2v2"></path><path d="M17 20v2"></path><path d="M17 2v2"></path><path d="M2 12h2"></path><path d="M2 17h2"></path><path d="M2 7h2"></path><path d="M20 12h2"></path><path d="M20 17h2"></path><path d="M20 7h2"></path><path d="M7 20v2"></path><path d="M7 2v2"></path><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="8" y="8" width="8" height="8" rx="1"></rect></svg>', 
+  //   tone: "red" 
+  // },
+  // { 
+  //   label: "High-Performance Data Engineering", 
+  //   icon: '<div data-source-pos="1188:18-1196:24" data-source-name="div" class="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-md border transition-all duration-500 border-white/10 bg-white/5 text-white/75 group-hover:border-white/20 group-hover:bg-white/10 group-hover:scale-105"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity transition-all duration-500 group-hover:rotate-6" aria-hidden="true" data-source-pos="1195:20-1195:140" data-source-name="Icon"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path></svg></div>', 
+  //   tone: "blue" 
+  // },
 ];
 
 const orbitNodes = [
@@ -298,25 +287,6 @@ const metrics = [
   { value: "24", suffix: "/7", label: "Delivery Reliability Mindset" },
 ];
 
-function SectionEyebrow({
-  children,
-  className = "",
-  lineClassName = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-  lineClassName?: string;
-}) {
-  return (
-    <div
-      className={`mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] ${className}`}
-    >
-      <span className={`h-[2px] w-7 bg-red-600 ${lineClassName}`} />
-      {children}
-    </div>
-  );
-}
-
 function OrbitVisual() {
 
   const [active, setActive] = useState("NEXT.JS");
@@ -358,7 +328,7 @@ function OrbitVisual() {
       <g key={node.label} className="orbit-node cursor-pointer" onMouseEnter={() => { setIsPaused(true); setActive(node.label); }} onMouseLeave={() => setIsPaused(false)}>
         <circle cx={node.x} cy={node.y} r={isActive ? node.r + 9 : node.r + 4} fill={isActive ? glowFill : ringFill} className="transition-all duration-500"/>
         <circle cx={node.x} cy={node.y} r={isActive ? node.r + 1.5 : node.r} fill={node.fill} stroke={node.stroke || "transparent"} strokeWidth={node.stroke ? 1.5 : 0} filter={isActive ? "url(#softGlow)"  : undefined} className="transition-all duration-500"/>
-        <text x={node.x} y={node.y + 3} textAnchor="middle" fontFamily="Inter" fontSize={labelFontSize(node.label)} fontWeight="800" fill={node.text} letterSpacing="0.2" style={{ pointerEvents: "none" }}>
+        <text x={node.x} y={node.y + 3} textAnchor="middle" fontSize={labelFontSize(node.label)} fontWeight="800" fill={node.text} letterSpacing="0.2" style={{ pointerEvents: "none" }}>
           {node.label}
         </text>
       </g>
@@ -366,7 +336,7 @@ function OrbitVisual() {
   };
 
   return (
-    <div className="relative w-full max-w-[560px]">
+    <div className="relative w-full">
       <div className="pointer-events-none absolute inset-x-10 top-8 h-32 rounded-full bg-red-600/10 blur-3xl" />
       <div className="pointer-events-none absolute inset-x-20 bottom-6 h-28 rounded-full bg-blue-600/10 blur-3xl" />
 
@@ -380,7 +350,7 @@ function OrbitVisual() {
           <div className="rounded-full border border-[var(--border)] bg-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-500">Auto Sliding</div>
         </div>
 
-        <svg viewBox="0 0 460 460" className="w-full drop-shadow-[0_20px_50px_rgba(0,0,0,0.08)]" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
+        <svg viewBox="0 0 460 460" className="w-full drop-shadow-[0_20px_50px_rgba(0,0,0,0.08)] font-sans" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
           <defs>
             <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
               <stop offset="0%" stopColor="rgba(230,51,34,0.22)" />
@@ -404,8 +374,8 @@ function OrbitVisual() {
           <g className="orbit-1">{inner.map((node) => renderNode(node, "rgba(230,51,34,0.10)", "rgba(12,12,12,0.04)"))}</g>
           <circle cx="230" cy="230" r="46" fill="#0c0c0c" filter="url(#softGlow)" />
           <circle cx="230" cy="230" r="58" fill="none" stroke="rgba(230,51,34,0.28)" strokeWidth="1.5" strokeDasharray="4 5" />
-          <text x="230" y="223" textAnchor="middle" fontFamily="Inter" fontSize="9" fontWeight="700" fill="rgba(255,255,255,.55)" letterSpacing="1">MIRACULOUS</text>
-          <text x="230" y="237" textAnchor="middle" fontFamily="Inter" fontSize="9" fontWeight="700" fill="rgba(255,255,255,.55)" letterSpacing="1">SOFT</text>
+          <text x="230" y="223" textAnchor="middle" fontFamily="Inter" fontSize="9" fontWeight="700" fill="rgba(255,255,255,.55)" letterSpacing="1" className="font-sans">MIRACULOUS</text>
+          <text x="230" y="237" textAnchor="middle" fontFamily="Inter" fontSize="9" fontWeight="700" fill="rgba(255,255,255,.55)" letterSpacing="1" className="font-sans">SOFT</text>
         </svg>
 
         <div className="mt-4 grid gap-2 sm:grid-cols-3">
@@ -424,6 +394,7 @@ function OrbitVisual() {
     </div>
   );
 }
+
 
 export default function MiraculousSoftLandingPage() {
   const [activeCapability, setActiveCapability] = useState(0);
@@ -469,8 +440,9 @@ export default function MiraculousSoftLandingPage() {
         <div className="absolute bottom-0 right-[-120px] top-0 hidden w-[480px] bg-red-600 [clip-path:polygon(18%_0,100%_0,100%_100%,0_100%)] lg:block" />
 
         <div className="relative z-10 mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-[1fr_390px]">
-          <div className="lg:-mt-4">
-            <h1 className="font-hero text-[86px] uppercase leading-[0.84] tracking-[0.02em] sm:text-[118px] md:text-[140px] lg:text-[168px]">
+          {/* Left Column */}
+          <div className="relative">
+            <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] sm:text-[118px] md:text-[140px] lg:text-[168px]">
               <span className="block">We</span>
               <span className="block text-red-600">Engineer</span>
               <span className="hero-outline block">Digital</span>
@@ -478,25 +450,25 @@ export default function MiraculousSoftLandingPage() {
             </h1>
           </div>
 
+          {/* Right Column */}
           <div className="space-y-5 pb-0 lg:pt-20">
             <div className="inline-flex w-fit items-center gap-2 rounded-full border border-red-600 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-red-600">
               <span className="h-[5px] w-[5px] rounded-full bg-red-600" />
               Enterprise Software Partner
             </div>
 
-            <p className="max-w-sm text-[15px] leading-8 text-zinc-500">
-              SaaS platforms, B2B systems, ERP automation, eCommerce products, and mobile applications — built to launch fast, scale hard, and last.
-            </p>
+            <p className="max-w-sm text-[15px] leading-8 text-zinc-500">SaaS platforms, B2B systems, ERP automation, eCommerce products, and mobile applications — built to launch fast, scale hard, and last.</p>
 
-            <div className="flex flex-col gap-3">
-              <a href="#contact" className="group flex items-center justify-between rounded-[4px] border border-zinc-950 bg-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition hover:border-red-600 hover:bg-red-600">
+            <div className="flex flex-row flex-wrap lg:flex-col gap-3">
+              <Link href="#contact" className="group w-fit lg:w-auto flex items-center justify-between rounded-[4px] border border-zinc-950 bg-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition hover:border-red-600 hover:bg-red-600">
                 Start Your Project
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-              </a>
-              <a href="#services" className="group flex items-center justify-between rounded-[4px] border border-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-zinc-950 transition hover:bg-zinc-950 hover:text-white">
+              </Link>
+
+              <Link href="#services" className="group w-fit lg:w-auto flex items-center justify-between rounded-[4px] border border-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-zinc-950 transition hover:bg-zinc-950 hover:text-white">
                 Explore Services
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -515,10 +487,10 @@ export default function MiraculousSoftLandingPage() {
       </section>
       
       {/* Marquee Section */}
-      <section className="overflow-hidden border-y-2 border-neutral-200 bg-[var(--off)]">
+      <section className="overflow-hidden border-y-2 border-[var(--border)] bg-[var(--off)]">
         <div className="marquee-track flex">
           {marqueeLoop.map((item, index) => (
-            <div key={`${item}-${index}`} className="flex shrink-0 items-center gap-3 border-r border-neutral-200 px-9 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-zinc-500 transition hover:text-zinc-950">
+            <div key={`${item}-${index}`} className="flex shrink-0 items-center gap-3 border-r border-[var(--border)] px-9 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-zinc-500 transition hover:text-zinc-950">
               <span className="text-[10px] text-red-600">✦</span>
               {item}
             </div>
@@ -527,60 +499,22 @@ export default function MiraculousSoftLandingPage() {
       </section>
       
       {/* Why Miraculous Soft Section */}
-      <section className="overflow-hidden bg-[var(--off)] py-24 lg:py-28">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-0 px-6 lg:grid-cols-2 lg:px-10">
-          <div className="border-b-2 border-[var(--border)] pb-12 lg:border-b-0 lg:border-r-2 lg:pb-0 lg:pr-14">
-            <SectionEyebrow>Why Miraculous Soft</SectionEyebrow>
-            <h2 className="font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[70px] lg:text-[88px]">
-              The Partner
-              <br />
-              Businesses
-              <br />
-              <span className="text-red-600">Choose.</span>
-            </h2>
-            <p className="mt-8 max-w-xl text-[15px] leading-8 text-zinc-500">
-              When the stakes are high and execution matters, growth-stage businesses and enterprise teams choose a partner that can think strategically and build reliably.
-            </p>
-          </div>
-
-          <div className="pt-12 lg:pl-14 lg:pt-0">
-            {whyPointsold.map((point, index) => (
-              <div key={point.title} className="grid grid-cols-[56px_1fr] gap-5 border-b border-[var(--border)] py-8 last:border-b-0 first:pt-0 last:pb-0">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-zinc-950 text-white transition hover:bg-red-600">
-                  <span className="font-hero text-[22px] uppercase tracking-[0.04em]">{String(index + 1).padStart(2, "0")}</span>
-                </div>
-                <div>
-                  <div className="text-[17px] font-extrabold tracking-[-0.02em] text-zinc-950">{point.title}</div>
-                  <p className="mt-2 text-[13px] leading-7 text-zinc-500">{point.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="overflow-hidden bg-[var(--off)] py-14 sm:py-20">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-4 lg:grid-cols-[0.92fr_1.08fr] lg:gap-20">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-4 lg:grid-cols-[0.92fr_1.08fr] lg:gap-12">
           <div className="border-b-2 border-[var(--border)] pb-12 lg:sticky lg:top-28 lg:h-fit lg:border-b-0 lg:pb-0 lg:pr-14">
-            <SectionEyebrow>Why Miraculous Soft</SectionEyebrow>
-            <h2 className="font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">
+            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
+              <span className="h-[2px] w-7 bg-red-600" />
+              Why Miraculous Soft
+            </div>
+            <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">
               The Partner Businesses <span className="text-red-600">Choose.</span>
             </h2>
-            <p className="mt-8 max-w-xl text-[15px] leading-8 text-zinc-500">
-              When the stakes are high and execution matters, growth-stage businesses and enterprise teams choose a partner that can think strategically and build reliably.
-            </p>
+            <p className="mt-8 max-w-xl text-[15px] leading-8 text-zinc-500">When the stakes are high and execution matters, growth-stage businesses and enterprise teams choose a partner that can think strategically and build reliably.</p>
 
             <div className="mt-10 hidden lg:block">
-              <div className="text-[110px] font-hero leading-none tracking-[0.02em] text-zinc-200">
-                {whyPoints[visibleWhyIndex].number}
-              </div>
-              <div className="mt-4 text-[30px] font-bold tracking-[-0.03em] text-zinc-950">
-                {whyPoints[visibleWhyIndex].title}
-              </div>
-              <p className="mt-4 max-w-md text-[15px] leading-8 text-zinc-500">
-                {whyPoints[visibleWhyIndex].description}
-              </p>
-
+              <div className="text-[110px] font-bebas-neue font-extrabold leading-none tracking-[0.02em] text-zinc-200">{whyPoints[visibleWhyIndex].number}</div>
+              <div className="mt-4 text-[30px] font-extrabold tracking-[-0.03em] text-zinc-950">{whyPoints[visibleWhyIndex].title}</div>
+              <p className="mt-4 max-w-md text-[15px] leading-8 text-zinc-500">{whyPoints[visibleWhyIndex].description}</p>
               <div className="mt-8 h-[2px] w-48 overflow-hidden bg-black/10">
                 <div
                   key={`why-left-progress-${visibleWhyIndex}-${hoveredWhyIndex ?? "auto"}`}
@@ -614,7 +548,7 @@ export default function MiraculousSoftLandingPage() {
                           <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-red-600">Active</span>
                         )}
                       </div>
-                      <div className={`mt-4 text-[24px] font-bold tracking-[-0.03em] transition-all duration-500 sm:text-[26px] ${ isActive ? "text-zinc-950" : "text-zinc-700" }`}>{point.title}</div>
+                      <div className={`mt-4 text-[24px] font-extrabold tracking-[-0.03em] transition-all duration-500 sm:text-[26px] ${ isActive ? "text-zinc-950" : "text-zinc-700" }`}>{point.title}</div>
                       <p className={`why-item-copy mt-3 max-w-md text-[15px] leading-7 text-zinc-500 ${ isActive ? "translate-x-0 opacity-100" : "translate-x-[2px] opacity-70" }`}>{point.description}</p>
                       <div className="mt-6 h-[2px] w-full overflow-hidden bg-black/5">
                         <div key={`why-progress-${index}-${visibleWhyIndex}-${hoveredWhyIndex ?? "auto"}`} className="why-progress-bar h-full bg-red-600" style={{ width: isActive ? "100%" : index < visibleWhyIndex ? "100%" : "0%" }}/>
@@ -633,7 +567,10 @@ export default function MiraculousSoftLandingPage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-14 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
             <div>
-              <SectionEyebrow>Services</SectionEyebrow>
+              <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
+                <span className="h-[2px] w-7 bg-red-600" />
+                Services
+              </div>
               <h2 className="font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">
                 What We
                 <br />
@@ -644,11 +581,10 @@ export default function MiraculousSoftLandingPage() {
               We build robust digital products and operational systems that combine sharp experience design with strong engineering foundations — delivered for performance, clarity, and scale.
             </p>
           </div>
-
           <div className="grid border-2 border-zinc-950 md:grid-cols-2 xl:grid-cols-3">
             {services.map((service, index) => {
               return (
-                <div key={service.title} className={`group border-[var(--border)] p-8 transition duration-300 hover:bg-zinc-950 ${index % 3 !== 2 ? "xl:border-r" : ""} ${index < 3 ? "xl:border-b" : ""} ${index % 2 !== 1 ? "md:border-r xl:border-r" : ""} ${index < 4 ? "md:border-b xl:border-b" : ""}`}>
+                <div key={service.title} className={`group border-[var(--border)] p-8 transition duration-300 hover:bg-zinc-950 ${index % 3 !== 2 ? "xl:border-r" : ""} ${index < 3 ? "md:border-b xl:border-b" : ""} ${index % 2 !== 1 ? "md:border-r xl:border-r" : ""} ${index < 4 ? "md:border-b xl:border-b" : ""}`}>
                   <div className="mb-6 text-[11px] font-bold uppercase tracking-[0.1em] text-zinc-500 transition group-hover:text-white/35">{service.number}</div>
                   <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-[10px] border border-[var(--border)] bg-[var(--off)] transition group-hover:border-red-600 group-hover:bg-red-600">
                   <span dangerouslySetInnerHTML={{ __html: service.icon }} />
@@ -666,21 +602,22 @@ export default function MiraculousSoftLandingPage() {
       {/* Technology Stack Section */}
       <section id="tech" className="bg-[var(--off)] py-14 lg:py-20">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-14 grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1.05fr] lg:items-end">
+          <div className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-2 md:items-end">
             <div>
-              <SectionEyebrow>Technology Stack</SectionEyebrow>
+              <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
+                <span className="h-[2px] w-7 bg-red-600" />
+                Technology Stack
+              </div>
               <h2 className="font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">
                 Built With
                 <br />
                 <span className="text-red-600">Proven Tech.</span>
               </h2>
             </div>
-            <p className="max-w-2xl text-[15px] leading-8 text-zinc-500">
-              We use modern, production-proven technologies to build scalable SaaS platforms, enterprise systems, and high-performance applications. Every tool is selected for reliability, maintainability, and long-term growth.
-            </p>
+            <p className="max-w-2xl text-[15px] leading-8 text-zinc-500">We use modern, production-proven technologies to build scalable SaaS platforms, enterprise systems, and high-performance applications. Every tool is selected for reliability, maintainability, and long-term growth.</p>
           </div>
-          <div className="grid grid-cols-1 gap-10 xl:grid-cols-[1.05fr_1fr] xl:items-center">
-            <div className="order-2 xl:order-1">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
+            <div className="order-2 lg:order-1">
               <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-2">
                 {techGroups.map((group) => {
                   return (
@@ -691,7 +628,6 @@ export default function MiraculousSoftLandingPage() {
                         </div>
                         <div className="text-[11px] font-bold uppercase tracking-[0.14em] text-zinc-500">{group.title}</div>
                       </div>
-
                       <div className="flex flex-wrap gap-2">
                         {group.tags.map((tag) => (
                           <span key={tag} className="rounded-[4px] border border-[var(--border)] bg-[var(--off)] px-3 py-1 text-[12px] font-bold text-zinc-950 transition hover:border-zinc-950 hover:bg-zinc-950 hover:text-white">
@@ -742,7 +678,7 @@ export default function MiraculousSoftLandingPage() {
                 + AI Integrations • Automation Workflows • Microservices Architecture • Enterprise Scaling
               </div>
             </div>
-            <div className="order-1 flex items-center justify-center xl:order-2">
+            <div className="order-1 lg:order-2">
               <OrbitVisual />
             </div>
           </div>
@@ -752,168 +688,178 @@ export default function MiraculousSoftLandingPage() {
       {/* Capabilities Section */}
       <section className="relative overflow-hidden bg-zinc-950 py-14 sm:py-20">
         <div className="cap-grid-bg absolute inset-0" />
-        <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-14 px-4 lg:grid-cols-2 lg:items-center lg:gap-20">
-          <div>
-            <SectionEyebrow className="text-zinc-500">Capabilities</SectionEyebrow>
-            <h2 className="font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">
-              Engineered
-              <br />
-              For <span className="text-red-600">Impact.</span>
-            </h2>
-            <p className="mt-6 max-w-xl text-[15px] leading-8 text-white/45">
-              We specialise in connected systems, enterprise workflows, and modern software architecture that supports serious business growth.
-            </p>
+        <div className="mx-auto max-w-7xl px-4 space-y-10">
+          <div className="relative z-10 grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-20">
+            <div>
+              <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
+                <span className="h-[2px] w-7 bg-red-600" />
+                Capabilities
+              </div>
+              <h2 className="font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">
+                Engineered
+                <br />
+                For <span className="text-red-600">Impact.</span>
+              </h2>
+              <p className="mt-6 max-w-xl text-[15px] leading-8 text-white/45">We specialise in connected systems, enterprise workflows, and modern software architecture that supports serious business growth.</p>
+              {/* <div className="mt-10 w-full flex max-w-[384px] rounded-[24px] border border-white/10 bg-black/50 shadow-[0_20px_70px_rgba(0,0,0,0.45)] backdrop-blur-sm">
+                <svg viewBox="0 0 386 184" className="w-full overflow-visible rounded-[18px] bg-[#05070b]">
+                  <defs>
+                    <linearGradient id="impactRed" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stopColor="#ff5b47" />
+                      <stop offset="100%" stopColor="#e63322" />
+                    </linearGradient>
+                    <linearGradient id="impactBlue" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stopColor="#2d7dff" />
+                      <stop offset="100%" stopColor="#0044ff" />
+                    </linearGradient>
+                    <filter id="nodeGlow" x="-100%" y="-100%" width="300%" height="300%">
+                      <feGaussianBlur stdDeviation="4" result="blur" />
+                      <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                  </defs>
+                  
+                  <g opacity="0.08">
+                    {Array.from({ length: 10 }).map((_, i) => (
+                      <line key={`v-${i}`} x1={i * 38.6} y1="0" x2={i * 38.6} y2="184" stroke="#ffffff" strokeWidth="1" />
+                    ))}
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <line key={`h-${i}`} x1="0" y1={i * 46} x2="386" y2={i * 46} stroke="#ffffff" strokeWidth="1" />
+                    ))}
+                  </g>
 
-            <div className="mt-10 w-full max-w-[360px] rounded-[24px] border border-white/10 bg-black/50 p-3 shadow-[0_20px_70px_rgba(0,0,0,0.45)] backdrop-blur-sm">
-              <svg viewBox="0 0 386 184" className="w-full overflow-visible rounded-[18px] bg-[#05070b]">
-                <defs>
-                  <linearGradient id="impactRed" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stopColor="#ff5b47" />
-                    <stop offset="100%" stopColor="#e63322" />
-                  </linearGradient>
-                  <linearGradient id="impactBlue" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stopColor="#2d7dff" />
-                    <stop offset="100%" stopColor="#0044ff" />
-                  </linearGradient>
-                  <filter id="nodeGlow" x="-100%" y="-100%" width="300%" height="300%">
-                    <feGaussianBlur stdDeviation="4" result="blur" />
-                    <feMerge>
-                      <feMergeNode in="blur" />
-                      <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                  </filter>
-                </defs>
+                  <g className="impact-edge impact-edge-left-top">
+                    <line x1="40" y1="92" x2="106" y2="54" stroke="rgba(255,255,255,0.16)" strokeWidth="1.2" />
+                    <circle cx="73" cy="73" r="2.2" fill="#ff6d5b">
+                      <animateMotion dur="2.8s" repeatCount="indefinite" path="M 0 0 L 33 -19" />
+                    </circle>
+                  </g>
 
-                <rect width="386" height="184" fill="#05070b" />
-                <g opacity="0.08">
-                  {Array.from({ length: 10 }).map((_, i) => (
-                    <line key={`v-${i}`} x1={i * 38.6} y1="0" x2={i * 38.6} y2="184" stroke="#ffffff" strokeWidth="1" />
-                  ))}
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <line key={`h-${i}`} x1="0" y1={i * 46} x2="386" y2={i * 46} stroke="#ffffff" strokeWidth="1" />
-                  ))}
-                </g>
+                  <g className="impact-edge impact-edge-left-bottom">
+                    <line x1="40" y1="92" x2="106" y2="130" stroke="rgba(255,255,255,0.16)" strokeWidth="1.2" />
+                    <circle cx="73" cy="111" r="2.2" fill="#ff6d5b">
+                      <animateMotion dur="2.8s" begin="0.25s" repeatCount="indefinite" path="M 0 0 L 33 19" />
+                    </circle>
+                  </g>
 
-                <g className="impact-edge impact-edge-left-top">
-                  <line x1="40" y1="92" x2="106" y2="54" stroke="rgba(255,255,255,0.16)" strokeWidth="1.2" />
-                  <circle cx="73" cy="73" r="2.2" fill="#ff6d5b">
-                    <animateMotion dur="2.8s" repeatCount="indefinite" path="M 0 0 L 33 -19" />
-                  </circle>
-                </g>
+                  <g className="impact-edge impact-edge-center-top">
+                    <line x1="106" y1="54" x2="172" y2="92" stroke="url(#impactRed)" strokeWidth="1.8" strokeLinecap="round" />
+                    <circle cx="139" cy="73" r="2.2" fill="#ff5b47">
+                      <animateMotion dur="2.3s" repeatCount="indefinite" path="M 0 0 L 33 19" />
+                    </circle>
+                  </g>
 
-                <g className="impact-edge impact-edge-left-bottom">
-                  <line x1="40" y1="92" x2="106" y2="130" stroke="rgba(255,255,255,0.16)" strokeWidth="1.2" />
-                  <circle cx="73" cy="111" r="2.2" fill="#ff6d5b">
-                    <animateMotion dur="2.8s" begin="0.25s" repeatCount="indefinite" path="M 0 0 L 33 19" />
-                  </circle>
-                </g>
+                  <g className="impact-edge impact-edge-center-bottom">
+                    <line x1="106" y1="130" x2="172" y2="92" stroke="url(#impactRed)" strokeWidth="1.8" strokeLinecap="round" />
+                    <circle cx="139" cy="111" r="2.2" fill="#ff5b47">
+                      <animateMotion dur="2.3s" begin="0.2s" repeatCount="indefinite" path="M 0 0 L 33 -19" />
+                    </circle>
+                  </g>
 
-                <g className="impact-edge impact-edge-center-top">
-                  <line x1="106" y1="54" x2="172" y2="92" stroke="url(#impactRed)" strokeWidth="1.8" strokeLinecap="round" />
-                  <circle cx="139" cy="73" r="2.2" fill="#ff5b47">
-                    <animateMotion dur="2.3s" repeatCount="indefinite" path="M 0 0 L 33 19" />
-                  </circle>
-                </g>
+                  <g className="impact-edge impact-edge-right-top-inactive">
+                    <line x1="172" y1="92" x2="238" y2="54" stroke="rgba(255,255,255,0.16)" strokeWidth="1.2" />
+                  </g>
 
-                <g className="impact-edge impact-edge-center-bottom">
-                  <line x1="106" y1="130" x2="172" y2="92" stroke="url(#impactRed)" strokeWidth="1.8" strokeLinecap="round" />
-                  <circle cx="139" cy="111" r="2.2" fill="#ff5b47">
-                    <animateMotion dur="2.3s" begin="0.2s" repeatCount="indefinite" path="M 0 0 L 33 -19" />
-                  </circle>
-                </g>
+                  <g className="impact-edge impact-edge-right-bottom-inactive">
+                    <line x1="172" y1="92" x2="238" y2="130" stroke="rgba(255,255,255,0.16)" strokeWidth="1.2" />
+                  </g>
 
-                <g className="impact-edge impact-edge-right-top-inactive">
-                  <line x1="172" y1="92" x2="238" y2="54" stroke="rgba(255,255,255,0.16)" strokeWidth="1.2" />
-                </g>
+                  <g className="impact-edge impact-edge-right-top-active">
+                    <line x1="238" y1="54" x2="304" y2="92" stroke="url(#impactBlue)" strokeWidth="1.8" strokeLinecap="round" />
+                    <circle cx="271" cy="73" r="2.2" fill="#3c84ff">
+                      <animateMotion dur="2.3s" begin="0.45s" repeatCount="indefinite" path="M 0 0 L 33 19" />
+                    </circle>
+                  </g>
 
-                <g className="impact-edge impact-edge-right-bottom-inactive">
-                  <line x1="172" y1="92" x2="238" y2="130" stroke="rgba(255,255,255,0.16)" strokeWidth="1.2" />
-                </g>
+                  <g className="impact-edge impact-edge-right-bottom-active">
+                    <line x1="238" y1="130" x2="304" y2="92" stroke="url(#impactBlue)" strokeWidth="1.8" strokeLinecap="round" />
+                    <circle cx="271" cy="111" r="2.2" fill="#3c84ff">
+                      <animateMotion dur="2.3s" begin="0.65s" repeatCount="indefinite" path="M 0 0 L 33 -19" />
+                    </circle>
+                  </g>
 
-                <g className="impact-edge impact-edge-right-top-active">
-                  <line x1="238" y1="54" x2="304" y2="92" stroke="url(#impactBlue)" strokeWidth="1.8" strokeLinecap="round" />
-                  <circle cx="271" cy="73" r="2.2" fill="#3c84ff">
-                    <animateMotion dur="2.3s" begin="0.45s" repeatCount="indefinite" path="M 0 0 L 33 19" />
-                  </circle>
-                </g>
+                  <g filter="url(#nodeGlow)">
+                    <circle cx="40" cy="92" r="7.5" fill="url(#impactRed)" className="impact-node-pulse-red" />
+                    <circle cx="106" cy="54" r="6" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.28)" strokeWidth="1.2" />
+                    <circle cx="106" cy="130" r="6" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.28)" strokeWidth="1.2" />
+                    <circle cx="172" cy="92" r="10.5" fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" className="impact-node-core" />
+                    <circle cx="238" cy="54" r="6" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.28)" strokeWidth="1.2" />
+                    <circle cx="238" cy="130" r="6" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.28)" strokeWidth="1.2" />
+                    <circle cx="304" cy="92" r="7.5" fill="url(#impactBlue)" className="impact-node-pulse-blue" />
+                  </g>
+                </svg>
+              </div> */}
+            </div>
+            <div className="relative grid overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] sm:grid-cols-2">
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(230,51,34,0.12),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(0,68,255,0.12),transparent_30%)]" />
 
-                <g className="impact-edge impact-edge-right-bottom-active">
-                  <line x1="238" y1="130" x2="304" y2="92" stroke="url(#impactBlue)" strokeWidth="1.8" strokeLinecap="round" />
-                  <circle cx="271" cy="111" r="2.2" fill="#3c84ff">
-                    <animateMotion dur="2.3s" begin="0.65s" repeatCount="indefinite" path="M 0 0 L 33 -19" />
-                  </circle>
-                </g>
+              {capabilities.map((capability, index) => {
+                const isActive = activeCapability === index;
+                const toneClasses =
+                  capability.tone === "red"
+                    ? "from-red-600/20 via-red-500/8 to-transparent"
+                    : "from-blue-600/20 via-blue-500/8 to-transparent";
+                const iconTone = capability.tone === "red" ? "text-red-400" : "text-blue-400";
+                const activeBorder = capability.tone === "red" ? "border-red-500/40" : "border-blue-500/40";
+                const activeGlow =
+                  capability.tone === "red"
+                    ? "shadow-[0_0_0_1px_rgba(230,51,34,0.22),0_0_40px_rgba(230,51,34,0.14)]"
+                    : "shadow-[0_0_0_1px_rgba(0,68,255,0.22),0_0_40px_rgba(0,68,255,0.14)]";
+                const activeLine = capability.tone === "red" ? "bg-red-500" : "bg-blue-500";
 
-                <g filter="url(#nodeGlow)">
-                  <circle cx="40" cy="92" r="7.5" fill="url(#impactRed)" className="impact-node-pulse-red" />
-                  <circle cx="106" cy="54" r="6" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.28)" strokeWidth="1.2" />
-                  <circle cx="106" cy="130" r="6" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.28)" strokeWidth="1.2" />
-                  <circle cx="172" cy="92" r="10.5" fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" className="impact-node-core" />
-                  <circle cx="238" cy="54" r="6" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.28)" strokeWidth="1.2" />
-                  <circle cx="238" cy="130" r="6" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.28)" strokeWidth="1.2" />
-                  <circle cx="304" cy="92" r="7.5" fill="url(#impactBlue)" className="impact-node-pulse-blue" />
-                </g>
-              </svg>
+                return (
+                  <div key={capability.label} onMouseEnter={() => setActiveCapability(index)} className={`cap-card-float group relative flex items-center gap-3 border-white/10 px-5 py-5 text-[13px] font-bold tracking-[-0.01em] transition-all duration-500 ${ index % 2 === 0 ? "sm:border-r" : "" } ${index < capabilities.length - 2 ? "border-b" : ""} ${ isActive ? `z-10 text-white ${activeBorder} ${activeGlow}` : "text-white/70 hover:z-10 hover:text-white" }`}>
+                    <div className={`pointer-events-none absolute inset-0 transition-all duration-700 ${ isActive ? `opacity-100 bg-gradient-to-r ${toneClasses}` : "opacity-0 group-hover:opacity-100 bg-gradient-to-r from-white/5 via-white/[0.03] to-transparent" }`} />
+                    <div className={`pointer-events-none absolute inset-y-0 left-0 w-[3px] transition-all duration-500 ${ isActive ? activeLine + " opacity-100" : "bg-white/0 opacity-0 group-hover:bg-white/30 group-hover:opacity-100" }`}/>
+                    {isActive && (
+                      <div className={`pointer-events-none absolute inset-y-0 left-0 w-24 skew-x-[-18deg] bg-gradient-to-r ${toneClasses}`} style={{ animation: "capabilitySweep 1.6s ease-in-out infinite" }}/>
+                    )}
+                    <div className={`relative flex h-10 w-10 shrink-0 items-center justify-center rounded-md border transition-all duration-500 ${ isActive ? `border-white/20 bg-white/10 ${iconTone} scale-110` : "border-white/10 bg-white/5 text-white/75 group-hover:border-white/20 group-hover:bg-white/10 group-hover:scale-105" }`}>
+                      <span dangerouslySetInnerHTML={{ __html: capability.icon }} />
+                    </div>
+                    <span className={`relative pr-6 transition-all duration-500 ${isActive ? "translate-x-1" : "group-hover:translate-x-1"}`}>
+                      {capability.label}
+                    </span>
+                    <span className={`absolute bottom-0 left-0 h-[2px] transition-all duration-500 ${ isActive ? `${activeLine} w-full` : "w-0 bg-white/40 group-hover:w-full" }`}/>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
-          <div className="relative grid overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] sm:grid-cols-2">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(230,51,34,0.12),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(0,68,255,0.12),transparent_30%)]" />
-
-            {capabilities.map((capability, index) => {
-              const isActive = activeCapability === index;
-              const toneClasses =
-                capability.tone === "red"
-                  ? "from-red-600/20 via-red-500/8 to-transparent"
-                  : "from-blue-600/20 via-blue-500/8 to-transparent";
-              const iconTone = capability.tone === "red" ? "text-red-400" : "text-blue-400";
-              const activeBorder = capability.tone === "red" ? "border-red-500/40" : "border-blue-500/40";
-              const activeGlow =
-                capability.tone === "red"
-                  ? "shadow-[0_0_0_1px_rgba(230,51,34,0.22),0_0_40px_rgba(230,51,34,0.14)]"
-                  : "shadow-[0_0_0_1px_rgba(0,68,255,0.22),0_0_40px_rgba(0,68,255,0.14)]";
-              const activeLine = capability.tone === "red" ? "bg-red-500" : "bg-blue-500";
-
-              return (
-                <div key={capability.label} onMouseEnter={() => setActiveCapability(index)} className={`cap-card-float group relative flex items-center gap-3 border-white/10 px-5 py-5 text-[13px] font-bold tracking-[-0.01em] transition-all duration-500 ${ index % 2 === 0 ? "sm:border-r" : "" } ${index < capabilities.length - 2 ? "border-b" : ""} ${ isActive ? `z-10 text-white ${activeBorder} ${activeGlow}` : "text-white/70 hover:z-10 hover:text-white" }`}>
-                  <div className={`pointer-events-none absolute inset-0 transition-all duration-700 ${ isActive ? `opacity-100 bg-gradient-to-r ${toneClasses}` : "opacity-0 group-hover:opacity-100 bg-gradient-to-r from-white/5 via-white/[0.03] to-transparent" }`} />
-                  <div className={`pointer-events-none absolute inset-y-0 left-0 w-[3px] transition-all duration-500 ${ isActive ? activeLine + " opacity-100" : "bg-white/0 opacity-0 group-hover:bg-white/30 group-hover:opacity-100" }`}/>
-                  {isActive && (
-                    <div className={`pointer-events-none absolute inset-y-0 left-0 w-24 skew-x-[-18deg] bg-gradient-to-r ${toneClasses}`} style={{ animation: "capabilitySweep 1.6s ease-in-out infinite" }}/>
-                  )}
-                  <div className={`relative flex h-10 w-10 shrink-0 items-center justify-center rounded-md border transition-all duration-500 ${ isActive ? `border-white/20 bg-white/10 ${iconTone} scale-110` : "border-white/10 bg-white/5 text-white/75 group-hover:border-white/20 group-hover:bg-white/10 group-hover:scale-105" }`}>
-                  <span dangerouslySetInnerHTML={{ __html: capability.icon }} />
-                  </div>
-
-                  <span className={`relative pr-6 transition-all duration-500 ${isActive ? "translate-x-1" : "group-hover:translate-x-1"}`}>
-                    {capability.label}
-                  </span>
-
-                  <span className={`absolute bottom-0 left-0 h-[2px] transition-all duration-500 ${ isActive ? `${activeLine} w-full` : "w-0 bg-white/40 group-hover:w-full" }`}/>
-                </div>
-              );
-            })}
-          </div>
+          <CommandCenterTopology />
         </div>
+        
       </section>
+
+      {/* CommandCenterTopology */}
+      {/* <section id="command-center-topology" className="pt-14 sm:pt-20">
+        <div className="mx-auto max-w-7xl px-4">
+          <CommandCenterTopology />
+        </div>
+        
+      </section> */}
       
       {/* industries */}
       <section id="industries" className="bg-white py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-12">
-            <SectionEyebrow>Industries</SectionEyebrow>
-            <h2 className="font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">
-              Where We <span className="text-red-600">Operate.</span>
-            </h2>
+            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
+              <span className="h-[2px] w-7 bg-red-600" />
+              Industries
+            </div>
+            <h2 className="font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">Where We <span className="text-red-600">Operate.</span></h2>
           </div>
 
-          <div className="grid overflow-hidden rounded-xl border-2 border-zinc-950  grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
+          <div className="grid overflow-hidden rounded-xl border-2 border-zinc-950 grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
             {industries.map((industry, index) => {
               return (
                 <div key={industry.name} className={`group relative overflow-hidden px-4 py-8 text-center transition ${index !== industries.length - 1 ? "border-r border-[var(--border)]" : ""}`}>
                   <div className="absolute inset-0 translate-y-full bg-red-600 transition duration-300 group-hover:translate-y-0" />
-                  <div className="relative z-10">
-                    <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border)] bg-white transition group-hover:border-white/25 group-hover:bg-white/10">
+                  <div className="relative z-10 space-y-3">
+                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-[var(--border)] bg-white transition group-hover:border-white/25 group-hover:bg-white/10">
                       <span dangerouslySetInnerHTML={{ __html: industry.icon }} />
                     </div>
                     <div className="text-[11px] font-bold uppercase tracking-[0.08em] text-zinc-500 transition group-hover:text-white">{industry.name}</div>
@@ -930,7 +876,10 @@ export default function MiraculousSoftLandingPage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-14 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-end">
             <div>
-              <SectionEyebrow>Client Voices</SectionEyebrow>
+              <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
+                <span className="h-[2px] w-7 bg-red-600" />
+                Client Voices
+              </div>
               <h2 className="font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">
                 What They
                 <br />
@@ -939,18 +888,18 @@ export default function MiraculousSoftLandingPage() {
             </div>
             <p className="max-w-xl text-[15px] leading-8 text-zinc-500">Trusted by product founders, leadership teams, and businesses building serious digital systems across multiple industries.</p>
           </div>
-
           <div className="grid gap-6 lg:grid-cols-3">
             {testimonials.map((item, index) => (
-              <div key={item.name} className="rounded-2xl border border-[var(--border)] bg-white p-8 transition hover:-translate-y-1 hover:border-zinc-950 hover:shadow-[6px_6px_0_#0c0c0c]">
-                <div className="mb-5 flex gap-1 text-yellow-500 text-xl">
-                  {Array.from({ length: 5 }).map((_, starIndex) => (
-                    <span key={starIndex}>★</span>
-                  ))}
+              <div key={item.name} className="flex flex-col justify-between rounded-2xl border border-[var(--border)] bg-white p-8 transition hover:-translate-y-1 hover:border-zinc-950 hover:shadow-[6px_6px_0_#0c0c0c]">
+                <div>
+                  <div className="mb-5 flex gap-1 text-yellow-500 text-xl">
+                    {Array.from({ length: 5 }).map((_, starIndex) => (
+                      <span key={starIndex}>★</span>
+                    ))}
+                  </div>
+                  <p className="font-serif-display mb-7 text-[20px] font-light italic leading-8 text-zinc-800">“{item.quote}”</p>
                 </div>
-                <p className="font-serif-display mb-7 text-[20px] font-light italic leading-8 text-zinc-800">“{item.quote}”</p>
-                <div className="mb-5 h-px bg-neutral-200" />
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 border-t border-zinc-200 pt-5">
                   <div className={`flex h-11 w-11 items-center justify-center rounded-full text-sm font-extrabold text-white ${index === 0 ? "bg-blue-600" : index === 1 ? "bg-red-600" : "bg-zinc-950"}`}>
                     {item.initials}
                   </div>
@@ -967,17 +916,19 @@ export default function MiraculousSoftLandingPage() {
       
       {/* metrics */}
       <section className="bg-white relative">
-        <div className="mx-auto grid max-w-7xl px-4 border-y-1 border-neutral-200 sm:grid-cols-2 xl:grid-cols-4">
-          {metrics.map((metric, index) => (
-            <div key={metric.label} className={`group relative overflow-hidden px-8 py-12 text-center transition hover:bg-[var(--off)] ${index !== metrics.length - 1 ? "border-r border-[var(--border)]" : ""}`}>
-              <div className="absolute bottom-0 left-0 right-0 h-1 origin-left scale-x-0 bg-red-600 transition duration-300 group-hover:scale-x-100" />
-              <div className="font-hero text-[72px] uppercase leading-none tracking-[0.02em] text-zinc-950">
-                {metric.value}
-                <span className="align-super text-[40px] text-red-600">{metric.suffix}</span>
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="border-y-2 border-zinc-950 grid sm:grid-cols-2 xl:grid-cols-4">
+            {metrics.map((metric, index) => (
+              <div key={metric.label} className={`group relative overflow-hidden px-8 py-12 text-center transition hover:bg-[var(--off)] ${index !== metrics.length - 1 ? "border-r border-[var(--border)]" : ""}`}>
+                <div className="absolute bottom-0 left-0 right-0 h-1 origin-left scale-x-0 bg-red-600 transition duration-300 group-hover:scale-x-100" />
+                <div className="font-bebas-neue text-[72px] uppercase leading-none tracking-[0.02em] text-zinc-950">
+                  {metric.value}
+                  <span className="align-super text-[40px] text-red-600">{metric.suffix}</span>
+                </div>
+                <div className="mt-2 text-[12px] font-bold uppercase tracking-[0.08em] text-zinc-500">{metric.label}</div>
               </div>
-              <div className="mt-2 text-[12px] font-bold uppercase tracking-[0.08em] text-zinc-500">{metric.label}</div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
@@ -985,17 +936,20 @@ export default function MiraculousSoftLandingPage() {
       <section id="process" className="bg-[var(--off)] py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-14">
-            <SectionEyebrow>Process</SectionEyebrow>
-            <h2 className="font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">How We <span className="text-red-600">Work.</span></h2>
+            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
+              <span className="h-[2px] w-7 bg-red-600" />
+              Process
+            </div>
+            <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">How We <span className="text-red-600">Work.</span></h2>
           </div>
 
-          <div className="overflow-hidden rounded-xl border-2 border-neutral-600">
+          <div className="overflow-hidden rounded-xl border-2 border-zinc-950">
             {processSteps.map((step, index) => (
-              <div key={step.title} className={`group grid items-center gap-5 px-6 py-7 transition hover:bg-zinc-950 lg:grid-cols-[80px_1fr_1fr_auto] lg:px-10 ${index !== processSteps.length - 1 ? "border-b border-neutral-200" : ""}`}>
-                <div className="font-hero text-[42px] uppercase leading-none tracking-[0.02em] text-neutral-200 transition group-hover:text-red-600">{step.number}</div>
-                <div className="text-lg font-bold text-zinc-950 transition group-hover:text-white/90">{step.title}</div>
-                <div className="text-sm leading-7 text-zinc-500 transition group-hover:text-white/45">{step.description}</div>
-                <div className="w-fit rounded-full border border-neutral-200 bg-neutral-200 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.08em] text-zinc-500 transition group-hover:border-red-600 group-hover:bg-red-600 group-hover:text-white">{step.tag}</div>
+              <div key={step.title} className={`group grid items-center gap-5 px-6 py-7 transition hover:bg-zinc-950 lg:grid-cols-[80px_1fr_1fr_auto] lg:px-10 ${index !== processSteps.length - 1 ? "border-b border-zinc-200" : ""}`}>
+                <div className="font-bebas-neue text-[42px] uppercase leading-none tracking-[0.02em] text-[var(--off-2)] transition group-hover:text-red-600">{step.number}</div>
+                <div className="text-[18px] font-extrabold tracking-[-0.02em] text-zinc-950 transition group-hover:text-white/90">{step.title}</div>
+                <div className="text-[13px] leading-7 text-zinc-500 transition group-hover:text-white/45">{step.description}</div>
+                <div className="w-fit rounded-full border border-[var(--border)] bg-[var(--off-2)] px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.08em] text-zinc-500 transition group-hover:border-red-600 group-hover:bg-red-600 group-hover:text-white">{step.tag}</div>
               </div>
             ))}
           </div>
@@ -1004,23 +958,27 @@ export default function MiraculousSoftLandingPage() {
 
       {/* contact */}
       <section id="contact" className="bg-white py-14 sm:py-20">
-        <div className="relative mx-auto grid max-w-7xl overflow-hidden rounded-2xl bg-neutral-900 lg:grid-cols-[1.4fr_0.6fr]">
-          <div className="absolute bottom-[-40px] right-[-20px] font-hero text-[220px] uppercase leading-none text-white/[0.03] sm:text-[300px]">M</div>
+        <div className="relative mx-auto grid max-w-7xl overflow-hidden rounded-2xl bg-zinc-950 lg:grid-cols-[1.4fr_0.6fr]">
+          <div className="absolute bottom-[-40px] right-[-20px] font-bebas-neue text-[220px] uppercase leading-none text-white/[0.03] sm:text-[300px]">M</div>
           <div className="relative z-10 px-8 py-14 sm:px-12 lg:px-16">
             <div className="mb-5 text-xs font-bold uppercase tracking-[0.16em] text-white/30">Start a Conversation</div>
-            <h2 className="font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">
+            <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">
               Let’s Build
               <br />
               Something <span className="text-red-600">Great.</span>
             </h2>
-            <p className="mt-6 max-w-xl text-[15px] leading-8 text-white/45">
-              Whether you are shaping a new SaaS product, modernising an internal platform, or scaling enterprise operations, we help turn complex ideas into strong, usable systems.
-            </p>
+            <p className="mt-6 max-w-xl text-[15px] leading-8 text-white/45">Whether you are shaping a new SaaS product, modernising an internal platform, or scaling enterprise operations, we help turn complex ideas into strong, usable systems.</p>
           </div>
 
           <div className="relative z-10 flex flex-col justify-center gap-4 border-t border-white/10 px-8 py-10 sm:px-12 lg:border-l lg:border-t-0 lg:px-10">
-            <a href="mailto:info@miraculoussoft.com" className="flex items-center justify-center rounded-md bg-emerald-600 px-6 py-4 text-[13px] font-extrabold uppercase tracking-[0.08em] text-white transition hover:-translate-y-0.5 hover:bg-[#006644]">info@miraculoussoft.com</a>
-            <a href="#services" className="flex items-center justify-center rounded-md border border-neutral-500 px-6 py-4 text-[13px] font-extrabold uppercase tracking-[0.08em] text-neutral-200 transition hover:border-neutral-300 hover:text-white">Explore Services</a>
+            <Link href="mailto:info@miraculoussoft.com" className="flex items-center justify-between rounded-md bg-[var(--green)] px-6 py-4 text-[13px] font-extrabold uppercase tracking-[0.08em] text-white transition hover:-translate-y-0.5 hover:bg-[#006644]">
+              info@miraculoussoft.com
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right" aria-hidden="true" data-source-pos="1338:14-1338:38" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </Link>
+            <Link href="#services" className="flex items-center justify-between rounded-md border border-white/15 px-6 py-4 text-[13px] font-extrabold uppercase tracking-[0.08em] text-white/70 transition hover:border-white/40 hover:text-white">
+              Explore Services
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right" aria-hidden="true" data-source-pos="1338:14-1338:38" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </Link>
           </div>
         </div>
       </section>
