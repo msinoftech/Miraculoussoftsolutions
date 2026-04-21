@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import CommandCenterTopology from "./components/CommandCenterTopology";
-
+import Getintouch from "./components/Getintouch";
 
 const marqueeItems = [
   "SaaS Product Development",
@@ -500,8 +500,9 @@ export default function MiraculousSoftLandingPage() {
       
       {/* Why Miraculous Soft Section */}
       <section className="overflow-hidden bg-[var(--off)] py-14 sm:py-20">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-4 lg:grid-cols-[0.92fr_1.08fr] lg:gap-12">
-          <div className="border-b-2 border-[var(--border)] pb-12 lg:sticky lg:top-28 lg:h-fit lg:border-b-0 lg:pb-0 lg:pr-14">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 lg:grid-cols-2 lg:gap-10">
+          {/* left column */}
+          <div className="border-b-2 border-[var(--border)] pb-12 lg:border-b-0">
             <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
               <span className="h-[2px] w-7 bg-red-600" />
               Why Miraculous Soft
@@ -524,6 +525,8 @@ export default function MiraculousSoftLandingPage() {
               </div>
             </div>
           </div>
+
+          {/* right column */}
           <div className="relative">
             <div className="absolute left-[20px] top-2 hidden h-[calc(100%-16px)] w-px bg-black/10 md:block" />
             <div className="space-y-10 lg:space-y-12">
@@ -833,14 +836,6 @@ export default function MiraculousSoftLandingPage() {
         </div>
         
       </section>
-
-      {/* CommandCenterTopology */}
-      {/* <section id="command-center-topology" className="pt-14 sm:pt-20">
-        <div className="mx-auto max-w-7xl px-4">
-          <CommandCenterTopology />
-        </div>
-        
-      </section> */}
       
       {/* industries */}
       <section id="industries" className="bg-white py-14 sm:py-20">
@@ -957,31 +952,7 @@ export default function MiraculousSoftLandingPage() {
       </section>
 
       {/* contact */}
-      <section id="contact" className="bg-white py-14 sm:py-20">
-        <div className="relative mx-auto grid max-w-7xl overflow-hidden rounded-2xl bg-zinc-950 lg:grid-cols-[1.4fr_0.6fr]">
-          <div className="absolute bottom-[-40px] right-[-20px] font-bebas-neue text-[220px] uppercase leading-none text-white/[0.03] sm:text-[300px]">M</div>
-          <div className="relative z-10 px-8 py-14 sm:px-12 lg:px-16">
-            <div className="mb-5 text-xs font-bold uppercase tracking-[0.16em] text-white/30">Start a Conversation</div>
-            <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">
-              Let’s Build
-              <br />
-              Something <span className="text-red-600">Great.</span>
-            </h2>
-            <p className="mt-6 max-w-xl text-[15px] leading-8 text-white/45">Whether you are shaping a new SaaS product, modernising an internal platform, or scaling enterprise operations, we help turn complex ideas into strong, usable systems.</p>
-          </div>
-
-          <div className="relative z-10 flex flex-col justify-center gap-4 border-t border-white/10 px-8 py-10 sm:px-12 lg:border-l lg:border-t-0 lg:px-10">
-            <Link href="mailto:info@miraculoussoft.com" className="flex items-center justify-between rounded-md bg-[var(--green)] px-6 py-4 text-[13px] font-extrabold uppercase tracking-[0.08em] text-white transition hover:-translate-y-0.5 hover:bg-[#006644]">
-              info@miraculoussoft.com
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right" aria-hidden="true" data-source-pos="1338:14-1338:38" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-            </Link>
-            <Link href="#services" className="flex items-center justify-between rounded-md border border-white/15 px-6 py-4 text-[13px] font-extrabold uppercase tracking-[0.08em] text-white/70 transition hover:border-white/40 hover:text-white">
-              Explore Services
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right" aria-hidden="true" data-source-pos="1338:14-1338:38" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <Getintouch />
     </>
   );
 }
