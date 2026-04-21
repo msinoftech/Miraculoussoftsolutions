@@ -437,9 +437,9 @@ export default function MiraculousSoftLandingPage() {
       {/* Hero Section */}
       <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
         <div className="grid-bg absolute inset-0 opacity-45" />
-        <div className="absolute bottom-0 right-[-120px] top-0 hidden w-[480px] bg-red-600 [clip-path:polygon(18%_0,100%_0,100%_100%,0_100%)] lg:block" />
+        <div className="absolute bottom-0 right-[-120px] top-0 hidden w-[480px] bg-red-600 [clip-path:polygon(18%_0,100%_0,100%_100%,0_100%)] lg:block z-[1]" />
 
-        <div className="relative z-10 mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-[1fr_390px]">
+        <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-[1fr_390px] z-10">
           {/* Left Column */}
           <div className="relative">
             <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] sm:text-[118px] md:text-[140px] lg:text-[168px]">
@@ -451,9 +451,9 @@ export default function MiraculousSoftLandingPage() {
           </div>
 
           {/* Right Column */}
-          <div className="space-y-5 pb-0 lg:pt-20">
-            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-red-600 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-red-600">
-              <span className="h-[5px] w-[5px] rounded-full bg-red-600" />
+          <div className="space-y-5 pb-0 lg:pt-20 relative z-10">
+            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-red-800 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-red-800 relative z-10">
+              <span className="h-[5px] w-[5px] rounded-full bg-red-800" />
               Enterprise Software Partner
             </div>
 
