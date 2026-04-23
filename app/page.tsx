@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import CommandCenterTopology from "./components/CommandCenterTopology";
 import Getintouch from "./components/Getintouch";
+import Marquee from "./components/Marquee";
 
 const marqueeItems = [
   "SaaS Product Development",
@@ -410,7 +411,6 @@ export default function MiraculousSoftLandingPage() {
     };
   }, []);
 
-  const marqueeLoop = useMemo(() => [...marqueeItems, ...marqueeItems], []);
   const tickerLoop = useMemo(() => [...tickerItems, ...tickerItems], []);
   const visibleWhyIndex = hoveredWhyIndex ?? activeWhyIndex;
 
@@ -445,7 +445,7 @@ export default function MiraculousSoftLandingPage() {
             <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] sm:text-[118px] md:text-[140px] lg:text-[168px]">
               <span className="block">We</span>
               <span className="block text-red-600">Engineer</span>
-              <span className="hero-outline block">Digital</span>
+              <span className="hero-outline block outline-black">Digital</span>
               <span className="block">Futures.</span>
             </h1>
           </div>
@@ -477,7 +477,7 @@ export default function MiraculousSoftLandingPage() {
           <div className="ticker-track flex">
             {tickerLoop.map((item, index) => (
               <div key={`${item.label}-${index}`} className="flex shrink-0 items-center gap-4 border-r border-white/10 px-10 py-4">
-                <span className="font-hero text-[28px] uppercase tracking-[0.03em] text-white">{item.value}</span>
+                <span className="font-bebas-neue text-[28px] uppercase tracking-[0.03em] text-white">{item.value}</span>
                 <span className="text-red-600">✦</span>
                 <span className="whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.1em] text-white/45">{item.label}</span>
               </div>
@@ -487,16 +487,12 @@ export default function MiraculousSoftLandingPage() {
       </section>
       
       {/* Marquee Section */}
-      <section className="overflow-hidden border-y-2 border-[var(--border)] bg-[var(--off)]">
-        <div className="marquee-track flex">
-          {marqueeLoop.map((item, index) => (
-            <div key={`${item}-${index}`} className="flex shrink-0 items-center gap-3 border-r border-[var(--border)] px-9 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-zinc-500 transition hover:text-zinc-950">
-              <span className="text-[10px] text-red-600">✦</span>
-              {item}
-            </div>
-          ))}
-        </div>
-      </section>
+      <Marquee
+        items={marqueeItems}
+        sectionClassName="overflow-hidden border-y-2 border-[var(--border)] bg-[var(--off)]"
+        itemClassName="flex shrink-0 items-center gap-3 border-r border-[var(--border)] px-9 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-zinc-500 transition hover:text-zinc-950"
+        iconClassName="text-[10px] text-red-600"
+      />
       
       {/* Why Miraculous Soft Section */}
       <section className="overflow-hidden bg-[var(--off)] py-14 sm:py-20">
@@ -698,102 +694,12 @@ export default function MiraculousSoftLandingPage() {
                 <span className="h-[2px] w-7 bg-red-600" />
                 Capabilities
               </div>
-              <h2 className="font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">
+              <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">
                 Engineered
                 <br />
                 For <span className="text-red-600">Impact.</span>
               </h2>
               <p className="mt-6 max-w-xl text-[15px] leading-8 text-white/45">We specialise in connected systems, enterprise workflows, and modern software architecture that supports serious business growth.</p>
-              {/* <div className="mt-10 w-full flex max-w-[384px] rounded-[24px] border border-white/10 bg-black/50 shadow-[0_20px_70px_rgba(0,0,0,0.45)] backdrop-blur-sm">
-                <svg viewBox="0 0 386 184" className="w-full overflow-visible rounded-[18px] bg-[#05070b]">
-                  <defs>
-                    <linearGradient id="impactRed" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stopColor="#ff5b47" />
-                      <stop offset="100%" stopColor="#e63322" />
-                    </linearGradient>
-                    <linearGradient id="impactBlue" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stopColor="#2d7dff" />
-                      <stop offset="100%" stopColor="#0044ff" />
-                    </linearGradient>
-                    <filter id="nodeGlow" x="-100%" y="-100%" width="300%" height="300%">
-                      <feGaussianBlur stdDeviation="4" result="blur" />
-                      <feMerge>
-                        <feMergeNode in="blur" />
-                        <feMergeNode in="SourceGraphic" />
-                      </feMerge>
-                    </filter>
-                  </defs>
-                  
-                  <g opacity="0.08">
-                    {Array.from({ length: 10 }).map((_, i) => (
-                      <line key={`v-${i}`} x1={i * 38.6} y1="0" x2={i * 38.6} y2="184" stroke="#ffffff" strokeWidth="1" />
-                    ))}
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <line key={`h-${i}`} x1="0" y1={i * 46} x2="386" y2={i * 46} stroke="#ffffff" strokeWidth="1" />
-                    ))}
-                  </g>
-
-                  <g className="impact-edge impact-edge-left-top">
-                    <line x1="40" y1="92" x2="106" y2="54" stroke="rgba(255,255,255,0.16)" strokeWidth="1.2" />
-                    <circle cx="73" cy="73" r="2.2" fill="#ff6d5b">
-                      <animateMotion dur="2.8s" repeatCount="indefinite" path="M 0 0 L 33 -19" />
-                    </circle>
-                  </g>
-
-                  <g className="impact-edge impact-edge-left-bottom">
-                    <line x1="40" y1="92" x2="106" y2="130" stroke="rgba(255,255,255,0.16)" strokeWidth="1.2" />
-                    <circle cx="73" cy="111" r="2.2" fill="#ff6d5b">
-                      <animateMotion dur="2.8s" begin="0.25s" repeatCount="indefinite" path="M 0 0 L 33 19" />
-                    </circle>
-                  </g>
-
-                  <g className="impact-edge impact-edge-center-top">
-                    <line x1="106" y1="54" x2="172" y2="92" stroke="url(#impactRed)" strokeWidth="1.8" strokeLinecap="round" />
-                    <circle cx="139" cy="73" r="2.2" fill="#ff5b47">
-                      <animateMotion dur="2.3s" repeatCount="indefinite" path="M 0 0 L 33 19" />
-                    </circle>
-                  </g>
-
-                  <g className="impact-edge impact-edge-center-bottom">
-                    <line x1="106" y1="130" x2="172" y2="92" stroke="url(#impactRed)" strokeWidth="1.8" strokeLinecap="round" />
-                    <circle cx="139" cy="111" r="2.2" fill="#ff5b47">
-                      <animateMotion dur="2.3s" begin="0.2s" repeatCount="indefinite" path="M 0 0 L 33 -19" />
-                    </circle>
-                  </g>
-
-                  <g className="impact-edge impact-edge-right-top-inactive">
-                    <line x1="172" y1="92" x2="238" y2="54" stroke="rgba(255,255,255,0.16)" strokeWidth="1.2" />
-                  </g>
-
-                  <g className="impact-edge impact-edge-right-bottom-inactive">
-                    <line x1="172" y1="92" x2="238" y2="130" stroke="rgba(255,255,255,0.16)" strokeWidth="1.2" />
-                  </g>
-
-                  <g className="impact-edge impact-edge-right-top-active">
-                    <line x1="238" y1="54" x2="304" y2="92" stroke="url(#impactBlue)" strokeWidth="1.8" strokeLinecap="round" />
-                    <circle cx="271" cy="73" r="2.2" fill="#3c84ff">
-                      <animateMotion dur="2.3s" begin="0.45s" repeatCount="indefinite" path="M 0 0 L 33 19" />
-                    </circle>
-                  </g>
-
-                  <g className="impact-edge impact-edge-right-bottom-active">
-                    <line x1="238" y1="130" x2="304" y2="92" stroke="url(#impactBlue)" strokeWidth="1.8" strokeLinecap="round" />
-                    <circle cx="271" cy="111" r="2.2" fill="#3c84ff">
-                      <animateMotion dur="2.3s" begin="0.65s" repeatCount="indefinite" path="M 0 0 L 33 -19" />
-                    </circle>
-                  </g>
-
-                  <g filter="url(#nodeGlow)">
-                    <circle cx="40" cy="92" r="7.5" fill="url(#impactRed)" className="impact-node-pulse-red" />
-                    <circle cx="106" cy="54" r="6" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.28)" strokeWidth="1.2" />
-                    <circle cx="106" cy="130" r="6" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.28)" strokeWidth="1.2" />
-                    <circle cx="172" cy="92" r="10.5" fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" className="impact-node-core" />
-                    <circle cx="238" cy="54" r="6" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.28)" strokeWidth="1.2" />
-                    <circle cx="238" cy="130" r="6" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.28)" strokeWidth="1.2" />
-                    <circle cx="304" cy="92" r="7.5" fill="url(#impactBlue)" className="impact-node-pulse-blue" />
-                  </g>
-                </svg>
-              </div> */}
             </div>
             <div className="relative grid overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] sm:grid-cols-2">
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(230,51,34,0.12),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(0,68,255,0.12),transparent_30%)]" />

@@ -101,7 +101,7 @@ const ContactForm = () => {
         placeholder="Full Name"
         value={formData.name}
         onChange={handleChange}
-        className="block w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-white/45 outline-none transition focus:border-red-500/70 focus:bg-white/[0.07] focus:ring-2 focus:ring-red-500/30"
+        className="block w-full rounded-xl border border-white/15 bg-[#0b0b0d] px-4 py-3 text-white placeholder:text-white/45 outline-none transition focus:border-red-500/70 focus:bg-white/[0.07] focus:ring-2 focus:ring-red-500/30"
       />
       
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-3">
@@ -112,7 +112,7 @@ const ContactForm = () => {
           placeholder="Phone"
           value={formData.phone}
           onChange={handleChange}
-          className="block w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-white/45 outline-none transition focus:border-red-500/70 focus:bg-white/[0.07] focus:ring-2 focus:ring-red-500/30"
+          className="block w-full rounded-xl border border-white/15 bg-[#0b0b0d] px-4 py-3 text-white placeholder:text-white/45 outline-none transition focus:border-red-500/70 focus:bg-white/[0.07] focus:ring-2 focus:ring-red-500/30"
         />
         <input
           name="email"
@@ -121,7 +121,7 @@ const ContactForm = () => {
           placeholder="Email"
           value={formData.email}
           onChange={handleChange}
-          className="block w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-white/45 outline-none transition focus:border-red-500/70 focus:bg-white/[0.07] focus:ring-2 focus:ring-red-500/30"
+          className="block w-full rounded-xl border border-white/15 bg-[#0b0b0d] px-4 py-3 text-white placeholder:text-white/45 outline-none transition focus:border-red-500/70 focus:bg-white/[0.07] focus:ring-2 focus:ring-red-500/30"
         />
       </div>
       
@@ -132,17 +132,19 @@ const ContactForm = () => {
           required
           value={formData.service}
           onChange={handleChange}
-          className="block w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 outline-none transition focus:border-red-500/70 focus:bg-white/[0.07] focus:ring-2 focus:ring-red-500/30 appearance-none"
+          className={`block w-full rounded-xl border px-4 py-3 text-sm outline-none transition ${
+            formData.service ? "text-white" : "text-white/60"
+          } border-white/15 bg-[#0b0b0d] focus:border-red-500/70 focus:ring-1 focus:ring-red-500/30`}
         >
-          <option value="">--Select Service--</option>
-          <option value="website-design">Website Design</option>
-          <option value="website-development">Website Development</option>
-          <option value="website-maintenance">Website Maintenance</option>
-          <option value="website-hosting">Website Hosting</option>
-          <option value="website-seo">Website SEO</option>
-          <option value="website-marketing">Website Marketing</option>
-          <option value="website-analytics">Website Analytics</option>
-          <option value="website-security">Website Security</option>
+          <option value="" disabled>Select Service</option>
+          <option value="SaaS Development">SaaS Development</option>
+          <option value="B2B Platform Engineering">B2B Platform Engineering</option>
+          <option value="ERP & Automation">ERP & Automation</option>
+          <option value="eCommerce Solutions">eCommerce Solutions</option>
+          <option value="Web & Mobile Apps">Web & Mobile Apps</option>
+          <option value="Digital Growth Strategy">Digital Growth Strategy</option>
+          <option value="API-First Engineering">API-First Engineering</option>
+          <option value="Cloud Infrastructure">Cloud Infrastructure</option>
         </select>
       </div>
 
@@ -153,14 +155,14 @@ const ContactForm = () => {
         placeholder="How can we help?"
         value={formData.message}
         onChange={handleChange}
-        className="block w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-white/45 outline-none transition focus:border-red-500/70 focus:bg-white/[0.07] focus:ring-2 focus:ring-red-500/30"
+        className="block w-full rounded-xl border border-white/15 bg-[#0b0b0d] px-4 py-3 text-white placeholder:text-white/45 outline-none transition focus:border-red-500/70 focus:bg-white/[0.07] focus:ring-2 focus:ring-red-500/30"
       />
       
       <div className="block sm:flex items-center justify-between gap-3">
         <button
           type="submit"
           disabled={status === "sending"}
-          className="inline-flex items-center gap-2 rounded-lg bg-red-600 px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white shadow-lg shadow-red-900/30 transition hover:bg-red-500 disabled:cursor-not-allowed disabled:opacity-70"
+          className="inline-flex items-center gap-2 rounded-lg bg-red-600 px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white shadow-lg shadow-red-900/30 transition disabled:cursor-not-allowed disabled:opacity-70"
           aria-disabled={status === "sending"}
         >
           {status === "sending" ? "Sending…" : "Request Quote"}

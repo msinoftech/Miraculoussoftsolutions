@@ -42,32 +42,32 @@ export default function Navbar() {
                     <div className="mb-3 border-b border-[#e0dbd2] pb-3">
                       <div className="flex items-center justify-between gap-2">
                       <div className="text-[10px] font-bold uppercase tracking-[0.16em] text-zinc-400">SERVICES</div>
-                      <Link href="/#services" className="text-[11px] font-bold tracking-[0.16em] text-[#7c7c7c] hover:text-red-600">VIEW ALL</Link>
+                      <Link href="/services" className="text-[11px] font-bold tracking-[0.16em] text-[#7c7c7c] hover:text-red-600">VIEW ALL</Link>
                       </div>
                       <div className="mt-1 text-[15px] font-extrabold tracking-[-0.03em] text-zinc-950">What we build</div>
                     </div>
                     <div className="grid grid-cols-2 gap-x-6 gap-y-2">
-                      <Link href="/#services" className="group-item rounded-xl flex items-center gap-2 py-2 transition">
+                      <Link href="/services/saas-development-services" className="group-item rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                         <div className="text-[12px] font-bold text-zinc-900 hover:text-red-600">SaaS Development</div>
                       </Link>
-                      <Link href="/#services" className="group rounded-xl flex items-center gap-2 py-2 transition">
+                      <Link href="/services/b2b-platform-engineering-services" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                         <div className="text-[12px] font-bold text-zinc-900 hover:text-red-600">B2B Platforms</div>
                       </Link>
-                      <Link href="/#services" className="group rounded-xl flex items-center gap-2 py-2 transition">
+                      <Link href="/services/erp-and-business-automation-services" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                         <div className="text-[12px] font-bold text-zinc-900 hover:text-red-600">ERP Systems</div>
                       </Link>
-                      <Link href="/#services" className="group rounded-xl flex items-center gap-2 py-2 transition">
+                      <Link href="/services/ecommerce-solutions-services" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                         <div className="text-[12px] font-bold text-zinc-900 hover:text-red-600">eCommerce</div>
                       </Link>
-                      <Link href="/#services" className="group rounded-xl flex items-center gap-2 py-2 transition">
+                      <Link href="/services/mobile-applications-services" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                         <div className="text-[12px] font-bold text-zinc-900 hover:text-red-600">Mobile Apps</div>
                       </Link>
-                      <Link href="/#services" className="group rounded-xl flex items-center gap-2 py-2 transition">
+                      <Link href="/services/branding-and-digital-growth-services" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                         <div className="text-[12px] font-bold text-zinc-900 hover:text-red-600">Digital Growth</div>
                       </Link>
@@ -89,48 +89,72 @@ export default function Navbar() {
                       <div className="mt-1 text-[15px] font-extrabold tracking-[-0.03em] text-zinc-950">Modern engineering stack</div>
                     </div>
                     <div className="grid grid-cols-2 gap-x-6 gap-y-2">
-                      <Link href="/#tech" className="group rounded-xl gap-2 py-2 transition hover:text-red-600">
+                      <div className="group rounded-xl gap-2 py-2 transition hover:text-red-600">
                         <div className="flex items-center gap-2 text-[12px] font-bold text-zinc-900">
                           <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                           <div className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-zinc-950">Frontend</div>
                         </div>
-                        <div className="mt-1 text-[11px] leading-5 text-zinc-500">React · Next.js · TypeScript</div>
-                      </Link>
-                      <Link href="/#tech" className="group rounded-xl gap-2 py-2 transition">
+                        <div className="mt-1 text-[11px] flex items-center gap-2 leading-5 text-zinc-500">
+                          <Link href="/technologies/reactjs-development-company" className="hover:text-red-600">React</Link>
+                          <Link href="/technologies/nextjs-development-company" className="hover:text-red-600">Next.js</Link>
+                          <Link href="/technologies/typescript-development-company" className="hover:text-red-600">TypeScript</Link>
+                        </div>
+                      </div>
+                      <div className="group rounded-xl gap-2 py-2 transition">
                         <div className="flex items-center gap-2 text-[12px] font-bold text-zinc-900">
                           <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                           <div className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-zinc-950">Backend</div>
                         </div>
-                        <div className="mt-1 text-[11px] leading-5 text-zinc-500">Node.js · Python · FastAPI</div>
-                      </Link>
-                      <Link href="/#tech" className="group rounded-xl gap-2 py-2 transition">
+                        <div className="mt-1 text-[11px] flex items-center gap-2 leading-5 text-zinc-500">
+                          <Link href="/technologies/nodejs-development-company" className="hover:text-red-600">Node.js</Link>
+                          <Link href="/technologies/python-development-company" className="hover:text-red-600">Python</Link>
+                          <Link href="/technologies/fastapi-development-company" className="hover:text-red-600">FastAPI</Link>
+                        </div>
+                      </div>
+                      <div className="group rounded-xl gap-2 py-2 transition">
                         <div className="flex items-center gap-2 text-[12px] font-bold text-zinc-900">
                           <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                           <div className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-zinc-950">Cloud & DevOps</div>
                         </div>
-                        <div className="mt-1 text-[11px] leading-5 text-zinc-500">AWS · Docker · Kubernetes</div>
-                      </Link>
-                      <Link href="/#tech" className="group rounded-xl gap-2 py-2 transition">
+                        <div className="mt-1 text-[11px] flex items-center gap-2 leading-5 text-zinc-500">
+                          <Link href="/technologies/aws-development-company" className="hover:text-red-600">AWS</Link>
+                          <Link href="/technologies/docker-development-company" className="hover:text-red-600">Docker</Link>
+                          <Link href="/technologies/kubernetes-development-company" className="hover:text-red-600">Kubernetes</Link>
+                        </div>
+                      </div>
+                      <div className="group rounded-xl gap-2 py-2 transition">
                         <div className="flex items-center gap-2 text-[12px] font-bold text-zinc-900">
                           <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                           <div className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-zinc-950">Data & Integrations</div>
                         </div>
-                        <div className="mt-1 text-[11px] leading-5 text-zinc-500">PostgreSQL · Redis · OpenSearch</div>
-                      </Link>
-                      <Link href="/#tech" className="group rounded-xl gap-2 py-2 transition">
+                        <div className="mt-1 text-[11px] flex items-center gap-2 leading-5 text-zinc-500">
+                          <Link href="/technologies/postgresql-development-company" className="hover:text-red-600">PostgreSQL</Link>
+                          <Link href="/technologies/redis-development-company" className="hover:text-red-600">Redis</Link>
+                          <Link href="/technologies/opensearch-development-company" className="hover:text-red-600">OpenSearch</Link>
+                        </div>
+                      </div>
+                      <div className="group rounded-xl gap-2 py-2 transition">
                         <div className="flex items-center gap-2 text-[12px] font-bold text-zinc-900">
                           <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                           <div className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-zinc-950">Security</div>
                         </div>
-                        <div className="mt-1 text-[11px] leading-5 text-zinc-500">OAuth · JWT · RBAC</div>
-                      </Link>
-                      <Link href="/#tech" className="group rounded-xl gap-2 py-2 transition">
+                        <div className="mt-1 text-[11px] flex items-center gap-2 leading-5 text-zinc-500">
+                          <Link href="/technologies/oauth-development-company" className="hover:text-red-600">OAuth</Link>
+                          <Link href="/technologies/jwt-development-company" className="hover:text-red-600">JWT</Link>
+                          <Link href="/technologies/rbac-development-company" className="hover:text-red-600">RBAC</Link>
+                        </div>
+                      </div>
+                      <div className="group rounded-xl gap-2 py-2 transition">
                         <div className="flex items-center gap-2 text-[12px] font-bold text-zinc-900">
                           <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                           <div className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-zinc-950">AI & Automation</div>
                         </div>
-                        <div className="mt-1 text-[11px] leading-5 text-zinc-500">OpenAI · Agents · RAG</div>
-                      </Link>
+                        <div className="mt-1 text-[11px] flex items-center gap-2 leading-5 text-zinc-500">
+                          <Link href="/technologies/openai-development-company" className="hover:text-red-600">OpenAI</Link>
+                          <Link href="/technologies/agents-development-company" className="hover:text-red-600">Agents</Link>
+                          <Link href="/technologies/rag-development-company" className="hover:text-red-600">RAG</Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </li>
@@ -218,105 +242,123 @@ export default function Navbar() {
 
         <ul className="relative">
           <li className="border-b border-[#ededed]">
-            <button type="button" className="flex w-full items-center justify-between px-4 py-4 text-left text-[12px] font-semibold tracking-[1.2px] text-[#222]" onClick={() => toggleMobileDropdown("services")}>
+            <button type="button" className="flex w-full items-center justify-between px-4 py-4 text-left text-[13px] font-semibold tracking-[1.2px] text-[#222]" onClick={() => toggleMobileDropdown("services")}>
               SERVICES
               <span className={`text-xs transition-transform ${mobileDropdown === "services" ? "rotate-180" : ""}`}>▼</span>
             </button>
             {mobileDropdown === "services" && (
               <div className="space-y-2 border-t border-[#f0f0f0] px-6 py-3">
-                <Link href="/#services" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
+                <Link href="/services/saas-development-services" className="block py-1 flex items-center gap-2 text-[#222]" onClick={closeMobileMenu}>
                   <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-bold text-zinc-900">SaaS Development</div>
+                  <div className="text-[13px] font-semibold text-zinc-900">SaaS Development</div>
                 </Link>
-                <Link href="/#services" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
+                <Link href="/services/b2b-platform-engineering-services" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
                   <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-bold text-zinc-900">B2B Platforms</div>
+                  <div className="text-[13px] font-semibold text-zinc-900">B2B Platforms</div>
                 </Link>
-                <Link href="/#services" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
+                <Link href="/services/erp-and-business-automation-services" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
                   <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-bold text-zinc-900">ERP Systems</div>
+                  <div className="text-[13px] font-semibold text-zinc-900">ERP Systems</div>
                 </Link>
-                <Link href="/#services" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
+                <Link href="/services/ecommerce-solutions-services" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
                   <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-bold text-zinc-900">eCommerce</div>
+                  <div className="text-[13px] font-semibold text-zinc-900">eCommerce</div>
                 </Link>
-                <Link href="/#services" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
+                <Link href="/services/mobile-applications-services" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
                   <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-bold text-zinc-900">Mobile Apps</div>
+                  <div className="text-[13px] font-semibold text-zinc-900">Mobile Apps</div>
                 </Link>
-                <Link href="/#services" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
+                <Link href="/services/branding-and-digital-growth-services" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
                   <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-bold text-zinc-900">Digital Growth</div>
+                  <div className="text-[13px] font-semibold text-zinc-900">Digital Growth</div>
                 </Link>
               </div>
             )}
           </li>
 
           <li className="border-b border-[#ededed]">
-            <button type="button" className="flex w-full items-center justify-between px-4 py-4 text-left text-[12px] font-semibold tracking-[1.2px] text-[#222]" onClick={() => toggleMobileDropdown("technology")}>
+            <button type="button" className="flex w-full items-center justify-between px-4 py-4 text-left text-[13px] font-semibold tracking-[1.2px] text-[#222]" onClick={() => toggleMobileDropdown("technology")}>
               TECHNOLOGY
               <span className={`text-xs transition-transform ${mobileDropdown === "technology" ? "rotate-180" : ""}`}>▼</span>
             </button>
             {mobileDropdown === "technology" && (
               <div className="space-y-2 border-t border-[#f0f0f0] px-6 py-3">
-                <Link href="/#tech" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
-                  <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-bold text-zinc-900">Frontend</div>
+                <Link href="/#tech" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                  <div className="text-[13px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Frontend</div>
+                  <div className="flex items-center gap-2 text-[12px] leading-5 text-zinc-500">
+                    <Link href="/technologies/reactjs-development-company" className="hover:text-red-600">React</Link>
+                    <Link href="/technologies/nextjs-development-company" className="hover:text-red-600">Next.js</Link>
+                    <Link href="/technologies/typescript-development-company" className="hover:text-red-600">TypeScript</Link>
+                  </div>
                 </Link>
-                <Link href="/#tech" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
-                  <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-bold text-zinc-900">Backend</div>
+                <Link href="/#tech" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                  <div className="text-[13px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Backend</div>
+                  <div className="text-[12px] flex items-center gap-2 leading-5 text-zinc-500">
+                    <Link href="/technologies/nodejs-development-company" className="hover:text-red-600">Node.js</Link>
+                    <Link href="/technologies/python-development-company" className="hover:text-red-600">Python</Link>
+                    <Link href="/technologies/fastapi-development-company" className="hover:text-red-600">FastAPI</Link>
+                  </div>
                 </Link>
-                <Link href="/#tech" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
-                  <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-bold text-zinc-900">Cloud & DevOps</div>
+                <Link href="/#tech" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                  <div className="text-[13px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Cloud & DevOps</div>
+                  <div className="text-[12px] flex items-center gap-2 leading-5 text-zinc-500">
+                    <Link href="/technologies/aws-development-company" className="hover:text-red-600">AWS</Link>
+                    <Link href="/technologies/docker-development-company" className="hover:text-red-600">Docker</Link>
+                    <Link href="/technologies/kubernetes-development-company" className="hover:text-red-600">Kubernetes</Link>
+                  </div>
                 </Link>
-                <Link href="/#tech" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
-                  <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-bold text-zinc-900">Data & Integrations</div>
+                <Link href="/#tech" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                  <div className="text-[13px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Data & Integrations</div>
+                  <div className="text-[12px] flex items-center gap-2 leading-5 text-zinc-500">
+                    <Link href="/technologies/postgresql-development-company" className="hover:text-red-600">PostgreSQL</Link>
+                    <Link href="/technologies/redis-development-company" className="hover:text-red-600">Redis</Link>
+                    <Link href="/technologies/opensearch-development-company" className="hover:text-red-600">OpenSearch</Link>
+                  </div>
                 </Link>
-                <Link href="/#tech" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
-                  <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-bold text-zinc-900">Security</div>
+                <Link href="/#tech" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                  <div className="text-[13px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Security</div>
+                  <div className="text-[12px] flex items-center gap-2 leading-5 text-zinc-500">
+                    <Link href="/technologies/oauth-development-company" className="hover:text-red-600">OAuth</Link>
+                    <Link href="/technologies/jwt-development-company" className="hover:text-red-600">JWT</Link>
+                    <Link href="/technologies/rbac-development-company" className="hover:text-red-600">RBAC</Link>
+                  </div>
                 </Link>
-                <Link href="/#tech" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
-                  <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-bold text-zinc-900">AI & Automation</div>
+                <Link href="/#tech" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                  <div className="text-[13px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> AI & Automation</div>
+                  <div className="text-[12px] flex items-center gap-2 leading-5 text-zinc-500">
+                    <Link href="/technologies/openai-development-company" className="hover:text-red-600">OpenAI</Link>
+                    <Link href="/technologies/agents-development-company" className="hover:text-red-600">Agents</Link>
+                    <Link href="/technologies/rag-development-company" className="hover:text-red-600">RAG</Link>
+                  </div>
                 </Link>
               </div>
             )}
           </li>
 
           <li className="border-b border-[#ededed]">
-            <button type="button" className="flex w-full items-center justify-between px-4 py-4 text-left text-[12px] font-semibold tracking-[1.2px] text-[#222]" onClick={() => toggleMobileDropdown("industries")}>
+            <button type="button" className="flex w-full items-center justify-between px-4 py-4 text-left text-[13px] font-semibold tracking-[1.2px] text-[#222]" onClick={() => toggleMobileDropdown("industries")}>
               INDUSTRIES
               <span className={`text-xs transition-transform ${mobileDropdown === "industries" ? "rotate-180" : ""}`}>▼</span>
             </button>
             {mobileDropdown === "industries" && (
               <div className="space-y-2 border-t border-[#f0f0f0] px-6 py-3">
-                <Link href="/#industries" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
-                  <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-bold text-zinc-900">Healthcare</div>
+                <Link href="/#industries" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                  <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Healthcare</div>
                 </Link>
-                <Link href="/#industries" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
-                  <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-bold text-zinc-900">Logistics</div>
+                <Link href="/#industries" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                  <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Logistics</div>
                 </Link>
-                <Link href="/#industries" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
-                  <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-bold text-zinc-900">Finance</div>
+                <Link href="/#industries" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                  <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Finance</div>
                 </Link>
-                <Link href="/#industries" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
-                  <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-bold text-zinc-900">Retail</div>
+                <Link href="/#industries" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                  <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Retail</div>
                 </Link>
-                <Link href="/#industries" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
-                  <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-bold text-zinc-900">Education</div>
+                <Link href="/#industries" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                  <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Education</div>
                 </Link>
-                <Link href="/#industries" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
-                  <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-bold text-zinc-900">Enterprise</div>
+                <Link href="/#industries" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                  <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Enterprise</div>
                 </Link>
               </div>
             )}
@@ -333,17 +375,14 @@ export default function Navbar() {
             </button>
             {mobileDropdown === "clients" && (
               <div className="space-y-2 border-t border-[#f0f0f0] px-6 py-3">
-                <Link href="/#clients" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
-                  <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-bold text-zinc-900">Overview</div>
+                <Link href="/#clients" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                  <div className="text-[12px] font-bold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Overview</div>
                 </Link>
-                <Link href="/#clients" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
-                  <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-bold text-zinc-900">Case Studies</div>
+                <Link href="/#clients" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                  <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Case Studies</div>
                 </Link>
-                <Link href="/#clients" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
-                  <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-bold text-zinc-900">Approach</div>
+                <Link href="/#clients" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                  <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Approach</div>
                 </Link>
               </div>
             )}
