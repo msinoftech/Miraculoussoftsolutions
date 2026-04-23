@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import CommandCenterTopology from "./components/CommandCenterTopology";
 import Getintouch from "./components/Getintouch";
 import Marquee from "./components/Marquee";
+import DevelopmentProcess from "./components/DevelopmentProcess";
 
 const marqueeItems = [
   "SaaS Product Development",
@@ -252,31 +253,28 @@ const testimonials = [
 
 const processSteps = [
   {
-    number: "01",
+    num: "01",
     title: "Discovery & Alignment",
-    description:
+    body:
       "We clarify goals, constraints, workflows, priorities, and the business logic behind the product.",
     tag: "Strategy",
   },
   {
-    number: "02",
+    num: "02",
     title: "Architecture & Planning",
-    description:
-      "We shape the system, tech stack, delivery plan, and implementation roadmap before build velocity begins.",
+    body: "We shape the system, tech stack, delivery plan, and implementation roadmap before build velocity begins.",
     tag: "Foundation",
   },
   {
-    number: "03",
+    num: "03",
     title: "Design, Build & Validate",
-    description:
-      "We deliver with iterative development, strong QA discipline, and product feedback built into the process.",
+    body: "We deliver with iterative development, strong QA discipline, and product feedback built into the process.",
     tag: "Execution",
   },
   {
-    number: "04",
+    num: "04",
     title: "Launch & Scale",
-    description:
-      "We support deployment, optimization, and the next phase of growth with a stable, scalable platform base.",
+    body: "We support deployment, optimization, and the next phase of growth with a stable, scalable platform base.",
     tag: "Growth",
   },
 ];
@@ -834,28 +832,16 @@ export default function MiraculousSoftLandingPage() {
       </section>
 
       {/* process */}
-      <section id="process" className="bg-[var(--off)] py-14 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-14">
-            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-              <span className="h-[2px] w-7 bg-red-600" />
-              Process
-            </div>
-            <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">How We <span className="text-red-600">Work.</span></h2>
-          </div>
-
-          <div className="overflow-hidden rounded-xl border-2 border-zinc-950">
-            {processSteps.map((step, index) => (
-              <div key={step.title} className={`group grid items-center gap-5 px-6 py-7 transition hover:bg-zinc-950 lg:grid-cols-[80px_1fr_1fr_auto] lg:px-10 ${index !== processSteps.length - 1 ? "border-b border-zinc-200" : ""}`}>
-                <div className="font-bebas-neue text-[42px] uppercase leading-none tracking-[0.02em] text-[var(--off-2)] transition group-hover:text-red-600">{step.number}</div>
-                <div className="text-[18px] font-extrabold tracking-[-0.02em] text-zinc-950 transition group-hover:text-white/90">{step.title}</div>
-                <div className="text-[13px] leading-7 text-zinc-500 transition group-hover:text-white/45">{step.description}</div>
-                <div className="w-fit rounded-full border border-[var(--border)] bg-[var(--off-2)] px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.08em] text-zinc-500 transition group-hover:border-red-600 group-hover:bg-red-600 group-hover:text-white">{step.tag}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <DevelopmentProcess
+        steps={processSteps}
+        label="Process"
+        title={
+          <>
+            How We <span className="text-red-600">Work.</span>
+          </>
+        }
+        description=""
+      />
 
       {/* contact */}
       <Getintouch />

@@ -1,9 +1,10 @@
 "use client";
 import Link from "next/link";
 import Marquee from "@/app/components/Marquee";
-import Process from "@/app/components/Process";
+//import Process from "@/app/components/Process";
 import BoxCard from "@/app/components/BoxCard";
 import CtaStrip from "@/app/components/CtaStrip";
+import DevelopmentProcess from "@/app/components/DevelopmentProcess";
 
 const features = [
   {
@@ -163,11 +164,11 @@ export default function SaaSDevelopmentPage() {
                 </Link>
             </div>
 
-            <div className="mt-7 grid grid-cols-2 gap-4 pt-7 sm:grid-cols-4">
+            <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
               {metrics.map(([n, l]) => (
                 <div key={l}>
-                  <div className="font-bebas-neue text-5xl leading-none text-zinc-950">{n}</div>
-                  <div className="mt-1 text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-950">{l}</div>
+                  <div className="font-bebas-neue text-3xl leading-none text-zinc-950">{n}</div>
+                  <div className="text-sm font-semibold text-zinc-950">{l}</div>
                 </div>
               ))}
             </div>
@@ -275,26 +276,26 @@ export default function SaaSDevelopmentPage() {
     </section>
     
     {/* CORE CAPABILITIES */}
-    <section className="relative overflow-hidden border-y border-white/[0.04] bg-[#0A0A0A] py-16 md:py-20">
+    <section className="relative overflow-hidden bg-white py-14 sm:py-20">
         <div className="relative mx-auto w-full max-w-7xl px-4">
-            <div className="mb-12 max-w-2xl">
+            <div className="mb-12 max-w-3xl">
                 <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
                     <span className="h-[2px] w-7 bg-red-600" />
                     What We Build
                 </div>
-                <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">High-Value SaaS Capabilities for <span className="text-red-600">Modern Products</span></h2>
-                <p className="mt-6 max-w-xl text-[15px] leading-8 text-white/45">From MVP platforms to mature enterprise portals, we create SaaS systems engineered for usability, speed, flexibility, and scale.</p>
+                <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">High-Value SaaS Capabilities for <span className="text-red-600">Modern Products</span></h2>
+                <p className="mt-4 max-w-xl text-[15px] leading-8 text-zinc-500">From MVP platforms to mature enterprise portals, we create SaaS systems engineered for usability, speed, flexibility, and scale.</p>
             </div>
 
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
             {features.map((item) => (
-                <div key={item.title} className="group relative overflow-hidden rounded-2xl border border-[rgba(255,255,255,0.06)] bg-[linear-gradient(180deg,rgba(24,24,24,0.94),rgba(16,16,16,0.94))] p-6 transition duration-300 hover:-translate-y-1.5 hover:border-[rgba(255,255,255,0.12)]">
+                <div key={item.title} className="group relative overflow-hidden rounded-2xl bg-white p-6 transition duration-300 hover:-translate-y-1.5 shadow-sm">
                     <div className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 bg-gradient-to-r from-[#E02020] to-[#3B82F6] transition duration-300 group-hover:scale-x-100" />
-                    <div className="mb-4 text-3xl bg-white/10 w-12 h-12 flex items-center justify-center rounded-lg text-white">
+                    <div className="mb-4 text-3xl w-12 h-12 flex items-center justify-center rounded-lg border border-zinc-200">
                         <span dangerouslySetInnerHTML={{ __html: item.icon }} />
                     </div>
-                    <div className="font-bebas-neue text-white text-[24px] uppercase leading-[1.2] tracking-widest mb-2">{item.title}</div>
-                    <div className="mt-4 text-[14px] leading-[1.7] text-white/45">{item.body}</div>
+                    <div className="font-bebas-neue text-[24px] uppercase leading-[1.2] tracking-[0.02em] mb-2">{item.title}</div>
+                    <div className="mt-4 text-[14px] leading-[1.7] text-zinc-500">{item.body}</div>
                 </div>
             ))}
             </div>
@@ -302,7 +303,7 @@ export default function SaaSDevelopmentPage() {
     </section>
     
     {/* SaaS Development Process */}
-    <Process
+     <DevelopmentProcess
       steps={steps}
       label="SaaS Development Process"
       title={
@@ -311,9 +312,6 @@ export default function SaaSDevelopmentPage() {
         </>
       }
       description="We turn SaaS concepts into high-performance digital products through structured discovery, smart architecture, premium UX, and launch-ready engineering."
-      sectionClassName="relative overflow-hidden border-y border-white/[0.04] bg-[linear-gradient(180deg,#141414,#121212)] py-16 md:py-20"
-      containerClassName="relative mx-auto w-full max-w-7xl px-4"
-      stepsWrapperClassName="flex flex-col border-t border-[rgba(255,255,255,0.05)]"
     />
     
     {/* BUSINESS BENEFITS */}
