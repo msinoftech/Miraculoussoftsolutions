@@ -1,41 +1,47 @@
 "use client";
 import Link from "next/link";
 import Marquee from "@/app/components/Marquee";
-import Process from "@/app/components/Process";
 import BoxCard from "@/app/components/BoxCard";
 import CtaStrip from "@/app/components/CtaStrip";
 import DevelopmentProcess from "@/app/components/DevelopmentProcess";
+import Card from "@/app/components/Card";
 
 const features = [
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layers-icon lucide-layers"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>`,
+    number: "",
     title: "Native & Cross-Platform Apps",
-    body: "Build high-performance apps for iOS and Android using native and cross-platform technologies like Flutter and React Native.",
+    description: "Build high-performance apps for iOS and Android using native and cross-platform technologies like Flutter and React Native.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>`,
   },
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-git-fork-icon lucide-git-fork"><circle cx="12" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9"/><path d="M12 12v3"/></svg>`,
+    number: "",
     title: "Mobile UI/UX Design",
-    body: "Design intuitive, modern, and user-friendly interfaces that enhance engagement and improve user retention.",
+    description: "Design intuitive, modern, and user-friendly interfaces that enhance engagement and improve user retention.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><circle cx="12" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9"/><path d="M12 12v3"/></svg>`,
   },
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-dashboard-icon lucide-layout-dashboard"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>`,
+    number: "",
     title: "Push Notifications & Engagement",
-    body: "Implement smart notification systems to boost engagement and keep users connected with your app.",
+    description: "Implement smart notification systems to boost engagement and keep users connected with your app.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>`,
   },
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot-icon lucide-bot"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>`,
+    number: "",
     title: "Secure Authentication Systems",
-    body: "Advanced security with login systems, user roles, data protection, and API-level authentication.",
+    description: "Advanced security with login systems, user roles, data protection, and API-level authentication.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>`,
   },
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud-icon lucide-cloud"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>`,
+    number: "",
     title: "High Performance Optimization",
-    body: "Optimized apps for speed, responsiveness, and smooth performance across all devices.",
+    description: "Optimized apps for speed, responsiveness, and smooth performance across all devices.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>`,
   },
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock-keyhole-icon lucide-lock-keyhole"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`,
+    number: "",
     title: "API & Backend Integration",
-    body: "Robust backend systems and seamless API integrations to power your mobile application.",
+    description: "Robust backend systems and seamless API integrations to power your mobile application.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`,
   },
 ];
 
@@ -44,26 +50,31 @@ const steps = [
     num: "01",
     title: "Product Discovery",
     body: "We define user roles, workflows, business logic, monetization model, and platform goals before development begins.",
+    tag: "",
   },
   {
     num: "02",
     title: "Architecture Planning",
     body: "We shape the SaaS structure, tenant logic, modules, APIs, permissions, and data flows for a scalable foundation.",
+    tag: "",
   },
   {
     num: "03",
     title: "UX & Interface Design",
     body: "Clean product UI, conversion-focused onboarding, dashboard usability, and high-trust interfaces for modern SaaS experiences.",
+    tag: "",
   },
   {
     num: "04",
     title: "MVP Development",
     body: "We build the first production-ready SaaS version with core features, billing flows, admin control, and real deployment readiness.",
+    tag: "",
   },
   {
     num: "05",
     title: "Optimization & Growth",
     body: "After launch, we improve performance, add advanced modules, refine analytics, and help your SaaS scale with confidence.",
+    tag: "",
   },
 ];
 
@@ -159,11 +170,11 @@ export default function MobileApplicationsServicesPage() {
                 </Link>
             </div>
 
-            <div className="mt-7 grid grid-cols-2 gap-4 pt-7 sm:grid-cols-4">
+            <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
               {metrics.map(([n, l]) => (
                 <div key={l}>
-                  <div className="font-bebas-neue text-5xl leading-none text-zinc-950">{n}</div>
-                  <div className="mt-1 text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-950">{l}</div>
+                  <div className="font-bebas-neue text-3xl leading-none text-zinc-950">{n}</div>
+                  <div className="text-sm font-semibold text-zinc-950">{l}</div>
                 </div>
               ))}
             </div>
@@ -177,44 +188,56 @@ export default function MobileApplicationsServicesPage() {
 
             <div className="absolute inset-[88px] rounded-full border border-[rgba(255,255,255,0.08)] bg-[linear-gradient(145deg,rgba(26,26,26,0.95),rgba(17,17,17,0.95))] shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_18px_38px_rgba(0,0,0,0.35)] md:inset-[116px]">
               <div className="relative h-full w-full">
-                <div className="absolute left-1/2 top-1/2 h-[186px] w-[92px] -translate-x-[60%] -translate-y-1/2 rounded-[22px] border border-white/15 bg-[linear-gradient(180deg,#1a1a1a,#050505)] p-[3px] shadow-[0_24px_44px_rgba(0,0,0,0.55)] md:h-[320px] md:w-[200px] md:rounded-[28px]">
-                  <div className="relative h-full w-full overflow-hidden rounded-[19px] bg-[linear-gradient(170deg,#0f172a,#111827,#1e293b)] p-2 md:rounded-[24px] md:p-3">
+                <div className="absolute -left-1 top-1/2 h-[28px] w-[28px] -translate-y-[120%] rounded-full border border-blue-300/40 bg-blue-500/20 blur-[1px]" />
+                <div className="absolute right-0 top-1/2 h-[22px] w-[22px] -translate-y-[10%] rounded-full border border-red-300/40 bg-red-500/20 blur-[1px]" />
+
+                <div className="absolute left-1/2 top-1/2 h-[190px] w-[98px] -translate-x-[64%] -translate-y-1/2 rounded-[24px] border border-white/15 bg-[linear-gradient(180deg,#171717,#040404)] p-[3px] shadow-[0_24px_44px_rgba(0,0,0,0.55)] md:h-[322px] md:w-[200px] md:rounded-[30px]">
+                  <div className="relative h-full w-full overflow-hidden rounded-[20px] bg-[linear-gradient(165deg,#0f172a,#111827,#1e293b)] p-2 md:rounded-[26px] md:p-3">
                     <div className="absolute left-1/2 top-1.5 h-1 w-8 -translate-x-1/2 rounded-full bg-white/30 md:top-2 md:w-10" />
-                    <div className="mt-3 rounded-lg border border-white/10 bg-white/[0.06] p-1.5 md:p-2">
-                      <div className="mb-1.5 h-2 w-14 rounded-full bg-white/20 md:h-2.5 md:w-20" />
-                      <div className="h-6 rounded-md bg-gradient-to-r from-blue-500/90 to-indigo-500/80 md:h-8" />
+                    <div className="mt-3 rounded-lg border border-white/10 bg-white/[0.07] p-1.5 md:p-2">
+                      <div className="flex items-center justify-between">
+                        <div className="text-[7px] font-bold uppercase tracking-[0.12em] text-white/75 md:text-[8px]">DAU</div>
+                        <div className="text-[7px] font-bold uppercase tracking-[0.1em] text-emerald-300 md:text-[8px]">+18%</div>
+                      </div>
+                      <div className="mt-1 font-bebas-neue text-[15px] leading-none text-white md:text-[24px]">128K</div>
                     </div>
-                    <div className="mt-2 rounded-lg border border-white/10 bg-white/[0.05] p-1.5 md:mt-3 md:p-2">
-                      <div className="mb-1.5 h-2 w-16 rounded-full bg-white/20 md:w-24" />
-                      <div className="h-7 rounded-md bg-white/10 md:h-9" />
-                    </div>
-                    <div className="mt-2 rounded-lg border border-white/10 bg-white/[0.05] p-1.5 md:mt-3 md:p-2">
+                    <div className="mt-2 rounded-lg border border-white/10 bg-white/[0.06] p-1.5 md:mt-3 md:p-2">
                       <div className="mb-2 flex items-end gap-1 md:gap-1.5">
                         <span className="h-4 flex-1 rounded-sm bg-blue-400/50 md:h-6" />
                         <span className="h-6 flex-1 rounded-sm bg-blue-400/70 md:h-8" />
                         <span className="h-8 flex-1 rounded-sm bg-violet-400/75 md:h-11" />
-                        <span className="h-7 flex-1 rounded-sm bg-red-400/70 md:h-10" />
+                        <span className="h-10 flex-1 rounded-sm bg-red-400/80 md:h-13" />
                       </div>
                       <div className="h-2 w-full rounded-full bg-white/10" />
+                    </div>
+                    <div className="mt-2 grid grid-cols-2 gap-1.5 md:mt-3 md:gap-2">
+                      <div className="rounded-md border border-white/10 bg-white/[0.08] p-1.5 text-[7px] font-bold uppercase tracking-[0.1em] text-white/70 md:p-2 md:text-[8px]">Push CTR 18.6%</div>
+                      <div className="rounded-md border border-white/10 bg-white/[0.08] p-1.5 text-[7px] font-bold uppercase tracking-[0.1em] text-white/70 md:p-2 md:text-[8px]">Retention 72%</div>
                     </div>
                   </div>
                 </div>
 
-                <div className="absolute left-1/2 top-1/2 h-[194px] w-[98px] -translate-x-[3%] -translate-y-[44%] rounded-[24px] border border-white/20 bg-[linear-gradient(180deg,#1b1b1b,#060606)] p-[3px] shadow-[0_26px_46px_rgba(0,0,0,0.6)] md:h-[320px] md:w-[180px] md:rounded-[30px]">
+                <div className="absolute left-1/2 top-1/2 h-[198px] w-[102px] -translate-x-[2%] -translate-y-[44%] rounded-[24px] border border-white/20 bg-[linear-gradient(180deg,#1b1b1b,#060606)] p-[3px] shadow-[0_28px_48px_rgba(0,0,0,0.62)] md:h-[324px] md:w-[184px] md:rounded-[32px]">
                   <div className="relative h-full w-full overflow-hidden rounded-[20px] bg-[linear-gradient(165deg,#0f172a,#172554,#1e1b4b)] p-2 md:rounded-[26px] md:p-3">
                     <div className="absolute left-1/2 top-1.5 h-1 w-8 -translate-x-1/2 rounded-full bg-white/30 md:top-2 md:w-10" />
                     <div className="mt-3 rounded-lg border border-white/10 bg-white/[0.07] p-1.5 md:p-2">
                       <div className="text-[7px] font-bold uppercase tracking-[0.12em] text-white/75 md:text-[8px]">App Score</div>
                       <div className="font-bebas-neue text-[16px] leading-none text-white md:text-[24px]">4.9</div>
                     </div>
-                    <div className="mt-2 h-6 rounded-md bg-gradient-to-r from-emerald-400/80 to-cyan-400/70 md:mt-3 md:h-8" />
-                    <div className="mt-2 rounded-lg border border-white/10 bg-white/[0.07] p-1.5 md:mt-3 md:p-2">
-                      <div className="text-[7px] font-bold uppercase tracking-[0.12em] text-white/70 md:text-[8px]">Crash Free</div>
+                    <div className="mt-2 rounded-lg border border-emerald-300/20 bg-emerald-400/10 p-1.5 md:mt-3 md:p-2">
+                      <div className="text-[7px] font-bold uppercase tracking-[0.12em] text-emerald-200 md:text-[8px]">Crash Free</div>
                       <div className="text-[10px] font-bold text-emerald-300 md:text-xs">99.98%</div>
                     </div>
+                    <div className="mt-2 h-6 rounded-md bg-gradient-to-r from-cyan-400/75 via-blue-400/75 to-violet-500/70 md:mt-3 md:h-8" />
                     <div className="mt-2 grid grid-cols-2 gap-1.5 md:mt-3 md:gap-2">
-                      <div className="h-8 rounded-md bg-white/[0.08] md:h-10" />
-                      <div className="h-8 rounded-md bg-white/[0.08] md:h-10" />
+                      <div className="rounded-md border border-white/10 bg-white/[0.08] p-1.5 md:p-2">
+                        <div className="text-[6px] font-bold uppercase tracking-[0.12em] text-white/60 md:text-[7px]">Installs</div>
+                        <div className="text-[9px] font-bold text-white md:text-[11px]">240K</div>
+                      </div>
+                      <div className="rounded-md border border-white/10 bg-white/[0.08] p-1.5 md:p-2">
+                        <div className="text-[6px] font-bold uppercase tracking-[0.12em] text-white/60 md:text-[7px]">Sessions</div>
+                        <div className="text-[9px] font-bold text-white md:text-[11px]">1.4M</div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -233,153 +256,98 @@ export default function MobileApplicationsServicesPage() {
 
     {/* OVERVIEW */}
     <section className="relative overflow-hidden border-y border-white/[0.04] bg-[linear-gradient(180deg,#141414,#121212)] py-16 md:py-20">
-        <div className="relative mx-auto w-full max-w-7xl px-4">
-            <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-12">
-                
-                <div className="relative min-h-[420px] overflow-hidden rounded-2xl border border-[rgba(255,255,255,0.08)] bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01)),linear-gradient(135deg,rgba(26,86,219,0.10),rgba(224,32,32,0.10))] p-6">
-                    <div className="grid h-full min-h-[368px] grid-rows-[auto_1fr] gap-6 rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(10,10,10,0.78)] p-6">
-                    <div className="flex items-center justify-between gap-4">
-                        <div className="flex gap-2">
-                            <span className="h-[9px] w-[9px] rounded-full bg-red-600" />
-                            <span className="h-[9px] w-[9px] rounded-full bg-blue-500" />
-                            <span className="h-[9px] w-[9px] rounded-full bg-zinc-500" />
-                        </div>
-                        <div className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-blue-200">Mobile App Command Center</div>
-                    </div>
+      <div className="relative mx-auto w-full max-w-7xl px-4">
+        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-12">
+            
+          <div className="relative min-h-[420px] overflow-hidden rounded-2xl border border-[rgba(255,255,255,0.08)] bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01)),linear-gradient(135deg,rgba(26,86,219,0.10),rgba(224,32,32,0.10))] p-6">
+              <div className="grid h-full min-h-[368px] grid-rows-[auto_1fr] gap-6 rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(10,10,10,0.78)] p-6">
+              <div className="flex items-center justify-between gap-4">
+                  <div className="flex gap-2">
+                      <span className="h-[9px] w-[9px] rounded-full bg-red-600" />
+                      <span className="h-[9px] w-[9px] rounded-full bg-blue-500" />
+                      <span className="h-[9px] w-[9px] rounded-full bg-zinc-500" />
+                  </div>
+                  <div className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-blue-200">Mobile App Command Center</div>
+              </div>
 
-                    <div className="grid h-full grid-cols-1 gap-4 md:grid-cols-[1.15fr_0.85fr]">
-                        <div className="relative flex flex-col justify-between overflow-hidden rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4">
-                            <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-blue-500/20 blur-2xl" />
-                            <div className="absolute -left-8 -bottom-8 h-24 w-24 rounded-full bg-red-500/20 blur-2xl" />
-                            <div className="relative">
-                                <div className="mb-4 flex items-center justify-between gap-3">
-                                    <div className="text-[12px] font-bold uppercase tracking-[0.12em] text-zinc-500">Daily Active Users</div>
-                                    <div className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-xs font-semibold uppercase text-blue-200">+31.2%</div>
-                                </div>
-                                <div className="font-bebas-neue text-4xl leading-none text-white">128K</div>
-                            </div>
+              <div className="grid h-full grid-cols-1 gap-4 md:grid-cols-[1.15fr_0.85fr]">
+                  <div className="relative flex flex-col justify-between overflow-hidden rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4">
+                      <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-blue-500/20 blur-2xl" />
+                      <div className="absolute -left-8 -bottom-8 h-24 w-24 rounded-full bg-red-500/20 blur-2xl" />
+                      <div className="relative">
+                          <div className="mb-4 flex items-center justify-between gap-3">
+                              <div className="text-[12px] font-bold uppercase tracking-[0.12em] text-zinc-500">Daily Active Users</div>
+                              <div className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-xs font-semibold uppercase text-blue-200">+31.2%</div>
+                          </div>
+                          <div className="font-bebas-neue text-4xl leading-none text-white">128K</div>
+                      </div>
 
-                            <div className="relative mt-4 flex h-[166px] items-end gap-[10px]">
-                                {chartHeights.map((height, index) => (
-                                <div key={index} className={`flex-1 rounded-t-[10px] bg-gradient-to-b from-blue-500 via-indigo-500 to-red-500 opacity-90 ${height}`}/>
-                                ))}
-                            </div>
-                        </div>
+                      <div className="relative mt-4 flex h-[166px] items-end gap-[10px]">
+                          {chartHeights.map((height, index) => (
+                          <div key={index} className={`flex-1 rounded-t-[10px] bg-gradient-to-b from-blue-500 via-indigo-500 to-red-500 opacity-90 ${height}`}/>
+                          ))}
+                      </div>
+                  </div>
 
-                        <div className="grid grid-cols-1 gap-4">
-                            <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
-                                <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">App Store Rating</div>
-                                <div className="font-bebas-neue text-4xl leading-none text-white">4.9</div>
-                                <div className="text-[12px] font-bold text-green-500">Top-tier feedback</div>
-                            </div>
+                  <div className="grid grid-cols-1 gap-4">
+                      <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
+                          <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">App Store Rating</div>
+                          <div className="font-bebas-neue text-4xl leading-none text-white">4.9</div>
+                          <div className="text-[12px] font-bold text-green-500">Top-tier feedback</div>
+                      </div>
 
-                            <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
-                                <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Crash-Free Sessions</div>
-                                <div className="font-bebas-neue text-4xl leading-none text-white">99.98%</div>
-                                <div className="text-[12px] font-bold text-green-500">Highly stable build</div>
-                            </div>
+                      <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
+                          <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Crash-Free Sessions</div>
+                          <div className="font-bebas-neue text-4xl leading-none text-white">99.98%</div>
+                          <div className="text-[12px] font-bold text-green-500">Highly stable build</div>
+                      </div>
 
-                            <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
-                                <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Push CTR</div>
-                                <div className="font-bebas-neue text-4xl leading-none text-white">18.6%</div>
-                                <div className="text-[12px] font-bold text-green-500">Strong engagement</div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
+                      <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
+                          <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Push CTR</div>
+                          <div className="font-bebas-neue text-4xl leading-none text-white">18.6%</div>
+                          <div className="text-[12px] font-bold text-green-500">Strong engagement</div>
+                      </div>
+                  </div>
+              </div>
+              </div>
+          </div>
 
-                
-                <div className="relative space-y-4">
-                    <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                        <span className="h-[2px] w-7 bg-red-600" />
-                        Why Build Mobile Apps With Us
-                    </div>
-                    <h2 className="text-[50px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[70px] lg:text-[80px]">MOBILE APPS BUILT FOR <span className="text-red-600">REAL ENGAGEMENT</span></h2>
+          
+          <div className="relative space-y-4">
+              <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
+                  <span className="h-[2px] w-7 bg-red-600" />
+                  Why Build Mobile Apps With Us
+              </div>
+              <h2 className="text-[50px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[70px] lg:text-[80px]">MOBILE APPS BUILT FOR <span className="text-red-600">REAL ENGAGEMENT</span></h2>
 
-                    <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">We design and engineer mobile apps that go beyond visuals, built for <strong className="text-white">high retention, smooth journeys, performance, and long-term product growth</strong>.</p>
-                    <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">From startup MVPs to enterprise mobility products, we align each build with{" "} <strong className="text-white">real user behavior, scalable architecture, app-store quality, and security-first engineering</strong>.</p>
-                    <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">Our mobile-first execution blends premium UI, conversion-focused UX, and robust development so your app can launch faster and improve continuously without rework.</p>
+              <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">We design and engineer mobile apps that go beyond visuals, built for <strong className="text-white">high retention, smooth journeys, performance, and long-term product growth</strong>.</p>
+              <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">From startup MVPs to enterprise mobility products, we align each build with{" "} <strong className="text-white">real user behavior, scalable architecture, app-store quality, and security-first engineering</strong>.</p>
+              <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">Our mobile-first execution blends premium UI, conversion-focused UX, and robust development so your app can launch faster and improve continuously without rework.</p>
 
-                    <div className="mt-7 flex flex-wrap gap-[10px]">
-                    {pills.map((item) => (
-                        <span key={item} className="rounded-full border border-[rgba(59,130,246,0.32)] bg-[rgba(26,86,219,0.08)] px-4 py-2 text-[12px] font-bold uppercase tracking-[1px] text-[#3B82F6]">{item}</span>
-                    ))}
-                    </div>
-                </div>
-            </div>
+              <div className="mt-7 flex flex-wrap gap-[10px]">
+              {pills.map((item) => (
+                  <span key={item} className="rounded-full border border-[rgba(59,130,246,0.32)] bg-[rgba(26,86,219,0.08)] px-4 py-2 text-[12px] font-bold uppercase tracking-[1px] text-[#3B82F6]">{item}</span>
+              ))}
+              </div>
+          </div>
         </div>
+      </div>
     </section>
     
     {/* CORE CAPABILITIES */}
-    {/* <section className="relative overflow-hidden border-y border-white/[0.04] bg-[#0A0A0A] py-16 md:py-20">
-        <div className="relative mx-auto w-full max-w-7xl px-4">
-            <div className="mb-12 max-w-3xl">
-                <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                    <span className="h-[2px] w-7 bg-red-600" />
-                    What We Build for Mobile Apps
-                </div>
-                <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">COMPLETE MOBILE APP <span className="text-red-600">DEVELOPMENT SOLUTIONS</span></h2>
-
-                <p className="mt-6 max-w-xl text-[15px] leading-8 text-white/45">From MVP apps to mature enterprise portals, we create mobile apps engineered for usability, speed, flexibility, and scale.</p>
-            </div>
-
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((item) => (
-                <div key={item.title} className="group relative overflow-hidden rounded-2xl border border-[rgba(255,255,255,0.06)] bg-[linear-gradient(180deg,rgba(24,24,24,0.94),rgba(16,16,16,0.94))] p-6 transition duration-300 hover:-translate-y-1.5 hover:border-[rgba(255,255,255,0.12)]">
-                    <div className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 bg-gradient-to-r from-[#E02020] to-[#3B82F6] transition duration-300 group-hover:scale-x-100" />
-                    <div className="mb-4 text-3xl bg-white/10 w-12 h-12 flex items-center justify-center rounded-lg text-white">
-                        <span dangerouslySetInnerHTML={{ __html: item.icon }} />
-                    </div>
-                    <div className="font-bebas-neue text-white text-[24px] uppercase leading-[1.2] tracking-widest mb-2">{item.title}</div>
-                    <div className="mt-4 text-[14px] leading-[1.7] text-white/45">{item.body}</div>
-                </div>
-            ))}
-            </div>
-        </div>
-    </section> */}
-
-    <section className="relative overflow-hidden bg-white py-14 sm:py-20">
-        <div className="relative mx-auto w-full max-w-7xl px-4">
-            <div className="mb-12 max-w-3xl">
-                <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                    <span className="h-[2px] w-7 bg-red-600" />
-                    What We Build for Mobile Apps
-                </div>
-                <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">COMPLETE MOBILE APP <span className="text-red-600">DEVELOPMENT SOLUTIONS</span></h2>
-                <p className="mt-4 max-w-xl text-[15px] leading-8 text-zinc-500">From MVP apps to mature enterprise portals, we create mobile apps engineered for usability, speed, flexibility, and scale.</p>
-            </div>
-
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((item) => (
-                <div key={item.title} className="group relative overflow-hidden rounded-2xl bg-white p-6 transition duration-300 hover:-translate-y-1.5 shadow-sm">
-                    <div className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 bg-gradient-to-r from-[#E02020] to-[#3B82F6] transition duration-300 group-hover:scale-x-100" />
-                    <div className="mb-4 text-3xl w-12 h-12 flex items-center justify-center rounded-lg border border-zinc-200">
-                        <span dangerouslySetInnerHTML={{ __html: item.icon }} />
-                    </div>
-                    <div className="font-bebas-neue text-[24px] uppercase leading-[1.2] tracking-[0.02em] mb-2">{item.title}</div>
-                    <div className="mt-4 text-[14px] leading-[1.7] text-zinc-500">{item.body}</div>
-                </div>
-            ))}
-            </div>
-        </div>
-    </section>
-    
-    {/* SaaS Development Process */}
-    {/* <Process
-      steps={steps}
-      label="Mobile App Development Process"
+    <Card
+      label="What We Build for Mobile Apps"
       title={
         <>
-          FROM IDEA TO <span className="text-red-600">SCALABLE APP</span>
+          Complete Mobile App <br />
+          <span className="text-red-600">Development Solutions</span>
         </>
       }
-      description="We turn mobile app concepts into high-performance digital products through structured discovery, smart architecture, premium UX, and launch-ready engineering."
-      sectionClassName="relative overflow-hidden border-y border-white/[0.04] bg-[linear-gradient(180deg,#141414,#121212)] py-16 md:py-20"
-      containerClassName="relative mx-auto w-full max-w-7xl px-4"
-      stepsWrapperClassName="flex flex-col border-t border-[rgba(255,255,255,0.05)]"
-    /> */}
-
+      description="From MVP apps to mature enterprise portals, we create mobile apps engineered for usability, speed, flexibility, and scale."
+      items={features}
+    />
+    
+    {/* SaaS Development Process */}
     <DevelopmentProcess
       steps={steps}
       label="Mobile App Development Process"
@@ -393,19 +361,19 @@ export default function MobileApplicationsServicesPage() {
     
     {/* BUSINESS BENEFITS */}
     <BoxCard
-          items={benefits}
-          label="Why Choose Us"
-          title={
-            <>
-              A Strong Fit for
-              <br />
-              <span className="text-red-600">SaaS Founders, Teams</span> 
-              <br />
-              and Growing Businesses
-            </>
-          }
-          description="We build with business clarity, engineering depth, and premium execution so your product feels credible from the first interaction to long-term scale."
-          headerClassName="mb-12 text-left"
+      items={benefits}
+      label="Why Choose Us"
+      title={
+        <>
+          A Strong Fit for
+          <br />
+          <span className="text-red-600">SaaS Founders, Teams</span> 
+          <br />
+          and Growing Businesses
+        </>
+      }
+      description="We build with business clarity, engineering depth, and premium execution so your product feels credible from the first interaction to long-term scale."
+      headerClassName="mb-12 text-left"
     />
 
     {/* CTA STRIP */}

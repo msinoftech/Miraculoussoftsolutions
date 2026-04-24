@@ -5,6 +5,7 @@ import CommandCenterTopology from "./components/CommandCenterTopology";
 import Getintouch from "./components/Getintouch";
 import Marquee from "./components/Marquee";
 import DevelopmentProcess from "./components/DevelopmentProcess";
+import Card from "./components/Card";
 
 const marqueeItems = [
   "SaaS Product Development",
@@ -55,37 +56,43 @@ const services = [
     number: "01 — SaaS",
     title: "SaaS Product Development",
     description: "Multi-tenant SaaS platforms with clean UX, billing systems, usage analytics, and scalable architecture built for long-term product growth.",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layers text-zinc-900 transition group-hover:text-white" aria-hidden="true" data-source-pos="1018:20-1018:98" data-source-name="Icon"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></svg>',
+    href: "/services/saas-development-services",
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white" aria-hidden="true" data-source-pos="1018:20-1018:98" data-source-name="Icon"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></svg>',
   },
   {
     number: "02 — B2B",
     title: "B2B Platform Engineering",
     description: "Enterprise dashboards, partner portals, admin systems, and multi-role platforms designed around real operational complexity.",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor-smartphone text-zinc-900 transition group-hover:text-white" aria-hidden="true" data-source-pos="1018:20-1018:98" data-source-name="Icon"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8"></path><path d="M10 19v-3.96 3.15"></path><path d="M7 19h5"></path><rect width="6" height="10" x="16" y="12" rx="2"></rect></svg>',
+    href: "/services/b2b-platform-engineering-services",
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white" aria-hidden="true" data-source-pos="1018:20-1018:98" data-source-name="Icon"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8"></path><path d="M10 19v-3.96 3.15"></path><path d="M7 19h5"></path><rect width="6" height="10" x="16" y="12" rx="2"></rect></svg>',
   },
   {
     number: "03 — ERP",
     title: "ERP & Business Automation",
     description: "Custom workflows, approvals, internal tools, automation pipelines, and ERP modules that reduce friction across teams.",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-workflow text-zinc-900 transition group-hover:text-white" aria-hidden="true" data-source-pos="1018:20-1018:98" data-source-name="Icon"><rect width="8" height="8" x="3" y="3" rx="2"></rect><path d="M7 11v4a2 2 0 0 0 2 2h4"></path><rect width="8" height="8" x="13" y="13" rx="2"></rect></svg>',
+    href: "/services/erp-and-business-automation-services",
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white" aria-hidden="true" data-source-pos="1018:20-1018:98" data-source-name="Icon"><rect width="8" height="8" x="3" y="3" rx="2"></rect><path d="M7 11v4a2 2 0 0 0 2 2h4"></path><rect width="8" height="8" x="13" y="13" rx="2"></rect></svg>',
   },
   {
     number: "04 — Commerce",
     title: "eCommerce Solutions",
     description: "High-performance commerce systems with inventory sync, payments, integrations, and conversion-focused experiences.",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag text-zinc-900 transition group-hover:text-white" aria-hidden="true" data-source-pos="1018:20-1018:98" data-source-name="Icon"><path d="M16 10a4 4 0 0 1-8 0"></path><path d="M3.103 6.034h17.794"></path><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"></path></svg>',
+    href: "/services/ecommerce-solutions-services",
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white" aria-hidden="true" data-source-pos="1018:20-1018:98" data-source-name="Icon"><path d="M16 10a4 4 0 0 1-8 0"></path><path d="M3.103 6.034h17.794"></path><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"></path></svg>',
   },
   {
     number: "05 — Mobile",
     title: "Web & Mobile Applications",
     description: "Fast web and mobile products that feel polished, perform under load, and support real business use cases at scale.",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone text-zinc-900 transition group-hover:text-white" aria-hidden="true" data-source-pos="1018:20-1018:98" data-source-name="Icon"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg>',
+    href: "/services/mobile-applications-services",
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white" aria-hidden="true" data-source-pos="1018:20-1018:98" data-source-name="Icon"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg>',
   },
   {
     number: "06 — Growth",
     title: "Branding & Digital Growth",
     description: "Brand systems, SEO architecture, and digital growth strategy aligned with product positioning and business outcomes.",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-column text-zinc-900 transition group-hover:text-white" aria-hidden="true" data-source-pos="1018:20-1018:98" data-source-name="Icon"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg>',
+    href: "/services/branding-and-digital-growth-services",
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white" aria-hidden="true" data-source-pos="1018:20-1018:98" data-source-name="Icon"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg>',
   },
 ];
 
@@ -255,8 +262,7 @@ const processSteps = [
   {
     num: "01",
     title: "Discovery & Alignment",
-    body:
-      "We clarify goals, constraints, workflows, priorities, and the business logic behind the product.",
+    body: "We clarify goals, constraints, workflows, priorities, and the business logic behind the product.",
     tag: "Strategy",
   },
   {
@@ -560,42 +566,18 @@ export default function MiraculousSoftLandingPage() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="bg-white py-14 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-14 flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
-            <div>
-              <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                <span className="h-[2px] w-7 bg-red-600" />
-                Services
-              </div>
-              <h2 className="font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">
-                What We
-                <br />
-                <span className="text-red-600">Build.</span>
-              </h2>
-            </div>
-            <p className="max-w-xl text-[15px] leading-8 text-zinc-500">
-              We build robust digital products and operational systems that combine sharp experience design with strong engineering foundations — delivered for performance, clarity, and scale.
-            </p>
-          </div>
-          <div className="grid border-2 border-zinc-950 md:grid-cols-2 xl:grid-cols-3">
-            {services.map((service, index) => {
-              return (
-                <div key={service.title} className={`group border-[var(--border)] p-8 transition duration-300 hover:bg-zinc-950 ${index % 3 !== 2 ? "xl:border-r" : ""} ${index < 3 ? "md:border-b xl:border-b" : ""} ${index % 2 !== 1 ? "md:border-r xl:border-r" : ""} ${index < 4 ? "md:border-b xl:border-b" : ""}`}>
-                  <div className="mb-6 text-[11px] font-bold uppercase tracking-[0.1em] text-zinc-500 transition group-hover:text-white/35">{service.number}</div>
-                  <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-[10px] border border-[var(--border)] bg-[var(--off)] transition group-hover:border-red-600 group-hover:bg-red-600">
-                  <span dangerouslySetInnerHTML={{ __html: service.icon }} />
-                  </div>
-                  <div className="mb-3 text-[18px] font-extrabold tracking-[-0.02em] text-zinc-950 transition group-hover:text-white">{service.title}</div>
-                  <p className="mb-6 text-[13px] leading-7 text-zinc-500 transition group-hover:text-white/55">{service.description}</p>
-                  <div className="text-2xl text-[var(--border)] transition group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-red-600">↗</div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-          
+      <Card
+        label="Services"
+        title={
+          <>
+            What We <br />
+            <span className="text-red-600">Build.</span>
+          </>
+        }
+        description="We build robust digital products and operational systems that combine sharp experience design with strong engineering foundations — delivered for performance, clarity, and scale."
+        items={services}
+      />
+  
       {/* Technology Stack Section */}
       <section id="tech" className="bg-[var(--off)] py-14 lg:py-20">
         <div className="mx-auto max-w-7xl px-4">
@@ -840,7 +822,7 @@ export default function MiraculousSoftLandingPage() {
             How We <span className="text-red-600">Work.</span>
           </>
         }
-        description=""
+        description="We follow a structured, data-driven process to build high-performance digital products that meet your business needs and drive growth."
       />
 
       {/* contact */}

@@ -1,74 +1,182 @@
-"use client";
+import type { Metadata } from "next";
+import Script from "next/script";
+import { APP_NAME, BASE_URL, contactInfo } from "@/app/lib/config";
+
 import Link from "next/link";
 import Marquee from "@/app/components/Marquee";
-//import Process from "@/app/components/Process";
 import BoxCard from "@/app/components/BoxCard";
 import CtaStrip from "@/app/components/CtaStrip";
 import DevelopmentProcess from "@/app/components/DevelopmentProcess";
+import Card from "@/app/components/Card";
+
+export const metadata: Metadata = {
+  title: "SaaS Development Services | Miraculous Soft Solutions",
+  description: "Miraculous Soft Solutions provides end-to-end SaaS development services to design, build, launch, and scale secure cloud-based SaaS products.",
+  keywords: [ "SaaS development services", "SaaS product development", "cloud SaaS solutions", "multi-tenant SaaS platform", "API-first SaaS engineering", "Miraculous Soft Solutions",],
+  
+  alternates: {
+    canonical: `${BASE_URL}/services/saas-development-services`,
+  },
+
+  openGraph: {
+    title: `SaaS Development Services | ${APP_NAME}`,
+    description: `End-to-end SaaS development services for modern cloud products, including architecture, dashboards, API engineering, deployment, and scaling.`,
+    url: `${BASE_URL}/services/saas-development-services`,
+    type: "website",
+    siteName: `${APP_NAME}`,
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: `${APP_NAME}`,
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    site: "@miraculous_soft",
+    creator: "@miraculous_soft",
+    title: `SaaS Development Services | ${APP_NAME}`,
+    description: `Build and scale secure SaaS platforms with ${APP_NAME}, from product strategy to cloud deployment and growth.`,
+    images: ["/og-image.png"],
+  },
+}
+
+const saasDevelopmentSchemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}#website`,
+      "url": `${BASE_URL}`,
+      "name": `${APP_NAME}`,
+      "description": `${APP_NAME} provides SaaS development and software engineering services.`,
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": `${BASE_URL}/search?q={search_term_string}`,
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${BASE_URL}/services/saas-development-services#webpage`,
+      "url": `${BASE_URL}/services/saas-development-services`,
+      "name": `SaaS Development Services | ${APP_NAME}`,
+      "inLanguage": "en-US",
+      "description": `SaaS Development Services by ${APP_NAME} to design, build, launch, and scale modern SaaS products.`,
+      "isPartOf": {
+        "@id": `${BASE_URL}#website`
+      },
+      "about": {
+        "@id": `${BASE_URL}#organization`
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": `${BASE_URL}#organization`,
+      "name": `${APP_NAME}`,
+      "url": `${BASE_URL}`,
+      "logo": `${BASE_URL}${contactInfo.logo}`,
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": `${contactInfo.phone}`,
+        "contactType": "customer service",
+        "areaServed": "Global",
+        "availableLanguage": ["en"]
+      },
+      "sameAs": [
+        "https://www.facebook.com/miraculoussoft",
+        "https://twitter.com/miraculous_soft",
+        "https://www.instagram.com/miraculous_soft",
+        "https://www.pinterest.com/seomiraculoussoft"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": `${BASE_URL}/services/saas-development-services#service`,
+      "serviceType": "SaaS Development Services",
+      "name": `SaaS Development Services | ${APP_NAME}`,
+      "description": `End-to-end SaaS product development including architecture planning, UX design, API engineering, role-based dashboards, cloud deployment, and scaling support.`,
+      "url": `${BASE_URL}/services/saas-development-services`,
+      "provider": {
+        "@id": `${BASE_URL}#organization`
+      },
+      "areaServed": "Global"
+    }
+  ]
+};
 
 const features = [
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layers-icon lucide-layers"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>`,
+    number: "",
     title: "Multi-Tenant SaaS Platforms",
-    body: "Build secure, scalable products with clean tenant separation, admin controls, and flexible account structures.",
+    description: "Build secure, scalable products with clean tenant separation, admin controls, and flexible account structures.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>`,
   },
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-git-fork-icon lucide-git-fork"><circle cx="12" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9"/><path d="M12 12v3"/></svg>`,
+    number: "",
     title: "API-First Product Engineering",
-    body: "Future-ready APIs for web, mobile, internal systems, third-party integrations, and automation workflows.",
+    description: "Future-ready APIs for web, mobile, internal systems, third-party integrations, and automation workflows.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><circle cx="12" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9"/><path d="M12 12v3"/></svg>`,
   },
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-dashboard-icon lucide-layout-dashboard"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>`,
+    number: "",
     title: "Role-Based Dashboards",
-    body: "Rich portals for admins, teams, customers, and partners with configurable permissions and reporting.",
+    description: "Rich portals for admins, teams, customers, and partners with configurable permissions and reporting.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>`,
   },
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot-icon lucide-bot"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>`,
+    number: "",
     title: "AI-Ready Features",
-    body: "Add copilots, automation, summarization, smart search, and operational AI without breaking core product flow.",
+    description: "Add copilots, automation, summarization, smart search, and operational AI without breaking core product flow.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>`,
   },
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud-icon lucide-cloud"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>`,
+    number: "",
     title: "Cloud Deployment & Scaling",
-    body: "Ship on modern cloud infrastructure with CI/CD, observability, autoscaling, and resilient delivery pipelines.",
+    description: "Ship on modern cloud infrastructure with CI/CD, observability, autoscaling, and resilient delivery pipelines.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>`,
   },
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock-keyhole-icon lucide-lock-keyhole"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`,
+    number: "",
     title: "Security & Compliance Focus",
-    body: "Strong authentication, audit trails, role control, data protection, and production-safe engineering practices.",
+    description: "Strong authentication, audit trails, role control, data protection, and production-safe engineering practices.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`,
   },
 ];
 
 const steps = [
   {
     num: "01",
-    icon: "🔍",
     title: "Product Discovery",
     body: "We define user roles, workflows, business logic, monetization model, and platform goals before development begins.",
+    tag: "Discovery",
   },
   {
     num: "02",
-    icon: "🧠",
     title: "Architecture Planning",
     body: "We shape the SaaS structure, tenant logic, modules, APIs, permissions, and data flows for a scalable foundation.",
+    tag: "Architecture",
   },
   {
     num: "03",
-    icon: "🎨",
     title: "UX & Interface Design",
     body: "Clean product UI, conversion-focused onboarding, dashboard usability, and high-trust interfaces for modern SaaS experiences.",
+    tag: "Design",
   },
   {
     num: "04",
-    icon: "⚙️",
     title: "MVP Development",
     body: "We build the first production-ready SaaS version with core features, billing flows, admin control, and real deployment readiness.",
+    tag: "Build",
   },
   {
     num: "05",
-    icon: "📈",
     title: "Optimization & Growth",
     body: "After launch, we improve performance, add advanced modules, refine analytics, and help your SaaS scale with confidence.",
+    tag: "Growth",
   },
 ];
 
@@ -78,24 +186,28 @@ const benefits = [
     icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rocket-icon lucide-rocket"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>`,
     title: "Fast MVP Momentum",
     body: "We help turn strong product ideas into launch-ready SaaS experiences without bloated delivery cycles.",
+    tag: "",
   },
   {
     no: "02",
     icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet-icon lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>`,
     title: "Scalable Core Systems",
     body: "From auth and billing to dashboard logic and integrations, we build foundations made to grow.",
+    tag: "",
   },
   {
     no: "03",
     icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings2-icon lucide-settings-2"><path d="M14 17H5"/><path d="M19 7h-9"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>`,
     title: "Modern Engineering",
     body: "Clean frontend architecture, resilient backend services, and product-grade code quality from day one.",
+    tag: "",
   },
   {
     no: "04",
     icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake-icon lucide-handshake"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>`,
     title: "Built for Outcomes",
     body: "We care about activation, retention, usability, performance, and business impact, not just screens.",
+    tag: "",
   },
 ];
 
@@ -135,6 +247,9 @@ const chartHeights = ["h-[40%]", "h-[52%]", "h-[60%]", "h-[74%]", "h-[84%]", "h-
 export default function SaaSDevelopmentPage() {
     return (
     <>
+    {/* Add Structured Data for SaaS Development Services Page */}
+    <Script id="saas-development-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(saasDevelopmentSchemaData, null, 2),}}/>
+
     {/* HERO */}
     <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
         <div className="grid-bg absolute inset-0 opacity-45" />
@@ -276,31 +391,17 @@ export default function SaaSDevelopmentPage() {
     </section>
     
     {/* CORE CAPABILITIES */}
-    <section className="relative overflow-hidden bg-white py-14 sm:py-20">
-        <div className="relative mx-auto w-full max-w-7xl px-4">
-            <div className="mb-12 max-w-3xl">
-                <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                    <span className="h-[2px] w-7 bg-red-600" />
-                    What We Build
-                </div>
-                <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">High-Value SaaS Capabilities for <span className="text-red-600">Modern Products</span></h2>
-                <p className="mt-4 max-w-xl text-[15px] leading-8 text-zinc-500">From MVP platforms to mature enterprise portals, we create SaaS systems engineered for usability, speed, flexibility, and scale.</p>
-            </div>
-
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((item) => (
-                <div key={item.title} className="group relative overflow-hidden rounded-2xl bg-white p-6 transition duration-300 hover:-translate-y-1.5 shadow-sm">
-                    <div className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 bg-gradient-to-r from-[#E02020] to-[#3B82F6] transition duration-300 group-hover:scale-x-100" />
-                    <div className="mb-4 text-3xl w-12 h-12 flex items-center justify-center rounded-lg border border-zinc-200">
-                        <span dangerouslySetInnerHTML={{ __html: item.icon }} />
-                    </div>
-                    <div className="font-bebas-neue text-[24px] uppercase leading-[1.2] tracking-[0.02em] mb-2">{item.title}</div>
-                    <div className="mt-4 text-[14px] leading-[1.7] text-zinc-500">{item.body}</div>
-                </div>
-            ))}
-            </div>
-        </div>
-    </section>
+    <Card
+      label="What We Build"
+      title={
+        <>
+          High-Value SaaS Capabilities for <br />
+          <span className="text-red-600">Modern Products</span>
+        </>
+      }
+      description="From MVP platforms to mature enterprise portals, we create SaaS systems engineered for usability, speed, flexibility, and scale."
+      items={features}
+    />
     
     {/* SaaS Development Process */}
      <DevelopmentProcess
@@ -316,19 +417,19 @@ export default function SaaSDevelopmentPage() {
     
     {/* BUSINESS BENEFITS */}
     <BoxCard
-          items={benefits}
-          label="Why Choose Us"
-          title={
-            <>
-              A Strong Fit for
-              <br />
-              <span className="text-red-600">SaaS Founders, Teams</span> 
-              <br />
-              and Growing Businesses
-            </>
-          }
-          description="We build with business clarity, engineering depth, and premium execution so your product feels credible from the first interaction to long-term scale."
-          headerClassName="mb-12 text-left"
+      items={benefits}
+      label="Why Choose Us"
+      title={
+        <>
+          A Strong Fit for
+          <br />
+          <span className="text-red-600">SaaS Founders, Teams</span> 
+          <br />
+          and Growing Businesses
+        </>
+      }
+      description="We build with business clarity, engineering depth, and premium execution so your product feels credible from the first interaction to long-term scale."
+      headerClassName="mb-12 text-left"
     />
 
     {/* CTA STRIP */}

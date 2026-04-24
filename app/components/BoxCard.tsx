@@ -34,7 +34,7 @@ export default function BoxCard({
   cardClassName = "group relative min-h-[255px] overflow-hidden rounded-[14px] border border-white/10 bg-white p-6 shadow-sm transition hover:-translate-y-1",
   cardIndexClassName = "pointer-events-none absolute right-4 top-2 font-bebas-neue text-6xl leading-none text-zinc-200",
   iconWrapClassName = "mb-4 text-3xl w-12 h-12 flex items-center justify-center rounded-lg border border-[var(--off-2)] bg-[var(--off)]",
-  itemTitleClassName = "font-bebas-neue text-[24px] uppercase leading-[1.2] tracking-[0.02em] mb-2",
+  itemTitleClassName = "text-[18px] font-extrabold tracking-[-0.02em] text-zinc-950 transition leading-[1.2] mb-2",
   itemBodyClassName = "mt-4 text-[14px] leading-[1.7] text-zinc-500",
 }: BoxCardProps) {
   return (

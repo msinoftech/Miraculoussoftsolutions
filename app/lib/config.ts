@@ -1,6 +1,6 @@
-export const APP_NAME = "Miraculous Soft Solutions";
-//export const BASE_URL = "https://miraculoussoftsolutions.vercel.app";
-export const BASE_URL = "http://localhost:3000";
+export const APP_NAME = "Miraculoussoftsolutions";
+export const BASE_URL = "https://miraculoussoftsolutions.vercel.app";
+//export const BASE_URL = "http://localhost:3000";
 
 export const contactInfo = {
   logo: "/miraculoussoftsolutions-logo.png",
