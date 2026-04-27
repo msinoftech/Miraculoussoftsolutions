@@ -203,7 +203,7 @@ export default function Navbar() {
                 </li>
 
                 <li className="group relative h-16 border-r border-[var(--border)] px-5 transition hover:bg-[var(--off)]">
-                  <Link href="/#process" className="flex h-full items-center gap-2 text-[12px] font-bold uppercase tracking-[0.1em] text-zinc-500 group-hover:text-zinc-950">PROCESS</Link>
+                  <Link href="/process" className="flex h-full items-center gap-2 text-[12px] font-bold uppercase tracking-[0.1em] text-zinc-500 group-hover:text-zinc-950">PROCESS</Link>
                 </li>
 
                 <li className="group relative h-16 border-r border-[var(--border)] px-5 transition hover:bg-[var(--off)]">
@@ -365,7 +365,7 @@ export default function Navbar() {
           </li>
 
           <li className="border-b border-[#ededed]">
-            <Link href="/#process" className="flex w-full items-center justify-between px-4 py-4 text-left text-[12px] font-semibold tracking-[1.2px] text-[#222]" onClick={closeMobileMenu}>PROCESS</Link>
+            <Link href="/process" className="flex w-full items-center justify-between px-4 py-4 text-left text-[12px] font-semibold tracking-[1.2px] text-[#222]" onClick={closeMobileMenu}>PROCESS</Link>
           </li>
 
           <li className="border-b border-[#ededed]">

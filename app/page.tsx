@@ -587,7 +587,7 @@ export default function MiraculousSoftLandingPage() {
                 <span className="h-[2px] w-7 bg-red-600" />
                 Technology Stack
               </div>
-              <h2 className="font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">
+              <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">
                 Built With
                 <br />
                 <span className="text-red-600">Proven Tech.</span>
