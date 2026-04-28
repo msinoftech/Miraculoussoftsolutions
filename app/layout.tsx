@@ -48,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${bebas_neue.variable} select-none`}>
+    <html lang="en" className={`${bebas_neue.variable}`}>
       <body>
         <div id="cursor"></div>
         <div id="cursor-ring"></div>

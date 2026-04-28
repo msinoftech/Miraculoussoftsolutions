@@ -438,7 +438,7 @@ export default function B2BPlatformEngineeringServicesPage() {
       items={features}
     />
 
-    {/* SaaS Development Process */}
+    {/* B2B Development Process */}
     <DevelopmentProcess
       steps={steps}
       label="B2B Platform Engineering Process"

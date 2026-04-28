@@ -33,188 +33,215 @@ export default function Navbar() {
 
             <nav className="hidden items-center border-l border-[var(--border)] h-full xl:flex">
               <ul className="flex h-full">
+                {/* Services block */}
                 <li className="group relative h-16 border-r border-[var(--border)] px-5 transition hover:bg-[var(--off)]">
-                  <button type="button" className="flex h-full items-center gap-2 text-[12px] font-bold uppercase tracking-[0.1em] text-zinc-500 group-hover:text-red-600">
+                  <button type="button" className="flex h-full items-center gap-2 text-[13px] font-bold uppercase tracking-wider text-zinc-500 group-hover:text-red-600">
                     SERVICES
                     <span className="text-[10px]">▼</span>
                   </button>
-                  <div className="invisible absolute left-0 top-full z-40 w-[440px] translate-y-2 rounded-2xl border border-[#dadada] bg-white/95 p-6 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                  <div className="invisible absolute left-0 top-full z-40 w-[400px] translate-y-2 rounded-2xl border border-[#dadada] bg-white/95 p-6 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                     <div className="mb-3 border-b border-[#e0dbd2] pb-3">
                       <div className="flex items-center justify-between gap-2">
-                      <div className="text-[10px] font-bold uppercase tracking-[0.16em] text-zinc-400">SERVICES</div>
-                      <Link href="/services" className="text-[11px] font-bold tracking-[0.16em] text-[#7c7c7c] hover:text-red-600">VIEW ALL</Link>
+                        <div className="text-[13px] font-bold uppercase tracking-wider text-zinc-500">SERVICES</div>
+                        <Link href="/services" className="text-[13px] font-bold tracking-wider text-zinc-500 hover:text-red-600">VIEW ALL</Link>
                       </div>
-                      <div className="mt-1 text-[15px] font-extrabold tracking-[-0.03em] text-zinc-950">What we build</div>
+                      <div className="mt-1 text-[15px] font-extrabold text-zinc-950">What we build</div>
                     </div>
-                    <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-2 text-[13px] font-semibold text-zinc-900">
                       <Link href="/services/saas-development-services" className="group-item rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="text-[12px] font-bold text-zinc-900 hover:text-red-600">SaaS Development</div>
+                        <div className="hover:text-red-600">SaaS Development</div>
                       </Link>
                       <Link href="/services/b2b-platform-engineering-services" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="text-[12px] font-bold text-zinc-900 hover:text-red-600">B2B Platforms</div>
+                        <div className="hover:text-red-600">B2B Platforms</div>
                       </Link>
                       <Link href="/services/erp-and-business-automation-services" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="text-[12px] font-bold text-zinc-900 hover:text-red-600">ERP Systems</div>
+                        <div className="hover:text-red-600">ERP Systems</div>
                       </Link>
                       <Link href="/services/ecommerce-solutions-services" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="text-[12px] font-bold text-zinc-900 hover:text-red-600">eCommerce</div>
+                        <div className="hover:text-red-600">eCommerce</div>
                       </Link>
                       <Link href="/services/mobile-applications-services" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="text-[12px] font-bold text-zinc-900 hover:text-red-600">Mobile Apps</div>
+                        <div className="hover:text-red-600">Mobile Apps</div>
                       </Link>
                       <Link href="/services/branding-and-digital-growth-services" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="text-[12px] font-bold text-zinc-900 hover:text-red-600">Digital Growth</div>
+                        <div className="hover:text-red-600">Digital Growth</div>
                       </Link>
                     </div>
                   </div>
                 </li>
 
+                {/* Technoligies */}
                 <li className="group relative h-16 border-r border-[var(--border)] px-5 transition hover:bg-[var(--off)]">
-                  <button type="button" className="flex h-full items-center gap-2 text-[12px] font-bold uppercase tracking-[0.1em] text-zinc-500 group-hover:text-zinc-950">
+                  <button type="button" className="flex h-full items-center gap-2 text-[13px] font-bold uppercase tracking-wider text-zinc-500 group-hover:text-red-600">
                     TECHNOLOGY
                     <span className="text-[10px]">▼</span>
                   </button>
-                  <div className="invisible absolute left-0 top-full z-40 w-[420px] translate-y-2 rounded-xl border border-[#dadada] bg-white/95 p-5 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                  <div className="invisible absolute left-0 top-full z-40 w-[440px] translate-y-2 rounded-xl border border-[#dadada] bg-white/95 p-5 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                     <div className="mb-3 border-b border-[#e0dbd2] pb-3">
                       <div className="flex items-center justify-between gap-2">
-                      <div className="text-[10px] font-bold uppercase tracking-[0.16em] text-zinc-400">TECHNOLOGY</div>
-                      <Link href="/#tech" className="text-[11px] font-bold tracking-[0.16em] text-[#7c7c7c] hover:text-red-600">VIEW ALL</Link>
+                        <div className="text-[13px] font-bold uppercase tracking-wider text-zinc-500">TECHNOLOGY</div>
+                        <Link href="/technologies" className="text-[13px] font-bold tracking-wider text-zinc-500 hover:text-red-600">VIEW ALL</Link>
                       </div>
-                      <div className="mt-1 text-[15px] font-extrabold tracking-[-0.03em] text-zinc-950">Modern engineering stack</div>
+                      <div className="mt-1 text-[15px] font-extrabold text-zinc-950">Modern engineering stack</div>
                     </div>
                     <div className="grid grid-cols-2 gap-x-6 gap-y-2">
-                      <div className="group rounded-xl gap-2 py-2 transition hover:text-red-600">
-                        <div className="flex items-center gap-2 text-[12px] font-bold text-zinc-900">
+                      
+                      {/* Frontend */}
+                      <div className="group rounded-xl gap-2 py-2 transition">
+                        <div className="flex items-center gap-2">
                           <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                          <div className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-zinc-950">Frontend</div>
+                          <Link href="/technologies/frontend-technologies" className="text-[12px] font-extrabold uppercase tracking-wider text-zinc-950 hover:text-red-600">Frontend</Link>
                         </div>
-                        <div className="mt-1 text-[11px] flex items-center gap-2 leading-5 text-zinc-500">
+                        <div className="mt-1 flex items-center gap-2 text-[13px] font-semibold text-zinc-900">
                           <Link href="/technologies/reactjs-development-company" className="hover:text-red-600">React</Link>
                           <Link href="/technologies/nextjs-development-company" className="hover:text-red-600">Next.js</Link>
                           <Link href="/technologies/typescript-development-company" className="hover:text-red-600">TypeScript</Link>
                         </div>
                       </div>
+
+                      {/* Backend */}
                       <div className="group rounded-xl gap-2 py-2 transition">
-                        <div className="flex items-center gap-2 text-[12px] font-bold text-zinc-900">
+                        <div className="flex items-center gap-2">
                           <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                          <div className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-zinc-950">Backend</div>
+                          <Link href="/technologies/backend-technologies" className="text-[12px] font-extrabold uppercase tracking-wider text-zinc-950 hover:text-red-600">Backend</Link>
                         </div>
-                        <div className="mt-1 text-[11px] flex items-center gap-2 leading-5 text-zinc-500">
+                        <div className="mt-1 flex items-center gap-2 text-[13px] font-semibold text-zinc-900 ">
                           <Link href="/technologies/nodejs-development-company" className="hover:text-red-600">Node.js</Link>
                           <Link href="/technologies/python-development-company" className="hover:text-red-600">Python</Link>
                           <Link href="/technologies/fastapi-development-company" className="hover:text-red-600">FastAPI</Link>
                         </div>
                       </div>
+
+                      {/* Cloud Devops */}
                       <div className="group rounded-xl gap-2 py-2 transition">
-                        <div className="flex items-center gap-2 text-[12px] font-bold text-zinc-900">
+                        <div className="flex items-center gap-2">
                           <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                          <div className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-zinc-950">Cloud & DevOps</div>
+                          <Link href="/technologies/cloud-devops" className="text-[12px] font-extrabold uppercase tracking-wider text-zinc-950 hover:text-red-600">Cloud & DevOps</Link>
                         </div>
-                        <div className="mt-1 text-[11px] flex items-center gap-2 leading-5 text-zinc-500">
+                        <div className="mt-1 flex items-center gap-2 text-[13px] font-semibold text-zinc-900">
                           <Link href="/technologies/aws-development-company" className="hover:text-red-600">AWS</Link>
                           <Link href="/technologies/docker-development-company" className="hover:text-red-600">Docker</Link>
                           <Link href="/technologies/kubernetes-development-company" className="hover:text-red-600">Kubernetes</Link>
                         </div>
                       </div>
+
+                      {/* data & integrations */}
                       <div className="group rounded-xl gap-2 py-2 transition">
-                        <div className="flex items-center gap-2 text-[12px] font-bold text-zinc-900">
+                        <div className="flex items-center gap-2">
                           <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                          <div className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-zinc-950">Data & Integrations</div>
+                          <Link href="/technologies/data-and-integrations" className="text-[12px] font-extrabold uppercase tracking-wider text-zinc-950 hover:text-red-600">Data & Integrations</Link>
                         </div>
-                        <div className="mt-1 text-[11px] flex items-center gap-2 leading-5 text-zinc-500">
+                        <div className="mt-1 flex items-center gap-2 text-[13px] font-semibold text-zinc-900">
                           <Link href="/technologies/postgresql-development-company" className="hover:text-red-600">PostgreSQL</Link>
                           <Link href="/technologies/redis-development-company" className="hover:text-red-600">Redis</Link>
                           <Link href="/technologies/opensearch-development-company" className="hover:text-red-600">OpenSearch</Link>
                         </div>
                       </div>
+
+                      {/* Security */}
                       <div className="group rounded-xl gap-2 py-2 transition">
-                        <div className="flex items-center gap-2 text-[12px] font-bold text-zinc-900">
+                        <div className="flex items-center gap-2 ">
                           <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                          <div className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-zinc-950">Security</div>
+                          <Link href="/technologies/security" className="text-[12px] font-extrabold uppercase tracking-wider text-zinc-950 hover:text-red-600">Security</Link>
                         </div>
-                        <div className="mt-1 text-[11px] flex items-center gap-2 leading-5 text-zinc-500">
+                        <div className="mt-1 flex items-center gap-2 text-[13px] font-semibold text-zinc-900">
                           <Link href="/technologies/oauth-development-company" className="hover:text-red-600">OAuth</Link>
                           <Link href="/technologies/jwt-development-company" className="hover:text-red-600">JWT</Link>
                           <Link href="/technologies/rbac-development-company" className="hover:text-red-600">RBAC</Link>
                         </div>
                       </div>
+
+                      {/* Ai & Automation */}
                       <div className="group rounded-xl gap-2 py-2 transition">
-                        <div className="flex items-center gap-2 text-[12px] font-bold text-zinc-900">
+                        <div className="flex items-center gap-2">
                           <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                          <div className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-zinc-950">AI & Automation</div>
+                          <Link href="/technologies/ai-and-automation" className="text-[12px] font-extrabold uppercase tracking-wider text-zinc-950 hover:text-red-600">AI & Automation</Link>
                         </div>
-                        <div className="mt-1 text-[11px] flex items-center gap-2 leading-5 text-zinc-500">
+                        <div className="mt-1 flex items-center gap-2 text-[13px] font-semibold text-zinc-900">
                           <Link href="/technologies/openai-development-company" className="hover:text-red-600">OpenAI</Link>
                           <Link href="/technologies/agents-development-company" className="hover:text-red-600">Agents</Link>
                           <Link href="/technologies/rag-development-company" className="hover:text-red-600">RAG</Link>
                         </div>
                       </div>
+
                     </div>
                   </div>
                 </li>
 
+                {/* Industries */}
                 <li className="group relative h-16 border-r border-[var(--border)] px-5 transition hover:bg-[var(--off)]">
-                  <button type="button" className="flex h-full items-center gap-2 text-[12px] font-bold uppercase tracking-[0.1em] text-zinc-500 group-hover:text-zinc-950">
+                  <button type="button" className="flex h-full items-center gap-2 text-[13px] font-bold uppercase tracking-wider text-zinc-500 group-hover:text-red-600">
                     INDUSTRIES
                     <span className="text-[10px]">▼</span>
                   </button>
                   <div className="invisible absolute left-0 top-full z-40 w-[440px] translate-y-2 rounded-2xl border border-[#dadada] bg-white/95 p-6 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                     <div className="mb-3 border-b border-[#e0dbd2] pb-3">
                       <div className="flex items-center justify-between gap-2">
-                      <div className="text-[10px] font-bold uppercase tracking-[0.16em] text-zinc-400">Industries</div>
-                      <Link href="/#industries" className="text-[11px] font-bold tracking-[0.16em] text-[#7c7c7c] hover:text-[#111]">VIEW ALL</Link>
+                        <div className="text-[13px] font-bold uppercase tracking-wider text-zinc-400">Industries</div>
+                        <Link href="/industries" className="text-[13px] font-bold tracking-wider text-zinc-500 hover:text-red-600">VIEW ALL</Link>
                       </div>
-                      <div className="mt-1 text-[15px] font-extrabold tracking-[-0.03em] text-zinc-950">Domains we serve</div>
+                      <div className="mt-1 text-[15px] font-extrabold text-zinc-950">Domains we serve</div>
                     </div>
-                    <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-2 text-[13px] font-semibold text-zinc-900">
                       <Link href="/#industries" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="text-[12px] font-bold text-zinc-900">Healthcare</div>
+                        <div className="hover:text-red-600">Healthcare</div>
                       </Link>
                       <Link href="/#industries" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="text-[12px] font-bold text-zinc-900">Logistics</div>
+                        <div className="hover:text-red-600">Logistics</div>
                       </Link>
                       <Link href="/#industries" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="text-[12px] font-bold text-zinc-900">Finance</div>
+                        <div className="hover:text-red-600">Finance</div>
                       </Link>
                       <Link href="/#industries" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="text-[12px] font-bold text-zinc-900">Retail</div>
+                        <div className="hover:text-red-600">Retail</div>
                       </Link>
                       <Link href="/#industries" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="text-[12px] font-bold text-zinc-900">Education</div>
+                        <div className="hover:text-red-600">Education</div>
                       </Link>
                       <Link href="/#industries" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="text-[12px] font-bold text-zinc-900">Enterprise</div>
+                        <div className="hover:text-red-600">Enterprise</div>
                       </Link>
 
                     </div>
                   </div>
                 </li>
 
+                {/* Process */}
                 <li className="group relative h-16 border-r border-[var(--border)] px-5 transition hover:bg-[var(--off)]">
-                  <Link href="/process" className="flex h-full items-center gap-2 text-[12px] font-bold uppercase tracking-[0.1em] text-zinc-500 group-hover:text-zinc-950">PROCESS</Link>
+                  <Link href="/process" className="flex h-full items-center gap-2 text-[13px] font-bold uppercase tracking-wider text-zinc-500 group-hover:text-red-600">PROCESS</Link>
                 </li>
 
+                {/* Clients */}
                 <li className="group relative h-16 border-r border-[var(--border)] px-5 transition hover:bg-[var(--off)]">
-                  <button type="button" className="flex h-full items-center gap-2 text-[12px] font-bold uppercase tracking-[0.1em] text-zinc-500 group-hover:text-zinc-950">
+                  <button type="button" className="flex h-full items-center gap-2 text-[13px] font-bold uppercase tracking-wider text-zinc-500 group-hover:text-red-600">
                     CLIENTS
                     <span className="text-[10px]">▼</span>
                   </button>
                   <div className="invisible absolute left-0 top-full z-40 w-[280px] translate-y-2 rounded-xl border border-[#dadada] bg-white/95 p-5 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                    <Link href="/#clients" className="block rounded-lg py-2 text-[12px] font-bold text-zinc-600 transition hover:text-red-600">Overview</Link>
-                    <Link href="/#clients" className="block rounded-lg py-2 text-[12px] font-bold text-zinc-600 transition hover:text-red-600">Case Studies</Link>
-                    <Link href="/#clients" className="block rounded-lg py-2 text-[12px] font-bold text-zinc-600 transition hover:text-red-600">Approach</Link>
+                    <Link href="/#clients" className="flex items-center gap-2 rounded-lg py-2 text-[13px] font-semibold text-zinc-900 transition hover:text-red-600">
+                      <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
+                      Overview
+                    </Link>
+                    <Link href="/#clients" className="flex items-center gap-2 rounded-lg py-2 text-[13px] font-semibold text-zinc-900 transition hover:text-red-600">
+                      <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
+                      Case Studies
+                    </Link>
+                    <Link href="/#clients" className="flex items-center gap-2 rounded-lg py-2 text-[13px] font-semibold text-zinc-900 transition hover:text-red-600">
+                      <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
+                      Approach
+                    </Link>
                   </div>
                 </li>
               </ul>
