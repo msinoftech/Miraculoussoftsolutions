@@ -146,6 +146,7 @@ export default function MobileApplicationsServicesPage() {
         <div className="grid-bg absolute inset-0 opacity-45" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.16))]" />
+        
         <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-[1fr_390px] z-10">
           {/* Left Column */}
           <div className="space-y-5">
@@ -185,68 +186,64 @@ export default function MobileApplicationsServicesPage() {
             <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
             <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
             <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
+            
+            {/* center core */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center relative h-[210px] w-[125px] md:h-[340px] md:w-[200px] rounded-2xl bg-[linear-gradient(180deg,#ffffff,#eef2f7)] shadow-[0_25px_60px_rgba(15,23,42,0.25)] p-[4px]">
+              {/* Screen */}
+              <div className="relative h-full w-full overflow-hidden rounded-2xl 
+                bg-[linear-gradient(180deg,#dbeafe,#f1f5f9,#e0f2fe)] p-2 md:p-3">
 
-            <div className="absolute inset-[88px] rounded-full border border-[rgba(255,255,255,0.08)] bg-[linear-gradient(145deg,rgba(26,26,26,0.95),rgba(17,17,17,0.95))] shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_18px_38px_rgba(0,0,0,0.35)] md:inset-[116px]">
-              <div className="relative h-full w-full">
-                <div className="absolute -left-1 top-1/2 h-[28px] w-[28px] -translate-y-[120%] rounded-full border border-blue-300/40 bg-blue-500/20 blur-[1px]" />
-                <div className="absolute right-0 top-1/2 h-[22px] w-[22px] -translate-y-[10%] rounded-full border border-red-300/40 bg-red-500/20 blur-[1px]" />
-
-                <div className="absolute left-1/2 top-1/2 h-[190px] w-[98px] -translate-x-[64%] -translate-y-1/2 rounded-[24px] border border-white/15 bg-[linear-gradient(180deg,#171717,#040404)] p-[3px] shadow-[0_24px_44px_rgba(0,0,0,0.55)] md:h-[322px] md:w-[200px] md:rounded-[30px]">
-                  <div className="relative h-full w-full overflow-hidden rounded-[20px] bg-[linear-gradient(165deg,#0f172a,#111827,#1e293b)] p-2 md:rounded-[26px] md:p-3">
-                    <div className="absolute left-1/2 top-1.5 h-1 w-8 -translate-x-1/2 rounded-full bg-white/30 md:top-2 md:w-10" />
-                    <div className="mt-3 rounded-lg border border-white/10 bg-white/[0.07] p-1.5 md:p-2">
-                      <div className="flex items-center justify-between">
-                        <div className="text-[7px] font-bold uppercase tracking-[0.12em] text-white/75 md:text-[8px]">DAU</div>
-                        <div className="text-[7px] font-bold uppercase tracking-[0.1em] text-emerald-300 md:text-[8px]">+18%</div>
-                      </div>
-                      <div className="mt-1 font-bebas-neue text-[15px] leading-none text-white md:text-[24px]">128K</div>
-                    </div>
-                    <div className="mt-2 rounded-lg border border-white/10 bg-white/[0.06] p-1.5 md:mt-3 md:p-2">
-                      <div className="mb-2 flex items-end gap-1 md:gap-1.5">
-                        <span className="h-4 flex-1 rounded-sm bg-blue-400/50 md:h-6" />
-                        <span className="h-6 flex-1 rounded-sm bg-blue-400/70 md:h-8" />
-                        <span className="h-8 flex-1 rounded-sm bg-violet-400/75 md:h-11" />
-                        <span className="h-10 flex-1 rounded-sm bg-red-400/80 md:h-13" />
-                      </div>
-                      <div className="h-2 w-full rounded-full bg-white/10" />
-                    </div>
-                    <div className="mt-2 grid grid-cols-2 gap-1.5 md:mt-3 md:gap-2">
-                      <div className="rounded-md border border-white/10 bg-white/[0.08] p-1.5 text-[7px] font-bold uppercase tracking-[0.1em] text-white/70 md:p-2 md:text-[8px]">Push CTR 18.6%</div>
-                      <div className="rounded-md border border-white/10 bg-white/[0.08] p-1.5 text-[7px] font-bold uppercase tracking-[0.1em] text-white/70 md:p-2 md:text-[8px]">Retention 72%</div>
-                    </div>
+                {/* Status Bar */}
+                <div className="flex items-center justify-between text-[7px] font-semibold text-zinc-700 md:text-[9px]">
+                  <span>9:41</span>
+                  <div className="flex items-center gap-1">
+                    <span>5G</span>
+                    <span className="h-1.5 w-3 rounded-sm border border-zinc-500">
+                      <span className="block h-full w-[70%] bg-zinc-700 rounded-[2px]" />
+                    </span>
                   </div>
                 </div>
-
-                <div className="absolute left-1/2 top-1/2 h-[198px] w-[102px] -translate-x-[2%] -translate-y-[44%] rounded-[24px] border border-white/20 bg-[linear-gradient(180deg,#1b1b1b,#060606)] p-[3px] shadow-[0_28px_48px_rgba(0,0,0,0.62)] md:h-[324px] md:w-[184px] md:rounded-[32px]">
-                  <div className="relative h-full w-full overflow-hidden rounded-[20px] bg-[linear-gradient(165deg,#0f172a,#172554,#1e1b4b)] p-2 md:rounded-[26px] md:p-3">
-                    <div className="absolute left-1/2 top-1.5 h-1 w-8 -translate-x-1/2 rounded-full bg-white/30 md:top-2 md:w-10" />
-                    <div className="mt-3 rounded-lg border border-white/10 bg-white/[0.07] p-1.5 md:p-2">
-                      <div className="text-[7px] font-bold uppercase tracking-[0.12em] text-white/75 md:text-[8px]">App Score</div>
-                      <div className="font-bebas-neue text-[16px] leading-none text-white md:text-[24px]">4.9</div>
-                    </div>
-                    <div className="mt-2 rounded-lg border border-emerald-300/20 bg-emerald-400/10 p-1.5 md:mt-3 md:p-2">
-                      <div className="text-[7px] font-bold uppercase tracking-[0.12em] text-emerald-200 md:text-[8px]">Crash Free</div>
-                      <div className="text-[10px] font-bold text-emerald-300 md:text-xs">99.98%</div>
-                    </div>
-                    <div className="mt-2 h-6 rounded-md bg-gradient-to-r from-cyan-400/75 via-blue-400/75 to-violet-500/70 md:mt-3 md:h-8" />
-                    <div className="mt-2 grid grid-cols-2 gap-1.5 md:mt-3 md:gap-2">
-                      <div className="rounded-md border border-white/10 bg-white/[0.08] p-1.5 md:p-2">
-                        <div className="text-[6px] font-bold uppercase tracking-[0.12em] text-white/60 md:text-[7px]">Installs</div>
-                        <div className="text-[9px] font-bold text-white md:text-[11px]">240K</div>
-                      </div>
-                      <div className="rounded-md border border-white/10 bg-white/[0.08] p-1.5 md:p-2">
-                        <div className="text-[6px] font-bold uppercase tracking-[0.12em] text-white/60 md:text-[7px]">Sessions</div>
-                        <div className="text-[9px] font-bold text-white md:text-[11px]">1.4M</div>
-                      </div>
-                    </div>
+                {/* Weather Widget */}
+                <div className="mt-2 rounded-xl bg-white/70 backdrop-blur p-2 shadow-sm">
+                  <div className="text-[10px] font-semibold text-zinc-500">Chandigarh</div>
+                  <div className="flex items-center justify-between">
+                    <div className="text-[16px] font-bold text-zinc-900">28°</div>
+                    <div className="text-[10px]">☀️</div>
                   </div>
                 </div>
+                {/* App Grid */}
+                <div className="mt-3 grid grid-cols-4 gap-2">
+                  {["🛒","💬","📊","🎵","📦","💳","📍","⚙️"].map((icon, i) => (
+                    <div key={i} className="flex h-6 w-6 items-center justify-center rounded-sm bg-white shadow text-[12px] md:h-9 md:w-9 md:text-[14px]">{icon}</div>
+                  ))}
+                </div>
+                {/* Activity Widget */}
+                <div className="mt-3 rounded-xl bg-white/70 backdrop-blur p-2 shadow-sm">
+                  <div className="text-[10px] font-semibold text-zinc-500">Daily Activity</div>
+                  <div className="mt-1 h-2 w-full rounded-full bg-zinc-200 overflow-hidden">
+                    <div className="h-full w-[65%] bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full" />
+                  </div>
+                </div>
+                {/* Notification */}
+                <div className="mt-2 rounded-lg bg-white shadow p-2">
+                  <div className="text-[10px] font-semibold text-zinc-800">New Order</div>
+                  <div className="text-[10px] font-semibold text-zinc-500">Order #2456 placed</div>
+                </div>
+                {/* Bottom Bar */}
+                <div className="absolute bottom-2 left-1/2 h-1 w-10 -translate-x-1/2 rounded-full bg-zinc-400" />
               </div>
             </div>
 
-            <div className="absolute right-8 top-[54px] flex animate-bounce items-center gap-2 whitespace-nowrap rounded-[10px] border border-[rgba(255,255,255,0.08)] bg-[rgba(30,30,30,0.84)] px-4 py-3 text-[12px] font-bold text-[#3B82F6] shadow-[0_10px_24px_rgba(0,0,0,0.2)] [animation-duration:4.5s]">📈 Subscription Ready</div>
-            <div className="absolute bottom-[76px] left-0 flex animate-bounce items-center gap-2 whitespace-nowrap rounded-[10px] border border-[rgba(255,255,255,0.08)] bg-[rgba(30,30,30,0.84)] px-4 py-3 text-[12px] font-bold text-[#E02020] shadow-[0_10px_24px_rgba(0,0,0,0.2)] [animation-duration:4.5s] [animation-delay:1.4s]">🔐 Role Based Access</div>
-            <div className="absolute bottom-[150px] right-2 flex animate-bounce items-center gap-2 whitespace-nowrap rounded-[10px] border border-[rgba(255,255,255,0.08)] bg-[rgba(30,30,30,0.84)] px-4 py-3 text-[12px] font-bold text-emerald-500 shadow-[0_10px_24px_rgba(0,0,0,0.2)] [animation-duration:4.5s] [animation-delay:0.8s]">⚡ Fast MVP Launch</div>
+            {/* Development Process */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Planning</div>
+            <div className="absolute right-0 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">UI/UX Design</div>
+            <div className="absolute bottom-10 right-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">App Development</div>
+            <div className="absolute bottom-10 left-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">App Launch</div>
+            <div className="absolute left-0 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Scaling & Updates</div>
+            {/* Mobile Features Layer */}
+            <div className="absolute top-[90px] right-[15px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Push Notifications</div>
+            <div className="absolute bottom-[120px] left-[15px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">API Integration</div>
+            <div className="absolute bottom-[150px] right-2 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Fast MVP Launch</div>
           </div>
         </div>
     </section>

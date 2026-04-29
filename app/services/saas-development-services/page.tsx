@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Script from "next/script";
-import { APP_NAME, BASE_URL, contactInfo } from "@/app/lib/config";
+import { APP_NAME, BASE_URL } from "@/app/lib/config";
 
 import Link from "next/link";
 import Marquee from "@/app/components/Marquee";
@@ -43,70 +42,6 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
 }
-
-const saasDevelopmentSchemaData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": `${BASE_URL}#website`,
-      "url": `${BASE_URL}`,
-      "name": `${APP_NAME}`,
-      "description": `${APP_NAME} provides SaaS development and software engineering services.`,
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": `${BASE_URL}/search?q={search_term_string}`,
-        "query-input": "required name=search_term_string"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": `${BASE_URL}/services/saas-development-services#webpage`,
-      "url": `${BASE_URL}/services/saas-development-services`,
-      "name": `SaaS Development Services | ${APP_NAME}`,
-      "inLanguage": "en-US",
-      "description": `SaaS Development Services by ${APP_NAME} to design, build, launch, and scale modern SaaS products.`,
-      "isPartOf": {
-        "@id": `${BASE_URL}#website`
-      },
-      "about": {
-        "@id": `${BASE_URL}#organization`
-      }
-    },
-    {
-      "@type": "Organization",
-      "@id": `${BASE_URL}#organization`,
-      "name": `${APP_NAME}`,
-      "url": `${BASE_URL}`,
-      "logo": `${BASE_URL}${contactInfo.logo}`,
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": `${contactInfo.phone}`,
-        "contactType": "customer service",
-        "areaServed": "Global",
-        "availableLanguage": ["en"]
-      },
-      "sameAs": [
-        "https://www.facebook.com/miraculoussoft",
-        "https://twitter.com/miraculous_soft",
-        "https://www.instagram.com/miraculous_soft",
-        "https://www.pinterest.com/seomiraculoussoft"
-      ]
-    },
-    {
-      "@type": "Service",
-      "@id": `${BASE_URL}/services/saas-development-services#service`,
-      "serviceType": "SaaS Development Services",
-      "name": `SaaS Development Services | ${APP_NAME}`,
-      "description": `End-to-end SaaS product development including architecture planning, UX design, API engineering, role-based dashboards, cloud deployment, and scaling support.`,
-      "url": `${BASE_URL}/services/saas-development-services`,
-      "provider": {
-        "@id": `${BASE_URL}#organization`
-      },
-      "areaServed": "Global"
-    }
-  ]
-};
 
 const features = [
   {
@@ -247,9 +182,6 @@ const chartHeights = ["h-[40%]", "h-[52%]", "h-[60%]", "h-[74%]", "h-[84%]", "h-
 export default function SaaSDevelopmentPage() {
     return (
     <>
-    {/* Add Structured Data for SaaS Development Services Page */}
-    <Script id="saas-development-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(saasDevelopmentSchemaData, null, 2),}}/>
-
     {/* HERO */}
     <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
         <div className="grid-bg absolute inset-0 opacity-45" />
@@ -290,21 +222,66 @@ export default function SaaSDevelopmentPage() {
           </div>
 
           {/* Right Column */}
-          <div className="relative mx-auto aspect-square w-full max-w-[320px] xl:ml-auto xl:mr-0 xl:max-w-[450px]">
+          <div className="relative mx-auto aspect-square w-full max-w-[320px] xl:ml-auto xl:mr-0 xl:max-w-[460px]">
+            {/* Rings */}
             <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
             <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
             <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
 
-            <div className="absolute inset-[88px] flex flex-col items-center justify-center gap-2 rounded-full border border-[rgba(255,255,255,0.08)] bg-[linear-gradient(145deg,rgba(26,26,26,0.95),rgba(17,17,17,0.95))] text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_18px_38px_rgba(0,0,0,0.35)] md:inset-[116px]">
-              <div className="text-[58px] leading-none md:text-[74px]">☁</div>
-              <div className="text-[12px] font-extrabold uppercase tracking-[2px] text-[rgba(255,255,255,0.72)]">
-                SaaS Growth Engine
+            {/* <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-indigo-500/20 to-red-500/20 blur-2xl"></div> */}
+
+            {/* Center Core */}
+            <div className="absolute inset-[95px] h-fit rounded-2xl border border-zinc-200 bg-[linear-gradient(165deg,#ffffff,#f8fafc)] p-4 shadow-[0_16px_38px_rgba(15,23,42,0.12)]">
+              <div className="absolute inset-0 rounded-2xl bg-[radial-gradient(circle_at_18%_12%,rgba(59,130,246,0.12),transparent_55%)]" />
+              <div className="relative flex flex-col justify-between">
+                <div className="flex items-center justify-between border-b border-zinc-200 pb-2">
+                  <div>
+                    <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-500">Core Module</div>
+                    <div className="text-[13px] font-extrabold uppercase tracking-[0.08em] text-zinc-900">SaaS Engine</div>
+                  </div>
+                  <div className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-blue-200 bg-blue-50 text-sm text-blue-700">
+                    ⚙
+                  </div>
+                </div>
+
+                <div className="mt-3 grid grid-cols-2 gap-2">
+                  <div className="rounded-md border border-zinc-200 bg-white px-2.5 py-2">
+                    <div className="text-[9px] uppercase tracking-[0.12em] text-zinc-500">Runtime</div>
+                    <div className="mt-1 text-[11px] font-bold text-zinc-900">Distributed</div>
+                  </div>
+                  <div className="rounded-md border border-zinc-200 bg-white px-2.5 py-2">
+                    <div className="text-[9px] uppercase tracking-[0.12em] text-zinc-500">Region</div>
+                    <div className="mt-1 text-[11px] font-bold text-zinc-900">Multi-Geo</div>
+                  </div>
+                </div>
+
+                <div className="mt-3 flex items-center justify-between rounded-md border border-emerald-200 bg-emerald-50 px-2.5 py-2 text-[10px] font-semibold text-emerald-700">
+                  <span className="inline-flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                    System Active
+                  </span>
+                  <span>99.99%</span>
+                </div>
+
+                <div className="mt-3 flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.1em] text-zinc-700">
+                  <span className="rounded border border-zinc-200 bg-zinc-100 px-2 py-1">API Live</span>
+                  <span className="rounded border border-zinc-200 bg-zinc-100 px-2 py-1">DB Synced</span>
+                  <span className="rounded border border-zinc-200 bg-zinc-100 px-2 py-1">Auth Secure</span>
+                </div>
               </div>
             </div>
 
-            <div className="absolute right-8 top-[54px] flex animate-bounce items-center gap-2 whitespace-nowrap rounded-[10px] border border-[rgba(255,255,255,0.08)] bg-[rgba(30,30,30,0.84)] px-4 py-3 text-[12px] font-bold text-[#3B82F6] shadow-[0_10px_24px_rgba(0,0,0,0.2)] [animation-duration:4.5s]">📈 Subscription Ready</div>
-            <div className="absolute bottom-[76px] left-0 flex animate-bounce items-center gap-2 whitespace-nowrap rounded-[10px] border border-[rgba(255,255,255,0.08)] bg-[rgba(30,30,30,0.84)] px-4 py-3 text-[12px] font-bold text-[#E02020] shadow-[0_10px_24px_rgba(0,0,0,0.2)] [animation-duration:4.5s] [animation-delay:1.4s]">🔐 Role Based Access</div>
-            <div className="absolute bottom-[150px] right-2 flex animate-bounce items-center gap-2 whitespace-nowrap rounded-[10px] border border-[rgba(255,255,255,0.08)] bg-[rgba(30,30,30,0.84)] px-4 py-3 text-[12px] font-bold text-emerald-500 shadow-[0_10px_24px_rgba(0,0,0,0.2)] [animation-duration:4.5s] [animation-delay:0.8s]">⚡ Fast MVP Launch</div>
+            {/* Development Process Nodes */}
+            <div className="absolute top-6 left-1/2 -translate-x-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]" >🧠 Planning</div>
+            <div className="absolute right-0 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.3s]">🎨 UI/UX Design</div>
+            <div className="absolute bottom-10 right-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.4s]">💻 Development</div>
+            <div className="absolute bottom-10 left-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.5s]">🚀 Deployment</div>
+            <div className="absolute left-0 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.6s]">📈 Scaling</div>
+            {/* SaaS Feature Layer */}
+            <div className="absolute top-[70px] right-[20px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.7s]">Subscription Billing</div>
+            <div className="absolute bottom-[120px] left-[0px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.8s]">Multi-Tenant System</div>
+            <div className="absolute top-[70px] left-[30px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.9s]">API Integrations</div>
+            <div className="absolute bottom-[120px] right-[0px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:1.0s]">Analytics Dashboard</div>
           </div>
         </div>
     </section>

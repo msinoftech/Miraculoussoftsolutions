@@ -1,6 +1,5 @@
 "use client";
-import { useMemo, useState } from "react";
-//import Getintouch from "@/app/components/Getintouch";
+import { useMemo } from "react";
 import Link from "next/link";
 import Marquee from "@/app/components/Marquee";
 import Process from "@/app/components/Process";
@@ -184,8 +183,6 @@ const aboutCodeLines = [
 ];
 
 export default function MiraculousPage() {
-    const [activeStep, setActiveStep] = useState<number | null>(null);
-
   const stats = useMemo(
     () => [
       { num: "200+", label: "Projects Delivered" },
@@ -249,20 +246,45 @@ export default function MiraculousPage() {
 
               {/* Right Column */}
               <div className="relative mx-auto hidden aspect-square w-full max-w-[440px] lg:block" aria-hidden="true">
-                  <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
-                  <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
-                  <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
-                  
-                  <div className="absolute inset-[116px] flex flex-col items-center justify-center gap-2 shadow-xl rounded-full border border-white/10 bg-zinc-900/90 text-center">
-                      <div className="bg-gradient-to-r from-blue-400 to-red-500 bg-clip-text text-6xl font-black text-transparent">
-                          &lt;/&gt;
-                      </div>
-                      <div className="text-[11px] font-bold uppercase tracking-[0.16em] text-white/70">Modern Frontend Engineering</div>
+
+                {/* Rings */}
+                <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
+                <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
+                <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
+
+                {/* Center Core - React Engine */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[200px] flex flex-col items-center justify-center rounded-xl bg-[linear-gradient(165deg,#ffffff,#f8fafc)] p-4 shadow-[0_16px_34px_rgba(15,23,42,0.14)]">
+                  <div className="text-4xl">
+                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="currentColor" className="text-zinc-900 transition group-hover:text-white"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path fill="none" d="M0 0h24v24H0z"></path> <path fill-rule="nonzero" d="M14.448 16.24a21.877 21.877 0 0 1-1.747 2.175c1.672 1.623 3.228 2.383 4.09 1.884.864-.498.983-2.225.414-4.484-.853.19-1.78.334-2.757.425zm-1.31.087a27.512 27.512 0 0 1-2.276 0c.377.492.758.948 1.138 1.364.38-.416.76-.872 1.138-1.364zm5.04-7.894c2.665.764 4.405 2.034 4.405 3.567 0 1.533-1.74 2.803-4.405 3.567.67 2.69.441 4.832-.886 5.598-1.328.767-3.298-.105-5.292-2.03-1.994 1.925-3.964 2.797-5.292 2.03-1.327-.766-1.557-2.908-.886-5.598-2.665-.764-4.405-2.034-4.405-3.567 0-1.533 1.74-2.803 4.405-3.567-.67-2.69-.441-4.832.886-5.598 1.328-.767 3.298.105 5.292 2.03 1.994-1.925 3.964-2.797 5.292-2.03 1.327.766 1.557 2.908.886 5.598zm-.973-.248c.57-2.26.45-3.986-.413-4.484-.863-.499-2.419.261-4.09 1.884.591.643 1.179 1.374 1.746 2.175.978.09 1.904.234 2.757.425zm-10.41 7.63c-.57 2.26-.45 3.986.413 4.484.863.499 2.419-.261 4.09-1.884a21.877 21.877 0 0 1-1.746-2.175 21.877 21.877 0 0 1-2.757-.425zm4.067-8.142a27.512 27.512 0 0 1 2.276 0A20.523 20.523 0 0 0 12 6.31c-.38.416-.76.872-1.138 1.364zm-1.31.087A21.877 21.877 0 0 1 11.3 5.585C9.627 3.962 8.07 3.202 7.209 3.701c-.864.498-.983 2.225-.414 4.484.853-.19 1.78-.334 2.757-.425zm4.342 7.52A25.368 25.368 0 0 0 15.787 12a25.368 25.368 0 0 0-1.893-3.28 25.368 25.368 0 0 0-3.788 0A25.368 25.368 0 0 0 8.213 12a25.368 25.368 0 0 0 1.893 3.28 25.368 25.368 0 0 0 3.788 0zm1.284-.131c.615-.08 1.2-.183 1.75-.304a20.523 20.523 0 0 0-.612-1.667 27.512 27.512 0 0 1-1.138 1.97zM8.822 8.85c-.615.08-1.2.183-1.75.304.17.536.374 1.094.612 1.667a27.512 27.512 0 0 1 1.138-1.97zm-1.75 5.994c.55.121 1.135.223 1.75.304a27.512 27.512 0 0 1-1.138-1.97c-.238.572-.442 1.13-.612 1.666zm-.978-.245c.261-.834.6-1.708 1.01-2.6-.41-.892-.749-1.766-1.01-2.6-2.242.637-3.677 1.604-3.677 2.6s1.435 1.963 3.677 2.6zm10.834-5.445c-.55-.121-1.135-.223-1.75-.304a27.511 27.511 0 0 1 1.138 1.97c.238-.572.442-1.13.612-1.666zm.978.245c-.261.834-.6 1.708-1.01 2.6.41.892.749 1.766 1.01 2.6 2.242-.637 3.677-1.604 3.677-2.6s-1.435-1.963-3.677-2.6zM12 13.88a1.88 1.88 0 1 1 0-3.76 1.88 1.88 0 0 1 0 3.76z"></path> </g> </g></svg>
+                  </div>
+                  <div className="mt-1 text-[12px] font-bold uppercase tracking-wider text-zinc-600">React Engine</div>
+                  {/* Mini Component Tree */}
+                  <div className="mt-3 space-y-1 text-[11px] text-zinc-600">
+                    <div className="rounded border border-zinc-200 bg-white px-2 py-1">App</div>
+                    <div className="flex gap-1">
+                      <span className="rounded border border-zinc-200 bg-white px-2 py-1">Header</span>
+                      <span className="rounded border border-zinc-200 bg-white px-2 py-1">Dashboard</span>
+                    </div>
+                    <div className="flex gap-1">
+                      <span className="rounded border border-zinc-200 bg-white px-2 py-1">Card</span>
+                      <span className="rounded border border-zinc-200 bg-white px-2 py-1">Chart</span>
+                    </div>
                   </div>
 
-                  <div className="absolute right-8 top-16 rounded-lg border border-white/10 bg-zinc-900/90 px-4 py-2 text-xs font-bold text-blue-400 hero-float">⚛️ React 18</div>
-                  <div className="absolute bottom-16 left-2 rounded-lg border border-white/10 bg-zinc-900/90 px-4 py-2 text-xs font-bold text-red-500 hero-float [animation-delay:1.6s]">🔥 Next.js 14</div>
-                  <div className="absolute bottom-36 right-3 rounded-lg border border-white/10 bg-zinc-900/90 px-4 py-2 text-xs font-bold text-emerald-400 hero-float [animation-delay:0.8s]">✅ TypeScript</div>
+                </div>
+
+                {/* Floating Concepts (React Workflow) */}
+                <div className="hero-float absolute left-1/2 top-12 -translate-x-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-cyan-700">State Management</div>
+                <div className="hero-float absolute right-6 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-blue-700">Props Flow</div>
+                <div className="hero-float absolute bottom-12 right-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-emerald-700">API Integration</div>
+                <div className="hero-float absolute bottom-12 left-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-amber-700">Hooks Logic</div>
+                <div className="hero-float absolute left-6 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-rose-700">Virtual DOM</div>
+                
+                <div className="absolute top-[70px] right-[20px] rounded-lg bg-white px-3 py-1 text-xs font-semibold text-blue-700">Next.js</div>
+                <div className="absolute bottom-[120px] left-[20px] rounded-lg bg-white px-3 py-1 text-xs font-semibold text-emerald-700">TypeScript</div>
+                <div className="absolute top-[70px] left-[20px] rounded-lg bg-white px-3 py-1 text-xs font-semibold text-pink-700">Tailwind CSS</div>
+                <div className="absolute bottom-[120px] right-[20px] rounded-lg bg-white px-3 py-1 text-xs font-semibold text-orange-700">SSR / SSG</div>
+
               </div>
             </div>
         </section>

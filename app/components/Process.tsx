@@ -36,13 +36,13 @@ export default function Process({
   return (
     <section className={sectionClassName}>
       <div className={containerClassName}>
-        <div className="mb-12 max-w-2xl">
+        <div className="mb-12 max-w-3xl">
           <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
             <span className="h-[2px] w-7 bg-red-600" />
             {label}
           </div>
           <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">{title}</h2>
-          <p className="mt-6 max-w-xl text-[15px] leading-8 text-white/45">{description}</p>
+          <p className="mt-6 text-[15px] leading-8 text-white/45">{description}</p>
         </div>
 
         <div className={stepsWrapperClassName}>

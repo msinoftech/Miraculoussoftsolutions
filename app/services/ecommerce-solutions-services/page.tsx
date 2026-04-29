@@ -170,21 +170,79 @@ export default function EcommerceSolutionsServicesPage() {
           </div>
 
           {/* Right Column */}
-          <div className="relative mx-auto aspect-square w-full max-w-[320px] xl:ml-auto xl:mr-0 xl:max-w-[450px]">
+          <div className="relative mx-auto aspect-square w-full max-w-[320px] xl:ml-auto xl:mr-0 xl:max-w-[460px]">
+
+            {/* Rotating Rings */}
             <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
             <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
             <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
 
-            <div className="absolute inset-[88px] flex flex-col items-center justify-center gap-2 rounded-full border border-[rgba(255,255,255,0.08)] bg-[linear-gradient(145deg,rgba(26,26,26,0.95),rgba(17,17,17,0.95))] text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_18px_38px_rgba(0,0,0,0.35)] md:inset-[116px]">
-              <div className="text-[58px] leading-none md:text-[74px]">☁</div>
-              <div className="text-[12px] font-extrabold uppercase tracking-[2px] text-[rgba(255,255,255,0.72)]">
-                Ecommerce Solutions Growth Engine
+            {/* Center Core - Ecommerce Engine */}
+            {/* Center Core - Ecommerce Dashboard Card */}
+            <div className="absolute inset-[80px] flex items-center justify-center">
+              <div className="w-[190px] rounded-xl border border-zinc-200 
+                bg-[linear-gradient(145deg,#ffffff,#f8fafc)] 
+                shadow-[0_20px_42px_rgba(15,23,42,0.14)] p-4">
+
+                {/* Header */}
+                <div className="flex items-center justify-between mb-3">
+                  <div className="text-[10px] font-bold uppercase tracking-[1.5px] text-zinc-500">
+                    Store Dashboard
+                  </div>
+                  <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                </div>
+
+                {/* Revenue */}
+                <div className="mb-3">
+                  <div className="text-[18px] font-bold text-zinc-900">$2,480</div>
+                  <div className="text-[10px] text-zinc-500">Today Revenue</div>
+                </div>
+
+                {/* Mini Stats */}
+                <div className="grid grid-cols-2 gap-2 mb-3">
+                  <div className="rounded-md border border-zinc-200 bg-zinc-50 p-2 text-center">
+                    <div className="text-[12px] font-bold text-zinc-900">124</div>
+                    <div className="text-[9px] text-zinc-500">Orders</div>
+                  </div>
+                  <div className="rounded-md border border-zinc-200 bg-zinc-50 p-2 text-center">
+                    <div className="text-[12px] font-bold text-zinc-900">32</div>
+                    <div className="text-[9px] text-zinc-500">Customers</div>
+                  </div>
+                </div>
+
+                {/* Progress Bar */}
+                <div className="mb-3">
+                  <div className="mb-1 flex justify-between text-[9px] text-zinc-500">
+                    <span>Conversion</span>
+                    <span>78%</span>
+                  </div>
+                  <div className="h-1.5 w-full overflow-hidden rounded-full bg-zinc-200">
+                    <div className="h-full w-[78%] bg-gradient-to-r from-emerald-400 to-green-500 rounded-full" />
+                  </div>
+                </div>
+
+                {/* Bottom Tags */}
+                <div className="flex justify-between text-[9px] text-zinc-500">
+                  <span>Payments</span>
+                  <span>Inventory</span>
+                  <span>Shipping</span>
+                </div>
+
               </div>
             </div>
 
-            <div className="absolute right-8 top-[54px] flex animate-bounce items-center gap-2 whitespace-nowrap rounded-[10px] border border-[rgba(255,255,255,0.08)] bg-[rgba(30,30,30,0.84)] px-4 py-3 text-[12px] font-bold text-[#3B82F6] shadow-[0_10px_24px_rgba(0,0,0,0.2)] [animation-duration:4.5s]">📈 Subscription Ready</div>
-            <div className="absolute bottom-[76px] left-0 flex animate-bounce items-center gap-2 whitespace-nowrap rounded-[10px] border border-[rgba(255,255,255,0.08)] bg-[rgba(30,30,30,0.84)] px-4 py-3 text-[12px] font-bold text-[#E02020] shadow-[0_10px_24px_rgba(0,0,0,0.2)] [animation-duration:4.5s] [animation-delay:1.4s]">🔐 Role Based Access</div>
-            <div className="absolute bottom-[150px] right-2 flex animate-bounce items-center gap-2 whitespace-nowrap rounded-[10px] border border-[rgba(255,255,255,0.08)] bg-[rgba(30,30,30,0.84)] px-4 py-3 text-[12px] font-bold text-emerald-500 shadow-[0_10px_24px_rgba(0,0,0,0.2)] [animation-duration:4.5s] [animation-delay:0.8s]">⚡ Fast MVP Launch</div>
+            {/* Development Process Flow */}
+            <div className="absolute top-6 left-1/2 -translate-x-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Store Planning</div>
+            <div className="absolute right-0 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">UI/UX Design</div>
+            <div className="absolute bottom-10 right-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Development</div>
+            <div className="absolute bottom-10 left-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Launch Store</div>
+            <div className="absolute left-0 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Growth & Scaling</div>
+            {/* Ecommerce Features Layer */}
+            <div className="absolute top-[60px] right-[15px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Payment Gateway</div>
+            <div className="absolute bottom-[120px] left-[15px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Product Management</div>
+            <div className="absolute top-[70px] left-[25px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Cart & Checkout</div>
+            <div className="absolute bottom-[120px] right-[25px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Order Tracking</div>
+
           </div>
         </div>
     </section>

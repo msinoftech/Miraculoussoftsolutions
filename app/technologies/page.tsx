@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import Link from "next/link";
-import { APP_NAME, BASE_URL, contactInfo } from "@/app/lib/config";
+import { APP_NAME, BASE_URL } from "@/app/lib/config";
 import Marquee from "@/app/components/Marquee";
 
 export const metadata: Metadata = {
@@ -46,70 +45,6 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
 }
-
-const technologiesSchemaData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": `${BASE_URL}#website`,
-      "url": `${BASE_URL}`,
-      "name": `${APP_NAME}`,
-      "description": `${APP_NAME} provides technologies for modern cloud products, including architecture, dashboards, API engineering, deployment, and scaling.`,
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": `${BASE_URL}/search?q={search_term_string}`,
-        "query-input": "required name=search_term_string"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": `${BASE_URL}/technologies#webpage`,
-      "url": `${BASE_URL}/technologies`,
-      "name": `technologies | ${APP_NAME}`,
-      "inLanguage": "en-US",
-      "description": `technologies by ${APP_NAME} to design, build, launch, and scale modern cloud products.`,
-      "isPartOf": {
-        "@id": `${BASE_URL}#website`
-      },
-      "about": {
-        "@id": `${BASE_URL}#organization`
-      }
-    },
-    {
-      "@type": "Organization",
-      "@id": `${BASE_URL}#organization`,
-      "name": `${APP_NAME}`,
-      "url": `${BASE_URL}`,
-      "logo": `${BASE_URL}${contactInfo.logo}`,
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": `${contactInfo.phone}`,
-        "contactType": "customer service",
-        "areaServed": "Global",
-        "availableLanguage": ["en"]
-      },
-      "sameAs": [
-        "https://www.facebook.com/miraculoussoft",
-        "https://twitter.com/miraculous_soft",
-        "https://www.instagram.com/miraculous_soft",
-        "https://www.pinterest.com/seomiraculoussoft"
-      ]
-    },
-    {
-      "@type": "Service",
-      "@id": `${BASE_URL}/technologies#service`,
-      "serviceType": "technologies",
-      "name": `technologies | ${APP_NAME}`,
-      "description": `technologies for modern cloud products, including architecture, dashboards, API engineering, deployment, and scaling.`,
-      "url": `${BASE_URL}/technologies`,
-      "provider": {
-        "@id": `${BASE_URL}#organization`
-      },
-      "areaServed": "Global"
-    }
-  ]
-};
 
 // const serviceItems = [
 //   {
@@ -184,10 +119,7 @@ const marqueeItems = [
 
 export default function technologiesPage() {
   return (
-    <>
-    {/* Add Structured Data for technologies Page */}
-    <Script id="technologies-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(technologiesSchemaData, null, 2) }} />
-    
+    <>    
     {/* Hero section */}
     <section className="relative overflow-hidden bg-white py-16 sm:py-20">
       <div className="grid-bg absolute inset-0 opacity-45" />

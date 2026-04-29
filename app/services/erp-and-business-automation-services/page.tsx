@@ -190,70 +190,78 @@ export default function ErpAndBusinessAutomationServicesPage() {
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15),transparent_70%)] blur-2xl" />
 
                 {/* Central Core Dashboard */}
-                <div className="absolute left-1/2 top-1/2 z-20 w-[236px] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-white/15 bg-[linear-gradient(155deg,#0f172a,#0b1226,#030712)] p-4 shadow-[0_22px_62px_rgba(0,0,0,0.62)]">
+                <div className="absolute left-1/2 top-1/2 z-20 w-[236px] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-zinc-200 bg-[linear-gradient(155deg,#ffffff,#f8fafc,#f1f5f9)] p-4 shadow-[0_20px_48px_rgba(15,23,42,0.16)]">
                     <div className="flex items-start justify-between">
                         <div>
-                            <div className="text-[11px] uppercase tracking-[0.16em] text-white/60">ERP Core</div>
-                            <div className="mt-1 text-xl font-bold text-white">Dashboard</div>
+                            <div className="text-[11px] uppercase tracking-[0.16em] text-zinc-500">ERP Core</div>
+                            <div className="mt-1 text-xl font-bold text-zinc-900">Dashboard</div>
                         </div>
-                        <div className="rounded-full border border-emerald-400/30 bg-emerald-500/10 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-emerald-300">
+                        <div className="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-emerald-700">
                             Live
                         </div>
                     </div>
 
-                    <div className="mt-3 rounded-lg border border-white/10 bg-white/[0.04] p-2.5">
-                        <div className="mb-2 flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.08em] text-white/60">
+                    <div className="mt-3 rounded-lg border border-zinc-200 bg-white p-2.5">
+                        <div className="mb-2 flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.08em] text-zinc-500">
                             <span>Process Health</span>
-                            <span className="text-blue-300">89%</span>
+                            <span className="text-blue-600">89%</span>
                         </div>
                         <div className="flex h-14 items-end gap-1.5">
-                            <span className="h-4 flex-1 rounded-sm bg-blue-400/50" />
-                            <span className="h-6 flex-1 rounded-sm bg-blue-400/65" />
-                            <span className="h-8 flex-1 rounded-sm bg-indigo-400/70" />
-                            <span className="h-10 flex-1 rounded-sm bg-violet-400/75" />
-                            <span className="h-12 flex-1 rounded-sm bg-red-400/80" />
+                            <span className="h-4 flex-1 rounded-sm bg-blue-200" />
+                            <span className="h-6 flex-1 rounded-sm bg-blue-300" />
+                            <span className="h-8 flex-1 rounded-sm bg-indigo-300" />
+                            <span className="h-10 flex-1 rounded-sm bg-violet-300" />
+                            <span className="h-12 flex-1 rounded-sm bg-rose-300" />
                         </div>
                     </div>
 
                     <div className="mt-3 grid grid-cols-2 gap-2">
-                        <div className="rounded-md border border-white/10 bg-white/[0.04] p-2">
-                            <div className="text-[9px] font-bold uppercase tracking-[0.08em] text-white/60">Approvals</div>
-                            <div className="mt-1 text-base font-extrabold text-white">1,248</div>
+                        <div className="rounded-md border border-zinc-200 bg-white p-2">
+                            <div className="text-[9px] font-bold uppercase tracking-[0.08em] text-zinc-500">Approvals</div>
+                            <div className="mt-1 text-base font-extrabold text-zinc-900">1,248</div>
                         </div>
-                        <div className="rounded-md border border-white/10 bg-white/[0.04] p-2">
-                            <div className="text-[9px] font-bold uppercase tracking-[0.08em] text-white/60">SLA Met</div>
-                            <div className="mt-1 text-base font-extrabold text-white">96.8%</div>
+                        <div className="rounded-md border border-zinc-200 bg-white p-2">
+                            <div className="text-[9px] font-bold uppercase tracking-[0.08em] text-zinc-500">SLA Met</div>
+                            <div className="mt-1 text-base font-extrabold text-zinc-900">96.8%</div>
                         </div>
                     </div>
                 </div>
 
                 {/* Module Cards */}
                 {[
-                { title: "HR", pos: "top-0 left-10" },
-                { title: "CRM", pos: "top-5 -right-10" },
-                { title: "Finance", pos: "bottom-10 -left-10" },
-                { title: "Inventory", pos: "-bottom-5 -right-10" },
+                { title: "HR", pos: "-top-5 left-0", icon: "H", tone: "from-blue-500 to-cyan-500", meta: "People Ops" },
+                { title: "CRM", pos: "top-5 -right-10", icon: "C", tone: "from-rose-500 to-orange-500", meta: "Client Graph" },
+                { title: "Finance", pos: "bottom-10 -left-10", icon: "F", tone: "from-violet-500 to-indigo-500", meta: "Cash Flow" },
+                { title: "Inventory", pos: "-bottom-5 -right-10", icon: "I", tone: "from-emerald-500 to-teal-500", meta: "Stock Grid" },
                 ].map((item, i) => (
-                <div key={i} className={`absolute ${item.pos} w-[140px] rounded-xl border border-white/10 bg-white p-3 backdrop-blur-xl shadow-lg`}>
-                    <div className="text-[12px] font-semibold uppercase tracking-widest">Module</div>
-                    <div className="text-md font-bold">{item.title}</div>
-                    <div className="mt-2 h-8 rounded-md bg-white/10" />
+                <div key={i} className={`absolute ${item.pos} w-[162px] overflow-hidden rounded-2xl border border-zinc-200/90 bg-[linear-gradient(165deg,#ffffff,#f8fafc)] p-3.5 shadow-[0_16px_36px_rgba(15,23,42,0.16)]`}>
+                    <div className={`absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r ${item.tone}`} />
+                    <div className="flex items-start justify-between">
+                        <div>
+                            <div className="text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-500">Module</div>
+                            <div className="mt-0.5 text-[16px] font-extrabold leading-none text-zinc-900">{item.title}</div>
+                        </div>
+                        <div className={`inline-flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br ${item.tone} text-[11px] font-extrabold text-white shadow-sm`}>
+                            {item.icon}
+                        </div>
+                    </div>
+
+                    <div className="mt-3 rounded-lg border border-zinc-200 bg-white px-2.5 py-2">
+                        <div className="flex items-center justify-between text-[9px] font-semibold uppercase tracking-[0.1em] text-zinc-500">
+                            <span>{item.meta}</span>
+                            <span className="inline-flex items-center gap-1 text-emerald-600">
+                                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                                Live
+                            </span>
+                        </div>
+                        <div className="mt-2 grid grid-cols-3 gap-1.5">
+                            <span className="h-1.5 rounded-full bg-zinc-200" />
+                            <span className={`h-1.5 rounded-full bg-gradient-to-r ${item.tone}`} />
+                            <span className="h-1.5 rounded-full bg-zinc-200" />
+                        </div>
+                    </div>
                 </div>
                 ))}
-
-                {/* Connection Lines */}
-                <svg className="absolute inset-0 z-10 h-full w-full">
-                <line x1="50%" y1="50%" x2="20%" y2="10%" stroke="rgba(59,130,246,0.3)" strokeWidth="1.5" strokeDasharray="6 6" />
-                <line x1="50%" y1="50%" x2="90%" y2="20%" stroke="rgba(236,72,153,0.3)" strokeWidth="1.5" strokeDasharray="6 6" />
-                <line x1="50%" y1="50%" x2="15%" y2="85%" stroke="rgba(34,197,94,0.3)" strokeWidth="1.5" strokeDasharray="6 6" />
-                <line x1="50%" y1="50%" x2="85%" y2="90%" stroke="rgba(251,191,36,0.3)" strokeWidth="1.5" strokeDasharray="6 6" />
-                </svg>
-
-                {/* Floating Badges */}
-                <div className="absolute top-6 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-[10px] border border-[rgba(255,255,255,0.08)] bg-[rgba(30,30,30,0.84)] px-4 py-3 text-[12px] font-bold text-[#3B82F6] shadow-[0_10px_24px_rgba(0,0,0,0.2)] animate-bounce">⚙️ Automation</div>
-
-                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce whitespace-nowrap rounded-[10px] border border-[rgba(255,255,255,0.08)] bg-[rgba(30,30,30,0.84)] px-4 py-3 text-[12px] font-bold text-[#3B82F6] shadow-[0_10px_24px_rgba(0,0,0,0.2)] [animation-delay:1s]">📊 Real-time Data</div>
-
             </div>
         </div>
     </section>

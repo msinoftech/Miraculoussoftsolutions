@@ -243,8 +243,6 @@ const aboutCodeLines = [
 ];
 
 export default function MiraculousPage() {
-    const [activeStep, setActiveStep] = useState<number | null>(null);
-
   const stats = useMemo(
     () => [
       { num: "200+", label: "Projects Delivered" },
@@ -308,20 +306,41 @@ export default function MiraculousPage() {
 
               {/* Right Column */}
               <div className="relative mx-auto hidden aspect-square w-full max-w-[440px] lg:block" aria-hidden="true">
-                  <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
-                  <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
-                  <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
-                  
-                  <div className="absolute inset-[116px] flex flex-col items-center justify-center gap-2 shadow-xl rounded-full border border-white/10 bg-zinc-900/90 text-center">
-                      <div className="bg-gradient-to-r from-blue-400 to-red-500 bg-clip-text text-6xl font-black text-transparent">
-                          &lt;/&gt;
-                      </div>
-                      <div className="text-[11px] font-bold uppercase tracking-[0.16em] text-white/70">Modern Frontend Engineering</div>
+
+                {/* Rings */}
+                <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
+                <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
+                <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
+
+                {/* Center Core - Next.js Engine */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[200px] flex flex-col items-center justify-center rounded-xl bg-[linear-gradient(165deg,#ffffff,#f8fafc)] p-4 shadow-[0_16px_34px_rgba(15,23,42,0.14)]">
+                  <div className="text-3xl font-bold">
+                    <svg width="24px" height="24px" viewBox="0 0 15 15" fill="#111827"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4.5 4.5L4.90534 4.20725C4.77836 4.03144 4.55252 3.95753 4.34617 4.02425C4.13981 4.09098 4 4.28313 4 4.5H4.5ZM7.5 14C3.91015 14 1 11.0899 1 7.5H0C0 11.6421 3.35786 15 7.5 15V14ZM14 7.5C14 11.0899 11.0899 14 7.5 14V15C11.6421 15 15 11.6421 15 7.5H14ZM7.5 1C11.0899 1 14 3.91015 14 7.5H15C15 3.35786 11.6421 0 7.5 0V1ZM7.5 0C3.35786 0 0 3.35786 0 7.5H1C1 3.91015 3.91015 1 7.5 1V0ZM5 12V4.5H4V12H5ZM4.09466 4.79275L10.5947 13.7927L11.4053 13.2073L4.90534 4.20725L4.09466 4.79275ZM10 4V10H11V4H10Z" fill="#111827"></path> </g></svg>
+                  </div>
+                  <div className="mt-1 text-[12px] font-bold uppercase tracking-wider text-zinc-600">Next.js Engine</div>
+
+                  {/* Pipeline Flow */}
+                  <div className="mt-3 w-full space-y-1 text-[11px] text-zinc-600">
+                    <div className="rounded border border-zinc-200 bg-white px-2 py-1 text-center">Routing</div>
+                    <div className="rounded border border-zinc-200 bg-white px-2 py-1 text-center">Server Components</div>
+                    <div className="rounded border border-zinc-200 bg-white px-2 py-1 text-center">Data Fetching</div>
+                    <div className="rounded border border-zinc-200 bg-white px-2 py-1 text-center">Render Output</div>
                   </div>
 
-                  <div className="absolute right-8 top-16 rounded-lg border border-white/10 bg-zinc-900/90 px-4 py-2 text-xs font-bold text-blue-400 hero-float">⚛️ React 18</div>
-                  <div className="absolute bottom-16 left-2 rounded-lg border border-white/10 bg-zinc-900/90 px-4 py-2 text-xs font-bold text-red-500 hero-float [animation-delay:1.6s]">🔥 Next.js 16</div>
-                  <div className="absolute bottom-36 right-3 rounded-lg border border-white/10 bg-zinc-900/90 px-4 py-2 text-xs font-bold text-emerald-400 hero-float [animation-delay:0.8s]">✅ TypeScript</div>
+                </div>
+
+                {/* Core Concepts */}
+                <div className="hero-float absolute left-1/2 top-12 -translate-x-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-blue-700">SSR</div>
+                <div className="hero-float absolute right-6 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-purple-700">API Routes</div>
+                <div className="hero-float absolute bottom-12 right-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-emerald-700">SSG / ISR</div>
+                <div className="hero-float absolute bottom-12 left-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-amber-700">Middleware</div>
+                <div className="hero-float absolute left-6 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-rose-700">App Router</div>
+                
+                <div className="absolute top-[70px] right-[20px] rounded-lg bg-white px-3 py-1 text-xs font-semibold text-blue-700">React 18</div>
+                <div className="absolute bottom-[120px] left-[20px] rounded-lg bg-white px-3 py-1 text-xs font-semibold text-emerald-700">TypeScript</div>
+                <div className="absolute top-[70px] left-[20px] rounded-lg bg-white px-3 py-1 text-xs font-semibold text-pink-700">Tailwind CSS</div>
+                <div className="absolute bottom-[120px] right-[20px] rounded-lg bg-white px-3 py-1 text-xs font-semibold text-orange-700">Edge Runtime</div>
+
               </div>
             </div>
         </section>

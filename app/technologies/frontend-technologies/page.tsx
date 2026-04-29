@@ -1,5 +1,5 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import Link from "next/link";
 import Marquee from "@/app/components/Marquee";
 import Card from "@/app/components/Card";

@@ -1,5 +1,5 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import Link from "next/link";
 import Marquee from "@/app/components/Marquee";
 import Process from "@/app/components/Process";
@@ -228,8 +228,6 @@ const aboutCodeLines = [
 ];
 
 export default function MiraculousPage() {
-    const [activeStep, setActiveStep] = useState<number | null>(null);
-
   const stats = useMemo(
     () => [
       { num: "200+", label: "Projects Delivered" },
@@ -293,20 +291,74 @@ export default function MiraculousPage() {
 
               {/* Right Column */}
               <div className="relative mx-auto hidden aspect-square w-full max-w-[440px] lg:block" aria-hidden="true">
-                  <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
-                  <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
-                  <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
-                  
-                  <div className="absolute inset-[116px] flex flex-col items-center justify-center gap-2 shadow-xl rounded-full border border-white/10 bg-zinc-900/90 text-center">
-                      <div className="bg-gradient-to-r from-blue-400 to-red-500 bg-clip-text text-6xl font-black text-transparent">
-                          &lt;/&gt;
-                      </div>
-                      <div className="text-[11px] font-bold uppercase tracking-[0.16em] text-white/70">Modern Frontend Engineering</div>
-                  </div>
 
-                  <div className="absolute right-8 top-16 rounded-lg border border-white/10 bg-zinc-900/90 px-4 py-2 text-xs font-bold text-blue-400 hero-float">⚛️ React 18</div>
-                  <div className="absolute bottom-16 left-2 rounded-lg border border-white/10 bg-zinc-900/90 px-4 py-2 text-xs font-bold text-red-500 hero-float [animation-delay:1.6s]">🔥 Next.js 16</div>
-                  <div className="absolute bottom-36 right-3 rounded-lg border border-white/10 bg-zinc-900/90 px-4 py-2 text-xs font-bold text-emerald-400 hero-float [animation-delay:0.8s]">✅ TypeScript</div>
+                {/* Rings */}
+                <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
+                <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
+                <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
+
+                {/* Center Core - TypeScript Engine */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[200px] flex flex-col items-center justify-center rounded-xl bg-[linear-gradient(165deg,#ffffff,#f8fafc)] p-4 shadow-[0_16px_34px_rgba(15,23,42,0.14)]">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[12px] text-zinc-500">userService.ts</span>
+                    <span className="text-[12px] font-semibold text-blue-700">TypeScript</span>
+                  </div>
+                  <div className="relative p-3 font-mono text-[11px] leading-4 text-zinc-700">
+                    <div>
+                      <span className="text-purple-700">interface</span>{" "}
+                      <span className="text-blue-700">User</span>{" "}
+                      {"{"}
+                    </div>
+                    <div className="ml-3">
+                      <span className="text-emerald-700">name</span>:{" "}
+                      <span className="text-amber-700">string</span>;
+                    </div>
+                    <div className="ml-3">
+                      <span className="text-emerald-700">email</span>:{" "}
+                      <span className="text-amber-700">string</span>;
+                    </div>
+                    <div>{"}"}</div>
+
+                    <div className="mt-2">
+                      <span className="text-purple-700">const</span>{" "}
+                      <span className="text-blue-700">user</span>:{" "}
+                      <span className="text-blue-700">User</span> = {"{"}
+                    </div>
+
+                    <div className="ml-3">
+                      <span className="text-emerald-700">name</span>:{" "}
+                      <span className="text-amber-700">"Cal Smith"</span>,
+                    </div>
+
+                    {/* IntelliSense Trigger Line */}
+                    <div className="ml-3 relative">
+                      <span className="text-emerald-700">email</span>: user.email.
+                      {/* IntelliSense Dropdown */}
+                      <div className="absolute left-14 top-4 w-[140px] z-10 rounded-md border border-zinc-200 bg-white text-[9px] shadow-[0_12px_24px_rgba(15,23,42,0.14)]">
+                        <div className="border-b border-zinc-200 px-2 py-1 text-zinc-500">Suggestions</div>
+                        <div className="bg-blue-50 px-2 py-1 text-blue-700">email: string</div>
+                        <div className="px-2 py-1 text-zinc-700 hover:bg-zinc-100">name: string</div>
+                        <div className="px-2 py-1 text-zinc-700 hover:bg-zinc-100">toString()</div>
+                      </div>
+                    </div>
+                    <div>{"}"}</div>
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 flex justify-between px-3 py-1 text-[9px] border-t border-zinc-200 bg-white text-zinc-500">
+                    <span>Ln 12, Col 14</span>
+                    <span className="text-emerald-700">No Errors ✓</span>
+                  </div>
+                </div>
+
+                {/* TypeScript Concepts */}
+                <div className="absolute top-12 left-1/2 -translate-x-1/2 hero-float rounded-lg bg-white px-3 py-1 text-xs font-semibold text-blue-700">Interfaces</div>
+                <div className="absolute right-6 top-1/4 hero-float rounded-lg bg-white px-3 py-1 text-xs font-semibold text-indigo-700">Generics</div>
+                <div className="absolute bottom-12 right-6 hero-float rounded-lg bg-white px-3 py-1 text-xs font-semibold text-emerald-700">Strict Mode</div>
+                <div className="absolute bottom-12 left-6 hero-float rounded-lg bg-white px-3 py-1 text-xs font-semibold text-amber-700">Type Inference</div>
+                <div className="absolute left-0 top-1/3 hero-float rounded-lg bg-white px-3 py-1 text-xs font-semibold text-rose-700">Error Checking</div>
+                {/* Ecosystem Layer */}
+                <div className="absolute bottom-[120px] left-[20px] hero-float rounded-lg bg-white px-3 py-1 text-xs font-semibold text-emerald-700">Node.js</div>
+                <div className="absolute top-[70px] left-[30px] hero-float rounded-lg bg-white px-3 py-1 text-xs font-semibold text-pink-700">React</div>
+                <div className="absolute bottom-[120px] right-[30px] hero-float rounded-lg bg-white px-3 py-1 text-xs font-semibold text-orange-700">API Safety</div>
               </div>
             </div>
         </section>

@@ -1,45 +1,10 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import Link from "next/link";
 import Marquee from "@/app/components/Marquee";
 import Process from "@/app/components/Process";
 import BoxCard from "@/app/components/BoxCard";
 import CtaStrip from "@/app/components/CtaStrip";
-
-const backendTech = [
-  {
-    name: "Node.js",
-    desc: "Event-driven runtime for scalable APIs and real-time apps.",
-  },
-  {
-    name: "Express.js",
-    desc: "Minimal framework for building REST APIs and backend services.",
-  },
-  {
-    name: "MongoDB",
-    desc: "Flexible NoSQL database for high-scale applications.",
-  },
-  {
-    name: "MySQL",
-    desc: "Reliable relational database for structured data systems.",
-  },
-  {
-    name: "Redis",
-    desc: "In-memory database for caching and performance optimization.",
-  },
-  {
-    name: "Docker",
-    desc: "Containerization for scalable and portable deployments.",
-  },
-  {
-    name: "AWS",
-    desc: "Cloud infrastructure for scalable backend systems.",
-  },
-  {
-    name: "GraphQL",
-    desc: "Efficient API query language for frontend-backend communication.",
-  },
-];
 
 const marqueeItems = [
     "ULTRA-FAST PERFORMANCE (ASGI)",
@@ -297,58 +262,72 @@ export default function BackendPage() {
                 </div>
                 {/* RIGHT SaaS UI PREVIEW */}
                 <div className="relative mx-auto hidden aspect-square w-full lg:block">
-                    {/* Outer Rings */}
-                    <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
-                    <div className="absolute inset-[42px] rounded-full border border-yellow-500/30 hero-ring-2" />
-                    <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
+                  {/* Rings */}
+                  <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
+                  <div className="absolute inset-[42px] rounded-full border border-yellow-500/30 hero-ring-2" />
+                  <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
 
-                    {/* Glow */}
-                    <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-blue-500/20 to-emerald-400/20 blur-2xl" />
-
-                    {/* Glass Card */}
-                    <div className="absolute inset-[60px] overflow-hidden relative rounded-2xl max-w-[70%] bg-white/20 shadow-2xl">
-                        
-                        {/* Top Bar */}
-                        <div className="flex items-center justify-between bg-white p-3 border-b border-zinc-500/30 pb-3">
-                            <div className="text-sm font-semibold text-zinc-800">
-                                API Dashboard
-                            </div>
-                            <div className="flex gap-2">
-                                <span className="h-3 w-3 rounded-full bg-red-400" />
-                                <span className="h-3 w-3 rounded-full bg-yellow-400" />
-                                <span className="h-3 w-3 rounded-full bg-green-400" />
-                            </div>
-                        </div>
-
-                        {/* API Metrics */}
-                        <div className="mt-3 px-3 space-y-3">
-                            <div className="rounded-lg shadow-sm bg-zinc-50 p-4 flex items-center justify-between">
-                                <div className="text-xs text-zinc-500">Requests / sec</div>
-                                <div className="mt-1 text-xl font-bold text-blue-600">12,540</div>
-                            </div>
-
-                            <div className="rounded-lg shadow-sm bg-zinc-50 p-4 flex items-center justify-between">
-                                <div className="text-xs text-zinc-500">Latency</div>
-                                <div className="mt-1 text-xl font-bold text-emerald-600">28ms</div>
-                            </div>
-
-                            <div className="rounded-lg shadow-sm bg-zinc-50 p-4 flex items-center justify-between">
-                                <div className="text-xs text-zinc-500">Success Rate</div>
-                                <div className="mt-1 text-xl font-bold text-purple-600">99.98%</div>
-                            </div>
-                        </div>
-
-                        {/* Code Preview */}
-                        <div className="mt-6 rounded-lg bg-black p-4 text-xs text-green-400 font-mono">
-                {`@app.get("/api/data")
-                async def get_data():
-                    return {"status": "success"}`}
-                        </div>
+                  {/* Main Card */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[220px] flex flex-col items-center rounded-xl bg-[#020617] shadow-[0_16px_34px_rgba(15,23,42,0.14)] overflow-hidden">
+                    <div className="w-full flex items-center justify-between border-b border-white/10 bg-[#0f172a] py-2 px-3">
+                      <span className="text-[11px] text-white/60">FastAPI Server</span>
+                      <span className="text-[11px] text-emerald-400 font-semibold">Running ⚡</span>
                     </div>
 
-                    {/* Floating Tags */}
-                    <div className="absolute top-0 right-0 rounded-lg bg-white px-3 py-1 text-xs font-semibold shadow hero-float [animation-delay:0.8s]">⚡ Async Ready</div>
-                    <div className="absolute bottom-0 left-0 rounded-lg bg-white px-3 py-1 text-xs font-semibold shadow hero-float [animation-delay:0.8s]">🚀 Ultra Fast</div>
+                    {/* Request */}
+                    <div className="w-full px-3 pt-3 text-[11px] text-white/80">
+                      <div className="text-blue-400">POST /api/users</div>
+                      <div className="mt-1 text-white/60">
+                        {"{ name: string, email: string }"}
+                      </div>
+                    </div>
+
+                    {/* Validation */}
+                    <div className="w-full px-3 mt-3">
+                      <div className="rounded-md border border-emerald-400/20 bg-emerald-500/10 p-2 text-[9px]">
+                        <div className="text-emerald-300 font-semibold">✔ Pydantic Validation</div>
+                        <div className="text-white/70">Types Verified Successfully</div>
+                      </div>
+                    </div>
+
+                    {/* Code */}
+                    <div className="w-full px-3 text-[11px] text-green-400 bg-black/60 p-2 rounded-md">
+                {`@app.post("/api/users")
+                async def create_user(user: UserSchema):
+                    return {"id": 101, "status": "created"}`}
+                    </div>
+
+                    {/* Response */}
+                    <div className="w-full px-3">
+                      <div className="rounded-md border border-blue-400/20 bg-blue-500/10 p-2 text-[9px]">
+                        <div className="text-blue-300 font-semibold">Response 201</div>
+                        <div className="text-white/70">{`{ "id": 101, "status": "created" }`}</div>
+                      </div>
+                    </div>
+
+                    {/* Metrics */}
+                    <div className="w-full px-3 pb-3 mt-3 grid grid-cols-3 gap-2 text-[11px]">
+                      <div className="bg-white/[0.05] border border-white/10 rounded p-2 text-center">
+                        <div className="text-white/60">Latency</div>
+                        <div className="text-emerald-400 font-bold">24ms</div>
+                      </div>
+                      <div className="bg-white/[0.05] border border-white/10 rounded p-2 text-center">
+                        <div className="text-white/60">Throughput</div>
+                        <div className="text-cyan-400 font-bold">12K/s</div>
+                      </div>
+                      <div className="bg-white/[0.05] border border-white/10 rounded p-2 text-center">
+                        <div className="text-white/60">Uptime</div>
+                        <div className="text-purple-400 font-bold">99.99%</div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  {/* Floating Features */}
+                  <div className="absolute top-10 right-4 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-emerald-400 hero-float">⚡ Async First</div>
+                  <div className="absolute bottom-10 left-4 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-blue-400 hero-float">📘 Auto Docs</div>
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-yellow-400 hero-float">🧠 Type Validation</div>
+                  <div className="absolute right-0 top-1/2 -translate-y-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-purple-400 hero-float">🚀 High Performance</div>
                 </div>
             </div>
         </section>

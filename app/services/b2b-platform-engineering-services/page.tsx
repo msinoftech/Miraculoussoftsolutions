@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { APP_NAME, BASE_URL, contactInfo } from "@/app/lib/config";
+import { APP_NAME, BASE_URL } from "@/app/lib/config";
 
 import Link from "next/link";
 import Marquee from "@/app/components/Marquee";
@@ -52,70 +52,6 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
 }
-
-const b2bPlatformEngineeringSchemaData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": `${BASE_URL}#website`,
-      "url": `${BASE_URL}`,
-      "name": `${APP_NAME}`,
-      "description": `${APP_NAME} provides B2B platform engineering services.`,
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": `${BASE_URL}/search?q={search_term_string}`,
-        "query-input": "required name=search_term_string"
-      }
-    },
-    {
-      "@type": "WebPage",
-      "@id": `${BASE_URL}/services/b2b-platform-engineering-services#webpage`,
-      "url": `${BASE_URL}/services/b2b-platform-engineering-services`,
-      "name": `B2B Platform Engineering Services | ${APP_NAME}`,
-      "inLanguage": "en-US",
-      "description": `B2B Platform Engineering Services by ${APP_NAME} to design and build scalable business platforms with secure architecture, workflows, integrations, and analytics.`,
-      "isPartOf": {
-        "@id": `${BASE_URL}#website`
-      },
-      "about": {
-        "@id": `${BASE_URL}#organization`
-      }
-    },
-    {
-      "@type": "Organization",
-      "@id": `${BASE_URL}#organization`,
-      "name": `${APP_NAME}`,
-      "url": `${BASE_URL}`,
-      "logo": `${BASE_URL}${contactInfo.logo}`,
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": `${contactInfo.phone}`,
-        "contactType": "customer service",
-        "areaServed": "Global",
-        "availableLanguage": ["en"]
-      },
-      "sameAs": [
-        "https://www.facebook.com/miraculoussoft",
-        "https://twitter.com/miraculous_soft",
-        "https://www.instagram.com/miraculous_soft",
-        "https://www.pinterest.com/seomiraculoussoft"
-      ]
-    },
-    {
-      "@type": "Service",
-      "@id": `${BASE_URL}/services/b2b-platform-engineering-services#service`,
-      "serviceType": "B2B Platform Engineering Services",
-      "name": `B2B Platform Engineering Services | ${APP_NAME}`,
-      "description": `End-to-end B2B platform engineering including architecture planning, role-based workflows, enterprise integrations, analytics, security, and long-term scaling support.`,
-      "url": `${BASE_URL}/services/b2b-platform-engineering-services`,
-      "provider": {
-        "@id": `${BASE_URL}#organization`
-      },
-      "areaServed": "Global"
-    }
-  ]
-};
 
 const features = [
   {
@@ -252,9 +188,6 @@ const chartHeights = ["h-[40%]", "h-[52%]", "h-[60%]", "h-[74%]", "h-[84%]", "h-
 export default function B2BPlatformEngineeringServicesPage() {
     return (
     <>
-    {/* Add Structured Data for B2B Platform Engineering Services Page */}
-    <Script id="b2b-platform-engineering-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(b2bPlatformEngineeringSchemaData, null, 2),}}/>
-
     {/* HERO */}
     <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
         <div className="grid-bg absolute inset-0 opacity-45" />
@@ -301,39 +234,33 @@ export default function B2BPlatformEngineeringServicesPage() {
             <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
             <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
 
-            <div className="absolute left-1/2 top-[12%] z-20 w-[84%] -translate-x-1/2 rounded-[14px] border border-white/10 bg-zinc-900/90 px-4 py-3 shadow-[0_10px_24px_rgba(0,0,0,0.3)]">
+            <div className="absolute left-1/2 top-[12%] z-20 w-[84%] -translate-x-1/2 rounded-[14px] border border-zinc-200 bg-white/95 px-4 py-3 shadow-[0_10px_24px_rgba(15,23,42,0.12)]">
               <div className="flex items-center justify-between">
-                <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-white/60">B2B Platform Runtime</div>
-                <div className="rounded-full border border-emerald-400/35 bg-emerald-500/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.08em] text-emerald-300">Healthy</div>
+                <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-500">B2B Platform Runtime</div>
+                <div className="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.08em] text-emerald-700">Healthy</div>
               </div>
               <div className="mt-2 grid grid-cols-3 gap-2">
-                <div className="rounded-[8px] border border-white/10 bg-white/[0.04] px-2 py-1 text-center text-[9px] font-bold uppercase tracking-[0.08em] text-white/75">99.9% SLA</div>
-                <div className="rounded-[8px] border border-white/10 bg-white/[0.04] px-2 py-1 text-center text-[9px] font-bold uppercase tracking-[0.08em] text-white/75">8ms Sync</div>
-                <div className="rounded-[8px] border border-white/10 bg-white/[0.04] px-2 py-1 text-center text-[9px] font-bold uppercase tracking-[0.08em] text-white/75">Audit Logs</div>
+                <div className="rounded-[8px] border border-zinc-200 bg-zinc-50 px-2 py-1 text-center text-[9px] font-bold uppercase tracking-[0.08em] text-zinc-700">99.9% SLA</div>
+                <div className="rounded-[8px] border border-zinc-200 bg-zinc-50 px-2 py-1 text-center text-[9px] font-bold uppercase tracking-[0.08em] text-zinc-700">8ms Sync</div>
+                <div className="rounded-[8px] border border-zinc-200 bg-zinc-50 px-2 py-1 text-center text-[9px] font-bold uppercase tracking-[0.08em] text-zinc-700">Audit Logs</div>
               </div>
             </div>
 
-            <div className="absolute left-1/2 top-[47%] z-20 w-[44%] -translate-x-1/2 -translate-y-1/2 rounded-[16px] border border-blue-400/25 bg-[linear-gradient(155deg,#111827,#0f172a)] p-4 text-center shadow-[0_16px_30px_rgba(0,0,0,0.35)]">
-              <div className="text-[9px] font-bold uppercase tracking-[0.14em] text-blue-200">Core Engine</div>
-              <div className="mt-1 font-bebas-neue text-[30px] leading-none text-white">B2B OS</div>
-              <div className="mt-1 text-[9px] font-bold uppercase tracking-[0.1em] text-white/60">Identity • Data • Rules</div>
+            <div className="absolute left-[8%] top-[34%] w-[34%] rounded-[11px] border border-zinc-200 bg-white px-3 py-2.5 shadow-[0_10px_20px_rgba(15,23,42,0.1)]">
+              <div className="text-[9px] font-bold uppercase tracking-[0.1em] text-blue-600">Tenant Layer</div>
+              <div className="mt-1 text-[12px] font-extrabold text-zinc-900">Isolation + Routing</div>
             </div>
-
-            <div className="absolute left-[8%] top-[34%] w-[34%] rounded-[11px] border border-white/10 bg-zinc-900/90 px-3 py-2.5 shadow-[0_12px_22px_rgba(0,0,0,0.22)]">
-              <div className="text-[9px] font-bold uppercase tracking-[0.1em] text-blue-300">Tenant Layer</div>
-              <div className="mt-1 text-[12px] font-extrabold text-white">Isolation + Routing</div>
+            <div className="absolute right-[8%] top-[34%] w-[34%] rounded-[11px] border border-zinc-200 bg-white px-3 py-2.5 shadow-[0_10px_20px_rgba(15,23,42,0.1)]">
+              <div className="text-[9px] font-bold uppercase tracking-[0.1em] text-rose-600">Access Layer</div>
+              <div className="mt-1 text-[12px] font-extrabold text-zinc-900">Roles + Policies</div>
             </div>
-            <div className="absolute right-[8%] top-[34%] w-[34%] rounded-[11px] border border-white/10 bg-zinc-900/90 px-3 py-2.5 shadow-[0_12px_22px_rgba(0,0,0,0.22)]">
-              <div className="text-[9px] font-bold uppercase tracking-[0.1em] text-red-300">Access Layer</div>
-              <div className="mt-1 text-[12px] font-extrabold text-white">Roles + Policies</div>
+            <div className="absolute left-[8%] bottom-[16%] w-[34%] rounded-[11px] border border-zinc-200 bg-white px-3 py-2.5 shadow-[0_10px_20px_rgba(15,23,42,0.1)]">
+              <div className="text-[9px] font-bold uppercase tracking-[0.1em] text-emerald-600">Workflow Layer</div>
+              <div className="mt-1 text-[12px] font-extrabold text-zinc-900">Approvals + Triggers</div>
             </div>
-            <div className="absolute left-[8%] bottom-[16%] w-[34%] rounded-[11px] border border-white/10 bg-zinc-900/90 px-3 py-2.5 shadow-[0_12px_22px_rgba(0,0,0,0.22)]">
-              <div className="text-[9px] font-bold uppercase tracking-[0.1em] text-emerald-300">Workflow Layer</div>
-              <div className="mt-1 text-[12px] font-extrabold text-white">Approvals + Triggers</div>
-            </div>
-            <div className="absolute right-[8%] bottom-[16%] w-[34%] rounded-[11px] border border-white/10 bg-zinc-900/90 px-3 py-2.5 shadow-[0_12px_22px_rgba(0,0,0,0.22)]">
-              <div className="text-[9px] font-bold uppercase tracking-[0.1em] text-amber-200">Insights Layer</div>
-              <div className="mt-1 text-[12px] font-extrabold text-white">Billing + BI</div>
+            <div className="absolute right-[8%] bottom-[16%] w-[34%] rounded-[11px] border border-zinc-200 bg-white px-3 py-2.5 shadow-[0_10px_20px_rgba(15,23,42,0.1)]">
+              <div className="text-[9px] font-bold uppercase tracking-[0.1em] text-amber-600">Insights Layer</div>
+              <div className="mt-1 text-[12px] font-extrabold text-zinc-900">Billing + BI</div>
             </div>
 
             <div className="absolute left-[35%] top-[43%] h-px w-[15%] bg-gradient-to-r from-transparent via-blue-400/80 to-transparent" />

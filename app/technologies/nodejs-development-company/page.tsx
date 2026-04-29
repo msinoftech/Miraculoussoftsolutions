@@ -1,45 +1,10 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import Link from "next/link";
 import Marquee from "@/app/components/Marquee";
 import Process from "@/app/components/Process";
 import BoxCard from "@/app/components/BoxCard";
 import CtaStrip from "@/app/components/CtaStrip";
-
-const backendTech = [
-  {
-    name: "Node.js",
-    desc: "Event-driven runtime for scalable APIs and real-time apps.",
-  },
-  {
-    name: "Express.js",
-    desc: "Minimal framework for building REST APIs and backend services.",
-  },
-  {
-    name: "MongoDB",
-    desc: "Flexible NoSQL database for high-scale applications.",
-  },
-  {
-    name: "MySQL",
-    desc: "Reliable relational database for structured data systems.",
-  },
-  {
-    name: "Redis",
-    desc: "In-memory database for caching and performance optimization.",
-  },
-  {
-    name: "Docker",
-    desc: "Containerization for scalable and portable deployments.",
-  },
-  {
-    name: "AWS",
-    desc: "Cloud infrastructure for scalable backend systems.",
-  },
-  {
-    name: "GraphQL",
-    desc: "Efficient API query language for frontend-backend communication.",
-  },
-];
 
 const marqueeItems = [
     "Event-Driven Architecture",
@@ -264,20 +229,69 @@ export default function BackendPage() {
 
                 {/* Right Column */}
                 <div className="relative mx-auto hidden aspect-square w-full max-w-[440px] lg:block" aria-hidden="true">
-                    <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
-                    <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
-                    <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
-                    
-                    <div className="absolute inset-[116px] flex flex-col items-center justify-center gap-2 shadow-xl rounded-full border border-white/10 bg-zinc-900/90 text-center">
-                        <div className="bg-gradient-to-r from-blue-400 to-red-500 bg-clip-text text-6xl font-black text-transparent">
-                            &lt;/&gt;
-                        </div>
-                        <div className="text-[11px] font-bold uppercase tracking-[0.16em] text-white/70">API</div>
+
+                  {/* Rings */}
+                  <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
+                  <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
+                  <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
+
+                  {/* Center Core - Node Engine */}
+                  <div className="absolute inset-[100px] overflow-hidden rounded-xl border border-white/10 bg-[#020617] font-mono shadow-[0_30px_80px_rgba(0,0,0,0.7)]">
+                    {/* Header */}
+                    <div className="flex items-center justify-between border-b border-white/10 bg-[#0f172a] px-3 py-2">
+                      <span className="text-[10px] text-white/60">server.js</span>
+                      <span className="text-[10px] font-semibold text-emerald-400">Node.js Runtime</span>
                     </div>
 
-                    <div className="absolute right-8 top-16 rounded-lg border border-white/10 bg-zinc-900/90 px-4 py-2 text-xs font-bold text-blue-400 hero-float">NodeJS</div>
-                    <div className="absolute bottom-16 left-2 rounded-lg border border-white/10 bg-zinc-900/90 px-4 py-2 text-xs font-bold text-red-500 hero-float [animation-delay:1.6s]">MongoDB</div>
-                    <div className="absolute bottom-36 right-3 rounded-lg border border-white/10 bg-zinc-900/90 px-4 py-2 text-xs font-bold text-emerald-400 hero-float [animation-delay:0.8s]">AWS</div>
+                    {/* Logs */}
+                    <div className="h-full overflow-hidden p-3 text-[10px] leading-5 text-white/80">
+                      <div className="animate-[fadeIn_0.6s_ease] text-emerald-400">✔ Server started on port 3000</div>
+                      
+                      <div className="animate-[fadeIn_1.2s_ease]">
+                        <span className="text-blue-400">GET</span> /api/users 200 - 12ms
+                      </div>
+                      
+                      <div className="animate-[fadeIn_1.8s_ease]">
+                        <span className="text-blue-400">POST</span> /api/auth/login 201 - 32ms
+                      </div>
+
+                      <div className="animate-[fadeIn_2.4s_ease]">
+                        <span className="text-yellow-400">DB:</span> Connected to MongoDB
+                      </div>
+
+                      <div className="animate-[fadeIn_3s_ease]">
+                        <span className="text-purple-400">WS:</span> Client connected (id: #1024)
+                      </div>
+
+                      <div className="animate-[fadeIn_3.6s_ease]">
+                        <span className="text-red-400">WARN:</span> Slow query detected (128ms)
+                      </div>
+
+                      <div className="animate-[fadeIn_4.2s_ease] text-emerald-400">
+                        ✔ Response sent successfully
+                      </div>
+
+                      {/* Blinking Cursor */}
+                      <div className="mt-1 flex items-center">
+                        <span className="text-green-400">$</span>
+                        <span className="ml-1 h-3 w-[6px] animate-pulse bg-green-400" />
+                      </div>
+
+                    </div>
+                  </div>
+
+                  {/* Backend Flow Concepts */}
+                  <div className="hero-float absolute left-1/2 top-12 -translate-x-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-green-700">API Requests</div>
+                  <div className="hero-float absolute right-6 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-emerald-700">Async Processing</div>
+                  <div className="hero-float absolute bottom-12 right-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-blue-700">Database Ops</div>
+                  <div className="hero-float absolute bottom-12 left-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-amber-700">Microservices</div>
+                  <div className="hero-float absolute left-6 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-rose-700">Event Loop</div>
+                  {/* Tech Layer */}
+                  <div className="absolute top-[70px] right-[20px] hero-float rounded-lg bg-white px-3 py-1 text-xs font-semibold text-green-700">Express.js</div>
+                  <div className="absolute bottom-[120px] left-[20px] hero-float rounded-lg bg-white px-3 py-1 text-xs font-semibold text-emerald-700">MongoDB</div>
+                  <div className="absolute top-[70px] left-[20px] hero-float rounded-lg bg-white px-3 py-1 text-xs font-semibold text-blue-700">REST API</div>
+                  <div className="absolute bottom-[120px] right-[20px] hero-float rounded-lg bg-white px-3 py-1 text-xs font-semibold text-orange-700">WebSockets</div>
+
                 </div>
             </div>
         </section>

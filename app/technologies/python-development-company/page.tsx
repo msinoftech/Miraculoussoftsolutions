@@ -1,45 +1,10 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import Link from "next/link";
 import Marquee from "@/app/components/Marquee";
 import Process from "@/app/components/Process";
 import BoxCard from "@/app/components/BoxCard";
 import CtaStrip from "@/app/components/CtaStrip";
-
-const backendTech = [
-  {
-    name: "Node.js",
-    desc: "Event-driven runtime for scalable APIs and real-time apps.",
-  },
-  {
-    name: "Express.js",
-    desc: "Minimal framework for building REST APIs and backend services.",
-  },
-  {
-    name: "MongoDB",
-    desc: "Flexible NoSQL database for high-scale applications.",
-  },
-  {
-    name: "MySQL",
-    desc: "Reliable relational database for structured data systems.",
-  },
-  {
-    name: "Redis",
-    desc: "In-memory database for caching and performance optimization.",
-  },
-  {
-    name: "Docker",
-    desc: "Containerization for scalable and portable deployments.",
-  },
-  {
-    name: "AWS",
-    desc: "Cloud infrastructure for scalable backend systems.",
-  },
-  {
-    name: "GraphQL",
-    desc: "Efficient API query language for frontend-backend communication.",
-  },
-];
 
 const marqueeItems = [
     "SIMPLE & READABLE SYNTAX",
@@ -232,46 +197,62 @@ export default function BackendPage() {
 
                 {/* Right Column */}
                 <div className="relative mx-auto hidden aspect-square w-full max-w-[440px] lg:block" aria-hidden="true">
-                    {/* Outer Rings */}
+                    {/* Rings */}
                     <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
                     <div className="absolute inset-[42px] rounded-full border border-yellow-500/30 hero-ring-2" />
                     <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
 
                     {/* Center Core */}
-                    <div className="absolute inset-[105px] flex items-center justify-center">
-                        <div className="relative flex h-[170px] w-[170px] flex-col items-center justify-center rounded-full border border-white/10 bg-gradient-to-br from-zinc-900 via-zinc-800 to-black shadow-2xl">
-                            {/* Glow Layer */}
-                            <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.25)_0%,transparent_70%)] blur-xl" />
-                            {/* Inner Ring */}
-                            <div className="absolute inset-2 rounded-full border border-blue-500/20 animate-pulse" />
-                            {/* Python SVG Icon */}
-                            <svg width="48" height="48" viewBox="0 0 256 255" xmlns="http://www.w3.org/2000/svg" className="mb-2">
-                                <defs>
-                                    <linearGradient id="pythonGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stopColor="#4F46E5" />
-                                    <stop offset="100%" stopColor="#22C55E" />
-                                    </linearGradient>
-                                </defs>
-                                <path fill="url(#pythonGradient1)" d="M126.916 0C94.047 0 95.719 14.269 95.719 14.269l.037 14.785h31.729v4.436H83.167S61.954 32.43 61.954 63.58c0 31.15 18.52 30.06 18.52 30.06h11.07v-15.543s-.596-18.52 18.31-18.52h31.555s17.74.287 17.74-17.166V17.166S161.17 0 126.916 0z"/>
-                                <path fill="url(#pythonGradient1)" d="M129.084 255c32.87 0 31.197-14.269 31.197-14.269l-.037-14.785h-31.729v-4.436h44.318s21.213 1.06 21.213-30.09-18.52-30.06-18.52-30.06h-11.07v15.543s.596 18.52-18.31 18.52h-31.555s-17.74-.287-17.74 17.166v25.245S94.83 255 129.084 255z"/>
-                            </svg>
-                            {/* Title */}
-                            <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/80">PYTHON ENGINE</div>
-                            {/* Sub Label */}
-                            <div className="mt-1 text-[10px] text-white/50">Data • AI • APIs</div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[220px] flex flex-col items-center rounded-xl border border-white/10 bg-[#020617] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.65)]">
+                      <div className="flex w-full items-center justify-between border-b border-white/10 bg-[#0f172a] py-2 px-2">
+                        <span className="text-[11px] text-white/60">analytics.py</span>
+                        <span className="text-[11px] font-semibold text-yellow-400">Python Runtime</span>
+                      </div>
+
+                      <div className="text-[11px] py-3 leading-5 text-white/80">
+                        <div>
+                          <span className="text-purple-400">import</span>{" "}
+                          <span className="text-blue-300">pandas</span>{" "}
+                          <span className="text-purple-400">as</span>{" "}
+                          <span className="text-blue-300">pd</span>
                         </div>
+
+                        <div>
+                          <span className="text-blue-300">data</span> = pd.read_csv(
+                          <span className="text-yellow-300">"users.csv"</span>)
+                        </div>
+
+                        <div>
+                          <span className="text-blue-300">growth</span> = data.groupby(
+                          <span className="text-yellow-300">"month"</span>).sum()
+                        </div>
+
+                        <div className="mt-2">
+                          <span className="text-purple-400">print</span>(growth)
+                        </div>
+
+                        {/* Output */}
+                        <div className="mt-3 rounded-md border border-white/10 bg-white/[0.04] p-2 text-[9px]">
+                          <div className="text-emerald-400">✔ Data Processed</div>
+                          <div className="text-white/60">Users Growth: +24%</div>
+                          <div className="text-white/60">Active: 128K</div>
+                        </div>
+
+                        {/* AI Output */}
+                        <div className="mt-2 rounded-md border border-purple-400/20 bg-purple-500/10 p-2 text-[9px]">
+                          <div className="text-purple-300">AI Insight</div>
+                          <div className="text-white/70">Retention improved by 18%</div>
+                        </div>
+
+                      </div>
                     </div>
 
                     {/* Floating Tags */}
-                    <div className="absolute right-6 top-16 rounded-lg border border-white/10 bg-zinc-900/90 px-4 py-2 text-xs font-bold text-blue-400 hero-float">Django</div>
-
-                    <div className="absolute bottom-16 left-2 rounded-lg border border-white/10 bg-zinc-900/90 px-4 py-2 text-xs font-bold text-yellow-400 hero-float [animation-delay:1.4s]">Pandas</div>
-
-                    <div className="absolute bottom-36 right-3 rounded-lg border border-white/10 bg-zinc-900/90 px-4 py-2 text-xs font-bold text-emerald-400 hero-float [animation-delay:0.8s]">FastAPI</div>
-
-                    <div className="absolute top-1/2 left-[-10px] rounded-lg border border-white/10 bg-zinc-900/90 px-4 py-2 text-xs font-bold text-purple-400 hero-float [animation-delay:2s]">TensorFlow</div>
-
-                    <div className="absolute top-10 left-20 rounded-lg border border-white/10 bg-zinc-900/90 px-4 py-2 text-xs font-bold text-pink-400 hero-float [animation-delay:1s]">NumPy</div>
+                    <div className="hero-float absolute right-6 top-10 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-blue-700">API (FastAPI)</div>
+                    <div className="hero-float absolute bottom-16 left-2 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-amber-700">Data Processing</div>
+                    <div className="hero-float absolute bottom-36 right-3 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-emerald-700">Async Tasks</div>
+                    <div className="hero-float absolute left-[-10px] top-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-purple-700">Machine Learning</div>
+                    <div className="hero-float absolute left-0 top-0 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-pink-700">NumPy Engine</div>
 
                 </div>
             </div>
