@@ -46,44 +46,44 @@ export const metadata: Metadata = {
   },
 }
 
-// const serviceItems = [
-//   {
-//     title: "SaaS Development",
-//     description: "Cloud-native, subscription-ready SaaS products with scalable architecture.",
-//     href: "/technologies/saas-development-technologies",
-//     accent: "from-blue-500 to-indigo-500",
-//   },
-//   {
-//     title: "B2B Platform Engineering",
-//     description: "Enterprise-grade B2B platforms with workflows, access control, and integrations.",
-//     href: "/technologies/b2b-platform-engineering-technologies",
-//     accent: "from-red-500 to-orange-500",
-//   },
-//   {
-//     title: "eCommerce Solutions",
-//     description: "Conversion-focused commerce platforms with checkout, payments, and automation.",
-//     href: "/technologies/ecommerce-solutions-technologies",
-//     accent: "from-emerald-500 to-teal-500",
-//   },
-//   {
-//     title: "ERP & Business Automation",
-//     description: "Unified ERP systems to streamline core business operations and reporting.",
-//     href: "/technologies/erp-and-business-automation-technologies",
-//     accent: "from-violet-500 to-fuchsia-500",
-//   },
-//   {
-//     title: "Mobile Applications",
-//     description: "High-performance mobile apps with clean UX and production-ready architecture.",
-//     href: "/technologies/mobile-applications-technologies",
-//     accent: "from-cyan-500 to-blue-500",
-//   },
-//   {
-//     title: "Branding & Digital Growth",
-//     description: "Brand strategy and digital growth systems for visibility, leads, and retention.",
-//     href: "/technologies/branding-and-digital-growth-technologies",
-//     accent: "from-amber-500 to-red-500",
-//   },
-// ];
+const serviceItems = [
+  {
+    title: "SaaS Development",
+    description: "Cloud-native, subscription-ready SaaS products with scalable architecture.",
+    href: "/technologies/saas-development-technologies",
+    accent: "from-blue-500 to-indigo-500",
+  },
+  {
+    title: "B2B Platform Engineering",
+    description: "Enterprise-grade B2B platforms with workflows, access control, and integrations.",
+    href: "/technologies/b2b-platform-engineering-technologies",
+    accent: "from-red-500 to-orange-500",
+  },
+  {
+    title: "eCommerce Solutions",
+    description: "Conversion-focused commerce platforms with checkout, payments, and automation.",
+    href: "/technologies/ecommerce-solutions-technologies",
+    accent: "from-emerald-500 to-teal-500",
+  },
+  {
+    title: "ERP & Business Automation",
+    description: "Unified ERP systems to streamline core business operations and reporting.",
+    href: "/technologies/erp-and-business-automation-technologies",
+    accent: "from-violet-500 to-fuchsia-500",
+  },
+  {
+    title: "Mobile Applications",
+    description: "High-performance mobile apps with clean UX and production-ready architecture.",
+    href: "/technologies/mobile-applications-technologies",
+    accent: "from-cyan-500 to-blue-500",
+  },
+  {
+    title: "Branding & Digital Growth",
+    description: "Brand strategy and digital growth systems for visibility, leads, and retention.",
+    href: "/technologies/branding-and-digital-growth-technologies",
+    accent: "from-amber-500 to-red-500",
+  },
+];
 
 const whyPointsold = [
     {
@@ -115,6 +115,63 @@ const marqueeItems = [
   "UI/UX Product Design",
   "API Integrations",
   "Performance Optimization",
+];
+
+const technologyTree = [
+  {
+    parent: "SaaS Development",
+    parentHref: "/technologies/saas-development-technologies",
+    children: [
+      { label: "Next.js", href: "/technologies/nextjs-development-company" },
+      { label: "Node.js", href: "/technologies/nodejs-development-company" },
+      { label: "TypeScript", href: "/technologies/typescript-development-company" },
+    ],
+  },
+  {
+    parent: "B2B Platform Engineering",
+    parentHref: "/technologies/b2b-platform-engineering-technologies",
+    children: [
+      { label: "React.js", href: "/technologies/reactjs-development-company" },
+      { label: "Node.js", href: "/technologies/nodejs-development-company" },
+      { label: "Kubernetes", href: "/technologies/kubernetes-development-company" },
+    ],
+  },
+  {
+    parent: "eCommerce Solutions",
+    parentHref: "/technologies/ecommerce-solutions-technologies",
+    children: [
+      { label: "Next.js", href: "/technologies/nextjs-development-company" },
+      { label: "Python", href: "/technologies/python-development-company" },
+      { label: "AWS", href: "/technologies/aws-development-company" },
+    ],
+  },
+  {
+    parent: "ERP & Business Automation",
+    parentHref: "/technologies/erp-and-business-automation-technologies",
+    children: [
+      { label: "Node.js", href: "/technologies/nodejs-development-company" },
+      { label: "Python", href: "/technologies/python-development-company" },
+      { label: "Docker", href: "/technologies/docker-development-company" },
+    ],
+  },
+  {
+    parent: "Mobile Applications",
+    parentHref: "/technologies/mobile-applications-technologies",
+    children: [
+      { label: "React.js", href: "/technologies/reactjs-development-company" },
+      { label: "FastAPI", href: "/technologies/fastapi-development-company" },
+      { label: "Cloud DevOps", href: "/technologies/cloud-devops" },
+    ],
+  },
+  {
+    parent: "Branding & Digital Growth",
+    parentHref: "/technologies/branding-and-digital-growth-technologies",
+    children: [
+      { label: "Frontend Stack", href: "/technologies/frontend-technologies" },
+      { label: "Cloud DevOps", href: "/technologies/cloud-devops" },
+      { label: "AWS", href: "/technologies/aws-development-company" },
+    ],
+  },
 ];
 
 export default function technologiesPage() {
@@ -198,7 +255,7 @@ export default function technologiesPage() {
     <Marquee items={marqueeItems} />
 
     {/* technologies */}
-    {/* <section className="relative overflow-hidden bg-white py-14 sm:py-20">
+    <section id="all-technologies" className="relative overflow-hidden bg-white py-14 sm:py-20">
       <div className="relative mx-auto w-full max-w-7xl px-4">
         <div className="mb-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
@@ -207,10 +264,10 @@ export default function technologiesPage() {
               technologies
             </div>
             <h2 className="font-bebas-neue text-[54px] uppercase leading-[0.9] tracking-[0.02em] text-zinc-950 sm:text-[72px] lg:text-[90px]">
-              Service <span className="text-red-600">Catalog</span>
+              Technology <span className="text-red-600">Tree</span>
             </h2>
             <p className="mt-3 max-w-2xl text-[15px] leading-8 text-zinc-600">
-              Explore our delivery ecosystem through specialized vertical technologies, each engineered for measurable business impact.
+              Explore parent technology domains and their child stacks in a timeline/tree structure built for product-scale delivery.
             </p>
           </div>
           <Link
@@ -222,50 +279,103 @@ export default function technologiesPage() {
           </Link>
         </div>
 
-        <div className="grid gap-4 lg:grid-cols-12">
-          <Link href={serviceItems[0].href} className="group relative col-span-12 overflow-hidden rounded-2xl border border-zinc-200 bg-[linear-gradient(145deg,#111111,#1a1a1a)] p-7 text-white shadow-[0_14px_34px_rgba(0,0,0,0.16)] lg:col-span-7">
-            <div className={`absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r ${serviceItems[0].accent}`} />
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.1em] text-white/80">
-              Featured Service
-            </div>
-            <div className="text-[38px] font-extrabold leading-[1.02] tracking-[-0.02em]">{serviceItems[0].title}</div>
-            <p className="mt-4 max-w-xl text-[14px] leading-7 text-white/75">{serviceItems[0].description}</p>
-            <div className="mt-6 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.08em] text-white transition group-hover:text-red-300">
-              Explore Service →
-            </div>
-          </Link>
-
-          <div className="col-span-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:col-span-5">
-            <Link href={serviceItems[1].href} className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
-              <div className={`absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r ${serviceItems[1].accent}`} />
-              <div className="text-[24px] font-extrabold leading-[1.1] tracking-[-0.02em] text-zinc-950">{serviceItems[1].title}</div>
-              <p className="mt-2 text-[13px] leading-7 text-zinc-600">{serviceItems[1].description}</p>
-            </Link>
-            <Link href={serviceItems[2].href} className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
-              <div className={`absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r ${serviceItems[2].accent}`} />
-              <div className="text-[24px] font-extrabold leading-[1.1] tracking-[-0.02em] text-zinc-950">{serviceItems[2].title}</div>
-              <p className="mt-2 text-[13px] leading-7 text-zinc-600">{serviceItems[2].description}</p>
-            </Link>
-          </div>
-
-          <div className="col-span-12 grid grid-cols-1 gap-4 md:grid-cols-3">
-            {serviceItems.slice(3).map((service, index) => (
-              <Link key={service.href} href={service.href} className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-zinc-300 hover:shadow-md">
-                <div className={`absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r ${service.accent}`} />
-                <div className="mb-2 text-[11px] font-bold uppercase tracking-[0.08em] text-zinc-400">
-                  {String(index + 4).padStart(2, "0")}
+        <div className="relative rounded-2xl border border-zinc-200 bg-zinc-50/70 p-6 sm:p-8">
+          <div className="absolute bottom-6 left-7 top-6 w-px bg-zinc-200 sm:left-8" />
+          <div className="space-y-6">
+            {technologyTree.map((node) => (
+              <div key={node.parent} className="relative pl-8 sm:pl-10">
+                <span className="absolute left-[5px] top-[8px] h-3 w-3 rounded-full border-2 border-red-200 bg-red-500 sm:left-[6px]" />
+                <Link href={node.parentHref} className="inline-flex items-center gap-2 text-[18px] font-extrabold tracking-[-0.02em] text-zinc-950 transition hover:text-red-600">
+                  {node.parent}
+                  <span aria-hidden="true">↗</span>
+                </Link>
+                <div className="mt-3 grid gap-2 sm:grid-cols-3">
+                  {node.children.map((child) => (
+                    <Link
+                      key={child.href}
+                      href={child.href}
+                      className="rounded-lg border border-zinc-200 bg-white px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-zinc-700 transition hover:border-zinc-300 hover:text-red-600"
+                    >
+                      {child.label}
+                    </Link>
+                  ))}
                 </div>
-                <div className="text-[22px] font-extrabold leading-[1.12] tracking-[-0.02em] text-zinc-950">{service.title}</div>
-                <p className="mt-2 text-[13px] leading-7 text-zinc-600">{service.description}</p>
-                <div className="mt-3 text-[12px] font-bold uppercase tracking-[0.08em] text-zinc-900 transition group-hover:text-red-600">
-                  Explore Service →
-                </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
       </div>
-    </section> */}
+    </section>
+
+
+    <div className="relative rounded-2xl border border-zinc-200 bg-gradient-to-b from-white to-zinc-50 p-6 sm:p-10">
+
+  {/* Center vertical line */}
+  <div className="absolute left-1/2 top-0 h-full w-[2px] -translate-x-1/2 bg-gradient-to-b from-transparent via-zinc-300 to-transparent" />
+
+  <div className="space-y-16">
+    {technologyTree.map((node, index) => {
+      const isLeft = index % 2 === 0;
+
+      return (
+        <div key={node.parent} className="relative flex items-center justify-between">
+
+          {/* LEFT SIDE */}
+          <div className={`w-[45%] ${isLeft ? "text-right" : "opacity-0"}`}>
+            {isLeft && (
+              <div>
+                <Link href={node.parentHref} className="text-[20px] font-extrabold text-zinc-900 hover:text-red-600">
+                  {node.parent}
+                </Link>
+
+                <div className="mt-4 flex flex-wrap justify-end gap-2">
+                  {node.children.map((child) => (
+                    <Link
+                      key={child.href}
+                      href={child.href}
+                      className="rounded-md bg-white border border-zinc-200 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide hover:border-red-500 hover:text-red-600"
+                    >
+                      {child.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* CENTER NODE */}
+          <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-red-600 text-white font-bold shadow-lg">
+            {index + 1}
+          </div>
+
+          {/* RIGHT SIDE */}
+          <div className={`w-[45%] ${!isLeft ? "text-left" : "opacity-0"}`}>
+            {!isLeft && (
+              <div>
+                <Link href={node.parentHref} className="text-[20px] font-extrabold text-zinc-900 hover:text-red-600">
+                  {node.parent}
+                </Link>
+
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {node.children.map((child) => (
+                    <Link
+                      key={child.href}
+                      href={child.href}
+                      className="rounded-md bg-white border border-zinc-200 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide hover:border-red-500 hover:text-red-600"
+                    >
+                      {child.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+        </div>
+      );
+    })}
+  </div>
+</div>
 
     <section className="overflow-hidden bg-[var(--off)] py-24 lg:py-28">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-0 px-6 lg:grid-cols-2 lg:px-10">

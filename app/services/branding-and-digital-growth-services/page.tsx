@@ -186,29 +186,29 @@ export default function BrandingAndDigitalGrowthServicesPage() {
           </div>
 
           {/* Right Column */}
-          <div className="relative mx-auto aspect-square w-full max-w-[320px] xl:ml-auto xl:mr-0 xl:max-w-[450px]">
-            <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
+          <div className="relative mx-auto aspect-square w-full">
+            {/* <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
             <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
-            <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
+            <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" /> */}
 
-            <div className="relative top-1/2 left-1/2 max-w-[200px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-2xl bg-white shadow-[0_16px_38px_rgba(15,23,42,0.12)] p-2 md:p-3">
+            <div className="relative top-1/2 left-1/2 max-w-[220px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-2xl bg-white shadow-[0_16px_38px_rgba(15,23,42,0.12)] p-2 md:p-3">
 
               {/* Search Bar */}
               <div className="flex items-center gap-2 rounded-md border border-zinc-200 bg-white px-2 py-1">
-                <span className="text-[8px] text-zinc-500">🔍</span>
-                <span className="text-[8px] text-zinc-600">best digital marketing agency</span>
+                <span className="text-[10px] text-zinc-500">🔍</span>
+                <span className="text-[10px] text-zinc-600">best digital marketing agency</span>
               </div>
 
               {/* Ranking Result */}
               <div className="mt-2 rounded-lg border border-emerald-200 bg-emerald-50 p-2">
                 <div className="text-[7px] uppercase text-emerald-700">Ranking Position</div>
                 <div className="text-[16px] font-bold text-emerald-700">#1</div>
-                <div className="text-[7px] text-zinc-500">Google SERP</div>
+                <div className="text-[10px] text-zinc-500">Google SERP</div>
               </div>
 
               {/* Traffic Growth */}
               <div className="mt-2 rounded-lg border border-zinc-200 bg-white p-2">
-                <div className="mb-1 text-[7px] uppercase text-blue-700">Organic Traffic</div>
+                <div className="mb-1 text-[10px] uppercase text-blue-700">Organic Traffic</div>
                 <div className="flex items-end gap-1">
                   <span className="h-3 flex-1 rounded-sm bg-blue-200" />
                   <span className="h-5 flex-1 rounded-sm bg-blue-300" />
@@ -220,35 +220,35 @@ export default function BrandingAndDigitalGrowthServicesPage() {
               {/* Keyword Stats */}
               <div className="mt-2 grid grid-cols-2 gap-2">
                 <div className="rounded-md border border-zinc-200 bg-white p-1.5">
-                  <div className="text-[6px] text-zinc-500">Keywords</div>
+                  <div className="text-[10px] text-zinc-500">Keywords</div>
                   <div className="text-[10px] font-bold text-zinc-900">1.2K</div>
                 </div>
                 <div className="rounded-md border border-zinc-200 bg-white p-1.5">
-                  <div className="text-[6px] text-zinc-500">CTR</div>
+                  <div className="text-[10px] text-zinc-500">CTR</div>
                   <div className="text-[10px] font-bold text-zinc-900">18.4%</div>
                 </div>
               </div>
 
               {/* SEO Tags */}
               <div className="mt-2 flex flex-wrap gap-1">
-                <span className="rounded-full bg-blue-50 px-2 py-[2px] text-[6px] text-blue-700">On-Page</span>
-                <span className="rounded-full bg-purple-50 px-2 py-[2px] text-[6px] text-purple-700">Backlinks</span>
-                <span className="rounded-full bg-emerald-50 px-2 py-[2px] text-[6px] text-emerald-700">Technical SEO</span>
+                <span className="rounded-full bg-blue-50 px-2 py-[2px] text-[10px] text-blue-700">On-Page</span>
+                <span className="rounded-full bg-purple-50 px-2 py-[2px] text-[10px] text-purple-700">Backlinks</span>
+                <span className="rounded-full bg-emerald-50 px-2 py-[2px] text-[10px] text-emerald-700">Technical SEO</span>
               </div>
 
             </div>
 
            {/* SEO Process */}
             <div className="absolute top-6 left-1/2 -translate-x-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Keyword Research</div>
-            <div className="absolute right-0 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">On-Page Optimization</div>
+            <div className="absolute right-0 top-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">On-Page Optimization</div>
             <div className="absolute bottom-10 right-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Link Building</div>
-            <div className="absolute bottom-10 left-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Ranking Boost</div>
-            <div className="absolute left-0 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Traffic Growth</div>
+            <div className="absolute bottom-10 left-6 rounded-lg bg-white px-3 py-  1 text-xs font-semibold hero-float [animation-delay:0.2s]">Ranking Boost</div>
+            <div className="absolute left-0 top-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Traffic Growth</div>
             {/* Feature Tags */}
             <div className="absolute top-[70px] right-[15px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Google Rankings</div>
-            <div className="absolute bottom-[120px] left-[15px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Organic Traffic</div>
+            {/* <div className="absolute bottom-[120px] left-[15px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Organic Traffic</div> */}
             <div className="absolute top-[70px] left-[25px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Technical SEO</div>
-            <div className="absolute bottom-[120px] right-[25px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">High CTR</div>
+            {/* <div className="absolute bottom-[120px] right-[25px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">High CTR</div> */}
           </div>
         </div>
     </section>

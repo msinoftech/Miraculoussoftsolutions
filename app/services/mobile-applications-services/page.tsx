@@ -142,30 +142,29 @@ export default function MobileApplicationsServicesPage() {
     return (
     <>
     {/* HERO */}
-    <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
-        <div className="grid-bg absolute inset-0 opacity-45" />
+    <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-zinc-950">
+        <div className="grid-bg absolute inset-0 opacity-5" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.16))]" />
         
         <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-[1fr_390px] z-10">
           {/* Left Column */}
           <div className="space-y-5">
-            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
+            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white">
                 <span className="h-[2px] w-7 bg-red-600" />Mobile Applications Services
             </div>
-            <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-zinc-950 sm:text-[118px] md:text-[140px] lg:text-[168px]">
+            <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-white sm:text-[118px] md:text-[140px] lg:text-[168px]">
               <span>BUILD </span>
               <span className="text-red-600">MOBILE</span>
-              <span className="hero-outline block outline-black">APPLICATIONS</span>
+              <span className="hero-outline block outline-white">APPLICATIONS</span>
             </h1>
-            <p className="max-w-xl text-[15px] leading-8 text-zinc-500">We design and develop modern mobile apps with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
+            <p className="max-w-xl text-[15px] leading-8 text-white">We design and develop modern mobile apps with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
 
             <div className="flex flex-wrap items-center gap-4">
                 <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
                         Start Your Project
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                 </Link>
-                <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
+                <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-white px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-zinc-950 transition">
                         View Portfolio
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                 </Link>
@@ -174,8 +173,8 @@ export default function MobileApplicationsServicesPage() {
             <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
               {metrics.map(([n, l]) => (
                 <div key={l}>
-                  <div className="font-bebas-neue text-3xl leading-none text-zinc-950">{n}</div>
-                  <div className="text-sm font-semibold text-zinc-950">{l}</div>
+                  <div className="font-bebas-neue text-3xl leading-none text-white">{n}</div>
+                  <div className="text-sm font-semibold text-white">{l}</div>
                 </div>
               ))}
             </div>
@@ -183,9 +182,9 @@ export default function MobileApplicationsServicesPage() {
 
           {/* Right Column */}
           <div className="relative mx-auto aspect-square w-full max-w-[320px] xl:ml-auto xl:mr-0 xl:max-w-[450px]">
-            <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
+            {/* <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
             <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
-            <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
+            <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" /> */}
             
             {/* center core */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center relative h-[210px] w-[125px] md:h-[340px] md:w-[200px] rounded-2xl bg-[linear-gradient(180deg,#ffffff,#eef2f7)] shadow-[0_25px_60px_rgba(15,23,42,0.25)] p-[4px]">
@@ -235,15 +234,13 @@ export default function MobileApplicationsServicesPage() {
             </div>
 
             {/* Development Process */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Planning</div>
-            <div className="absolute right-0 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">UI/UX Design</div>
-            <div className="absolute bottom-10 right-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">App Development</div>
+            {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Planning</div> */}
+            <div className="absolute right-0 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">API Integration</div>
+            <div className="absolute bottom-10 right-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Fast MVP Launch</div>
             <div className="absolute bottom-10 left-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">App Launch</div>
-            <div className="absolute left-0 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Scaling & Updates</div>
-            {/* Mobile Features Layer */}
-            <div className="absolute top-[90px] right-[15px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Push Notifications</div>
-            <div className="absolute bottom-[120px] left-[15px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">API Integration</div>
-            <div className="absolute bottom-[150px] right-2 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Fast MVP Launch</div>
+            <div className="absolute left-0 top-[50px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Scaling & Updates</div>
+            <div className="absolute top-[50px] right-[15px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Push Notifications</div>
+            <div className="absolute bottom-[120px] left-[15px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">App Store Ready</div>
           </div>
         </div>
     </section>

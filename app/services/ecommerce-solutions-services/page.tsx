@@ -170,17 +170,17 @@ export default function EcommerceSolutionsServicesPage() {
           </div>
 
           {/* Right Column */}
-          <div className="relative mx-auto aspect-square w-full max-w-[320px] xl:ml-auto xl:mr-0 xl:max-w-[460px]">
+          <div className="relative mx-auto aspect-square w-full">
 
             {/* Rotating Rings */}
-            <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
+            {/* <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
             <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
-            <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
+            <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" /> */}
 
             {/* Center Core - Ecommerce Engine */}
             {/* Center Core - Ecommerce Dashboard Card */}
             <div className="absolute inset-[80px] flex items-center justify-center">
-              <div className="w-[190px] rounded-xl border border-zinc-200 
+              <div className="w-full rounded-xl border border-zinc-200 
                 bg-[linear-gradient(145deg,#ffffff,#f8fafc)] 
                 shadow-[0_20px_42px_rgba(15,23,42,0.14)] p-4">
 
@@ -233,15 +233,14 @@ export default function EcommerceSolutionsServicesPage() {
 
             {/* Development Process Flow */}
             <div className="absolute top-6 left-1/2 -translate-x-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Store Planning</div>
-            <div className="absolute right-0 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">UI/UX Design</div>
-            <div className="absolute bottom-10 right-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Development</div>
-            <div className="absolute bottom-10 left-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Launch Store</div>
-            <div className="absolute left-0 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Growth & Scaling</div>
-            {/* Ecommerce Features Layer */}
+            {/* <div className="absolute right-0 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">UI/UX Design</div> */}
+            <div className="absolute bottom-10 right-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Order Tracking</div>
+            <div className="absolute bottom-10 left-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Product Management</div>
+            <div className="absolute left-0 top-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Growth & Scaling</div>
             <div className="absolute top-[60px] right-[15px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Payment Gateway</div>
-            <div className="absolute bottom-[120px] left-[15px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Product Management</div>
+            {/* <div className="absolute bottom-[120px] left-[15px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Product Management</div> */}
             <div className="absolute top-[70px] left-[25px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Cart & Checkout</div>
-            <div className="absolute bottom-[120px] right-[25px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Order Tracking</div>
+            {/* <div className="absolute bottom-[120px] right-[25px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Order Tracking</div> */}
 
           </div>
         </div>

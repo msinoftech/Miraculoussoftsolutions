@@ -62,7 +62,7 @@ h1, h2, h3, h4, h5, h6, .font-bebas-neue {
 }
 
 .hero-outline.outline-white{
-  -webkit-text-stroke-color: var(--white);
+  -webkit-text-stroke-color: var(--bg);
 }
 
 .hero-outline.outline-red{

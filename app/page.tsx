@@ -579,7 +579,7 @@ export default function MiraculousSoftLandingPage() {
       />
   
       {/* Technology Stack Section */}
-      <section id="tech" className="bg-[var(--off)] py-14 lg:py-20">
+      <section id="tech" className="bg-[var(--off)] py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-2 md:items-end">
             <div>

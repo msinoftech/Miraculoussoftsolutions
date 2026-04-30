@@ -142,29 +142,29 @@ export default function ErpAndBusinessAutomationServicesPage() {
     return (
     <>
     {/* HERO */}
-    <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
-        <div className="grid-bg absolute inset-0 opacity-45" />
+    <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-zinc-950">
+        <div className="grid-bg absolute inset-0 opacity-5" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.16))]" />
+        
         <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-[1fr_390px] z-10">
             {/* Left Column */}
             <div className="space-y-5">
-                <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
+                <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white">
                     <span className="h-[2px] w-7 bg-red-600" />ERP and Business Automation Services
                 </div>
-                <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-zinc-950 sm:text-[118px] md:text-[140px] lg:text-[168px]">
+                <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-white sm:text-[118px] md:text-[140px] lg:text-[168px]">
                 <span>ERP And</span>
                 <span className="block text-red-600">Business</span>
-                <span className="hero-outline block outline-black">Automation</span>
+                <span className="hero-outline block outline-white">Automation</span>
                 </h1>
-                <p className="max-w-xl text-[15px] leading-8 text-zinc-500">We design and develop modern ERP and business automation systems with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
+                <p className="max-w-xl text-[15px] leading-8 text-white">We design and develop modern ERP and business automation systems with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
 
                 <div className="flex flex-wrap items-center gap-4">
                     <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
                             Start Your Project
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                     </Link>
-                    <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
+                    <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-white px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-zinc-950 transition">
                             View Portfolio
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                     </Link>
@@ -173,21 +173,21 @@ export default function ErpAndBusinessAutomationServicesPage() {
                 <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
                 {metrics.map(([n, l]) => (
                     <div key={l}>
-                    <div className="font-bebas-neue text-3xl leading-none text-zinc-950">{n}</div>
-                    <div className="text-sm font-semibold text-zinc-950">{l}</div>
+                    <div className="font-bebas-neue text-3xl leading-none text-white">{n}</div>
+                    <div className="text-sm font-semibold text-white">{l}</div>
                     </div>
                 ))}
                 </div>
             </div>
 
           {/* Right Column - ERP System Visualization */}
-            <div className="relative mx-auto aspect-square w-full max-w-[320px] xl:ml-auto xl:mr-0 xl:max-w-[450px]">
-                <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
+            <div className="relative mx-auto aspect-square w-full">
+                {/* <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
                 <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
-                <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
+                <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" /> */}
 
                 {/* Glow Background */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15),transparent_70%)] blur-2xl" />
+                {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15),transparent_70%)] blur-2xl" /> */}
 
                 {/* Central Core Dashboard */}
                 <div className="absolute left-1/2 top-1/2 z-20 w-[236px] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-zinc-200 bg-[linear-gradient(155deg,#ffffff,#f8fafc,#f1f5f9)] p-4 shadow-[0_20px_48px_rgba(15,23,42,0.16)]">
@@ -229,12 +229,12 @@ export default function ErpAndBusinessAutomationServicesPage() {
 
                 {/* Module Cards */}
                 {[
-                { title: "HR", pos: "-top-5 left-0", icon: "H", tone: "from-blue-500 to-cyan-500", meta: "People Ops" },
-                { title: "CRM", pos: "top-5 -right-10", icon: "C", tone: "from-rose-500 to-orange-500", meta: "Client Graph" },
-                { title: "Finance", pos: "bottom-10 -left-10", icon: "F", tone: "from-violet-500 to-indigo-500", meta: "Cash Flow" },
-                { title: "Inventory", pos: "-bottom-5 -right-10", icon: "I", tone: "from-emerald-500 to-teal-500", meta: "Stock Grid" },
+                { title: "HR", pos: "-top-10 left-0", icon: "H", tone: "from-blue-500 to-cyan-500", meta: "People Ops" },
+                { title: "CRM", pos: "-top-10 right-0", icon: "C", tone: "from-rose-500 to-orange-500", meta: "Client Graph" },
+                { title: "Finance", pos: "-bottom-10 left-0", icon: "F", tone: "from-violet-500 to-indigo-500", meta: "Cash Flow" },
+                { title: "Inventory", pos: "-bottom-10 right-0", icon: "I", tone: "from-emerald-500 to-teal-500", meta: "Stock Grid" },
                 ].map((item, i) => (
-                <div key={i} className={`absolute ${item.pos} w-[162px] overflow-hidden rounded-2xl border border-zinc-200/90 bg-[linear-gradient(165deg,#ffffff,#f8fafc)] p-3.5 shadow-[0_16px_36px_rgba(15,23,42,0.16)]`}>
+                <div key={i} className={`absolute ${item.pos} hero-float w-[130px] overflow-hidden rounded-2xl border border-zinc-200/90 bg-[linear-gradient(165deg,#ffffff,#f8fafc)] p-3 shadow-[0_16px_36px_rgba(15,23,42,0.16)]`}>
                     <div className={`absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r ${item.tone}`} />
                     <div className="flex items-start justify-between">
                         <div>
@@ -249,10 +249,6 @@ export default function ErpAndBusinessAutomationServicesPage() {
                     <div className="mt-3 rounded-lg border border-zinc-200 bg-white px-2.5 py-2">
                         <div className="flex items-center justify-between text-[9px] font-semibold uppercase tracking-[0.1em] text-zinc-500">
                             <span>{item.meta}</span>
-                            <span className="inline-flex items-center gap-1 text-emerald-600">
-                                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                                Live
-                            </span>
                         </div>
                         <div className="mt-2 grid grid-cols-3 gap-1.5">
                             <span className="h-1.5 rounded-full bg-zinc-200" />

@@ -189,27 +189,27 @@ export default function Navbar() {
                       <div className="mt-1 text-[14px] font-extrabold text-zinc-950">Domains we serve</div>
                     </div>
                     <div className="grid grid-cols-2 gap-x-6 gap-y-2 text-[12px] font-semibold text-zinc-900">
-                      <Link href="/#industries" className="group rounded-xl flex items-center gap-2 py-2 transition">
+                      <Link href="/industries/healthcare" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                         <div className="hover:text-red-600">Healthcare</div>
                       </Link>
-                      <Link href="/#industries" className="group rounded-xl flex items-center gap-2 py-2 transition">
+                      <Link href="/industries/logistics" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                         <div className="hover:text-red-600">Logistics</div>
                       </Link>
-                      <Link href="/#industries" className="group rounded-xl flex items-center gap-2 py-2 transition">
+                      <Link href="/industries/finance" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                         <div className="hover:text-red-600">Finance</div>
                       </Link>
-                      <Link href="/#industries" className="group rounded-xl flex items-center gap-2 py-2 transition">
+                      <Link href="/industries/retail" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                         <div className="hover:text-red-600">Retail</div>
                       </Link>
-                      <Link href="/#industries" className="group rounded-xl flex items-center gap-2 py-2 transition">
+                      <Link href="/industries/education" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                         <div className="hover:text-red-600">Education</div>
                       </Link>
-                      <Link href="/#industries" className="group rounded-xl flex items-center gap-2 py-2 transition">
+                      <Link href="/industries/enterprise" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                         <div className="hover:text-red-600">Enterprise</div>
                       </Link>
@@ -368,22 +368,22 @@ export default function Navbar() {
             </button>
             {mobileDropdown === "industries" && (
               <div className="space-y-2 border-t border-[#f0f0f0] px-6 py-3">
-                <Link href="/#industries" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                <Link href="/industries/healthcare" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
                   <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Healthcare</div>
                 </Link>
-                <Link href="/#industries" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                <Link href="/industries/logistics" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
                   <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Logistics</div>
                 </Link>
-                <Link href="/#industries" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                <Link href="/industries/finance" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
                   <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Finance</div>
                 </Link>
-                <Link href="/#industries" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                <Link href="/industries/retail" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
                   <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Retail</div>
                 </Link>
-                <Link href="/#industries" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                <Link href="/industries/education" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
                   <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Education</div>
                 </Link>
-                <Link href="/#industries" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                <Link href="/industries/enterprise" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
                   <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Enterprise</div>
                 </Link>
               </div>

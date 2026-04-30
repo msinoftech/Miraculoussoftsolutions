@@ -324,10 +324,10 @@ export default function BackendPage() {
                   </div>
 
                   {/* Floating Features */}
-                  <div className="absolute top-10 right-4 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-emerald-400 hero-float">⚡ Async First</div>
-                  <div className="absolute bottom-10 left-4 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-blue-400 hero-float">📘 Auto Docs</div>
-                  <div className="absolute left-0 top-1/2 -translate-y-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-yellow-400 hero-float">🧠 Type Validation</div>
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-purple-400 hero-float">🚀 High Performance</div>
+                  <div className="absolute top-10 right-4 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-emerald-400 hero-float">Async First</div>
+                  <div className="absolute bottom-10 left-4 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-blue-400 hero-float">Auto Docs</div>
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-yellow-400 hero-float">Type Validation</div>
+                  <div className="absolute right-0 top-1/2 -translate-y-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold text-purple-400 hero-float">High Performance</div>
                 </div>
             </div>
         </section>
