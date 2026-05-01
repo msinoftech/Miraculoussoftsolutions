@@ -115,9 +115,9 @@ export default function MiraculousHealthcarePage() {
     <>
         {/* HERO */}
         <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
-            
             <div className="grid-bg absolute inset-0 opacity-45" />
             <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white to-transparent" />
+            <div className="absolute -right-28 top-28 z-10 h-[430px] w-[430px] rounded-full border border-red-500/20"/>
 
             <div className="absolute left-[-12rem] top-[-12rem] h-[34rem] w-[34rem] rounded-full bg-blue-600/10 blur-3xl mss-float-soft" />
             <div className="absolute right-[-10rem] top-20 h-[30rem] w-[30rem] rounded-full bg-red-600/10 blur-3xl mss-float-reverse" />
@@ -149,16 +149,15 @@ export default function MiraculousHealthcarePage() {
                         {metrics.map(([n, l]) => (
                             <div key={l}>
                             <div className="font-bebas-neue text-3xl leading-none text-zinc-950">{n}</div>
-                            <div className="text-sm font-semibold text-zinc-950">{l}</div>
+                            <div className="text-sm text-zinc-950">{l}</div>
                             </div>
                         ))}
                     </div>
-
                 </div>
                 {/* Right Column */}
                 <div className="relative">
-                    {/* Background Glow */}
                     <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-indigo-100 via-white to-blue-100 blur-2xl" />
+                    <div className="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-br from-red-500/25 via-blue-500/20 to-white/10 blur-2xl" />
                     <div className="relative rounded-2xl border border-slate-200 bg-white shadow-2xl shadow-slate-900/10 overflow-hidden">
                         <div className="relative flex items-center justify-between border-b border-neutral-200 px-4 py-3">
                             <div className="flex items-center gap-2">

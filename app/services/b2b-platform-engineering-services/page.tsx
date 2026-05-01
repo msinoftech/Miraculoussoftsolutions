@@ -166,10 +166,10 @@ const marqueeItems = [
 ];
 
 const metrics = [
-  ["100+", "Product Modules Built"],
-  ["99%", "System Reliability Focus"],
-  ["MVP", "Fast Launch Strategy"],
-  ["Scale", "Growth-Ready Architecture"],
+  ["100+", "Product Modules"],
+  ["99%", "System Reliability"],
+  ["MVP", "Fast Launch"],
+  ["Scale", "Growth-Ready"],
 ];
 
 const pills = [
@@ -194,18 +194,18 @@ export default function B2BPlatformEngineeringServicesPage() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.16))]" />
 
-        <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-[1fr_390px] z-10">
+        <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-6 px-4 lg:grid-cols-2 z-10">
           {/* Left Column */}
           <div className="space-y-5">
             <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
                 <span className="h-[2px] w-7 bg-red-600" />B2B Platform Engineering Services
             </div>
-            <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-zinc-950 sm:text-[118px] md:text-[140px] lg:text-[168px]">
+            <h1 className="font-bebas-neue uppercase leading-[0.84] tracking-wider text-zinc-950 text-[80px] sm:text-[100px] md:text-[140px]">
               <span>BUILD </span>
               <span className="text-red-600">B2B</span>
               <span className="hero-outline block outline-black">PLATFORMS</span>
             </h1>
-            <p className="max-w-xl text-[15px] leading-8 text-zinc-500">We design and develop modern B2B platforms with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
+            <p className="text-[15px] leading-8 text-zinc-500">We design and develop modern B2B platforms with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
 
             <div className="flex flex-wrap items-center gap-4">
                 <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
@@ -222,51 +222,124 @@ export default function B2BPlatformEngineeringServicesPage() {
               {metrics.map(([n, l]) => (
                 <div key={l}>
                   <div className="font-bebas-neue text-3xl leading-none text-zinc-950">{n}</div>
-                  <div className="text-sm font-semibold text-zinc-950">{l}</div>
+                  <div className="text-sm text-zinc-950">{l}</div>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Right Column */}
-          <div className="relative mx-auto aspect-square w-full max-w-[320px] xl:ml-auto xl:mr-0 xl:max-w-[450px]">
-            <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
-            <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
-            <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
+          <div className="relative w-full space-y-4 max-w-[90%] ml-auto">
+            <div className="relative overflow-hidden rounded-2xl bg-[linear-gradient(165deg,#ffffff,#f8fafc)] p-4 shadow-xl hero-float">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_8%_0%,rgba(59,130,246,0.14),transparent_45%),radial-gradient(circle_at_95%_100%,rgba(234,88,12,0.1),transparent_40%)]" />
 
-            <div className="absolute left-1/2 top-[12%] z-20 w-[84%] -translate-x-1/2 rounded-[14px] border border-zinc-200 bg-white/95 px-4 py-3 shadow-[0_10px_24px_rgba(15,23,42,0.12)]">
-              <div className="flex items-center justify-between">
-                <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-500">B2B Platform Runtime</div>
-                <div className="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.08em] text-emerald-700">Healthy</div>
+              <div className="relative grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
+                <div className="rounded-xl border border-zinc-200 bg-white p-3">
+                  <div className="flex items-center justify-between border-b border-zinc-200 pb-3">
+                    <div>
+                      <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-500">B2B Product Delivery Board</div>
+                      <div className="text-[14px] font-extrabold uppercase tracking-[0.08em] text-zinc-900">Build Track + Deployment Track</div>
+                    </div>
+                    <span className="rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.1em] text-emerald-700">
+                       Active
+                    </span>
+                  </div>
+
+                  <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-3">
+                    <div className="rounded-lg border border-blue-200 bg-blue-50/70 p-2">
+                      <div className="text-[10px] font-bold tracking-[0.12em] text-blue-700">01 Discovery</div>
+                      <div className="mt-1 text-[11px] font-semibold text-zinc-900">Process Mapping</div>
+                    </div>
+                    <div className="rounded-lg border border-indigo-200 bg-indigo-50/70 p-2">
+                      <div className="text-[10px] font-bold tracking-[0.12em] text-indigo-700">02 Architecture</div>
+                      <div className="mt-1 text-[11px] font-semibold text-zinc-900">Tenant & Domain Design</div>
+                    </div>
+                    <div className="rounded-lg border border-cyan-200 bg-cyan-50/70 p-2">
+                      <div className="text-[10px] font-bold tracking-[0.12em] text-cyan-700">03 Platform UX</div>
+                      <div className="mt-1 text-[11px] font-semibold text-zinc-900">Role-based Journeys</div>
+                    </div>
+                    <div className="rounded-lg border border-violet-200 bg-violet-50/70 p-2">
+                      <div className="text-[10px] font-bold tracking-[0.12em] text-violet-700">04 Engineering</div>
+                      <div className="mt-1 text-[11px] font-semibold text-zinc-900">Services + Integrations</div>
+                    </div>
+                    <div className="rounded-lg border border-amber-200 bg-amber-50/80 p-2">
+                      <div className="text-[10px] font-bold tracking-[0.12em] text-amber-700">05 QA / Security</div>
+                      <div className="mt-1 text-[11px] font-semibold text-zinc-900">Validation + Hardening</div>
+                    </div>
+                    <div className="rounded-lg border border-emerald-200 bg-emerald-50/70 p-2">
+                      <div className="text-[10px] font-bold tracking-[0.12em] text-emerald-700">06 Go-Live</div>
+                      <div className="mt-1 text-[11px] font-semibold text-zinc-900">Release + Support</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="rounded-xl border border-zinc-200 bg-white/90 p-3">
+                  <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-500">Deployment Matrix</div>
+                  <div className="mt-3 space-y-2">
+                    <div className="flex items-center justify-between rounded-md border border-zinc-200 bg-zinc-50 px-2.5 py-2 text-[10px] font-semibold text-zinc-800">
+                      <span>CI/CD</span>
+                      <span className="text-emerald-700">Passed</span>
+                    </div>
+                    <div className="flex items-center justify-between rounded-md border border-zinc-200 bg-zinc-50 px-2.5 py-2 text-[10px] font-semibold text-zinc-800">
+                      <span>RBAC Policies</span>
+                      <span className="text-emerald-700">Enforced</span>
+                    </div>
+                    <div className="flex items-center justify-between rounded-md border border-zinc-200 bg-zinc-50 px-2.5 py-2 text-[10px] font-semibold text-zinc-800">
+                      <span>Audit Logging</span>
+                      <span className="text-emerald-700">Live</span>
+                    </div>
+                    <div className="flex items-center justify-between rounded-md border border-zinc-200 bg-zinc-50 px-2.5 py-2 text-[10px] font-semibold text-zinc-800">
+                      <span>Monitoring</span>
+                      <span className="text-emerald-700">Healthy</span>
+                    </div>
+                  </div>
+
+                  <div className="mt-3 rounded-md border border-emerald-200 bg-emerald-50 px-3 py-2">
+                    <div className="flex items-center justify-between text-[10px] font-semibold text-emerald-700">
+                      <span className="inline-flex items-center gap-2">
+                        <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                        SLA Compliance
+                      </span>
+                      <span>99.9%</span>
+                    </div>
+                    <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-emerald-100">
+                      <div className="h-full w-[90%] rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400" />
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="mt-2 grid grid-cols-3 gap-2">
-                <div className="rounded-[8px] border border-zinc-200 bg-zinc-50 px-2 py-1 text-center text-[9px] font-bold uppercase tracking-[0.08em] text-zinc-700">99.9% SLA</div>
-                <div className="rounded-[8px] border border-zinc-200 bg-zinc-50 px-2 py-1 text-center text-[9px] font-bold uppercase tracking-[0.08em] text-zinc-700">8ms Sync</div>
-                <div className="rounded-[8px] border border-zinc-200 bg-zinc-50 px-2 py-1 text-center text-[9px] font-bold uppercase tracking-[0.08em] text-zinc-700">Audit Logs</div>
+            </div>
+
+            <div className="rounded-2xl bg-white p-4 shadow-lg">
+              <div className="flex items-center justify-between border-b border-zinc-200 pb-3">
+                <div>
+                  <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-500">Operational Runtime</div>
+                  <div className="text-sm font-extrabold uppercase tracking-[0.08em] text-zinc-900">How B2B Platform Works</div>
+                </div>
+                <span className="rounded-full border border-cyan-200 bg-cyan-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.1em] text-cyan-700">
+                  Real-Time Flow
+                </span>
+              </div>
+
+              <div className="mt-3 grid grid-cols-1 gap-2 md:grid-cols-4">
+                <div className="rounded-md border border-zinc-200 bg-zinc-50 px-3 py-2">
+                  <div className="text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-500">01</div>
+                  <div className="mt-1 text-[11px] font-semibold text-zinc-900">Client Workspace Request</div>
+                </div>
+                <div className="rounded-md border border-zinc-200 bg-zinc-50 px-3 py-2">
+                  <div className="text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-500">02</div>
+                  <div className="mt-1 text-[11px] font-semibold text-zinc-900">Policy + Approval Routing</div>
+                </div>
+                <div className="rounded-md border border-zinc-200 bg-zinc-50 px-3 py-2">
+                  <div className="text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-500">03</div>
+                  <div className="mt-1 text-[11px] font-semibold text-zinc-900">Workflow / Integration Execution</div>
+                </div>
+                <div className="rounded-md border border-zinc-200 bg-zinc-50 px-3 py-2">
+                  <div className="text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-500">04</div>
+                  <div className="mt-1 text-[11px] font-semibold text-zinc-900">Reporting + Audit Record</div>
+                </div>
               </div>
             </div>
-
-            <div className="absolute left-[8%] top-[34%] w-[34%] rounded-[11px] border border-zinc-200 bg-white px-3 py-2.5 shadow-[0_10px_20px_rgba(15,23,42,0.1)]">
-              <div className="text-[9px] font-bold uppercase tracking-[0.1em] text-blue-600">Tenant Layer</div>
-              <div className="mt-1 text-[12px] font-extrabold text-zinc-900">Isolation + Routing</div>
-            </div>
-            <div className="absolute right-[8%] top-[34%] w-[34%] rounded-[11px] border border-zinc-200 bg-white px-3 py-2.5 shadow-[0_10px_20px_rgba(15,23,42,0.1)]">
-              <div className="text-[9px] font-bold uppercase tracking-[0.1em] text-rose-600">Access Layer</div>
-              <div className="mt-1 text-[12px] font-extrabold text-zinc-900">Roles + Policies</div>
-            </div>
-            <div className="absolute left-[8%] bottom-[16%] w-[34%] rounded-[11px] border border-zinc-200 bg-white px-3 py-2.5 shadow-[0_10px_20px_rgba(15,23,42,0.1)]">
-              <div className="text-[9px] font-bold uppercase tracking-[0.1em] text-emerald-600">Workflow Layer</div>
-              <div className="mt-1 text-[12px] font-extrabold text-zinc-900">Approvals + Triggers</div>
-            </div>
-            <div className="absolute right-[8%] bottom-[16%] w-[34%] rounded-[11px] border border-zinc-200 bg-white px-3 py-2.5 shadow-[0_10px_20px_rgba(15,23,42,0.1)]">
-              <div className="text-[9px] font-bold uppercase tracking-[0.1em] text-amber-600">Insights Layer</div>
-              <div className="mt-1 text-[12px] font-extrabold text-zinc-900">Billing + BI</div>
-            </div>
-
-            <div className="absolute left-[35%] top-[43%] h-px w-[15%] bg-gradient-to-r from-transparent via-blue-400/80 to-transparent" />
-            <div className="absolute right-[35%] top-[43%] h-px w-[15%] bg-gradient-to-r from-transparent via-red-400/80 to-transparent" />
-            <div className="absolute left-[35%] bottom-[30%] h-px w-[15%] bg-gradient-to-r from-transparent via-emerald-400/80 to-transparent" />
-            <div className="absolute right-[35%] bottom-[30%] h-px w-[15%] bg-gradient-to-r from-transparent via-amber-300/80 to-transparent" />
           </div>
         </div>
     </section>

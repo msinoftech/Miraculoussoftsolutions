@@ -119,10 +119,10 @@ const marqueeItems = [
 ];
 
 const metrics = [
-  ["100+", "Product Modules Built"],
-  ["99%", "System Reliability Focus"],
-  ["MVP", "Fast Launch Strategy"],
-  ["Scale", "Growth-Ready Architecture"],
+  ["100+", "Product Modules"],
+  ["99%", "System Reliability"],
+  ["MVP", "Fast Launch"],
+  ["Scale", "Growth-Ready"],
 ];
 
 const pills = [
@@ -146,18 +146,18 @@ export default function MobileApplicationsServicesPage() {
         <div className="grid-bg absolute inset-0 opacity-5" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
         
-        <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-[1fr_390px] z-10">
+        <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-6 px-4 lg:grid-cols-2 z-10">
           {/* Left Column */}
           <div className="space-y-5">
             <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white">
                 <span className="h-[2px] w-7 bg-red-600" />Mobile Applications Services
             </div>
-            <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-white sm:text-[118px] md:text-[140px] lg:text-[168px]">
+            <h1 className="font-bebas-neue uppercase leading-[0.84] tracking-wider text-white text-[80px] sm:text-[100px] md:text-[140px]">
               <span>BUILD </span>
               <span className="text-red-600">MOBILE</span>
-              <span className="hero-outline block outline-white">APPLICATIONS</span>
+              <span className="hero-outline outline-white"> APP</span>
             </h1>
-            <p className="max-w-xl text-[15px] leading-8 text-white">We design and develop modern mobile apps with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
+            <p className="text-[15px] leading-8 text-white">We design and develop modern mobile apps with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
 
             <div className="flex flex-wrap items-center gap-4">
                 <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
@@ -174,73 +174,131 @@ export default function MobileApplicationsServicesPage() {
               {metrics.map(([n, l]) => (
                 <div key={l}>
                   <div className="font-bebas-neue text-3xl leading-none text-white">{n}</div>
-                  <div className="text-sm font-semibold text-white">{l}</div>
+                  <div className="text-sm text-white">{l}</div>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Right Column */}
-          <div className="relative mx-auto aspect-square w-full max-w-[320px] xl:ml-auto xl:mr-0 xl:max-w-[450px]">
-            {/* <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
-            <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
-            <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" /> */}
-            
-            {/* center core */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center relative h-[210px] w-[125px] md:h-[340px] md:w-[200px] rounded-2xl bg-[linear-gradient(180deg,#ffffff,#eef2f7)] shadow-[0_25px_60px_rgba(15,23,42,0.25)] p-[4px]">
-              {/* Screen */}
-              <div className="relative h-full w-full overflow-hidden rounded-2xl 
-                bg-[linear-gradient(180deg,#dbeafe,#f1f5f9,#e0f2fe)] p-2 md:p-3">
+          <div className="relative w-full space-y-4 max-w-[90%] ml-auto">
+            <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[linear-gradient(145deg,#0b1220,#111827)] p-4 shadow-[0_20px_45px_rgba(2,6,23,0.45)]">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_8%,rgba(59,130,246,0.18),transparent_48%),radial-gradient(circle_at_88%_90%,rgba(16,185,129,0.14),transparent_44%)]" />
 
-                {/* Status Bar */}
-                <div className="flex items-center justify-between text-[7px] font-semibold text-zinc-700 md:text-[9px]">
-                  <span>9:41</span>
-                  <div className="flex items-center gap-1">
-                    <span>5G</span>
-                    <span className="h-1.5 w-3 rounded-sm border border-zinc-500">
-                      <span className="block h-full w-[70%] bg-zinc-700 rounded-[2px]" />
-                    </span>
+              <div className="relative grid gap-4 grid-cols-12">
+                <div className="relative col-span-12 sm:col-span-5">
+                  <div className="flex items-end flex-col justify-between rounded-xl border border-white/10 bg-white/[0.04] p-3">
+                    <div>
+                      <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-400">Mobile Device Preview</div>
+                      <div className="text-[13px] font-extrabold uppercase tracking-[0.08em] text-white">Live Application Screen</div>
+                    </div>
+                    <span className="rounded-full bg-indigo-600 px-2 py-1 text-[9px] font-bold uppercase text-white">iOS / Android</span>
+                  </div>
+
+                  <div className="mt-4 flex items-center justify-center">
+                    <div className="relative h-[320px] w-full rounded-[26px] border border-zinc-300 bg-[linear-gradient(180deg,#ffffff,#eef2f7)] p-[5px] shadow-[0_20px_48px_rgba(15,23,42,0.22)]">
+                      <div className="relative h-full w-full overflow-hidden rounded-[22px] bg-[linear-gradient(180deg,#dbeafe,#f1f5f9,#e0f2fe)] p-2.5">
+                        <div className="flex items-center justify-between text-[8px] font-semibold text-zinc-700">
+                          <span>9:41</span>
+                          <span>5G 86%</span>
+                        </div>
+                        <div className="mt-2 rounded-lg bg-white/80 p-2 shadow-sm">
+                          <div className="text-[9px] font-semibold text-zinc-500">Delivery App</div>
+                          <div className="mt-1 text-[13px] font-bold text-zinc-900">24 Active Orders</div>
+                        </div>
+                        <div className="mt-2 grid grid-cols-4 gap-1.5">
+                          {["🛒","💬","📊","📍","💳","📦","⚙️","🔔"].map((icon, i) => (
+                            <div key={i} className="flex h-7 w-7 items-center justify-center rounded-md bg-white text-[12px] shadow-sm">{icon}</div>
+                          ))}
+                        </div>
+                        <div className="mt-2 grid grid-cols-2 gap-1.5">
+                          <div className="rounded-lg bg-white/85 p-1.5 shadow-sm">
+                            <div className="text-[8px] font-semibold text-zinc-500">Revenue</div>
+                            <div className="text-[10px] font-bold text-zinc-900">$12.8K</div>
+                          </div>
+                          <div className="rounded-lg bg-white/85 p-1.5 shadow-sm">
+                            <div className="text-[8px] font-semibold text-zinc-500">Users</div>
+                            <div className="text-[10px] font-bold text-zinc-900">2,148</div>
+                          </div>
+                        </div>
+                        <div className="mt-2 rounded-lg bg-white/80 p-2 shadow-sm">
+                          <div className="text-[9px] font-semibold text-zinc-500">Sync Status</div>
+                          <div className="mt-1 h-1.5 w-full rounded-full bg-zinc-200">
+                            <div className="h-full w-[78%] rounded-full bg-gradient-to-r from-blue-500 to-emerald-500" />
+                          </div>
+                        </div>
+                        <div className="mt-2 rounded-lg bg-white/85 p-2 shadow-sm">
+                          <div className="text-[9px] font-semibold text-zinc-800">Latest Notification</div>
+                          <div className="text-[8px] font-semibold text-zinc-500">Order #2456 delivered successfully</div>
+                        </div>
+                        <div className="absolute bottom-2 left-1/2 h-1 w-10 -translate-x-1/2 rounded-full bg-zinc-400" />
+                      </div>
+                    </div>
                   </div>
                 </div>
-                {/* Weather Widget */}
-                <div className="mt-2 rounded-xl bg-white/70 backdrop-blur p-2 shadow-sm">
-                  <div className="text-[10px] font-semibold text-zinc-500">Chandigarh</div>
-                  <div className="flex items-center justify-between">
-                    <div className="text-[16px] font-bold text-zinc-900">28°</div>
-                    <div className="text-[10px]">☀️</div>
+
+                <div className="rounded-xl border border-white/10 bg-white/[0.03] p-3 col-span-12 sm:col-span-7">
+                  <div className="flex items-end flex-col justify-between border-b border-white/10 pb-2.5">
+                    <div>
+                      <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-400">Full Mobile Product Lifecycle</div>
+                      <div className="text-[13px] font-extrabold uppercase tracking-[0.08em] text-white">Development + Deployment Flow</div>
+                    </div>
+                    <span className="rounded-full border border-white/15 bg-white/[0.04] px-2 py-1 text-[9px] font-bold uppercase text-zinc-200">Release 2.4</span>
+                  </div>
+
+                  <div className="mt-3 grid grid-cols-2 gap-2 text-[9px] font-semibold uppercase tracking-[0.06em] text-zinc-200 sm:grid-cols-3">
+                    <div className="rounded-md border border-white/15 bg-white/[0.04] px-2.5 py-2 text-center">Discovery</div>
+                    <div className="rounded-md border border-white/15 bg-white/[0.04] px-2.5 py-2 text-center">UI / UX</div>
+                    <div className="rounded-md border border-white/15 bg-white/[0.04] px-2.5 py-2 text-center">App Development</div>
+                    <div className="rounded-md border border-white/15 bg-white/[0.04] px-2.5 py-2 text-center">API Integration</div>
+                    <div className="rounded-md border border-white/15 bg-white/[0.04] px-2.5 py-2 text-center">QA Testing</div>
+                    <div className="rounded-md border border-white/15 bg-white/[0.04] px-2.5 py-2 text-center">Store Launch</div>
+                  </div>
+
+                  <div className="mt-3 rounded-md border border-white/15 bg-white/[0.04] p-2.5">
+                    <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.08em] text-zinc-300">
+                      <span>Deployment Stack</span>
+                      <span className="text-emerald-300">Ready</span>
+                    </div>
+                    <div className="mt-2 grid grid-cols-2 gap-2 text-[10px] font-semibold text-zinc-100">
+                      <div className="rounded border border-white/15 bg-white/[0.03] px-2 py-1.5 text-center">CI / CD</div>
+                      <div className="rounded border border-white/15 bg-white/[0.03] px-2 py-1.5 text-center">Firebase / Push</div>
+                      <div className="rounded border border-white/15 bg-white/[0.03] px-2 py-1.5 text-center">Analytics SDK</div>
+                      <div className="rounded border border-white/15 bg-white/[0.03] px-2 py-1.5 text-center">App Store / Play</div>
+                    </div>
+                  </div>
+
+                  <div className="mt-3 grid grid-cols-2 gap-2">
+                    <div className="rounded-md border border-white/15 bg-white/[0.03] p-2">
+                      <div className="text-[9px] font-bold uppercase text-zinc-400">Crash Free</div>
+                      <div className="mt-1 text-[15px] font-extrabold text-white">99.6%</div>
+                    </div>
+                    <div className="rounded-md border border-white/15 bg-white/[0.03] p-2">
+                      <div className="text-[9px] font-bold uppercase text-zinc-400">Avg Rating</div>
+                      <div className="mt-1 text-[15px] font-extrabold text-white">4.8★</div>
+                    </div>
                   </div>
                 </div>
-                {/* App Grid */}
-                <div className="mt-3 grid grid-cols-4 gap-2">
-                  {["🛒","💬","📊","🎵","📦","💳","📍","⚙️"].map((icon, i) => (
-                    <div key={i} className="flex h-6 w-6 items-center justify-center rounded-sm bg-white shadow text-[12px] md:h-9 md:w-9 md:text-[14px]">{icon}</div>
-                  ))}
-                </div>
-                {/* Activity Widget */}
-                <div className="mt-3 rounded-xl bg-white/70 backdrop-blur p-2 shadow-sm">
-                  <div className="text-[10px] font-semibold text-zinc-500">Daily Activity</div>
-                  <div className="mt-1 h-2 w-full rounded-full bg-zinc-200 overflow-hidden">
-                    <div className="h-full w-[65%] bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full" />
-                  </div>
-                </div>
-                {/* Notification */}
-                <div className="mt-2 rounded-lg bg-white shadow p-2">
-                  <div className="text-[10px] font-semibold text-zinc-800">New Order</div>
-                  <div className="text-[10px] font-semibold text-zinc-500">Order #2456 placed</div>
-                </div>
-                {/* Bottom Bar */}
-                <div className="absolute bottom-2 left-1/2 h-1 w-10 -translate-x-1/2 rounded-full bg-zinc-400" />
               </div>
             </div>
 
-            {/* Development Process */}
-            {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Planning</div> */}
-            <div className="absolute right-0 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">API Integration</div>
-            <div className="absolute bottom-10 right-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Fast MVP Launch</div>
-            <div className="absolute bottom-10 left-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">App Launch</div>
-            <div className="absolute left-0 top-[50px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Scaling & Updates</div>
-            <div className="absolute top-[50px] right-[15px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Push Notifications</div>
-            <div className="absolute bottom-[120px] left-[15px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">App Store Ready</div>
+            <div className="rounded-2xl border border-white/15  bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01)),linear-gradient(135deg,rgba(26,86,219,0.10),rgba(224,32,32,0.10))] p-4 shadow-lg backdrop-blur-sm">
+              <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                <div>
+                  <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-400">How It Works</div>
+                  <div className="text-sm font-extrabold uppercase tracking-[0.08em] text-white">Mobile Runtime Sequence</div>
+                </div>
+                <span className="rounded-full bg-white/10 border border-white/50 px-2.5 py-1 text-[10px] font-bold uppercase text-white">Live Operations</span>
+              </div>
+
+              <div className="mt-3 grid grid-cols-1 gap-2 md:grid-cols-5">
+                <div className="rounded-md border border-white/15 bg-white/[0.03] px-3 py-2 text-center"><div className="text-[10px] font-bold text-white">Install</div></div>
+                <div className="rounded-md border border-white/15 bg-white/[0.03] px-3 py-2 text-center"><div className="text-[10px] font-bold text-white">Onboard</div></div>
+                <div className="rounded-md border border-white/15 bg-white/[0.03] px-3 py-2 text-center"><div className="text-[10px] font-bold text-white">Authenticate</div></div>
+                <div className="rounded-md border border-white/15 bg-white/[0.03] px-3 py-2 text-center"><div className="text-[10px] font-bold text-white">Use Features</div></div>
+                <div className="rounded-md border border-white/15 bg-white/[0.03] px-3 py-2 text-center"><div className="text-[10px] font-bold text-white">Track + Update</div></div>
+              </div>
+            </div>
           </div>
         </div>
     </section>

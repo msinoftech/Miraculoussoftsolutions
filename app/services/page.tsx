@@ -120,26 +120,26 @@ export default function ServicesPage() {
   return (
     <>    
     {/* Hero section */}
-    <section className="relative overflow-hidden bg-white py-16 sm:py-20">
+    <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
       <div className="grid-bg absolute inset-0 opacity-45" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_78%_58%_at_82%_42%,rgba(26,86,219,0.14)_0%,transparent_70%),radial-gradient(ellipse_54%_78%_at_18%_84%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:52px_52px]" />
-      <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-        <div>
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
+      
+      <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-6 px-4 lg:grid-cols-2 z-10">
+        {/* Left Column */}
+        <div className="space-y-5">
           <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
             <span className="h-[2px] w-7 bg-red-600" />
             Services
           </div>
-          <h1 className="font-bebas-neue text-[62px] uppercase leading-[0.9] tracking-[0.02em] text-zinc-950 sm:text-[86px] lg:text-[112px]">
+          <h1 className="font-bebas-neue uppercase leading-[0.84] tracking-wider text-zinc-950 text-[80px] sm:text-[100px] md:text-[140px]">
             <span>BUILD </span>
             <span className="text-red-600">Scale</span>
             <span className="block text-zinc-900">Operate with</span>
             <span className="hero-outline block outline-black"> Clarity</span>
           </h1>
-          <p className="mt-4 max-w-2xl text-[15px] leading-8 text-zinc-600">
-            We design and engineer digital products that combine business strategy, premium experience, and strong technical foundations across SaaS, B2B, eCommerce, ERP, mobile, and growth ecosystems.
-          </p>
-          <div className="mt-7 flex flex-wrap gap-3">
+          <p className="text-[15px] leading-8 text-zinc-500">We design and engineer digital products that combine business strategy, premium experience, and strong technical foundations across SaaS, B2B, eCommerce, ERP, mobile, and growth ecosystems.</p>
+          
+          <div className="flex flex-wrap items-center gap-4">
             <Link href="/contact" className="inline-flex items-center gap-2 rounded-[6px] bg-red-600 px-5 py-3 text-[12px] font-bold uppercase tracking-[0.08em] text-white transition hover:bg-red-700">
               Start Your Project
               <span aria-hidden="true">↗</span>
@@ -150,44 +150,137 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        <div className="relative mx-auto aspect-square w-full max-w-[320px] xl:ml-auto xl:mr-0 xl:max-w-[450px]">
-          <div className="absolute inset-0 rounded-[26px] border border-zinc-200 bg-[linear-gradient(160deg,#ffffff,#f8fafc)] shadow-[0_16px_34px_rgba(20,20,20,0.08)]" />
-          <div className="absolute inset-[10px] rounded-[20px] border border-zinc-200/80 bg-white/90" />
+        {/* Right Column */}
+        <div className="relative w-full space-y-4 max-w-[90%] ml-auto">
 
-          <div className="absolute left-1/2 top-1/2 h-[66%] w-[66%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-zinc-200 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.10),rgba(255,255,255,0.94)_65%)]" />
-          <div className="absolute left-1/2 top-1/2 h-[48%] w-[48%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-zinc-200/90 bg-white" />
-          <div className="absolute left-1/2 top-1/2 h-[30%] w-[30%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-blue-200 bg-[linear-gradient(145deg,#111827,#1f2937)] text-center shadow-[0_16px_28px_rgba(20,20,20,0.18)]">
-            <div className="flex h-full w-full flex-col items-center justify-center">
-              <div className="text-[9px] font-bold uppercase tracking-[0.1em] text-white/70">Core</div>
-              <div className="font-bebas-neue text-[22px] leading-none text-white">SERVICES</div>
+          {/* MAIN SYSTEM CARD */}
+          <div className="relative overflow-hidden rounded-3xl border border-zinc-200 bg-white p-5 shadow-[0_25px_60px_rgba(0,0,0,0.08)]">
+
+            {/* Background Glow */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(99,102,241,0.12),transparent_40%),radial-gradient(circle_at_80%_90%,rgba(16,185,129,0.10),transparent_40%)]" />
+
+            {/* HEADER */}
+            <div className="relative flex items-center justify-between border-b border-zinc-200 pb-4">
+              <div>
+                <p className="text-[10px] uppercase tracking-[0.18em] text-zinc-500 font-semibold">
+                  Service Intelligence System
+                </p>
+                <h3 className="text-[16px] font-extrabold text-zinc-900 tracking-wide">
+                  Unified Digital Product Engine
+                </h3>
+              </div>
+
+              <div className="rounded-full bg-indigo-50 text-indigo-700 text-[10px] px-3 py-1 font-bold border border-indigo-200">
+                6 Modules Active
+              </div>
             </div>
-          </div>
 
-          <div className="absolute left-[7%] top-[16%] rounded-[10px] border border-zinc-200 bg-white px-3 py-2 text-[10px] font-bold uppercase tracking-[0.08em] text-zinc-700 shadow-sm">
-            SaaS
-          </div>
-          <div className="absolute right-[7%] top-[16%] rounded-[10px] border border-zinc-200 bg-white px-3 py-2 text-[10px] font-bold uppercase tracking-[0.08em] text-zinc-700 shadow-sm">
-            B2B
-          </div>
-          <div className="absolute left-[6%] bottom-[16%] rounded-[10px] border border-zinc-200 bg-white px-3 py-2 text-[10px] font-bold uppercase tracking-[0.08em] text-zinc-700 shadow-sm">
-            ERP
-          </div>
-          <div className="absolute right-[6%] bottom-[16%] rounded-[10px] border border-zinc-200 bg-white px-3 py-2 text-[10px] font-bold uppercase tracking-[0.08em] text-zinc-700 shadow-sm">
-            eCom
-          </div>
+            {/* CORE SYSTEM */}
+            <div className="relative mt-6 flex items-center justify-center">
 
-          <div className="absolute left-[50%] top-[26%] h-[11%] w-px -translate-x-1/2 bg-gradient-to-b from-zinc-300 to-transparent" />
-          <div className="absolute left-[24%] top-[50%] h-px w-[13%] -translate-y-1/2 bg-gradient-to-r from-zinc-300 to-transparent" />
-          <div className="absolute right-[24%] top-[50%] h-px w-[13%] -translate-y-1/2 bg-gradient-to-l from-zinc-300 to-transparent" />
-          <div className="absolute left-[50%] bottom-[26%] h-[11%] w-px -translate-x-1/2 bg-gradient-to-t from-zinc-300 to-transparent" />
+              {/* Connection Rings */}
+              <div className="absolute w-[220px] h-[220px] rounded-full border border-dashed border-zinc-300 animate-spin-slow" />
+              <div className="absolute w-[300px] h-[300px] rounded-full border border-zinc-200" />
 
-          <div className="absolute right-[8%] top-[36%] rounded-[12px] border border-zinc-200 bg-white px-3 py-2.5 shadow-sm">
-            <div className="text-[9px] font-bold uppercase tracking-[0.08em] text-zinc-500">Coverage</div>
-            <div className="mt-1 text-[14px] font-extrabold leading-none text-zinc-900">6 Domains</div>
-          </div>
-          <div className="absolute left-[8%] top-[36%] rounded-[12px] border border-zinc-200 bg-white px-3 py-2.5 shadow-sm">
-            <div className="text-[9px] font-bold uppercase tracking-[0.08em] text-zinc-500">Delivery</div>
-            <div className="mt-1 text-[14px] font-extrabold leading-none text-zinc-900">End-to-End</div>
+              {/* CENTER CORE */}
+              <div className="relative z-10 flex h-[90px] w-[90px] items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-600 to-violet-600 text-white shadow-xl">
+                <span className="text-[11px] font-bold text-center leading-tight">
+                  CORE
+                  <br />
+                  ENGINE
+                </span>
+              </div>
+
+              {/* SERVICE NODES */}
+              <div className="absolute grid grid-cols-3 gap-6 w-full max-w-[340px]">
+
+                {[
+                  { name: "SaaS", color: "blue" },
+                  { name: "B2B", color: "violet" },
+                  { name: "ERP", color: "emerald" },
+                  { name: "Ecom", color: "amber" },
+                  { name: "Mobile", color: "cyan" },
+                  { name: "Marketing", color: "rose" },
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className={`group relative flex items-center justify-center rounded-xl border bg-${item.color}-50 border-${item.color}-200 text-${item.color}-900 text-[10px] font-bold h-[48px] transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer`}
+                  >
+                    {item.name}
+
+                    {/* Glow on hover */}
+                    <div className={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition bg-${item.color}-400/10 blur`} />
+                  </div>
+                ))}
+
+              </div>
+            </div>
+
+            {/* PIPELINE FLOW */}
+            <div className="relative mt-8">
+
+              <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-500 mb-3">
+                Execution Pipeline
+              </div>
+
+              <div className="flex items-center justify-between gap-2">
+
+                {["Discovery", "Strategy", "Build", "Scale"].map((step, i) => (
+                  <div key={i} className="flex items-center w-full">
+
+                    <div className="flex-1 text-center rounded-lg border border-zinc-200 bg-white py-2 text-[10px] font-semibold shadow-sm">
+                      {step}
+                    </div>
+
+                    {i !== 3 && (
+                      <div className="w-6 h-[2px] bg-gradient-to-r from-indigo-400 to-emerald-400" />
+                    )}
+
+                  </div>
+                ))}
+
+              </div>
+            </div>
+
+            {/* DEVOPS STACK */}
+            <div className="relative mt-6 rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
+
+              <div className="flex justify-between items-center mb-3">
+                <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-500">
+                  Deployment Infrastructure
+                </p>
+                <span className="text-[9px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">
+                  Live
+                </span>
+              </div>
+
+              <div className="grid grid-cols-3 gap-2 text-[10px] font-semibold">
+
+                {["CI/CD", "Cloud", "Monitoring", "Automation", "Analytics", "Scaling"].map((item, i) => (
+                  <div
+                    key={i}
+                    className="rounded-md bg-white border border-zinc-200 py-1.5 text-center hover:shadow-sm transition"
+                  >
+                    {item}
+                  </div>
+                ))}
+
+              </div>
+            </div>
+
+            {/* FOOTER STATUS */}
+            <div className="mt-5 flex items-center justify-between text-[10px] font-semibold text-zinc-700">
+
+              <div className="flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                System Fully Operational
+              </div>
+
+              <span className="text-[9px] uppercase tracking-wider bg-zinc-100 px-2 py-0.5 rounded border">
+                End-to-End Coverage
+              </span>
+            </div>
+
           </div>
         </div>
       </div>
@@ -267,8 +360,10 @@ export default function ServicesPage() {
       </div>
     </section>
 
-    <section className="overflow-hidden bg-[var(--off)] py-24 lg:py-28">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-0 px-6 lg:grid-cols-2 lg:px-10">
+    <section className="relative overflow-hidden bg-[var(--off)] py-14 sm:py-20">
+      <div className="mx-auto px-4 max-w-7xl">
+        <div className="grid grid-cols-1 gap-0 lg:grid-cols-2">
+          {/* Left Column */}
           <div className="border-b-2 border-[var(--border)] pb-12 lg:border-b-0 lg:border-r-2 lg:pb-0 lg:pr-14">
             <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
               <span className="h-[2px] w-7 bg-red-600" />
@@ -285,7 +380,8 @@ export default function ServicesPage() {
               When the stakes are high and execution matters, growth-stage businesses and enterprise teams choose a partner that can think strategically and build reliably.
             </p>
           </div>
-
+            
+          {/* Right Column */}
           <div className="pt-12 lg:pl-14 lg:pt-0">
             {whyPointsold.map((point, index) => (
               <div key={point.title} className="grid grid-cols-[56px_1fr] gap-5 border-b border-[var(--border)] py-8 last:border-b-0 first:pt-0 last:pb-0">
@@ -298,6 +394,7 @@ export default function ServicesPage() {
                 </div>
               </div>
             ))}
+          </div>
           </div>
         </div>
       </section>

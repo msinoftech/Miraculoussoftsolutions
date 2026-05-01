@@ -124,10 +124,10 @@ const marqueeItems = [
 ];
 
 const metrics = [
-  ["100+", "Digital Marketing Campaigns"],
-  ["99%", "Social Media Management"],
+  ["100+", "Campaigns Built"],
+  ["99%", "Growth Strategies"],
   ["MVP", "Content Creation"],
-  ["Scale", "SEO Optimization"],
+  ["Scale", "Visibility & Rankings"],
 ];
 
 const pills = [
@@ -150,19 +150,19 @@ export default function BrandingAndDigitalGrowthServicesPage() {
     <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
         <div className="grid-bg absolute inset-0 opacity-45" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.16))]" />
-        <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-[1fr_390px] z-10">
+        
+        <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-6 px-4 lg:grid-cols-2 z-10">
           {/* Left Column */}
           <div className="space-y-5">
             <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
                 <span className="h-[2px] w-7 bg-red-600" />Branding and Digital Growth Services
             </div>
-            <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-zinc-950 sm:text-[118px] md:text-[140px] lg:text-[168px]">
+            <h1 className="font-bebas-neue uppercase leading-[0.84] tracking-wider text-zinc-950 text-[80px] sm:text-[100px] md:text-[140px]">
               <span className="block">BRANDING</span>
-              <span className="text-red-600">DIGITAL</span>
+              <span className="block text-red-600">DIGITAL</span>
               <span className="hero-outline outline-black">GROWTH</span>
             </h1>
-            <p className="max-w-xl text-[15px] leading-8 text-zinc-500">We design and develop modern mobile apps with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
+            <p className="text-[15px] leading-8 text-zinc-500">We design and develop modern mobile apps with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
 
             <div className="flex flex-wrap items-center gap-4">
                 <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
@@ -179,76 +179,110 @@ export default function BrandingAndDigitalGrowthServicesPage() {
               {metrics.map(([n, l]) => (
                 <div key={l}>
                   <div className="font-bebas-neue text-3xl leading-none text-zinc-950">{n}</div>
-                  <div className="text-sm font-semibold text-zinc-950">{l}</div>
+                  <div className="text-sm text-zinc-950">{l}</div>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Right Column */}
-          <div className="relative mx-auto aspect-square w-full">
-            {/* <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
-            <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
-            <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" /> */}
+          <div className="relative w-full space-y-4 max-w-[90%] ml-auto">
+            <div className="relative overflow-hidden rounded-2xl bg-white p-4 shadow-lg sm:p-5">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(14,165,233,0.10),transparent_44%),radial-gradient(circle_at_88%_88%,rgba(249,115,22,0.10),transparent_44%)]" />
 
-            <div className="relative top-1/2 left-1/2 max-w-[220px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-2xl bg-white shadow-[0_16px_38px_rgba(15,23,42,0.12)] p-2 md:p-3">
+              <div className="relative">
+                <div className="flex items-center justify-between border-b border-zinc-200 pb-3">
+                  <div>
+                    <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-500">Marketing Command Center</div>
+                    <div className="text-[14px] font-extrabold uppercase tracking-[0.08em] text-zinc-900">Brand to Revenue Funnel</div>
+                  </div>
+                  <span className="rounded-full border border-zinc-200 bg-zinc-50 px-2.5 py-1 text-[9px] font-bold uppercase text-zinc-700">Quarterly Sprint</span>
+                </div>
 
-              {/* Search Bar */}
-              <div className="flex items-center gap-2 rounded-md border border-zinc-200 bg-white px-2 py-1">
-                <span className="text-[10px] text-zinc-500">🔍</span>
-                <span className="text-[10px] text-zinc-600">best digital marketing agency</span>
-              </div>
+                <div className="mt-4 grid gap-4 lg:grid-cols-[0.58fr_0.42fr]">
+                  <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-3">
+                    <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-500">Growth Funnel</div>
+                    <div className="mt-3 space-y-2">
+                      <div className="rounded-lg border border-blue-200 bg-blue-50 px-3 py-2 text-center">
+                        <div className="text-[9px] font-bold uppercase text-blue-700">Awareness</div>
+                        <div className="text-[12px] font-extrabold text-blue-900">2.6M Reach</div>
+                      </div>
+                      <div className="mx-auto w-[88%] rounded-lg border border-violet-200 bg-violet-50 px-3 py-2 text-center">
+                        <div className="text-[9px] font-bold uppercase text-violet-700">Engagement</div>
+                        <div className="text-[12px] font-extrabold text-violet-900">480K Visits</div>
+                      </div>
+                      <div className="mx-auto w-[76%] rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-center">
+                        <div className="text-[9px] font-bold uppercase text-amber-700">Consideration</div>
+                        <div className="text-[12px] font-extrabold text-amber-900">73K Leads</div>
+                      </div>
+                      <div className="mx-auto w-[64%] rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2 text-center">
+                        <div className="text-[9px] font-bold uppercase text-emerald-700">Conversion</div>
+                        <div className="text-[12px] font-extrabold text-emerald-900">8.4K Sales</div>
+                      </div>
+                    </div>
+                  </div>
 
-              {/* Ranking Result */}
-              <div className="mt-2 rounded-lg border border-emerald-200 bg-emerald-50 p-2">
-                <div className="text-[7px] uppercase text-emerald-700">Ranking Position</div>
-                <div className="text-[16px] font-bold text-emerald-700">#1</div>
-                <div className="text-[10px] text-zinc-500">Google SERP</div>
-              </div>
+                  <div className="rounded-xl border border-zinc-200 bg-white p-3">
+                    <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-500">Channel Performance</div>
+                    <div className="mt-3 space-y-2">
+                      {[
+                        ["SEO", "Top 3 Keywords", "1.2K"],
+                        ["Paid Ads", "Cost per Lead", "$6.4"],
+                        ["Social", "Engagement Rate", "9.8%"],
+                        ["Email", "Open Rate", "31.2%"],
+                      ].map(([channel, metric, value]) => (
+                        <div key={channel} className="rounded-md border border-zinc-200 bg-zinc-50 px-3 py-2">
+                          <div className="flex items-center justify-between">
+                            <span className="text-[10px] font-bold uppercase text-zinc-700">{channel}</span>
+                            <span className="text-[11px] font-extrabold text-zinc-900">{value}</span>
+                          </div>
+                          <div className="mt-1 text-[9px] font-semibold text-zinc-500">{metric}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
 
-              {/* Traffic Growth */}
-              <div className="mt-2 rounded-lg border border-zinc-200 bg-white p-2">
-                <div className="mb-1 text-[10px] uppercase text-blue-700">Organic Traffic</div>
-                <div className="flex items-end gap-1">
-                  <span className="h-3 flex-1 rounded-sm bg-blue-200" />
-                  <span className="h-5 flex-1 rounded-sm bg-blue-300" />
-                  <span className="h-7 flex-1 rounded-sm bg-indigo-300" />
-                  <span className="h-9 flex-1 rounded-sm bg-emerald-300" />
+                <div className="mt-4 rounded-xl border border-blue-200 bg-[linear-gradient(120deg,#eff6ff,#f8fafc)] p-3 shadow-[0_12px_28px_rgba(59,130,246,0.14)]">
+                  <div className="flex items-center justify-between">
+                    <div className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.12em] text-blue-800">
+                      <span className="h-2 w-2 rounded-full bg-blue-600 animate-pulse" />
+                      Growth and Branding Deployment
+                    </div>
+                    <span className="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[10px] font-bold uppercase text-emerald-700">Active</span>
+                  </div>
+                  <div className="mt-2 grid grid-cols-2 gap-2 text-[10px] font-semibold text-zinc-800 sm:grid-cols-3 lg:grid-cols-6">
+                    <div className="rounded border border-blue-200 bg-white px-2 py-1.5 text-center text-blue-900">Brand Messaging</div>
+                    <div className="rounded border border-violet-200 bg-white px-2 py-1.5 text-center text-violet-900">Creative Assets</div>
+                    <div className="rounded border border-cyan-200 bg-white px-2 py-1.5 text-center text-cyan-900">SEO Publish</div>
+                    <div className="rounded border border-rose-200 bg-white px-2 py-1.5 text-center text-rose-900">Ad Deployment</div>
+                    <div className="rounded border border-amber-200 bg-white px-2 py-1.5 text-center text-amber-900">Analytics Events</div>
+                    <div className="rounded border border-emerald-200 bg-white px-2 py-1.5 text-center text-emerald-900">A/B Testing</div>
+                  </div>
                 </div>
               </div>
-
-              {/* Keyword Stats */}
-              <div className="mt-2 grid grid-cols-2 gap-2">
-                <div className="rounded-md border border-zinc-200 bg-white p-1.5">
-                  <div className="text-[10px] text-zinc-500">Keywords</div>
-                  <div className="text-[10px] font-bold text-zinc-900">1.2K</div>
-                </div>
-                <div className="rounded-md border border-zinc-200 bg-white p-1.5">
-                  <div className="text-[10px] text-zinc-500">CTR</div>
-                  <div className="text-[10px] font-bold text-zinc-900">18.4%</div>
-                </div>
-              </div>
-
-              {/* SEO Tags */}
-              <div className="mt-2 flex flex-wrap gap-1">
-                <span className="rounded-full bg-blue-50 px-2 py-[2px] text-[10px] text-blue-700">On-Page</span>
-                <span className="rounded-full bg-purple-50 px-2 py-[2px] text-[10px] text-purple-700">Backlinks</span>
-                <span className="rounded-full bg-emerald-50 px-2 py-[2px] text-[10px] text-emerald-700">Technical SEO</span>
-              </div>
-
             </div>
 
-           {/* SEO Process */}
-            <div className="absolute top-6 left-1/2 -translate-x-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Keyword Research</div>
-            <div className="absolute right-0 top-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">On-Page Optimization</div>
-            <div className="absolute bottom-10 right-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Link Building</div>
-            <div className="absolute bottom-10 left-6 rounded-lg bg-white px-3 py-  1 text-xs font-semibold hero-float [animation-delay:0.2s]">Ranking Boost</div>
-            <div className="absolute left-0 top-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Traffic Growth</div>
-            {/* Feature Tags */}
-            <div className="absolute top-[70px] right-[15px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Google Rankings</div>
-            {/* <div className="absolute bottom-[120px] left-[15px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Organic Traffic</div> */}
-            <div className="absolute top-[70px] left-[25px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Technical SEO</div>
-            {/* <div className="absolute bottom-[120px] right-[25px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">High CTR</div> */}
+            <div className="rounded-2xl border border-blue-200 bg-[linear-gradient(120deg,#eff6ff,#f8fafc)] p-4 shadow-[0_12px_28px_rgba(59,130,246,0.14)]">
+              <div className="flex items-center justify-between border-b border-blue-200/70 pb-3">
+                <div>
+                  <div className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.14em] text-blue-800">
+                    <span className="h-2 w-2 rounded-full bg-blue-600 animate-pulse" />
+                    Execution Loop
+                  </div>
+                  <div className="text-sm font-extrabold uppercase tracking-[0.08em] text-zinc-900">Continuous Growth Cycle</div>
+                </div>
+                <span className="rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[10px] font-bold uppercase text-emerald-700">Always On</span>
+              </div>
+              <div className="mt-3 grid grid-cols-2 gap-2 md:grid-cols-6">
+                <div className="rounded-md border border-blue-200 bg-white px-3 py-2 text-center text-[10px] font-bold text-blue-900">Research</div>
+                <div className="rounded-md border border-violet-200 bg-white px-3 py-2 text-center text-[10px] font-bold text-violet-900">Position</div>
+                <div className="rounded-md border border-cyan-200 bg-white px-3 py-2 text-center text-[10px] font-bold text-cyan-900">Create</div>
+                <div className="rounded-md border border-rose-200 bg-white px-3 py-2 text-center text-[10px] font-bold text-rose-900">Launch</div>
+                <div className="rounded-md border border-amber-200 bg-white px-3 py-2 text-center text-[10px] font-bold text-amber-900">Measure</div>
+                <div className="rounded-md border border-emerald-200 bg-white px-3 py-2 text-center text-[10px] font-bold text-emerald-900">Scale</div>
+              </div>
+            </div>
           </div>
         </div>
     </section>

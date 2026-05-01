@@ -119,10 +119,10 @@ const marqueeItems = [
 ];
 
 const metrics = [
-  ["100+", "Product Modules Built"],
-  ["99%", "System Reliability Focus"],
-  ["MVP", "Fast Launch Strategy"],
-  ["Scale", "Growth-Ready Architecture"],
+  ["100+", "Product Modules"],
+  ["99%", "System Reliability"],
+  ["MVP", "Fast Launch"],
+  ["Scale", "Growth-Ready"],
 ];
 
 const chartHeights = ["h-[40%]", "h-[52%]", "h-[60%]", "h-[74%]", "h-[84%]", "h-[92%]"];
@@ -134,19 +134,19 @@ export default function EcommerceSolutionsServicesPage() {
     <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
         <div className="grid-bg absolute inset-0 opacity-45" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.16))]" />
-        <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-[1fr_390px] z-10">
+        
+        <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-6 px-4 lg:grid-cols-2 z-10">
           {/* Left Column */}
           <div className="space-y-5">
             <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
                 <span className="h-[2px] w-7 bg-red-600" />Ecommerce Solutions Services
             </div>
-            <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-zinc-950 sm:text-[118px] md:text-[140px] lg:text-[168px]">
+            <h1 className="font-bebas-neue uppercase leading-[0.84] tracking-wider text-zinc-950 text-[80px] sm:text-[100px] md:text-[140px]">
               <span>BUILD </span>
               <span className="text-red-600">ECOMMERCE</span>
               <span className="hero-outline block outline-black">PLATFORMS</span>
             </h1>
-            <p className="max-w-xl text-[15px] leading-8 text-zinc-500">We design and develop modern ecommerce solutions with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
+            <p className="text-[15px] leading-8 text-zinc-500">We design and develop modern ecommerce solutions with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
 
             <div className="flex flex-wrap items-center gap-4">
                 <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
@@ -163,85 +163,108 @@ export default function EcommerceSolutionsServicesPage() {
               {metrics.map(([n, l]) => (
                 <div key={l}>
                   <div className="font-bebas-neue text-3xl leading-none text-zinc-950">{n}</div>
-                  <div className="text-sm font-semibold text-zinc-950">{l}</div>
+                  <div className="text-sm text-zinc-950">{l}</div>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Right Column */}
-          <div className="relative mx-auto aspect-square w-full">
-
-            {/* Rotating Rings */}
-            {/* <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
-            <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
-            <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" /> */}
-
-            {/* Center Core - Ecommerce Engine */}
-            {/* Center Core - Ecommerce Dashboard Card */}
-            <div className="absolute inset-[80px] flex items-center justify-center">
-              <div className="w-full rounded-xl border border-zinc-200 
-                bg-[linear-gradient(145deg,#ffffff,#f8fafc)] 
-                shadow-[0_20px_42px_rgba(15,23,42,0.14)] p-4">
-
-                {/* Header */}
-                <div className="flex items-center justify-between mb-3">
-                  <div className="text-[10px] font-bold uppercase tracking-[1.5px] text-zinc-500">
-                    Store Dashboard
-                  </div>
-                  <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <div className="relative w-full space-y-4 max-w-[90%] ml-auto">
+            <div className="rounded-2xl bg-white p-4 shadow-lg">
+              <div className="flex items-center justify-between border-b border-zinc-200 pb-3">
+                <div>
+                  <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-500">E-commerce Program Board</div>
+                  <div className="text-[14px] font-extrabold uppercase tracking-[0.08em] text-zinc-900">Development and Deployment Control</div>
                 </div>
+                <span className="rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[9px] font-bold uppercase text-emerald-700">Release Cycle 04</span>
+              </div>
 
-                {/* Revenue */}
-                <div className="mb-3">
-                  <div className="text-[18px] font-bold text-zinc-900">$2,480</div>
-                  <div className="text-[10px] text-zinc-500">Today Revenue</div>
-                </div>
-
-                {/* Mini Stats */}
-                <div className="grid grid-cols-2 gap-2 mb-3">
-                  <div className="rounded-md border border-zinc-200 bg-zinc-50 p-2 text-center">
-                    <div className="text-[12px] font-bold text-zinc-900">124</div>
-                    <div className="text-[9px] text-zinc-500">Orders</div>
-                  </div>
-                  <div className="rounded-md border border-zinc-200 bg-zinc-50 p-2 text-center">
-                    <div className="text-[12px] font-bold text-zinc-900">32</div>
-                    <div className="text-[9px] text-zinc-500">Customers</div>
+              <div className="mt-4 grid gap-4 lg:grid-cols-[0.44fr_0.56fr]">
+                <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-3">
+                  <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-500">Delivery Timeline</div>
+                  <div className="mt-3 space-y-2.5">
+                    {[
+                      ["01", "Discovery and Scope"],
+                      ["02", "UX and Storefront Design"],
+                      ["03", "Commerce Engine Build"],
+                      ["04", "Payments and Shipping Integration"],
+                      ["05", "QA and UAT"],
+                      ["06", "Production Rollout"],
+                    ].map(([id, label]) => (
+                      <div key={id} className="flex items-center gap-2.5">
+                        <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-zinc-300 bg-white text-[10px] font-bold text-zinc-700">{id}</span>
+                        <span className="text-[11px] font-semibold text-zinc-800">{label}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                {/* Progress Bar */}
-                <div className="mb-3">
-                  <div className="mb-1 flex justify-between text-[9px] text-zinc-500">
-                    <span>Conversion</span>
-                    <span>78%</span>
+                <div className="rounded-xl border border-zinc-200 bg-white p-3">
+                  <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-500">Deployment Readiness Matrix</div>
+                  <div className="mt-3 space-y-2">
+                    {[
+                      ["Payments and Fraud", "Passed"],
+                      ["Catalog and Inventory Sync", "Stable"],
+                      ["Order Orchestration", "Passed"],
+                      ["Shipping Carrier APIs", "Stable"],
+                      ["Analytics Tracking", "Passed"],
+                    ].map(([name, state]) => (
+                      <div key={name} className="flex items-center justify-between rounded-md border border-zinc-200 bg-zinc-50 px-3 py-2">
+                        <span className="text-[11px] font-semibold text-zinc-800">{name}</span>
+                        <span className="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[9px] font-bold uppercase text-emerald-700">{state}</span>
+                      </div>
+                    ))}
                   </div>
-                  <div className="h-1.5 w-full overflow-hidden rounded-full bg-zinc-200">
-                    <div className="h-full w-[78%] bg-gradient-to-r from-emerald-400 to-green-500 rounded-full" />
+
+                  <div className="mt-3 grid grid-cols-2 gap-2">
+                    <div className="rounded-md border border-zinc-200 bg-white p-2.5">
+                      <div className="text-[9px] font-bold uppercase tracking-[0.08em] text-zinc-500">Daily GMV</div>
+                      <div className="mt-1 text-base font-extrabold text-zinc-900">$48.2K</div>
+                    </div>
+                    <div className="rounded-md border border-zinc-200 bg-white p-2.5">
+                      <div className="text-[9px] font-bold uppercase tracking-[0.08em] text-zinc-500">Orders / Day</div>
+                      <div className="mt-1 text-base font-extrabold text-zinc-900">1,124</div>
+                    </div>
+                    <div className="rounded-md border border-zinc-200 bg-white p-2.5">
+                      <div className="text-[9px] font-bold uppercase tracking-[0.08em] text-zinc-500">Cart Conversion</div>
+                      <div className="mt-1 text-base font-extrabold text-zinc-900">3.8%</div>
+                    </div>
+                    <div className="rounded-md border border-zinc-200 bg-white p-2.5">
+                      <div className="text-[9px] font-bold uppercase tracking-[0.08em] text-zinc-500">Fulfillment SLA</div>
+                      <div className="mt-1 text-base font-extrabold text-zinc-900">97.4%</div>
+                    </div>
                   </div>
                 </div>
-
-                {/* Bottom Tags */}
-                <div className="flex justify-between text-[9px] text-zinc-500">
-                  <span>Payments</span>
-                  <span>Inventory</span>
-                  <span>Shipping</span>
-                </div>
-
               </div>
             </div>
 
-            {/* Development Process Flow */}
-            <div className="absolute top-6 left-1/2 -translate-x-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Store Planning</div>
-            {/* <div className="absolute right-0 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">UI/UX Design</div> */}
-            <div className="absolute bottom-10 right-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Order Tracking</div>
-            <div className="absolute bottom-10 left-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Product Management</div>
-            <div className="absolute left-0 top-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Growth & Scaling</div>
-            <div className="absolute top-[60px] right-[15px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Payment Gateway</div>
-            {/* <div className="absolute bottom-[120px] left-[15px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Product Management</div> */}
-            <div className="absolute top-[70px] left-[25px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Cart & Checkout</div>
-            {/* <div className="absolute bottom-[120px] right-[25px] rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Order Tracking</div> */}
+            <div className="rounded-2xl bg-white p-4 shadow-lg">
+              <div className="flex items-center justify-between border-b border-zinc-200 pb-3">
+                <div>
+                  <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-500">Execution Rail</div>
+                  <div className="text-[14px] font-extrabold uppercase tracking-[0.08em] text-zinc-900">Customer to Delivery Runtime</div>
+                </div>
+                <span className="rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[10px] font-bold uppercase text-emerald-700">Live Flow</span>
+              </div>
 
+              <div className="mt-4">
+                <div className="relative h-[2px] bg-emerald-200">
+                  <span className="absolute left-[10%] top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-emerald-600" />
+                  <span className="absolute left-[30%] top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-emerald-600" />
+                  <span className="absolute left-[50%] top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-emerald-600" />
+                  <span className="absolute left-[70%] top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-emerald-600" />
+                  <span className="absolute left-[90%] top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-emerald-600" />
+                </div>
+                <div className="mt-3 grid grid-cols-2 gap-2 md:grid-cols-5">
+                  <div className="rounded-md border border-blue-200 bg-blue-50 px-3 py-2 text-center"><div className="text-[10px] font-bold text-blue-900">Browse</div></div>
+                  <div className="rounded-md border border-violet-200 bg-violet-50 px-3 py-2 text-center"><div className="text-[10px] font-bold text-violet-900">Checkout</div></div>
+                  <div className="rounded-md border border-rose-200 bg-rose-50 px-3 py-2 text-center"><div className="text-[10px] font-bold text-rose-900">Payment</div></div>
+                  <div className="rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-center"><div className="text-[10px] font-bold text-amber-900">Fulfillment</div></div>
+                  <div className="rounded-md border border-emerald-200 bg-emerald-50 px-3 py-2 text-center"><div className="text-[10px] font-bold text-emerald-900">Tracking</div></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
     </section>

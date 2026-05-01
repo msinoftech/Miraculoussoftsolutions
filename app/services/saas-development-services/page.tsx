@@ -160,10 +160,10 @@ const marqueeItems = [
 ];
 
 const metrics = [
-  ["100+", "Product Modules Built"],
-  ["99%", "System Reliability Focus"],
-  ["MVP", "Fast Launch Strategy"],
-  ["Scale", "Growth-Ready Architecture"],
+  ["100+", "Product Modules"],
+  ["99%", "System Reliability"],
+  ["MVP", "Fast Launch"],
+  ["Scale", "Growth-Ready"],
 ];
 
 const pills = [
@@ -187,96 +187,132 @@ export default function SaaSDevelopmentPage() {
         <div className="grid-bg absolute inset-0 opacity-5" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
         
-        <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-[1fr_390px] z-10">
+        <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-6 px-4 lg:grid-cols-2 z-10">
           {/* Left Column */}
           <div className="space-y-5">
             <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white">
                 <span className="h-[2px] w-7 bg-red-600" />SaaS Development Services
             </div>
-            <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-white sm:text-[118px] md:text-[140px] lg:text-[168px]">
+            <h1 className="font-bebas-neue uppercase leading-[0.84] tracking-wider text-white text-[80px] sm:text-[100px] md:text-[140px]">
               <span>BUILD </span>
               <span className="text-red-600">SAAS</span>
               <span className="hero-outline block outline-white">PLATFORMS</span>
             </h1>
-            <p className="max-w-xl text-[15px] leading-8 text-white">We design and develop modern SaaS products with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
+            <p className="text-[15px] leading-8 text-white">We design and develop modern SaaS products with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
 
             <div className="flex flex-wrap items-center gap-4">
-                <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                        Start Your Project
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                </Link>
-                <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-white px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-zinc-950 transition">
-                        View Portfolio
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                </Link>
+              <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
+                Start Your Project
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </Link>
+              <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-white px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-zinc-950 transition">
+                View Portfolio
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </Link>
             </div>
 
             <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
               {metrics.map(([n, l]) => (
                 <div key={l}>
                   <div className="font-bebas-neue text-3xl leading-none text-white">{n}</div>
-                  <div className="text-sm font-semibold text-white">{l}</div>
+                  <div className="text-sm text-white">{l}</div>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Right Column */}
-          <div className="relative mx-auto aspect-square w-full max-w-[320px] xl:ml-auto xl:mr-0 xl:max-w-[460px]">
-            {/* Rings */}
-            {/* <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
-            <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
-            <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" /> */}
+          <div className="relative w-full space-y-4 max-w-[90%] ml-auto">
+            <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01)),linear-gradient(135deg,rgba(26,86,219,0.10),rgba(224,32,32,0.10))] p-4 shadow-[0_20px_46px_rgba(2,6,23,0.45)]">
 
-            {/* <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-indigo-500/20 to-red-500/20 blur-2xl"></div> */}
-
-            {/* Center Core */}
-            <div className="absolute inset-[95px] h-fit rounded-2xl border border-zinc-200 bg-[linear-gradient(165deg,#ffffff,#f8fafc)] p-4 shadow-[0_16px_38px_rgba(15,23,42,0.12)]">
-              <div className="absolute inset-0 rounded-2xl bg-[radial-gradient(circle_at_18%_12%,rgba(59,130,246,0.12),transparent_55%)]" />
-              <div className="relative flex flex-col justify-between">
-                <div className="flex items-center justify-between border-b border-zinc-200 pb-2">
+              <div className="relative">
+                <div className="flex items-center justify-between border-b border-white/10 pb-3">
                   <div>
-                    <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-500">Core Module</div>
-                    <div className="text-[13px] font-extrabold uppercase tracking-[0.08em] text-zinc-900">SaaS Engine</div>
+                    <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-cyan-200/80">SaaS Growth Engine</div>
+                    <div className="text-[15px] font-extrabold uppercase tracking-[0.06em] text-white">Creative Product Command Layer</div>
                   </div>
-                  <div className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-blue-200 bg-blue-50 text-sm text-blue-700">
-                    ⚙
-                  </div>
+                  <span className="rounded-full border border-cyan-300/30 bg-cyan-400/10 px-2.5 py-1 text-[9px] font-bold uppercase text-cyan-100">Live Build Cycle</span>
                 </div>
 
-                <div className="mt-3 grid grid-cols-2 gap-2">
-                  <div className="rounded-md border border-zinc-200 bg-white px-2.5 py-2">
-                    <div className="text-[9px] uppercase tracking-[0.12em] text-zinc-500">Runtime</div>
-                    <div className="mt-1 text-[11px] font-bold text-zinc-900">Distributed</div>
-                  </div>
-                  <div className="rounded-md border border-zinc-200 bg-white px-2.5 py-2">
-                    <div className="text-[9px] uppercase tracking-[0.12em] text-zinc-500">Region</div>
-                    <div className="mt-1 text-[11px] font-bold text-zinc-900">Multi-Geo</div>
-                  </div>
-                </div>
+                <div className="mt-4 grid gap-4 lg:grid-cols-[0.48fr_0.52fr]">
+                  <div className="rounded-xl border border-white/10 bg-white/[0.04] p-3">
+                    <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-300">Orbit Stages</div>
+                    <div className="mt-3 grid grid-cols-2 gap-2 text-[10px] font-semibold uppercase tracking-[0.06em]">
+                      <div className="rounded-md border border-cyan-300/30 bg-cyan-400/10 px-2 py-2 text-cyan-100">Architecture</div>
+                      <div className="rounded-md border border-blue-300/30 bg-blue-400/10 px-2 py-2 text-blue-100">UX / UI</div>
+                      <div className="rounded-md border border-violet-300/30 bg-violet-400/10 px-2 py-2 text-violet-100">Development</div>
+                      <div className="rounded-md border border-amber-300/30 bg-amber-400/10 px-2 py-2 text-amber-100">QA Testing</div>
+                      <div className="col-span-2 rounded-md border border-emerald-300/30 bg-emerald-400/10 px-2 py-2 text-center text-emerald-100">Launch</div>
+                    </div>
 
-                <div className="mt-3 flex items-center justify-between rounded-md border border-emerald-200 bg-emerald-50 px-2.5 py-2 text-[10px] font-semibold text-emerald-700">
-                  <span className="inline-flex items-center gap-2">
-                    <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                    System Active
-                  </span>
-                  <span>99.99%</span>
-                </div>
+                    <div className="mt-3 rounded-md border border-white/10 bg-black/20 p-2.5">
+                      <div className="mb-2 flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.08em] text-zinc-300">
+                        <span>Delivery Momentum</span>
+                        <span className="text-cyan-200">84%</span>
+                      </div>
+                      <div className="h-1.5 overflow-hidden rounded-full bg-zinc-700/80">
+                        <div className="h-full w-[84%] rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
+                      </div>
+                    </div>
+                  </div>
 
-                <div className="mt-3 flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.1em] text-zinc-700">
-                  <span className="rounded border border-zinc-200 bg-zinc-100 px-2 py-1">API Live</span>
-                  <span className="rounded border border-zinc-200 bg-zinc-100 px-2 py-1">DB Synced</span>
-                  <span className="rounded border border-zinc-200 bg-zinc-100 px-2 py-1">Auth Secure</span>
+                  <div className="rounded-xl border border-white/10 bg-white/[0.03] p-3">
+                    <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-300">Deployment Grid</div>
+                    <div className="mt-3 grid grid-cols-2 gap-2">
+                      <div className="rounded-md border border-white/15 bg-white/[0.04] px-2.5 py-2">
+                        <div className="text-[9px] font-bold uppercase text-zinc-400">CI/CD</div>
+                        <div className="mt-1 text-[11px] font-semibold text-white">Pipelines Green</div>
+                      </div>
+                      <div className="rounded-md border border-white/15 bg-white/[0.04] px-2.5 py-2">
+                        <div className="text-[9px] font-bold uppercase text-zinc-400">Containers</div>
+                        <div className="mt-1 text-[11px] font-semibold text-white">Auto Scaled</div>
+                      </div>
+                      <div className="rounded-md border border-white/15 bg-white/[0.04] px-2.5 py-2">
+                        <div className="text-[9px] font-bold uppercase text-zinc-400">Cloud Regions</div>
+                        <div className="mt-1 text-[11px] font-semibold text-white">Multi-Geo</div>
+                      </div>
+                      <div className="rounded-md border border-white/15 bg-white/[0.04] px-2.5 py-2">
+                        <div className="text-[9px] font-bold uppercase text-zinc-400">Monitoring</div>
+                        <div className="mt-1 text-[11px] font-semibold text-white">Realtime Live</div>
+                      </div>
+                    </div>
+
+                    <div className="mt-3 flex items-center justify-between rounded-md border border-emerald-300/30 bg-emerald-500/10 px-3 py-2 text-[10px] font-semibold text-emerald-100">
+                      <span className="inline-flex items-center gap-2">
+                        <span className="h-2 w-2 rounded-full bg-emerald-300 animate-pulse" />
+                        End-to-End SaaS System Active
+                      </span>
+                      <span>99.99% Uptime</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Development Process Nodes */}
-            <div className="absolute top-14 left-1/2 -translate-x-1/2 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.2s]">Planning</div>
-            <div className="absolute right-0 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.3s]">Analytics Dashboard</div>
-            <div className="absolute bottom-10 right-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.4s]">Subscription Billing</div>
-            <div className="absolute bottom-10 left-6 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.5s]">Multi-Tenant System</div>
-            <div className="absolute left-0 top-1/3 rounded-lg bg-white px-3 py-1 text-xs font-semibold hero-float [animation-delay:0.6s]">API Integrations</div>
+            <div className="rounded-2xl border border-white/15 bg-zinc-900/65 p-4 shadow-lg backdrop-blur-sm">
+              <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                <div>
+                  <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-400">Runtime Stream</div>
+                  <div className="text-sm font-extrabold uppercase tracking-[0.08em] text-white">SaaS Event Flow</div>
+                </div>
+                <span className="rounded-full border border-blue-300/30 bg-blue-400/10 px-2.5 py-1 text-[10px] font-bold uppercase text-blue-100">Live Pipeline</span>
+              </div>
+
+              <div className="mt-4">
+                <div className="relative h-[2px] bg-zinc-700">
+                  <span className="absolute left-[8%] top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-cyan-400" />
+                  <span className="absolute left-[35%] top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-blue-400" />
+                  <span className="absolute left-[62%] top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-violet-400" />
+                  <span className="absolute left-[90%] top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-emerald-400" />
+                </div>
+                <div className="mt-3 grid grid-cols-2 gap-2 md:grid-cols-4">
+                  <div className="rounded-md border border-white/15 bg-white/[0.03] px-3 py-2 text-center text-[10px] font-bold text-cyan-100">Input</div>
+                  <div className="rounded-md border border-white/15 bg-white/[0.03] px-3 py-2 text-center text-[10px] font-bold text-blue-100">Validate</div>
+                  <div className="rounded-md border border-white/15 bg-white/[0.03] px-3 py-2 text-center text-[10px] font-bold text-violet-100">Process</div>
+                  <div className="rounded-md border border-white/15 bg-white/[0.03] px-3 py-2 text-center text-[10px] font-bold text-emerald-100">Deliver</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
     </section>

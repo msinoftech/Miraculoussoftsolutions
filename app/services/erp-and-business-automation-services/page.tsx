@@ -119,10 +119,10 @@ const marqueeItems = [
 ];
 
 const metrics = [
-  ["100+", "Product Modules Built"],
-  ["99%", "System Reliability Focus"],
-  ["MVP", "Fast Launch Strategy"],
-  ["Scale", "Growth-Ready Architecture"],
+  ["100+", "Product Modules"],
+  ["99%", "System Reliability"],
+  ["MVP", "Fast Launch"],
+  ["Scale", "Growth-Ready"],
 ];
 
 const pills = [
@@ -146,18 +146,18 @@ export default function ErpAndBusinessAutomationServicesPage() {
         <div className="grid-bg absolute inset-0 opacity-5" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
         
-        <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-[1fr_390px] z-10">
+        <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-6 px-4 lg:grid-cols-2 z-10">
             {/* Left Column */}
             <div className="space-y-5">
                 <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white">
                     <span className="h-[2px] w-7 bg-red-600" />ERP and Business Automation Services
                 </div>
-                <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-white sm:text-[118px] md:text-[140px] lg:text-[168px]">
+                <h1 className="font-bebas-neue uppercase leading-[0.84] tracking-wider text-white text-[80px] sm:text-[100px] md:text-[140px]">
                 <span>ERP And</span>
                 <span className="block text-red-600">Business</span>
                 <span className="hero-outline block outline-white">Automation</span>
                 </h1>
-                <p className="max-w-xl text-[15px] leading-8 text-white">We design and develop modern ERP and business automation systems with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
+                <p className="text-[15px] leading-8 text-white">We design and develop modern ERP and business automation systems with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
 
                 <div className="flex flex-wrap items-center gap-4">
                     <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
@@ -174,90 +174,133 @@ export default function ErpAndBusinessAutomationServicesPage() {
                 {metrics.map(([n, l]) => (
                     <div key={l}>
                     <div className="font-bebas-neue text-3xl leading-none text-white">{n}</div>
-                    <div className="text-sm font-semibold text-white">{l}</div>
+                    <div className="text-sm text-white">{l}</div>
                     </div>
                 ))}
                 </div>
             </div>
 
           {/* Right Column - ERP System Visualization */}
-            <div className="relative mx-auto aspect-square w-full">
-                {/* <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
-                <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
-                <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" /> */}
+            <div className="relative w-full space-y-4 max-w-[90%] ml-auto">
+                <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[linear-gradient(145deg,#0b1220,#111827)] p-4 shadow-[0_20px_45px_rgba(2,6,23,0.45)]">
+                    <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-emerald-500" />
+                    <div className="relative">
+                        <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                            <div>
+                                <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-400">ERP Control Tower</div>
+                                <div className="text-[14px] font-extrabold uppercase tracking-[0.08em] text-white">Build Program + Deployment Readiness</div>
+                            </div>
+                            <span className="rounded-full border border-emerald-400/35 bg-emerald-400/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.1em] text-emerald-200">
+                                Live Program
+                            </span>
+                        </div>
 
-                {/* Glow Background */}
-                {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15),transparent_70%)] blur-2xl" /> */}
+                        <div className="mt-4 grid gap-3 lg:grid-cols-[0.95fr_1.05fr]">
+                            <div className="rounded-xl border border-white/10 bg-white/[0.04] p-3">
+                                <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-300">Implementation Timeline</div>
+                                <div className="mt-3 space-y-2">
+                                    {[
+                                        "Discovery & Requirement Audit",
+                                        "Process Blueprinting",
+                                        "Module Engineering",
+                                        "Integration & Data Migration",
+                                        "UAT + Compliance",
+                                        "Production Go-Live",
+                                    ].map((step, idx) => (
+                                        <div key={step} className="flex items-center gap-2 rounded-md border border-white/15 bg-white/[0.03] px-2.5 py-2">
+                                            <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-zinc-200 text-[10px] font-bold text-zinc-900">
+                                                {idx + 1}
+                                            </span>
+                                            <span className="text-[11px] font-semibold text-zinc-100">{step}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
 
-                {/* Central Core Dashboard */}
-                <div className="absolute left-1/2 top-1/2 z-20 w-[236px] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-zinc-200 bg-[linear-gradient(155deg,#ffffff,#f8fafc,#f1f5f9)] p-4 shadow-[0_20px_48px_rgba(15,23,42,0.16)]">
-                    <div className="flex items-start justify-between">
-                        <div>
-                            <div className="text-[11px] uppercase tracking-[0.16em] text-zinc-500">ERP Core</div>
-                            <div className="mt-1 text-xl font-bold text-zinc-900">Dashboard</div>
-                        </div>
-                        <div className="rounded-full border border-emerald-200 bg-emerald-50 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-emerald-700">
-                            Live
-                        </div>
-                    </div>
+                            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-3">
+                                <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-300">Core ERP Modules</div>
+                                <div className="mt-3 grid grid-cols-2 gap-2">
+                                    <div className="rounded-md border border-blue-400/30 bg-blue-500/10 px-3 py-2">
+                                        <div className="text-[9px] font-bold uppercase tracking-[0.1em] text-blue-200">HR</div>
+                                        <div className="mt-1 text-[11px] font-semibold text-zinc-100">People & Payroll</div>
+                                    </div>
+                                    <div className="rounded-md border border-violet-400/30 bg-violet-500/10 px-3 py-2">
+                                        <div className="text-[9px] font-bold uppercase tracking-[0.1em] text-violet-200">Finance</div>
+                                        <div className="mt-1 text-[11px] font-semibold text-zinc-100">GL + AP/AR</div>
+                                    </div>
+                                    <div className="rounded-md border border-amber-400/30 bg-amber-500/10 px-3 py-2">
+                                        <div className="text-[9px] font-bold uppercase tracking-[0.1em] text-amber-200">CRM</div>
+                                        <div className="mt-1 text-[11px] font-semibold text-zinc-100">Sales Pipeline</div>
+                                    </div>
+                                    <div className="rounded-md border border-emerald-400/30 bg-emerald-500/10 px-3 py-2">
+                                        <div className="text-[9px] font-bold uppercase tracking-[0.1em] text-emerald-200">Inventory</div>
+                                        <div className="mt-1 text-[11px] font-semibold text-zinc-100">Stock & Fulfillment</div>
+                                    </div>
+                                </div>
 
-                    <div className="mt-3 rounded-lg border border-zinc-200 bg-white p-2.5">
-                        <div className="mb-2 flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.08em] text-zinc-500">
-                            <span>Process Health</span>
-                            <span className="text-blue-600">89%</span>
+                                <div className="mt-3 rounded-md border border-white/15 bg-white/[0.03] p-2.5">
+                                    <div className="mb-2 flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.08em] text-zinc-300">
+                                        <span>Deployment Readiness</span>
+                                        <span className="text-blue-300">92%</span>
+                                    </div>
+                                    <div className="h-2 overflow-hidden rounded-full bg-zinc-700">
+                                        <div className="h-full w-[92%] rounded-full bg-gradient-to-r from-blue-500 via-indigo-500 to-emerald-500" />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div className="flex h-14 items-end gap-1.5">
-                            <span className="h-4 flex-1 rounded-sm bg-blue-200" />
-                            <span className="h-6 flex-1 rounded-sm bg-blue-300" />
-                            <span className="h-8 flex-1 rounded-sm bg-indigo-300" />
-                            <span className="h-10 flex-1 rounded-sm bg-violet-300" />
-                            <span className="h-12 flex-1 rounded-sm bg-rose-300" />
-                        </div>
-                    </div>
 
-                    <div className="mt-3 grid grid-cols-2 gap-2">
-                        <div className="rounded-md border border-zinc-200 bg-white p-2">
-                            <div className="text-[9px] font-bold uppercase tracking-[0.08em] text-zinc-500">Approvals</div>
-                            <div className="mt-1 text-base font-extrabold text-zinc-900">1,248</div>
-                        </div>
-                        <div className="rounded-md border border-zinc-200 bg-white p-2">
-                            <div className="text-[9px] font-bold uppercase tracking-[0.08em] text-zinc-500">SLA Met</div>
-                            <div className="mt-1 text-base font-extrabold text-zinc-900">96.8%</div>
+                        <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                            <div className="rounded-md border border-white/15 bg-white/[0.03] p-2">
+                                <div className="text-[9px] font-bold uppercase tracking-[0.08em] text-zinc-400">Approvals</div>
+                                <div className="mt-1 text-base font-extrabold text-white">1,248</div>
+                            </div>
+                            <div className="rounded-md border border-white/15 bg-white/[0.03] p-2">
+                                <div className="text-[9px] font-bold uppercase tracking-[0.08em] text-zinc-400">Data Sync</div>
+                                <div className="mt-1 text-base font-extrabold text-white">99.2%</div>
+                            </div>
+                            <div className="rounded-md border border-white/15 bg-white/[0.03] p-2">
+                                <div className="text-[9px] font-bold uppercase tracking-[0.08em] text-zinc-400">Active Users</div>
+                                <div className="mt-1 text-base font-extrabold text-white">8.4K</div>
+                            </div>
+                            <div className="rounded-md border border-white/15 bg-white/[0.03] p-2">
+                                <div className="text-[9px] font-bold uppercase tracking-[0.08em] text-zinc-400">Automation Runs</div>
+                                <div className="mt-1 text-base font-extrabold text-white">42K</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                {/* Module Cards */}
-                {[
-                { title: "HR", pos: "-top-10 left-0", icon: "H", tone: "from-blue-500 to-cyan-500", meta: "People Ops" },
-                { title: "CRM", pos: "-top-10 right-0", icon: "C", tone: "from-rose-500 to-orange-500", meta: "Client Graph" },
-                { title: "Finance", pos: "-bottom-10 left-0", icon: "F", tone: "from-violet-500 to-indigo-500", meta: "Cash Flow" },
-                { title: "Inventory", pos: "-bottom-10 right-0", icon: "I", tone: "from-emerald-500 to-teal-500", meta: "Stock Grid" },
-                ].map((item, i) => (
-                <div key={i} className={`absolute ${item.pos} hero-float w-[130px] overflow-hidden rounded-2xl border border-zinc-200/90 bg-[linear-gradient(165deg,#ffffff,#f8fafc)] p-3 shadow-[0_16px_36px_rgba(15,23,42,0.16)]`}>
-                    <div className={`absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r ${item.tone}`} />
-                    <div className="flex items-start justify-between">
+                <div className="rounded-2xl border border-white/15 bg-zinc-900/60 p-4 shadow-lg backdrop-blur-sm">
+                    <div className="flex items-center justify-between border-b border-white/10 pb-3">
                         <div>
-                            <div className="text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-500">Module</div>
-                            <div className="mt-0.5 text-[16px] font-extrabold leading-none text-zinc-900">{item.title}</div>
+                            <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-400">Runtime Orchestration</div>
+                            <div className="text-sm font-extrabold uppercase tracking-[0.08em] text-white">How ERP Runs Daily Operations</div>
                         </div>
-                        <div className={`inline-flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br ${item.tone} text-[11px] font-extrabold text-white shadow-sm`}>
-                            {item.icon}
-                        </div>
+                        <span className="rounded-full border border-indigo-400/35 bg-indigo-500/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.1em] text-indigo-200">
+                            Workflow Engine
+                        </span>
                     </div>
 
-                    <div className="mt-3 rounded-lg border border-zinc-200 bg-white px-2.5 py-2">
-                        <div className="flex items-center justify-between text-[9px] font-semibold uppercase tracking-[0.1em] text-zinc-500">
-                            <span>{item.meta}</span>
+                    <div className="mt-3 grid grid-cols-1 gap-2 md:grid-cols-4">
+                        <div className="rounded-md border border-white/15 bg-white/[0.03] px-3 py-2">
+                            <div className="text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-400">Input</div>
+                            <div className="mt-1 text-[11px] font-semibold text-zinc-100">Department Request</div>
                         </div>
-                        <div className="mt-2 grid grid-cols-3 gap-1.5">
-                            <span className="h-1.5 rounded-full bg-zinc-200" />
-                            <span className={`h-1.5 rounded-full bg-gradient-to-r ${item.tone}`} />
-                            <span className="h-1.5 rounded-full bg-zinc-200" />
+                        <div className="rounded-md border border-white/15 bg-white/[0.03] px-3 py-2">
+                            <div className="text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-400">Validation</div>
+                            <div className="mt-1 text-[11px] font-semibold text-zinc-100">Policy + SLA Rules</div>
+                        </div>
+                        <div className="rounded-md border border-white/15 bg-white/[0.03] px-3 py-2">
+                            <div className="text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-400">Execution</div>
+                            <div className="mt-1 text-[11px] font-semibold text-zinc-100">Cross-Module Automation</div>
+                        </div>
+                        <div className="rounded-md border border-white/15 bg-white/[0.03] px-3 py-2">
+                            <div className="text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-400">Output</div>
+                            <div className="mt-1 text-[11px] font-semibold text-zinc-100">Reports + Alerts + Audit</div>
                         </div>
                     </div>
                 </div>
-                ))}
             </div>
         </div>
     </section>

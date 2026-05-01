@@ -193,6 +193,10 @@ export default function Navbar() {
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                         <div className="hover:text-red-600">Healthcare</div>
                       </Link>
+                      <Link href="/industries/education" className="group rounded-xl flex items-center gap-2 py-2 transition">
+                        <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
+                        <div className="hover:text-red-600">Education</div>
+                      </Link>
                       <Link href="/industries/logistics" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                         <div className="hover:text-red-600">Logistics</div>
@@ -205,13 +209,17 @@ export default function Navbar() {
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                         <div className="hover:text-red-600">Retail</div>
                       </Link>
-                      <Link href="/industries/education" className="group rounded-xl flex items-center gap-2 py-2 transition">
-                        <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="hover:text-red-600">Education</div>
-                      </Link>
                       <Link href="/industries/enterprise" className="group rounded-xl flex items-center gap-2 py-2 transition">
                         <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                         <div className="hover:text-red-600">Enterprise</div>
+                      </Link>
+                      <Link href="/industries/real-estate" className="group rounded-xl flex items-center gap-2 py-2 transition">
+                        <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
+                        <div className="hover:text-red-600">Real Estate</div>
+                      </Link>
+                      <Link href="/industries/professional-industries" className="group rounded-xl flex items-center gap-2 py-2 transition">
+                        <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
+                        <div className="hover:text-red-600">Professional Industries</div>
                       </Link>
                     </div>
                   </div>
