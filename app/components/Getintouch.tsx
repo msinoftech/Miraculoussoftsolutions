@@ -6,7 +6,10 @@ export default function Getintouch() {
       <div className="max-w-7xl mx-auto bg-[#0b0b0d] rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2">
         {/* LEFT CONTENT */}
         <div className="p-10 flex flex-col justify-center">
-            <div className="mb-5 text-xs font-bold uppercase tracking-[0.16em] text-white/30">Start a Conversation</div>
+            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
+                <span className="h-[2px] w-7 bg-red-600" />
+                Start a Conversation
+            </div>
             <h2 className="text-[28px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">
               Let’s Build
               <br />

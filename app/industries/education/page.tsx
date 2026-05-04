@@ -1,92 +1,83 @@
 "use client";
 import Link from "next/link";
-import React, { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import Marquee from "@/app/components/Marquee";
+import BoxCard from "@/app/components/BoxCard";
+import CtaStrip from "@/app/components/CtaStrip";
+import Process from "@/app/components/Process";
 
-type IconName =
-  | "arrow"
-  | "book"
-  | "brain"
-  | "check"
-  | "chevron"
-  | "cloud"
-  | "graduation"
-  | "layers"
-  | "chart"
-  | "lock"
-  | "device"
-  | "play"
-  | "rocket"
-  | "school"
-  | "shield"
-  | "sparkles"
-  | "users"
-  | "video"
-  | "workflow"
-  | "zap"
-  | "calendar"
-  | "message"
-  | "payment"
-  | "database"
-  | "ai"
-  | "mobile"
-  | "automation"
-  | "globe";
+const marqueeItems = [
+  "Learning Management Systems (LMS)",
+  "E-Learning Platforms",
+  "Student Information Systems (SIS)",
+  "Online Course Development",
+  "Virtual Classrooms & Live Teaching",
+  "Education Data Security",
+  "Assessment & Examination Systems",
+  "Student Performance Analytics",
+  "Academic Workflow Automation",
+];
 
-type IconProps = { name: IconName; className?: string };
-
-function Icon({ name, className = "h-5 w-5" }: IconProps) {
-  const common = {
-    className,
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: 2,
-    strokeLinecap: "round" as const,
-    strokeLinejoin: "round" as const,
-    "aria-hidden": true,
-  };
-
-  const icons: Record<IconName, React.ReactNode> = {
-    arrow: <svg {...common}><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg>,
-    book: <svg {...common}><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z" /></svg>,
-    brain: <svg {...common}><path d="M8 6a3 3 0 0 1 6 0" /><path d="M14 6a3 3 0 0 1 4 4" /><path d="M18 10a3 3 0 0 1-1 5.8" /><path d="M8 6a3 3 0 0 0-4 4" /><path d="M4 10a3 3 0 0 0 1 5.8" /><path d="M12 6v10" /></svg>,
-    check: <svg {...common}><path d="M20 6 9 17l-5-5" /></svg>,
-    chevron: <svg {...common}><path d="m9 18 6-6-6-6" /></svg>,
-    cloud: <svg {...common}><path d="M17.5 19H7a4 4 0 1 1 .7-7.9A5.5 5.5 0 0 1 18 9.5 4.75 4.75 0 0 1 17.5 19z" /></svg>,
-    graduation: <svg {...common}><path d="m22 10-10-5-10 5 10 5 10-5z" /><path d="M6 12v5c3 2 9 2 12 0v-5" /><path d="M22 10v6" /></svg>,
-    layers: <svg {...common}><path d="m12 2 9 5-9 5-9-5 9-5z" /><path d="m3 12 9 5 9-5" /><path d="m3 17 9 5 9-5" /></svg>,
-    chart: <svg {...common}><path d="M4 19V5" /><path d="M4 19h16" /><path d="m7 15 4-4 3 3 5-7" /></svg>,
-    lock: <svg {...common}><rect x="4" y="10" width="16" height="11" rx="2" /><path d="M8 10V7a4 4 0 0 1 8 0v3" /></svg>,
-    device: <svg {...common}><rect x="3" y="4" width="14" height="10" rx="2" /><rect x="17" y="10" width="4" height="10" rx="1" /><path d="M8 20h5" /><path d="M10.5 14v6" /></svg>,
-    play: <svg {...common}><circle cx="12" cy="12" r="10" /><path d="m10 8 6 4-6 4V8z" /></svg>,
-    rocket: <svg {...common}><path d="M5 15c-1 1.5-1.5 3.5-1 5 1.5.5 3.5 0 5-1" /><path d="M15 9 9 15" /><path d="M14 4c3-2 6-1 6-1s1 3-1 6c-2 3-5 5-8 6l-2-2c1-3 3-6 5-9z" /><circle cx="15" cy="9" r="1" /></svg>,
-    school: <svg {...common}><path d="M3 21h18" /><path d="M5 21V9l7-5 7 5v12" /><path d="M9 21v-6h6v6" /><path d="M9 10h.01" /><path d="M15 10h.01" /></svg>,
-    shield: <svg {...common}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 12 2 2 4-5" /></svg>,
-    sparkles: <svg {...common}><path d="M12 3 9.5 9.5 3 12l6.5 2.5L12 21l2.5-6.5L21 12l-6.5-2.5L12 3z" /><path d="M5 3v4" /><path d="M3 5h4" /></svg>,
-    users: <svg {...common}><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>,
-    video: <svg {...common}><rect x="3" y="6" width="13" height="12" rx="2" /><path d="m16 10 5-3v10l-5-3" /></svg>,
-    workflow: <svg {...common}><rect x="3" y="4" width="6" height="6" rx="1" /><rect x="15" y="4" width="6" height="6" rx="1" /><rect x="9" y="14" width="6" height="6" rx="1" /><path d="M9 7h6" /><path d="M12 10v4" /></svg>,
-    zap: <svg {...common}><path d="M13 2 3 14h8l-1 8 11-14h-8l1-6z" /></svg>,
-    calendar: <svg {...common}><rect x="3" y="4" width="18" height="17" rx="2" /><path d="M8 2v4" /><path d="M16 2v4" /><path d="M3 10h18" /></svg>,
-    message: <svg {...common}><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" /></svg>,
-    payment: <svg {...common}><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 10h18" /><path d="M7 15h4" /></svg>,
-    database: <svg {...common}><ellipse cx="12" cy="5" rx="8" ry="3" /><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5" /><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" /></svg>,
-    ai: <svg {...common}><path d="M12 2v4" /><path d="M12 18v4" /><path d="M4.93 4.93 7.76 7.76" /><path d="m16.24 16.24 2.83 2.83" /><path d="M2 12h4" /><path d="M18 12h4" /><path d="m4.93 19.07 2.83-2.83" /><path d="m16.24 7.76 2.83-2.83" /><circle cx="12" cy="12" r="4" /></svg>,
-    mobile: <svg {...common}><rect x="7" y="2" width="10" height="20" rx="2" /><path d="M11 18h2" /></svg>,
-    automation: <svg {...common}><path d="M4 12a8 8 0 0 1 13.6-5.7" /><path d="M18 3v5h-5" /><path d="M20 12a8 8 0 0 1-13.6 5.7" /><path d="M6 21v-5h5" /></svg>,
-    globe: <svg {...common}><circle cx="12" cy="12" r="10" /><path d="M2 12h20" /><path d="M12 2a15.3 15.3 0 0 1 0 20" /><path d="M12 2a15.3 15.3 0 0 0 0 20" /></svg>,
-  };
-
-  return icons[name];
-}
+const whyPoints = [
+  {
+    number: "01",
+    title: "AI-ready learning intelligence",
+    description: "Add recommendations, student risk alerts, progress predictions, and adaptive learning journeys when your data matures.",
+  },
+  {
+    number: "02",
+    title: "Workflow automation",
+    description: "Automate admissions follow-ups, attendance alerts, fee reminders, certificates, approvals, and admin notifications.",
+  },
+  {
+    number: "03",
+    title: "Mobile-first experience",
+    description: "Deliver smooth portals for students, parents, teachers, and management across every screen size.",
+  },
+  {
+    number: "04",
+    title: "Multi-branch ready",
+    description: "Support multiple campuses, departments, roles, academic years, brands, permissions, and analytics layers.",
+  },
+];
 
 const solutions = [
-  { icon: "school" as const, title: "Smart Campus Portal", text: "Admissions, departments, students, notices, events, staff workflows, and academic operations in one connected portal.", metric: "01" },
-  { icon: "device" as const, title: "Custom LMS Platform", text: "Course builder, lessons, tests, assignments, certificates, student progress, and modern learning journeys.", metric: "02" },
-  { icon: "users" as const, title: "Parent & Student Apps", text: "Attendance, homework, results, communication, fee reminders, and real-time academic updates on mobile.", metric: "03" },
-  { icon: "chart" as const, title: "Academic Intelligence", text: "Executive dashboards for performance, attendance, admissions, fees, learning gaps, and institution-wide trends.", metric: "04" },
-  { icon: "video" as const, title: "Virtual Classroom Suite", text: "Live classes, video resources, discussion spaces, recorded lectures, and collaborative digital classrooms.", metric: "05" },
-  { icon: "lock" as const, title: "Secure Cloud Infrastructure", text: "Role-based access, backups, audit trails, integrations, scalable deployment, and protected education data.", metric: "06" },
+{ 
+  icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-school-icon lucide-school"><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M18 4.933V21"/><path d="m4 6 7.106-3.79a2 2 0 0 1 1.788 0L20 6"/><path d="m6 11-3.52 2.147a1 1 0 0 0-.48.854V19a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a1 1 0 0 0-.48-.853L18 11"/><path d="M6 4.933V21"/><circle cx="12" cy="9" r="2"/></svg>`, 
+  title: "Smart Campus Portal", 
+  body: "Admissions, departments, students, notices, events, staff workflows, and academic operations in one connected portal.", 
+  metric: "01" 
+},
+{ 
+  icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor-smartphone-icon lucide-monitor-smartphone"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8"/><path d="M10 19v-3.96 3.15"/><path d="M7 19h5"/><rect width="6" height="10" x="16" y="12" rx="2"/></svg>`, 
+  title: "Custom LMS Platform", 
+  body: "Course builder, lessons, tests, assignments, certificates, student progress, and modern learning journeys.", 
+  metric: "02" 
+},
+{ 
+  icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-icon lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>`, 
+  title: "Parent & Student Apps", 
+  body: "Attendance, homework, results, communication, fee reminders, and real-time academic updates on mobile.", 
+  metric: "03" 
+},
+{ 
+  icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-area-icon lucide-chart-area"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 11.207a.5.5 0 0 1 .146-.353l2-2a.5.5 0 0 1 .708 0l3.292 3.292a.5.5 0 0 0 .708 0l4.292-4.292a.5.5 0 0 1 .854.353V16a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1z"/></svg>`, 
+  title: "Academic Intelligence", 
+  body: "Executive dashboards for performance, attendance, admissions, fees, learning gaps, and institution-wide trends.", 
+  metric: "04" 
+},
+{ 
+  icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-video-icon lucide-video"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>`, 
+  title: "Virtual Classroom Suite", 
+  body: "Live classes, video resources, discussion spaces, recorded lectures, and collaborative digital classrooms.", 
+  metric: "05" 
+},
+{ 
+  icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock-icon lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`, 
+  title: "Secure Cloud Infrastructure", 
+  body: "Role-based access, backups, audit trails, integrations, scalable deployment, and protected education data.", 
+  metric: "06" 
+},
 ];
 
 const features = [
@@ -99,10 +90,26 @@ const features = [
 ];
 
 const process = [
-  { step: "01", icon: "brain" as const, title: "Discovery Blueprint", text: "We study your academic workflow, user roles, departments, integrations, compliance, and operational pain points." },
-  { step: "02", icon: "layers" as const, title: "Experience Architecture", text: "We create a scalable product structure, database model, dashboards, permissions, and module roadmap." },
-  { step: "03", icon: "workflow" as const, title: "Product Engineering", text: "We build polished web portals, admin dashboards, APIs, mobile-ready experiences, and cloud infrastructure." },
-  { step: "04", icon: "rocket" as const, title: "Launch & Optimize", text: "We deploy, test, train, monitor, improve, and scale the platform with continuous product support." },
+{ 
+  num: "01", 
+  title: "Discovery Blueprint", 
+  body: "We study your academic workflow, user roles, departments, integrations, compliance, and operational pain points." 
+},
+{ 
+  num: "02", 
+  title: "Experience Architecture", 
+  body: "We create a scalable product structure, database model, dashboards, permissions, and module roadmap." 
+},
+{ 
+  num: "03", 
+  title: "Product Engineering", 
+  body: "We build polished web portals, admin dashboards, APIs, mobile-ready experiences, and cloud infrastructure." 
+},
+{ 
+  num: "04", 
+  title: "Launch & Optimize", 
+  body: "We deploy, test, train, monitor, improve, and scale the platform with continuous product support." 
+},
 ];
 
 const metrics = [
@@ -115,25 +122,54 @@ const metrics = [
 const orbitItems = ["Admissions", "LMS", "Attendance", "Exams", "Fees", "Parents", "Analytics", "Cloud"];
 
 const ecosystem = [
-  { icon: "school" as const, label: "Admin Portal", text: "Control academics, staff, finance, and operations." },
-  { icon: "graduation" as const, label: "Student Zone", text: "Lessons, assignments, results, certificates, and progress." },
-  { icon: "users" as const, label: "Parent Access", text: "Attendance, payments, notices, and performance updates." },
-  { icon: "book" as const, label: "Learning Hub", text: "Courses, resources, tests, and blended learning." },
-  { icon: "payment" as const, label: "Fee Engine", text: "Invoices, dues, receipts, online payments, and reports." },
-  { icon: "database" as const, label: "Data Core", text: "Secure records, analytics, backups, and integrations." },
+  { 
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-school-icon lucide-school"><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M18 4.933V21"/><path d="m4 6 7.106-3.79a2 2 0 0 1 1.788 0L20 6"/><path d="m6 11-3.52 2.147a1 1 0 0 0-.48.854V19a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a1 1 0 0 0-.48-.853L18 11"/><path d="M6 4.933V21"/><circle cx="12" cy="9" r="2"/></svg>`, 
+    label: "Admin Portal", 
+    text: "Control academics, staff, finance, and operations." 
+  },
+  { 
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap-icon lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>`, 
+    label: "Student Zone", 
+    text: "Lessons, assignments, results, certificates, and progress." 
+  },
+  { 
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-icon lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>`, 
+    label: "Parent Access", 
+    text: "Attendance, payments, notices, and performance updates." 
+  },
+  { 
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-text-icon lucide-book-text"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/><path d="M8 11h8"/><path d="M8 7h6"/></svg>`, 
+    label: "Learning Hub", 
+    text: "Courses, resources, tests, and blended learning." 
+  },
+  { 
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-credit-card-icon lucide-credit-card"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>`, 
+    label: "Fee Engine", 
+    text: "Invoices, dues, receipts, online payments, and reports." 
+  },
+  { 
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database-icon lucide-database"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>`, 
+    label: "Data Core", 
+    text: "Secure records, analytics, backups, and integrations." 
+  },
 ];
 
 const trustCards = [
-  { icon: "shield" as const, title: "Enterprise-grade security", text: "Permission-controlled modules, secure records, encrypted workflows, and audit-friendly system design." },
-  { icon: "cloud" as const, title: "Scalable cloud architecture", text: "Designed for single institutes, coaching brands, multi-campus schools, universities, and digital academies." },
-  { icon: "zap" as const, title: "Premium user experience", text: "Clean dashboards, fast loading screens, mobile-first portals, and frictionless everyday workflows." },
-];
-
-const differentiators = [
-  { icon: "ai" as const, title: "AI-ready learning intelligence", text: "Add recommendations, student risk alerts, progress predictions, and adaptive learning journeys when your data matures." },
-  { icon: "automation" as const, title: "Workflow automation", text: "Automate admissions follow-ups, attendance alerts, fee reminders, certificates, approvals, and admin notifications." },
-  { icon: "mobile" as const, title: "Mobile-first experience", text: "Deliver smooth portals for students, parents, teachers, and management across every screen size." },
-  { icon: "globe" as const, title: "Multi-branch ready", text: "Support multiple campuses, departments, roles, academic years, brands, permissions, and analytics layers." },
+{ 
+  icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-icon lucide-shield"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>`, 
+  title: "Enterprise-grade security", 
+  text: "Permission-controlled modules, secure records, encrypted workflows, and audit-friendly system design." 
+},
+{ 
+  icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud-icon lucide-cloud"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>`, 
+  title: "Scalable cloud architecture", 
+  text: "Designed for single institutes, coaching brands, multi-campus schools, universities, and digital academies." 
+},
+{ 
+  icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap-icon lucide-zap"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>`, 
+  title: "Premium user experience", 
+  text: "Clean dashboards, fast loading screens, mobile-first portals, and frictionless everyday workflows." 
+},
 ];
 
 const productScreens = [
@@ -142,23 +178,20 @@ const productScreens = [
   ["Operations flow", "Attendance", "Fees", "Reports", "Alerts"],
 ];
 
-// function runEducationPageSelfTests() {
-//   console.assert(solutions.length === 6, "Expected 6 education solution cards.");
-//   console.assert(features.length === 6, "Expected 6 core platform feature blocks.");
-//   console.assert(process.length === 4, "Expected 4 delivery process steps.");
-//   console.assert(stats.length === 4, "Expected 4 hero stats.");
-//   console.assert(orbitItems.length === 8, "Expected 8 orbit items.");
-//   console.assert(ecosystem.length === 6, "Expected 6 ecosystem cards.");
-//   console.assert(trustCards.length === 3, "Expected 3 trust cards.");
-//   console.assert(differentiators.length === 4, "Expected 4 differentiator cards.");
-//   console.assert(productScreens.length === 3, "Expected 3 product screen flows.");
-// }
-
-// if (typeof window !== "undefined") runEducationPageSelfTests();
-
 export default function EducationIndustryPage() {
-  const [activeSolution, setActiveSolution] = useState(0);
-  const active = useMemo(() => solutions[activeSolution], [activeSolution]);
+  const [activeWhyIndex, setActiveWhyIndex] = useState(0);
+  const [hoveredWhyIndex, setHoveredWhyIndex] = useState<number | null>(null);
+  const visibleWhyIndex = hoveredWhyIndex ?? activeWhyIndex;
+
+  useEffect(() => {
+    if (hoveredWhyIndex !== null) return;
+
+    const interval = window.setInterval(() => {
+      setActiveWhyIndex((current) => (current + 1) % whyPoints.length);
+    }, 3000);
+
+    return () => window.clearInterval(interval);
+  }, [hoveredWhyIndex]);
 
   return (
     <>
@@ -209,14 +242,9 @@ export default function EducationIndustryPage() {
           
           {/* Right Column */}
           <div className="relative mx-auto hidden h-[500px] w-full max-w-[500px] items-center justify-center lg:flex">
-
-            {/* <div className="absolute h-[520px] w-[520px] rounded-full border border-dashed border-slate-300/80" />
-            <div className="absolute h-[390px] w-[390px] rounded-full border border-slate-200" />
-            <div className="absolute h-[280px] w-[280px] rounded-full bg-gradient-to-br from-red-200/70 to-blue-200/70 blur-2xl" /> */}
-
-                <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
-                <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
-                <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
+            <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
+            <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
+            <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
 
             {orbitItems.map((item, index) => {
               const angle = (index / orbitItems.length) * 360;
@@ -230,7 +258,15 @@ export default function EducationIndustryPage() {
 
             <div className="relative z-10 w-[335px] rounded-[2.2rem] border border-slate-200 bg-white/95 p-5 shadow-2xl shadow-slate-300/60 backdrop-blur-2xl">
               <div className="mb-4 flex items-center justify-between">
-                <div className="flex items-center gap-3"><div className="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-red-600 to-blue-600 text-white"><Icon name="graduation" className="h-6 w-6" /></div><div><p className="text-sm font-black text-slate-900">Education Command Center</p><p className="text-xs text-slate-500">Live institutional overview</p></div></div>
+                <div className="flex items-center gap-3">
+                  <div className="grid h-12 w-12 place-items-center rounded-2xl bg-red-600 text-white">
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-graduation-cap-icon lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-black text-slate-900">Education Command Center</p>
+                    <p className="text-xs text-slate-500">Live institutional overview</p>
+                  </div>
+                </div>
                 <div className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-black text-emerald-300">Online</div>
               </div>
 
@@ -251,90 +287,146 @@ export default function EducationIndustryPage() {
         </div>
       </section>
 
-      <section className="relative bg-white px-5 py-24 text-slate-950 sm:px-8 lg:px-12">
-        <div className="pointer-events-none absolute inset-x-0 -top-20 mx-auto h-40 max-w-6xl rounded-full bg-gradient-to-r from-red-100 via-blue-100 to-red-100 blur-3xl" />
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-14 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-            <div>
-              <div className="mb-4 inline-flex rounded-full bg-red-50 px-4 py-2 text-sm font-black text-red-600">Education Software Expertise</div>
-              <h2 className="text-4xl font-black tracking-[-0.05em] sm:text-5xl">Premium software for the complete education journey.</h2>
-            </div>
-            <p className="text-lg leading-8 text-slate-600">We create platforms that connect administration, learning, communication, finance, analytics, and cloud operations into one high-performance digital ecosystem.</p>
-          </div>
+      {/* Marquee Section */}
+      <Marquee items={marqueeItems} />
 
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {solutions.map((item, index) => (
-              <button key={item.title} onMouseEnter={() => setActiveSolution(index)} onClick={() => setActiveSolution(index)} className={`group relative overflow-hidden rounded-[2rem] border p-6 text-left transition duration-300 ${activeSolution === index ? "border-blue-200 bg-slate-950 text-white shadow-2xl shadow-blue-950/25" : "border-slate-200 bg-white hover:-translate-y-1 hover:border-red-200 hover:shadow-2xl hover:shadow-slate-200/80"}`}>
-                <div className="absolute right-5 top-5 text-5xl font-black tracking-[-0.08em] opacity-[0.07]">{item.metric}</div>
-                <div className={`mb-6 grid h-14 w-14 place-items-center rounded-2xl ${activeSolution === index ? "bg-gradient-to-br from-red-600 to-blue-600" : "bg-slate-100 text-blue-600"}`}><Icon name={item.icon} className="h-7 w-7" /></div>
-                <h3 className="text-xl font-black tracking-[-0.02em]">{item.title}</h3>
-                <p className={`mt-3 leading-7 ${activeSolution === index ? "text-slate-300" : "text-slate-600"}`}>{item.text}</p>
-                <div className={`mt-6 flex items-center gap-2 text-sm font-black ${activeSolution === index ? "text-blue-200" : "text-red-600"}`}>Explore module <Icon name="chevron" className="h-4 w-4 transition group-hover:translate-x-1" /></div>
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
+       {/* solutions */}
+       <BoxCard
+          items={solutions}
+          label="Education Software Expertise"
+          title={
+            <>
+              Premium software for the 
+              <br />
+              <span className="text-red-600">complete education journey.</span>
+            </>
+          }
+          description="We create platforms that connect administration, learning, communication, finance, analytics, and cloud operations into one high-performance digital ecosystem."
+          gridClassName = "grid gap-4 sm:grid-cols-2 xl:grid-cols-3"
+        />
 
-      <section className="bg-slate-50 px-5 py-24 text-slate-950 sm:px-8 lg:px-12">
-        <div className="mx-auto max-w-7xl">
+      {/* ecosystem */}
+      <section className="relative overflow-hidden py-14 sm:py-20 bg-[var(--off)]">
+        <div className="mx-auto max-w-7xl px-4">
           <div className="mb-12 max-w-3xl">
-            <p className="mb-3 text-sm font-black uppercase tracking-[0.22em] text-blue-600">Platform ecosystem</p>
-            <h2 className="text-4xl font-black tracking-[-0.05em] sm:text-5xl">One system. Every stakeholder connected.</h2>
+            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
+                <span className="h-[2px] w-7 bg-red-600" />Platform ecosystem
+            </div>
+            <h2 className="text-[50px] uppercase leading-[0.94] tracking-[0.02em] text-zinc-950 sm:text-[70px] lg:text-[80px]">One system. Every <span className="text-red-600">stakeholder connected.</span></h2>
           </div>
+
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {ecosystem.map((item) => (
-              <div key={item.label} className="group rounded-[2rem] border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/70 transition hover:-translate-y-1 hover:shadow-2xl">
-                <div className="mb-6 flex items-center justify-between"><div className="grid h-14 w-14 place-items-center rounded-2xl bg-slate-950 p-3 text-white"><Icon name={item.icon} className="h-6 w-6" /></div><span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-black text-slate-500">Connected</span></div>
-                <h3 className="text-xl font-black tracking-[-0.03em]">{item.label}</h3>
+              <div key={item.label} className="group rounded-2xl bg-white p-6 shadow-xl transition hover:-translate-y-1 hover:shadow-2xl">
+                <div className="mb-6 flex items-center justify-between">
+                  <div className="grid h-14 w-14 place-items-center rounded-[10px] border border-[var(--border)] bg-[var(--off)]">
+                    <span dangerouslySetInnerHTML={{ __html: item.icon }}></span>
+                  </div>
+                  <span className="rounded-[10px] border border-[var(--border)] bg-[var(--off)] px-3 py-1 text-xs font-semibold text-zinc-600">Connected</span>
+                </div>
+                <div className="text-xl font-black tracking-[-0.03em]">{item.label}</div>
                 <p className="mt-3 leading-7 text-slate-600">{item.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
-
-      <section className="bg-white px-5 py-24 text-slate-950 sm:px-8 lg:px-12">
-        <div className="mx-auto mb-20 max-w-7xl">
-          <div className="mb-10 grid gap-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
-            <div>
-              <p className="mb-3 text-sm font-black uppercase tracking-[0.22em] text-red-600">Next-level product layer</p>
-              <h2 className="text-4xl font-black tracking-[-0.05em] sm:text-5xl">Designed like a premium SaaS product, engineered like an enterprise platform.</h2>
+      
+      {/* Next-level product */}
+      <section className="overflow-hidden bg-[var(--off-2)] py-14 sm:py-20">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 lg:grid-cols-2 lg:gap-10">
+          {/* left column */}
+          <div className="border-b-2 border-[var(--border)] pb-12 lg:border-b-0">
+            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
+              <span className="h-[2px] w-7 bg-red-600" />
+              Next-level product layer
             </div>
-            <p className="text-lg leading-8 text-slate-600">The page now communicates stronger value: automation, AI-readiness, mobile-first UX, multi-branch architecture, and complete education operations coverage.</p>
-          </div>
+            <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">
+            Designed like a premium SaaS product, like <span className="text-red-600">an enterprise platform.</span>
+            </h2>
+            <p className="mt-8 max-w-xl text-[15px] leading-8 text-zinc-500">The page now communicates stronger value: automation, AI-readiness, mobile-first UX, multi-branch architecture, and complete education operations coverage.</p>
 
-          <div className="grid gap-5 lg:grid-cols-4">
-            {differentiators.map((item) => (
-              <div key={item.title} className="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/70 transition hover:-translate-y-1 hover:shadow-2xl">
-                <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-gradient-to-br from-red-100 to-blue-100 blur-2xl transition group-hover:scale-150" />
-                <div className="relative mb-6 grid h-14 w-14 place-items-center rounded-2xl bg-slate-950 text-white"><Icon name={item.icon} className="h-6 w-6" /></div>
-                <h3 className="relative text-xl font-black tracking-[-0.03em]">{item.title}</h3>
-                <p className="relative mt-3 leading-7 text-slate-600">{item.text}</p>
+            <div className="mt-10 hidden lg:block">
+              <div className="text-[110px] font-bebas-neue font-extrabold leading-none tracking-[0.02em] text-zinc-200">{whyPoints[visibleWhyIndex].number}</div>
+              <div className="mt-4 text-[30px] font-extrabold tracking-[-0.03em] text-zinc-950">{whyPoints[visibleWhyIndex].title}</div>
+              <p className="mt-4 max-w-md text-[15px] leading-8 text-zinc-500">{whyPoints[visibleWhyIndex].description}</p>
+              <div className="mt-8 h-[2px] w-48 overflow-hidden bg-black/10">
+                <div
+                  key={`why-left-progress-${visibleWhyIndex}-${hoveredWhyIndex ?? "auto"}`}
+                  className="why-progress-bar h-full bg-red-600"
+                  style={{ width: "100%" }}
+                />
               </div>
-            ))}
+            </div>
           </div>
 
-          <div className="mt-16 overflow-hidden rounded-[2.5rem] border border-slate-200 bg-slate-950 p-5 shadow-2xl shadow-slate-300/70 lg:p-8">
+          {/* right column */}
+          <div className="relative">
+            <div className="absolute left-[20px] top-2 hidden h-[calc(100%-16px)] w-px bg-black/10 md:block" />
+            <div className="space-y-10 lg:space-y-12">
+              {whyPoints.map((point, index) => {
+                const isActive = index === visibleWhyIndex;
+
+                return (
+                  <div key={point.title} className="relative md:pl-16" onMouseEnter={() => { setHoveredWhyIndex(index); setActiveWhyIndex(index); }} onMouseLeave={() => setHoveredWhyIndex(null)}>
+                    <div className="absolute left-[12px] top-2 hidden h-4 w-4 rounded-full border transition-all duration-500 md:block"
+                      style={{
+                        background: isActive ? "#e63322" : "#ffffff",
+                        borderColor: isActive ? "#e63322" : "rgba(0,0,0,0.16)",
+                        transform: isActive ? "scale(1.08)" : "scale(1)",
+                      }}
+                    />
+
+                    <div className="group border-b border-[var(--border)] py-8 transition-all duration-500 first:pt-0 last:border-b-0 last:pb-0">
+                      <div className="flex items-center gap-3">
+                        <span className={`why-item-line text-[11px] font-bold uppercase tracking-[0.2em] ${ isActive ? "text-red-600" : "text-zinc-400" }`}>{point.number}</span>
+                        <span className={`why-item-line h-px w-10 ${isActive ? "bg-red-600" : "bg-black/10"}`} />
+                        {isActive && (
+                          <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-red-600">Active</span>
+                        )}
+                      </div>
+                      <div className={`mt-4 text-[24px] font-extrabold tracking-[-0.03em] transition-all duration-500 sm:text-[26px] ${ isActive ? "text-zinc-950" : "text-zinc-700" }`}>{point.title}</div>
+                      <p className={`why-item-copy mt-3 max-w-md text-[15px] leading-7 text-zinc-500 ${ isActive ? "translate-x-0 opacity-100" : "translate-x-[2px] opacity-70" }`}>{point.description}</p>
+                      <div className="mt-6 h-[2px] w-full overflow-hidden bg-black/5">
+                        <div key={`why-progress-${index}-${visibleWhyIndex}-${hoveredWhyIndex ?? "auto"}`} className="why-progress-bar h-full bg-red-600" style={{ width: isActive ? "100%" : index < visibleWhyIndex ? "100%" : "0%" }}/>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-14 sm:py-20 text-slate-950">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="relative overflow-hidden rounded-[2.5rem] border border-slate-200 bg-[#0b0b0d] p-5 shadow-2xl shadow-slate-300/70 lg:p-8">
+            <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-b from-red-500/20 to-transparent blur-2xl"></div>
+            
             <div className="mb-7 flex flex-col justify-between gap-4 md:flex-row md:items-center">
               <div>
-                <p className="text-sm font-black uppercase tracking-[0.22em] text-blue-300">Live product architecture</p>
-                <h3 className="mt-2 text-3xl font-black tracking-[-0.04em] text-white">Connected education workflows</h3>
+                <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
+                    <span className="h-[2px] w-7 bg-red-600" />
+                    Live product architecture
+                </div>
+                <h3 className="text-[28px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">Connected education workflows</h3>
               </div>
-              <span className="w-fit rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 text-xs font-black text-slate-300">Real-time • Secure • Modular</span>
+              <span className="min-w-[250px] text-center rounded-full border border-white/10 bg-white/[0.06] px-3 py-2 text-xs font-black text-slate-300">Real-time • Secure • Modular</span>
             </div>
+
             <div className="grid gap-4 lg:grid-cols-3">
               {productScreens.map(([title, ...steps]) => (
-                <div key={title} className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-5 text-white backdrop-blur-xl">
+                <div key={title} className="rounded-2xl border border-white/10 bg-white/[0.05] p-5 text-white backdrop-blur-xl">
                   <div className="mb-5 flex items-center justify-between">
-                    <h4 className="font-black">{title}</h4>
-                    <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-black text-emerald-300">Active</span>
+                    <div className="font-semibold">{title}</div>
+                    <span className="rounded-2xl bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-300">Active</span>
                   </div>
                   <div className="space-y-3">
                     {steps.map((step, stepIndex) => (
-                      <div key={step} className="flex items-center gap-3 rounded-2xl bg-white/[0.06] p-3">
-                        <div className="grid h-8 w-8 place-items-center rounded-xl bg-gradient-to-br from-red-600 to-blue-600 text-xs font-black">{stepIndex + 1}</div>
-                        <span className="text-sm font-bold text-slate-200">{step}</span>
+                      <div key={step} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/10 p-3">
+                        <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-md border transition-all duration-500 border-white/10 bg-white/5 text-white/75 group-hover:border-white/20 group-hover:bg-white/10 group-hover:scale-105">{stepIndex + 1}</div>
+                        <span className="text-md font-semibold text-slate-200">{step}</span>
                       </div>
                     ))}
                   </div>
@@ -343,44 +435,106 @@ export default function EducationIndustryPage() {
             </div>
           </div>
         </div>
+      </section>
 
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="rounded-[2.5rem] bg-slate-950 p-8 text-white shadow-2xl shadow-slate-300/70">
-            <div className="mb-7 flex items-center gap-4"><div className="grid h-16 w-16 place-items-center rounded-3xl bg-gradient-to-br from-red-600 to-blue-600"><Icon name={active.icon} className="h-8 w-8" /></div><div><p className="text-sm font-black text-blue-200">Selected capability</p><h3 className="text-2xl font-black">{active.title}</h3></div></div>
-            <p className="text-lg leading-8 text-slate-300">{active.text}</p>
-            <div className="mt-8 rounded-3xl border border-white/10 bg-white/[0.05] p-5"><p className="mb-4 text-sm font-black text-slate-300">Built with enterprise-grade engineering</p><div className="grid gap-3 sm:grid-cols-2">{["Next.js", "React", "Node APIs", "Cloud", "AI-ready", "Secure RBAC"].map((tech) => <div key={tech} className="flex items-center gap-2 rounded-2xl bg-white/[0.06] px-3 py-3 text-sm font-semibold"><Icon name="check" className="h-4 w-4 text-emerald-300" /> {tech}</div>)}</div></div>
-          </div>
-
-          <div>
-            <div className="mb-8"><p className="mb-3 text-sm font-black uppercase tracking-[0.22em] text-red-600">Core platform features</p><h2 className="text-4xl font-black tracking-[-0.05em] sm:text-5xl">Built for daily operations and long-term scale.</h2></div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {features.map(([title, text]) => (
-                <div key={title} className="rounded-3xl border border-slate-200 bg-white p-5 shadow-xl shadow-slate-200/60">
-                  <div className="mb-4 flex items-center gap-3"><div className="grid h-9 w-9 place-items-center rounded-xl bg-blue-50 text-blue-600"><Icon name="check" className="h-5 w-5" /></div><h3 className="font-black text-slate-950">{title}</h3></div>
-                  <p className="leading-7 text-slate-600">{text}</p>
+      <section className="pb-14 sm:pb-20 text-slate-950">
+          <div className="mx-auto  max-w-7xl px-4">
+              <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+                <div className="rounded-2xl bg-zinc-950 p-8 text-white shadow-2xl shadow-slate-300/70">
+                  <div className="mb-7 flex items-center gap-4">
+                    <div className="grid h-16 w-16 place-items-center rounded-2xl bg-white/10">
+                      <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chart-spline-icon lucide-chart-spline"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7"/></svg></span>
+                    </div>
+                    <div>
+                      <div className="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
+                          <span className="h-[2px] w-7 bg-red-600" />
+                          Selected capability
+                      </div>
+                      <div className="text-2xl font-black">Academic Intelligence</div>
+                    </div>
+                  </div>
+                  <p className="text-lg leading-8 text-zinc-500">Executive dashboards for performance, attendance, admissions, fees, learning gaps, and institution-wide trends.</p>
+                  <div className="mt-8 rounded-3xl border border-white/10 bg-white/[0.05] p-5">
+                    <p className="mb-4 text-sm font-black text-zinc-300">Built with enterprise-grade engineering</p>
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      {[
+                        "Next.js", "React", "Node APIs", "Cloud", "AI-ready", "Secure RBAC"
+                      ].map((tech) => 
+                        <div key={tech} className="flex items-center gap-2 rounded-2xl bg-white/[0.06] px-3 py-3 text-sm font-semibold">
+                          <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check-icon lucide-check"><path d="M20 6 9 17l-5-5"/></svg></span> {tech}
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              ))}
-            </div>
+
+                <div>
+                  <div className="mb-8">
+                    <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
+                        <span className="h-[2px] w-7 bg-red-600" />
+                        Core platform features
+                    </div>
+                    <h2 className="text-[50px] uppercase leading-[0.94] tracking-[0.02em] text-zinc-950 sm:text-[70px] lg:text-[80px]">Built for daily operations and <span className="text-red-600">long-term scale.</span></h2>
+                  </div>
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    {features.map(([title, text]) => (
+                      <div key={title} className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-xl shadow-sm">
+                        <div className="mb-3 flex items-center gap-3">
+                          <div className="grid h-9 w-9 place-items-center rounded-xl bg-red-50 text-red-600">
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check-icon lucide-check"><path d="M20 6 9 17l-5-5"/></svg></span>
+                          </div>
+                          <div className="font-bold text-zinc-950">{title}</div>
+                        </div>
+                        <p className="leading-7 text-zinc-600">{text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+          </div>
+      </section>
+
+      {/* PROCESS */}
+      <Process
+          steps={process}
+          label="Delivery process"
+          title={
+            <>
+              A proven roadmap from idea to scalable <span className="text-red-600">education platform.</span>
+            </>
+          }
+          description=""
+        />
+
+      <section className="bg-white py-14 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="grid gap-8 lg:grid-cols-3">
+            {trustCards.map((item) => 
+              <div key={item.title} className="rounded-2xl border border-zinc-200 bg-gradient-to-br from-white to-zinc-50 p-8 shadow-2xl shadow-sm">
+                <div className="mb-8 grid h-16 w-16 place-items-center rounded-2xl bg-zinc-950 text-white">
+                  <span dangerouslySetInnerHTML={{ __html: item.icon }}></span>
+                </div>
+                <div className="text-2xl font-black">{item.title}</div>
+                <p className="mt-4 leading-8 text-zinc-600">{item.text}</p>
+              </div>
+            )}
           </div>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#060914] px-5 py-24 text-white sm:px-8 lg:px-12">
-        <div className="absolute left-1/2 top-0 h-[360px] w-[720px] -translate-x-1/2 rounded-full bg-blue-600/20 blur-3xl" />
-        <div className="mx-auto max-w-7xl"><div className="mx-auto mb-14 max-w-3xl text-center"><p className="mb-3 text-sm font-black uppercase tracking-[0.22em] text-blue-300">Delivery process</p><h2 className="text-4xl font-black tracking-[-0.05em] sm:text-5xl">A proven roadmap from idea to scalable education platform.</h2></div>
-          <div className="grid gap-5 md:grid-cols-4">{process.map((item) => <div key={item.step} className="relative rounded-[2rem] border border-white/10 bg-white/[0.05] p-6 backdrop-blur-xl"><div className="mb-8 flex items-center justify-between"><span className="text-5xl font-black tracking-[-0.08em] text-white/15">{item.step}</span><div className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-red-600 to-blue-600"><Icon name={item.icon} className="h-5 w-5" /></div></div><h3 className="text-xl font-black">{item.title}</h3><p className="mt-3 leading-7 text-slate-300">{item.text}</p></div>)}</div>
-        </div>
-      </section>
-
-      <section className="bg-white px-5 py-24 text-slate-950 sm:px-8 lg:px-12">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-3">{trustCards.map((item) => <div key={item.title} className="rounded-[2.3rem] border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-8 shadow-2xl shadow-slate-200/70"><div className="mb-8 grid h-16 w-16 place-items-center rounded-3xl bg-slate-950 text-white"><Icon name={item.icon} className="h-8 w-8" /></div><h3 className="text-2xl font-black tracking-[-0.03em]">{item.title}</h3><p className="mt-4 leading-8 text-slate-600">{item.text}</p></div>)}</div>
-      </section>
-
-      <section className="px-5 pb-24 text-white sm:px-8 lg:px-12">
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.8rem] border border-white/10 bg-gradient-to-br from-red-600 via-slate-950 to-blue-700 p-8 shadow-2xl shadow-blue-950/40 sm:p-12 lg:p-16">
-          <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto]"><div><div className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-black backdrop-blur-xl"><Icon name="book" className="h-4 w-4" /> Education product engineering partner</div><h2 className="max-w-3xl text-4xl font-black tracking-[-0.05em] sm:text-5xl">Ready to build a smarter education platform?</h2><p className="mt-5 max-w-2xl text-lg leading-8 text-white/75">Let Miraculous Soft Solutions design and develop a custom education solution that supports your institution today and scales with your future.</p></div><button className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white px-8 py-4 text-sm font-black text-slate-950 shadow-xl transition hover:scale-[1.02]">Discuss Your Project <Icon name="arrow" className="h-4 w-4" /></button></div>
-        </div>
-      </section>
+      {/* CTA STRIP */}
+      <CtaStrip
+          title={
+            <>
+              Ready to build a smarter
+              <br />
+              <span className="text-black">education platform?</span>
+            </>
+          }
+          description="Let Miraculous Soft Solutions design and develop a custom education solution that supports your institution today and scales with your future."
+          buttonText="Discuss Your Project →"
+          buttonHref="/"
+        />
     </>
   );
 }
