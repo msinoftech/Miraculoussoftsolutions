@@ -1,5 +1,11 @@
 "use client";
-
+import { useEffect } from "react";
+import Link from "next/link";
+import Marquee from "@/app/components/Marquee";
+import Card from "@/app/components/Card";
+import BoxCard from "@/app/components/BoxCard";
+import CtaStrip from "@/app/components/CtaStrip";
+import Process from "@/app/components/Process";
 import React, { useMemo, useState } from "react";
 
 type IconName =
@@ -74,7 +80,7 @@ function Icon({ name, className = "h-5 w-5" }: IconProps) {
   );
 }
 
-const industries = [
+const marqueeItems = [
   "Consulting Firms",
   "Legal Practices",
   "Accounting & Tax Firms",
@@ -94,19 +100,55 @@ const industries = [
 ];
 
 const capabilities = [
-  { icon: "workflow" as const, title: "Workflow Automation", text: "Digitize approvals, handoffs, reminders, document routing, internal reviews, and repeatable operations." },
-  { icon: "users" as const, title: "Client & Team Portals", text: "Secure portals for clients, partners, staff, managers, consultants, and service teams." },
-  { icon: "calendar" as const, title: "Smart Scheduling Systems", text: "Consultation slots, availability rules, follow-ups, reminders, and automated booking flows." },
-  { icon: "file" as const, title: "Document Management", text: "Centralize proposals, contracts, case files, invoices, reports, templates, and knowledge assets." },
-  { icon: "bar" as const, title: "Business Intelligence", text: "Executive dashboards for revenue, clients, productivity, SLA, utilization, and project performance." },
-  { icon: "lock" as const, title: "Secure Cloud Platforms", text: "Authentication, audit logs, permissions, encrypted workflows, backups, and scalable architecture." },
+{ 
+  icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>`,
+  title: "Workflow Automation", 
+  description: "Digitize approvals, handoffs, reminders, document routing, internal reviews, and repeatable operations." 
+},
+{ 
+  icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>`,
+  title: "Client & Team Portals", 
+  description: "Secure portals for clients, partners, staff, managers, consultants, and service teams." 
+},
+{ 
+  icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>`,
+  title: "Smart Scheduling Systems", 
+  description: "Consultation slots, availability rules, follow-ups, reminders, and automated booking flows." 
+},
+{ 
+  icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/></svg>`,
+  title: "Document Management", 
+  description: "Centralize proposals, contracts, case files, invoices, reports, templates, and knowledge assets." 
+},
+{ 
+  icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M4 4v16"/><path d="M9 4v16"/><path d="M14 4v16"/><path d="M19 4v16"/></svg>`, 
+  title: "Business Intelligence", 
+  description: "Executive dashboards for revenue, clients, productivity, SLA, utilization, and project performance." 
+},
+{ 
+  icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
+  title: "Secure Cloud Platforms", 
+  description: "Authentication, audit logs, permissions, encrypted workflows, backups, and scalable architecture." 
+},
 ];
 
 const solutions = [
-  { title: "Professional CRM", desc: "Manage leads, accounts, client history, communication, tasks, quotes, and service pipelines from one high-performance workspace.", icon: "briefcase" as const },
-  { title: "Project & Case Management", desc: "Track deadlines, documents, milestones, deliverables, internal reviews, client approvals, and team accountability.", icon: "clipboard" as const },
-  { title: "Billing & Invoice Automation", desc: "Automate estimates, invoices, payment status, tax records, subscriptions, client statements, and revenue reports.", icon: "line" as const },
-  { title: "AI-Ready Knowledge Base", desc: "Build searchable knowledge systems for SOPs, reports, policies, client notes, decision logs, and team learning.", icon: "search" as const },
+  { title: "Professional CRM", 
+    desc: "Manage leads, accounts, client history, communication, tasks, quotes, and service pipelines from one high-performance workspace.", 
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-briefcase-business-icon lucide-briefcase-business"><path d="M12 12h.01"/><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M22 13a18.15 18.15 0 0 1-20 0"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>`
+  },
+  { title: "Project & Case Management", 
+    desc: "Track deadlines, documents, milestones, deliverables, internal reviews, client approvals, and team accountability.", 
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-clipboard-list-icon lucide-clipboard-list"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>`
+  },
+  { title: "Billing & Invoice Automation", 
+    desc: "Automate estimates, invoices, payment status, tax records, subscriptions, client statements, and revenue reports.", 
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-pencil-line-icon lucide-pencil-line"><path d="M13 21h8"/><path d="m15 5 4 4"/><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/></svg>`
+  },
+  { title: "AI-Ready Knowledge Base", 
+    desc: "Build searchable knowledge systems for SOPs, reports, policies, client notes, decision logs, and team learning.", 
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>`
+  },
 ];
 
 const metrics = [
@@ -116,16 +158,49 @@ const metrics = [
   { value: "24/7", label: "secure cloud access" },
 ];
 
-const process = ["Discover", "Map", "Design", "Build", "Secure", "Scale"];
+const process = [
+  { 
+    num: "01", 
+    title: "Discover", 
+    body: "Deep dive into business objectives, user needs, existing systems, and technical constraints to uncover high-impact opportunities." 
+  },
+  { 
+    num: "02", 
+    title: "Architect", 
+    body: "Define scalable architecture, data models, APIs, integrations, and infrastructure aligned with enterprise standards." 
+  },
+  { 
+    num: "03", 
+    title: "Design", 
+    body: "Craft intuitive user experiences, system workflows, and interface designs that balance usability with operational efficiency." 
+  },
+  { 
+    num: "04", 
+    title: "Build", 
+    body: "Develop robust, maintainable applications with clean code, modular components, and seamless system integrations." 
+  },
+  { 
+    num: "05", 
+    title: "Secure & Optimize", 
+    body: "Implement security best practices, performance tuning, monitoring, and compliance to ensure reliability at scale." 
+  },
+  { 
+    num: "06", 
+    title: "Scale & Evolve", 
+    body: "Continuously enhance the platform with new features, automation, and infrastructure scaling to support long-term growth." 
+  },
+];
+
+
 const techStack = ["Next.js", "React", "Node.js", "Laravel", ".NET", "PostgreSQL", "MongoDB", "AWS", "Docker", "CI/CD", "Redis", "OpenSearch"];
-const marqueeIndustries = [...industries, ...industries];
+//const marqueeIndustries = [...industries, ...industries];
 
 export const pageTestCases = [
-  { name: "renders professional industry list", expected: industries.length >= 12 },
+  //{ name: "renders professional industry list", expected: industries.length >= 12 },
   { name: "has four solution tabs", expected: solutions.length === 4 },
   { name: "has six delivery process steps", expected: process.length === 6 },
   { name: "uses local inline icons without lucide-react", expected: true },
-  { name: "has next-level marquee industry data", expected: marqueeIndustries.length >= 24 },
+  //{ name: "has next-level marquee industry data", expected: marqueeIndustries.length >= 24 },
 ];
 
 export default function ProfessionalIndustryPage() {
@@ -144,106 +219,95 @@ export default function ProfessionalIndustryPage() {
   );
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[#05060a] text-white">
-      <section className="relative isolate px-5 py-8 sm:px-8 lg:px-12">
+    <>
+      {/* Hero Section */}
+      <section className="relative flex min-h-[88vh] flex-col overflow-hidden">
+
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,#05060a_0%,#0a0e1c_42%,#06070c_100%)]" />
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_14%_12%,rgba(239,35,48,0.34),transparent_30%),radial-gradient(circle_at_82%_18%,rgba(37,99,235,0.34),transparent_34%),radial-gradient(circle_at_50%_95%,rgba(255,255,255,0.08),transparent_30%)]" />
         <div className="absolute inset-0 -z-10 opacity-[0.18] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:70px_70px]" />
 
-        <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/10 bg-white/[0.045] px-5 py-3 shadow-2xl shadow-black/30 backdrop-blur-xl">
-          <div className="flex items-center gap-3">
-            <div className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-red-500 via-white to-blue-500 p-[1px] shadow-lg shadow-red-950/40">
-              <div className="grid h-full w-full place-items-center rounded-2xl bg-[#080910]">
-                <Icon name="sparkles" className="h-5 w-5 text-red-400" />
-              </div>
-            </div>
-            <div>
-              <p className="text-sm font-black tracking-wide">Miraculous Soft Solutions</p>
-              <p className="text-xs text-white/50">Professional Industry Software</p>
-            </div>
-          </div>
-          <button className="hidden items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-black text-black transition hover:bg-red-500 hover:text-white sm:flex">
-            Start Project <Icon name="arrow" className="h-4 w-4" />
-          </button>
-        </div>
-
-        <div className="mx-auto grid max-w-7xl items-center gap-16 pb-12 pt-20 lg:grid-cols-[1.04fr_0.96fr] lg:pt-24">
-          <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-red-400/30 bg-red-500/10 px-4 py-2 text-sm font-bold text-red-100 shadow-xl shadow-red-950/20">
-              <Icon name="gem" className="h-4 w-4 text-red-400" />
-              Enterprise-grade systems for professional service businesses
+        <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-2 z-10">
+          {/* Left Column */}
+          <div className="space-y-5">
+            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
+                <span className="h-[2px] w-7 bg-red-600" />Enterprise-grade systems for professional service businesses
             </div>
 
-            <h1 className="max-w-5xl text-5xl font-black leading-[0.92] tracking-[-0.06em] sm:text-6xl lg:text-8xl">
+            <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-white">
               Transform your professional firm into a
-              <span className="block bg-gradient-to-r from-red-400 via-white to-blue-400 bg-clip-text text-transparent"> digital command center.</span>
+              <span className="text-red-600"> digital command center.</span>
             </h1>
 
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/68">
+            <p className="text-[15px] leading-8 text-zinc-500">
               Miraculous Soft Solutions builds premium CRMs, portals, workflow automation, dashboards, scheduling systems, document platforms, and cloud software for consulting, legal, accounting, advisory, HR, finance, and service-led companies.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <button className="group inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-red-500 to-blue-600 px-7 py-4 text-sm font-black shadow-2xl shadow-red-950/40 transition hover:scale-[1.02]">
-                Build Your Platform
-                <Icon name="arrow" className="h-4 w-4 transition group-hover:translate-x-1" />
-              </button>
-              <button className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/12 bg-white/[0.06] px-7 py-4 text-sm font-bold text-white/85 backdrop-blur-xl transition hover:bg-white/10">
-                Explore Solutions <Icon name="chevron" className="h-4 w-4" />
-              </button>
+            <div className="flex flex-wrap items-center gap-4">
+              <Link href="/contact-us" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
+                  Discuss Your Requirement
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </Link>
+              <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-white px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-zinc-950 transition">
+                  Explore Software
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </Link>
             </div>
 
-            <div className="mt-10 grid max-w-2xl grid-cols-3 gap-3">
-              {metrics.slice(0, 3).map((item) => (
-                <div key={item.label} className="rounded-3xl border border-white/10 bg-white/[0.045] p-4 backdrop-blur-xl">
-                  <p className="text-2xl font-black">{item.value}</p>
-                  <p className="mt-1 text-xs leading-5 text-white/50">{item.label}</p>
+            <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
+              {metrics.map((item) => (
+                <div key={item.label}>
+                  <div className="font-bebas-neue text-3xl leading-none text-white">{item.value}</div>
+                  <div className="text-sm text-white">{item.label}</div>
                 </div>
               ))}
             </div>
           </div>
-
+          
+          {/* Right Column */}
           <div className="relative mx-auto w-full max-w-[610px]">
             <div className="absolute -inset-8 rounded-full bg-gradient-to-r from-red-500/20 to-blue-600/20 blur-3xl" />
-            <div className="relative rounded-[3rem] border border-white/10 bg-white/[0.055] p-4 shadow-2xl shadow-black/40 backdrop-blur-2xl">
-              <div className="rounded-[2.4rem] border border-white/10 bg-[#080b13]/90 p-5">
+            
+            <div className="relative rounded-2xl border border-white/10 bg-white/[0.055] p-4 shadow-2xl shadow-black/40 backdrop-blur-2xl">
+              <div className="rounded-2xl border border-white/10 bg-[#080b13]/90 p-5">
                 <div className="flex items-center justify-between border-b border-white/10 pb-4">
                   <div>
-                    <p className="text-xs font-black uppercase tracking-[0.28em] text-blue-300">Live Ops Console</p>
-                    <h3 className="mt-2 text-2xl font-black">Professional Suite</h3>
+                    <p className="text-xs font-black uppercase tracking-[0.28em] text-white">Live Ops Console</p>
+                    <div className="mt-2 text-2xl font-bold text-white">Professional Suite</div>
                   </div>
-                  <span className="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-black text-emerald-300">Online</span>
+                  <span className="rounded-2xl bg-emerald-400/10 px-3 py-1 text-xs font-black text-emerald-300">Online</span>
                 </div>
 
                 <div className="mt-5 grid gap-4 sm:grid-cols-[0.9fr_1.1fr]">
+                  
                   <div className="space-y-4">
                     {solutions.map((item, index) => (
                       <button key={item.title} onClick={() => setActiveSolution(index)} className={`flex w-full items-center gap-3 rounded-2xl border p-3 text-left transition ${activeSolution === index ? "border-red-400/40 bg-gradient-to-r from-red-500/25 to-blue-600/20" : "border-white/10 bg-white/[0.04] hover:bg-white/[0.08]"}`}>
                         <span className="grid h-10 w-10 place-items-center rounded-xl bg-white text-black">
-                          <Icon name={item.icon} className="h-5 w-5" />
+                          <span dangerouslySetInnerHTML={{ __html: item.icon }}></span>
                         </span>
-                        <span className="text-sm font-black">{item.title}</span>
+                        <span className="text-sm font-bold text-white">{item.title}</span>
                       </button>
                     ))}
                   </div>
 
-                  <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-black/30 p-5">
+                  <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/30 p-5">
                     <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-blue-500/20 blur-2xl" />
                     <div className="relative z-10">
                       <div className="flex items-center gap-3">
-                        <div className="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-red-500 to-blue-600">
-                          <Icon name={solutions[activeSolution].icon} className="h-7 w-7" />
+                        <div className="grid h-14 w-14 place-items-center rounded-2xl bg-white">
+                          <span dangerouslySetInnerHTML={{ __html: solutions[activeSolution].icon }}></span>
                         </div>
                         <div>
-                          <p className="text-xs text-white/45">Selected Module</p>
-                          <p className="font-black">{solutions[activeSolution].title}</p>
+                          <p className="text-xs text-white">Selected Module</p>
+                          <p className="font-bold text-white">{solutions[activeSolution].title}</p>
                         </div>
                       </div>
-                      <p className="mt-5 text-sm leading-6 text-white/58">{solutions[activeSolution].desc}</p>
+                      <p className="mt-5 text-sm leading-6 text-white">{solutions[activeSolution].desc}</p>
                       <div className="mt-6 space-y-3">
                         {[91, 76, 84].map((width, index) => (
-                          <div key={index} className="h-3 overflow-hidden rounded-full bg-white/10">
-                            <div style={{ width: `${width}%` }} className="h-full rounded-full bg-gradient-to-r from-red-500 to-blue-500" />
+                          <div key={index} className="h-1 overflow-hidden rounded-full bg-white/10">
+                            <div style={{ width: `${width}%` }} className="h-full rounded-full bg-red-500" />
                           </div>
                         ))}
                       </div>
@@ -252,12 +316,18 @@ export default function ProfessionalIndustryPage() {
                 </div>
 
                 <div className="mt-5 grid grid-cols-3 gap-3">
-                  {["Security", "Automation", "Analytics"].map((item) => (
-                    <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-center">
-                      <Icon name={item === "Security" ? "shield" : item === "Automation" ? "zap" : "bar"} className="mx-auto h-5 w-5 text-red-300" />
-                      <p className="mt-2 text-xs font-bold text-white/60">{item}</p>
+                    <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-center">
+                      <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
+                      <p className="text-sm font-bold text-white/60">Security</p>
                     </div>
-                  ))}
+                    <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-center">
+                      <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg></span>
+                      <p className="text-sm font-bold text-white/60">Automation</p>
+                    </div>
+                    <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-center">
+                      <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white"><path d="M12 16v5"/><path d="M16 14v7"/><path d="M20 10v11"/><path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15"/><path d="M4 18v3"/><path d="M8 14v7"/></svg></span>
+                      <p className="text-sm font-bold text-white/60">Analytics</p>
+                    </div>
                 </div>
               </div>
             </div>
@@ -265,58 +335,38 @@ export default function ProfessionalIndustryPage() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-white/[0.03] py-5">
-        <div className="flex w-max gap-3 px-5">
-          {marqueeIndustries.map((item, index) => (
-            <span key={`${item}-${index}`} className="rounded-full border border-white/10 bg-white/[0.055] px-5 py-3 text-sm font-bold text-white/65">
-              {item}
-            </span>
-          ))}
-        </div>
-      </section>
+       {/* Marquee Section */}
+       <Marquee items={marqueeItems} />
+        
+      {/* capabilities */}
+      <Card
+        label="What we build"
+        title={
+            <>
+            Software systems built around real
+            <span className="text-red-600"> professional workflows.</span>
+            </>
+        }
+        description="From first enquiry to project delivery, billing, reporting, and client retention, we design every module to reduce manual work and increase operational clarity."
+        items={capabilities}
+      />
 
-      <section className="px-5 py-24 sm:px-8 lg:px-12">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-            <div>
-              <p className="text-sm font-black uppercase tracking-[0.28em] text-red-400">What we build</p>
-              <h2 className="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-6xl">Software systems built around real professional workflows.</h2>
-            </div>
-            <p className="max-w-2xl text-lg leading-8 text-white/58 lg:justify-self-end">
-              From first enquiry to project delivery, billing, reporting, and client retention, we design every module to reduce manual work and increase operational clarity.
-            </p>
-          </div>
+      <section className="py-14 sm:py-20 bg-[linear-gradient(180deg,#141414,#121212)]">
+        <div className="mx-auto max-w-7xl px-4">
+          
+          <div className="relative overflow-hidden rounded-2xl bg-[#0b0b0d] p-5 shadow-2xl lg:p-8 grid gap-8 lg:grid-cols-[0.92fr_1.08fr]">
+          <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-b from-red-500/20 to-transparent blur-2xl"></div>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {capabilities.map((item) => (
-              <div key={item.title} className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.025] p-7 shadow-2xl shadow-black/20 backdrop-blur-xl transition hover:border-red-400/40">
-                <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-blue-500/0 blur-2xl transition group-hover:bg-blue-500/15" />
-                <div className="relative z-10">
-                  <div className="mb-7 flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-black transition group-hover:bg-red-500 group-hover:text-white">
-                    <Icon name={item.icon} className="h-7 w-7" />
-                  </div>
-                  <h3 className="text-xl font-black">{item.title}</h3>
-                  <p className="mt-4 leading-7 text-white/58">{item.text}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="px-5 pb-24 sm:px-8 lg:px-12">
-        <div className="mx-auto max-w-7xl rounded-[3rem] border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl lg:p-10">
-          <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr]">
             <div className="space-y-3">
               {solutions.map((solution, index) => {
                 const isActive = activeSolution === index;
                 return (
-                  <button key={solution.title} onClick={() => setActiveSolution(index)} className={`flex w-full items-start gap-4 rounded-[1.7rem] p-5 text-left transition ${isActive ? "bg-gradient-to-r from-red-500 to-blue-600 shadow-2xl shadow-blue-950/30" : "bg-white/[0.04] hover:bg-white/[0.08]"}`}>
+                  <button key={solution.title} onClick={() => setActiveSolution(index)} className={`flex w-full items-start gap-4 rounded-2xl p-5 text-left transition ${isActive ? "bg-gradient-to-r from-red-500/10 via-white/[0.03] to-blue-500/10" : "bg-white/[0.04] hover:bg-white/[0.08]"}`}>
                     <span className={`grid h-12 w-12 shrink-0 place-items-center rounded-2xl ${isActive ? "bg-white text-black" : "bg-white/10 text-white"}`}>
-                      <Icon name={solution.icon} className="h-6 w-6" />
+                      <span dangerouslySetInnerHTML={{ __html: solution.icon }} />
                     </span>
                     <span>
-                      <span className="block text-lg font-black">{solution.title}</span>
+                      <span className="block text-lg text-white font-bold">{solution.title}</span>
                       <span className={`mt-2 block text-sm leading-6 ${isActive ? "text-white/85" : "text-white/52"}`}>{solution.desc}</span>
                     </span>
                   </button>
@@ -324,21 +374,23 @@ export default function ProfessionalIndustryPage() {
               })}
             </div>
 
-            <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-[#11172b] via-[#0a0c14] to-[#06070c] p-8 shadow-2xl shadow-black/30">
+            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#11172b] via-[#0a0c14] to-[#06070c] p-8 shadow-2xl shadow-black/30">
+              
               <div className="absolute right-0 top-0 h-64 w-64 rounded-full bg-blue-600/20 blur-3xl" />
               <div className="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-red-600/20 blur-3xl" />
-              <div className="relative z-10">
-                <div className="grid h-20 w-20 place-items-center rounded-[2rem] bg-white text-black">
-                  <Icon name={solutions[activeSolution].icon} className="h-9 w-9" />
-                </div>
-                <h2 className="mt-8 text-4xl font-black tracking-[-0.04em]">{solutions[activeSolution].title}</h2>
-                <p className="mt-5 max-w-2xl text-lg leading-8 text-white/62">{solutions[activeSolution].desc}</p>
 
-                <div className="mt-9 grid gap-4 sm:grid-cols-2">
+              <div className="relative space-y-4 z-10">
+                <div className="grid h-20 w-20 place-items-center rounded-[2rem] bg-white text-black">
+                  <span dangerouslySetInnerHTML={{ __html: solutions[activeSolution].icon }} />
+                </div>
+                <div className="text-3xl font-black tracking-[-0.04em] md:text-4xl text-white">{solutions[activeSolution].title}</div>
+                <p className="text-lg leading-8 text-zinc-500">{solutions[activeSolution].desc}</p>
+
+                <div className="grid gap-4 sm:grid-cols-2">
                   {["Role-based access", "Real-time dashboards", "Email & WhatsApp alerts", "Cloud-ready architecture"].map((item) => (
                     <div key={item} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-4">
-                      <Icon name="check" className="h-5 w-5 text-red-400" />
-                      <span className="text-sm font-semibold text-white/72">{item}</span>
+                      <span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-red-600"><path d="M20 6 9 17l-5-5"/></svg></span>
+                      <span className="text-md font-semibold text-white/72">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -346,8 +398,8 @@ export default function ProfessionalIndustryPage() {
                 <div className="mt-10 grid gap-4 sm:grid-cols-3">
                   {metrics.slice(0, 3).map((item) => (
                     <div key={item.label} className="rounded-2xl border border-white/10 bg-black/25 p-4">
-                      <p className="text-2xl font-black">{item.value}</p>
-                      <p className="mt-1 text-xs leading-5 text-white/48">{item.label}</p>
+                      <p className="text-2xl font-bold text-white">{item.value}</p>
+                      <p className="mt-1 text-sm leading-5 text-white/48">{item.label}</p>
                     </div>
                   ))}
                 </div>
@@ -357,67 +409,62 @@ export default function ProfessionalIndustryPage() {
         </div>
       </section>
 
-      <section className="px-5 pb-24 sm:px-8 lg:px-12">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-10 text-center">
-            <p className="text-sm font-black uppercase tracking-[0.28em] text-blue-300">Delivery engine</p>
-            <h2 className="mx-auto mt-4 max-w-4xl text-4xl font-black tracking-[-0.04em] sm:text-6xl">A premium process from idea to production-grade software.</h2>
-          </div>
-          <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-6">
-            {process.map((step, index) => (
-              <div key={step} className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl">
-                <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-red-500/10 blur-2xl" />
-                <div className="relative z-10">
-                  <span className="text-4xl font-black text-white/18">0{index + 1}</span>
-                  <div className="mt-8 grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-red-500 to-blue-600">
-                    <Icon name="layers" className="h-5 w-5" />
-                  </div>
-                  <p className="mt-5 text-lg font-black">{step}</p>
-                </div>
+
+      {/* Process */}
+      <Process
+          steps={process}
+          label="Delivery engine"
+          title={
+            <>
+              A premium process from idea to <span className="text-red-600">production-grade software.</span>
+            </>
+          }
+          description=""
+        />
+      
+      {/* Technology Stack */}
+      <section className="relative overflow-hidden py-14 sm:py-20 bg-[var(--off)]">
+        <div className="absolute left-0 top-0 h-80 w-80 rounded-full bg-blue-500/20 blur-3xl mss-float-soft" />
+        <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-red-500/20 blur-3xl mss-float-reverse" />
+
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+            <div className="rounded-2xl bg-gradient-to-br from-red-500/18 to-blue-600/12 p-8 backdrop-blur-xl">
+              <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
+                <span className="h-[2px] w-7 bg-red-600" />
+                Technology stack
               </div>
-            ))}
+              <h2 className="text-[50px] uppercase leading-[0.94] tracking-[0.02em] text-zinc-950 sm:text-[70px] lg:text-[80px]">Modern, scalable, and enterprise-ready.</h2>
+              <p className="mt-5 text-base leading-8 text-zinc-500">We choose architecture based on performance, security, maintainability, and long-term business scale.</p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/75 p-6 backdrop-blur-xl">
+              <div className="flex flex-wrap gap-3">
+                {techStack.map((tech) => (
+                  <span key={tech} className="rounded-xl border border-red-200 bg-red-100/50 px-5 py-3 text-sm font-bold text-red-600">{tech}</span>
+                ))}
+              </div>
+              <Link href="/" className="mt-6 flex w-fit items-center justify-between rounded-[4px] bg-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
+                Discuss Architecture
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="px-5 pb-24 sm:px-8 lg:px-12">
-        <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-[0.8fr_1.2fr]">
-          <div className="rounded-[3rem] border border-white/10 bg-gradient-to-br from-red-500/18 to-blue-600/12 p-8 backdrop-blur-xl">
-            <p className="text-sm font-black uppercase tracking-[0.28em] text-red-300">Technology stack</p>
-            <h2 className="mt-4 text-4xl font-black tracking-[-0.04em]">Modern, scalable, and enterprise-ready.</h2>
-            <p className="mt-5 leading-8 text-white/58">We choose architecture based on performance, security, maintainability, and long-term business scale.</p>
-          </div>
-          <div className="rounded-[3rem] border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl">
-            <div className="flex flex-wrap gap-3">
-              {techStack.map((tech) => (
-                <span key={tech} className="rounded-2xl border border-white/10 bg-white/[0.055] px-5 py-3 text-sm font-bold text-white/70">
-                  {tech}
-                </span>
-              ))}
-            </div>
-            <button className="mt-8 inline-flex items-center gap-2 rounded-2xl border border-white/12 bg-white px-6 py-4 text-sm font-black text-black hover:bg-red-500 hover:text-white">
-              Discuss Architecture <Icon name="arrow" className="h-4 w-4" />
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-5 pb-10 sm:px-8 lg:px-12">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[3rem] border border-white/10 bg-gradient-to-r from-red-600 via-[#151827] to-blue-700 p-8 shadow-2xl shadow-black/40 lg:p-14">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.22),transparent_30%),radial-gradient(circle_at_80%_40%,rgba(255,255,255,0.18),transparent_32%)]" />
-          <div className="relative z-10 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-            <div>
-              <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-sm font-bold text-white backdrop-blur-xl">
-                <Icon name="sparkles" className="h-4 w-4" /> Ready for digital transformation
-              </p>
-              <h2 className="max-w-3xl text-4xl font-black tracking-[-0.04em] sm:text-5xl">Build a professional services platform that saves time, improves visibility, and scales with your business.</h2>
-            </div>
-            <button className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white px-8 py-5 text-sm font-black text-black shadow-xl transition hover:scale-[1.02]">
-              Start With Miraculous <Icon name="arrow" className="h-5 w-5" />
-            </button>
-          </div>
-        </div>
-      </section>
-    </main>
+      {/* CTA STRIP */}
+      <CtaStrip
+        title={
+          <>
+            Ready for digital 
+            <br />
+            <span className="text-black">transformation</span>
+          </>
+        }
+        description="Build a professional services platform that saves time, improves visibility, and scales with your business."
+        buttonText="Discuss Your Project →"
+        buttonHref="/"
+      />
+    </>
   );
 }

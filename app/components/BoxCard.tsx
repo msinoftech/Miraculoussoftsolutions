@@ -41,14 +41,20 @@ export default function BoxCard({
     <section className={sectionClassName}>
       <div className={containerClassName}>
         <div className={headerClassName}>
-          <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-            <span className="h-[2px] w-7 bg-red-600" />
-            {label}
-          </div>
-          <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">
-            {title}
-          </h2>
-          <p className="text-[15px] leading-8 text-zinc-500">{description}</p>
+          {label && (
+            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
+              <span className="h-[2px] w-7 bg-red-600" />
+              {label}
+            </div>
+          )}
+
+          {title && (
+            <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">{title}</h2>
+          )}
+
+          {description && (
+            <p className="text-[15px] leading-8 text-zinc-500">{description}</p>
+          )}
         </div>
 
         <div className={gridClassName}>

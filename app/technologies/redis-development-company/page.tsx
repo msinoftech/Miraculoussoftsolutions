@@ -1,0 +1,495 @@
+"use client";
+import { useMemo } from "react";
+import Link from "next/link";
+import Marquee from "@/app/components/Marquee";
+import Process from "@/app/components/Process";
+import BoxCard from "@/app/components/BoxCard";
+import CtaStrip from "@/app/components/CtaStrip";
+
+const marqueeItems = [
+    "Ultra-Fast In-Memory Data Processing",
+    "Sub-Millisecond Latency Performance",
+    "Real-Time Caching & Session Management",
+    "Pub/Sub Messaging & Event Streaming",
+    "High-Throughput Read/Write Operations",
+    "Horizontal Scaling with Redis Cluster",
+    "Built-in Data Structures (Strings, Lists, Sets, Hashes)",
+    "Distributed Caching Architecture",
+    "Persistence with RDB & AOF",
+    "High Availability with Redis Sentinel",
+    "Atomic Operations & Data Consistency",
+    "Cloud-Ready Redis Deployments",
+  ];
+
+const aboutCodeLines = [
+    {
+      type: "comment",
+      content: "// Redis Configuration",
+    },
+  
+    {
+      content: [
+        { t: "version: ", cls: "code-keyword" },
+        { t: "7.x", cls: "code-string" },
+      ],
+    },
+  
+    {
+      content: [
+        { t: "host: ", cls: "code-keyword" },
+        { t: "127.0.0.1", cls: "code-string" },
+      ],
+    },
+  
+    {
+      content: [
+        { t: "port: ", cls: "code-keyword" },
+        { t: "6379", cls: "code-string" },
+      ],
+    },
+  
+    {
+      content: [
+        { t: "mode: ", cls: "code-keyword" },
+        { t: "in-memory", cls: "code-string" },
+      ],
+    },
+  
+    {
+      type: "comment",
+      content: "// Cache Operations",
+    },
+  
+    {
+      content: [
+        { t: "SET ", cls: "code-keyword" },
+        { t: "user:1001 ", cls: "code-string" },
+        { t: '"Aman"', cls: "code-muted" },
+      ],
+    },
+  
+    {
+      content: [
+        { t: "GET ", cls: "code-keyword" },
+        { t: "user:1001", cls: "code-string" },
+      ],
+    },
+  
+    {
+      content: [
+        { t: "EXPIRE ", cls: "code-keyword" },
+        { t: "user:1001 ", cls: "code-string" },
+        { t: "60", cls: "code-muted" },
+      ],
+    },
+  
+    {
+      type: "comment",
+      content: "// Data Structures",
+    },
+  
+    {
+      content: [
+        { t: "LPUSH ", cls: "code-keyword" },
+        { t: "queue ", cls: "code-string" },
+        { t: '"job1"', cls: "code-muted" },
+      ],
+    },
+  
+    {
+      content: [
+        { t: "HSET ", cls: "code-keyword" },
+        { t: "user:1001 ", cls: "code-string" },
+        { t: "name ", cls: "code-muted" },
+        { t: '"Aman"', cls: "code-string" },
+      ],
+    },
+  
+    {
+      type: "comment",
+      content: "// Pub/Sub Messaging",
+    },
+  
+    {
+      content: [
+        { t: "PUBLISH ", cls: "code-keyword" },
+        { t: "notifications ", cls: "code-string" },
+        { t: '"New User Registered"', cls: "code-muted" },
+      ],
+    },
+  
+    {
+      type: "comment",
+      content: "// Persistence & Scaling",
+    },
+  
+    {
+      content: [
+        { t: "persistence: ", cls: "code-keyword" },
+        { t: "RDB + AOF", cls: "code-string" },
+      ],
+    },
+  
+    {
+      content: [
+        { t: "cluster_mode: ", cls: "code-muted" },
+        { t: "enabled", cls: "code-string" },
+      ],
+    },
+  
+    {
+      type: "comment",
+      content: "// Output (Runtime State)",
+    },
+  
+    {
+      content: [
+        {
+          t: "Status: Connected | Latency: <1ms | Cache Hits: 98% | Memory Usage: Optimized",
+          cls: "code-string",
+        },
+      ],
+    },
+];
+
+const technologies = [
+    "Blazing-Fast Real-Time Data Access",
+    "In-Memory Performance at Scale",
+    "Instant Caching for High-Traffic Apps",
+    "Live Data Streaming & Pub/Sub Systems",
+    "Seamless Horizontal Scaling",
+    "Powerful Built-In Data Structures",
+    "Reliable Persistence & Backup Options",
+    "Always-On High Availability",
+    "Atomic Operations for Safe Updates",
+];
+
+const steps = [
+    {
+      num: "01",
+      title: "Use Case & Caching Strategy",
+      body: "We define how Redis will be used—caching, session storage, real-time analytics, or pub/sub messaging. Key design, TTL strategy, and data structures are planned for optimal performance.",
+    },
+    {
+      num: "02",
+      title: "Provisioning & Configuration",
+      body: "We deploy Redis on cloud or on-prem with optimized memory settings, eviction policies, persistence (RDB/AOF), and secure access controls for high-speed operations.",
+    },
+    {
+      num: "03",
+      title: "Data Structuring & Integration",
+      body: "We design efficient key patterns and leverage Redis data structures (strings, hashes, lists, sets) while integrating Redis seamlessly with your backend, APIs, or microservices.",
+    },
+    {
+      num: "04",
+      title: "Clustering & High Availability",
+      body: "We configure Redis Cluster and Sentinel for automatic failover, data partitioning, and high availability to ensure zero downtime and consistent performance under load.",
+    },
+    {
+      num: "05",
+      title: "Performance Optimization & Monitoring",
+      body: "We fine-tune memory usage, optimize cache hit ratios, and monitor latency, throughput, and system health to maintain ultra-fast response times at scale.",
+    },
+];
+
+const reasons = [
+    {
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award-icon lucide-award"><path d="M12 22s8-4.5 8-11.8A10 10 0 0 0 12 2a10 10 0 0 0-8 11.8A8 8 0 0 0 12 22"/><path d="M12 8v13"/><path d="M12 3v2"/><path d="M12 18v2"/></svg>`,
+        title: "Blazing-Fast In-Memory Performance",
+        body: "Redis delivers sub-millisecond response times by storing data in memory, making it ideal for high-speed applications, real-time analytics, and ultra-fast user experiences.",
+    },
+    {
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package-icon lucide-package"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></svg>`,
+        title: "Powerful Data Structures",
+        body: "Beyond simple key-value storage, Redis supports lists, sets, hashes, sorted sets, and streams—enabling flexible modeling for queues, leaderboards, sessions, and more.",
+    },
+    {
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-airplay-icon lucide-airplay"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><path d="m12 15 5 6H7Z"/></svg>`,
+        title: "Real-Time Processing & Messaging",
+        body: "With built-in Pub/Sub and streaming capabilities, Redis powers real-time applications like live notifications, chat systems, event-driven architectures, and analytics pipelines.",
+    },
+    {
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gem-icon lucide-gem"><path d="M11.5 2.75a2.25 2.25 0 0 1 2 0l7.5 4.5a2.25 2.25 0 0 1 1.1 1.95v9a2.25 2.25 0 0 1-1.1 1.95l-7.5 4.5a2.25 2.25 0 0 1-2 0l-7.5-4.5A2.25 2.25 0 0 1 2 16.5v-9a2.25 2.25 0 0 1 1.1-1.95z"/><path d="M12 12a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5z"/></svg>`,
+        title: "High Availability & Scalability",
+        body: "Redis ensures reliability with replication, clustering, and Sentinel-based failover—allowing seamless horizontal scaling and always-on performance for critical systems.",
+    },  
+];
+
+export default function PostgresqlDevelopmentCompanyPage() {
+
+    const stats = useMemo(
+        () => [
+          { num: "200+", label: "APIs BUILT" },
+          { num: "8+", label: "Years Experience" },
+          { num: "98%", label: "Uptime" },
+          { num: "50+", label: "Experts" },
+        ],
+        []
+    );
+    return (
+    <>
+       {/* HERO */}
+       <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
+            <div className="grid-bg absolute inset-0 opacity-45" />
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
+            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.16))]" />
+            <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-[1fr_390px] z-10">
+                {/* Left Column */}
+                <div className="space-y-5">
+                    <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
+                        <span className="h-[2px] w-7 bg-red-600" />Redis Real-Time Data Services
+                    </div>
+
+                    <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-zinc-950 sm:text-[118px] md:text-[140px] lg:text-[168px]">
+                        <span>HIRE </span>
+                        <span className="text-red-600">REDIS</span>
+                        <span className="hero-outline block outline-black">DEVELOPERS</span>
+                    </h1>
+
+                    <p className="max-w-xl text-[15px] leading-8 text-zinc-500">Power ultra-fast, real-time applications with Redis—leveraging in-memory caching, live data streaming, and sub-millisecond performance for modern scalable systems.</p>
+
+                    <div className="flex flex-wrap items-center gap-4">
+                        <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
+                            Start Your Project
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                        </Link>
+                        <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
+                            View Portfolio
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                        </Link>
+                    </div>
+
+                    <div className="mt-7 grid grid-cols-2 gap-4 pt-7 sm:grid-cols-4">
+                        {stats.map((item) => {
+                            const numberOnly = item.num.replace(/[+%]/g, "");
+                            const suffix = item.num.includes("+") ? "+" : item.num.includes("%") ? "%" : "";
+                            return (
+                            <div key={item.label}>
+                                <div className="font-bebas-neue text-5xl leading-none text-zinc-950">
+                                {numberOnly}
+                                <span className="text-red-600">{suffix}</span>
+                                </div>
+                                <div className="mt-1 text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-950">{item.label}</div>
+                            </div>
+                            );
+                        })}
+                    </div>
+                </div>
+
+                {/* Right Column */}
+                <div className="relative mx-auto hidden aspect-square w-full max-w-[440px] lg:block" aria-hidden="true">
+
+                    {/* Rings (faster + real-time vibe) */}
+                    <div className="absolute inset-0 rounded-full border-2 border-red-500/20 hero-ring" />
+                    <div className="absolute inset-[42px] rounded-full border border-orange-500/25 hero-ring-2" />
+                    <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-400 hero-ring-3" />
+
+                    {/* CENTER CORE */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+
+                        {/* CLIENT */}
+                        <div className="w-fit mx-auto rounded-xl bg-white px-3 py-1 shadow-sm">
+                        <span className="text-xs text-red-600">Client / API Request</span>
+                        </div>
+
+                        {/* Connector */}
+                        <div className="mx-auto h-8 w-[3px] bg-gradient-to-b from-red-400/60 to-transparent" />
+
+                        {/* REDIS CORE */}
+                        <div className="w-[260px] rounded-2xl border border-zinc-200 bg-white p-4 shadow-[0_10px_26px_rgba(15,23,42,0.10)]">
+                        <div className="mb-3 text-center text-xs font-semibold tracking-wide text-red-600">
+                            Redis In-Memory Engine
+                        </div>
+
+                        {/* DATA STRUCTURES */}
+                        <div className="grid grid-cols-2 gap-3 text-[10px]">
+                            <div className="rounded-lg border border-red-200 bg-red-50 p-2 text-center text-red-600">
+                            Strings
+                            </div>
+                            <div className="rounded-lg border border-orange-200 bg-orange-50 p-2 text-center text-orange-600">
+                            Hashes
+                            </div>
+                            <div className="rounded-lg border border-yellow-200 bg-yellow-50 p-2 text-center text-yellow-700">
+                            Lists
+                            </div>
+                            <div className="rounded-lg border border-pink-200 bg-pink-50 p-2 text-center text-pink-600">
+                            Sets
+                            </div>
+                        </div>
+                        </div>
+
+                        {/* Connector */}
+                        <div className="mx-auto h-8 w-[3px] bg-gradient-to-b from-red-400/60 to-transparent" />
+
+                        {/* CACHE + PUBSUB */}
+                        <div className="flex gap-6">
+
+                        {/* CACHE */}
+                        <div className="w-[120px] rounded-xl border border-zinc-200 bg-white p-3 shadow-sm">
+                            <div className="mb-2 text-center text-[12px] text-emerald-600">
+                            Cache Layer
+                            </div>
+
+                            <div className="flex justify-center gap-1">
+                            {[...Array(3)].map((_, i) => (
+                                <div key={i} className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                            ))}
+                            </div>
+                        </div>
+
+                        {/* PUB SUB */}
+                        <div className="w-[120px] rounded-xl border border-zinc-200 bg-white p-3 shadow-sm">
+                            <div className="mb-2 text-center text-[12px] text-purple-600">
+                            Pub / Sub
+                            </div>
+
+                            <div className="flex justify-center gap-1">
+                            {[...Array(3)].map((_, i) => (
+                                <div key={i} className="h-3 w-3 rounded-full bg-purple-500 animate-ping" />
+                            ))}
+                            </div>
+                        </div>
+
+                        </div>
+
+                        {/* Connector */}
+                        <div className="mx-auto h-8 w-[3px] bg-gradient-to-b from-orange-400/60 to-transparent" />
+
+                        {/* PERSISTENCE */}
+                        <div className="w-fit mx-auto rounded-xl border border-zinc-200 bg-white px-4 py-2 shadow-sm">
+                        <span className="text-xs text-orange-600">Persistence (RDB / AOF)</span>
+                        </div>
+
+                        {/* Tagline */}
+                        <div className="text-center text-[12px] font-semibold tracking-wide text-zinc-600 mt-2">
+                        Real-Time, In-Memory & Ultra-Fast Data Engine
+                        </div>
+                    </div>
+
+                    {/* FLOATING FEATURES */}
+                    <div className="hero-float absolute right-6 top-1/3 rounded-lg bg-white/90 backdrop-blur px-3 py-1 text-xs font-semibold text-red-600">Sub-ms Latency</div>
+                    <div className="hero-float absolute bottom-12 left-6 rounded-lg bg-white/90 backdrop-blur px-3 py-1 text-xs font-semibold text-emerald-600">Smart Caching</div>
+                    <div className="hero-float absolute left-6 top-1/3 rounded-lg bg-white/90 backdrop-blur px-3 py-1 text-xs font-semibold text-purple-600">Real-Time Events</div>
+                    <div className="absolute bottom-[120px] left-[20px] hero-float rounded-lg bg-white/90 backdrop-blur px-3 py-1 text-xs font-semibold text-orange-600">High Availability</div>
+                    <div className="absolute bottom-[120px] right-[20px] hero-float rounded-lg bg-white/90 backdrop-blur px-3 py-1 text-xs font-semibold text-pink-600">Horizontal Scaling</div>
+                </div>
+            </div>
+        </section>
+
+        {/* Marquee Section */}
+        <Marquee items={marqueeItems} />
+
+        {/* ABOUT */}
+        <section className="relative overflow-hidden border-y border-white/[0.04] bg-[linear-gradient(180deg,#141414,#121212)] py-16 md:py-20">
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[length:100%_44px] opacity-20" />
+          <div className="relative mx-auto w-full max-w-7xl px-4">
+            <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-12">
+              {/* left column */}
+              <div className="relative flex min-h-[390px] items-center justify-center overflow-hidden rounded-md border border-white/[0.07] bg-[linear-gradient(135deg,rgba(26,86,219,0.09),rgba(224,32,32,0.09))] p-[42px]">
+                <span className="absolute left-0 top-0 h-6 w-6 rounded-tl-md border-l-2 border-t-2 border-white/70" />
+                <span className="absolute bottom-0 right-0 h-6 w-6 rounded-br-md border-b-2 border-r-2 border-white/70" />
+
+                <pre className="overflow-x-auto text-xs leading-7 md:text-sm" aria-label="Code preview">
+                  {aboutCodeLines.map((line, index) => {
+                    if (line.type === "comment") {
+                      return (
+                        <span key={index} className="block text-zinc-500 italic">
+                          {line.content}
+                        </span>
+                      );
+                    }
+
+                    if (typeof line.content === "string") {
+                      return (
+                        <span key={index} className="block text-zinc-200">
+                          {line.content}
+                        </span>
+                      );
+                    }
+
+                    return (
+                      <span key={index} className="block text-zinc-200">
+                        {line.content.map((part, partIndex) => (
+                          <span
+                            key={partIndex}
+                            className={
+                              part.cls === "code-keyword"
+                                ? "text-blue-400"
+                                : part.cls === "code-string"
+                                ? "text-emerald-400"
+                                : "text-zinc-200"
+                            }
+                          >
+                            {part.t}
+                          </span>
+                        ))}
+                      </span>
+                    );
+                  })}
+                </pre>
+              </div>
+              {/* right column */}
+              <div className="relative space-y-4">
+                <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
+                    <span className="h-[2px] w-7 bg-red-600" />
+                    Why Redis With Us
+                </div>
+                <h2 className="text-[50px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[70px] lg:text-[80px]">The Redis <span className="text-red-600">Real-Time Engine</span></h2>
+                
+                <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]"><strong className="text-white">Redis powers ultra-fast, real-time applications</strong>{" "} with in-memory data storage, sub-millisecond latency, and instant data access—making it ideal for caching, live analytics, and high-performance user experiences at scale.</p>
+
+                <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">We leverage <strong className="text-white">efficient key design, advanced data structures, and distributed caching strategies</strong>{" "} to build Redis-powered systems that handle massive traffic, enable real-time data flow, and ensure seamless scalability across modern cloud architectures.</p>
+
+                <div id="technologies" className="mt-7 flex flex-wrap gap-2">
+                  {technologies.map((item) => (
+                    <span key={item} className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-blue-200">{item}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+       {/* PROCESS */}
+       <Process
+          steps={steps}
+          label="Redis Real-Time Data Process"
+          title={
+            <>
+              YOU BUILD REAL-TIME <span className="text-red-600">REDIS SYSTEMS</span>
+            </>
+          }
+          description="From caching strategy to real-time data flow, we build Redis-powered systems with sub-millisecond latency, high availability, and scalable in-memory architecture—perfect for modern high-performance applications."
+        />
+
+        {/* REASONS */}
+        <BoxCard
+          items={reasons}
+          label="Why Choose Redis"
+          title={
+            <>
+              REASONS TO CHOOSE US
+              <br />
+              <span className="text-red-600">REDIS</span>
+            </>
+          }
+          description="Deep expertise in Redis architecture, real-time systems, and distributed caching—delivering ultra-fast, scalable, and resilient data solutions for modern applications."
+        />
+
+        {/* CTA STRIP */}
+        <CtaStrip
+            title={
+                <>
+                BUILD REAL-TIME
+                <br />
+                APPS <span className="text-black">AT SCALE?</span>
+                </>
+            }
+            description="Power your applications with Redis—achieve lightning-fast performance, seamless scalability, and real-time data processing for caching, streaming, and event-driven systems."
+            buttonText="Get a Free Quote →"
+            buttonHref="/"
+        />
+
+    </>
+  );
+}
