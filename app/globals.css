@@ -293,3 +293,332 @@ h1, h2, h3, h4, h5, h6, .font-bebas-neue {
 @keyframes spinReverse {
   to { transform: rotate(-360deg); }
 }
+
+.tech-orbit-spin {
+  animation: spin 56s linear infinite;
+}
+
+.tech-orbit-spin-reverse {
+  animation: spinReverse 72s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-orbit-spin,
+  .tech-orbit-spin-reverse {
+    animation: none;
+  }
+}
+
+.case-card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.case-card-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.14) 50%,
+    transparent 60%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.65s ease;
+  pointer-events: none;
+}
+
+.case-card-shine:hover::after {
+  transform: translateX(120%);
+}
+
+.case-index-glow {
+  animation: caseIndexPulse 4s ease-in-out infinite;
+}
+
+@keyframes caseIndexPulse {
+  0%,
+  100% {
+    opacity: 0.08;
+  }
+  50% {
+    opacity: 0.16;
+  }
+}
+
+@keyframes techBranchReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tech-branch-reveal {
+  animation: techBranchReveal 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+}
+
+@keyframes techChipGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.08);
+  }
+}
+
+.tech-chip-glow:hover {
+  animation: techChipGlow 1.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-branch-reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .tech-chip-glow:hover {
+    animation: none;
+  }
+}
+
+.tech-stack-layer {
+  transition: background-color 0.25s ease, padding-left 0.25s ease;
+}
+
+.tech-stack-layer:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.tech-stack-layer:hover .tech-stack-rail {
+  border-left-color: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes serviceEngineIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.service-engine-card {
+  animation: serviceEngineIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+}
+
+.service-panel-grid {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.035) 1px, transparent 0),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, transparent 28%);
+  background-size: 22px 22px, 100% 100%;
+}
+
+.service-panel-light.service-panel-grid {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.045) 1px, transparent 0),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, transparent 32%);
+  background-size: 22px 22px, 100% 100%;
+}
+
+.service-panel-light.service-panel-frame::before,
+.service-panel-light.service-panel-frame::after {
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.service-panel-light .service-graph-hub-ring {
+  animation: serviceGraphHubPulseLight 4s ease-in-out infinite;
+}
+
+@keyframes serviceGraphHubPulseLight {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.12), 0 12px 40px rgba(15, 23, 42, 0.08);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(220, 38, 38, 0.06), 0 16px 48px rgba(220, 38, 38, 0.1);
+  }
+}
+
+.service-panel-frame::before,
+.service-panel-frame::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: rgba(255, 255, 255, 0.14);
+  border-style: solid;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.service-panel-frame::before {
+  top: 14px;
+  left: 14px;
+  border-width: 1px 0 0 1px;
+}
+
+.service-panel-frame::after {
+  bottom: 14px;
+  right: 14px;
+  border-width: 0 1px 1px 0;
+}
+
+.service-panel-shine {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  background-size: 200% 100%;
+  animation: servicePanelShine 8s ease-in-out infinite;
+}
+
+@keyframes servicePanelShine {
+  0%,
+  100% {
+    background-position: 200% 0;
+  }
+  50% {
+    background-position: -200% 0;
+  }
+}
+
+.service-engine-card {
+  --engine-accent: #dc2626;
+}
+
+.service-engine-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  background: radial-gradient(ellipse 80% 60% at 0% 50%, color-mix(in srgb, var(--engine-accent) 18%, transparent), transparent 70%);
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.service-engine-card:hover::after {
+  opacity: 1;
+}
+
+.service-engine-card:hover .service-engine-arrow {
+  transform: translate(2px, -2px);
+  opacity: 1;
+  color: var(--engine-accent);
+}
+
+.service-engine-arrow {
+  transition: transform 0.25s ease, opacity 0.25s ease, color 0.25s ease;
+}
+
+.service-pipeline-progress {
+  animation: servicePipelinePulse 3.5s ease-in-out infinite;
+}
+
+@keyframes servicePipelinePulse {
+  0%,
+  100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.service-pipeline-active {
+  box-shadow: 0 0 0 3px color-mix(in srgb, #dc2626 25%, transparent);
+}
+
+.service-graph-orbit {
+  animation: serviceGraphOrbit 48s linear infinite;
+}
+
+.service-graph-orbit-reverse {
+  animation: serviceGraphOrbit 64s linear infinite reverse;
+}
+
+@keyframes serviceGraphOrbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.service-graph-spoke {
+  stroke-dasharray: 1.4 0.9;
+  animation: serviceGraphDash 14s linear infinite;
+}
+
+@keyframes serviceGraphDash {
+  to {
+    stroke-dashoffset: -12;
+  }
+}
+
+.service-graph-hub-ring {
+  animation: serviceGraphHubPulse 4s ease-in-out infinite;
+}
+
+@keyframes serviceGraphHubPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.2), 0 0 60px rgba(239, 68, 68, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(239, 68, 68, 0.08), 0 0 80px rgba(239, 68, 68, 0.22);
+  }
+}
+
+.service-graph-node {
+  animation: serviceEngineIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+}
+
+@keyframes industryGraphNodeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.industry-graph-node {
+  animation: industryGraphNodeIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-engine-card {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .service-engine-card:hover .service-engine-arrow {
+    transform: none;
+  }
+
+  .service-panel-shine,
+  .service-pipeline-progress,
+  .service-graph-orbit,
+  .service-graph-orbit-reverse,
+  .service-graph-spoke,
+  .service-graph-hub-ring,
+  .service-panel-light .service-graph-hub-ring,
+  .service-graph-node,
+  .industry-graph-node {
+    animation: none;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}

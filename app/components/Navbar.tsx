@@ -237,15 +237,15 @@ export default function Navbar() {
                     <span className="text-[10px]">▼</span>
                   </button>
                   <div className="invisible absolute left-0 top-full z-40 w-[280px] translate-y-2 rounded-xl border border-[#dadada] bg-white/95 p-5 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                    <Link href="/#clients" className="flex items-center gap-2 rounded-lg py-2 text-[12px] font-semibold text-zinc-900 transition hover:text-red-600">
+                    <Link href="/client-overview" className="flex items-center gap-2 rounded-lg py-2 text-[12px] font-semibold text-zinc-900 transition hover:text-red-600">
                       <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                       Overview
                     </Link>
-                    <Link href="/#clients" className="flex items-center gap-2 rounded-lg py-2 text-[12px] font-semibold text-zinc-900 transition hover:text-red-600">
+                    <Link href="/case-studies" className="flex items-center gap-2 rounded-lg py-2 text-[12px] font-semibold text-zinc-900 transition hover:text-red-600">
                       <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                       Case Studies
                     </Link>
-                    <Link href="/#clients" className="flex items-center gap-2 rounded-lg py-2 text-[12px] font-semibold text-zinc-900 transition hover:text-red-600">
+                    <Link href="/clients-approach" className="flex items-center gap-2 rounded-lg py-2 text-[12px] font-semibold text-zinc-900 transition hover:text-red-600">
                       <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
                       Approach
                     </Link>
@@ -409,13 +409,13 @@ export default function Navbar() {
             </button>
             {mobileDropdown === "clients" && (
               <div className="space-y-2 border-t border-[#f0f0f0] px-6 py-3">
-                <Link href="/#clients" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                <Link href="/client-overview" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
                   <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Overview</div>
                 </Link>
-                <Link href="/#clients" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                <Link href="/case-studies" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
                   <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Case Studies</div>
                 </Link>
-                <Link href="/#clients" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
+                <Link href="/clients-approach" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
                   <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Approach</div>
                 </Link>
               </div>

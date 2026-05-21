@@ -178,7 +178,7 @@ export default function RealEstateIndustryPage() {
           {/* Right Column */}
           <div className="relative mx-auto w-full">
             <div className="relative rounded-[2rem] border border-white/10 bg-white/10 p-6 shadow-2xl shadow-blue-950/40 backdrop-blur">
-              <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-white">
+              <div className="overflow-hidden">
                 <div className="flex items-center justify-between border-b border-white/10">
                   <div>
                     <p className="text-xs font-bold uppercase tracking-[0.22em] text-red-600">Property OS</p>
