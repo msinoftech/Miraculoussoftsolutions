@@ -142,7 +142,7 @@ const technologyCatalog = [
   },
   {
     category: "Security",
-    parentHref: "/technologies/oauth-development-company",
+    parentHref: "/technologies/security",
     description: "Authentication, authorization, and identity patterns for enterprise-grade access control.",
     children: [
       { label: "OAuth", href: "/technologies/oauth-development-company" },
@@ -152,7 +152,7 @@ const technologyCatalog = [
   },
   {
     category: "AI & Automation",
-    parentHref: "/technologies/openai-development-company",
+    parentHref: "/technologies/ai-and-automation",
     description: "LLM integrations and intelligent automation for modern product workflows.",
     children: [
       { label: "OpenAI", href: "/technologies/openai-development-company" },
@@ -559,7 +559,7 @@ export default function technologiesPage() {
             {whyPointsold.map((point, index) => (
               <div key={point.title} className="grid grid-cols-[56px_1fr] gap-5 border-b border-[var(--border)] py-8 last:border-b-0 first:pt-0 last:pb-0">
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-zinc-950 text-white transition hover:bg-red-600">
-                  <span className="font-hero text-[22px] uppercase tracking-[0.04em]">{String(index + 1).padStart(2, "0")}</span>
+                  <span className="font-bebas-neue text-[22px] uppercase tracking-[0.04em]">{String(index + 1).padStart(2, "0")}</span>
                 </div>
                 <div>
                   <div className="text-[17px] font-extrabold tracking-[-0.02em] text-zinc-950">{point.title}</div>

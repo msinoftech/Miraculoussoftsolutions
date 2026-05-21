@@ -1,12 +1,60 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Logo from "./Logo";
+import { contactInfo } from "../lib/config";
+
+function isLinkActive(pathname: string, href: string) {
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+function navLiClass(isActive: boolean) {
+  return `group relative h-16 border-r border-[var(--border)] px-5 transition ${isActive ? "bg-[var(--off)]" : "hover:bg-[var(--off)]"}`;
+}
+
+function navTriggerClass(isActive: boolean) {
+  return `flex h-full items-center gap-2 text-[12px] font-bold uppercase tracking-wider transition ${
+    isActive ? "text-red-600" : "text-zinc-500 group-hover:text-red-600"
+  }`;
+}
+
+function navDotClass(pathname: string, href: string) {
+  return `h-1.5 w-1.5 shrink-0 rounded-full transition ${isLinkActive(pathname, href) ? "bg-red-600" : "bg-zinc-950 group-hover:bg-red-600"}`;
+}
+
+function navChildTextClass(pathname: string, href: string) {
+  return isLinkActive(pathname, href) ? "text-red-600" : "hover:text-red-600";
+}
+
+function navHubClass(pathname: string, href: string) {
+  return `text-[12px] font-extrabold uppercase tracking-wider transition ${isLinkActive(pathname, href) ? "text-red-600" : "text-zinc-950 hover:text-red-600"}`;
+}
+
+function mobileSectionClass(isActive: boolean) {
+  return `flex w-full items-center justify-between px-4 py-4 text-left text-[12px] font-semibold tracking-wider transition ${
+    isActive ? "text-red-600" : "text-[#222]"
+  }`;
+}
+
+function mobileChildClass(pathname: string, href: string) {
+  return `text-[12px] font-semibold transition ${isLinkActive(pathname, href) ? "text-red-600" : "text-zinc-900"}`;
+}
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
+
+  const navActive = {
+    services: pathname.startsWith("/services"),
+    technology: pathname.startsWith("/technologies"),
+    industries: pathname.startsWith("/industries"),
+    process: pathname.startsWith("/process"),
+    about: pathname.startsWith("/about-us"),
+    contact: pathname.startsWith("/contact-us"),
+  };
 
   const toggleMobileDropdown = (menu: string) => {
     setMobileDropdown((prev) => (prev === menu ? null : menu));
@@ -34,8 +82,8 @@ export default function Navbar() {
             <nav className="hidden items-center border-l border-[var(--border)] h-full xl:flex">
               <ul className="flex h-full">
                 {/* Services block */}
-                <li className="group relative h-16 border-r border-[var(--border)] px-5 transition hover:bg-[var(--off)]">
-                  <button type="button" className="flex h-full items-center gap-2 text-[12px] font-bold uppercase tracking-wider text-zinc-500 group-hover:text-red-600">
+                <li className={navLiClass(navActive.services)}>
+                  <button type="button" className={navTriggerClass(navActive.services)} aria-current={navActive.services ? "true" : undefined}>
                     SERVICES
                     <span className="text-[10px]">▼</span>
                   </button>
@@ -43,42 +91,33 @@ export default function Navbar() {
                     <div className="mb-3 border-b border-[#e0dbd2] pb-3">
                       <div className="flex items-center justify-between gap-2">
                         <div className="text-[12px] font-bold uppercase tracking-wider text-zinc-500">SERVICES</div>
-                        <Link href="/services" className="text-[12px] font-bold tracking-wider text-zinc-500 hover:text-red-600">VIEW ALL</Link>
+                        <Link href="/services" className={`text-[12px] font-bold tracking-wider ${pathname === "/services" ? "text-red-600" : "text-zinc-500 hover:text-red-600"}`}>VIEW ALL</Link>
                       </div>
                       <div className="mt-1 text-[14px] font-extrabold text-zinc-950">What we build</div>
                     </div>
                     <div className="grid grid-cols-2 gap-x-6 gap-y-2 text-[12px] font-semibold text-zinc-900">
-                      <Link href="/services/saas-development-services" className="group-item rounded-xl flex items-center gap-2 py-2 transition">
-                        <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="hover:text-red-600">SaaS Development</div>
-                      </Link>
-                      <Link href="/services/b2b-platform-engineering-services" className="group rounded-xl flex items-center gap-2 py-2 transition">
-                        <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="hover:text-red-600">B2B Platforms</div>
-                      </Link>
-                      <Link href="/services/erp-and-business-automation-services" className="group rounded-xl flex items-center gap-2 py-2 transition">
-                        <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="hover:text-red-600">ERP Systems</div>
-                      </Link>
-                      <Link href="/services/ecommerce-solutions-services" className="group rounded-xl flex items-center gap-2 py-2 transition">
-                        <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="hover:text-red-600">eCommerce</div>
-                      </Link>
-                      <Link href="/services/mobile-applications-services" className="group rounded-xl flex items-center gap-2 py-2 transition">
-                        <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="hover:text-red-600">Mobile Apps</div>
-                      </Link>
-                      <Link href="/services/branding-and-digital-growth-services" className="group rounded-xl flex items-center gap-2 py-2 transition">
-                        <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="hover:text-red-600">Digital Growth</div>
-                      </Link>
+                      {(
+                        [
+                          ["/services/saas-development-services", "SaaS Development"],
+                          ["/services/b2b-platform-engineering-services", "B2B Platforms"],
+                          ["/services/erp-and-business-automation-services", "ERP Systems"],
+                          ["/services/ecommerce-solutions-services", "eCommerce"],
+                          ["/services/mobile-applications-services", "Mobile Apps"],
+                          ["/services/branding-and-digital-growth-services", "Digital Growth"],
+                        ] as const
+                      ).map(([href, label]) => (
+                        <Link key={href} href={href} className="group rounded-xl flex items-center gap-2 py-2 transition" aria-current={isLinkActive(pathname, href) ? "page" : undefined}>
+                          <span className={navDotClass(pathname, href)} />
+                          <div className={navChildTextClass(pathname, href)}>{label}</div>
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 </li>
 
                 {/* Technoligies */}
-                <li className="group relative h-16 border-r border-[var(--border)] px-5 transition hover:bg-[var(--off)]">
-                  <button type="button" className="flex h-full items-center gap-2 text-[12px] font-bold uppercase tracking-wider text-zinc-500 group-hover:text-red-600">
+                <li className={navLiClass(navActive.technology)}>
+                  <button type="button" className={navTriggerClass(navActive.technology)} aria-current={navActive.technology ? "true" : undefined}>
                     TECHNOLOGY
                     <span className="text-[10px]">▼</span>
                   </button>
@@ -86,97 +125,91 @@ export default function Navbar() {
                     <div className="mb-3 border-b border-[#e0dbd2] pb-3">
                       <div className="flex items-center justify-between gap-2">
                         <div className="text-[12px] font-bold uppercase tracking-wider text-zinc-500">TECHNOLOGY</div>
-                        <Link href="/technologies" className="text-[12px] font-bold tracking-wider text-zinc-500 hover:text-red-600">VIEW ALL</Link>
+                        <Link href="/technologies" className={`text-[12px] font-bold tracking-wider ${pathname === "/technologies" ? "text-red-600" : "text-zinc-500 hover:text-red-600"}`}>VIEW ALL</Link>
                       </div>
                       <div className="mt-1 text-[14px] font-extrabold text-zinc-950">Modern engineering stack</div>
                     </div>
                     <div className="grid grid-cols-2 gap-x-6 gap-y-2">
-                      
-                      {/* Frontend */}
-                      <div className="group rounded-xl gap-2 py-2 transition">
-                        <div className="flex items-center gap-2">
-                          <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                          <Link href="/technologies/frontend-technologies" className="text-[12px] font-extrabold uppercase tracking-wider text-zinc-950 hover:text-red-600">Frontend</Link>
-                        </div>
-                        <div className="mt-1 flex items-center gap-2 text-[12px] font-semibold text-zinc-900">
-                          <Link href="/technologies/reactjs-development-company" className="hover:text-red-600">React</Link>
-                          <Link href="/technologies/nextjs-development-company" className="hover:text-red-600">Next.js</Link>
-                          <Link href="/technologies/typescript-development-company" className="hover:text-red-600">TypeScript</Link>
-                        </div>
-                      </div>
-
-                      {/* Backend */}
-                      <div className="group rounded-xl gap-2 py-2 transition">
-                        <div className="flex items-center gap-2">
-                          <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                          <Link href="/technologies/backend-technologies" className="text-[12px] font-extrabold uppercase tracking-wider text-zinc-950 hover:text-red-600">Backend</Link>
-                        </div>
-                        <div className="mt-1 flex items-center gap-2 text-[12px] font-semibold text-zinc-900 ">
-                          <Link href="/technologies/nodejs-development-company" className="hover:text-red-600">Node.js</Link>
-                          <Link href="/technologies/python-development-company" className="hover:text-red-600">Python</Link>
-                          <Link href="/technologies/fastapi-development-company" className="hover:text-red-600">FastAPI</Link>
-                        </div>
-                      </div>
-
-                      {/* Cloud Devops */}
-                      <div className="group rounded-xl gap-2 py-2 transition">
-                        <div className="flex items-center gap-2">
-                          <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                          <Link href="/technologies/cloud-devops" className="text-[12px] font-extrabold uppercase tracking-wider text-zinc-950 hover:text-red-600">Cloud & DevOps</Link>
-                        </div>
-                        <div className="mt-1 flex items-center gap-2 text-[12px] font-semibold text-zinc-900">
-                          <Link href="/technologies/aws-development-company" className="hover:text-red-600">AWS</Link>
-                          <Link href="/technologies/docker-development-company" className="hover:text-red-600">Docker</Link>
-                          <Link href="/technologies/kubernetes-development-company" className="hover:text-red-600">Kubernetes</Link>
-                        </div>
-                      </div>
-
-                      {/* data & integrations */}
-                      <div className="group rounded-xl gap-2 py-2 transition">
-                        <div className="flex items-center gap-2">
-                          <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                          <Link href="/technologies/data-and-integrations" className="text-[12px] font-extrabold uppercase tracking-wider text-zinc-950 hover:text-red-600">Data & Integrations</Link>
-                        </div>
-                        <div className="mt-1 flex items-center gap-2 text-[12px] font-semibold text-zinc-900">
-                          <Link href="/technologies/postgresql-development-company" className="hover:text-red-600">PostgreSQL</Link>
-                          <Link href="/technologies/redis-development-company" className="hover:text-red-600">Redis</Link>
-                          <Link href="/technologies/opensearch-development-company" className="hover:text-red-600">OpenSearch</Link>
-                        </div>
-                      </div>
-
-                      {/* Security */}
-                      <div className="group rounded-xl gap-2 py-2 transition">
-                        <div className="flex items-center gap-2 ">
-                          <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                          <Link href="/technologies/security" className="text-[12px] font-extrabold uppercase tracking-wider text-zinc-950 hover:text-red-600">Security</Link>
-                        </div>
-                        <div className="mt-1 flex items-center gap-2 text-[12px] font-semibold text-zinc-900">
-                          <Link href="/technologies/oauth-development-company" className="hover:text-red-600">OAuth</Link>
-                          <Link href="/technologies/jwt-development-company" className="hover:text-red-600">JWT</Link>
-                          <Link href="/technologies/rbac-development-company" className="hover:text-red-600">RBAC</Link>
-                        </div>
-                      </div>
-
-                      {/* Ai & Automation */}
-                      <div className="group rounded-xl gap-2 py-2 transition">
-                        <div className="flex items-center gap-2">
-                          <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                          <Link href="/technologies/ai-and-automation" className="text-[12px] font-extrabold uppercase tracking-wider text-zinc-950 hover:text-red-600">AI & Automation</Link>
-                        </div>
-                        <div className="mt-1 flex items-center gap-2 text-[12px] font-semibold text-zinc-900">
-                          <Link href="/technologies/openai-development-company" className="hover:text-red-600">OpenAI</Link>
-                          <Link href="/technologies/agents-development-company" className="hover:text-red-600">Agents</Link>
-                          <Link href="/technologies/rag-development-company" className="hover:text-red-600">RAG</Link>
-                        </div>
-                      </div>
+                      {(
+                        [
+                          {
+                            hub: ["/technologies/frontend-technologies", "Frontend"],
+                            children: [
+                              ["/technologies/reactjs-development-company", "React"],
+                              ["/technologies/nextjs-development-company", "Next.js"],
+                              ["/technologies/typescript-development-company", "TypeScript"],
+                            ],
+                          },
+                          {
+                            hub: ["/technologies/backend-technologies", "Backend"],
+                            children: [
+                              ["/technologies/nodejs-development-company", "Node.js"],
+                              ["/technologies/python-development-company", "Python"],
+                              ["/technologies/fastapi-development-company", "FastAPI"],
+                            ],
+                          },
+                          {
+                            hub: ["/technologies/cloud-devops", "Cloud & DevOps"],
+                            children: [
+                              ["/technologies/aws-development-company", "AWS"],
+                              ["/technologies/docker-development-company", "Docker"],
+                              ["/technologies/kubernetes-development-company", "Kubernetes"],
+                            ],
+                          },
+                          {
+                            hub: ["/technologies/data-and-integrations", "Data & Integrations"],
+                            children: [
+                              ["/technologies/postgresql-development-company", "PostgreSQL"],
+                              ["/technologies/redis-development-company", "Redis"],
+                              ["/technologies/opensearch-development-company", "OpenSearch"],
+                            ],
+                          },
+                          {
+                            hub: ["/technologies/security", "Security"],
+                            children: [
+                              ["/technologies/oauth-development-company", "OAuth"],
+                              ["/technologies/jwt-development-company", "JWT"],
+                              ["/technologies/rbac-development-company", "RBAC"],
+                            ],
+                          },
+                          {
+                            hub: ["/technologies/ai-and-automation", "AI & Automation"],
+                            children: [
+                              ["/technologies/openai-development-company", "OpenAI"],
+                              ["/technologies/agents-development-company", "Agents"],
+                              ["/technologies/rag-development-company", "RAG"],
+                            ],
+                          },
+                        ] as const
+                      ).map(({ hub, children }) => {
+                        const [hubHref, hubLabel] = hub;
+                        const hubActive = isLinkActive(pathname, hubHref) || children.some(([href]) => isLinkActive(pathname, href));
+                        return (
+                          <div key={hubHref} className="group rounded-xl gap-2 py-2 transition">
+                            <div className="flex items-center gap-2">
+                              <span className={hubActive ? "h-1.5 w-1.5 shrink-0 rounded-full bg-red-600" : navDotClass(pathname, hubHref)} />
+                              <Link href={hubHref} className={navHubClass(pathname, hubHref)} aria-current={isLinkActive(pathname, hubHref) ? "page" : undefined}>
+                                {hubLabel}
+                              </Link>
+                            </div>
+                            <div className="mt-1 flex flex-wrap items-center gap-2 text-[12px] font-semibold text-zinc-900">
+                              {children.map(([href, label]) => (
+                                <Link key={href} href={href} className={navChildTextClass(pathname, href)} aria-current={isLinkActive(pathname, href) ? "page" : undefined}>
+                                  {label}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      })}
 
                     </div>
                   </div>
                 </li>
 
                 {/* Industries */}
-                <li className="group relative h-16 border-r border-[var(--border)] px-5 transition hover:bg-[var(--off)]">
-                  <button type="button" className="flex h-full items-center gap-2 text-[12px] font-bold uppercase tracking-wider text-zinc-500 group-hover:text-red-600">
+                <li className={navLiClass(navActive.industries)}>
+                  <button type="button" className={navTriggerClass(navActive.industries)} aria-current={navActive.industries ? "true" : undefined}>
                     INDUSTRIES
                     <span className="text-[10px]">▼</span>
                   </button>
@@ -184,84 +217,66 @@ export default function Navbar() {
                     <div className="mb-3 border-b border-[#e0dbd2] pb-3">
                       <div className="flex items-center justify-between gap-2">
                         <div className="text-[12px] font-bold uppercase tracking-wider text-zinc-400">Industries</div>
-                        <Link href="/industries" className="text-[12px] font-bold tracking-wider text-zinc-500 hover:text-red-600">VIEW ALL</Link>
+                        <Link href="/industries" className={`text-[12px] font-bold tracking-wider ${pathname === "/industries" ? "text-red-600" : "text-zinc-500 hover:text-red-600"}`}>VIEW ALL</Link>
                       </div>
                       <div className="mt-1 text-[14px] font-extrabold text-zinc-950">Domains we serve</div>
                     </div>
                     <div className="grid grid-cols-2 gap-x-6 gap-y-2 text-[12px] font-semibold text-zinc-900">
-                      <Link href="/industries/healthcare" className="group rounded-xl flex items-center gap-2 py-2 transition">
-                        <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="hover:text-red-600">Healthcare</div>
-                      </Link>
-                      <Link href="/industries/education" className="group rounded-xl flex items-center gap-2 py-2 transition">
-                        <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="hover:text-red-600">Education</div>
-                      </Link>
-                      <Link href="/industries/logistics" className="group rounded-xl flex items-center gap-2 py-2 transition">
-                        <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="hover:text-red-600">Logistics</div>
-                      </Link>
-                      <Link href="/industries/finance" className="group rounded-xl flex items-center gap-2 py-2 transition">
-                        <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="hover:text-red-600">Finance</div>
-                      </Link>
-                      <Link href="/industries/retail" className="group rounded-xl flex items-center gap-2 py-2 transition">
-                        <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="hover:text-red-600">Retail</div>
-                      </Link>
-                      <Link href="/industries/enterprise" className="group rounded-xl flex items-center gap-2 py-2 transition">
-                        <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="hover:text-red-600">Enterprise</div>
-                      </Link>
-                      <Link href="/industries/real-estate" className="group rounded-xl flex items-center gap-2 py-2 transition">
-                        <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="hover:text-red-600">Real Estate</div>
-                      </Link>
-                      <Link href="/industries/professional-industries" className="group rounded-xl flex items-center gap-2 py-2 transition">
-                        <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                        <div className="hover:text-red-600">Professional Industries</div>
-                      </Link>
+                      {(
+                        [
+                          ["/industries/healthcare", "Healthcare"],
+                          ["/industries/education", "Education"],
+                          ["/industries/logistics", "Logistics"],
+                          ["/industries/finance", "Finance"],
+                          ["/industries/retail", "Retail"],
+                          ["/industries/enterprise", "Enterprise"],
+                          ["/industries/real-estate", "Real Estate"],
+                          ["/industries/professional-industries", "Professional Industries"],
+                        ] as const
+                      ).map(([href, label]) => (
+                        <Link key={href} href={href} className="group rounded-xl flex items-center gap-2 py-2 transition" aria-current={isLinkActive(pathname, href) ? "page" : undefined}>
+                          <span className={navDotClass(pathname, href)} />
+                          <div className={navChildTextClass(pathname, href)}>{label}</div>
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 </li>
 
                 {/* Process */}
-                <li className="group relative h-16 border-r border-[var(--border)] px-5 transition hover:bg-[var(--off)]">
-                  <Link href="/process" className="flex h-full items-center gap-2 text-[12px] font-bold uppercase tracking-wider text-zinc-500 group-hover:text-red-600">PROCESS</Link>
+                <li className={navLiClass(navActive.process)}>
+                  <Link href="/process" className={navTriggerClass(navActive.process)} aria-current={navActive.process ? "page" : undefined}>
+                    PROCESS
+                  </Link>
                 </li>
 
-                {/* Clients */}
-                <li className="group relative h-16 border-r border-[var(--border)] px-5 transition hover:bg-[var(--off)]">
-                  <button type="button" className="flex h-full items-center gap-2 text-[12px] font-bold uppercase tracking-wider text-zinc-500 group-hover:text-red-600">
-                    CLIENTS
-                    <span className="text-[10px]">▼</span>
-                  </button>
-                  <div className="invisible absolute left-0 top-full z-40 w-[280px] translate-y-2 rounded-xl border border-[#dadada] bg-white/95 p-5 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                    <Link href="/client-overview" className="flex items-center gap-2 rounded-lg py-2 text-[12px] font-semibold text-zinc-900 transition hover:text-red-600">
-                      <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                      Overview
-                    </Link>
-                    <Link href="/case-studies" className="flex items-center gap-2 rounded-lg py-2 text-[12px] font-semibold text-zinc-900 transition hover:text-red-600">
-                      <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                      Case Studies
-                    </Link>
-                    <Link href="/clients-approach" className="flex items-center gap-2 rounded-lg py-2 text-[12px] font-semibold text-zinc-900 transition hover:text-red-600">
-                      <span className="h-1.5 w-1.5 rounded-full bg-zinc-950 transition group-hover:bg-red-600"></span>
-                      Approach
-                    </Link>
-                  </div>
+                <li className={navLiClass(navActive.about)}>
+                  <Link href="/about-us" className={navTriggerClass(navActive.about)} aria-current={navActive.about ? "page" : undefined}>
+                    About Us
+                  </Link>
                 </li>
               </ul>
             </nav>
 
             <div className="hidden h-16 items-center gap-2.5 xl:flex">
-              <Link href="#" className="inline-flex h-[42px] items-center justify-center border border-[#cfcfcf] bg-white px-6 text-[12px] font-semibold tracking-wider text-[#222]">VIEW WORK</Link>
-              <Link href="#" className="inline-flex h-[42px] items-center justify-center bg-[#0a0a13] px-6 text-[12px] font-semibold tracking-wider text-white">BOOK A CALL</Link>
+              <Link href="/contact-us" className={`inline-flex h-[42px] items-center justify-center border px-6 text-[12px] font-semibold tracking-wider transition ${
+                  navActive.contact
+                    ? "border-red-600 bg-red-50 text-red-600"
+                    : "border-[#cfcfcf] bg-white text-[#222] hover:border-red-600 hover:text-red-600"
+                }`}
+                aria-current={navActive.contact ? "page" : undefined}
+              >
+                Contact Us
+              </Link>
+              <Link href={`tel:${contactInfo.phone}`} className="inline-flex h-[42px] items-center justify-center bg-[#0a0a13] px-6 text-[12px] font-semibold tracking-wider text-white">BOOK A CALL</Link>
             </div>
+
           </div>
+
           <button type="button" aria-label="Open menu" className="flex items-center p-1 bg-zinc-950 rounded-md justify-center cursor-pointer xl:hidden" onClick={() => setIsOpen(true)}>
             <svg width="36px" height="36px" viewBox="0 0 24.00 24.00" fill="none"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 17H8M12 17H20M4 12H20M4 7H12M16 7H20" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>
           </button>
+
       </div>
 
       <div className={`fixed inset-0 z-[60] bg-black/45 transition-opacity duration-300 xl:hidden ${ isOpen ? "opacity-100 pointer-events-auto" : "pointer-events-none opacity-0"}`} onClick={closeMobileMenu} />
@@ -275,158 +290,170 @@ export default function Navbar() {
         </div>
 
         <ul className="relative">
-          <li className="border-b border-[#ededed]">
-            <button type="button" className="flex w-full items-center justify-between px-4 py-4 text-left text-[12px] font-semibold tracking-wider text-[#222]" onClick={() => toggleMobileDropdown("services")}>
+          <li className={`border-b border-[#ededed] ${navActive.services ? "bg-red-50/50" : ""}`}>
+            <button type="button" className={mobileSectionClass(navActive.services)} onClick={() => toggleMobileDropdown("services")}>
               SERVICES
               <span className={`text-xs transition-transform ${mobileDropdown === "services" ? "rotate-180" : ""}`}>▼</span>
             </button>
             {mobileDropdown === "services" && (
               <div className="space-y-2 border-t border-[#f0f0f0] px-6 py-3">
-                <Link href="/services/saas-development-services" className="block py-1 flex items-center gap-2 text-[#222]" onClick={closeMobileMenu}>
-                  <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-semibold text-zinc-900">SaaS Development</div>
+                <Link href="/services" className={`block py-1 text-[11px] font-bold uppercase tracking-wider ${isLinkActive(pathname, "/services") ? "text-red-600" : "text-zinc-500"}`} onClick={closeMobileMenu}>
+                  View all services
                 </Link>
-                <Link href="/services/b2b-platform-engineering-services" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
-                  <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-semibold text-zinc-900">B2B Platforms</div>
-                </Link>
-                <Link href="/services/erp-and-business-automation-services" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
-                  <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-semibold text-zinc-900">ERP Systems</div>
-                </Link>
-                <Link href="/services/ecommerce-solutions-services" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
-                  <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-semibold text-zinc-900">eCommerce</div>
-                </Link>
-                <Link href="/services/mobile-applications-services" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
-                  <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-semibold text-zinc-900">Mobile Apps</div>
-                </Link>
-                <Link href="/services/branding-and-digital-growth-services" className="block py-1 flex items-center gap-2 text-[22px] leading-none text-[#222]" onClick={closeMobileMenu}>
-                  <span className="h-1.5 w-1.5 rounded-full transition bg-red-600"></span>
-                  <div className="text-[12px] font-semibold text-zinc-900">Digital Growth</div>
-                </Link>
+                {(
+                  [
+                    ["/services/saas-development-services", "SaaS Development"],
+                    ["/services/b2b-platform-engineering-services", "B2B Platforms"],
+                    ["/services/erp-and-business-automation-services", "ERP Systems"],
+                    ["/services/ecommerce-solutions-services", "eCommerce"],
+                    ["/services/mobile-applications-services", "Mobile Apps"],
+                    ["/services/branding-and-digital-growth-services", "Digital Growth"],
+                  ] as const
+                ).map(([href, label]) => (
+                  <Link key={href} href={href} className="flex items-center gap-2 py-1" onClick={closeMobileMenu} aria-current={isLinkActive(pathname, href) ? "page" : undefined}>
+                    <span className={navDotClass(pathname, href)} />
+                    <div className={mobileChildClass(pathname, href)}>{label}</div>
+                  </Link>
+                ))}
               </div>
             )}
           </li>
 
-          <li className="border-b border-[#ededed]">
-            <button type="button" className="flex w-full items-center justify-between px-4 py-4 text-left text-[12px] font-semibold tracking-wider text-[#222]" onClick={() => toggleMobileDropdown("technology")}>
+          <li className={`border-b border-[#ededed] ${navActive.technology ? "bg-red-50/50" : ""}`}>
+            <button type="button" className={mobileSectionClass(navActive.technology)} onClick={() => toggleMobileDropdown("technology")}>
               TECHNOLOGY
               <span className={`text-xs transition-transform ${mobileDropdown === "technology" ? "rotate-180" : ""}`}>▼</span>
             </button>
             {mobileDropdown === "technology" && (
-              <div className="space-y-2 border-t border-[#f0f0f0] px-6 py-3">
-                <Link href="/#tech" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
-                  <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Frontend</div>
-                  <div className="flex items-center gap-2 text-[12px] leading-5 text-zinc-500">
-                    <Link href="/technologies/reactjs-development-company" className="hover:text-red-600">React</Link>
-                    <Link href="/technologies/nextjs-development-company" className="hover:text-red-600">Next.js</Link>
-                    <Link href="/technologies/typescript-development-company" className="hover:text-red-600">TypeScript</Link>
-                  </div>
+              <div className="space-y-3 border-t border-[#f0f0f0] px-6 py-3">
+                <Link href="/technologies" className={`block py-1 text-[11px] font-bold uppercase tracking-wider ${isLinkActive(pathname, "/technologies") ? "text-red-600" : "text-zinc-500"}`} onClick={closeMobileMenu}>
+                  View all technology
                 </Link>
-                <Link href="/#tech" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
-                  <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Backend</div>
-                  <div className="text-[12px] flex items-center gap-2 leading-5 text-zinc-500">
-                    <Link href="/technologies/nodejs-development-company" className="hover:text-red-600">Node.js</Link>
-                    <Link href="/technologies/python-development-company" className="hover:text-red-600">Python</Link>
-                    <Link href="/technologies/fastapi-development-company" className="hover:text-red-600">FastAPI</Link>
-                  </div>
-                </Link>
-                <Link href="/#tech" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
-                  <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Cloud & DevOps</div>
-                  <div className="text-[12px] flex items-center gap-2 leading-5 text-zinc-500">
-                    <Link href="/technologies/aws-development-company" className="hover:text-red-600">AWS</Link>
-                    <Link href="/technologies/docker-development-company" className="hover:text-red-600">Docker</Link>
-                    <Link href="/technologies/kubernetes-development-company" className="hover:text-red-600">Kubernetes</Link>
-                  </div>
-                </Link>
-                <Link href="/#tech" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
-                  <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Data & Integrations</div>
-                  <div className="text-[12px] flex items-center gap-2 leading-5 text-zinc-500">
-                    <Link href="/technologies/postgresql-development-company" className="hover:text-red-600">PostgreSQL</Link>
-                    <Link href="/technologies/redis-development-company" className="hover:text-red-600">Redis</Link>
-                    <Link href="/technologies/opensearch-development-company" className="hover:text-red-600">OpenSearch</Link>
-                  </div>
-                </Link>
-                <Link href="/#tech" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
-                  <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Security</div>
-                  <div className="text-[12px] flex items-center gap-2 leading-5 text-zinc-500">
-                    <Link href="/technologies/oauth-development-company" className="hover:text-red-600">OAuth</Link>
-                    <Link href="/technologies/jwt-development-company" className="hover:text-red-600">JWT</Link>
-                    <Link href="/technologies/rbac-development-company" className="hover:text-red-600">RBAC</Link>
-                  </div>
-                </Link>
-                <Link href="/#tech" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
-                  <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> AI & Automation</div>
-                  <div className="text-[12px] flex items-center gap-2 leading-5 text-zinc-500">
-                    <Link href="/technologies/openai-development-company" className="hover:text-red-600">OpenAI</Link>
-                    <Link href="/technologies/agents-development-company" className="hover:text-red-600">Agents</Link>
-                    <Link href="/technologies/rag-development-company" className="hover:text-red-600">RAG</Link>
-                  </div>
-                </Link>
+                {(
+                  [
+                    {
+                      hub: ["/technologies/frontend-technologies", "Frontend"],
+                      children: [
+                        ["/technologies/reactjs-development-company", "React"],
+                        ["/technologies/nextjs-development-company", "Next.js"],
+                        ["/technologies/typescript-development-company", "TypeScript"],
+                      ],
+                    },
+                    {
+                      hub: ["/technologies/backend-technologies", "Backend"],
+                      children: [
+                        ["/technologies/nodejs-development-company", "Node.js"],
+                        ["/technologies/python-development-company", "Python"],
+                        ["/technologies/fastapi-development-company", "FastAPI"],
+                      ],
+                    },
+                    {
+                      hub: ["/technologies/cloud-devops", "Cloud & DevOps"],
+                      children: [
+                        ["/technologies/aws-development-company", "AWS"],
+                        ["/technologies/docker-development-company", "Docker"],
+                        ["/technologies/kubernetes-development-company", "Kubernetes"],
+                      ],
+                    },
+                    {
+                      hub: ["/technologies/data-and-integrations", "Data & Integrations"],
+                      children: [
+                        ["/technologies/postgresql-development-company", "PostgreSQL"],
+                        ["/technologies/redis-development-company", "Redis"],
+                        ["/technologies/opensearch-development-company", "OpenSearch"],
+                      ],
+                    },
+                    {
+                      hub: ["/technologies/security", "Security"],
+                      children: [
+                        ["/technologies/oauth-development-company", "OAuth"],
+                        ["/technologies/jwt-development-company", "JWT"],
+                        ["/technologies/rbac-development-company", "RBAC"],
+                      ],
+                    },
+                    {
+                      hub: ["/technologies/ai-and-automation", "AI & Automation"],
+                      children: [
+                        ["/technologies/openai-development-company", "OpenAI"],
+                        ["/technologies/agents-development-company", "Agents"],
+                        ["/technologies/rag-development-company", "RAG"],
+                      ],
+                    },
+                  ] as const
+                ).map(({ hub, children }) => {
+                  const [hubHref, hubLabel] = hub;
+                  return (
+                    <div key={hubHref} className="block py-1">
+                      <Link href={hubHref} className="flex items-center gap-2" onClick={closeMobileMenu} aria-current={isLinkActive(pathname, hubHref) ? "page" : undefined}>
+                        <span className={navDotClass(pathname, hubHref)} />
+                        <span className={mobileChildClass(pathname, hubHref)}>{hubLabel}</span>
+                      </Link>
+                      <div className="mt-1 flex flex-wrap gap-2 pl-3.5 text-[12px] leading-5">
+                        {children.map(([href, label]) => (
+                          <Link key={href} href={href} className={navChildTextClass(pathname, href)} onClick={closeMobileMenu} aria-current={isLinkActive(pathname, href) ? "page" : undefined}>
+                            {label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             )}
           </li>
 
-          <li className="border-b border-[#ededed]">
-            <button type="button" className="flex w-full items-center justify-between px-4 py-4 text-left text-[12px] font-semibold tracking-wider text-[#222]" onClick={() => toggleMobileDropdown("industries")}>
+          <li className={`border-b border-[#ededed] ${navActive.industries ? "bg-red-50/50" : ""}`}>
+            <button type="button" className={mobileSectionClass(navActive.industries)} onClick={() => toggleMobileDropdown("industries")}>
               INDUSTRIES
               <span className={`text-xs transition-transform ${mobileDropdown === "industries" ? "rotate-180" : ""}`}>▼</span>
             </button>
             {mobileDropdown === "industries" && (
               <div className="space-y-2 border-t border-[#f0f0f0] px-6 py-3">
-                <Link href="/industries/healthcare" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
-                  <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Healthcare</div>
+                <Link href="/industries" className={`block py-1 text-[11px] font-bold uppercase tracking-wider ${isLinkActive(pathname, "/industries") ? "text-red-600" : "text-zinc-500"}`} onClick={closeMobileMenu}>
+                  View all industries
                 </Link>
-                <Link href="/industries/logistics" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
-                  <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Logistics</div>
-                </Link>
-                <Link href="/industries/finance" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
-                  <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Finance</div>
-                </Link>
-                <Link href="/industries/retail" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
-                  <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Retail</div>
-                </Link>
-                <Link href="/industries/education" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
-                  <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Education</div>
-                </Link>
-                <Link href="/industries/enterprise" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
-                  <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Enterprise</div>
-                </Link>
+                {(
+                  [
+                    ["/industries/healthcare", "Healthcare"],
+                    ["/industries/logistics", "Logistics"],
+                    ["/industries/finance", "Finance"],
+                    ["/industries/retail", "Retail"],
+                    ["/industries/education", "Education"],
+                    ["/industries/enterprise", "Enterprise"],
+                    ["/industries/real-estate", "Real Estate"],
+                    ["/industries/professional-industries", "Professional Industries"],
+                  ] as const
+                ).map(([href, label]) => (
+                  <Link key={href} href={href} className="flex items-center gap-2 py-1" onClick={closeMobileMenu} aria-current={isLinkActive(pathname, href) ? "page" : undefined}>
+                    <span className={navDotClass(pathname, href)} />
+                    <span className={mobileChildClass(pathname, href)}>{label}</span>
+                  </Link>
+                ))}
               </div>
             )}
           </li>
 
-          <li className="border-b border-[#ededed]">
-            <Link href="/process" className="flex w-full items-center justify-between px-4 py-4 text-left text-[12px] font-semibold tracking-wider text-[#222]" onClick={closeMobileMenu}>PROCESS</Link>
+          <li className={`border-b border-[#ededed] ${navActive.process ? "bg-red-50/50" : ""}`}>
+            <Link href="/process" className={mobileSectionClass(navActive.process)} onClick={closeMobileMenu} aria-current={navActive.process ? "page" : undefined}>
+              PROCESS
+            </Link>
           </li>
 
-          <li className="border-b border-[#ededed]">
-            <button type="button" className="flex w-full items-center justify-between px-4 py-4 text-left text-[12px] font-semibold tracking-wider text-[#222]" onClick={() => toggleMobileDropdown("clients")}>
-              CLIENTS
-              <span className={`text-xs transition-transform ${mobileDropdown === "clients" ? "rotate-180" : ""}`}>▼</span>
-            </button>
-            {mobileDropdown === "clients" && (
-              <div className="space-y-2 border-t border-[#f0f0f0] px-6 py-3">
-                <Link href="/client-overview" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
-                  <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Overview</div>
-                </Link>
-                <Link href="/case-studies" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
-                  <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Case Studies</div>
-                </Link>
-                <Link href="/clients-approach" className="block py-1 text-[#222]" onClick={closeMobileMenu}>
-                  <div className="text-[12px] font-semibold text-zinc-900"><span className="h-1.5 w-1.5 min-w-1.5 min-h-1.5 inline-flex rounded-full transition bg-red-600"></span> Approach</div>
-                </Link>
-              </div>
-            )}
+          <li className={`border-b border-[#ededed] ${navActive.about ? "bg-red-50/50" : ""}`}>
+            <Link href="/about-us" className={mobileSectionClass(navActive.about)} onClick={closeMobileMenu} aria-current={navActive.about ? "page" : undefined}>
+              ABOUT US
+            </Link>
           </li>
+
         </ul>
 
         <div className="space-y-3 px-4">
-          <Link href="#" className="flex h-[42px] w-full items-center justify-center border border-[#cfcfcf] bg-white text-[12px] font-semibold tracking-wider text-[#222]" onClick={closeMobileMenu}>VIEW WORK</Link>
-          <Link href="#" className="flex h-[42px] w-full items-center justify-center bg-[#0a0a13] text-[12px] font-semibold tracking-wider text-white" onClick={closeMobileMenu}>BOOK A CALL</Link>
+          <Link href="/contact-us" className={`flex h-[42px] w-full items-center justify-center border text-[12px] font-semibold tracking-wider ${navActive.contact ? "border-red-600 bg-red-50 text-red-600" : "border-[#cfcfcf] bg-white text-[#222]"}`} onClick={closeMobileMenu} aria-current={navActive.contact ? "page" : undefined}>
+            Contact Us
+          </Link>
+          <Link href={`tel:${contactInfo.phone}`} className="flex h-[42px] w-full items-center justify-center bg-[#0a0a13] text-[12px] font-semibold tracking-wider text-white" onClick={closeMobileMenu}>BOOK A CALL</Link>
         </div>
+        
       </aside>
     </header>
   );

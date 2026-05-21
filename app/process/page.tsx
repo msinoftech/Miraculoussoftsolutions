@@ -1,7 +1,8 @@
 "use client";
-import { useMemo, useState, type ReactElement } from "react";
+import { useEffect, useState, type CSSProperties, type Dispatch, type SetStateAction } from "react";
 import Link from "next/link";
 import BoxCard from "@/app/components/BoxCard";
+import Card from "@/app/components/Card";
 import CtaStrip from "@/app/components/CtaStrip";
 
 const processSteps = [
@@ -58,24 +59,31 @@ const processSteps = [
 const pillars = [
     { title: "Product Strategy", 
         text: "Clear discovery, requirement mapping, user-flow planning, and roadmap definition.", 
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white transition"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 8h7"/><path d="M8 12h6"/><path d="M11 16h5"/></svg>`
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 8h7"/><path d="M8 12h6"/><path d="M11 16h5"/></svg>`
     },
     { 
         title: "Modern Engineering", 
         text: "React, Next.js, Node, Python, .NET, APIs, cloud systems, and scalable backend architecture.", 
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-icon lucide-code"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>`
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>`
     },
     { 
         title: "Secure Architecture", 
         text: "Role-based access, secure APIs, structured permissions, data protection, and audit-ready systems.", 
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check-icon lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>`
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>`
     },
     { 
         title: "Cloud Deployment", 
         text: "AWS-ready systems with CI/CD, monitoring, deployment pipelines, and stable infrastructure.", 
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud-icon lucide-cloud"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>`
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>`
     },
 ];
+
+const pillarFeatures = pillars.map((pillar, index) => ({
+  number: String(index + 1).padStart(2, "0"),
+  title: pillar.title,
+  description: pillar.text,
+  icon: pillar.icon,
+}));
 
 const standards = [
   "API-first product engineering",
@@ -112,14 +120,279 @@ const model = [
     },
     {
       no: "03",
+      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud-upload"><path d="M12 13v8"/><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="m8 17 4-4 4 4"/></svg>`,
+      title: "Launch",
+      body: "Production deployment, CI/CD pipelines, environment hardening, and go-live support with stable, zero-downtime releases.",
+      tag: "",
+    },
+    {
+      no: "04",
       icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings2-icon lucide-settings-2"><path d="M14 17H5"/><path d="M19 7h-9"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>`,
       title: "Improve",
-      body: "We test, deploy, monitor, optimize, and support the product after launch for long-term value.",
+      body: "We monitor, optimize, and support the product after launch—iterating on performance, reliability, and long-term business value.",
       tag: "",
     },
 ];
 
-const orbitItems = ["DISCOVERY", "UX", "API", "CLOUD", "QA", "LAUNCH"];
+const PHASE_ACCENTS = ["#2563eb", "#7c3aed", "#4f46e5", "#dc2626", "#d97706", "#059669"] as const;
+
+const PHASE_LOGS: Record<string, { t: string; c: string }[]> = {
+  "01": [
+    { t: "workshop.stakeholders → goals aligned", c: "text-sky-400" },
+    { t: "success_metrics locked · KPI baseline", c: "text-emerald-400" },
+    { t: "scope.boundary approved", c: "text-zinc-400" },
+  ],
+  "02": [
+    { t: "journeys.map → 12 core flows", c: "text-violet-400" },
+    { t: "backlog.prioritized · MVP scope", c: "text-sky-400" },
+    { t: "roadmap.v1 published", c: "text-emerald-400" },
+  ],
+  "03": [
+    { t: "api.contract draft · OpenAPI", c: "text-indigo-400" },
+    { t: "db.schema · roles matrix", c: "text-sky-400" },
+    { t: "infra.plan → AWS topology", c: "text-emerald-400" },
+  ],
+  "04": [
+    { t: "sprint.14 → UI + API modules", c: "text-red-400" },
+    { t: "ci.pipeline green · main", c: "text-emerald-400" },
+    { t: "integrations.webhooks live", c: "text-zinc-400" },
+  ],
+  "05": [
+    { t: "qa.functional → 98% pass", c: "text-amber-400" },
+    { t: "security.scan · no critical", c: "text-emerald-400" },
+    { t: "perf.lighthouse · 92 score", c: "text-sky-400" },
+  ],
+  "06": [
+    { t: "deploy.prod → zero downtime", c: "text-emerald-400" },
+    { t: "monitoring.alerts armed", c: "text-sky-400" },
+    { t: "support.handoff complete", c: "text-zinc-400" },
+  ],
+};
+
+const WORKFLOW_NODES = processSteps.map((step, index) => {
+  const angle = (index / processSteps.length) * Math.PI * 2 - Math.PI / 2;
+  const radius = 38;
+  const cx = 50;
+  const cy = 50;
+  const x = cx + Math.cos(angle) * radius;
+  const y = cy + Math.sin(angle) * radius;
+  const accent = PHASE_ACCENTS[index];
+  return {
+    ...step,
+    accent,
+    accentSoft: `${accent}22`,
+    graph: { x, y, left: x, top: y },
+    pipeline: step.points.map((point) => ({
+      label: point.split(" ")[0],
+      detail: point,
+    })),
+    logs: PHASE_LOGS[step.id] ?? [],
+  };
+});
+
+const DELIVERY_HUB = { x: 50, y: 50 };
+
+const DELIVERY_EDGES = WORKFLOW_NODES.map((_, i) => ({
+  from: i,
+  to: (i + 1) % WORKFLOW_NODES.length,
+}));
+
+function ProcessWorkflowHub({
+  activeIndex,
+  onSelectIndex,
+}: {
+  activeIndex: number;
+  onSelectIndex: Dispatch<SetStateAction<number>>;
+}) {
+  const [pipelineTick, setPipelineTick] = useState(0);
+
+  const active = WORKFLOW_NODES[activeIndex];
+
+  useEffect(() => {
+    const rotate = setInterval(() => {
+      onSelectIndex((i) => (i + 1) % WORKFLOW_NODES.length);
+      setPipelineTick(0);
+    }, 4500);
+    return () => clearInterval(rotate);
+  }, [onSelectIndex]);
+
+  useEffect(() => {
+    setPipelineTick(0);
+    const step = setInterval(() => {
+      setPipelineTick((t) => (t < active.pipeline.length ? t + 1 : t));
+    }, 700);
+    return () => clearInterval(step);
+  }, [activeIndex, active.pipeline.length]);
+
+  const selectPhase = (index: number) => {
+    onSelectIndex(index);
+    setPipelineTick(0);
+  };
+
+  return (
+    <div className="service-panel-light service-panel-frame service-panel-grid relative mx-auto w-full overflow-hidden">
+      <div className="service-panel-shine pointer-events-none absolute inset-0 opacity-30" aria-hidden />
+
+      <div className="relative flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">Software delivery workflow</p>
+          <p className="font-bebas-neue text-2xl leading-none tracking-wide text-zinc-950 sm:text-[30px]">
+            Build <span className="text-red-600">System</span>
+          </p>
+        </div>
+        <span className="flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-600">
+          <span className="relative flex h-1.5 w-1.5">
+            <span className="relative h-1.5 w-1.5 rounded-full bg-red-500" />
+          </span>
+          In progress
+        </span>
+      </div>
+
+      <div className="relative px-1">
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl transition-colors duration-500" style={{ backgroundColor: `${active.accent}18` }}/>
+
+        <div className="relative mx-auto aspect-square w-full max-w-[420px]">
+          <div className="pointer-events-none absolute inset-[6%] rounded-full border border-dashed border-blue-300/50 service-graph-orbit" />
+          <div className="pointer-events-none absolute inset-[18%] rounded-full border border-dashed border-red-300/45 service-graph-orbit-reverse" />
+
+          <svg className="absolute inset-0 z-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" aria-hidden>
+            <defs>
+              <linearGradient id="processHubSpoke" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#2563eb" stopOpacity="0.4" />
+                <stop offset="100%" stopColor="#a1a1aa" stopOpacity="0.2" />
+              </linearGradient>
+            </defs>
+            <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(0,0,0,0.06)" strokeWidth="0.35" strokeDasharray="1.5 1.2" />
+            {WORKFLOW_NODES.map((node) => (
+              <line
+                key={`spoke-${node.id}`}
+                x1={DELIVERY_HUB.x}
+                y1={DELIVERY_HUB.y}
+                x2={node.graph.x}
+                y2={node.graph.y}
+                stroke={node.id === active.id ? node.accent : "url(#processHubSpoke)"}
+                strokeWidth={node.id === active.id ? 0.6 : 0.32}
+                strokeLinecap="round"
+                strokeDasharray={node.id === active.id ? "none" : "1.1 0.9"}
+                className={node.id === active.id ? "opacity-100" : "opacity-55"}
+              />
+            ))}
+            {DELIVERY_EDGES.map((edge) => {
+              const from = WORKFLOW_NODES[edge.from].graph;
+              const to = WORKFLOW_NODES[edge.to].graph;
+              const isLive = edge.from === activeIndex;
+              const accent = WORKFLOW_NODES[edge.from].accent;
+              return (
+                <path
+                  key={`edge-${edge.from}-${edge.to}`}
+                  d={`M ${from.x} ${from.y} A 38 38 0 0 1 ${to.x} ${to.y}`}
+                  fill="none"
+                  stroke={isLive ? accent : "#d4d4d8"}
+                  strokeWidth={isLive ? 0.5 : 0.3}
+                  strokeLinecap="round"
+                  className={isLive ? "ai-flow-path" : "ai-flow-path-idle"}
+                />
+              );
+            })}
+          </svg>
+
+          <div className="ai-hub-pulse service-graph-hub-ring absolute left-1/2 top-1/2 z-20 flex h-[5.5rem] w-[5.5rem] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-2xl border-2 border-zinc-900 bg-zinc-950 p-2 text-center text-white shadow-xl sm:h-24 sm:w-24">
+            <span className="text-[7px] font-bold uppercase tracking-[0.18em] text-white/50">Phase</span>
+            <span className="font-bebas-neue text-3xl leading-none text-red-500">{active.id}</span>
+            <span className="mt-0.5 line-clamp-2 text-[8px] font-bold uppercase leading-tight tracking-wide text-white/80">{active.phase}</span>
+            <div className="mt-1.5 h-1 w-14 rounded-full bg-gradient-to-r from-red-600 to-blue-600" />
+          </div>
+
+          {WORKFLOW_NODES.map((node, i) => {
+            const isActive = i === activeIndex;
+            const isPast = i < activeIndex;
+            return (
+              <button
+                key={node.id}
+                type="button"
+                onClick={() => selectPhase(i)}
+                className={`absolute z-30 max-w-[4.5rem] -translate-x-1/2 -translate-y-1/2 rounded-lg border px-2 py-1.5 text-center shadow-sm transition duration-300 sm:max-w-[5.25rem] ${
+                  isActive ? "scale-105 border-zinc-300 bg-white" : isPast ? "border-emerald-200 bg-emerald-50/90" : "border-zinc-200/90 bg-white/95 hover:border-zinc-300"
+                }`}
+                style={{
+                  left: `${node.graph.left}%`,
+                  top: `${node.graph.top}%`,
+                  ...(isActive ? { boxShadow: `0 0 0 2px #fff, 0 0 0 3px ${node.accent}` } : {}),
+                }}
+                aria-pressed={isActive}
+              >
+                <span className="text-[7px] font-bold uppercase tracking-wider text-zinc-500">{node.id}</span>
+                <span className="mt-0.5 block font-bebas-neue text-sm leading-none text-zinc-950 sm:text-base">{node.phase}</span>
+                {isActive && (
+                  <span className="mt-0.5 inline-block rounded px-1 py-px text-[6px] font-bold uppercase text-white" style={{ backgroundColor: node.accent }}>
+                    Live
+                  </span>
+                )}
+              </button>
+            );
+          })}
+
+        </div>
+
+        <div className="relative mt-4 flex items-center justify-center gap-0 px-1">
+          {active.pipeline.map((step, pi) => {
+            const done = pi < pipelineTick;
+            const current = pi === pipelineTick;
+            return (
+              <div key={step.detail} className="flex items-center">
+                {pi > 0 && <div className={`mx-0.5 h-px w-4 sm:w-8 ${done ? "bg-emerald-400" : "bg-zinc-200"}`} />}
+                <div
+                  className={`ai-step-node flex min-w-0 flex-col items-center rounded-lg border px-1.5 py-1.5 text-center transition sm:min-w-[4.5rem] sm:px-2 ${
+                    current ? "is-active" : done ? "is-done" : "border-zinc-200 bg-zinc-50 text-zinc-400"
+                  }`}
+                  style={current ? { color: active.accent } : undefined}
+                  title={step.detail}
+                >
+                  <span className="truncate text-[7px] font-extrabold uppercase sm:text-[8px]">{step.label}</span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="relative mt-4 overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950 font-mono shadow-[0_16px_40px_rgba(0,0,0,0.2)]">
+        <div className="flex items-center justify-between border-b border-white/10 bg-zinc-900 px-3 py-2">
+          <div className="flex items-center gap-1.5">
+            <span className="h-2 w-2 rounded-full bg-[#ff5f57]" />
+            <span className="h-2 w-2 rounded-full bg-[#febc2e]" />
+            <span className="h-2 w-2 rounded-full bg-[#28c840]" />
+          </div>
+          <span className="text-[9px] text-zinc-400">delivery-pipeline.log</span>
+          <span className="rounded px-1.5 py-0.5 text-[8px] font-bold uppercase" style={{ color: active.accent }}>
+            {active.tag}
+          </span>
+        </div>
+        <div key={active.id} className="space-y-1 p-3 text-[9px] leading-relaxed sm:text-[10px]">
+          <p style={{ color: active.accent }}>
+            ▶ Phase {active.id} · {active.title}
+          </p>
+          <p className="text-zinc-500">{active.description}</p>
+          {active.pipeline.map((step, pi) => (
+            <p key={step.detail} className={`transition-opacity duration-300 ${pi < pipelineTick ? "text-zinc-300" : "text-zinc-600 opacity-40"}`}>
+              <span className="text-red-400">{step.label}:</span> {step.detail}
+            </p>
+          ))}
+          {active.logs.map((line) => (
+            <p key={line.t} className={line.c}>
+              › {line.t}
+            </p>
+          ))}
+          <p className="flex items-center pt-1 text-red-400">
+            <span>$</span>
+            <span className="ml-1 inline-block h-3 w-[5px] animate-pulse bg-red-500" />
+          </p>
+        </div>
+      </div>
+
+    </div>
+  );
+}
 
 const runComponentDataChecks = () => {
   if (processSteps.length !== 6) throw new Error("Process page requires 6 delivery phases.");
@@ -133,15 +406,6 @@ export default function ProcessPage() {
   const [activeStep, setActiveStep] = useState(0);
   const active = processSteps[activeStep];
 
-  const orbitPositions = useMemo(
-    () => orbitItems.map((item, index) => {
-      const angle = (index / orbitItems.length) * Math.PI * 2 - Math.PI / 2;
-      const radius = 134;
-      return { item, x: Math.cos(angle) * radius, y: Math.sin(angle) * radius };
-    }),
-    []
-  );
-
   return (
     <>
         {/* Hero Section */}
@@ -150,7 +414,7 @@ export default function ProcessPage() {
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.16))]" />
 
-            <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-[1fr_390px] z-10">
+            <div className="relative z-10 mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 items-center gap-10 px-4 py-14 sm:py-20 lg:grid-cols-[minmax(0,1fr)_min(560px,42%)] lg:gap-12">
                 {/* Left column */}
                 <div  className="space-y-5">
                     <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
@@ -185,47 +449,27 @@ export default function ProcessPage() {
                         ))}
                     </div> 
                 </div>
-                {/* Right Column */}
-                <div className="relative mx-auto aspect-square w-full max-w-[320px] xl:max-w-[450px] flex items-center justify-center bg-white rounded-full">
-                    <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
-                    <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
-                    <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
-
-                    {orbitPositions.map((node, index) => (
-                        <div key={node.item} className="absolute z-20 flex h-16 w-16 items-center justify-center rounded-2xl border border-neutral-200 bg-white text-[10px] font-black text-neutral-800 shadow-lg" style={{ transform: `translate(${node.x}px, ${node.y}px)` }}>
-                        {node.item}
-                        </div>
-                    ))}
-
-                    <div className="relative z-10 flex h-44 w-44 flex-col items-center justify-center rounded-[2rem] bg-neutral-950 p-6 text-center text-white shadow-2xl shadow-red-600/20">
-                        <div className="text-xs font-bold uppercase tracking-[0.25em] text-white/60">Engineering Core</div>
-                        <div className="mt-2 text-2xl font-black tracking-tight">Build System</div>
-                        <div className="mt-3 h-1.5 w-20 rounded-full bg-gradient-to-r from-red-600 to-blue-600" />
-                    </div>
-                </div>
+                <ProcessWorkflowHub activeIndex={activeStep} onSelectIndex={setActiveStep} />
             </div>
         </section>
         
-        {/* Cards section */}
-        <section className="relative overflow-hidden border-y border-white/[0.04] bg-[linear-gradient(180deg,#141414,#121212)] py-14 md:py-20">
-            <div className="mx-auto max-w-7xl px-4">
-                <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-                    {pillars.map((pillar, index) => (
-                        <div key={pillar.title} className="group rounded-xl border border-neutral-200/10 bg-white/10 p-7 shadow-sm transition hover:-translate-y-1 hover:border-neutral-200 hover:shadow-xl hover:shadow-neutral-950/10">
-                            <div className="mb-6 flex h-13 w-13 items-center justify-center rounded-xl bg-neutral-950 text-white transition group-hover:bg-red-600">
-                                <span dangerouslySetInnerHTML={{ __html: pillar.icon || "" }} />
-                                {/* <Icon name={pillar.icon} className="h-6 w-6" /> */}
-                            </div>
-                            <div className="text-xl font-black tracking-tight text-white">{pillar.title}</div>
-                            <p className="mt-3 leading-7 text-zinc-500">{pillar.text}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
+        <Card
+            label="Delivery Capabilities"
+            title={
+                <>
+                    What Powers
+                    <br />
+                    <span className="text-red-600">Every Build.</span>
+                </>
+            }
+            description="Four disciplines that sit behind our delivery process—strategy, engineering, security, and cloud—so every phase ships with structure, not guesswork."
+            items={pillarFeatures}
+            showArrow={false}
+            gridClassName="grid border-2 border-zinc-700 md:grid-cols-2 xl:grid-cols-4"
+        />
 
         {/* Process */}
-        <section className="relative py-14 lg:py-20">
+        <section className="relative pb-14 lg:pb-20">
             <div className="mx-auto max-w-7xl px-4">
                 <div className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-2 md:items-end">
                     <div>
@@ -348,7 +592,7 @@ export default function ProcessPage() {
             }
             description=""
             headerClassName="mb-12 text-left"
-            gridClassName="grid gap-4 sm:grid-cols-2 xl:grid-cols-3"
+            gridClassName="grid gap-4 sm:grid-cols-2 xl:grid-cols-4"
         />
 
         {/* CTA STRIP */}
