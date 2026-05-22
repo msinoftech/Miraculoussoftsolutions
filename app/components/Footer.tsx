@@ -62,13 +62,13 @@ const footerContactItems = [
     href: `mailto:${contactInfo.email}`,
     Icon: IconMail,
   },
-  {
-    id: "phone",
-    label: "Phone",
-    value: contactInfo.phone,
-    href: `tel:+${contactInfo.phone.replace(/\D/g, "")}`,
-    Icon: IconPhone,
-  },
+  // {
+  //   id: "phone",
+  //   label: "Phone",
+  //   value: contactInfo.phone,
+  //   href: `tel:+${contactInfo.phone.replace(/\D/g, "")}`,
+  //   Icon: IconPhone,
+  // },
 ] as const;
 
 export default function Footer() {

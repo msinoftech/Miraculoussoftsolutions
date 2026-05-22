@@ -31,7 +31,7 @@ export default function ContactActions() {
           </span>
         </a>
 
-        <a href={`tel:${contactInfo.phone.replace(/[^+\d]/g, "")}`} className="group relative flex min-w-0 flex-col items-center gap-2 rounded-xl border border-emerald-300/20 bg-gradient-to-br from-emerald-500/20 via-teal-500/10 to-zinc-900 px-3 py-2 transition duration-300 hover:-translate-y-0.5 hover:border-emerald-300/40 hover:shadow-lg hover:shadow-emerald-500/20">
+        {/* <a href={`tel:${contactInfo.phone.replace(/[^+\d]/g, "")}`} className="group relative flex min-w-0 flex-col items-center gap-2 rounded-xl border border-emerald-300/20 bg-gradient-to-br from-emerald-500/20 via-teal-500/10 to-zinc-900 px-3 py-2 transition duration-300 hover:-translate-y-0.5 hover:border-emerald-300/40 hover:shadow-lg hover:shadow-emerald-500/20">
           <span className="grid h-10 w-10 place-items-center rounded-full bg-white text-emerald-600 shadow-md transition group-hover:scale-105">
             <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 503.32 503.32" fill="currentColor">
               <path d="M228.299,452.905c12.088,12.132,25.531,22.971,40.535,31.223c50.419,27.726,102.374,28.707,150.129-19.039l22.007-22.016c10.596-10.596,13.043-26.858,6.04-40.101c-16.479-31.128-77.225-66.734-77.225-66.734c-13.746-7.845-30.338-8.713-38.183,5.259c0,0-19.734,23.674-24.758,27.075c-22.936,15.542-44.18,14.935-65.623-6.508l-49.846-49.846l-49.838-49.838c-21.443-21.443-22.051-42.687-6.508-65.623c3.402-5.025,27.075-24.758,27.075-24.758c13.972-7.854,13.095-24.437,5.259-38.183c0,0-35.606-60.746-66.734-77.225c-13.243-7.003-29.505-4.556-40.101,6.04L38.512,84.638c-44.206,44.214-46.644,92.03-24.758,138.891c8.878,19.005,21.704,35.892,36.508,50.749L228.299,452.905z" />
@@ -40,7 +40,7 @@ export default function ContactActions() {
           <span className="min-w-0 leading-tight">
             <span className="block truncate text-xs font-semibold text-white">Call Now</span>
           </span>
-        </a>
+        </a> */}
       </div>
     </div>
   );

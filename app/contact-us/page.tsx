@@ -30,12 +30,12 @@ export default function ContactUsPage() {
       href: `mailto:${contactInfo.email}`,
       icon: `<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 491.52 491.52" xml:space="preserve" width="50px" height="50px" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect y="85.914" style="fill:#F6C358;" width="491.52" height="319.693"></rect> <polygon style="fill:#FCD462;" points="245.76,217.258 491.52,405.604 0,405.604 "></polygon> <polygon style="fill:#DC8744;" points="245.76,291.673 0,85.916 491.52,85.916 "></polygon> <polygon style="fill:#FCD462;" points="245.76,274.261 0,85.916 491.52,85.916 "></polygon> </g></svg>`,
     },
-    {
-      label: "Call Direct",
-      value: `+91 ${contactInfo.phone}`,
-      href: `tel:${cleanedPhone}`,
-      icon: `<svg width="50px" height="50px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M834.133333 149.333333h-78.933333C473.6 153.6 151.466667 514.133333 149.333333 755.2v78.933333c0 21.333333 17.066667 40.533333 40.533334 40.533334l160-2.133334c21.333333 0 40.533333-19.2 40.533333-40.533333l4.266667-174.933333-100.266667-85.333334c0-55.466667 224-279.466667 281.6-281.6l91.733333 100.266667 168.533334-4.266667c21.333333 0 40.533333-19.2 40.533333-40.533333L874.666667 189.866667c0-23.466667-17.066667-40.533333-40.533334-40.533334z" fill="#009688"></path></g></svg>`,
-    },
+    // {
+    //   label: "Call Direct",
+    //   value: `+91 ${contactInfo.phone}`,
+    //   href: `tel:${cleanedPhone}`,
+    //   icon: `<svg width="50px" height="50px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M834.133333 149.333333h-78.933333C473.6 153.6 151.466667 514.133333 149.333333 755.2v78.933333c0 21.333333 17.066667 40.533333 40.533334 40.533334l160-2.133334c21.333333 0 40.533333-19.2 40.533333-40.533333l4.266667-174.933333-100.266667-85.333334c0-55.466667 224-279.466667 281.6-281.6l91.733333 100.266667 168.533334-4.266667c21.333333 0 40.533333-19.2 40.533333-40.533333L874.666667 189.866667c0-23.466667-17.066667-40.533333-40.533334-40.533334z" fill="#009688"></path></g></svg>`,
+    // },
     {
       label: "WhatsApp",
       value: "Quick Project Chat",
@@ -59,7 +59,7 @@ export default function ContactUsPage() {
           </p>
           <p className="mt-3 text-sm font-bold leading-6 text-zinc-500"><i>Based in {contactInfo.address}, we collaborate with clients across India and globally.</i></p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link href="/#services" className="inline-flex h-11 items-center justify-center bg-zinc-950 px-6 text-sm font-semibold tracking-[0.06em] text-white transition hover:bg-red-600">
+            <Link href="/services" className="inline-flex h-11 items-center justify-center bg-zinc-950 px-6 text-sm font-semibold tracking-[0.06em] text-white transition hover:bg-red-600">
               EXPLORE SERVICES
             </Link>
             <a href={`mailto:${contactInfo.email}`} className="inline-flex h-11 items-center justify-center border border-zinc-300 bg-white px-6 text-sm font-semibold tracking-[0.06em] text-zinc-900 transition hover:border-zinc-900">

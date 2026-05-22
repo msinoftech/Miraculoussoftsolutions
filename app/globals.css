@@ -718,6 +718,149 @@ h1, h2, h3, h4, h5, h6, .font-bebas-neue {
   box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--process-accent, #dc2626);
 }
 
+.about-graph-panel {
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+}
+
+.about-graph-grid {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.about-graph-edge-active {
+  stroke-dasharray: 3 2;
+  animation: aboutGraphFlow 1.2s linear infinite;
+}
+
+@keyframes aboutGraphFlow {
+  to {
+    stroke-dashoffset: -10;
+  }
+}
+
+.about-graph-detail {
+  animation: aboutGraphDetailIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes aboutGraphDetailIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-graph-progress {
+  transition: width 0.7s ease;
+}
+
+.contact-hub-live span:first-child {
+  animation: contact-pulse 2s ease-in-out infinite;
+}
+
+.contact-orbit-spin {
+  animation: contact-orbit 24s linear infinite;
+  transform-origin: center;
+}
+
+.contact-node-pulse {
+  animation: about-story-pulse 2s ease-in-out infinite;
+}
+
+.contact-process-fill {
+  transition: width 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contact-bento-card {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.contact-bento-card:hover {
+  transform: translateY(-2px);
+}
+
+@keyframes contact-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes contact-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-hub-live span:first-child,
+  .contact-orbit-spin,
+  .contact-node-pulse {
+    animation: none;
+  }
+
+  .contact-process-fill {
+    transition: none;
+  }
+
+  .contact-bento-card:hover {
+    transform: none;
+  }
+}
+
+.about-story-milestone:focus-visible {
+  outline: 2px solid #dc2626;
+  outline-offset: 2px;
+}
+
+.about-story-detail {
+  animation: about-story-fade 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-story-arc-progress {
+  transition: stroke-dashoffset 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-story-node-pulse {
+  animation: about-story-pulse 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.about-story-seg-active {
+  box-shadow: 0 0 12px currentColor;
+}
+
+@keyframes about-story-fade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes about-story-pulse {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(1.15);
+  }
+}
+
 .security-layer-card {
   transition:
     transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
@@ -788,5 +931,21 @@ h1, h2, h3, h4, h5, h6, .font-bebas-neue {
   .ai-flow-path,
   .ai-hub-pulse {
     animation: none;
+  }
+
+  .about-graph-edge-active,
+  .about-graph-detail {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .about-story-detail,
+  .about-story-node-pulse {
+    animation: none;
+  }
+
+  .about-story-arc-progress {
+    transition: none;
   }
 }
