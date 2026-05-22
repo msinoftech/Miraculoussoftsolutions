@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { APP_NAME, BASE_URL } from "@/app/lib/config";
 import Marquee from "@/app/components/Marquee";
+import Subheading from "@/app/components/ui/Subheading";
 
 export const metadata: Metadata = {
   title: "technologies | Miraculous Soft Solutions",
@@ -539,10 +540,7 @@ export default function technologiesPage() {
     <section className="overflow-hidden bg-[var(--off)] py-24 lg:py-28">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-0 px-6 lg:grid-cols-2 lg:px-10">
           <div className="border-b-2 border-[var(--border)] pb-12 lg:border-b-0 lg:border-r-2 lg:pb-0 lg:pr-14">
-            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-              <span className="h-[2px] w-7 bg-red-600" />
-              Why Miraculous Soft
-            </div>
+            <Subheading variant="muted">Why Miraculous Soft</Subheading>
             <h2 className="font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[70px] lg:text-[88px]">
               The Partner
               <br />

@@ -9,9 +9,8 @@ import AboutStoryTimeline from "@/app/about-us/AboutStoryTimeline";
 import { APP_NAME, BASE_URL, contactInfo } from "@/app/lib/config";
 
 export const metadata: Metadata = {
-  title: `About Us | ${APP_NAME}`,
-  description:
-    "Miraculous Soft Solutions is a product engineering company building SaaS, B2B platforms, ERP systems, and cloud-native software with strategy, design, and long-term partnership.",
+  title: `Top SEO Service - Include PPC, SMO, Google Ads`,
+  description: "Miraculous Soft, has been providing Web Development and SEO services to clients and companies globally for over 10 years.",
   keywords: [
     "about Miraculous Soft Solutions",
     "software development company Mohali",
@@ -19,14 +18,23 @@ export const metadata: Metadata = {
     "SaaS development company",
     "B2B platform developers",
   ],
-  alternates: { canonical: `${BASE_URL}/about-us` },
+  alternates: { 
+    canonical: `${BASE_URL}/about-us` 
+  },
   openGraph: {
-    title: `About Us | ${APP_NAME}`,
-    description: "Product engineering partners for ambitious teams — from discovery to launch and scale.",
+    title: `Top SEO Service - Include PPC, SMO, Google Ads`,
+    description: "Miraculous Soft, has been providing Web Development and SEO services to clients and companies globally for over 10 years.",
     url: `${BASE_URL}/about-us`,
     type: "website",
     siteName: APP_NAME,
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: APP_NAME }],
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: APP_NAME,
+      },
+    ],
   },
 };
 

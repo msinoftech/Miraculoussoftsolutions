@@ -7,6 +7,7 @@ import Marquee from "./components/Marquee";
 import DevelopmentProcess from "./components/DevelopmentProcess";
 import Card from "./components/Card";
 import IndustriesList from "./components/IndustriesList";
+import Subheading from "./components/ui/Subheading";
 
 const marqueeItems = [
   "SaaS Product Development",
@@ -421,10 +422,7 @@ export default function MiraculousSoftLandingPage() {
 
           {/* Right Column */}
           <div className="space-y-5 pb-0 lg:pt-20 relative z-10">
-            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-red-800 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-red-800 relative z-10">
-              <span className="h-[5px] w-[5px] rounded-full bg-red-800" />
-              Enterprise Software Partner
-            </div>
+            <Subheading variant="default">Enterprise Software Partner</Subheading>
 
             <p className="max-w-sm text-[15px] leading-8 text-zinc-500">SaaS platforms, B2B systems, ERP automation, eCommerce products, and mobile applications — built to launch fast, scale hard, and last.</p>
 
@@ -448,7 +446,7 @@ export default function MiraculousSoftLandingPage() {
               <div key={`${item.label}-${index}`} className="flex shrink-0 items-center gap-4 border-r border-white/10 px-10 py-4">
                 <span className="font-bebas-neue text-[28px] uppercase tracking-[0.03em] text-white">{item.value}</span>
                 <span className="text-red-600">✦</span>
-                <span className="whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.1em] text-white/45">{item.label}</span>
+                <span className="whitespace-nowrap text-white uppercase tracking-[0.1em]">{item.label}</span>
               </div>
             ))}
           </div>
@@ -459,8 +457,8 @@ export default function MiraculousSoftLandingPage() {
       <Marquee
         items={marqueeItems}
         sectionClassName="overflow-hidden border-y-2 border-[var(--border)] bg-[var(--off)]"
-        itemClassName="flex shrink-0 items-center gap-3 border-r border-[var(--border)] px-9 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-zinc-500 transition hover:text-zinc-950"
-        iconClassName="text-[10px] text-red-600"
+        itemClassName="flex shrink-0 items-center gap-3 border-r border-[var(--border)] px-9 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-zinc-900 transition hover:text-red-600"
+        iconClassName="text-red-600"
       />
       
       {/* Why Miraculous Soft Section */}
@@ -468,10 +466,7 @@ export default function MiraculousSoftLandingPage() {
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 lg:grid-cols-2 lg:gap-10">
           {/* left column */}
           <div className="border-b-2 border-[var(--border)] pb-12 lg:border-b-0">
-            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-              <span className="h-[2px] w-7 bg-red-600" />
-              Why Miraculous Soft
-            </div>
+            <Subheading variant="default">Why Miraculous Soft</Subheading>
             <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">
               The Partner Businesses <span className="text-red-600">Choose.</span>
             </h2>

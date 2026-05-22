@@ -5,6 +5,7 @@ import Link from "next/link";
 import Marquee from "@/app/components/Marquee";
 import CtaStrip from "@/app/components/CtaStrip";
 import IndustriesList from "@/app/components/IndustriesList";
+import Subheading from "@/app/components/ui/Subheading";
 
 type Industry = {
   id: string;
@@ -752,10 +753,7 @@ export default function IndustriesView() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 gap-0 lg:grid-cols-2">
             <div className="border-b-2 border-[var(--border)] pb-12 lg:border-b-0 lg:border-r-2 lg:pb-0 lg:pr-14">
-              <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                <span className="h-[2px] w-7 bg-red-600" />
-                Why Miraculous Soft
-              </div>
+              <Subheading variant="muted">Why Miraculous Soft</Subheading>
               <h2 className="font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[70px] lg:text-[88px]">
                 Built For
                 <br />
