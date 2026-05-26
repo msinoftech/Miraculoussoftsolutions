@@ -540,7 +540,7 @@ export default function technologiesPage() {
     <section className="overflow-hidden bg-[var(--off)] py-24 lg:py-28">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-0 px-6 lg:grid-cols-2 lg:px-10">
           <div className="border-b-2 border-[var(--border)] pb-12 lg:border-b-0 lg:border-r-2 lg:pb-0 lg:pr-14">
-            <Subheading variant="muted">Why Miraculous Soft</Subheading>
+            <Subheading variant="default">Why Miraculous Soft</Subheading>
             <h2 className="font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[70px] lg:text-[88px]">
               The Partner
               <br />

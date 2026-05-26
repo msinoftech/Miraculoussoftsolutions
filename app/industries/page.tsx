@@ -753,7 +753,7 @@ export default function IndustriesView() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 gap-0 lg:grid-cols-2">
             <div className="border-b-2 border-[var(--border)] pb-12 lg:border-b-0 lg:border-r-2 lg:pb-0 lg:pr-14">
-              <Subheading variant="muted">Why Miraculous Soft</Subheading>
+              <Subheading variant="default">Why Miraculous Soft</Subheading>
               <h2 className="font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[70px] lg:text-[88px]">
                 Built For
                 <br />
