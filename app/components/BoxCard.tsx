@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import Subheading from "./ui/Subheading";
 
 type BoxCardItem = {
   icon: string;
@@ -42,10 +43,7 @@ export default function BoxCard({
       <div className={containerClassName}>
         <div className={headerClassName}>
           {label && (
-            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-              <span className="h-[2px] w-7 bg-red-600" />
-              {label}
-            </div>
+            <Subheading variant="default">{label}</Subheading>
           )}
 
           {title && (

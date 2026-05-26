@@ -1,9 +1,47 @@
-"use client";
-
-import { useMemo, useRef, useState } from "react";
+import type { Metadata } from "next";
+import Script from "next/script";
+import { BASE_URL, APP_NAME, contactInfo } from "@/app/lib/config";
 import Link from "next/link";
 import Marquee from "@/app/components/Marquee";
 import CtaStrip from "@/app/components/CtaStrip";
+import Subheading from "@/app/components/ui/Subheading";
+import DefaultButton from "@/app/components/ui/Button/defaultButton";
+import BoxCard from "@/app/components/BoxCard";
+
+const PAGE_URL = `${BASE_URL}/services`;
+
+export const metadata: Metadata = {
+  title: `Software Development Services | ${APP_NAME}`,
+  description: `${APP_NAME} delivers SaaS development, B2B platform engineering, eCommerce solutions, ERP automation, mobile applications, and branding & digital growth — built to launch, scale, and support serious business growth.`,
+  keywords: [ "software development services", "SaaS development", "B2B platform engineering", "eCommerce development", "ERP and business automation", "mobile app development", "branding and digital growth", "Miraculous Soft Solutions"],
+
+  alternates: {
+    canonical: `${PAGE_URL}`,
+  },
+
+  openGraph: {
+    title: `Software Development Services | ${APP_NAME}`,
+    description: `Explore end-to-end software services from ${APP_NAME}: SaaS products, B2B platforms, eCommerce, ERP automation, mobile apps, and digital growth — from discovery through launch and scale.`,
+    url: `${PAGE_URL}`,
+    type: "website",
+    siteName: `${APP_NAME}`,
+    images: [
+      {
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 500,
+        height: 500,
+        alt: `${APP_NAME} — Software Development Services`,
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: `Software Development Services | ${APP_NAME}`,
+    description: `SaaS, B2B platforms, eCommerce, ERP, mobile apps, and digital growth — engineered by ${APP_NAME} for scalable, high-impact products.`,
+    images: [`${BASE_URL}${contactInfo.logo}`],
+  },
+};
 
 type Service = {
   id: string;
@@ -26,7 +64,7 @@ const services: Service[] = [
     id: "saas",
     title: "SaaS Development",
     shortTitle: "SaaS",
-    href: "/services/saas-development-services",
+    href: "saas-development-services",
     description:
       "Cloud-native, subscription-ready SaaS products with multi-tenant architecture, billing, analytics, and admin dashboards.",
     highlight:
@@ -43,7 +81,7 @@ const services: Service[] = [
     id: "b2b",
     title: "B2B Platform Engineering",
     shortTitle: "B2B",
-    href: "/services/b2b-platform-engineering-services",
+    href: "b2b-platform-engineering-services",
     description:
       "Enterprise-grade B2B platforms with complex workflows, role-based access, partner portals, and deep integrations.",
     highlight:
@@ -59,7 +97,7 @@ const services: Service[] = [
     id: "ecommerce",
     title: "eCommerce Solutions",
     shortTitle: "eCom",
-    href: "/services/ecommerce-solutions-services",
+    href: "ecommerce-solutions-services",
     description:
       "Conversion-focused storefronts, headless commerce, payments, inventory sync, and fulfillment automation.",
     highlight:
@@ -75,7 +113,7 @@ const services: Service[] = [
     id: "erp",
     title: "ERP & Business Automation",
     shortTitle: "ERP",
-    href: "/services/erp-and-business-automation-services",
+    href: "erp-and-business-automation-services",
     description:
       "Unified ERP modules for inventory, finance, HR, procurement, and reporting — replacing fragmented spreadsheets.",
     highlight:
@@ -91,7 +129,7 @@ const services: Service[] = [
     id: "mobile",
     title: "Mobile Applications",
     shortTitle: "Mobile",
-    href: "/services/mobile-applications-services",
+    href: "mobile-applications-services",
     description:
       "High-performance iOS and Android apps with clean UX, offline support, push notifications, and secure APIs.",
     highlight:
@@ -107,7 +145,7 @@ const services: Service[] = [
     id: "growth",
     title: "Branding & Digital Growth",
     shortTitle: "Growth",
-    href: "/services/branding-and-digital-growth-services",
+    href: "branding-and-digital-growth-services",
     description:
       "Brand systems, marketing websites, SEO foundations, analytics, and growth funnels that support acquisition and retention.",
     highlight:
@@ -121,7 +159,151 @@ const services: Service[] = [
   },
 ];
 
-const DELIVERY_PIPELINE = ["Discover", "Architect", "Build", "Launch", "Scale"] as const;
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: `${APP_NAME}`,
+      alternateName: `${APP_NAME}`,
+      url: `${BASE_URL}`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 512,
+        height: 512,
+      },
+      image: `${BASE_URL}${contactInfo.logo}`,
+      description: `${APP_NAME} delivers SaaS development, B2B platform engineering, eCommerce solutions, ERP automation, mobile applications, and branding & digital growth — built to launch, scale, and support serious business growth.`,
+      email: contactInfo.email,
+      telephone: `+${contactInfo.phone.replace(/[^+\d]/g, "")}`,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        postalCode: "160062",
+        addressCountry: "IN",
+      },
+      sameAs: [
+        "https://www.facebook.com/miraculoussoft",
+        "https://twitter.com/miraculous_soft",
+        "https://www.instagram.com/miraculous_soft",
+        "https://www.pinterest.com/seomiraculoussoft",
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: contactInfo.email,
+          telephone: `+${contactInfo.phone.replace(/[^+\d]/g, "")}`,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: ["IN", "Worldwide"],
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: "Worldwide",
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      url: `${BASE_URL}`,
+      name: `${APP_NAME}`,
+      description: `${APP_NAME} delivers SaaS development, B2B platform engineering, eCommerce solutions, ERP automation, mobile applications, and branding & digital growth — built to launch, scale, and support serious business growth.`,
+      inLanguage: "en",
+      publisher: { "@id": `${BASE_URL}/#organization` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${PAGE_URL}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${BASE_URL}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Services",
+          item: `${PAGE_URL}`,
+        },
+      ],
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": `${PAGE_URL}/#webpage`,
+      url: `${PAGE_URL}`,
+      name: `Software Development Services | ${APP_NAME}`,
+      isPartOf: { "@id": `${BASE_URL}/#website` },
+      about: { "@id": `${PAGE_URL}/#professional-service` },
+      description: `${APP_NAME} delivers SaaS development, B2B platform engineering, eCommerce solutions, ERP automation, mobile applications, and branding & digital growth — built to launch, scale, and support serious business growth.`,
+      inLanguage: "en",
+      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
+      mainEntity: { "@id": `${PAGE_URL}/#service-list` },
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#service-list`,
+      name: `${APP_NAME} Software Services`,
+      numberOfItems: services.length,
+      itemListElement: services.map((service, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Service",
+          "@id": `${BASE_URL}${service.href}#service`,
+          name: service.title,
+          description: service.description,
+          url: `${BASE_URL}${service.href}`,
+          provider: { "@id": `${BASE_URL}/#organization` },
+          areaServed: ["India", "Worldwide"],
+        },
+      })),
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${PAGE_URL}/#professional-service`,
+      name: `${APP_NAME}`,
+      alternateName: `${APP_NAME}`,
+      url: `${PAGE_URL}`,
+      description: `${APP_NAME} delivers SaaS development, B2B platform engineering, eCommerce solutions, ERP automation, mobile applications, and branding & digital growth — built to launch, scale, and support serious business growth.`,
+      image: `${BASE_URL}${contactInfo.logo}`,
+      telephone: `+${contactInfo.phone.replace(/[^+\d]/g, "")}`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        addressCountry: "IN",
+      },
+      areaServed: ["India", "Worldwide"],
+      provider: { "@id": `${BASE_URL}/#organization` },
+      serviceType: services.map((service) => service.title),
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Software Development Services",
+        itemListElement: services.map((service) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: service.title,
+            description: service.description,
+            url: `${BASE_URL}${service.href}`,
+          },
+        })),
+      },
+    },
+  ],
+};
 
 const serviceGraphNodes = services.map((service, index) => {
   const angle = (index / services.length) * Math.PI * 2 - Math.PI / 2;
@@ -160,20 +342,32 @@ const techStack = ["Next.js", "React", "Node.js", "PostgreSQL", "AWS", "Docker",
 
 const whyPoints = [
   {
+    no: "01",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tangent-icon lucide-tangent"><circle cx="17" cy="4" r="2"/><path d="M15.59 5.41 5.41 15.59"/><circle cx="4" cy="17" r="2"/><path d="M12 22s-4-9-1.5-11.5S22 12 22 12"/></svg>`,
     title: "Reliability by design",
-    description: "Resilient architecture, recovery paths, and maintainability from day one.",
+    body: "Resilient architecture, recovery paths, and maintainability from day one.",
+    tag: "",
   },
   {
+    no: "02",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-icon lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>`,
     title: "Embedded product team",
-    description: "A focused squad that understands your business and ships like owners.",
+    body: "A focused squad that understands your business and ships like owners.",
+    tag: "",
   },
   {
+    no: "03",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M14 15H9v-5"/><path d="M16 3h5v5"/><path d="M21 3 9 15"/></svg>`,
     title: "Built for 10× scale",
-    description: "Modular APIs and clean foundations without constant rewrites.",
+    body: "Modular APIs and clean foundations without constant rewrites.",
+    tag: "",
   },
   {
+    no: "04",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package-icon lucide-package"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></svg>`,
     title: "Zero-surprise delivery",
-    description: "Clear milestones, visible progress, and aligned collaboration.",
+    body: "Clear milestones, visible progress, and aligned collaboration.",
+    tag: "",
   },
 ];
 
@@ -191,20 +385,17 @@ function TerminalMockup({ service }: { service: Service }) {
         <span className="h-2.5 w-2.5 rounded-full bg-red-500" />
         <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
         <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
-        <span className="ml-2 font-mono text-[10px] text-white/40">
-          miraculous — {service.shortTitle.toLowerCase()}
+        <span className="ml-2 font-mono text-white/40">
+          {APP_NAME} — {service.shortTitle.toLowerCase()}
         </span>
       </div>
-      <div className="space-y-1.5 p-5 font-mono text-[11px] leading-relaxed sm:text-[12px]">
+      <div className="space-y-1.5 p-5 font-mono leading-relaxed">
         {lines.map((line, i) => (
-          <p
-            key={line}
-            className={i === 0 ? "text-red-400" : line.startsWith("✓") ? "text-emerald-400" : "text-white/55"}
-          >
+          <p key={line} className={i === 0 ? "text-red-600" : line.startsWith("✓") ? "text-emerald-600" : "text-white/55"}>
             {line}
           </p>
         ))}
-        <p className="text-white/30">
+        <p className="text-white">
           <span className="animate-pulse">_</span>
         </p>
       </div>
@@ -215,6 +406,8 @@ function TerminalMockup({ service }: { service: Service }) {
 export default function ServicesView() {
   return (
     <>
+      <Script id="services-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
+
       {/* hero service */}
       <section className="relative flex min-h-[88vh] overflow-hidden bg-white">
         <div className="grid-bg absolute inset-0 opacity-45" />
@@ -223,10 +416,7 @@ export default function ServicesView() {
         <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
           {/* Left column */}
           <div className="space-y-5">
-            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-              <span className="h-[2px] w-7 bg-red-600" />
-              What We Build
-            </div>
+            <Subheading variant="default">What We Build</Subheading>
             <h1 className="font-bebas-neue text-[80px] uppercase leading-[0.84] tracking-wider text-zinc-950 sm:text-[100px] md:text-[140px]">
               <span>One Team. </span>
               <span className="text-red-600">Six</span>
@@ -238,19 +428,7 @@ export default function ServicesView() {
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-[6px] bg-red-600 px-5 py-3 text-[12px] font-bold uppercase tracking-[0.08em] text-white transition hover:bg-red-700"
-              >
-                Start Your Project
-                <span aria-hidden="true">↗</span>
-              </Link>
-              <Link
-                href="#all-services"
-                className="inline-flex items-center gap-2 rounded-[6px] border border-zinc-300 bg-white px-5 py-3 text-[12px] font-bold uppercase tracking-[0.08em] text-zinc-900 transition hover:bg-zinc-100"
-              >
-                Explore Services
-              </Link>
+              <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
             </div>
           </div>
 
@@ -258,16 +436,15 @@ export default function ServicesView() {
           <div className="w-full">
             <div className="service-panel-frame service-panel-grid relative">
               <div className="service-panel-shine pointer-events-none absolute inset-x-0 top-0 h-px opacity-40" aria-hidden />
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(220,38,38,0.06),transparent_55%)]" />
 
               <div className="relative flex flex-wrap items-center justify-between gap-3">
                 <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">Unified delivery graph</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">Unified delivery graph</p>
                   <p className="font-bebas-neue text-2xl leading-none tracking-wide text-zinc-950 sm:text-[30px]">
                     Six <span className="text-red-600">Engines</span>
                   </p>
                 </div>
-                <span className="rounded-full border border-zinc-200 bg-white px-3 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-600 shadow-sm">
+                <span className="rounded-full border border-zinc-200 bg-white px-3 py-1 text-sm font-bold uppercase tracking-[0.12em] text-zinc-600 shadow-sm">
                   Hub &amp; spoke
                 </span>
               </div>
@@ -330,26 +507,7 @@ export default function ServicesView() {
                   </div>
                 </div>
               </div>
-
-              <div className="relative flex flex-col gap-3 border-t border-zinc-200/80 bg-zinc-50/40 px-4 py-3.5 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-4">
-                <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-zinc-500">Execution path</p>
-                <div className="flex flex-wrap gap-1.5">
-                  {DELIVERY_PIPELINE.map((step, i) => (
-                    <span
-                      key={step}
-                      className={`rounded-full px-2.5 py-1 text-[8px] font-bold uppercase tracking-wide ring-1 ${
-                        i < 3
-                          ? "bg-white text-zinc-700 ring-zinc-200 shadow-sm"
-                          : i === 3
-                            ? "bg-red-50 text-red-700 ring-red-200"
-                            : "bg-zinc-100 text-zinc-500 ring-zinc-200/80"
-                      }`}
-                    >
-                      {step}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -361,11 +519,8 @@ export default function ServicesView() {
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:py-20">
           <div className="mb-14 max-w-xl">
-            <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-              <span className="mr-3 inline-block h-[2px] w-7 translate-y-[-2px] bg-red-600" />
-              Service breakdown
-            </p>
-            <h2 className="font-bebas-neue text-[52px] uppercase leading-[0.92] text-zinc-950 sm:text-[72px]">
+            <Subheading variant="default">Service breakdown</Subheading>
+            <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">
               What We <span className="text-red-600">Deliver</span>
             </h2>
           </div>
@@ -375,40 +530,25 @@ export default function ServicesView() {
               const isEven = index % 2 === 0;
               return (
                 <article key={service.id} id={service.id} className={`scroll-mt-28 px-8 ${ isEven ? "bg-white" : "bg-[var(--off)]" }`}>
-                  <div
-                    className={`grid grid-cols-1 items-center gap-10 py-12 sm:py-16 lg:grid-cols-2 lg:gap-16 ${
-                      isEven ? "" : "lg:[&>*:first-child]:order-2"
-                    }`}
-                  >
+                  <div className={`grid grid-cols-1 items-center gap-10 py-12 sm:py-16 lg:grid-cols-2 lg:gap-16 ${ isEven ? "" : "lg:[&>*:first-child]:order-2" }`}>
                     <div className="relative px-2 sm:px-4">
                       <span className="pointer-events-none absolute -top-6 left-0 font-bebas-neue text-[120px] leading-none opacity-10 sm:text-[160px]" aria-hidden>
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <div className="relative">
                         <div className="mb-4 flex items-center gap-3">
-                          <span
-                            className={`flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-to-br ${service.accent} text-white [&_svg]:stroke-current`}
-                          >
+                          <span className={`flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-to-br ${service.accent} text-white [&_svg]:stroke-current`}>
                             <span dangerouslySetInnerHTML={{ __html: service.icon }} />
                           </span>
-
                         </div>
-                        <h3 className="text-[32px] font-extrabold leading-[1.05] tracking-[-0.03em] text-zinc-950 sm:text-[40px]">
-                          {service.title}
+                        <h3 className="text-[32px] font-extrabold leading-[1.05] tracking-[-0.03em] text-zinc-950 sm:text-[40px] hover:text-red-600 transition-colors">
+                          <Link href={`${BASE_URL}/services/${service.href}`}>{service.title}</Link>
                         </h3>
-                        <p className="mt-4 text-[15px] leading-8 text-zinc-600">
-                          {service.description}
-                        </p>
-                        <p className="mt-4 border-l-2 border-red-600 pl-4 text-[14px] leading-7 text-zinc-700">
-                          {service.highlight}
-                        </p>
-
+                        <p className="mt-4 text-[15px] leading-8 text-zinc-600">{service.description}</p>
+                        <p className="mt-4 border-l-2 border-red-600 pl-4 text-[14px] leading-7 text-zinc-700">{service.highlight}</p>
                         <ul className="mt-6 grid grid-cols-2 gap-2">
                           {service.deliverables.map((item) => (
-                            <li
-                              key={item}
-                              className="flex items-center gap-2 rounded-[4px] border border-[var(--border)] bg-white px-3 py-2 text-[11px] font-bold text-zinc-800"
-                            >
+                            <li key={item} className="flex items-center gap-2 rounded-[4px] border border-zinc-200 bg-white px-3 py-2 text-zinc-800">
                               <span className="text-red-600">+</span>
                               {item}
                             </li>
@@ -417,23 +557,13 @@ export default function ServicesView() {
 
                         <div className="mt-8 flex flex-wrap items-center gap-6">
                           <div>
-                            <p className="font-bebas-neue text-5xl leading-none text-red-600">
-                              {service.stat}
-                            </p>
-                            <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-zinc-500">
-                              {service.statLabel}
-                            </p>
+                            <p className="font-bebas-neue text-5xl leading-none text-red-600">{service.stat}</p>
+                            <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-zinc-500">{service.statLabel}</p>
                           </div>
-                          <Link
-                            href={service.href}
-                            className="inline-flex items-center gap-2 rounded-[4px] border-2 border-zinc-950 bg-zinc-950 px-5 py-3 text-[12px] font-bold uppercase tracking-[0.08em] text-white transition hover:bg-red-600 hover:border-red-600"
-                          >
-                            View service page ↗
-                          </Link>
+                          <DefaultButton href={`${BASE_URL}/services/${service.href}`}>View service page</DefaultButton>
                         </div>
                       </div>
                     </div>
-
                     <TerminalMockup service={service} />
                   </div>
                 </article>
@@ -446,51 +576,136 @@ export default function ServicesView() {
       {/* Capability comparison table */}
       <section className="border-y-2 border-zinc-950 bg-zinc-950 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-7xl px-4">
-          <h2 className="font-bebas-neue text-center text-[48px] uppercase leading-none sm:text-[64px]">
-            Service <span className="text-red-500">Matrix</span>
-          </h2>
-          <p className="mx-auto mt-3 max-w-lg text-center text-[14px] text-white/45">
-            Compare deliverables across our six core service lines at a glance.
-          </p>
+          <div className="text-center">
+            <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">
+              Service <span className="text-red-500">Matrix</span>
+            </h2>
+            <p className="mx-auto mt-3 max-w-lg text-center text-[14px] text-white/45">
+              Compare deliverables across our six core service lines at a glance.
+            </p>
+          </div>
 
-          <div className="mt-10 overflow-x-auto">
-            <table className="w-full min-w-[640px] border-collapse text-left text-[12px]">
-              <thead>
-                <tr className="border-b border-white/15">
-                  <th className="py-4 pr-4 font-bold uppercase tracking-[0.1em] text-white/40">
-                    Deliverable
-                  </th>
-                  {services.map((s) => (
-                    <th
-                      key={s.id}
-                      className="px-2 py-4 text-center font-bold uppercase tracking-[0.06em] text-white/70"
+          <div className="mt-12 lg:hidden">
+            <div className="grid gap-4 sm:grid-cols-2">
+              {services.map((service) => (
+                <div
+                  key={service.id}
+                  className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]"
+                >
+                  <div
+                    className="flex items-center gap-3 border-b border-white/10 px-4 py-4"
+                    style={{ borderTopWidth: 3, borderTopColor: service.accentSolid }}
+                  >
+                    <span
+                      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${service.accent} text-white [&_svg]:stroke-current`}
                     >
-                      {s.shortTitle}
+                      <span dangerouslySetInnerHTML={{ __html: service.icon }} />
+                    </span>
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-white/40">Service line</p>
+                      <p className="text-[15px] font-extrabold tracking-[-0.02em] text-white">{service.shortTitle}</p>
+                    </div>
+                  </div>
+                  <ul className="divide-y divide-white/8">
+                    {service.deliverables.map((item, index) => (
+                      <li key={item} className="flex items-center gap-3 px-4 py-3">
+                        <span className="font-bebas-neue text-[22px] leading-none text-white/25">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <span className="text-[13px] font-semibold text-white/85">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-12 hidden overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] shadow-[0_24px_80px_rgba(0,0,0,0.35)] lg:block">
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[920px] border-collapse text-left">
+                <thead>
+                  <tr className="border-b border-white/10 bg-white/[0.03]">
+                    <th className="sticky left-0 z-20 w-[148px] bg-zinc-950 px-5 py-5 text-left after:pointer-events-none after:absolute after:inset-y-0 after:right-0 after:w-px after:bg-white/10">
+                      <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/35">Slot</span>
                     </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {[0, 1, 2, 3].map((row) => (
-                  <tr key={row} className="border-b border-white/10">
-                    <td className="py-3 pr-4 font-semibold text-white/80">
-                      Module {row + 1}
-                    </td>
-                    {services.map((s) => (
-                      <td key={s.id} className="px-2 py-3 text-center">
-                        {s.deliverables[row] ? (
-                          <span className="inline-block rounded bg-white/10 px-2 py-1 text-[10px] font-bold text-white/90">
-                            {s.deliverables[row]}
+                    {services.map((service) => (
+                      <th key={service.id} className="min-w-[132px] px-3 py-5 text-center align-bottom">
+                        <Link
+                          href={`/services/${service.href}`}
+                          className="group mx-auto flex max-w-[120px] flex-col items-center gap-2 transition hover:opacity-90"
+                        >
+                          <span
+                            className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${service.accent} text-white shadow-lg transition group-hover:scale-105 [&_svg]:stroke-current`}
+                          >
+                            <span dangerouslySetInnerHTML={{ __html: service.icon }} />
                           </span>
-                        ) : (
-                          <span className="text-white/20">—</span>
-                        )}
-                      </td>
+                          <span className="text-[11px] font-extrabold uppercase tracking-[0.08em] text-white group-hover:text-red-400">
+                            {service.shortTitle}
+                          </span>
+                          <span
+                            className="h-[3px] w-10 rounded-full"
+                            style={{ backgroundColor: service.accentSolid }}
+                          />
+                        </Link>
+                      </th>
                     ))}
                   </tr>
+                </thead>
+                <tbody>
+                  {[0, 1, 2, 3].map((row) => (
+                    <tr
+                      key={row}
+                      className={`border-b border-white/[0.06] transition-colors hover:bg-white/[0.02] ${row % 2 === 1 ? "bg-white/[0.015]" : ""}`}
+                    >
+                      <th
+                        scope="row"
+                        className="sticky left-0 z-10 bg-zinc-950 px-5 py-4 text-left after:pointer-events-none after:absolute after:inset-y-0 after:right-0 after:w-px after:bg-white/10"
+                      >
+                        <span className="font-bebas-neue text-[34px] leading-none tracking-[0.04em] text-white/20">
+                          {String(row + 1).padStart(2, "0")}
+                        </span>
+                      </th>
+                      {services.map((service) => {
+                        const deliverable = service.deliverables[row];
+
+                        return (
+                          <td key={service.id} className="px-3 py-4 align-middle">
+                            {deliverable ? (
+                              <div className="flex justify-center">
+                                <span
+                                  className="inline-flex max-w-[128px] items-center gap-2 rounded-lg border border-white/10 bg-white/[0.06] px-3 py-2 text-center text-[11px] font-bold leading-snug text-white/90 transition hover:border-white/20 hover:bg-white/[0.1]"
+                                  style={{ boxShadow: `inset 3px 0 0 0 ${service.accentSolid}` }}
+                                >
+                                  {deliverable}
+                                </span>
+                              </div>
+                            ) : (
+                              <div className="flex justify-center">
+                                <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-dashed border-white/10 text-[11px] text-white/20">
+                                  —
+                                </span>
+                              </div>
+                            )}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="flex flex-wrap items-center justify-between gap-3 border-t border-white/10 bg-white/[0.03] px-5 py-3">
+              <p className="text-sm font-semibold text-white/35">Four core deliverables per service line</p>
+              <div className="flex flex-wrap gap-2">
+                {services.map((service) => (
+                  <span key={service.id} className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-white/55">
+                    <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: service.accentSolid }} />
+                    {service.shortTitle}
+                  </span>
                 ))}
-              </tbody>
-            </table>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -499,41 +714,74 @@ export default function ServicesView() {
       <section className="bg-[var(--off)] py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-12 text-center">
-            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-              How we work
-            </p>
-            <h2 className="mt-2 font-bebas-neue text-[52px] uppercase leading-none text-zinc-950 sm:text-[72px]">
+            <Subheading variant="default">How we work</Subheading>
+            <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">
               Delivery <span className="text-red-600">Pipeline</span>
             </h2>
           </div>
 
-          <div className="relative">
-            <div className="absolute left-0 right-0 top-8 hidden h-0.5 bg-zinc-300 lg:block" />
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {deliveryPhases.map((phase, index) => (
-                <div
-                  key={phase.step}
-                  className="relative rounded-xl border-2 border-zinc-950 bg-white p-6 shadow-[6px_6px_0_#0c0c0c]"
-                >
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full border-2 border-zinc-950 bg-red-600 font-bebas-neue text-lg text-white">
-                    {index + 1}
-                  </div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-red-600">
-                    {phase.weeks}
-                  </p>
-                  <p className="mt-1 text-[20px] font-extrabold text-zinc-950">{phase.step}</p>
-                  <p className="mt-2 text-[13px] leading-6 text-zinc-600">{phase.detail}</p>
-                </div>
-              ))}
+          <div className="overflow-hidden rounded-[28px] border-2 border-zinc-950 bg-white shadow-[8px_8px_0_#0c0c0c]">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-zinc-950 bg-zinc-950 px-5 py-4 text-white sm:px-6">
+              <p className="text-sm font-bold uppercase tracking-[0.16em] text-white/45">End-to-end delivery</p>
+              <div className="flex flex-wrap items-center gap-2">
+                {deliveryPhases.map((phase, index) => (
+                  <span key={phase.step} className="flex items-center gap-2">
+                    <span className="text-xs font-bold uppercase tracking-[0.1em] text-white/80">{phase.step}</span>
+                    {index < deliveryPhases.length - 1 ? (
+                      <span className="text-red-500" aria-hidden="true">→</span>
+                    ) : null}
+                  </span>
+                ))}
+              </div>
             </div>
+
+            <ol className="relative grid divide-y-2 divide-zinc-950 lg:grid-cols-4 lg:divide-x-2 lg:divide-y-0">
+              {deliveryPhases.map((phase, index) => (
+                <li key={phase.step} className="group relative flex min-h-[220px] flex-col p-6 transition-colors hover:bg-[var(--off)] sm:p-7">
+                  <span className="pointer-events-none absolute right-4 top-3 font-bebas-neue text-[72px] leading-none tracking-[0.02em] text-zinc-100 transition-colors group-hover:text-red-600/10" aria-hidden="true">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <div className="relative z-10 flex items-start gap-4">
+                    <div className="relative shrink-0">
+                      <span className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-zinc-950 bg-red-600 font-bebas-neue text-xl text-white shadow-[3px_3px_0_#0c0c0c] transition group-hover:scale-105">
+                        {index + 1}
+                      </span>
+                      {index < deliveryPhases.length - 1 ? (
+                        <span className="absolute left-1/2 top-full hidden h-8 w-px -translate-x-1/2 bg-zinc-300 lg:block" aria-hidden="true"/>
+                      ) : null}
+                    </div>
+                    <div className="min-w-0 flex-1 pt-0.5">
+                      <span className="inline-flex rounded-full border border-red-600/20 bg-red-600/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-red-600">
+                        {phase.weeks}
+                      </span>
+                      <p className="mt-3 text-[24px] font-extrabold tracking-[-0.03em] text-zinc-950 sm:text-[26px]">
+                        {phase.step}
+                      </p>
+                      <p className="mt-2 max-w-[220px] text-[14px] leading-7 text-zinc-600">{phase.detail}</p>
+                    </div>
+                  </div>
+
+                  <div className="relative z-10 mt-auto flex items-center gap-2 pt-6">
+                    <span className="h-1.5 flex-1 overflow-hidden rounded-full bg-zinc-200">
+                      <span className="block h-full rounded-full bg-red-600 transition-all duration-500 group-hover:bg-red-500" style={{ width: `${((index + 1) / deliveryPhases.length) * 100}%` }}/>
+                    </span>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-zinc-400">
+                      Phase {index + 1}
+                    </span>
+                  </div>
+
+                  {index < deliveryPhases.length - 1 ? (
+                    <span className="absolute -right-[1px] top-1/2 z-20 hidden h-3 w-3 -translate-y-1/2 translate-x-1/2 rotate-45 border-r-2 border-t-2 border-zinc-950 bg-white lg:block" aria-hidden="true"/>
+                  ) : null}
+                </li>
+              ))}
+            </ol>
           </div>
 
           <div className="mt-12 flex flex-wrap justify-center gap-2">
             {techStack.map((tech) => (
-              <span
-                key={tech}
-                className="rounded-[4px] border border-zinc-300 bg-white px-4 py-2 text-[11px] font-bold uppercase tracking-[0.08em] text-zinc-800"
-              >
+              <span key={tech} className="rounded-[4px] border border-zinc-300 bg-white px-4 py-2 text-[11px] font-bold uppercase tracking-[0.08em] text-zinc-800">
                 {tech}
               </span>
             ))}
@@ -541,28 +789,18 @@ export default function ServicesView() {
         </div>
       </section>
 
-      {/* Why — card grid (not split column) */}
-      <section className="bg-white py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4">
-          <h2 className="mb-10 text-center font-bebas-neue text-[48px] uppercase leading-none sm:text-[64px]">
-            Why Teams <span className="text-red-600">Choose Us</span>
-          </h2>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {whyPoints.map((point, index) => (
-              <div
-                key={point.title}
-                className="group rounded-xl border-2 border-zinc-200 p-6 transition hover:border-zinc-950 hover:shadow-[6px_6px_0_#0c0c0c]"
-              >
-                <span className="font-bebas-neue text-5xl leading-none text-zinc-200 transition group-hover:text-red-600/30">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <p className="mt-4 text-[16px] font-extrabold text-zinc-950">{point.title}</p>
-                <p className="mt-2 text-[13px] leading-7 text-zinc-600">{point.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Why choose us */}
+      <BoxCard
+        items={whyPoints}
+        label="Why Choose Us"
+        title={
+          <>
+            Why Teams <span className="text-red-600">Choose Us</span> 
+          </>
+        }
+        description=""
+        headerClassName="mb-12 text-center"
+      />
 
       <CtaStrip
         title={

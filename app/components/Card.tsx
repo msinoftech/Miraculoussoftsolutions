@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ReactNode } from "react";
+import Subheading from "./ui/Subheading";
 
 export type CardItem = {
   number?: ReactNode;
@@ -39,8 +40,8 @@ export default function Card({
   sectionClassName = "bg-white py-14 sm:py-20",
   containerClassName = "mx-auto max-w-7xl px-4",
   headerClassName = "mb-14 flex flex-col justify-between gap-8 lg:flex-row lg:items-end",
-  labelClassName = "mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500",
-  titleClassName = "font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]",
+  // labelClassName = "mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500",
+  titleClassName = "text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]",
   descriptionClassName = "max-w-xl text-[15px] leading-8 text-zinc-500",
   gridClassName = "grid border-2 border-zinc-950 md:grid-cols-2 xl:grid-cols-3",
   cardClassName = "group border-[var(--border)] p-8 transition duration-300 hover:bg-zinc-950",
@@ -56,10 +57,7 @@ export default function Card({
       <div className={containerClassName}>
         <div className={headerClassName}>
           <div>
-            <div className={labelClassName}>
-              <span className="h-[2px] w-7 bg-red-600" />
-              {label}
-            </div>
+            <Subheading variant="default">{label}</Subheading>
             <h2 className={titleClassName}>{title}</h2>
           </div>
           <p className={descriptionClassName}>{description}</p>

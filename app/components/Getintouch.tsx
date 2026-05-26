@@ -1,22 +1,18 @@
 import Contactform from "./Contactform";
 import { contactInfo } from "@/app/lib/config";
+import Subheading from "./ui/Subheading";
+
 
 export default function Getintouch() {
   return (
     <section className="relative overflow-hidden bg-zinc-100 py-16 px-4 sm:py-20">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_0%_100%,rgba(220,38,38,0.06)_0%,transparent_50%)]" aria-hidden />
 
-      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-950 shadow-[0_32px_80px_rgba(15,23,42,0.2)]">
+      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-2xl bg-zinc-950 shadow-2xl">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="relative flex flex-col justify-center p-8 sm:p-10 lg:p-12">
-            <div className="grid-bg absolute inset-0 opacity-[0.08]" aria-hidden />
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_0%_50%,rgba(220,38,38,0.15)_0%,transparent_55%)]" aria-hidden />
-
             <div className="relative">
-              <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                <span className="h-[2px] w-7 bg-red-600" />
-                Project Intake Form
-              </div>
+              <Subheading variant="light">Project Intake Form</Subheading>
               <h2 className="font-bebas-neue text-[56px] uppercase leading-[0.9] tracking-wide text-white sm:text-[80px]">
                 Tell Us
                 <br />

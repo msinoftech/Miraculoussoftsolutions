@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
-import { APP_NAME, BASE_URL } from "@/app/lib/config";
-
-import Link from "next/link";
+import Script from "next/script";
+import { APP_NAME, BASE_URL, contactInfo } from "@/app/lib/config";
 import Marquee from "@/app/components/Marquee";
 import BoxCard from "@/app/components/BoxCard";
 import CtaStrip from "@/app/components/CtaStrip";
 import DevelopmentProcess from "@/app/components/DevelopmentProcess";
 import Card from "@/app/components/Card";
+import Subheading from "@/app/components/ui/Subheading";
+import DefaultButton from "@/app/components/ui/Button/defaultButton";
+
+const PAGE_URL = `${BASE_URL}/services/saas-development-services`;
+const SERVICES_URL = `${BASE_URL}/services`;
 
 export const metadata: Metadata = {
   title: "SaaS Development Services | Miraculous Soft Solutions",
@@ -14,20 +18,20 @@ export const metadata: Metadata = {
   keywords: [ "SaaS development services", "SaaS product development", "cloud SaaS solutions", "multi-tenant SaaS platform", "API-first SaaS engineering", "Miraculous Soft Solutions",],
   
   alternates: {
-    canonical: `${BASE_URL}/services/saas-development-services`,
+    canonical: `${PAGE_URL}`,
   },
 
   openGraph: {
     title: `SaaS Development Services | ${APP_NAME}`,
     description: `End-to-end SaaS development services for modern cloud products, including architecture, dashboards, API engineering, deployment, and scaling.`,
-    url: `${BASE_URL}/services/saas-development-services`,
+    url: `${PAGE_URL}`,
     type: "website",
     siteName: `${APP_NAME}`,
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 500,
+        height: 500,
         alt: `${APP_NAME}`,
       },
     ],
@@ -35,13 +39,11 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    site: "@miraculous_soft",
-    creator: "@miraculous_soft",
     title: `SaaS Development Services | ${APP_NAME}`,
     description: `Build and scale secure SaaS platforms with ${APP_NAME}, from product strategy to cloud deployment and growth.`,
-    images: ["/og-image.png"],
+    images: [`${BASE_URL}${contactInfo.logo}`],
   },
-}
+};
 
 const features = [
   {
@@ -81,6 +83,141 @@ const features = [
     icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`,
   },
 ];
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: `${APP_NAME}`,
+      alternateName: `${APP_NAME}`,
+      url: `${BASE_URL}`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 512,
+        height: 512,
+      },
+      image: `${BASE_URL}${contactInfo.logo}`,
+      description: `${APP_NAME} provides end-to-end SaaS development services to design, build, launch, and scale secure cloud-based SaaS products.`,
+      email: contactInfo.email,
+      telephone: `+${contactInfo.phone.replace(/[^+\d]/g, "")}`,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        postalCode: "160062",
+        addressCountry: "IN",
+      },
+      sameAs: [
+        "https://www.facebook.com/miraculoussoft",
+        "https://twitter.com/miraculous_soft",
+        "https://www.instagram.com/miraculous_soft",
+        "https://www.pinterest.com/seomiraculoussoft",
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: contactInfo.email,
+          telephone: `+${contactInfo.phone.replace(/[^+\d]/g, "")}`,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: ["IN", "Worldwide"],
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: "Worldwide",
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      url: `${BASE_URL}`,
+      name: `${APP_NAME}`,
+      inLanguage: "en",
+      publisher: { "@id": `${BASE_URL}/#organization` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${PAGE_URL}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${BASE_URL}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Services",
+          item: `${SERVICES_URL}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "SaaS Development Services",
+          item: `${PAGE_URL}`,
+        },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${PAGE_URL}/#webpage`,
+      url: `${PAGE_URL}`,
+      name: `SaaS Development Services | ${APP_NAME}`,
+      isPartOf: { "@id": `${BASE_URL}/#website` },
+      about: { "@id": `${PAGE_URL}/#service` },
+      description: `${APP_NAME} provides end-to-end SaaS development services to design, build, launch, and scale secure cloud-based SaaS products.`,
+      inLanguage: "en",
+      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
+      mainEntity: { "@id": `${PAGE_URL}/#service` },
+    },
+    {
+      "@type": "Service",
+      "@id": `${PAGE_URL}/#service`,
+      name: "SaaS Development Services",
+      alternateName: "SaaS Product Development",
+      url: `${PAGE_URL}`,
+      description: `${APP_NAME} provides end-to-end SaaS development services to design, build, launch, and scale secure cloud-based SaaS products.`,
+      provider: { "@id": `${BASE_URL}/#organization` },
+      areaServed: ["India", "Worldwide"],
+      serviceType: [
+        "SaaS Product Development",
+        "Multi-Tenant SaaS Platforms",
+        "Subscription Billing Systems",
+        "API-First SaaS Engineering",
+        "Cloud SaaS Deployment",
+        "SaaS MVP Development",
+      ],
+      category: "Software Development",
+      offers: {
+        "@type": "Offer",
+        availability: "https://schema.org/InStock",
+        url: `${BASE_URL}/contact-us`,
+        offeredBy: { "@id": `${BASE_URL}/#organization` },
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "SaaS Development Capabilities",
+        itemListElement: features.map((feature) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: feature.title,
+            description: feature.description,
+          },
+        })),
+      },
+    },
+  ],
+};
 
 const steps = [
   {
@@ -182,6 +319,8 @@ const chartHeights = ["h-[40%]", "h-[52%]", "h-[60%]", "h-[74%]", "h-[84%]", "h-
 export default function SaaSDevelopmentPage() {
     return (
     <>
+    <Script id="saas-development-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}/>
+
     {/* HERO */}
     <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-zinc-950">
         <div className="grid-bg absolute inset-0 opacity-5" />
@@ -190,9 +329,7 @@ export default function SaaSDevelopmentPage() {
         <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-6 px-4 lg:grid-cols-2 z-10">
           {/* Left Column */}
           <div className="space-y-5">
-            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white">
-                <span className="h-[2px] w-7 bg-red-600" />SaaS Development Services
-            </div>
+            <Subheading variant="light">SaaS Development Services</Subheading>
             <h1 className="font-bebas-neue uppercase leading-[0.84] tracking-wider text-white text-[80px] sm:text-[100px] md:text-[140px]">
               <span>BUILD </span>
               <span className="text-red-600">SAAS</span>
@@ -201,14 +338,10 @@ export default function SaaSDevelopmentPage() {
             <p className="text-[15px] leading-8 text-white">We design and develop modern SaaS products with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
 
             <div className="flex flex-wrap items-center gap-4">
-              <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                Start Your Project
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-              </Link>
-              <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-white px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-zinc-950 transition">
-                View Portfolio
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-              </Link>
+              <DefaultButton 
+                href="/contact-us"
+                bgClassName="bg-red-600 hover:bg-red-700"
+              >Start Your Project</DefaultButton>
             </div>
 
             <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -222,11 +355,11 @@ export default function SaaSDevelopmentPage() {
           </div>
 
           {/* Right Column */}
-          <div className="relative w-full space-y-4 max-w-[90%] ml-auto">
-            <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01)),linear-gradient(135deg,rgba(26,86,219,0.10),rgba(224,32,32,0.10))] p-4 shadow-[0_20px_46px_rgba(2,6,23,0.45)]">
+          <div className="relative w-full space-y-4">
+            <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01)),linear-gradient(135deg,rgba(26,86,219,0.10),rgba(224,32,32,0.10))] p-4 shadow-2xl">
 
               <div className="relative">
-                <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                <div className="flex items-center justify-between">
                   <div>
                     <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-cyan-200/80">SaaS Growth Engine</div>
                     <div className="text-[15px] font-extrabold uppercase tracking-[0.06em] text-white">Creative Product Command Layer</div>
@@ -234,7 +367,7 @@ export default function SaaSDevelopmentPage() {
                   <span className="rounded-full border border-cyan-300/30 bg-cyan-400/10 px-2.5 py-1 text-[9px] font-bold uppercase text-cyan-100">Live Build Cycle</span>
                 </div>
 
-                <div className="mt-4 grid gap-4 lg:grid-cols-[0.48fr_0.52fr]">
+                <div className="mt-4 grid gap-4 sm:grid-cols-2 grid-cols-1">
                   <div className="rounded-xl border border-white/10 bg-white/[0.04] p-3">
                     <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-300">Orbit Stages</div>
                     <div className="mt-3 grid grid-cols-2 gap-2 text-[10px] font-semibold uppercase tracking-[0.06em]">
@@ -290,7 +423,7 @@ export default function SaaSDevelopmentPage() {
             </div>
 
             <div className="rounded-2xl border border-white/15 bg-zinc-900/65 p-4 shadow-lg backdrop-blur-sm">
-              <div className="flex items-center justify-between border-b border-white/10 pb-3">
+              <div className="flex items-center justify-between">
                 <div>
                   <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-400">Runtime Stream</div>
                   <div className="text-sm font-extrabold uppercase tracking-[0.08em] text-white">SaaS Event Flow</div>
@@ -326,14 +459,14 @@ export default function SaaSDevelopmentPage() {
             <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-12">
                 {/* left column */}
                 <div className="relative min-h-[420px] overflow-hidden rounded-2xl border border-[rgba(255,255,255,0.08)] bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01)),linear-gradient(135deg,rgba(26,86,219,0.10),rgba(224,32,32,0.10))] p-6">
-                    <div className="grid h-full min-h-[368px] grid-rows-[auto_1fr] gap-6 rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(10,10,10,0.78)] p-6">
+                    <div className="grid h-full min-h-[368px] grid-rows-[auto_1fr] gap-6 rounded-[14px]">
                       <div className="flex items-center justify-between gap-4">
                           <div className="flex gap-2">
-                              <span className="h-[9px] w-[9px] rounded-full bg-red-600" />
-                              <span className="h-[9px] w-[9px] rounded-full bg-blue-500" />
-                              <span className="h-[9px] w-[9px] rounded-full bg-zinc-500" />
+                              <span className="h-[9px] w-[9px] rounded-full bg-red-500" />
+                              <span className="h-[9px] w-[9px] rounded-full bg-yellow-400" />
+                              <span className="h-[9px] w-[9px] rounded-full bg-green-600" />
                           </div>
-                          <div className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-blue-200">Live SaaS Dashboard</div>
+                          <div className="rounded-full border border-emerald-500/35 bg-emerald-500/10 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-emerald-200">Live SaaS Dashboard</div>
                       </div>
 
                       <div className="grid h-full grid-cols-1 gap-4 md:grid-cols-[1.2fr_0.8fr]">
@@ -373,26 +506,23 @@ export default function SaaSDevelopmentPage() {
                               </div>
                           </div>
                       </div>
+
+                      <div className="flex flex-wrap gap-[10px]">
+                        {pills.map((item) => (
+                            <span key={item} className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[1px] text-white">{item}</span>
+                        ))}
+                      </div>
                     </div>
                 </div>
 
                 {/* right column */}
                 <div className="relative space-y-4">
-                    <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                        <span className="h-[2px] w-7 bg-red-600" />
-                        Why SaaS With Us
-                    </div>
-                    <h2 className="text-[50px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[70px] lg:text-[80px]">SAAS PRODUCTS BUILT FOR <span className="text-red-600">REAL GROWTH</span></h2>
+                    <Subheading variant="light">Why SaaS With Us</Subheading>
+                    <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">SAAS PRODUCTS BUILT FOR <span className="text-red-600">REAL GROWTH</span></h2>
 
                     <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">We build SaaS products that are not just visually strong, but strategically engineered for <strong className="text-white"> {" "} recurring revenue, user retention, product operations, and long-term scale</strong>.</p>
                     <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">Whether you are launching a startup MVP, modernizing an internal B2B platform, or creating a vertical SaaS product, we shape the system around{" "} <strong className="text-white"> business logic, usability, security, and growth-readiness </strong>.</p>
                     <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">Our approach combines premium product design with scalable engineering so your SaaS can launch fast, operate smoothly, and expand without needing a full rebuild later.</p>
-
-                    <div className="mt-7 flex flex-wrap gap-[10px]">
-                    {pills.map((item) => (
-                        <span key={item} className="rounded-full border border-[rgba(59,130,246,0.32)] bg-[rgba(26,86,219,0.08)] px-4 py-2 text-[12px] font-bold uppercase tracking-[1px] text-[#3B82F6]">{item}</span>
-                    ))}
-                    </div>
                 </div>
             </div>
         </div>
@@ -451,7 +581,7 @@ export default function SaaSDevelopmentPage() {
       }
       description="Let's design a SaaS platform that is premium on the surface, strong in the backend, and ready for subscriptions, workflows, users, and scale."
       buttonText="Get a Free Quote →"
-      buttonHref="/"
+      buttonHref="/contact-us"
     />
 
     </>

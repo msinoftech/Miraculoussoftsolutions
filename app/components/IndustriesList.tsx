@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Subheading from "./ui/Subheading";
+
 const industries = [
     { 
       name: "Healthcare",
@@ -42,17 +44,12 @@ const industries = [
     },
   ];
 
-
-
 export default function IndustriesList() {
   return (
     <section id="industries" className="bg-white py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-12">
-            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-              <span className="h-[2px] w-7 bg-red-600" />
-              Industries
-            </div>
+            <Subheading variant="default">Industries</Subheading>
             <h2 className="font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">Where We <span className="text-red-600">Operate.</span></h2>
           </div>
 

@@ -1,10 +1,49 @@
-"use client";
-import Link from "next/link";
+import type { Metadata } from "next";
+import Script from "next/script";
+import { APP_NAME, BASE_URL, contactInfo } from "@/app/lib/config";
 import Marquee from "@/app/components/Marquee";
 import BoxCard from "@/app/components/BoxCard";
 import CtaStrip from "@/app/components/CtaStrip";
 import DevelopmentProcess from "@/app/components/DevelopmentProcess";
 import Card from "@/app/components/Card";
+import Subheading from "@/app/components/ui/Subheading";
+import DefaultButton from "@/app/components/ui/Button/defaultButton";
+
+const PAGE_URL = `${BASE_URL}/services/mobile-applications-services`;
+const SERVICES_URL = `${BASE_URL}/services`;
+
+export const metadata: Metadata = {
+  title: `Mobile Application Development Services | ${APP_NAME}`,
+  description: `${APP_NAME} builds high-performance iOS and Android apps — native and cross-platform development, mobile UX, secure authentication, push notifications, API integration, and optimization for engagement and scale.`,
+  keywords: [ "mobile app development services", "iOS and Android app development", "cross-platform mobile apps", "Flutter app development", "React Native development", "mobile UI UX design", "Miraculous Soft Solutions" ],
+
+  alternates: {
+    canonical: `${PAGE_URL}`,
+  },
+
+  openGraph: {
+    title: `Mobile Application Development Services | ${APP_NAME}`,
+    description: "Custom mobile apps for iOS and Android — product discovery, architecture, UI/UX, secure auth, push engagement, backend APIs, and performance tuning built for real users.",
+    url: `${PAGE_URL}`,
+    type: "website",
+    siteName: `${APP_NAME}`,
+    images: [
+      {
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 500,
+        height: 500,
+        alt: `${APP_NAME} — Mobile Application Development Services`,
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: `Mobile Application Development Services | ${APP_NAME}`,
+    description: `Ship iOS and Android apps with ${APP_NAME} — cross-platform engineering, polished UX, secure backends, and growth-ready mobile products.`,
+    images: [`${BASE_URL}${contactInfo.logo}`],
+  },
+};
 
 const features = [
   {
@@ -44,6 +83,141 @@ const features = [
     icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M18 16.98h-5.99c-1.1 0-1.95.94-2.48 1.9A4 4 0 0 1 2 17c.01-.7.2-1.4.57-2"/><path d="m6 17 3.13-5.78c.53-.97.1-2.18-.5-3.1a4 4 0 1 1 6.89-4.06"/><path d="m12 6 3.13 5.73C15.66 12.7 16.9 13 18 13a4 4 0 0 1 0 8"/></svg>`,
   },
 ];
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: `${APP_NAME}`,
+      alternateName: `${APP_NAME}`,
+      url: `${BASE_URL}`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 512,
+        height: 512,
+      },
+      image: `${BASE_URL}${contactInfo.logo}`,
+      description: `${APP_NAME} builds high-performance iOS and Android apps — native and cross-platform development, mobile UX, secure authentication, push notifications, API integration, and optimization for engagement and scale.`,
+      email: contactInfo.email,
+      telephone: `+${contactInfo.phone.replace(/[^+\d]/g, "")}`,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        postalCode: "160062",
+        addressCountry: "IN",
+      },
+      sameAs: [
+        "https://www.facebook.com/miraculoussoft",
+        "https://twitter.com/miraculous_soft",
+        "https://www.instagram.com/miraculous_soft",
+        "https://www.pinterest.com/seomiraculoussoft",
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: contactInfo.email,
+          telephone: `+${contactInfo.phone.replace(/[^+\d]/g, "")}`,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: ["IN", "Worldwide"],
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: "Worldwide",
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      url: `${BASE_URL}`,
+      name: `${APP_NAME}`,
+      inLanguage: "en",
+      publisher: { "@id": `${BASE_URL}/#organization` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${PAGE_URL}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${BASE_URL}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Services",
+          item: `${SERVICES_URL}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Mobile Application Development Services",
+          item: `${PAGE_URL}`,
+        },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${PAGE_URL}/#webpage`,
+      url: `${PAGE_URL}`,
+      name: `Mobile Application Development Services | ${APP_NAME}`,
+      isPartOf: { "@id": `${BASE_URL}/#website` },
+      about: { "@id": `${PAGE_URL}/#service` },
+      description: `${APP_NAME} builds high-performance iOS and Android apps — native and cross-platform development, mobile UX, secure authentication, push notifications, API integration, and optimization for engagement and scale.`,
+      inLanguage: "en",
+      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
+      mainEntity: { "@id": `${PAGE_URL}/#service` },
+    },
+    {
+      "@type": "Service",
+      "@id": `${PAGE_URL}/#service`,
+      name: "Mobile Application Development Services",
+      alternateName: "iOS and Android App Development",
+      url: `${PAGE_URL}`,
+      description: `${APP_NAME} builds high-performance iOS and Android apps — native and cross-platform development, mobile UX, secure authentication, push notifications, API integration, and optimization for engagement and scale.`,
+      provider: { "@id": `${BASE_URL}/#organization` },
+      areaServed: ["India", "Worldwide"],
+      serviceType: [
+        "iOS App Development",
+        "Android App Development",
+        "Cross-Platform Mobile Apps",
+        "Flutter App Development",
+        "React Native Development",
+        "Mobile UI/UX Design",
+      ],
+      category: "Software Development",
+      offers: {
+        "@type": "Offer",
+        availability: "https://schema.org/InStock",
+        url: `${BASE_URL}/contact-us`,
+        offeredBy: { "@id": `${BASE_URL}/#organization` },
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Mobile Application Development Capabilities",
+        itemListElement: features.map((feature) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: feature.title,
+            description: feature.description,
+          },
+        })),
+      },
+    },
+  ],
+};
 
 const steps = [
   {
@@ -141,6 +315,8 @@ const chartHeights = ["h-[40%]", "h-[52%]", "h-[60%]", "h-[74%]", "h-[84%]", "h-
 export default function MobileApplicationsServicesPage() {
     return (
     <>
+    <Script id="mobile-applications-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
+
     {/* HERO */}
     <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-zinc-950">
         <div className="grid-bg absolute inset-0 opacity-5" />
@@ -149,9 +325,7 @@ export default function MobileApplicationsServicesPage() {
         <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-6 px-4 lg:grid-cols-2 z-10">
           {/* Left Column */}
           <div className="space-y-5">
-            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white">
-                <span className="h-[2px] w-7 bg-red-600" />Mobile Applications Services
-            </div>
+            <Subheading variant="light">Mobile Applications Services</Subheading>
             <h1 className="font-bebas-neue uppercase leading-[0.84] tracking-wider text-white text-[80px] sm:text-[100px] md:text-[140px]">
               <span>BUILD </span>
               <span className="text-red-600">MOBILE</span>
@@ -160,14 +334,10 @@ export default function MobileApplicationsServicesPage() {
             <p className="text-[15px] leading-8 text-white">We design and develop modern mobile apps with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
 
             <div className="flex flex-wrap items-center gap-4">
-                <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                        Start Your Project
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                </Link>
-                <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-white px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-zinc-950 transition">
-                        View Portfolio
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                </Link>
+              <DefaultButton 
+                href="/contact-us"
+                bgClassName="bg-red-600 hover:bg-red-700"
+              >Start Your Project</DefaultButton>
             </div>
 
             <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -181,13 +351,13 @@ export default function MobileApplicationsServicesPage() {
           </div>
 
           {/* Right Column */}
-          <div className="relative w-full space-y-4 max-w-[90%] ml-auto">
+          <div className="relative w-full space-y-4">
             <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[linear-gradient(145deg,#0b1220,#111827)] p-4 shadow-[0_20px_45px_rgba(2,6,23,0.45)]">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_8%,rgba(59,130,246,0.18),transparent_48%),radial-gradient(circle_at_88%_90%,rgba(16,185,129,0.14),transparent_44%)]" />
 
               <div className="relative grid gap-4 grid-cols-12">
                 <div className="relative col-span-12 sm:col-span-5">
-                  <div className="flex items-end flex-col justify-between rounded-xl border border-white/10 bg-white/[0.04] p-3">
+                  <div className="flex items-end flex-col gap-2 justify-between rounded-xl border border-white/10 bg-white/[0.04] p-3">
                     <div>
                       <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-400">Mobile Device Preview</div>
                       <div className="text-[13px] font-extrabold uppercase tracking-[0.08em] text-white">Live Application Screen</div>
@@ -238,7 +408,7 @@ export default function MobileApplicationsServicesPage() {
                 </div>
 
                 <div className="rounded-xl border border-white/10 bg-white/[0.03] p-3 col-span-12 sm:col-span-7">
-                  <div className="flex items-end flex-col justify-between border-b border-white/10 pb-2.5">
+                  <div className="flex items-end flex-col gap-2 justify-between border-b border-white/10 pb-2.5">
                     <div>
                       <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-400">Full Mobile Product Lifecycle</div>
                       <div className="text-[13px] font-extrabold uppercase tracking-[0.08em] text-white">Development + Deployment Flow</div>
@@ -283,7 +453,7 @@ export default function MobileApplicationsServicesPage() {
             </div>
 
             <div className="rounded-2xl border border-white/15  bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01)),linear-gradient(135deg,rgba(26,86,219,0.10),rgba(224,32,32,0.10))] p-4 shadow-lg backdrop-blur-sm">
-              <div className="flex items-center justify-between border-b border-white/10 pb-3">
+              <div className="flex items-center justify-between">
                 <div>
                   <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-400">How It Works</div>
                   <div className="text-sm font-extrabold uppercase tracking-[0.08em] text-white">Mobile Runtime Sequence</div>
@@ -309,78 +479,78 @@ export default function MobileApplicationsServicesPage() {
     {/* OVERVIEW */}
     <section className="relative overflow-hidden border-y border-white/[0.04] bg-[linear-gradient(180deg,#141414,#121212)] py-16 md:py-20">
       <div className="relative mx-auto w-full max-w-7xl px-4">
+        
         <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-12">
-            
+          {/* Left Column */}
           <div className="relative min-h-[420px] overflow-hidden rounded-2xl border border-[rgba(255,255,255,0.08)] bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01)),linear-gradient(135deg,rgba(26,86,219,0.10),rgba(224,32,32,0.10))] p-6">
-              <div className="grid h-full min-h-[368px] grid-rows-[auto_1fr] gap-6 rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(10,10,10,0.78)] p-6">
-              <div className="flex items-center justify-between gap-4">
-                  <div className="flex gap-2">
-                      <span className="h-[9px] w-[9px] rounded-full bg-red-600" />
-                      <span className="h-[9px] w-[9px] rounded-full bg-blue-500" />
-                      <span className="h-[9px] w-[9px] rounded-full bg-zinc-500" />
-                  </div>
-                  <div className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-blue-200">Mobile App Command Center</div>
-              </div>
+              <div className="grid h-full min-h-[368px] grid-rows-[auto_1fr] gap-6">
+                <div className="flex items-center justify-between gap-4">
+                    <div className="flex gap-2">
+                      <span className="h-[9px] w-[9px] rounded-full bg-red-500" />
+                      <span className="h-[9px] w-[9px] rounded-full bg-yellow-400" />
+                      <span className="h-[9px] w-[9px] rounded-full bg-green-600" />
+                    </div>
+                    <div className="rounded-full border border-emerald-500/35 bg-emerald-500/10 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-emerald-200">Mobile App Command Center</div>
+                </div>
 
-              <div className="grid h-full grid-cols-1 gap-4 md:grid-cols-[1.15fr_0.85fr]">
-                  <div className="relative flex flex-col justify-between overflow-hidden rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4">
-                      <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-blue-500/20 blur-2xl" />
-                      <div className="absolute -left-8 -bottom-8 h-24 w-24 rounded-full bg-red-500/20 blur-2xl" />
-                      <div className="relative">
-                          <div className="mb-4 flex items-center justify-between gap-3">
-                              <div className="text-[12px] font-bold uppercase tracking-[0.12em] text-zinc-500">Daily Active Users</div>
-                              <div className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-xs font-semibold uppercase text-blue-200">+31.2%</div>
-                          </div>
-                          <div className="font-bebas-neue text-4xl leading-none text-white">128K</div>
-                      </div>
+                <div className="grid h-full grid-cols-1 gap-4 md:grid-cols-[1.15fr_0.85fr]">
+                    <div className="relative flex flex-col justify-between overflow-hidden rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4">
+                        <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-blue-500/20 blur-2xl" />
+                        <div className="absolute -left-8 -bottom-8 h-24 w-24 rounded-full bg-red-500/20 blur-2xl" />
+                        <div className="relative">
+                            <div className="mb-4 flex items-center justify-between gap-3">
+                                <div className="text-[12px] font-bold uppercase tracking-[0.12em] text-zinc-500">Daily Active Users</div>
+                                <div className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-xs font-semibold uppercase text-blue-200">+31.2%</div>
+                            </div>
+                            <div className="font-bebas-neue text-4xl leading-none text-white">128K</div>
+                        </div>
 
-                      <div className="relative mt-4 flex h-[166px] items-end gap-[10px]">
-                          {chartHeights.map((height, index) => (
-                          <div key={index} className={`flex-1 rounded-t-[10px] bg-gradient-to-b from-blue-500 via-indigo-500 to-red-500 opacity-90 ${height}`}/>
-                          ))}
-                      </div>
-                  </div>
+                        <div className="relative mt-4 flex h-[166px] items-end gap-[10px]">
+                            {chartHeights.map((height, index) => (
+                            <div key={index} className={`flex-1 rounded-t-[10px] bg-gradient-to-b from-blue-500 via-indigo-500 to-red-500 opacity-90 ${height}`}/>
+                            ))}
+                        </div>
+                    </div>
 
-                  <div className="grid grid-cols-1 gap-4">
-                      <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
-                          <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">App Store Rating</div>
-                          <div className="font-bebas-neue text-4xl leading-none text-white">4.9</div>
-                          <div className="text-[12px] font-bold text-green-500">Top-tier feedback</div>
-                      </div>
+                    <div className="grid grid-cols-1 gap-4">
+                        <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
+                            <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">App Store Rating</div>
+                            <div className="font-bebas-neue text-4xl leading-none text-white">4.9</div>
+                            <div className="text-[12px] font-bold text-green-500">Top-tier feedback</div>
+                        </div>
 
-                      <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
-                          <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Crash-Free Sessions</div>
-                          <div className="font-bebas-neue text-4xl leading-none text-white">99.98%</div>
-                          <div className="text-[12px] font-bold text-green-500">Highly stable build</div>
-                      </div>
+                        <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
+                            <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Crash-Free Sessions</div>
+                            <div className="font-bebas-neue text-4xl leading-none text-white">99.98%</div>
+                            <div className="text-[12px] font-bold text-green-500">Highly stable build</div>
+                        </div>
 
-                      <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
-                          <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Push CTR</div>
-                          <div className="font-bebas-neue text-4xl leading-none text-white">18.6%</div>
-                          <div className="text-[12px] font-bold text-green-500">Strong engagement</div>
-                      </div>
-                  </div>
-              </div>
+                        <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
+                            <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Push CTR</div>
+                            <div className="font-bebas-neue text-4xl leading-none text-white">18.6%</div>
+                            <div className="text-[12px] font-bold text-green-500">Strong engagement</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex flex-wrap gap-[10px]">
+                  {pills.map((item) => (
+                      <span key={item} className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[1px] text-white">{item}</span>
+                  ))}
+                </div>
+
               </div>
           </div>
 
-          
+          {/* Right Column */}
           <div className="relative space-y-4">
-              <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                  <span className="h-[2px] w-7 bg-red-600" />
-                  Why Build Mobile Apps With Us
-              </div>
-              <h2 className="text-[50px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[70px] lg:text-[80px]">MOBILE APPS BUILT FOR <span className="text-red-600">REAL ENGAGEMENT</span></h2>
+              <Subheading variant="light">Why Build Mobile Apps With Us</Subheading>
+              <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">MOBILE APPS BUILT FOR <span className="text-red-600">REAL ENGAGEMENT</span></h2>
 
               <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">We design and engineer mobile apps that go beyond visuals, built for <strong className="text-white">high retention, smooth journeys, performance, and long-term product growth</strong>.</p>
               <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">From startup MVPs to enterprise mobility products, we align each build with{" "} <strong className="text-white">real user behavior, scalable architecture, app-store quality, and security-first engineering</strong>.</p>
               <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">Our mobile-first execution blends premium UI, conversion-focused UX, and robust development so your app can launch faster and improve continuously without rework.</p>
 
-              <div className="mt-7 flex flex-wrap gap-[10px]">
-              {pills.map((item) => (
-                  <span key={item} className="rounded-full border border-[rgba(59,130,246,0.32)] bg-[rgba(26,86,219,0.08)] px-4 py-2 text-[12px] font-bold uppercase tracking-[1px] text-[#3B82F6]">{item}</span>
-              ))}
-              </div>
           </div>
         </div>
       </div>
@@ -439,7 +609,7 @@ export default function MobileApplicationsServicesPage() {
       }
       description="Let's design a mobile app that is premium on the surface, strong in the backend, and ready for subscriptions, workflows, users, and scale."
       buttonText="Get a Free Quote →"
-      buttonHref="/"
+      buttonHref="/contact-us"
     />
 
     </>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { APP_NAME, BASE_URL, contactInfo } from "./lib/config";
 import { Bebas_Neue } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -12,21 +13,33 @@ const bebas_neue = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-  title: "Top Website Design and Development Company - MiraculousSoftsolutions",
-  description: "MiraculousSoftsolutions is #1 Top Ranked Website Design and Development Company dedicated to build up web applications for to make online presence",
-  keywords: [ "IT company", "web development", "mobile apps", "cloud solutions", "Miraculous Soft Solutions"],
-  authors: [{ name: "Miraculous Soft Solutions" }],
+  title: `Top Website Design and Development Company - ${APP_NAME}`,
+  description: `${APP_NAME} is #1 Top Ranked Website Design and Development Company dedicated to build up web applications for to make online presence`,
+  keywords: [ "IT company", "web development", "mobile apps", "cloud solutions" ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: `${BASE_URL}`,
+  },
   openGraph: {
-    title: "Top Website Design and Development Company - MiraculousSoftsolutions",
-    description: "MiraculousSoftsolutions is #1 Top Ranked Website Design and Development Company dedicated to build up web applications for to make online presence",
-    url: "https://yourdomain.com",
-    siteName: "MiraculousSoftsolutions",
+    title: `Top Website Design and Development Company - ${APP_NAME}`,
+    description: `${APP_NAME} is #1 Top Ranked Website Design and Development Company dedicated to build up web applications for to make online presence`,
+    siteName: `${APP_NAME}`,
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "MiraculousSoftsolutions",
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 500,
+        height: 500,
+        alt: `${APP_NAME} — Top Website Design and Development Company`,
       },
     ],
     type: "website",
@@ -34,12 +47,10 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Top Website Design and Development Company - MiraculousSoftsolutions",
-    description: "MiraculousSoftsolutions is #1 Top Ranked Website Design and Development Company dedicated to build up web applications for to make online presence",
-    images: ["/og-image.png"],
+    title: `Top Website Design and Development Company - ${APP_NAME}`,
+    description: `${APP_NAME} is #1 Top Ranked Website Design and Development Company dedicated to build up web applications for to make online presence`,
+    images: [`${BASE_URL}${contactInfo.logo}`],
   },
-
-  metadataBase: new URL("https://yourdomain.com"),
 }
 
 export default function RootLayout({
@@ -52,9 +63,12 @@ export default function RootLayout({
       <body>
         <div id="cursor"></div>
         <div id="cursor-ring"></div>
+        
         <Navbar />
         <main>{children}</main>
         <Footer />
+        
+        {/* Custom Cursor Script */}
         <Script id="custom-cursor-script" strategy="afterInteractive">
           {`
             const cur = document.getElementById("cursor");

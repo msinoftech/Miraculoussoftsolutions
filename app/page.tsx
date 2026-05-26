@@ -1,6 +1,7 @@
-"use client";
-import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import type { Metadata } from "next";
+import Script from "next/script";
+import { APP_NAME, BASE_URL, contactInfo } from "./lib/config";
+import { useMemo } from "react";
 import CommandCenterTopology from "./components/CommandCenterTopology";
 import Getintouch from "./components/Getintouch";
 import Marquee from "./components/Marquee";
@@ -8,6 +9,146 @@ import DevelopmentProcess from "./components/DevelopmentProcess";
 import Card from "./components/Card";
 import IndustriesList from "./components/IndustriesList";
 import Subheading from "./components/ui/Subheading";
+import DefaultButton from "./components/ui/Button/defaultButton";
+import OutlineButton from "./components/ui/Button/outlineButton";
+import TechnologiesStack from "./components/tecnologiesStack";
+import WhyMiraculousSoft from "./components/WhyMiraculousSoft";
+import CardFloatGrid, { type CardFloatItem } from "./components/cardFloat";
+
+export const metadata: Metadata = {
+  title: "Top Website Design and Development Company - MiraculousSoftsolutions",
+  description: "MiraculousSoftsolutions is #1 Top Ranked Website Design and Development Company dedicated to build up web applications for to make online presence",
+  keywords: [ "IT company", "web development", "mobile apps", "cloud solutions", "Miraculous Soft Solutions"],
+  
+  alternates: {
+    canonical: `${BASE_URL}`,
+  },
+
+  openGraph: {
+    title: "Top Website Design and Development Company - MiraculousSoftsolutions",
+    description: "MiraculousSoftsolutions is #1 Top Ranked Website Design and Development Company dedicated to build up web applications for to make online presence",
+    url: `${BASE_URL}`,
+    type: "website",
+    siteName: `${APP_NAME}`,
+    images: [
+      {
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 500,
+        height: 500,
+        alt: `${APP_NAME}`,
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Top Website Design and Development Company - MiraculousSoftsolutions",
+    description: "MiraculousSoftsolutions is #1 Top Ranked Website Design and Development Company dedicated to build up web applications for to make online presence",
+    images: [`${BASE_URL}${contactInfo.logo}`],
+  },
+}
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: APP_NAME,
+      alternateName: "Miraculous Soft Solutions",
+      url: BASE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 512,
+        height: 512,
+      },
+      image: `${BASE_URL}${contactInfo.logo}`,
+      description: "MiraculousSoftsolutions is #1 Top Ranked Website Design and Development Company dedicated to build up web applications for to make online presence",
+      email: contactInfo.email,
+      telephone: `+${contactInfo.phone.replace(/[^+\d]/g, "")}`,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        postalCode: "160062",
+        addressCountry: "IN",
+      },
+      sameAs: [
+        "https://www.facebook.com/miraculoussoft",
+        "https://twitter.com/miraculous_soft",
+        "https://www.instagram.com/miraculous_soft",
+        "https://www.pinterest.com/seomiraculoussoft",
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: contactInfo.email,
+          telephone: `+${contactInfo.phone.replace(/[^+\d]/g, "")}`,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: ["IN", "Worldwide"],
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: "Worldwide",
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      url: BASE_URL,
+      name: APP_NAME,
+      description: "MiraculousSoftsolutions is #1 Top Ranked Website Design and Development Company dedicated to build up web applications for to make online presence",
+      inLanguage: "en",
+      publisher: { "@id": `${BASE_URL}/#organization` },
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${BASE_URL}/#webpage`,
+      url: BASE_URL,
+      name: "Home | Product Engineering & Software Development",
+      isPartOf: { "@id": `${BASE_URL}/#website` },
+      about: { "@id": `${BASE_URL}/#professional-service` },
+      description: "MiraculousSoftsolutions is #1 Top Ranked Website Design and Development Company dedicated to build up web applications for to make online presence",
+      inLanguage: "en",
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${BASE_URL}/#professional-service`,
+      name: APP_NAME,
+      alternateName: "Miraculous Soft Solutions",
+      url: BASE_URL,
+      description: "MiraculousSoftsolutions is #1 Top Ranked Website Design and Development Company dedicated to build up web applications for to make online presence",
+      image: `${BASE_URL}${contactInfo.logo}`,
+      telephone: `+${contactInfo.phone.replace(/[^+\d]/g, "")}`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        addressCountry: "IN",
+      },
+      areaServed: ["India", "Worldwide"],
+      serviceType: [
+        "SaaS Product Development",
+        "B2B Platform Engineering",
+        "ERP & Business Automation",
+        "eCommerce Solutions",
+        "Web & Mobile Applications",
+        "Branding & Digital Growth",
+        "Cloud & DevOps Engineering",
+        "AI-Ready Product Development",
+      ],
+    },
+  ],
+};
 
 const marqueeItems = [
   "SaaS Product Development",
@@ -131,7 +272,7 @@ const techGroups = [
   },
 ];
 
-const capabilities = [
+const capabilities: CardFloatItem[] = [
   { 
     label: "Microservices Architecture", 
     icon: '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-boxes transition-all duration-500 rotate-3 scale-105" aria-hidden="true" data-source-pos="1288:20-1288:140" data-source-name="Icon"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"></path><path d="m7 16.5-4.74-2.85"></path><path d="m7 16.5 5-3"></path><path d="M7 16.5v5.17"></path><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"></path><path d="m17 16.5-5-3"></path><path d="m17 16.5 4.74-2.85"></path><path d="M17 16.5v5.17"></path><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"></path><path d="M12 8 7.26 5.15"></path><path d="m12 8 4.74-2.85"></path><path d="M12 13.5V8"></path></svg>', 
@@ -182,26 +323,6 @@ const capabilities = [
   //   icon: '<div data-source-pos="1188:18-1196:24" data-source-name="div" class="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-md border transition-all duration-500 border-white/10 bg-white/5 text-white/75 group-hover:border-white/20 group-hover:bg-white/10 group-hover:scale-105"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity transition-all duration-500 group-hover:rotate-6" aria-hidden="true" data-source-pos="1195:20-1195:140" data-source-name="Icon"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path></svg></div>', 
   //   tone: "blue" 
   // },
-];
-
-const orbitNodes = [
-  { label: "REACT", x: 230, y: 150, r: 22, fill: "#e63322", text: "#fff", orbit: 1, category: "Frontend" },
-  { label: "NODE", x: 300, y: 220, r: 22, fill: "#f7f5f0", stroke: "#e0dbd2", text: "#0c0c0c", orbit: 1, category: "Backend" },
-  { label: "AWS", x: 230, y: 290, r: 22, fill: "#0044ff", text: "#fff", orbit: 1, category: "Cloud" },
-  { label: "PG", x: 160, y: 220, r: 22, fill: "#f7f5f0", stroke: "#e0dbd2", text: "#0c0c0c", orbit: 1, category: "Data" },
-  { label: "NEXT.JS", x: 230, y: 30, r: 28, fill: "#0c0c0c", text: "#fff", orbit: 2, category: "Frontend" },
-  { label: "DOCKER", x: 390, y: 130, r: 24, fill: "#f7f5f0", stroke: "#e0dbd2", text: "#7c7872", orbit: 2, category: "DevOps" },
-  { label: "PYTHON", x: 410, y: 270, r: 26, fill: "#e63322", text: "#fff", orbit: 2, category: "Backend" },
-  { label: "REDIS", x: 300, y: 390, r: 24, fill: "#0044ff", text: "#fff", orbit: 2, category: "Data" },
-  { label: "STRIPE", x: 120, y: 390, r: 26, fill: "#f7f5f0", stroke: "#e0dbd2", text: "#7c7872", orbit: 2, category: "Integrations" },
-  { label: "K8S", x: 50, y: 270, r: 24, fill: "#00875a", text: "#fff", orbit: 2, category: "Cloud" },
-  { label: "GCP", x: 70, y: 130, r: 24, fill: "#f7f5f0", stroke: "#e0dbd2", text: "#7c7872", orbit: 2, category: "Cloud" },
-  { label: "FASTAPI", x: 112, y: 58, r: 22, fill: "#00875a", text: "#fff", orbit: 3, category: "Backend" },
-  { label: "AZURE", x: 352, y: 68, r: 22, fill: "#0044ff", text: "#fff", orbit: 3, category: "Cloud" },
-  { label: "KAFKA", x: 400, y: 218, r: 22, fill: "#0c0c0c", text: "#fff", orbit: 3, category: "Data" },
-  { label: "AUTH0", x: 342, y: 360, r: 22, fill: "#e63322", text: "#fff", orbit: 3, category: "Security" },
-  { label: "VERCEL", x: 118, y: 366, r: 22, fill: "#0c0c0c", text: "#fff", orbit: 3, category: "Frontend" },
-  { label: "NEST", x: 58, y: 220, r: 22, fill: "#e63322", text: "#fff", orbit: 3, category: "Backend" },
 ];
 
 const testimonials = [
@@ -259,151 +380,14 @@ const metrics = [
   { value: "24", suffix: "/7", label: "Delivery Reliability Mindset" },
 ];
 
-function OrbitVisual() {
-
-  const [active, setActive] = useState("NEXT.JS");
-  const [isPaused, setIsPaused] = useState(false);
-  const orderedLabels = useMemo(() => orbitNodes.map((node) => node.label), []);
-
-  useEffect(() => {
-    if (isPaused) return;
-
-    const interval = window.setInterval(() => {
-      setActive((current) => {
-        const currentIndex = orderedLabels.indexOf(current);
-        const nextIndex = currentIndex === -1 ? 0 : (currentIndex + 1) % orderedLabels.length;
-        return orderedLabels[nextIndex];
-      });
-    }, 1800);
-
-    return () => window.clearInterval(interval);
-  }, [isPaused, orderedLabels]);
-
-  const inner = orbitNodes.filter((n) => n.orbit === 1);
-  const outer = orbitNodes.filter((n) => n.orbit === 2);
-  const edge = orbitNodes.filter((n) => n.orbit === 3);
-  const activeNode = orbitNodes.find((n) => n.label === active) ?? orbitNodes[0];
-
-  const labelFontSize = (label: string) => {
-    if (label.length >= 7) return 6.5;
-    if (label.length >= 6) return 7;
-    return 8;
-  };
-
-  const renderNode = (
-    node: (typeof orbitNodes)[number],
-    glowFill: string,
-    ringFill: string
-  ) => {
-    const isActive = active === node.label;
-    return (
-      <g key={node.label} className="orbit-node cursor-pointer" onMouseEnter={() => { setIsPaused(true); setActive(node.label); }} onMouseLeave={() => setIsPaused(false)}>
-        <circle cx={node.x} cy={node.y} r={isActive ? node.r + 9 : node.r + 4} fill={isActive ? glowFill : ringFill} className="transition-all duration-500"/>
-        <circle cx={node.x} cy={node.y} r={isActive ? node.r + 1.5 : node.r} fill={node.fill} stroke={node.stroke || "transparent"} strokeWidth={node.stroke ? 1.5 : 0} filter={isActive ? "url(#softGlow)"  : undefined} className="transition-all duration-500"/>
-        <text x={node.x} y={node.y + 3} textAnchor="middle" fontSize={labelFontSize(node.label)} fontWeight="800" fill={node.text} letterSpacing="0.2" style={{ pointerEvents: "none" }}>
-          {node.label}
-        </text>
-      </g>
-    );
-  };
-
-  return (
-    <div className="relative w-full">
-      <div className="pointer-events-none absolute inset-x-10 top-8 h-32 rounded-full bg-red-600/10 blur-3xl" />
-      <div className="pointer-events-none absolute inset-x-20 bottom-6 h-28 rounded-full bg-blue-600/10 blur-3xl" />
-
-      <div className="relative overflow-hidden rounded-[28px] border border-[var(--border)] bg-white p-4 shadow-[0_24px_80px_rgba(12,12,12,0.08)] sm:p-6">
-        <div className="mb-4 flex items-start justify-between gap-4 rounded-2xl border border-[var(--border)] bg-[var(--off)] p-4">
-          <div>
-            <div className="text-[10px] font-bold uppercase tracking-[0.16em] text-zinc-500">Interactive Tech Orbit</div>
-            <div className="mt-2 text-[22px] font-extrabold tracking-[-0.03em] text-zinc-950">{activeNode.label}</div>
-            <div className="mt-1 text-[12px] font-bold uppercase tracking-[0.12em] text-red-600">{activeNode.category}</div>
-          </div>
-          <div className="rounded-full border border-[var(--border)] bg-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-500">Auto Sliding</div>
-        </div>
-
-        <svg viewBox="0 0 460 460" className="w-full drop-shadow-[0_20px_50px_rgba(0,0,0,0.08)] font-sans" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
-          <defs>
-            <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="rgba(230,51,34,0.22)" />
-              <stop offset="100%" stopColor="rgba(230,51,34,0)" />
-            </radialGradient>
-            <filter id="softGlow">
-              <feGaussianBlur stdDeviation="6" result="blur" />
-              <feMerge>
-                <feMergeNode in="blur" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
-          </defs>
-          <circle cx="230" cy="230" r="210" fill="url(#coreGlow)" />
-          <circle cx="230" cy="230" r="190" fill="none" stroke="#e0dbd2" strokeWidth="1" strokeDasharray="6 5" />
-          <circle cx="230" cy="230" r="150" fill="none" stroke="#ebe6dd" strokeWidth="1" strokeDasharray="3 6" />
-          <circle cx="230" cy="230" r="110" fill="none" stroke="#eeeae2" strokeWidth="1.5" />
-          <circle cx="230" cy="230" r="70" fill="none" stroke="#e0dbd2" strokeWidth="1" />
-          <g className="orbit-3">{edge.map((node) => renderNode(node, "rgba(230,51,34,0.12)", "rgba(12,12,12,0.04)"))}</g>
-          <g className="orbit-2">{outer.map((node) => renderNode(node, "rgba(0,68,255,0.10)", "rgba(12,12,12,0.04)"))}</g>
-          <g className="orbit-1">{inner.map((node) => renderNode(node, "rgba(230,51,34,0.10)", "rgba(12,12,12,0.04)"))}</g>
-          <circle cx="230" cy="230" r="46" fill="#0c0c0c" filter="url(#softGlow)" />
-          <circle cx="230" cy="230" r="58" fill="none" stroke="rgba(230,51,34,0.28)" strokeWidth="1.5" strokeDasharray="4 5" />
-          <text x="230" y="223" textAnchor="middle" fontFamily="Inter" fontSize="9" fontWeight="700" fill="rgba(255,255,255,.55)" letterSpacing="1" className="font-sans">MIRACULOUS</text>
-          <text x="230" y="237" textAnchor="middle" fontFamily="Inter" fontSize="9" fontWeight="700" fill="rgba(255,255,255,.55)" letterSpacing="1" className="font-sans">SOFT</text>
-        </svg>
-
-        <div className="mt-4 grid gap-2 sm:grid-cols-3">
-          {[
-            "Frontend Systems",
-            "Backend Engineering",
-            "Cloud & DevOps",
-            "Data Platforms",
-            "Security & Auth",
-            "Integrations",
-          ].map((item) => (
-            <div key={item} className="rounded-xl border border-[var(--border)] bg-white px-3 py-2 text-center text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">{item}</div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function MiraculousSoftLandingPage() {
-  const [activeCapability, setActiveCapability] = useState(0);
-  const [activeWhyIndex, setActiveWhyIndex] = useState(0);
-  const [hoveredWhyIndex, setHoveredWhyIndex] = useState<number | null>(null);
-
-  useEffect(() => {
-    const html = document.documentElement;
-    const previous = html.style.scrollBehavior;
-    html.style.scrollBehavior = "smooth";
-    return () => {
-      html.style.scrollBehavior = previous;
-    };
-  }, []);
-
   const tickerLoop = useMemo(() => [...tickerItems, ...tickerItems], []);
-  const visibleWhyIndex = hoveredWhyIndex ?? activeWhyIndex;
-
-  useEffect(() => {
-    const interval = window.setInterval(() => {
-      setActiveCapability((current) => (current + 1) % capabilities.length);
-    }, 1600);
-
-    return () => window.clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    if (hoveredWhyIndex !== null) return;
-
-    const interval = window.setInterval(() => {
-      setActiveWhyIndex((current) => (current + 1) % whyPoints.length);
-    }, 3000);
-
-    return () => window.clearInterval(interval);
-  }, [hoveredWhyIndex]);
 
   return (
     <>
+      {/* SCHEMA */}
+      <Script type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
+
       {/* Hero Section */}
       <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
         <div className="grid-bg absolute inset-0 opacity-45" />
@@ -427,15 +411,8 @@ export default function MiraculousSoftLandingPage() {
             <p className="max-w-sm text-[15px] leading-8 text-zinc-500">SaaS platforms, B2B systems, ERP automation, eCommerce products, and mobile applications — built to launch fast, scale hard, and last.</p>
 
             <div className="flex flex-row flex-wrap lg:flex-col gap-3">
-              <Link href="#contact" className="group w-fit lg:w-auto flex items-center justify-between rounded-[4px] border border-zinc-950 bg-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition hover:border-red-600 hover:bg-red-600">
-                Start Your Project
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-              </Link>
-
-              <Link href="#services" className="group w-fit lg:w-auto flex items-center justify-between rounded-[4px] border border-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-zinc-950 transition hover:bg-zinc-950 hover:text-white">
-                Explore Services
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-              </Link>
+              <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
+              <OutlineButton href="/services">Explore Services</OutlineButton>
             </div>
           </div>
         </div>
@@ -461,69 +438,16 @@ export default function MiraculousSoftLandingPage() {
         iconClassName="text-red-600"
       />
       
-      {/* Why Miraculous Soft Section */}
-      <section className="overflow-hidden bg-[var(--off)] py-14 sm:py-20">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 lg:grid-cols-2 lg:gap-10">
-          {/* left column */}
-          <div className="border-b-2 border-[var(--border)] pb-12 lg:border-b-0">
-            <Subheading variant="default">Why Miraculous Soft</Subheading>
-            <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">
-              The Partner Businesses <span className="text-red-600">Choose.</span>
-            </h2>
-            <p className="mt-8 max-w-xl text-[15px] leading-8 text-zinc-500">When the stakes are high and execution matters, growth-stage businesses and enterprise teams choose a partner that can think strategically and build reliably.</p>
-
-            <div className="mt-10 hidden lg:block">
-              <div className="text-[110px] font-bebas-neue font-extrabold leading-none tracking-[0.02em] text-zinc-200">{whyPoints[visibleWhyIndex].number}</div>
-              <div className="mt-4 text-[30px] font-extrabold tracking-[-0.03em] text-zinc-950">{whyPoints[visibleWhyIndex].title}</div>
-              <p className="mt-4 max-w-md text-[15px] leading-8 text-zinc-500">{whyPoints[visibleWhyIndex].description}</p>
-              <div className="mt-8 h-[2px] w-48 overflow-hidden bg-black/10">
-                <div
-                  key={`why-left-progress-${visibleWhyIndex}-${hoveredWhyIndex ?? "auto"}`}
-                  className="why-progress-bar h-full bg-red-600"
-                  style={{ width: "100%" }}
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* right column */}
-          <div className="relative">
-            <div className="absolute left-[20px] top-2 hidden h-[calc(100%-16px)] w-px bg-black/10 md:block" />
-            <div className="space-y-10 lg:space-y-12">
-              {whyPoints.map((point, index) => {
-                const isActive = index === visibleWhyIndex;
-
-                return (
-                  <div key={point.title} className="relative md:pl-16" onMouseEnter={() => { setHoveredWhyIndex(index); setActiveWhyIndex(index); }} onMouseLeave={() => setHoveredWhyIndex(null)}>
-                    <div className="absolute left-[12px] top-2 hidden h-4 w-4 rounded-full border transition-all duration-500 md:block"
-                      style={{
-                        background: isActive ? "#e63322" : "#ffffff",
-                        borderColor: isActive ? "#e63322" : "rgba(0,0,0,0.16)",
-                        transform: isActive ? "scale(1.08)" : "scale(1)",
-                      }}
-                    />
-
-                    <div className="group border-b border-[var(--border)] py-8 transition-all duration-500 first:pt-0 last:border-b-0 last:pb-0">
-                      <div className="flex items-center gap-3">
-                        <span className={`why-item-line text-[11px] font-bold uppercase tracking-[0.2em] ${ isActive ? "text-red-600" : "text-zinc-400" }`}>{point.number}</span>
-                        <span className={`why-item-line h-px w-10 ${isActive ? "bg-red-600" : "bg-black/10"}`} />
-                        {isActive && (
-                          <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-red-600">Active</span>
-                        )}
-                      </div>
-                      <div className={`mt-4 text-[24px] font-extrabold tracking-[-0.03em] transition-all duration-500 sm:text-[26px] ${ isActive ? "text-zinc-950" : "text-zinc-700" }`}>{point.title}</div>
-                      <p className={`why-item-copy mt-3 max-w-md text-[15px] leading-7 text-zinc-500 ${ isActive ? "translate-x-0 opacity-100" : "translate-x-[2px] opacity-70" }`}>{point.description}</p>
-                      <div className="mt-6 h-[2px] w-full overflow-hidden bg-black/5">
-                        <div key={`why-progress-${index}-${visibleWhyIndex}-${hoveredWhyIndex ?? "auto"}`} className="why-progress-bar h-full bg-red-600" style={{ width: isActive ? "100%" : index < visibleWhyIndex ? "100%" : "0%" }}/>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
+      <WhyMiraculousSoft
+        points={whyPoints}
+        label="Why Miraculous Soft"
+        title={
+          <>
+            The Partner Businesses <span className="text-red-600">Choose.</span>
+          </>
+        }
+        description="When the stakes are high and execution matters, growth-stage businesses and enterprise teams choose a partner that can think strategically and build reliably."
+      />
 
       {/* Services Section */}
       <Card
@@ -541,12 +465,10 @@ export default function MiraculousSoftLandingPage() {
       {/* Technology Stack Section */}
       <section id="tech" className="bg-[var(--off)] py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-4">
+          
           <div className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-2 md:items-end">
             <div>
-              <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                <span className="h-[2px] w-7 bg-red-600" />
-                Technology Stack
-              </div>
+              <Subheading variant="default">Technology Stack</Subheading>
               <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">
                 Built With
                 <br />
@@ -555,6 +477,7 @@ export default function MiraculousSoftLandingPage() {
             </div>
             <p className="max-w-2xl text-[15px] leading-8 text-zinc-500">We use modern, production-proven technologies to build scalable SaaS platforms, enterprise systems, and high-performance applications. Every tool is selected for reliability, maintainability, and long-term growth.</p>
           </div>
+
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
             <div className="order-2 lg:order-1">
               <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-2">
@@ -579,46 +502,13 @@ export default function MiraculousSoftLandingPage() {
                 })}
               </div>
 
-              {/* <div className="mt-5 grid gap-5 sm:grid-cols-2">
-                <div className="rounded-xl border border-[var(--border)] bg-zinc-950 p-6 text-white shadow-[6px_6px_0_#e63322]">
-                  <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.14em] text-white/45">
-                    Delivery Approach
-                  </div>
-                  <div className="text-[24px] font-extrabold tracking-[-0.03em]">
-                    Built for speed, scale, and long-term maintainability.
-                  </div>
-                  <p className="mt-3 text-[13px] leading-7 text-white/60">
-                    Strong architecture, clean APIs, automation-first thinking, and enterprise-ready execution across every phase.
-                  </p>
-                </div>
-
-                <div className="rounded-xl border border-[var(--border)] bg-white p-6">
-                  <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.14em] text-zinc-500">
-                    Best Fit Projects
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      "SaaS Platforms",
-                      "B2B Systems",
-                      "ERP Modernization",
-                      "eCommerce",
-                      "Automation",
-                      "AI Products",
-                    ].map((item) => (
-                      <span key={item} className="rounded-[4px] border border-[var(--border)] bg-[var(--off)] px-3 py-1 text-[12px] font-bold text-zinc-950">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div> */}
-
-              <div className="mt-5 border-t border-[var(--border)] pt-6 text-[13px] uppercase tracking-[0.12em] text-zinc-500">
+              <div className="pt-6 text-sm font-semibold text-zinc-950">
                 + AI Integrations • Automation Workflows • Microservices Architecture • Enterprise Scaling
               </div>
             </div>
+
             <div className="order-1 lg:order-2">
-              <OrbitVisual />
+              <TechnologiesStack />
             </div>
           </div>
         </div>
@@ -630,10 +520,7 @@ export default function MiraculousSoftLandingPage() {
         <div className="mx-auto max-w-7xl px-4 space-y-10">
           <div className="relative z-10 grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-20">
             <div>
-              <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                <span className="h-[2px] w-7 bg-red-600" />
-                Capabilities
-              </div>
+              <Subheading variant="light">Capabilities</Subheading>
               <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">
                 Engineered
                 <br />
@@ -641,41 +528,8 @@ export default function MiraculousSoftLandingPage() {
               </h2>
               <p className="mt-6 max-w-xl text-[15px] leading-8 text-white/45">We specialise in connected systems, enterprise workflows, and modern software architecture that supports serious business growth.</p>
             </div>
-            <div className="relative grid overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] sm:grid-cols-2">
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(230,51,34,0.12),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(0,68,255,0.12),transparent_30%)]" />
 
-              {capabilities.map((capability, index) => {
-                const isActive = activeCapability === index;
-                const toneClasses =
-                  capability.tone === "red"
-                    ? "from-red-600/20 via-red-500/8 to-transparent"
-                    : "from-blue-600/20 via-blue-500/8 to-transparent";
-                const iconTone = capability.tone === "red" ? "text-red-400" : "text-blue-400";
-                const activeBorder = capability.tone === "red" ? "border-red-500/40" : "border-blue-500/40";
-                const activeGlow =
-                  capability.tone === "red"
-                    ? "shadow-[0_0_0_1px_rgba(230,51,34,0.22),0_0_40px_rgba(230,51,34,0.14)]"
-                    : "shadow-[0_0_0_1px_rgba(0,68,255,0.22),0_0_40px_rgba(0,68,255,0.14)]";
-                const activeLine = capability.tone === "red" ? "bg-red-500" : "bg-blue-500";
-
-                return (
-                  <div key={capability.label} onMouseEnter={() => setActiveCapability(index)} className={`cap-card-float group relative flex items-center gap-3 border-white/10 px-5 py-5 text-[13px] font-bold tracking-[-0.01em] transition-all duration-500 ${ index % 2 === 0 ? "sm:border-r" : "" } ${index < capabilities.length - 2 ? "border-b" : ""} ${ isActive ? `z-10 text-white ${activeBorder} ${activeGlow}` : "text-white/70 hover:z-10 hover:text-white" }`}>
-                    <div className={`pointer-events-none absolute inset-0 transition-all duration-700 ${ isActive ? `opacity-100 bg-gradient-to-r ${toneClasses}` : "opacity-0 group-hover:opacity-100 bg-gradient-to-r from-white/5 via-white/[0.03] to-transparent" }`} />
-                    <div className={`pointer-events-none absolute inset-y-0 left-0 w-[3px] transition-all duration-500 ${ isActive ? activeLine + " opacity-100" : "bg-white/0 opacity-0 group-hover:bg-white/30 group-hover:opacity-100" }`}/>
-                    {isActive && (
-                      <div className={`pointer-events-none absolute inset-y-0 left-0 w-24 skew-x-[-18deg] bg-gradient-to-r ${toneClasses}`} style={{ animation: "capabilitySweep 1.6s ease-in-out infinite" }}/>
-                    )}
-                    <div className={`relative flex h-10 w-10 shrink-0 items-center justify-center rounded-md border transition-all duration-500 ${ isActive ? `border-white/20 bg-white/10 ${iconTone} scale-110` : "border-white/10 bg-white/5 text-white/75 group-hover:border-white/20 group-hover:bg-white/10 group-hover:scale-105" }`}>
-                      <span dangerouslySetInnerHTML={{ __html: capability.icon }} />
-                    </div>
-                    <span className={`relative pr-6 transition-all duration-500 ${isActive ? "translate-x-1" : "group-hover:translate-x-1"}`}>
-                      {capability.label}
-                    </span>
-                    <span className={`absolute bottom-0 left-0 h-[2px] transition-all duration-500 ${ isActive ? `${activeLine} w-full` : "w-0 bg-white/40 group-hover:w-full" }`}/>
-                  </div>
-                );
-              })}
-            </div>
+            <CardFloatGrid items={capabilities} autoRotateMs={1600} />
           </div>
 
           <CommandCenterTopology />
@@ -691,10 +545,7 @@ export default function MiraculousSoftLandingPage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-14 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-end">
             <div>
-              <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                <span className="h-[2px] w-7 bg-red-600" />
-                Client Voices
-              </div>
+              <Subheading variant="default">Client Voices</Subheading>
               <h2 className="font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">
                 What They
                 <br />

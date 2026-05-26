@@ -1,10 +1,49 @@
-"use client";
-import Link from "next/link";
+import type { Metadata } from "next";
+import Script from "next/script";
+import { APP_NAME, BASE_URL, contactInfo } from "@/app/lib/config";
 import Marquee from "@/app/components/Marquee";
 import BoxCard from "@/app/components/BoxCard";
 import CtaStrip from "@/app/components/CtaStrip";
 import DevelopmentProcess from "@/app/components/DevelopmentProcess";
 import Card from "@/app/components/Card";
+import Subheading from "@/app/components/ui/Subheading";
+import DefaultButton from "@/app/components/ui/Button/defaultButton";
+
+const PAGE_URL = `${BASE_URL}/services/erp-and-business-automation-services`;
+const SERVICES_URL = `${BASE_URL}/services`;
+
+export const metadata: Metadata = {
+  title: `ERP & Business Automation Services | ${APP_NAME}`,
+  description: `${APP_NAME} delivers custom ERP and business automation solutions — unified modules, workflow approvals, role-based dashboards, reporting, and enterprise integrations to streamline operations.`,
+  keywords: [ "ERP development services", "ERP and business automation", "custom ERP software", "business process automation", "workflow automation platform", "enterprise resource planning", "Miraculous Soft Solutions" ],
+
+  alternates: {
+    canonical: `${PAGE_URL}`,
+  },
+
+  openGraph: {
+    title: `ERP & Business Automation Services | ${APP_NAME}`,
+    description: "Custom ERP systems and business automation — finance, inventory, procurement, HR, approvals, reporting, and integrations built for operational clarity and scale.",
+    url: `${PAGE_URL}`,
+    type: "website",
+    siteName: `${APP_NAME}`,
+    images: [
+      {
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 500,
+        height: 500,
+        alt: `${APP_NAME} — ERP & Business Automation Services`,
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: `ERP & Business Automation Services | ${APP_NAME}`,
+    description: `Unify operations with custom ERP and automation from ${APP_NAME} — modules, workflows, dashboards, and integrations for growing teams.`,
+    images: [`${BASE_URL}${contactInfo.logo}`],
+  },
+};
 
 const features = [
   {
@@ -44,6 +83,141 @@ const features = [
     icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>`,
   },
 ];
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: `${APP_NAME}`,
+      alternateName: `${APP_NAME}`,
+      url: `${BASE_URL}`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 512,
+        height: 512,
+      },
+      image: `${BASE_URL}${contactInfo.logo}`,
+      description: `${APP_NAME} delivers custom ERP and business automation solutions — unified modules, workflow approvals, role-based dashboards, reporting, and enterprise integrations to streamline operations.`,
+      email: contactInfo.email,
+      telephone: `+${contactInfo.phone.replace(/[^+\d]/g, "")}`,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        postalCode: "160062",
+        addressCountry: "IN",
+      },
+      sameAs: [
+        "https://www.facebook.com/miraculoussoft",
+        "https://twitter.com/miraculous_soft",
+        "https://www.instagram.com/miraculous_soft",
+        "https://www.pinterest.com/seomiraculoussoft",
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: contactInfo.email,
+          telephone: `+${contactInfo.phone.replace(/[^+\d]/g, "")}`,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: ["IN", "Worldwide"],
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: "Worldwide",
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      url: `${BASE_URL}`,
+      name: `${APP_NAME}`,
+      inLanguage: "en",
+      publisher: { "@id": `${BASE_URL}/#organization` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${PAGE_URL}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${BASE_URL}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Services",
+          item: `${SERVICES_URL}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "ERP & Business Automation Services",
+          item: `${PAGE_URL}`,
+        },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${PAGE_URL}/#webpage`,
+      url: `${PAGE_URL}`,
+      name: `ERP & Business Automation Services | ${APP_NAME}`,
+      isPartOf: { "@id": `${BASE_URL}/#website` },
+      about: { "@id": `${PAGE_URL}/#service` },
+      description: `${APP_NAME} delivers custom ERP and business automation solutions — unified modules, workflow approvals, role-based dashboards, reporting, and enterprise integrations to streamline operations.`,
+      inLanguage: "en",
+      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
+      mainEntity: { "@id": `${PAGE_URL}/#service` },
+    },
+    {
+      "@type": "Service",
+      "@id": `${PAGE_URL}/#service`,
+      name: "ERP & Business Automation Services",
+      alternateName: "Custom ERP Development",
+      url: `${PAGE_URL}`,
+      description: `${APP_NAME} delivers custom ERP and business automation solutions — unified modules, workflow approvals, role-based dashboards, reporting, and enterprise integrations to streamline operations.`,
+      provider: { "@id": `${BASE_URL}/#organization` },
+      areaServed: ["India", "Worldwide"],
+      serviceType: [
+        "Custom ERP Development",
+        "Business Process Automation",
+        "Workflow Automation & Approvals",
+        "ERP Module Implementation",
+        "Role-Based ERP Dashboards",
+        "Enterprise ERP Integrations",
+      ],
+      category: "Software Development",
+      offers: {
+        "@type": "Offer",
+        availability: "https://schema.org/InStock",
+        url: `${BASE_URL}/contact-us`,
+        offeredBy: { "@id": `${BASE_URL}/#organization` },
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "ERP & Business Automation Capabilities",
+        itemListElement: features.map((feature) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: feature.title,
+            description: feature.description,
+          },
+        })),
+      },
+    },
+  ],
+};
 
 const steps = [
   {
@@ -141,6 +315,8 @@ const chartHeights = ["h-[40%]", "h-[52%]", "h-[60%]", "h-[74%]", "h-[84%]", "h-
 export default function ErpAndBusinessAutomationServicesPage() {
     return (
     <>
+    <Script id="erp-automation-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
+
     {/* HERO */}
     <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-zinc-950">
         <div className="grid-bg absolute inset-0 opacity-5" />
@@ -149,9 +325,7 @@ export default function ErpAndBusinessAutomationServicesPage() {
         <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-6 px-4 lg:grid-cols-2 z-10">
             {/* Left Column */}
             <div className="space-y-5">
-                <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white">
-                    <span className="h-[2px] w-7 bg-red-600" />ERP and Business Automation Services
-                </div>
+                <Subheading variant="light">ERP and Business Automation Services</Subheading>
                 <h1 className="font-bebas-neue uppercase leading-[0.84] tracking-wider text-white text-[80px] sm:text-[100px] md:text-[140px]">
                 <span>ERP And</span>
                 <span className="block text-red-600">Business</span>
@@ -160,32 +334,27 @@ export default function ErpAndBusinessAutomationServicesPage() {
                 <p className="text-[15px] leading-8 text-white">We design and develop modern ERP and business automation systems with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
 
                 <div className="flex flex-wrap items-center gap-4">
-                    <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                            Start Your Project
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                    </Link>
-                    <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-white px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-zinc-950 transition">
-                            View Portfolio
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                    </Link>
+                  <DefaultButton 
+                    href="/contact-us"
+                    bgClassName="bg-red-600 hover:bg-red-700"
+                  >Start Your Project</DefaultButton>
                 </div>
 
                 <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
-                {metrics.map(([n, l]) => (
-                    <div key={l}>
-                    <div className="font-bebas-neue text-3xl leading-none text-white">{n}</div>
-                    <div className="text-sm text-white">{l}</div>
-                    </div>
-                ))}
+                  {metrics.map(([n, l]) => (
+                      <div key={l}>
+                      <div className="font-bebas-neue text-3xl leading-none text-white">{n}</div>
+                      <div className="text-sm text-white">{l}</div>
+                      </div>
+                  ))}
                 </div>
             </div>
 
           {/* Right Column - ERP System Visualization */}
-            <div className="relative w-full space-y-4 max-w-[90%] ml-auto">
-                <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[linear-gradient(145deg,#0b1220,#111827)] p-4 shadow-[0_20px_45px_rgba(2,6,23,0.45)]">
-                    <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-emerald-500" />
+            <div className="relative w-full space-y-4">
+                <div className="relative overflow-hidden rounded-2xl border border-white/15 p-4">
                     <div className="relative">
-                        <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                        <div className="flex items-center justify-between">
                             <div>
                                 <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-400">ERP Control Tower</div>
                                 <div className="text-[14px] font-extrabold uppercase tracking-[0.08em] text-white">Build Program + Deployment Readiness</div>
@@ -195,7 +364,7 @@ export default function ErpAndBusinessAutomationServicesPage() {
                             </span>
                         </div>
 
-                        <div className="mt-4 grid gap-3 lg:grid-cols-[0.95fr_1.05fr]">
+                        <div className="mt-4 grid gap-3 sm:grid-cols-2 grid-cols-1">
                             <div className="rounded-xl border border-white/10 bg-white/[0.04] p-3">
                                 <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-300">Implementation Timeline</div>
                                 <div className="mt-3 space-y-2">
@@ -272,7 +441,7 @@ export default function ErpAndBusinessAutomationServicesPage() {
                 </div>
 
                 <div className="rounded-2xl border border-white/15 bg-zinc-900/60 p-4 shadow-lg backdrop-blur-sm">
-                    <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                    <div className="flex items-center justify-between">
                         <div>
                             <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-400">Runtime Orchestration</div>
                             <div className="text-sm font-extrabold uppercase tracking-[0.08em] text-white">How ERP Runs Daily Operations</div>
@@ -314,92 +483,90 @@ export default function ErpAndBusinessAutomationServicesPage() {
         <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-12">
             {/* left column */}
             <div className="relative min-h-[420px] overflow-hidden rounded-2xl border border-[rgba(255,255,255,0.08)] bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01)),linear-gradient(135deg,rgba(26,86,219,0.10),rgba(224,32,32,0.10))] p-6">
-                <div className="grid h-full min-h-[368px] grid-rows-[auto_1fr] gap-5 rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(10,10,10,0.78)] p-5">
-                <div className="flex items-center justify-between gap-4">
-                    <div className="flex gap-2">
-                        <span className="h-[9px] w-[9px] rounded-full bg-red-600" />
-                        <span className="h-[9px] w-[9px] rounded-full bg-blue-500" />
-                        <span className="h-[9px] w-[9px] rounded-full bg-zinc-500" />
-                    </div>
-                    <div className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-blue-200">ERP Operations Console</div>
-                </div>
+                <div className="grid h-full min-h-[368px] grid-rows-[auto_1fr] gap-5">
+                  <div className="flex items-center justify-between gap-4">
+                      <div className="flex gap-2">
+                        <span className="h-[9px] w-[9px] rounded-full bg-red-500" />
+                        <span className="h-[9px] w-[9px] rounded-full bg-yellow-400" />
+                        <span className="h-[9px] w-[9px] rounded-full bg-green-600" />
+                      </div>
+                      <div className="rounded-full border border-emerald-500/35 bg-emerald-500/10 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-emerald-200">ERP Operations Console</div>
+                  </div>
 
-                <div className="grid h-full grid-cols-1 gap-4 md:grid-cols-[1.2fr_0.8fr]">
-                    <div className="grid grid-rows-[auto_1fr_auto] gap-4 rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4">
-                        <div className="flex items-start justify-between gap-3">
-                            <div>
-                                <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Process Automation Efficiency</div>
-                                <div className="mt-2 font-bebas-neue text-5xl leading-none text-white">89%</div>
-                            </div>
-                            <div className="rounded-full border border-emerald-400/35 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.06em] text-emerald-300">+22.4%</div>
-                        </div>
+                  <div className="grid h-full grid-cols-1 gap-4 md:grid-cols-[1.2fr_0.8fr]">
+                      <div className="grid grid-rows-[auto_1fr_auto] gap-4 rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4">
+                          <div className="flex items-start justify-between gap-3">
+                              <div>
+                                  <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Process Automation Efficiency</div>
+                                  <div className="mt-2 font-bebas-neue text-5xl leading-none text-white">89%</div>
+                              </div>
+                              <div className="rounded-full border border-emerald-400/35 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.06em] text-emerald-300">+22.4%</div>
+                          </div>
 
-                        <div className="rounded-[12px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.01))] p-3">
-                            <div className="mb-3 flex items-center justify-between">
-                                <div className="text-[10px] font-bold uppercase tracking-[0.08em] text-zinc-500">Cross-Department Throughput</div>
-                                <div className="text-[10px] font-semibold uppercase tracking-[0.08em] text-blue-300">Live sync</div>
-                            </div>
-                            <div className="flex h-[120px] items-end gap-2">
-                                {chartHeights.map((height, index) => (
-                                <div key={index} className={`flex-1 rounded-t-[8px] bg-gradient-to-b from-blue-500 via-indigo-500 to-red-500 opacity-90 ${height}`}/>
-                                ))}
-                            </div>
-                        </div>
+                          <div className="rounded-[12px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.01))] p-3">
+                              <div className="mb-3 flex items-center justify-between">
+                                  <div className="text-[10px] font-bold uppercase tracking-[0.08em] text-zinc-500">Cross-Department Throughput</div>
+                                  <div className="text-[10px] font-semibold uppercase tracking-[0.08em] text-blue-300">Live sync</div>
+                              </div>
+                              <div className="flex h-[120px] items-end gap-2">
+                                  {chartHeights.map((height, index) => (
+                                  <div key={index} className={`flex-1 rounded-t-[8px] bg-gradient-to-b from-blue-500 via-indigo-500 to-red-500 opacity-90 ${height}`}/>
+                                  ))}
+                              </div>
+                          </div>
 
-                        <div className="grid grid-cols-3 gap-2">
-                            <div className="rounded-[10px] border border-white/10 bg-white/[0.03] px-2 py-2 text-center">
-                                <div className="text-[10px] font-bold uppercase tracking-[0.08em] text-zinc-500">Finance</div>
-                                <div className="mt-1 text-[18px] font-extrabold text-white">98%</div>
-                            </div>
-                            <div className="rounded-[10px] border border-white/10 bg-white/[0.03] px-2 py-2 text-center">
-                                <div className="text-[10px] font-bold uppercase tracking-[0.08em] text-zinc-500">Procurement</div>
-                                <div className="mt-1 text-[18px] font-extrabold text-white">2.4d</div>
-                            </div>
-                            <div className="rounded-[10px] border border-white/10 bg-white/[0.03] px-2 py-2 text-center">
-                                <div className="text-[10px] font-bold uppercase tracking-[0.08em] text-zinc-500">Inventory</div>
-                                <div className="mt-1 text-[18px] font-extrabold text-white">99.3%</div>
-                            </div>
-                        </div>
-                    </div>
+                          <div className="grid grid-cols-3 gap-2">
+                              <div className="rounded-[10px] border border-white/10 bg-white/[0.03] px-2 py-2 text-center">
+                                  <div className="text-[10px] font-bold uppercase tracking-[0.08em] text-zinc-500">Finance</div>
+                                  <div className="mt-1 text-[18px] font-extrabold text-white">98%</div>
+                              </div>
+                              <div className="rounded-[10px] border border-white/10 bg-white/[0.03] px-2 py-2 text-center">
+                                  <div className="text-[10px] font-bold uppercase tracking-[0.08em] text-zinc-500">Procurement</div>
+                                  <div className="mt-1 text-[18px] font-extrabold text-white">2.4d</div>
+                              </div>
+                              <div className="rounded-[10px] border border-white/10 bg-white/[0.03] px-2 py-2 text-center">
+                                  <div className="text-[10px] font-bold uppercase tracking-[0.08em] text-zinc-500">Inventory</div>
+                                  <div className="mt-1 text-[18px] font-extrabold text-white">99.3%</div>
+                              </div>
+                          </div>
+                      </div>
 
-                    <div className="grid grid-cols-1 gap-3">
-                        <div className="rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4">
-                            <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">PO Cycle Time</div>
-                            <div className="mt-2 font-bebas-neue text-4xl leading-none text-white">-34%</div>
-                            <div className="mt-2 text-[12px] font-bold text-green-500">Approval flow optimized</div>
-                        </div>
+                      <div className="grid grid-cols-1 gap-3">
+                          <div className="rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4">
+                              <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">PO Cycle Time</div>
+                              <div className="mt-2 font-bebas-neue text-4xl leading-none text-white">-34%</div>
+                              <div className="mt-2 text-[12px] font-bold text-green-500">Approval flow optimized</div>
+                          </div>
 
-                        <div className="rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4">
-                            <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">On-Time Dispatch</div>
-                            <div className="mt-2 font-bebas-neue text-4xl leading-none text-white">96.8%</div>
-                            <div className="mt-2 text-[12px] font-bold text-green-500">Ops reliability strong</div>
-                        </div>
+                          <div className="rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4">
+                              <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">On-Time Dispatch</div>
+                              <div className="mt-2 font-bebas-neue text-4xl leading-none text-white">96.8%</div>
+                              <div className="mt-2 text-[12px] font-bold text-green-500">Ops reliability strong</div>
+                          </div>
 
-                        <div className="rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4">
-                            <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Workflow Compliance</div>
-                            <div className="mt-2 font-bebas-neue text-4xl leading-none text-white">99.1%</div>
-                            <div className="mt-2 text-[12px] font-bold text-green-500">Audit-ready records</div>
-                        </div>
-                    </div>
-                </div>
+                          <div className="rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4">
+                              <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Workflow Compliance</div>
+                              <div className="mt-2 font-bebas-neue text-4xl leading-none text-white">99.1%</div>
+                              <div className="mt-2 text-[12px] font-bold text-green-500">Audit-ready records</div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-[10px]">
+                    {pills.map((item) => (
+                        <span key={item} className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[1px] text-white">{item}</span>
+                    ))}
+                  </div>
+
                 </div>
             </div>
             {/* right column */}
             <div className="relative space-y-4">
-                <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                    <span className="h-[2px] w-7 bg-red-600" />
-                    Why ERP & Automation With Us
-                </div>
-                <h2 className="text-[50px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[70px] lg:text-[80px]">ERP SOFTWARE BUILT TO <span className="text-red-600">RUN CORE BUSINESS PROCESSES</span></h2>
+                <Subheading variant="light">Why ERP & Automation With Us</Subheading>
+                <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">ERP SOFTWARE BUILT TO <span className="text-red-600">RUN CORE BUSINESS PROCESSES</span></h2>
 
                 <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">We build ERP platforms that unify finance, procurement, inventory, HR, and operations in one structured ecosystem for <strong className="text-white">clarity, control, and execution speed</strong>.</p>
                 <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">From approval chains and vendor workflows to reporting and compliance, every module is engineered to reduce manual effort and create <strong className="text-white">accurate, auditable, real-time business operations</strong>.</p>
-
-                <div className="mt-7 flex flex-wrap gap-[10px]">
-                {pills.map((item) => (
-                    <span key={item} className="rounded-full border border-[rgba(59,130,246,0.32)] bg-[rgba(26,86,219,0.08)] px-4 py-2 text-[12px] font-bold uppercase tracking-[1px] text-[#3B82F6]">{item}</span>
-                ))}
-                </div>
             </div>
         </div>
       </div>
@@ -458,7 +625,7 @@ export default function ErpAndBusinessAutomationServicesPage() {
       }
       description="Let's design a ERP system that is premium on the surface, strong in the backend, and ready for subscriptions, workflows, users, and scale."
       buttonText="Get a Free Quote →"
-      buttonHref="/"
+      buttonHref="/contact-us"
     />
 
     </>
