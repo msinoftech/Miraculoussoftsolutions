@@ -50,7 +50,7 @@ export default function IndustriesList() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-12">
             <Subheading variant="default">Industries</Subheading>
-            <h2 className="font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">Where We <span className="text-red-600">Operate.</span></h2>
+            <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">Where We <span className="text-red-600">Operate.</span></h2>
           </div>
 
           <div className="grid overflow-hidden rounded-xl border-2 border-zinc-950 grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-8">
