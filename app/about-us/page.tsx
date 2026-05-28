@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import Link from "next/link";
 import Marquee from "@/app/components/Marquee";
 import Card from "@/app/components/Card";
@@ -7,6 +8,10 @@ import CtaStrip from "@/app/components/CtaStrip";
 import AboutStudioIdentity from "@/app/about-us/AboutStudioIdentity";
 import AboutStoryTimeline from "@/app/about-us/AboutStoryTimeline";
 import { APP_NAME, BASE_URL, contactInfo } from "@/app/lib/config";
+import Subheading from "@/app/components/ui/Subheading";
+import DefaultButton from "@/app/components/ui/Button/defaultButton";
+
+const PAGE_URL = `${BASE_URL}/about-us`;
 
 export const metadata: Metadata = {
   title: `Top SEO Service - Include PPC, SMO, Google Ads`,
@@ -19,23 +24,152 @@ export const metadata: Metadata = {
     "B2B platform developers",
   ],
   alternates: { 
-    canonical: `${BASE_URL}/about-us` 
+    canonical: `${PAGE_URL}` 
   },
   openGraph: {
     title: `Top SEO Service - Include PPC, SMO, Google Ads`,
     description: "Miraculous Soft, has been providing Web Development and SEO services to clients and companies globally for over 10 years.",
-    url: `${BASE_URL}/about-us`,
+    url: `${PAGE_URL}`,
     type: "website",
     siteName: APP_NAME,
     images: [
       {
-        url: "/og-image.png",
+        url: `${BASE_URL}${contactInfo.logo}`,
         width: 1200,
         height: 630,
         alt: APP_NAME,
       },
     ],
   },
+};
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: `${APP_NAME}`,
+      alternateName: `${APP_NAME}`,
+      url: BASE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 512,
+        height: 512,
+      },
+      image: `${BASE_URL}${contactInfo.logo}`,
+      description: `${APP_NAME} is a software development and product engineering company helping startups, SMEs, and enterprises design, build, launch, and scale digital products.`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        postalCode: "160062",
+        addressCountry: "IN",
+      },
+      sameAs: [
+        "https://www.facebook.com/miraculoussoft",
+        "https://twitter.com/miraculous_soft",
+        "https://www.instagram.com/miraculous_soft",
+        "https://www.pinterest.com/seomiraculoussoft",
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: ["IN", "Worldwide"],
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: "Worldwide",
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      url: `${BASE_URL}`,
+      name: `${APP_NAME}`,
+      description: `${APP_NAME} builds custom software, SaaS products, business platforms, and scalable digital solutions for global clients.`,
+      inLanguage: "en",
+      publisher: { "@id": `${BASE_URL}/#organization` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${PAGE_URL}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${BASE_URL}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "About Us",
+          item: `${PAGE_URL}`,
+        },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${PAGE_URL}/#webpage`,
+      url: `${PAGE_URL}`,
+      name: `About Us | ${APP_NAME}`,
+      isPartOf: { "@id": `${BASE_URL}/#website` },
+      about: { "@id": `${PAGE_URL}/#software-company-profile` },
+      description: `Learn about ${APP_NAME}, our software engineering expertise, delivery approach, and commitment to building high-performance digital products.`,
+      inLanguage: "en",
+      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
+      mainEntity: { "@id": `${PAGE_URL}/#software-company-profile` },
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${PAGE_URL}/#software-company-profile`,
+      name: `${APP_NAME}`,
+      alternateName: `${APP_NAME}`,
+      url: `${PAGE_URL}`,
+      description: `${APP_NAME} is a software company specializing in product engineering, custom web and mobile development, SaaS platforms, automation systems, and cloud-ready digital solutions.`,
+      image: `${BASE_URL}${contactInfo.logo}`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        addressCountry: "IN",
+      },
+      areaServed: ["India", "Worldwide"],
+      serviceType: [
+        "SaaS Product Development",
+        "B2B Platform Engineering",
+        "ERP & Business Automation",
+        "eCommerce Solutions",
+        "Web & Mobile Applications",
+        "UI/UX and Product Design",
+        "Cloud & DevOps Engineering",
+        "AI-Ready Product Development",
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Software Development Services",
+        itemListElement: [
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "SaaS Product Development" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Custom Web and Mobile App Development" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "ERP and Workflow Automation" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Cloud and DevOps Engineering" } },
+        ],
+      },
+    },
+  ],
 };
 
 const marqueeItems = [
@@ -56,7 +190,7 @@ const heroStats = [
   { value: "120+", label: "Products Shipped" },
   { value: "50+", label: "Engineers & Experts" },
   { value: "24/7", label: "Support Mindset" },
-] as const;
+];
 
 const values = [
   {
@@ -79,7 +213,7 @@ const values = [
     body: "From MVP to enterprise rollout — deployment pipelines, observability, and iteration loops that keep products healthy after launch.",
     icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>`,
   },
-] as const;
+];
 
 const valueFeatures = values.map((item, index) => ({
   number: String(index + 1).padStart(2, "0"),
@@ -148,7 +282,7 @@ const capabilities = [
   { label: "Technologies", href: "/technologies" },
   { label: "Industries", href: "/industries" },
   { label: "Delivery Process", href: "/process" },
-] as const;
+];
 
 const cultureCards = [
   {
@@ -184,53 +318,40 @@ const cultureCards = [
 export default function AboutUsPage() {
   return (
     <>
+      {/* Schema */}
+      <Script id="about-us-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
+
+      {/* Hero Section */}
       <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
         <div className="grid-bg absolute inset-0 opacity-45" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_75%_55%_at_85%_45%,rgba(220,38,38,0.1)_0%,transparent_65%),radial-gradient(ellipse_50%_70%_at_15%_90%,rgba(37,99,235,0.08)_0%,transparent_60%)]" />
 
         <div className="relative z-10 mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 items-center gap-12 px-4 py-14 sm:py-20 lg:grid-cols-[minmax(0,1fr)_min(540px,44%)] lg:gap-14">
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-              <span className="h-[2px] w-7 bg-red-600" />
-              Company · About Us
-            </div>
-
-            <h1 className="font-bebas-neue uppercase leading-[0.84] tracking-wider text-[64px] text-zinc-950 sm:text-[96px] md:text-[118px] lg:text-[132px]">
+          <div className="space-y-5">
+            <Subheading variant="default">Company · About Us</Subheading>
+            <h1 className="uppercase leading-[0.84] tracking-wider text-[64px] text-zinc-950 sm:text-[96px] md:text-[118px] lg:text-[132px]">
               <span>We Build </span>
               <span className="text-red-600">Products</span>
               <span className="hero-outline block outline-black">That Last</span>
             </h1>
 
-            <p className="max-w-xl text-[15px] leading-8 text-zinc-500">
-              Miraculous Soft Solutions is a product engineering company — partnering with founders and enterprises to design, build, and scale SaaS, B2B platforms, ERP systems, and modern digital experiences.
-            </p>
+            <p className="text-[15px] leading-8 text-zinc-600">{APP_NAME} is a product engineering company — partnering with founders and enterprises to design, build, and scale SaaS, B2B platforms, ERP systems, and modern digital experiences.</p>
 
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/contact-us"
-                className="flex w-fit items-center gap-2 rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition hover:bg-red-700"
-              >
-                Work With Us
-                <span aria-hidden>→</span>
-              </Link>
-              <Link
-                href="/process"
-                className="flex w-fit items-center gap-2 rounded-[4px] bg-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition hover:bg-zinc-800"
-              >
-                Our Process
-              </Link>
+            <div className="flex flex-wrap items-center gap-4">
+                <DefaultButton href="/contact-us" bgClassName="bg-red-600 hover:bg-red-700">Work With Us</DefaultButton>
+                <DefaultButton href="/process">Our Process</DefaultButton>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 pt-4 sm:grid-cols-4">
-              {heroStats.map((stat) => (
-                <div key={stat.label}>
-                  <div className="font-bebas-neue text-4xl leading-none text-zinc-950 sm:text-5xl">
-                    {stat.value.replace(/\+/, "")}
-                    {stat.value.includes("+") && <span className="text-red-600">+</span>}
-                  </div>
-                  <div className="mt-1 text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-600">{stat.label}</div>
-                </div>
-              ))}
+            <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                {heroStats.map((stat) => (
+                    <div key={stat.label}>
+                    <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
+                      {stat.value.replace(/\+/, "")}
+                      {stat.value.includes("+") && <span className="text-red-600">+</span>}
+                    </div>
+                    <div className="text-sm text-zinc-950">{stat.label}</div>
+                    </div>
+                ))}
             </div>
           </div>
 
@@ -238,43 +359,39 @@ export default function AboutUsPage() {
         </div>
       </section>
 
+      {/* Marquee Section */}
       <Marquee items={[...marqueeItems]} />
 
+      {/* Our Story Section */}
       <section className="relative overflow-hidden border-y border-white/[0.04] bg-[linear-gradient(180deg,#141414,#121212)] py-16 md:py-24">
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[length:100%_48px] opacity-30" />
         <div className="relative mx-auto max-w-7xl px-4">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(280px,0.82fr)] lg:items-start lg:gap-14 xl:gap-16">
-            <div className="flex flex-col lg:py-2">
-              <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                <span className="h-[2px] w-7 bg-red-600" />
-                Our Story
-              </div>
-              <h2 className="font-bebas-neue text-[56px] uppercase leading-[0.9] tracking-wide text-white sm:text-[80px] lg:text-[88px]">
+          
+          <div className="grid gap-10 sm:grid-cols-2 lg:items-start lg:gap-14 xl:gap-16">
+            
+            <div className="space-y-5">
+              <Subheading variant="light">Our Story</Subheading>
+              <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">
                 Engineering
                 <br />
                 <span className="text-red-600">With Purpose.</span>
               </h2>
-              <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-400 sm:text-[17px]">
-                We started with a simple belief: great software is not a collection of features — it is a business instrument. Every architecture choice, sprint, and release should move your product closer to trust, adoption, and scale.
-              </p>
+              <p className="text-[15px] leading-8 text-white">We started with a simple belief: great software is not a collection of features — it is a business instrument. Every architecture choice, sprint, and release should move your product closer to trust, adoption, and scale.</p>
 
-              <blockquote className="mt-8 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-5 sm:px-6 sm:py-6">
-                <p className="text-xl font-semibold leading-relaxed text-white/95 sm:text-[22px]">
-                  &ldquo;We do not chase trends. We build systems your team can own, extend, and scale.&rdquo;
-                </p>
-                <footer className="mt-4 text-[11px] font-bold uppercase tracking-[0.14em] text-zinc-500">
-                  — Miraculous Soft Solutions
-                </footer>
+              <blockquote className="rounded-xl border border-white/10 bg-white/[0.04] p-5">
+                <p className="text-[20px] font-semibold leading-relaxed text-white/95">&ldquo;We do not chase trends. We build systems your team can own, extend, and scale.&rdquo;</p>
+                <footer className="mt-4 text-[10px] font-bold uppercase tracking-[0.14em] text-white/50">— {APP_NAME}</footer>
               </blockquote>
             </div>
 
-            <div className="lg:flex lg:items-start lg:justify-end">
+            <div className="relative">
               <AboutStoryTimeline milestones={storyMilestones} />
             </div>
           </div>
         </div>
       </section>
 
+      {/* What We Stand For Section */}
       <Card
         label="What We Stand For"
         title={
@@ -289,31 +406,35 @@ export default function AboutUsPage() {
         gridClassName="grid border-2 border-zinc-950 sm:grid-cols-2 md:grid-cols-4"
       />
 
+      {/* What We Deliver Section */}
       <section className="bg-[var(--off)] py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-10 max-w-2xl">
-            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-              <span className="h-[2px] w-7 bg-red-600" />
-              What We Deliver
-            </div>
-            <h2 className="font-bebas-neue text-[48px] uppercase leading-[0.92] text-zinc-950 sm:text-[64px]">
-              Full-Stack <span className="text-red-600">Capability.</span>
-            </h2>
-            <p className="mt-4 text-[15px] leading-8 text-zinc-600">
-              One partner across strategy, engineering, and launch — explore how we work and what we build.
-            </p>
+          <div className="mb-10">
+            <Subheading variant="default">What We Deliver</Subheading>
+            <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">Full-Stack <span className="text-red-600">Capability.</span></h2>
+            <p className="text-[15px] leading-8 text-zinc-600">One partner across strategy, engineering, and launch — explore how we work and what we build.</p>
           </div>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((cap) => (
-              <Link key={cap.label} href={cap.href} className="group flex items-center justify-between rounded-xl border-2 border-zinc-950 bg-white px-5 py-4 shadow-[4px_4px_0_#0c0c0c] transition hover:-translate-y-0.5 hover:shadow-[6px_6px_0_#0c0c0c]">
-                <span className="text-[13px] font-extrabold uppercase tracking-wide text-zinc-950 group-hover:text-red-600">{cap.label}</span>
-                <span className="text-xl text-zinc-300 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-red-600" aria-hidden>↗</span>
+              <Link key={cap.label} href={cap.href} className="group relative overflow-hidden rounded-xl border border-zinc-300 bg-white px-5 py-4 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg">
+                <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-red-500/10 blur-2xl" />
+                  <div className="absolute -bottom-10 -left-10 h-24 w-24 rounded-full bg-blue-500/10 blur-2xl" />
+                </div>
+
+                <div className="relative flex items-center justify-between gap-3">
+                  <span className="text-[13px] font-extrabold uppercase tracking-[0.08em] text-zinc-900 transition group-hover:text-red-600">{cap.label}</span>
+                  <span className="grid h-8 w-8 place-items-center rounded-full border border-zinc-300 bg-white text-sm text-zinc-500 transition group-hover:border-red-600 group-hover:text-red-600">
+                    <span className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden>↗</span>
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
+      {/* How We Work Section */}
       <BoxCard
         items={cultureCards}
         label="How We Work"
@@ -329,6 +450,7 @@ export default function AboutUsPage() {
         gridClassName="grid gap-4 sm:grid-cols-2 xl:grid-cols-4"
       />
 
+      {/* Cta Strip Section */}
       <CtaStrip
         title={
           <>

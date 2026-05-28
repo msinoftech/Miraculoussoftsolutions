@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import { contactInfo } from "@/app/lib/config";
 

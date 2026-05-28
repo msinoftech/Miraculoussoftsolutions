@@ -390,7 +390,7 @@ export default function IndustriesView() {
           {/* Left column */}
           <div className="space-y-5">
             <Subheading variant="default">Industries We Serve</Subheading>
-            <h1 className="font-bebas-neue text-[88px] uppercase leading-[0.82] tracking-[0.02em] text-zinc-950 sm:text-[118px] md:text-[142px] lg:text-[168px]">
+            <h1 className="text-[88px] uppercase leading-[0.82] tracking-[0.02em] text-zinc-950 sm:text-[118px] md:text-[142px] lg:text-[168px]">
               <span className="block">Software</span>
               <span className="text-red-600">For Every</span>
               <span className="hero-outline block outline-black">Sector</span>

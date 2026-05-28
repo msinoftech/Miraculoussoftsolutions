@@ -1,10 +1,187 @@
-"use client";
-import Link from "next/link";
+import type { Metadata } from "next";
+import Script from "next/script";
 import Marquee from "@/app/components/Marquee";
 import Card from "@/app/components/Card";
 import BoxCard from "@/app/components/BoxCard";
 import CtaStrip from "@/app/components/CtaStrip";
 import Process from "@/app/components/Process";
+import Subheading from "@/app/components/ui/Subheading";
+import { APP_NAME, BASE_URL, contactInfo } from "@/app/lib/config";
+import DefaultButton from "@/app/components/ui/Button/defaultButton";
+import FinanceHubGraph from "@/app/components/graph/FinanceHubGraph";
+
+const PAGE_URL = `${BASE_URL}/industries/finance`;
+const INDUSTRIES_URL = `${BASE_URL}/industries`;
+
+export const metadata: Metadata = {
+  title: `Finance Software Development | ${APP_NAME}`,
+  description: `${APP_NAME} builds secure finance software for banks, NBFCs, FinTech startups, and finance teams, including digital banking platforms, payment systems, lending workflows, portfolio intelligence, and compliance-ready automation.`,
+  keywords: [ "finance software development", "fintech software development", "digital banking platform", "payment gateway software", "loan management system", "financial analytics dashboard", "compliance-ready finance software", "Miraculous Soft Solutions"],
+  
+  alternates: {
+    canonical: `${PAGE_URL}`,
+  },
+
+  openGraph: {
+    title: `Finance Software Development | ${APP_NAME}`,
+    description: `Custom finance platforms for payments, lending, digital banking, investment dashboards, risk intelligence, and secure operational workflows.`,
+    url: `${PAGE_URL}`,
+    type: "website",
+    siteName: `${APP_NAME}`,
+    images: [
+      {
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 500,
+        height: 500,
+        alt: `${APP_NAME} - Finance Software Development`,
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: `Finance Software Development | ${APP_NAME}`,
+    description: `Design and scale modern finance systems with ${APP_NAME}, from digital banking and payments to lending automation and analytics dashboards.`,
+    images: [`${BASE_URL}${contactInfo.logo}`],
+  },
+};
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: `${APP_NAME}`,
+      alternateName: `${APP_NAME}`,
+      url: `${BASE_URL}`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 512,
+        height: 512,
+      },
+      image: `${BASE_URL}${contactInfo.logo}`,
+      description: `${APP_NAME} builds secure finance software for banks, NBFCs, FinTech startups, and finance teams, including digital banking platforms, payment systems, lending workflows, portfolio intelligence, and compliance-ready automation.`,
+      email: contactInfo.email,
+      telephone: `+${contactInfo.phone.replace(/[^+\d]/g, "")}`,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        postalCode: "160062",
+        addressCountry: "IN",
+      },
+      sameAs: [
+        "https://www.facebook.com/miraculoussoft",
+        "https://twitter.com/miraculous_soft",
+        "https://www.instagram.com/miraculous_soft",
+        "https://www.pinterest.com/seomiraculoussoft",
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: contactInfo.email,
+          telephone: `+${contactInfo.phone.replace(/[^+\d]/g, "")}`,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: ["IN", "Worldwide"],
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: "Worldwide",
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      url: `${BASE_URL}`,
+      name: `${APP_NAME}`,
+      inLanguage: "en",
+      publisher: { "@id": `${BASE_URL}/#organization` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${PAGE_URL}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${BASE_URL}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Industries",
+          item: `${INDUSTRIES_URL}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Finance Software Development",
+          item: `${PAGE_URL}`,
+        },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${PAGE_URL}/#webpage`,
+      url: `${PAGE_URL}`,
+      name: `Finance Software Development | ${APP_NAME}`,
+      isPartOf: { "@id": `${BASE_URL}/#website` },
+      about: { "@id": `${PAGE_URL}/#finance-software-development` },
+      description: `${APP_NAME} builds secure finance software for banks, NBFCs, FinTech startups, and finance teams, including digital banking platforms, payment systems, lending workflows, portfolio intelligence, and compliance-ready automation.`,
+      inLanguage: "en",
+      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
+      mainEntity: { "@id": `${PAGE_URL}/#finance-software-development` },
+    },
+    {
+      "@type": "Service",
+      "@id": `${PAGE_URL}/#finance-software-development`,
+      name: "Finance Software Development",
+      alternateName: "Finance Technology Solutions",
+      url: `${PAGE_URL}`,
+      description: `${APP_NAME} builds secure finance software for banks, NBFCs, FinTech startups, and finance teams, including digital banking platforms, payment systems, lending workflows, portfolio intelligence, and compliance-ready automation.`,
+      provider: { "@id": `${BASE_URL}/#organization` },
+      areaServed: ["India", "Worldwide"],
+      serviceType: [
+        "Digital Banking Platforms",
+        "Payment & Wallet Solutions",
+        "Investment & Wealth Apps",
+        "Loan & Lending Systems",
+        "Finance Data Automation",
+        "Compliance-Ready Architecture",
+      ],
+      category: "Finance Software Development",
+      offers: {
+        "@type": "Offer",
+        availability: "https://schema.org/InStock",
+        url: `${BASE_URL}/contact-us`,
+        offeredBy: { "@id": `${BASE_URL}/#organization` },
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Finance Software Capabilities",
+        get itemListElement() {
+          return financeServices.map((service) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: service.title,
+              description: service.description,
+            },
+          }));
+        },
+      },
+    },
+  ],
+};
 
 const marqueeItems = [
   "Digital Banking Platforms",
@@ -21,32 +198,32 @@ const marqueeItems = [
 
 const financeServices = [
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M17 14h.01"/><path d="M7 7h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>`,
     title: "Digital Banking Platforms",
     description: "Customer onboarding, account dashboards, fund transfers, statements, alerts, admin panels, and secure self-service portals.",
   },
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>`,
     title: "Payment & Wallet Solutions",
     description: "Payment gateways, digital wallets, billing engines, reconciliation, transaction logs, and subscription automation.",
   },
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M7 3.5c5-2 7 2.5 3 4C1.5 10 2 15 5 16c5 2 9-10 14-7s.5 13.5-4 12c-5-2.5.5-11 6-2"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>`,
     title: "Investment & Wealth Apps",
     description: "Portfolio dashboards, advisor portals, risk analytics, performance reporting, and investor experience platforms.",
   },
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17"/><path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 16 6 6"/><circle cx="16" cy="9" r="2.9"/><circle cx="6" cy="5" r="3"/></svg>`,
     title: "Loan & Lending Systems",
     description: "Loan applications, KYC workflows, approval pipelines, EMI tracking, document verification, and borrower portals.",
   },
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>`,
     title: "Finance Data Automation",
     description: "Data pipelines, document parsing, financial reporting, audit logs, API integrations, and operations dashboards.",
   },
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>`,
     title: "Compliance-Ready Architecture",
     description: "RBAC, encrypted data flow, audit trails, secure APIs, cloud deployment, and controlled access management.",
   },
@@ -113,19 +290,24 @@ const floatingCards = [
 
 const audienceCards = [
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-building-icon lucide-building"><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M12 6h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/><path d="M8 6h.01"/><path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/><rect x="4" y="2" width="16" height="20" rx="2"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-landmark-icon lucide-landmark"><path d="M10 18v-7"/><path d="M11.119 2.205a2 2 0 0 1 1.762 0l7.84 3.846A.5.5 0 0 1 20.5 7h-17a.5.5 0 0 1-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></svg>`,
     title: "Banks & NBFCs",
     body: "Secure customer portals, lending systems, operational dashboards, loan workflows, CRM integrations, and admin control centers.",
   },
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-landmark-icon lucide-landmark"><path d="M10 18v-7"/><path d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-credit-card-icon lucide-credit-card"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>`,
     title: "FinTech Startups",
     body: "MVP to production-grade platforms with payments, wallet flows, subscriptions, analytics, onboarding, and scalable APIs.",
   },
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-chart-area-icon lucide-chart-area"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 11.207a.5.5 0 0 1 .146-.353l2-2a.5.5 0 0 1 .708 0l3.292 3.292a.5.5 0 0 0 .708 0l4.292-4.292a.5.5 0 0 1 .854.353V16a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1z"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-icon lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>`,
     title: "Finance Teams",
     body: "Automation tools, reconciliation dashboards, reporting systems, approval flows, billing tools, and audit-ready operations.",
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text-icon lucide-file-text"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>`,
+    title: "Insurance & Lending Providers",
+    body: "Policy, claims, underwriting, loan lifecycle, collections, and compliance workflows unified into one scalable platform.",
   },
 ];
 
@@ -139,37 +321,30 @@ const transactionFlow = [
 export default function FinancePage() {
   return (
     <>
+      {/* Schema.org Markup */}
+      <Script id="finance-software-development-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
+
       {/* Hero Section */}
       <section className="relative flex min-h-[88vh] flex-col overflow-hidden">
         
-        <div className="grid-bg absolute inset-0 opacity-5" />
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(220,38,38,0.3),transparent_34%),radial-gradient(circle_at_top_right,rgba(37,99,235,0.38),transparent_32%),linear-gradient(180deg,#050505_0%,#0b0b0f_52%,#050505_100%)]" />
-        <div className="absolute left-1/2 top-0 -z-10 h-96 w-96 -translate-x-1/2 rounded-full bg-blue-600/20 blur-3xl" />
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+            <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(220,38,38,0.28),transparent_30%),radial-gradient(circle_at_82%_20%,rgba(37,99,235,0.26),transparent_32%),radial-gradient(circle_at_50%_88%,rgba(255,255,255,0.08),transparent_28%),linear-gradient(135deg,#04060b_0%,#080b14_45%,#02030a_100%)]" />
+            <div className="absolute inset-0 z-10 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,.7)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.7)_1px,transparent_1px)] [background-size:72px_72px]" />
+            <div className="absolute -right-28 top-28 z-10 h-[430px] w-[430px] rounded-full border border-white/10"/>
+            <div className="absolute -left-24 bottom-8 z-10 h-[340px] w-[340px] rounded-full border border-red-500/20"/>
 
         <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-6 px-4 lg:grid-cols-2 z-10">
           {/* Left Column */}
           <div className="space-y-5">
-            <div className="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                <span className="h-[2px] w-7 bg-red-600" />Banking • FinTech • Lending • Payments • WealthTech
-            </div>
-
+            <Subheading variant="light">Banking • FinTech</Subheading>
             <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-white">
               Build Finance Products That Feel
               <span className="text-red-600">Secure, Fast & Premium.</span>
             </h1>
 
-            <p className="text-[15px] leading-8 text-zinc-500">Miraculous Soft Solutions engineers high-trust finance platforms for banks, NBFCs, investment firms, payment companies, accounting teams, and FinTech startups — with enterprise UX, secure APIs, automation, and scalable cloud architecture.</p>
+            <p className="text-[15px] leading-8 text-white">Miraculous Soft Solutions engineers high-trust finance platforms for banks, NBFCs, investment firms, payment companies, accounting teams, and FinTech startups — with enterprise UX, secure APIs, automation, and scalable cloud architecture.</p>
 
             <div className="flex flex-wrap items-center gap-4">
-              <Link href="/contact-us" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                  Discuss Your Requirement
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-              </Link>
-              <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-white px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-zinc-950 transition">
-                  Explore Software
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-              </Link>
+              <DefaultButton href="/contact-us" bgClassName="bg-red-600 hover:bg-red-700">Discuss Your Requirement</DefaultButton>
             </div>
 
             <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -184,78 +359,7 @@ export default function FinancePage() {
           </div>
 
           {/* Right Column */}
-          <div className="relative">
-            
-            <div className="absolute -right-8 -top-8 z-20 rounded-2xl border border-white/10 bg-white/10 p-4 shadow-2xl shadow-black/30 backdrop-blur-xl">
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-500/15 text-emerald-300">
-                  <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-shield-icon lucide-shield"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></span>
-                </div>
-                <div>
-                  <p className="text-sm text-white">Risk Engine</p>
-                  <p className="text-md text-white font-bold">Protected</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute -inset-6 rounded-[3rem] bg-gradient-to-r from-red-600/20 via-white/5 to-blue-600/25 blur-2xl" />
-            
-            <div className="relative overflow-hidden rounded-2xl border border-white/12 bg-white/[0.075] p-5 shadow-2xl shadow-black/40 backdrop-blur-2xl">
-              <div className="rounded-2xl border border-white/10 bg-[#070a13]/90 p-5">
-                <div className="mb-5 flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-white">Finance Command Center</p>
-                    <div className="text-xl font-bold text-white">Real-Time Intelligence</div>
-                  </div>
-                  <div className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-bold text-emerald-300">Live</div>
-                </div>
-
-                <div className="grid gap-4 sm:grid-cols-3">
-                  {floatingCards.map((card) => (
-                    <div key={card.label} className="rounded-2xl border border-white/10 bg-white/[0.06] p-4">
-                      <span dangerouslySetInnerHTML={{ __html: card.icon }}></span>
-                      <p className="mt-1 text-xl font-bold text-white">{card.value}</p>
-                      <p className="mt-1 text-sm text-white">{card.label}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-                  <div className="mb-3 flex items-center justify-between">
-                    <p className="text-sm font-semibold text-white/70">Transaction Flow</p>
-                    <span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span>
-                  </div>
-
-                  <div className="space-y-4">
-                    {transactionFlow.map((item) => (
-                      <div key={item.label}>
-                        <div className="mb-2 flex justify-between text-xs text-white/45">
-                          <span>{item.label}</span>
-                          <span>{item.width}%</span>
-                        </div>
-                        <div className="h-3 overflow-hidden rounded-full bg-white/8">
-                          <div style={{ width: `${item.width}%` }} className="h-full rounded-full bg-gradient-to-r from-red-500 to-blue-500"/>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mt-5 grid grid-cols-2 gap-4">
-                  <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-blue-500/15 to-white/[0.03] p-5">
-                    <p className="text-xs text-white">Monthly Volume</p>
-                    <p className="mt-2 text-xl font-bold text-white">$42.7M</p>
-                    <p className="mt-2 text-xs text-emerald-300">+21.6% growth</p>
-                  </div>
-                  <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-red-500/15 to-white/[0.03] p-5">
-                    <p className="text-xs text-white">Automation Queue</p>
-                    <p className="mt-2 text-xl font-bold text-white">8,420</p>
-                    <p className="mt-2 text-xs text-blue-300">Tasks processed</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <FinanceHubGraph floatingCards={floatingCards} transactionFlow={transactionFlow} />
         </div>
       </section>
 
@@ -286,16 +390,13 @@ export default function FinancePage() {
               <div className="mb-7 flex h-16 w-16 items-center justify-center rounded-xl bg-white/50">
                 <span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-fingerprint-pattern-icon lucide-fingerprint-pattern"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"/><path d="M2 12a10 10 0 0 1 18-6"/><path d="M2 16h.01"/><path d="M21.8 16c.2-2 .131-5.354 0-6"/><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"/><path d="M8.65 22c.21-.66.45-1.32.57-2"/><path d="M9 6.8a6 6 0 0 1 9 5.2v2"/></svg></span>
               </div>
-              <h2 className="text-[50px] uppercase leading-[0.94] tracking-[0.02em] text-zinc-950 sm:text-[70px] lg:text-[80px]">Security-first <span className="text-red-600">finance engineering.</span></h2>
+              <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">Security-first <span className="text-red-600">finance engineering.</span></h2>
               
-              <p className="mt-5 text-base leading-8 text-zinc-500">
-                Finance products need more than attractive UI. They need safe access, clear data ownership, reliable infrastructure, and traceable operations.
-              </p>
+              <p className="text-[15px] leading-8 text-zinc-600">Finance products need more than attractive UI. They need safe access, clear data ownership, reliable infrastructure, and traceable operations.</p>
               
-              <Link href="/contact-us" className="mt-5 flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                Discuss Security Stack
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-              </Link>
+              <div className="flex flex-wrap items-center gap-4 mt-4">
+                <DefaultButton href="/contact-us" bgClassName="bg-red-600 hover:bg-red-700">Discuss Security Stack</DefaultButton>
+              </div>
             </div>
 
             {/* Right Column */}
@@ -330,14 +431,15 @@ export default function FinancePage() {
       {/* solutions */}
       <BoxCard
           items={audienceCards}
-          label=""
+          label="Audience"
           title={
             <>
-              
+              Secure finance products for <br />
+              <span className="text-red-600">finance operation.</span>
             </>
           }
           description=""
-          gridClassName = "grid gap-4 sm:grid-cols-2 xl:grid-cols-3"
+          gridClassName = "grid gap-4 sm:grid-cols-2 xl:grid-cols-4"
       />
 
       {/* CTA STRIP */}
@@ -350,7 +452,7 @@ export default function FinancePage() {
         }
         description="Miraculous Soft Solutions helps finance companies build secure, premium, and scalable digital products that users trust."
         buttonText="Get Free Consultation →"
-        buttonHref="/"
+        buttonHref="/contact-us"
       />
     </>
   );

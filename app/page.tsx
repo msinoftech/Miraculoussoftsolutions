@@ -396,7 +396,7 @@ export default function MiraculousSoftLandingPage() {
         <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-[1fr_390px] z-10">
           {/* Left Column */}
           <div className="relative">
-            <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] sm:text-[118px] md:text-[140px] lg:text-[168px]">
+            <h1 className="text-[86px] uppercase leading-[0.84] tracking-[0.02em] sm:text-[118px] md:text-[140px] lg:text-[168px]">
               <span className="block">We</span>
               <span className="block text-red-600">Engineer</span>
               <span className="hero-outline block outline-black">Digital</span>

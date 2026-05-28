@@ -301,9 +301,7 @@ export default function HealthcarePage() {
                 {/* Left Column */}
                 <div className="space-y-5">
                     <Subheading>Healthcare Software</Subheading>
-
                     <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-zinc-950"><span className="text-red-600">Healthcare Software</span> Built for <span className="hero-outline outline-black">Clinics, Hospitals & Medical</span> Teams.</h1>
-
                     <p className="text-[15px] leading-8 text-zinc-500">We design and develop secure healthcare platforms that connect appointments, doctors, patients, billing, records, telemedicine, analytics, and operations into one scalable digital ecosystem.</p>
 
                     <div className="flex flex-wrap items-center gap-4">

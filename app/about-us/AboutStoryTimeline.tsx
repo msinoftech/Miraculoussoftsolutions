@@ -177,7 +177,7 @@ export default function AboutStoryTimeline({ milestones }: { milestones: StoryMi
   const goNext = () => setActiveIndex((i) => (i + 1) % milestones.length);
 
   return (
-    <article className="about-story-rail relative w-full overflow-hidden rounded-2xl border border-white/10 bg-[#0c0c0c] lg:max-w-[420px] lg:justify-self-end" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} aria-label="Company story timeline">
+    <div className="about-story-rail relative w-full overflow-hidden rounded-2xl border border-white/10 bg-[#0c0c0c]" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} aria-label="Company story timeline">
       <div className="pointer-events-none absolute inset-0 opacity-40" style={{ background: `radial-gradient(ellipse 80% 60% at 70% 0%, ${active.accent}33 0%, transparent 70%)`, }} aria-hidden/>
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,transparent,rgba(0,0,0,0.4))]" aria-hidden />
 
@@ -303,6 +303,6 @@ export default function AboutStoryTimeline({ milestones }: { milestones: StoryMi
           Studio to global product partner
         </p>
       </div>
-    </article>
+    </div>
   );
 }
