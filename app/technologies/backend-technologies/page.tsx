@@ -1,11 +1,63 @@
-"use client";
-import { useMemo, useState } from "react";
-import Link from "next/link";
+import type { Metadata } from "next";
+import Script from "next/script";
 import Marquee from "@/app/components/Marquee";
 import Card from "@/app/components/Card";
 import CtaStrip from "@/app/components/CtaStrip";
 import DevelopmentProcess from "@/app/components/DevelopmentProcess";
 import BoxCard from "@/app/components/BoxCard";
+import Subheading from "@/app/components/ui/Subheading";
+import DefaultButton from "@/app/components/ui/Button/defaultButton";
+import { APP_NAME, BASE_URL, contactInfo } from "@/app/lib/config";
+
+const PAGE_URL = `${BASE_URL}/technologies/backend-technologies`;
+const TECHNOLOGIES_URL = `${BASE_URL}/technologies`;
+
+export const metadata: Metadata = {
+  title: `Backend Technologies | ${APP_NAME}`,
+  description: `Hire expert backend developers from ${APP_NAME}. We build secure, scalable APIs and server-side systems with Node.js, Express, Laravel, Django, Spring Boot, PostgreSQL, MongoDB, GraphQL, and microservices — from architecture to deployment.`,
+  keywords: [
+    "backend development services",
+    "hire backend developer",
+    "API development",
+    "REST API development",
+    "GraphQL API development",
+    "Node.js backend development",
+    "microservices architecture",
+    "database design",
+    "PostgreSQL development",
+    "MongoDB development",
+    "backend security",
+    "SaaS backend development",
+    "server-side development",
+    APP_NAME,
+  ],
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: `Backend Technologies | ${APP_NAME}`,
+    description: `Robust backend engineering with ${APP_NAME} — REST & GraphQL APIs, authentication, databases, caching, queues, and cloud-native infrastructure built for reliability and scale.`,
+    url: PAGE_URL,
+    type: "website",
+    siteName: APP_NAME,
+    images: [
+      {
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 1200,
+        height: 630,
+        alt: `${APP_NAME} — Backend Technologies`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@miraculous_soft",
+    creator: "@miraculous_soft",
+    title: `Backend Technologies | ${APP_NAME}`,
+    description: `Build secure, high-performance backends — Node.js, Laravel, Django, databases, JWT/OAuth, microservices, Docker, and CI/CD engineered for SaaS and enterprise products.`,
+    images: [`${BASE_URL}${contactInfo.logo}`],
+  },
+};
 
 const marqueeItems = [
     "Node.js & Server-Side JavaScript",
@@ -30,6 +82,13 @@ const marqueeItems = [
     "Scalability & Load Balancing",
     "Performance Optimization",
     "Backend Testing (Jest / Mocha)",
+];
+
+const heroStats = [
+    { num: "150+", label: "APIs BUILT" },
+    { num: "8+", label: "Years Experience" },
+    { num: "98%", label: "Uptime" },
+    { num: "50+", label: "Experts" },
 ];
 
 const technologie = [
@@ -169,66 +228,222 @@ const benefits = [
     },
 ];
 
-export default function BackendTechnologiesPage() {
-
-    const stats = useMemo(
-        () => [
-            { num: "150+", label: "APIs BUILT" },
-            { num: "8+", label: "Years Experience" },
-            { num: "98%", label: "Uptime" },
-            { num: "50+", label: "Experts" },
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: APP_NAME,
+      alternateName: APP_NAME,
+      url: BASE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 512,
+        height: 512,
+      },
+      image: `${BASE_URL}${contactInfo.logo}`,
+      description: `${APP_NAME} builds secure, scalable backend systems with Node.js, Express, Laravel, Django, Spring Boot, PostgreSQL, MongoDB, GraphQL, and microservices — APIs, databases, and cloud infrastructure for SaaS and enterprise products.`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        postalCode: "160062",
+        addressCountry: "IN",
+      },
+      sameAs: [
+        "https://www.facebook.com/miraculoussoft",
+        "https://twitter.com/miraculous_soft",
+        "https://www.instagram.com/miraculous_soft",
+        "https://www.pinterest.com/seomiraculoussoft",
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: ["IN", "Worldwide"],
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: "Worldwide",
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      url: BASE_URL,
+      name: APP_NAME,
+      description: `${APP_NAME} delivers modern backend engineering — REST and GraphQL APIs, authentication, database design, caching, queues, and cloud-native deployment for reliable, high-traffic applications.`,
+      inLanguage: "en",
+      publisher: { "@id": `${BASE_URL}/#organization` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${PAGE_URL}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: BASE_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Technologies",
+          item: TECHNOLOGIES_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Backend Technologies",
+          item: PAGE_URL,
+        },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${PAGE_URL}/#webpage`,
+      url: PAGE_URL,
+      name: `Backend Technologies | ${APP_NAME}`,
+      isPartOf: { "@id": `${BASE_URL}/#website` },
+      about: { "@id": `${PAGE_URL}/#backend-development` },
+      description: `Hire expert backend developers from ${APP_NAME}. Build secure, scalable APIs and server-side systems with Node.js, Express, Laravel, Django, Spring Boot, PostgreSQL, MongoDB, and GraphQL.`,
+      inLanguage: "en",
+      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
+      mainEntity: { "@id": `${PAGE_URL}/#backend-technologies` },
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#backend-technologies`,
+      name: `${APP_NAME} Backend Technology Stack`,
+      numberOfItems: features.length,
+      itemListElement: features.map((tech, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          name: tech.title,
+          description: tech.description,
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#backend-development-process`,
+      name: `${APP_NAME} Backend Development Process`,
+      numberOfItems: steps.length,
+      itemListElement: steps.map((step, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Service",
+          "@id": `${PAGE_URL}/#step-${step.num}`,
+          name: `${step.num} — ${step.title}`,
+          description: step.body,
+          url: PAGE_URL,
+          provider: { "@id": `${BASE_URL}/#organization` },
+          areaServed: ["India", "Worldwide"],
+          category: "Backend Development Process",
+        },
+      })),
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${PAGE_URL}/#backend-development`,
+      name: `${APP_NAME} — Backend Development Services`,
+      alternateName: "Hire Backend Developer",
+      url: PAGE_URL,
+      description: `${APP_NAME} engineers robust server-side systems — API design, database architecture, authentication, microservices, and DevOps — built for performance, security, and long-term scalability across SaaS, B2B, and enterprise platforms.`,
+      image: `${BASE_URL}${contactInfo.logo}`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        addressCountry: "IN",
+      },
+      areaServed: ["India", "Worldwide"],
+      provider: { "@id": `${BASE_URL}/#organization` },
+      serviceType: [
+        ...features.map((tech) => `${tech.title} Development`),
+        ...marqueeItems,
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Backend Development Services",
+        itemListElement: [
+          ...features.map((tech) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: `${tech.title} Development`,
+              description: tech.description,
+              url: PAGE_URL,
+            },
+          })),
+          ...steps.map((step) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: step.title,
+              description: step.body,
+              url: PAGE_URL,
+            },
+          })),
         ],
-        []
-    );
+      },
+    },
+  ],
+};
 
+export default function BackendTechnologiesPage() {
     return (
     <>
+        <Script id="backend-technologies-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
+
         {/* Hero section */}
-        <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
+        <section className="relative overflow-hidden bg-white py-16 sm:py-20">
             <div className="grid-bg absolute inset-0 opacity-45" />
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.16))]" />
 
-            <div className="relative mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 items-start gap-10 px-4 py-14 sm:py-20 lg:grid-cols-[minmax(0,1fr)_520px] lg:gap-14 xl:grid-cols-[minmax(0,1fr)_560px] z-10">
+            <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
                 {/* Left Column */}
                 <div className="space-y-5">
-                    <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                    <span className="h-[2px] w-7 bg-red-600" />Backend Technologies Services
-                    </div>
-
-                    <h1 className="font-bebas-neue uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
+                    <Subheading variant="default">Backend Technologies Services</Subheading>
+                    <h1 className="uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
                     <span>HIRE </span>
                     <span className="text-red-600">Backend</span>
                     <span className="hero-outline block outline-black">Developer</span>
                     </h1>
 
-                    <p className="max-w-xl text-[15px] leading-8 text-zinc-500">Build secure, scalable, and high-performance backend systems using modern server-side technologies.</p>
+                    <p className="text-[15px] leading-8 text-zinc-500">Build secure, scalable, and high-performance backend systems using modern server-side technologies.</p>
 
                     <div className="flex flex-wrap items-center gap-4">
-                        <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                            Start Your Project
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                        </Link>
-                        <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                            View Portfolio
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                        </Link>
+                        <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
                     </div>
 
-                    <div className="mt-7 grid grid-cols-2 gap-4 pt-7 sm:grid-cols-4">
-                    {stats.map((item) => {
-                        const numberOnly = item.num.replace(/[+%]/g, "");
-                        const suffix = item.num.includes("+") ? "+" : item.num.includes("%") ? "%" : "";
-                        return (
-                        <div key={item.label}>
-                            <div className="font-bebas-neue text-5xl leading-none text-zinc-950">
-                            {numberOnly}
-                            <span className="text-red-600">{suffix}</span>
+                    <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                        {heroStats.map((stat) => (
+                            <div key={stat.label}>
+                            <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
+                            {stat.num.replace(/\+/, "")}
+                            {stat.num.includes("+") && <span className="text-red-600">+</span>}
                             </div>
-                            <div className="mt-1 text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-950">{item.label}</div>
-                        </div>
-                        );
-                    })}
+                            <div className="text-sm text-zinc-950">{stat.label}</div>
+                            </div>
+                        ))}
                     </div>
                 </div>
 
@@ -317,22 +532,19 @@ return Response.json({
                     </div>
                     {/* right column */}
                     <div className="relative space-y-4">
-                        <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                            <span className="h-[2px] w-7 bg-red-600" />
-                            Backend Overview
-                        </div>
-                        <h2 className="text-[50px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[70px] lg:text-[80px]">Modern <span className="text-red-600">Backend</span></h2>
+                        <Subheading variant="light">Backend Overview</Subheading>
+                        <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">Modern <span className="text-red-600">Backend</span></h2>
                         
-                        <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]"><strong className="text-white">Backend development is the engine behind web applications</strong>{" "} — handling business logic, data processing, and server-side operations. It ensures that applications are secure, scalable, and capable of managing complex workflows efficiently.</p>
+                        <p className="text-[15px] leading-[1.8] text-white"><strong className="text-white">Backend development is the engine behind web applications</strong>{" "} — handling business logic, data processing, and server-side operations. It ensures that applications are secure, scalable, and capable of managing complex workflows efficiently.</p>
 
-                        <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">Using technologies like <strong className="text-white">Node.js, databases, and API architectures</strong>,{" "} we build robust systems that manage data, integrate services, and power seamless communication between frontend and server.</p>
+                        <p className="text-[15px] leading-[1.8] text-white">Using technologies like <strong className="text-white">Node.js, databases, and API architectures</strong>,{" "} we build robust systems that manage data, integrate services, and power seamless communication between frontend and server.</p>
 
-                        <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">Our approach focuses on <strong className="text-white">performance, security, and scalability</strong>{" "} — delivering reliable backend infrastructures that support high traffic, real-time operations, and long-term product growth.</p>
+                        <p className="text-[15px] leading-[1.8] text-white">Our approach focuses on <strong className="text-white">performance, security, and scalability</strong>{" "} — delivering reliable backend infrastructures that support high traffic, real-time operations, and long-term product growth.</p>
 
-                        <div id="technologies" className="mt-7 flex flex-wrap gap-2">
-                        {technologie.map((item) => (
-                            <span key={item} className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-blue-200">{item}</span>
-                        ))}
+                        <div className="flex flex-wrap gap-2">
+                            {technologie.map((item) => (
+                                <span key={item} className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-blue-200">{item}</span>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -393,7 +605,7 @@ return Response.json({
             }
             description="Let&apos;s turn your vision into a production-grade Backend application. Our team is ready when you are — no project too small, no challenge too large."
             buttonText="Get a Free Quote →"
-            buttonHref="/"
+            buttonHref="/contact-us"
         />
 
     </>

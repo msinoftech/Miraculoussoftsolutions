@@ -1,11 +1,61 @@
-"use client";
-import { useMemo } from "react";
-import Link from "next/link";
+import type { Metadata } from "next";
+import Script from "next/script";
 import Marquee from "@/app/components/Marquee";
 import Card from "@/app/components/Card";
 import CtaStrip from "@/app/components/CtaStrip";
 import DevelopmentProcess from "@/app/components/DevelopmentProcess";
 import BoxCard from "@/app/components/BoxCard";
+import Subheading from "@/app/components/ui/Subheading";
+import DefaultButton from "@/app/components/ui/Button/defaultButton";
+import FrontendHubGraph from "@/app/components/graph/FrontendHubGraph";
+import { APP_NAME, BASE_URL, contactInfo } from "@/app/lib/config";
+
+const PAGE_URL = `${BASE_URL}/technologies/frontend-technologies`;
+const TECHNOLOGIES_URL = `${BASE_URL}/technologies`;
+
+export const metadata: Metadata = {
+  title: `Frontend Technologies | ${APP_NAME}`,
+  description: `Hire expert frontend developers from ${APP_NAME}. We build high-performance SaaS UIs with React.js, Next.js, TypeScript, Tailwind CSS, Vue.js, Angular, Redux, and GraphQL — responsive, accessible, and optimized for scale.`,
+  keywords: [
+    "frontend development services",
+    "hire frontend developer",
+    "React.js development",
+    "Next.js development",
+    "TypeScript development",
+    "Tailwind CSS development",
+    "Vue.js development",
+    "Angular development",
+    "frontend UI engineering",
+    "responsive web design",
+    "SaaS frontend development",
+    "web performance optimization",
+    APP_NAME,
+  ],
+  alternates: {
+    canonical: `${PAGE_URL}`,
+  },
+  openGraph: {
+    title: `Frontend Technologies | ${APP_NAME}`,
+    description: `Modern frontend engineering with React, Next.js, TypeScript, and Tailwind — scalable component architecture, premium UX, and Core Web Vitals optimization for SaaS and digital products.`,
+    url: `${PAGE_URL}`,
+    type: "website",
+    siteName: `${APP_NAME}`,
+    images: [
+      {
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 1200,
+        height: 630,
+        alt: `${APP_NAME} — Frontend Technologies`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Frontend Technologies | ${APP_NAME}`,
+    description: `Build fast, responsive, and scalable frontends with React, Next.js, TypeScript, Tailwind, and modern UI frameworks — engineered for SaaS and growth-stage products.`,
+    images: `${BASE_URL}${contactInfo.logo}`,
+  },
+};
 
 const features = [
     {
@@ -56,7 +106,14 @@ const features = [
       description: "Efficient API querying for frontend applications.",
       icon: `<svg fill="currentColor" width="24px" height="24px" viewBox="0 0 32 32" version="1.1" class="text-zinc-900 transition group-hover:text-white"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>graphql</title> <path d="M7.696 22.798h16.611l-8.305 4.794zM17.736 5.409l8.305 4.796v9.59zM14.269 5.409l-8.304 14.386v-9.59zM16.003 4.946l9.572 16.583h-19.147zM16.003 2.945l-11.308 6.528v13.056l11.308 6.528 11.305-6.528v-13.056zM5.328 7.166c-1.476 0-2.672 1.196-2.672 2.672s1.196 2.672 2.672 2.672c1.476 0 2.672-1.196 2.672-2.672 0-0.492-0.133-0.953-0.365-1.349l0.007 0.013c-0.471-0.804-1.33-1.336-2.314-1.336 0 0 0 0 0 0v0zM5.328 19.491c0 0.852 0.691 1.542 1.543 1.542s1.543-0.691 1.543-1.543-0.691-1.543-1.543-1.543c-0.852 0-1.542 0.69-1.543 1.542v0zM16.002 25.652c0 0 0 0 0 0-1.476 0-2.672 1.196-2.672 2.672s1.196 2.672 2.672 2.672c1.476 0 2.672-1.196 2.672-2.672 0-0.492-0.133-0.953-0.365-1.349l0.007 0.013c-0.471-0.804-1.33-1.336-2.314-1.336v0zM26.674 19.49c-1.476 0-2.672 1.196-2.672 2.672s1.196 2.672 2.672 2.672c1.476 0 2.672-1.196 2.672-2.672 0-0.492-0.133-0.953-0.365-1.349l0.007 0.013c-0.471-0.804-1.33-1.336-2.314-1.336 0 0-0 0-0 0v0zM26.674 7.166c-1.476 0-2.672 1.196-2.672 2.672s1.196 2.672 2.672 2.672c1.476 0 2.672-1.196 2.672-2.672 0-0.492-0.133-0.953-0.365-1.349l0.007 0.013c-0.471-0.804-1.33-1.336-2.314-1.336-0 0-0 0-0 0v0zM16.002 1.004c0 0 0 0 0 0-1.476 0-2.672 1.196-2.672 2.672s1.196 2.672 2.672 2.672c1.476 0 2.672-1.196 2.672-2.672 0-0.492-0.133-0.953-0.365-1.349l0.007 0.013c-0.471-0.804-1.33-1.336-2.314-1.336v0z"></path> </g></svg>`,
     },
-  ];
+];
+
+const heroStats = [
+    { num: "200+", label: "Projects Delivered" },
+    { num: "8+", label: "Years Experience" },
+    { num: "98+", label: "Retention" },
+    { num: "50+", label: "Experts" },
+];
 
 const technologie = [
     "HTML5",
@@ -71,7 +128,7 @@ const technologie = [
     "State Management",
     "API Integration",
     "Web Performance",
-  ];
+];
 
 const marqueeItems = [
     "HTML5 & Semantic Markup",
@@ -158,87 +215,219 @@ const benefits = [
     },
 ];
 
-export default function Page() {
-
-    const stats = useMemo(
-        () => [
-            { num: "200+", label: "Projects Delivered" },
-            { num: "8+", label: "Years Experience" },
-            { num: "98%", label: "Retention" },
-            { num: "50+", label: "Experts" },
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: APP_NAME,
+      alternateName: APP_NAME,
+      url: BASE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 512,
+        height: 512,
+      },
+      image: `${BASE_URL}${contactInfo.logo}`,
+      description: `${APP_NAME} builds high-performance, scalable frontend applications with React.js, Next.js, TypeScript, Tailwind CSS, and modern UI frameworks — responsive, accessible, and optimized for SaaS and digital products.`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        postalCode: "160062",
+        addressCountry: "IN",
+      },
+      sameAs: [
+        "https://www.facebook.com/miraculoussoft",
+        "https://twitter.com/miraculous_soft",
+        "https://www.instagram.com/miraculous_soft",
+        "https://www.pinterest.com/seomiraculoussoft",
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: ["IN", "Worldwide"],
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: "Worldwide",
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      url: BASE_URL,
+      name: APP_NAME,
+      description: `${APP_NAME} delivers modern frontend engineering — component-driven UIs, design systems, performance optimization, and scalable architectures for SaaS and growth-stage products.`,
+      inLanguage: "en",
+      publisher: { "@id": `${BASE_URL}/#organization` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${PAGE_URL}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: BASE_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Technologies",
+          item: TECHNOLOGIES_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Frontend Technologies",
+          item: PAGE_URL,
+        },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${PAGE_URL}/#webpage`,
+      url: PAGE_URL,
+      name: `Frontend Technologies | ${APP_NAME}`,
+      isPartOf: { "@id": `${BASE_URL}/#website` },
+      about: { "@id": `${PAGE_URL}/#frontend-development` },
+      description: `Hire expert frontend developers from ${APP_NAME}. Build high-performance SaaS UIs with React.js, Next.js, TypeScript, Tailwind CSS, Vue.js, Angular, Redux, and GraphQL.`,
+      inLanguage: "en",
+      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
+      mainEntity: { "@id": `${PAGE_URL}/#frontend-technologies` },
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#frontend-technologies`,
+      name: `${APP_NAME} Frontend Technology Stack`,
+      numberOfItems: features.length,
+      itemListElement: features.map((tech: { title: string; description: string }, index: number) => {
+        return {
+          "@type": "ListItem",
+          position: index + 1,
+          item: tech,
+        };
+      }),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#frontend-development-process`,
+      name: `${APP_NAME} Frontend Development Process`,
+      numberOfItems: steps.length,
+      itemListElement: steps.map((step, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Service",
+          "@id": `${PAGE_URL}#step-${step.num}`,
+          name: `${step.num} — ${step.title}`,
+          description: step.body,
+          url: PAGE_URL,
+          provider: { "@id": `${BASE_URL}/#organization` },
+          areaServed: ["India", "Worldwide"],
+          category: "Frontend Development Process",
+        },
+      })),
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${PAGE_URL}/#frontend-development`,
+      name: `${APP_NAME} — Frontend Development Services`,
+      alternateName: "Hire Frontend Developer",
+      url: PAGE_URL,
+      description: `${APP_NAME} designs and engineers digital products with modern frontend technologies — combining business strategy, premium UX, and strong technical foundations for SaaS, B2B, eCommerce, ERP, and mobile ecosystems.`,
+      image: `${BASE_URL}${contactInfo.logo}`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        addressCountry: "IN",
+      },
+      areaServed: ["India", "Worldwide"],
+      provider: { "@id": `${BASE_URL}/#organization` },
+      serviceType: [
+        ...features.map((tech) => `${tech.title} Development`),
+        ...marqueeItems,
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Frontend Development Services",
+        itemListElement: [
+          ...features.map((tech) => {
+            return tech;
+          }),
+          ...steps.map((step) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: step.title,
+              description: step.body,
+              url: PAGE_URL,
+            },
+          })),
         ],
-        []
-    );
+      },
+    },
+  ],
+};
 
+export default function Page() {
   return (
     <>
+        <Script id="frontend-technologies-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
 
     {/* Hero section */}
-    <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
+    <section className="relative overflow-hidden bg-white py-16 sm:py-20">
         <div className="grid-bg absolute inset-0 opacity-45" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.16))]" />
 
-        <div className="relative mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 items-start gap-10 px-4 py-14 sm:py-20 lg:grid-cols-[minmax(0,1fr)_520px] lg:gap-14 xl:grid-cols-[minmax(0,1fr)_560px] z-10">
+        <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
             {/* Left Column */}
             <div className="space-y-5">
-                <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                <span className="h-[2px] w-7 bg-red-600" />Frontend Technologies Services
-                </div>
-
-                <h1 className="font-bebas-neue uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
+                <Subheading variant="default">Frontend Technologies Services</Subheading>
+                <h1 className="uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
                 <span>HIRE </span>
                 <span className="text-red-600">Frontend</span>
                 <span className="hero-outline block outline-black">Developer</span>
                 </h1>
 
-                <p className="max-w-xl text-[15px] leading-8 text-zinc-500">Build high-performance, scalable, and visually stunning SaaS applications using modern frontend technologies.</p>
+                <p className="text-[15px] leading-8 text-zinc-600">Build high-performance, scalable, and visually stunning SaaS applications using modern frontend technologies.</p>
 
                 <div className="flex flex-wrap items-center gap-4">
-                    <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                        Start Your Project
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                    </Link>
-                    <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                        View Portfolio
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                    </Link>
+                    <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
                 </div>
 
-                <div className="mt-7 grid grid-cols-2 gap-4 pt-7 sm:grid-cols-4">
-                {stats.map((item) => {
-                    const numberOnly = item.num.replace(/[+%]/g, "");
-                    const suffix = item.num.includes("+") ? "+" : item.num.includes("%") ? "%" : "";
-                    return (
-                    <div key={item.label}>
-                        <div className="font-bebas-neue text-5xl leading-none text-zinc-950">
-                        {numberOnly}
-                        <span className="text-red-600">{suffix}</span>
+                <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                    {heroStats.map((stat) => (
+                        <div key={stat.label}>
+                        <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
+                        {stat.num.replace(/\+/, "")}
+                        {stat.num.includes("+") && <span className="text-red-600">+</span>}
                         </div>
-                        <div className="mt-1 text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-950">{item.label}</div>
-                    </div>
-                    );
-                })}
+                        <div className="text-sm text-zinc-950">{stat.label}</div>
+                        </div>
+                    ))}
                 </div>
             </div>
 
             {/* Right Column */}
-            <div className="relative mx-auto hidden aspect-square w-full max-w-[440px] lg:block" aria-hidden="true">
-                <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
-                <div className="absolute inset-[42px] rounded-full border border-red-500/25 hero-ring-2" />
-                <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
-                
-                <div className="absolute inset-[116px] flex flex-col items-center justify-center gap-2 shadow-xl rounded-full border border-white/10 bg-zinc-900/90 text-center">
-                    <div className="bg-gradient-to-r from-blue-400 to-red-500 bg-clip-text text-6xl font-black text-transparent">
-                        &lt;/&gt;
-                    </div>
-                    <div className="text-[11px] font-bold uppercase tracking-[0.16em] text-white/70">Modern Frontend Engineering</div>
-                </div>
-
-                <div className="absolute right-8 top-16 rounded-lg border border-white/10 bg-zinc-900/90 px-4 py-2 text-xs font-bold text-blue-400 hero-float">React 18</div>
-                <div className="absolute bottom-16 left-2 rounded-lg border border-white/10 bg-zinc-900/90 px-4 py-2 text-xs font-bold text-red-500 hero-float [animation-delay:1.6s]">Next.js 16</div>
-                <div className="absolute bottom-36 right-3 rounded-lg border border-white/10 bg-zinc-900/90 px-4 py-2 text-xs font-bold text-emerald-400 hero-float [animation-delay:0.8s]">TypeScript</div>
-            </div>
+            <FrontendHubGraph />
         </div>
     </section>
 
@@ -248,6 +437,7 @@ export default function Page() {
     {/* ABOUT */}
     <section className="relative overflow-hidden border-y border-white/[0.04] bg-[linear-gradient(180deg,#141414,#121212)] py-16 md:py-20">
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[length:100%_44px] opacity-20" />
+        
         <div className="relative mx-auto w-full max-w-7xl px-4">
             <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-12">
                 {/* left column */}
@@ -256,70 +446,67 @@ export default function Page() {
                     <span className="absolute bottom-0 right-0 h-6 w-6 rounded-br-md border-b-2 border-r-2 border-white/70" />
                     <div className="w-full overflow-hidden rounded-xl border border-white/[0.08] bg-[#0f0f0f] shadow-2xl">
   
-                    {/* Header (Editor Style) */}
-                    <div className="flex items-center justify-between border-b border-white/[0.06] px-4 py-2">
-                        <div className="flex items-center gap-2">
-                        <span className="h-3 w-3 rounded-full bg-red-500" />
-                        <span className="h-3 w-3 rounded-full bg-yellow-500" />
-                        <span className="h-3 w-3 rounded-full bg-green-500" />
-                        </div>
-                        <span className="text-[11px] text-zinc-500">Card.jsx</span>
-                    </div>
-
-                    {/* Body */}
-                    <div className="grid md:grid-cols-2">
-                        
-                        {/* Code Block */}
-                        <div className="border-r border-white/[0.06] p-4">
-                            <pre className="overflow-x-auto text-xs leading-6 text-zinc-300 md:text-sm">
-{`// React Component UI
-export default function Card() {
-return (
-    <div className="p-4 rounded-xl bg-white shadow-md">
-    <h2 className="text-lg font-semibold">
-        Frontend UI
-    </h2>
-    <p className="text-sm text-gray-500">
-        Clean & responsive design
-    </p>
-    <button className="mt-3 px-4 py-2 bg-blue-600 text-white rounded-lg">
-        Get Started
-    </button>
-    </div>
-);
-}`}
-                            </pre>
+                        {/* Header (Editor Style) */}
+                        <div className="flex items-center justify-between border-b border-white/[0.06] px-4 py-2">
+                            <div className="flex items-center gap-2">
+                            <span className="h-3 w-3 rounded-full bg-red-500" />
+                            <span className="h-3 w-3 rounded-full bg-yellow-500" />
+                            <span className="h-3 w-3 rounded-full bg-green-500" />
+                            </div>
+                            <span className="text-[11px] text-zinc-500">Card.jsx</span>
                         </div>
 
-                        {/* Output Preview */}
-                        <div className="flex items-center justify-center bg-[#0c0c0c] p-6">
-                        <div className="w-full max-w-[220px] rounded-xl bg-white p-4 shadow-xl">
-                            <div className="text-sm font-semibold text-gray-900">Frontend UI</div>
-                            <p className="text-xs text-gray-500">Clean & responsive design</p>
-                            <button className="mt-3 w-full rounded-md bg-red-600 px-3 py-1.5 text-xs font-medium text-white">Get Started</button>
-                        </div>
-                        </div>
+                        {/* Body */}
+                        <div className="grid md:grid-cols-2">
+                            
+                            {/* Code Block */}
+                            <div className="border-r border-white/[0.06] p-4">
+                                <pre className="overflow-x-auto text-xs leading-6 text-zinc-300 md:text-sm">
+    {`// React Component UI
+    export default function Card() {
+    return (
+        <div className="p-4 rounded-xl bg-white shadow-md">
+        <h2 className="text-lg font-semibold">
+            Frontend UI
+        </h2>
+        <p className="text-sm text-gray-500">
+            Clean & responsive design
+        </p>
+        <button className="mt-3 px-4 py-2 bg-blue-600 text-white rounded-lg">
+            Get Started
+        </button>
+        </div>
+    );
+    }`}
+                                </pre>
+                            </div>
 
-                    </div>
+                            {/* Output Preview */}
+                            <div className="flex items-center justify-center bg-[#0c0c0c] p-6">
+                                <div className="w-full max-w-[220px] rounded-xl bg-white p-4 shadow-xl">
+                                    <div className="text-sm font-semibold text-gray-900">Frontend UI</div>
+                                    <p className="text-xs text-gray-500">Clean & responsive design</p>
+                                    <button className="mt-3 w-full rounded-md bg-red-600 px-3 py-1.5 text-xs font-medium text-white">Get Started</button>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
                 {/* right column */}
                 <div className="relative space-y-4">
-                    <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                        <span className="h-[2px] w-7 bg-red-600" />
-                        Frontend Overview
-                    </div>
-                    <h2 className="text-[50px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[70px] lg:text-[80px]">Modern <span className="text-red-600">Frontend</span></h2>
+                    <Subheading variant="light">Frontend Overview</Subheading>
+                    <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">Modern <span className="text-red-600">Frontend</span></h2>
                     
-                    <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]"><strong className="text-white">Frontend development is the visual and interactive layer</strong>{" "} of web applications—where design meets functionality. It focuses on building fast, responsive, and engaging user interfaces that deliver seamless user experiences across all devices.</p>
+                    <p className="text-[15px] leading-[1.8] text-white"><strong className="text-white">Frontend development is the visual and interactive layer</strong>{" "} of web applications—where design meets functionality. It focuses on building fast, responsive, and engaging user interfaces that deliver seamless user experiences across all devices.</p>
 
-                    <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">Using technologies like <strong className="text-white">HTML, CSS, JavaScript, and modern frameworks</strong>,{" "} we craft dynamic interfaces with reusable components, smooth animations, and scalable architectures that enhance usability and performance.</p>
+                    <p className="text-[15px] leading-[1.8] text-white">Using technologies like <strong className="text-white">HTML, CSS, JavaScript, and modern frameworks</strong>,{" "} we craft dynamic interfaces with reusable components, smooth animations, and scalable architectures that enhance usability and performance.</p>
 
-                    <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">Our approach ensures <strong className="text-white">pixel-perfect design, accessibility, and optimization</strong>{" "} — delivering high-performing frontends that are SEO-friendly, lightning-fast, and built for real-world scalability.</p>
+                    <p className="text-[15px] leading-[1.8] text-white">Our approach ensures <strong className="text-white">pixel-perfect design, accessibility, and optimization</strong>{" "} — delivering high-performing frontends that are SEO-friendly, lightning-fast, and built for real-world scalability.</p>
 
-                    <div id="technologies" className="mt-7 flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2">
                     {technologie.map((item) => (
-                        <span key={item} className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-blue-200">{item}</span>
+                        <span key={item} className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-blue-200">{item}</span>
                     ))}
                     </div>
                 </div>
@@ -379,7 +566,7 @@ return (
           }
           description="Let&apos;s turn your vision into a production-grade Frontend application. Our team is ready when you are — no project too small, no challenge too large."
           buttonText="Get a Free Quote →"
-          buttonHref="/"
+          buttonHref="/contact-us"
     />
 
     </>

@@ -440,7 +440,7 @@ export default function PostgresqlDevelopmentCompanyPage() {
 
                 <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">We leverage <strong className="text-white">efficient key design, advanced data structures, and distributed caching strategies</strong>{" "} to build Redis-powered systems that handle massive traffic, enable real-time data flow, and ensure seamless scalability across modern cloud architectures.</p>
 
-                <div id="technologies" className="mt-7 flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2">
                   {technologies.map((item) => (
                     <span key={item} className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-blue-200">{item}</span>
                   ))}

@@ -358,7 +358,7 @@ export default function RbacDevelopmentCompanyPage() {
                 <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">We implement <strong className="text-white">role design, permission taxonomy, enforcement in APIs, admin tooling, and audit trails</strong>{" "} so access stays correct—even as your product grows and org structures change.</p>
 
 
-                <div id="technologies" className="mt-7 flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2">
                   {technologies.map((item) => (
                     <span key={item} className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-blue-200">{item}</span>
                   ))}

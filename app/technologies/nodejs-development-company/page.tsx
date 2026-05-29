@@ -1,10 +1,59 @@
-"use client";
-import { useMemo } from "react";
-import Link from "next/link";
+import type { Metadata } from "next";
+import Script from "next/script";
 import Marquee from "@/app/components/Marquee";
 import Process from "@/app/components/Process";
 import BoxCard from "@/app/components/BoxCard";
 import CtaStrip from "@/app/components/CtaStrip";
+import Subheading from "@/app/components/ui/Subheading";
+import DefaultButton from "@/app/components/ui/Button/defaultButton";
+import { APP_NAME, BASE_URL, contactInfo } from "@/app/lib/config";
+
+const PAGE_URL = `${BASE_URL}/technologies/nodejs-development-company`;
+const TECHNOLOGIES_URL = `${BASE_URL}/technologies`;
+
+export const metadata: Metadata = {
+  title: `Node.js Development Company | ${APP_NAME}`,
+  description: `Hire expert Node.js developers from ${APP_NAME}. We build scalable, high-performance backends with Node.js, Express.js, REST & GraphQL APIs, microservices, real-time systems, and cloud deployment — from architecture to testing and long-term maintenance.`,
+  keywords: [
+    "Node.js development company",
+    "hire Node.js developer",
+    "NodeJS development services",
+    "Express.js development",
+    "Node.js API development",
+    "REST API development",
+    "GraphQL API development",
+    "Node.js microservices",
+    "real-time Node.js applications",
+    "event-driven architecture",
+    "SaaS backend development",
+    "enterprise Node.js applications",
+    APP_NAME,
+  ],
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: `Node.js Development Company | ${APP_NAME}`,
+    description: `Build fast, scalable backends with ${APP_NAME} — event-driven Node.js architecture, non-blocking I/O, Express APIs, authentication, databases, and cloud-native deployment for startups and enterprise products.`,
+    url: PAGE_URL,
+    type: "website",
+    siteName: APP_NAME,
+    images: [
+      {
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 1200,
+        height: 630,
+        alt: `${APP_NAME} — Node.js Development`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Node.js Development Company | ${APP_NAME}`,
+    description: `Hire Node.js developers who ship reliable backends — REST/GraphQL APIs, microservices, real-time data, Docker, AWS deployment, and automated testing built for scale.`,
+    images: [`${BASE_URL}${contactInfo.logo}`],
+  },
+};
 
 const marqueeItems = [
     "Event-Driven Architecture",
@@ -19,6 +68,13 @@ const marqueeItems = [
     "NPM Ecosystem",
     "Cross-Platform Runtime",
     "Streaming Data Support",
+];
+
+const heroStats = [
+  { num: "200+", label: "Projects Delivered" },
+  { num: "8+", label: "Years Experience" },
+  { num: "98+", label: "Client Retention" },
+  { num: "50+", label: "Experts" },
 ];
 
 const aboutCodeLines = [
@@ -166,64 +222,245 @@ const reasons = [
     },  
 ];
 
-export default function BackendPage() {
-
-    const stats = useMemo(
-        () => [
-          { num: "200+", label: "APIs BUILT" },
-          { num: "8+", label: "Years Experience" },
-          { num: "98%", label: "Uptime" },
-          { num: "50+", label: "Experts" },
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: APP_NAME,
+      alternateName: APP_NAME,
+      url: BASE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 512,
+        height: 512,
+      },
+      image: `${BASE_URL}${contactInfo.logo}`,
+      description: `${APP_NAME} delivers expert Node.js development — event-driven backends, Express.js APIs, REST & GraphQL, microservices, real-time systems, and cloud deployment for SaaS, enterprise, and growth-stage products.`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        postalCode: "160062",
+        addressCountry: "IN",
+      },
+      sameAs: [
+        "https://www.facebook.com/miraculoussoft",
+        "https://twitter.com/miraculous_soft",
+        "https://www.instagram.com/miraculous_soft",
+        "https://www.pinterest.com/seomiraculoussoft",
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: ["IN", "Worldwide"],
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: "Worldwide",
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      url: BASE_URL,
+      name: APP_NAME,
+      description: `${APP_NAME} provides Node.js development services — from system architecture and API design through backend implementation, testing, deployment, and long-term scaling.`,
+      inLanguage: "en",
+      publisher: { "@id": `${BASE_URL}/#organization` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${PAGE_URL}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: BASE_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Technologies",
+          item: TECHNOLOGIES_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Node.js Development",
+          item: PAGE_URL,
+        },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${PAGE_URL}/#webpage`,
+      url: PAGE_URL,
+      name: `Node.js Development Company | ${APP_NAME}`,
+      isPartOf: { "@id": `${BASE_URL}/#website` },
+      about: { "@id": `${PAGE_URL}/#nodejs-development` },
+      description: `Hire expert Node.js developers from ${APP_NAME}. We build fast, scalable backends with event-driven architecture, non-blocking I/O, Express.js, REST/GraphQL APIs, and cloud-native infrastructure.`,
+      inLanguage: "en",
+      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
+      mainEntity: { "@id": `${PAGE_URL}/#nodejs-development` },
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#nodejs-technology-stack`,
+      name: `${APP_NAME} Node.js Technology Stack`,
+      numberOfItems: technologies.length,
+      itemListElement: technologies.map((tech, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}/#tech-${tech.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+          name: tech,
+          description: `${tech} used in ${APP_NAME} Node.js backend development projects.`,
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#nodejs-development-process`,
+      name: `${APP_NAME} Node.js Development Process`,
+      numberOfItems: steps.length,
+      itemListElement: steps.map((step, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Service",
+          "@id": `${PAGE_URL}/#step-${step.num}`,
+          name: `${step.num} — ${step.title}`,
+          description: step.body,
+          url: PAGE_URL,
+          provider: { "@id": `${BASE_URL}/#organization` },
+          areaServed: ["India", "Worldwide"],
+          category: "Node.js Development Process",
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#why-nodejs`,
+      name: `Why Choose ${APP_NAME} for Node.js`,
+      numberOfItems: reasons.length,
+      itemListElement: reasons.map((reason, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}/#reason-${String(index + 1).padStart(2, "0")}`,
+          name: reason.title,
+          description: reason.body,
+        },
+      })),
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${PAGE_URL}/#nodejs-development`,
+      name: `${APP_NAME} — Node.js Development Company`,
+      alternateName: "Hire Node.js Developers",
+      url: PAGE_URL,
+      description: `${APP_NAME} engineers production-grade Node.js backends — scalable APIs, secure authentication, database design, microservices, and DevOps. Build faster, handle more traffic, and scale without limits with expert server-side engineering.`,
+      image: `${BASE_URL}${contactInfo.logo}`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        addressCountry: "IN",
+      },
+      areaServed: ["India", "Worldwide"],
+      provider: { "@id": `${BASE_URL}/#organization` },
+      serviceType: ["Node.js Development", ...technologies, ...marqueeItems],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Node.js Development Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Node.js Development",
+              description: `End-to-end Node.js development with Express.js, REST & GraphQL APIs, event-driven architecture, authentication, databases, Docker, AWS deployment, and automated testing.`,
+              url: PAGE_URL,
+            },
+          },
+          ...steps.map((step) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: step.title,
+              description: step.body,
+              url: PAGE_URL,
+            },
+          })),
+          ...reasons.map((reason) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: reason.title,
+              description: reason.body,
+              url: PAGE_URL,
+            },
+          })),
         ],
-        []
-    );
+      },
+    },
+  ],
+};
+
+export default function NodeJSDevelopmentCompanyPage() {
     return (
     <>
+        <Script id="nodejs-development-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
+
        {/* HERO */}
-       <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
+       <section className="relative overflow-hidden bg-white py-16 sm:py-20">
             <div className="grid-bg absolute inset-0 opacity-45" />
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.16))]" />
-            <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-[1fr_390px] z-10">
+            
+            <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
                 {/* Left Column */}
                 <div className="space-y-5">
-                    <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                        <span className="h-[2px] w-7 bg-red-600" />NodeJS Development Services
-                    </div>
-
-                    <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-zinc-950 sm:text-[118px] md:text-[140px] lg:text-[168px]">
+                    <Subheading variant="default">NodeJS Development Services</Subheading>
+                    <h1 className="uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
                     <span>HIRE </span>
                     <span className="text-red-600">NODEJS</span>
                     <span className="hero-outline block outline-black">DEVELOPERS</span>
                     </h1>
 
-                    <p className="max-w-xl text-[15px] leading-8 text-zinc-500">Build fast, scalable, and real-time backend systems using Node.js and modern cloud architecture.</p>
+                    <p className="text-[15px] leading-8 text-zinc-600">Build fast, scalable, and real-time backend systems using Node.js and modern cloud architecture.</p>
 
                     <div className="flex flex-wrap items-center gap-4">
-                        <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                            Start Your Project
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                        </Link>
-                        <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                            View Portfolio
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                        </Link>
+                      <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
                     </div>
 
-                    <div className="mt-7 grid grid-cols-2 gap-4 pt-7 sm:grid-cols-4">
-                        {stats.map((item) => {
-                            const numberOnly = item.num.replace(/[+%]/g, "");
-                            const suffix = item.num.includes("+") ? "+" : item.num.includes("%") ? "%" : "";
-                            return (
-                            <div key={item.label}>
-                                <div className="font-bebas-neue text-5xl leading-none text-zinc-950">
-                                {numberOnly}
-                                <span className="text-red-600">{suffix}</span>
-                                </div>
-                                <div className="mt-1 text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-950">{item.label}</div>
-                            </div>
-                            );
-                        })}
+                    <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                      {heroStats.map((stat) => (
+                          <div key={stat.label}>
+                          <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
+                          {stat.num.replace(/\+/, "")}
+                          {stat.num.includes("+") && <span className="text-red-600">+</span>}
+                          </div>
+                          <div className="text-sm text-zinc-950">{stat.label}</div>
+                          </div>
+                      ))}
                     </div>
                 </div>
 
@@ -350,18 +587,16 @@ export default function BackendPage() {
               </div>
               {/* right column */}
               <div className="relative space-y-4">
-                <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                    <span className="h-[2px] w-7 bg-red-600" />
-                    Why Node With Us
-                </div>
-                <h2 className="text-[50px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[70px] lg:text-[80px]">The NodeJS <span className="text-red-600">Advantage</span></h2>
+                <Subheading variant="light">Why Node With Us</Subheading>
+
+                <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">The NodeJS <span className="text-red-600">Advantage</span></h2>
                 
-                <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]"><strong className="text-white">Node.js powers scalable backend systems</strong>{" "} with its event-driven, non-blocking architecture—enabling high-performance APIs, real-time applications, and seamless handling of concurrent requests.</p>
+                <p className="text-[15px] leading-[1.8] text-white"><strong className="text-white">Node.js powers scalable backend systems</strong>{" "} with its event-driven, non-blocking architecture—enabling high-performance APIs, real-time applications, and seamless handling of concurrent requests.</p>
 
-                <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]"> We leverage <strong className="text-white">Express.js, microservices architecture, and REST/GraphQL APIs</strong>{" "} to build backend solutions that are fast, maintainable, and ready for production at scale.</p>
+                <p className="text-[15px] leading-[1.8] text-white"> We leverage <strong className="text-white">Express.js, microservices architecture, and REST/GraphQL APIs</strong>{" "} to build backend solutions that are fast, maintainable, and ready for production at scale.</p>
 
 
-                <div id="technologies" className="mt-7 flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2">
                   {technologies.map((item) => (
                     <span key={item} className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-blue-200">{item}</span>
                   ))}
@@ -408,7 +643,7 @@ export default function BackendPage() {
             }
             description="Let&apos;s turn your vision into a production-grade NodeJS application. Our team is ready when you are — no project too small, no challenge too large."
             buttonText="Get a Free Quote →"
-            buttonHref="/"
+            buttonHref="/contact-us"
         />
 
     </>

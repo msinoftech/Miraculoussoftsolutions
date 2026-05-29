@@ -1,10 +1,60 @@
-"use client";
-import { useMemo } from "react";
-import Link from "next/link";
+import type { Metadata } from "next";
+import Script from "next/script";
 import Marquee from "@/app/components/Marquee";
 import Process from "@/app/components/Process";
 import BoxCard from "@/app/components/BoxCard";
 import CtaStrip from "@/app/components/CtaStrip";
+import Subheading from "@/app/components/ui/Subheading";
+import DefaultButton from "@/app/components/ui/Button/defaultButton";
+import { APP_NAME, BASE_URL, contactInfo } from "@/app/lib/config";
+
+
+const PAGE_URL = `${BASE_URL}/technologies/python-development-company`;
+const TECHNOLOGIES_URL = `${BASE_URL}/technologies`;
+
+export const metadata: Metadata = {
+  title: `Python Development Company | ${APP_NAME}`,
+  description: `Hire expert Python developers from ${APP_NAME}. We build scalable backends, APIs, and data-driven apps with Django, Flask, FastAPI, Pandas, AI/ML, Celery, and cloud deployment — from architecture to testing and long-term maintenance.`,
+  keywords: [
+    "Python development company",
+    "hire Python developer",
+    "Python development services",
+    "Django development",
+    "Flask development",
+    "FastAPI development",
+    "Python API development",
+    "Python machine learning",
+    "data science Python development",
+    "Python automation",
+    "SaaS Python development",
+    "enterprise Python applications",
+    APP_NAME,
+  ],
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: `Python Development Company | ${APP_NAME}`,
+    description: `Build versatile, scalable systems with ${APP_NAME} — Django, Flask, FastAPI APIs, data pipelines, AI/ML with TensorFlow, automation, and cloud-native deployment for startups and enterprise products.`,
+    url: PAGE_URL,
+    type: "website",
+    siteName: APP_NAME,
+    images: [
+      {
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 1200,
+        height: 630,
+        alt: `${APP_NAME} — Python Development`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Python Development Company | ${APP_NAME}`,
+    description: `Hire Python developers who ship faster — web apps, FastAPI backends, data analysis, AI models, Celery jobs, Docker, and automated testing built for scale.`,
+    images: [`${BASE_URL}${contactInfo.logo}`],
+  },
+};
 
 const marqueeItems = [
     "SIMPLE & READABLE SYNTAX",
@@ -21,56 +71,144 @@ const marqueeItems = [
     "API DEVELOPMENT (FASTAPI)",
 ];
 
-const aboutCodeLines = [
-    { type: "comment", content: "# Create User API (POST)" },
-  
-    {
-      content: [
-        { t: "from ", cls: "code-keyword" },
-        { t: "fastapi ", cls: "code-name" },
-        { t: "import ", cls: "code-keyword" },
-        { t: "FastAPI", cls: "code-name" },
-      ],
-    },
-  
-    {
-      content: [
-        { t: "app ", cls: "code-name" },
-        { t: "= FastAPI()", cls: "code-muted" },
-      ],
-    },
-  
-    {
-      content: [
-        { t: "@app.post", cls: "code-name" },
-        { t: '("/api/users")', cls: "code-string" },
-      ],
-    },
-  
-    {
-      content: [
-        { t: "def ", cls: "code-keyword" },
-        { t: "create_user", cls: "code-name" },
-        { t: "(name: str):", cls: "code-muted" },
-      ],
-    },
-  
-    {
-      content: [
-        { t: "    return ", cls: "code-keyword" },
-        { t: '{ "message": "User created", "name": name }', cls: "code-string" },
-      ],
-    },
-  
-    { type: "comment", content: "# Output" },
-  
-    {
-      content: [
-        { t: "POST /api/users → ", cls: "code-muted" },
-        { t: '{ "message": "User created", "name": "John" }', cls: "code-string" },
-      ],
-    },
+const heroStats = [
+  { num: "200+", label: "APIs BUILT" },
+  { num: "8+", label: "Years Experience" },
+  { num: "98%", label: "Uptime" },
+  { num: "50+", label: "Experts" },
 ];
+
+const aboutCodeLines = [
+  {
+    type: "comment",
+    content: "# FastAPI — typed endpoints with Pydantic validation",
+  },
+  {
+    content: [
+      { t: "from", cls: "code-keyword" },
+      { t: " fastapi ", cls: "code-muted" },
+      { t: "import", cls: "code-keyword" },
+      { t: " FastAPI", cls: "code-name" },
+    ],
+  },
+  {
+    content: [
+      { t: "from", cls: "code-keyword" },
+      { t: " pydantic ", cls: "code-muted" },
+      { t: "import", cls: "code-keyword" },
+      { t: " BaseModel", cls: "code-name" },
+    ],
+  },
+  { content: "\n" },
+  {
+    content: [
+      { t: "app", cls: "code-name" },
+      { t: " = ", cls: "code-muted" },
+      { t: "FastAPI", cls: "code-name" },
+      { t: "()", cls: "code-muted" },
+    ],
+  },
+  { content: "\n" },
+  {
+    content: [
+      { t: "class", cls: "code-keyword" },
+      { t: " ", cls: "code-muted" },
+      { t: "UserCreate", cls: "code-name" },
+      { t: "(", cls: "code-muted" },
+      { t: "BaseModel", cls: "code-name" },
+      { t: "):", cls: "code-muted" },
+    ],
+  },
+  {
+    content: [
+      { t: "    name", cls: "code-muted" },
+      { t: ": ", cls: "code-muted" },
+      { t: "str", cls: "code-type" },
+    ],
+  },
+  {
+    content: [
+      { t: "    email", cls: "code-muted" },
+      { t: ": ", cls: "code-muted" },
+      { t: "str", cls: "code-type" },
+    ],
+  },
+  { content: "\n" },
+  {
+    content: [
+      { t: "@app.post", cls: "code-decorator" },
+      { t: '(', cls: "code-muted" },
+      { t: '"/api/users"', cls: "code-string" },
+      { t: ")", cls: "code-muted" },
+    ],
+  },
+  {
+    content: [
+      { t: "async def", cls: "code-keyword" },
+      { t: " ", cls: "code-muted" },
+      { t: "create_user", cls: "code-name" },
+      { t: "(user: ", cls: "code-muted" },
+      { t: "UserCreate", cls: "code-type" },
+      { t: "):", cls: "code-muted" },
+    ],
+  },
+  {
+    content: [
+      { t: "    return", cls: "code-keyword" },
+      { t: " {", cls: "code-muted" },
+    ],
+  },
+  {
+    content: [
+      { t: '        "message"', cls: "code-string" },
+      { t: ': ', cls: "code-muted" },
+      { t: '"User created"', cls: "code-string" },
+      { t: ",", cls: "code-muted" },
+    ],
+  },
+  {
+    content: [
+      { t: '        "name"', cls: "code-string" },
+      { t: ": user.name", cls: "code-muted" },
+      { t: ",", cls: "code-muted" },
+    ],
+  },
+  {
+    content: [{ t: "    }", cls: "code-muted" }],
+  },
+  { content: "\n" },
+  {
+    type: "comment",
+    content: "# POST /api/users → validated JSON response",
+  },
+  {
+    content: [
+      { t: "# ", cls: "code-muted" },
+      { t: '{"message": "User created", "name": "John"}', cls: "code-string" },
+    ],
+  },
+];
+
+function codePartClassName(cls: string) {
+  switch (cls) {
+    case "code-keyword":
+      return "text-blue-400";
+    case "code-type":
+      return "text-amber-400";
+    case "code-name":
+      return "text-sky-300";
+    case "code-string":
+      return "text-emerald-400";
+    case "code-decorator":
+      return "text-purple-400";
+    case "code-comment":
+      return "text-zinc-500 italic";
+    case "code-muted":
+      return "text-zinc-400";
+    default:
+      return "text-zinc-200";
+  }
+}
 
 const technologies = [
     "Django Framework",
@@ -134,65 +272,250 @@ const reasons = [
     },  
 ];
 
-export default function BackendPage() {
-
-    const stats = useMemo(
-        () => [
-          { num: "200+", label: "APIs BUILT" },
-          { num: "8+", label: "Years Experience" },
-          { num: "98%", label: "Uptime" },
-          { num: "50+", label: "Experts" },
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: APP_NAME,
+      alternateName: APP_NAME,
+      url: BASE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 512,
+        height: 512,
+      },
+      image: `${BASE_URL}${contactInfo.logo}`,
+      description: `${APP_NAME} delivers expert Python development — Django, Flask, FastAPI backends, data pipelines with Pandas & NumPy, AI/ML with TensorFlow, automation, and cloud deployment for SaaS, enterprise, and growth-stage products.`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        postalCode: "160062",
+        addressCountry: "IN",
+      },
+      sameAs: [
+        "https://www.facebook.com/miraculoussoft",
+        "https://twitter.com/miraculous_soft",
+        "https://www.instagram.com/miraculous_soft",
+        "https://www.pinterest.com/seomiraculoussoft",
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: ["IN", "Worldwide"],
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: "Worldwide",
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      url: BASE_URL,
+      name: APP_NAME,
+      description: `${APP_NAME} provides Python development services — from solution architecture and API design through web apps, data systems, AI/ML, testing, deployment, and long-term scaling.`,
+      inLanguage: "en",
+      publisher: { "@id": `${BASE_URL}/#organization` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${PAGE_URL}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: BASE_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Technologies",
+          item: TECHNOLOGIES_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Python Development",
+          item: PAGE_URL,
+        },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${PAGE_URL}/#webpage`,
+      url: PAGE_URL,
+      name: `Python Development Company | ${APP_NAME}`,
+      isPartOf: { "@id": `${BASE_URL}/#website` },
+      about: { "@id": `${PAGE_URL}/#python-development` },
+      description: `Hire expert Python developers from ${APP_NAME}. We build scalable backends, APIs, and data-driven applications with Django, Flask, FastAPI, Pandas, AI/ML, Celery, and cloud-native infrastructure.`,
+      inLanguage: "en",
+      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
+      mainEntity: { "@id": `${PAGE_URL}/#python-development` },
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#python-technology-stack`,
+      name: `${APP_NAME} Python Technology Stack`,
+      numberOfItems: technologies.length,
+      itemListElement: technologies.map((tech, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}/#tech-${tech.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+          name: tech,
+          description: `${tech} used in ${APP_NAME} Python development projects.`,
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#python-development-process`,
+      name: `${APP_NAME} Python Development Process`,
+      numberOfItems: steps.length,
+      itemListElement: steps.map((step, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Service",
+          "@id": `${PAGE_URL}/#step-${step.num}`,
+          name: `${step.num} — ${step.title}`,
+          description: step.body,
+          url: PAGE_URL,
+          provider: { "@id": `${BASE_URL}/#organization` },
+          areaServed: ["India", "Worldwide"],
+          category: "Python Development Process",
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#why-python`,
+      name: `Why Choose ${APP_NAME} for Python`,
+      numberOfItems: reasons.length,
+      itemListElement: reasons.map((reason, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}/#reason-${String(index + 1).padStart(2, "0")}`,
+          name: reason.title,
+          description: reason.body,
+        },
+      })),
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${PAGE_URL}/#python-development`,
+      name: `${APP_NAME} — Python Development Company`,
+      alternateName: "Hire Python Developers",
+      url: PAGE_URL,
+      description: `${APP_NAME} engineers production-grade Python applications — web platforms, FastAPI backends, data pipelines, AI/ML models, and automation. Build faster, analyze smarter, and scale without limits with versatile Python engineering.`,
+      image: `${BASE_URL}${contactInfo.logo}`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        addressCountry: "IN",
+      },
+      areaServed: ["India", "Worldwide"],
+      provider: { "@id": `${BASE_URL}/#organization` },
+      serviceType: ["Python Development", ...technologies, ...marqueeItems],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Python Development Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Python Development",
+              description: `End-to-end Python development with Django, Flask, FastAPI, Pandas, NumPy, TensorFlow, Celery background jobs, REST APIs, Docker, cloud deployment, and automated testing.`,
+              url: PAGE_URL,
+            },
+          },
+          ...steps.map((step) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: step.title,
+              description: step.body,
+              url: PAGE_URL,
+            },
+          })),
+          ...reasons.map((reason) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: reason.title,
+              description: reason.body,
+              url: PAGE_URL,
+            },
+          })),
         ],
-        []
-    );
+      },
+    },
+  ],
+};
+
+export default function PythonDevelopmentCompanyPage() {
     return (
     <>
+        <Script
+          id="python-development-schema"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
+
         {/* HERO */}
-        <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
+        <section className="relative overflow-hidden bg-white py-16 sm:py-20">
             <div className="grid-bg absolute inset-0 opacity-45" />
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.16))]" />
             
-            <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-[1fr_390px] z-10">
+            <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
                 {/* Left Column */}
                 <div className="space-y-5">
-                    <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                        <span className="h-[2px] w-7 bg-red-600" />Python Development Services
-                    </div>
-
-                    <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-zinc-950 sm:text-[118px] md:text-[140px] lg:text-[168px]">
+                    <Subheading variant="default">Python Development Services</Subheading>
+                    <h1 className="uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
                     <span>HIRE </span>
                     <span className="text-red-600">Python</span>
                     <span className="hero-outline block outline-black">DEVELOPERS</span>
                     </h1>
 
-                    <p className="max-w-xl text-[15px] leading-8 text-zinc-500">Build fast, scalable, and real-time backend systems using python and modern cloud architecture.</p>
+                    <p className="text-[15px] leading-8 text-zinc-600">Build fast, scalable, and real-time backend systems using python and modern cloud architecture.</p>
 
                     <div className="flex flex-wrap items-center gap-4">
-                        <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                            Start Your Project
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                        </Link>
-                        <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                            View Portfolio
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                        </Link>
+                      <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
                     </div>
 
-                    <div className="mt-7 grid grid-cols-2 gap-4 pt-7 sm:grid-cols-4">
-                        {stats.map((item) => {
-                            const numberOnly = item.num.replace(/[+%]/g, "");
-                            const suffix = item.num.includes("+") ? "+" : item.num.includes("%") ? "%" : "";
-                            return (
-                            <div key={item.label}>
-                                <div className="font-bebas-neue text-5xl leading-none text-zinc-950">
-                                {numberOnly}
-                                <span className="text-red-600">{suffix}</span>
-                                </div>
-                                <div className="mt-1 text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-950">{item.label}</div>
-                            </div>
-                            );
-                        })}
+                    <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                      {heroStats.map((stat) => (
+                          <div key={stat.label}>
+                          <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
+                          {stat.num.replace(/\+/, "")}
+                          {stat.num.includes("+") && <span className="text-red-600">+</span>}
+                          </div>
+                          <div className="text-sm text-zinc-950">{stat.label}</div>
+                          </div>
+                      ))}
                     </div>
                 </div>
 
@@ -272,59 +595,63 @@ export default function BackendPage() {
                 <span className="absolute left-0 top-0 h-6 w-6 rounded-tl-md border-l-2 border-t-2 border-white/70" />
                 <span className="absolute bottom-0 right-0 h-6 w-6 rounded-br-md border-b-2 border-r-2 border-white/70" />
 
-                <pre className="overflow-x-auto text-xs leading-7 md:text-sm" aria-label="Code preview">
-                  {aboutCodeLines.map((line, index) => {
-                    if (line.type === "comment") {
-                      return (
-                        <span key={index} className="block text-zinc-500 italic">
-                          {line.content}
-                        </span>
-                      );
-                    }
-
-                    if (typeof line.content === "string") {
-                      return (
-                        <span key={index} className="block text-zinc-200">
-                          {line.content}
-                        </span>
-                      );
-                    }
-
-                    return (
-                      <span key={index} className="block text-zinc-200">
-                        {line.content.map((part, partIndex) => (
-                          <span
-                            key={partIndex}
-                            className={
-                              part.cls === "code-keyword"
-                                ? "text-blue-400"
-                                : part.cls === "code-string"
-                                ? "text-emerald-400"
-                                : "text-zinc-200"
-                            }
-                          >
-                            {part.t}
+                <div className="w-full overflow-hidden rounded-xl border border-white/[0.08] bg-[#0f0f0f] shadow-2xl">
+                  <div className="flex items-center justify-between border-b border-white/[0.06] px-4 py-2">
+                    <div className="flex items-center gap-2">
+                      <span className="h-3 w-3 rounded-full bg-red-500" />
+                      <span className="h-3 w-3 rounded-full bg-yellow-500" />
+                      <span className="h-3 w-3 rounded-full bg-green-500" />
+                    </div>
+                    <span className="font-mono text-[11px] text-zinc-500">users_api.py</span>
+                  </div>
+                  <pre
+                    className="overflow-x-auto p-4 font-mono text-xs leading-7 md:text-sm"
+                    aria-label="Python code preview"
+                  >
+                    {aboutCodeLines.map((line, index) => {
+                      if (line.type === "comment") {
+                        return (
+                          <span key={index} className="block text-zinc-500 italic">
+                            {line.content}
                           </span>
-                        ))}
-                      </span>
-                    );
-                  })}
-                </pre>
+                        );
+                      }
+
+                      if (typeof line.content === "string") {
+                        return line.content === "\n" ? (
+                          <span key={index} className="block h-3" aria-hidden />
+                        ) : (
+                          <span key={index} className="block text-zinc-200">
+                            {line.content}
+                          </span>
+                        );
+                      }
+
+                      return (
+                        <span key={index} className="block whitespace-pre text-zinc-200">
+                          {line.content.map((part, partIndex) => (
+                            <span key={partIndex} className={codePartClassName(part.cls)}>
+                              {part.t}
+                            </span>
+                          ))}
+                        </span>
+                      );
+                    })}
+                  </pre>
+                </div>
               </div>
               {/* right column */}
               <div className="relative space-y-4">
-                <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                    <span className="h-[2px] w-7 bg-red-600" />
-                    Why Python With Us
-                </div>
-                <h2 className="text-[50px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[70px] lg:text-[80px]">The Python <span className="text-red-600">Advantage</span></h2>
+                <Subheading variant="light">Why Python With Us</Subheading>
+
+                <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">The Python <span className="text-red-600">Advantage</span></h2>
                 
-                <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]"><strong className="text-white">Python powers modern, versatile applications</strong>{" "} with its clean syntax and massive ecosystem—enabling rapid development across web platforms, data engineering, automation, and AI-driven solutions.</p>
+                <p className="text-[15px] leading-[1.8] text-white"><strong className="text-white">Python powers modern, versatile applications</strong>{" "} with its clean syntax and massive ecosystem—enabling rapid development across web platforms, data engineering, automation, and AI-driven solutions.</p>
 
-                <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">We leverage <strong className="text-white">Django, FastAPI, and Flask</strong>{" "} to build secure and scalable backend systems, along with powerful libraries like{" "} <strong className="text-white">Pandas, NumPy, and TensorFlow</strong>{" "} for data processing and intelligent application development.</p>
+                <p className="text-[15px] leading-[1.8] text-white">We leverage <strong className="text-white">Django, FastAPI, and Flask</strong>{" "} to build secure and scalable backend systems, along with powerful libraries like{" "} <strong className="text-white">Pandas, NumPy, and TensorFlow</strong>{" "} for data processing and intelligent application development.</p>
 
 
-                <div id="technologies" className="mt-7 flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2">
                   {technologies.map((item) => (
                     <span key={item} className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-blue-200">{item}</span>
                   ))}
@@ -371,7 +698,7 @@ export default function BackendPage() {
             }
             description="Let&apos;s turn your vision into a production-grade Python application. Our team is ready when you are — no project too small, no challenge too large."
             buttonText="Get a Free Quote →"
-            buttonHref="/"
+            buttonHref="/contact-us"
         />
 
     </>

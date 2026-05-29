@@ -490,7 +490,7 @@ export default function KubernetesDevelopmentCompanyPage() {
 
                 <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">We leverage <strong className="text-white">Kubernetes clusters, microservices architecture, and declarative deployments</strong>{" "} to deliver production-ready platforms that scale effortlessly, optimize resources, and simplify complex operations across distributed environments.</p>
 
-                <div id="technologies" className="mt-7 flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2">
                   {technologies.map((item) => (
                     <span key={item} className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-blue-200">{item}</span>
                   ))}

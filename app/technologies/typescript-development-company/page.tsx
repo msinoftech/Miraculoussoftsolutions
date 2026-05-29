@@ -1,10 +1,61 @@
-"use client";
-import { useMemo } from "react";
-import Link from "next/link";
+import type { Metadata } from "next";
+import Script from "next/script";
 import Marquee from "@/app/components/Marquee";
 import Process from "@/app/components/Process";
 import BoxCard from "@/app/components/BoxCard";
 import CtaStrip from "@/app/components/CtaStrip";
+import Subheading from "@/app/components/ui/Subheading";
+import DefaultButton from "@/app/components/ui/Button/defaultButton";
+import { APP_NAME, BASE_URL, contactInfo } from "@/app/lib/config";
+
+const PAGE_URL = `${BASE_URL}/technologies/typescript-development-company`;
+const TECHNOLOGIES_URL = `${BASE_URL}/technologies`;
+
+export const metadata: Metadata = {
+  title: `TypeScript Development Company | ${APP_NAME}`,
+  description: `Hire expert TypeScript developers from ${APP_NAME}. We build type-safe, scalable applications with strict typing, generics, interfaces, React/Next.js integration, API contracts, and safe refactoring — from type system design to testing and long-term maintenance.`,
+  keywords: [
+    "TypeScript development company",
+    "hire TypeScript developer",
+    "TypeScript development services",
+    "type-safe application development",
+    "TypeScript React development",
+    "TypeScript Next.js integration",
+    "generics and interfaces TypeScript",
+    "JavaScript to TypeScript migration",
+    "Zod schema validation",
+    "Prisma TypeScript",
+    "enterprise TypeScript applications",
+    "strict mode TypeScript",
+    APP_NAME,
+  ],
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: `TypeScript Development Company | ${APP_NAME}`,
+    description: `Type-safe engineering with ${APP_NAME} — interfaces, generics, domain models, API typing, and scalable architectures that catch errors early and support confident refactoring for SaaS and enterprise products.`,
+    url: PAGE_URL,
+    type: "website",
+    siteName: APP_NAME,
+    images: [
+      {
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 1200,
+        height: 630,
+        alt: `${APP_NAME} — TypeScript Development`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@miraculous_soft",
+    creator: "@miraculous_soft",
+    title: `TypeScript Development Company | ${APP_NAME}`,
+    description: `Build better apps with strong typing — TypeScript experts for React, Next.js, API safety, Zod validation, and maintainable codebases that scale with your team.`,
+    images: [`${BASE_URL}${contactInfo.logo}`],
+  },
+};
 
 const steps = [
     {
@@ -32,7 +83,7 @@ const steps = [
       title: "Testing, Optimization & Scaling",
       body: "We validate code with type checks, unit tests, and linting tools. As the application grows, TypeScript ensures safe refactoring, easier scaling, and long-term stability across the codebase.",
     },
-  ];
+];
 
 const reasons = [
   {
@@ -77,6 +128,13 @@ const reasons = [
   },
 ];
 
+const heroStats = [
+  { num: "200+", label: "Projects Delivered" },
+  { num: "8+", label: "Years Experience" },
+  { num: "98+", label: "Client Retention" },
+  { num: "50+", label: "Experts" },
+];
+
 const technologies = [
     "Static Typing & Type Safety",
     "Interfaces & Type Aliases",
@@ -86,7 +144,7 @@ const technologies = [
     "Enums & Literal Types",
     "Modules & Namespaces",
     "TypeScript with React (TSX)",
-  ];
+];
 
 const marqueeItems = [
     "Static Typing & Type Safety",
@@ -107,185 +165,395 @@ const marqueeItems = [
     "Error Handling with Types",
     "Testing with TypeScript (Jest)",
     "Scalable Type Architecture",
-  ];
-
-const aboutCodeLines = [
-{
-    type: "comment",
-    content: "// Next.js-first, production-ready mindset",
-},
-
-{
-    content: [
-    { t: "import", cls: "code-keyword" },
-    { t: " ", cls: "code-muted" },
-    { t: "{ Suspense }", cls: "code-name" },
-    { t: " ", cls: "code-muted" },
-    { t: "from", cls: "code-keyword" },
-    { t: " ", cls: "code-muted" },
-    { t: "'react'", cls: "code-string" },
-    ],
-},
-
-{
-    content: [
-    { t: "import", cls: "code-keyword" },
-    { t: " ", cls: "code-muted" },
-    { t: "Dashboard", cls: "code-name" },
-    { t: " ", cls: "code-muted" },
-    { t: "from", cls: "code-keyword" },
-    { t: " ", cls: "code-muted" },
-    { t: "'@/components/dashboard'", cls: "code-string" },
-    ],
-},
-
-{ content: "\n" },
-
-{
-    content: [
-    { t: "export default", cls: "code-keyword" },
-    { t: " ", cls: "code-muted" },
-    { t: "async function", cls: "code-keyword" },
-    { t: " ", cls: "code-muted" },
-    { t: "App()", cls: "code-name" },
-    { t: " {", cls: "code-muted" },
-    ],
-},
-
-{
-    content: [
-    { t: "  const", cls: "code-keyword" },
-    { t: " ", cls: "code-muted" },
-    { t: "data", cls: "code-name" },
-    { t: " = await ", cls: "code-muted" },
-    { t: "fetch", cls: "code-name" },
-    { t: "('/api/metrics', { cache: 'no-store' });", cls: "code-string" },
-    ],
-},
-
-{ content: "\n" },
-
-{
-    content: [
-    { t: "  return", cls: "code-keyword" },
-    { t: " (", cls: "code-muted" },
-    ],
-},
-
-{
-    content: [
-    { t: "    <", cls: "code-muted" },
-    { t: "Suspense", cls: "code-name" },
-    { t: " fallback=", cls: "code-muted" },
-    { t: "<Loader />", cls: "code-name" },
-    { t: ">", cls: "code-muted" },
-    ],
-},
-
-{
-    content: [
-    { t: "      <", cls: "code-muted" },
-    { t: "Dashboard", cls: "code-name" },
-    ],
-},
-
-{
-    content: [
-    { t: "        data=", cls: "code-muted" },
-    { t: "{data}", cls: "code-string" },
-    ],
-},
-
-{
-    content: [
-    { t: "        performance=", cls: "code-muted" },
-    { t: '"optimized"', cls: "code-string" },
-    ],
-},
-
-{
-    content: [
-    { t: "        seo=", cls: "code-muted" },
-    { t: '"best-in-class"', cls: "code-string" },
-    ],
-},
-
-{
-    content: [{ t: "      />", cls: "code-muted" }],
-},
-
-{
-    content: [{ t: "    </Suspense>", cls: "code-muted" }],
-},
-
-{
-    content: [{ t: "  );", cls: "code-muted" }],
-},
-
-{
-    content: [{ t: "}", cls: "code-muted" }],
-},
 ];
 
-export default function MiraculousPage() {
-  const stats = useMemo(
-    () => [
-      { num: "200+", label: "Projects Delivered" },
-      { num: "8+", label: "Years Experience" },
-      { num: "98%", label: "Client Retention" },
-      { num: "50+", label: "Expert Devs" },
-    ],
-    []
-  );
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: APP_NAME,
+      alternateName: APP_NAME,
+      url: BASE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 512,
+        height: 512,
+      },
+      image: `${BASE_URL}${contactInfo.logo}`,
+      description: `${APP_NAME} delivers expert TypeScript development — strict typing, generics, interfaces, type-safe APIs, and scalable architectures for React, Next.js, and enterprise applications.`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        postalCode: "160062",
+        addressCountry: "IN",
+      },
+      sameAs: [
+        "https://www.facebook.com/miraculoussoft",
+        "https://twitter.com/miraculous_soft",
+        "https://www.instagram.com/miraculous_soft",
+        "https://www.pinterest.com/seomiraculoussoft",
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: ["IN", "Worldwide"],
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: "Worldwide",
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      url: BASE_URL,
+      name: APP_NAME,
+      description: `${APP_NAME} provides TypeScript development services — from type system design and domain modeling through type-safe implementation, testing, and long-term codebase maintenance.`,
+      inLanguage: "en",
+      publisher: { "@id": `${BASE_URL}/#organization` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${PAGE_URL}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: BASE_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Technologies",
+          item: TECHNOLOGIES_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
+          name: "TypeScript Development",
+          item: PAGE_URL,
+        },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${PAGE_URL}/#webpage`,
+      url: PAGE_URL,
+      name: `TypeScript Development Company | ${APP_NAME}`,
+      isPartOf: { "@id": `${BASE_URL}/#website` },
+      about: { "@id": `${PAGE_URL}/#typescript-development` },
+      description: `Hire expert TypeScript developers from ${APP_NAME}. Build type-safe, scalable applications with strict typing, generics, interfaces, and confident refactoring — catch errors early and scale with strong typing.`,
+      inLanguage: "en",
+      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
+      mainEntity: { "@id": `${PAGE_URL}/#typescript-development` },
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#typescript-capabilities`,
+      name: `${APP_NAME} TypeScript Capabilities`,
+      numberOfItems: technologies.length,
+      itemListElement: technologies.map((tech, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}#capability-${tech.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+          name: tech,
+          description: `${tech} — core TypeScript capability delivered by ${APP_NAME}.`,
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#typescript-development-process`,
+      name: `${APP_NAME} TypeScript Development Process`,
+      numberOfItems: steps.length,
+      itemListElement: steps.map((step, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Service",
+          "@id": `${PAGE_URL}#step-${step.num}`,
+          name: `${step.num} — ${step.title}`,
+          description: step.body,
+          url: PAGE_URL,
+          provider: { "@id": `${BASE_URL}/#organization` },
+          areaServed: ["India", "Worldwide"],
+          category: "TypeScript Development Process",
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#why-typescript`,
+      name: `Why Choose ${APP_NAME} for TypeScript`,
+      numberOfItems: reasons.length,
+      itemListElement: reasons.map((reason, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}#reason-${String(index + 1).padStart(2, "0")}`,
+          name: reason.title,
+          description: reason.body,
+        },
+      })),
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${PAGE_URL}/#typescript-development`,
+      name: `${APP_NAME} — TypeScript Development Company`,
+      alternateName: "Hire TypeScript Developers",
+      url: PAGE_URL,
+      description: `${APP_NAME} helps you catch errors early, scale confidently, and build better applications with strong typing — from interfaces and generics to React/Next.js integration and JavaScript migration.`,
+      image: `${BASE_URL}${contactInfo.logo}`,
+      telephone: `+${contactInfo.phone.replace(/[^+\d]/g, "")}`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        addressCountry: "IN",
+      },
+      areaServed: ["India", "Worldwide"],
+      provider: { "@id": `${BASE_URL}/#organization` },
+      serviceType: ["TypeScript Development", ...marqueeItems],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "TypeScript Development Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "TypeScript Development",
+              description: `End-to-end TypeScript development with strict typing, generics, interfaces, React/Next.js TSX, API DTOs, Zod validation, Prisma types, testing, and safe refactoring at scale.`,
+              url: PAGE_URL,
+            },
+          },
+          ...steps.map((step) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: step.title,
+              description: step.body,
+              url: PAGE_URL,
+            },
+          })),
+          ...reasons.map((reason) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: reason.title,
+              description: reason.body,
+              url: PAGE_URL,
+            },
+          })),
+        ],
+      },
+    },
+  ],
+};
 
+const aboutCodeLines = [
+  {
+    type: "comment",
+    content: "// Type-safe API layer — errors caught at compile time",
+  },
+  {
+    content: [
+      { t: "import", cls: "code-keyword" },
+      { t: " { z } ", cls: "code-muted" },
+      { t: "from", cls: "code-keyword" },
+      { t: " ", cls: "code-muted" },
+      { t: "'zod'", cls: "code-string" },
+      { t: ";", cls: "code-muted" },
+    ],
+  },
+  { content: "\n" },
+  {
+    content: [
+      { t: "interface", cls: "code-keyword" },
+      { t: " ", cls: "code-muted" },
+      { t: "User", cls: "code-name" },
+      { t: " {", cls: "code-muted" },
+    ],
+  },
+  {
+    content: [
+      { t: "  id", cls: "code-muted" },
+      { t: ": ", cls: "code-muted" },
+      { t: "string", cls: "code-type" },
+      { t: ";", cls: "code-muted" },
+    ],
+  },
+  {
+    content: [
+      { t: "  name", cls: "code-muted" },
+      { t: ": ", cls: "code-muted" },
+      { t: "string", cls: "code-type" },
+      { t: ";", cls: "code-muted" },
+    ],
+  },
+  {
+    content: [
+      { t: "  email", cls: "code-muted" },
+      { t: ": ", cls: "code-muted" },
+      { t: "string", cls: "code-type" },
+      { t: ";", cls: "code-muted" },
+    ],
+  },
+  {
+    content: [{ t: "}", cls: "code-muted" }],
+  },
+  { content: "\n" },
+  {
+    content: [
+      { t: "const", cls: "code-keyword" },
+      { t: " ", cls: "code-muted" },
+      { t: "UserSchema", cls: "code-name" },
+      { t: " = ", cls: "code-muted" },
+      { t: "z", cls: "code-name" },
+      { t: ".object({ ... });", cls: "code-muted" },
+    ],
+  },
+  { content: "\n" },
+  {
+    content: [
+      { t: "async function", cls: "code-keyword" },
+      { t: " ", cls: "code-muted" },
+      { t: "fetchUser", cls: "code-name" },
+      { t: "<T extends { id: string }>(", cls: "code-muted" },
+    ],
+  },
+  {
+    content: [
+      { t: "  id", cls: "code-muted" },
+      { t: ": ", cls: "code-muted" },
+      { t: "T", cls: "code-type" },
+      { t: '["id"]', cls: "code-muted" },
+      { t: "): ", cls: "code-muted" },
+      { t: "Promise", cls: "code-name" },
+      { t: "<", cls: "code-muted" },
+      { t: "User", cls: "code-type" },
+      { t: "> {", cls: "code-muted" },
+    ],
+  },
+  {
+    content: [
+      { t: "  const", cls: "code-keyword" },
+      { t: " ", cls: "code-muted" },
+      { t: "json", cls: "code-name" },
+      { t: " = await ", cls: "code-muted" },
+      { t: "res", cls: "code-name" },
+      { t: ".json();", cls: "code-muted" },
+    ],
+  },
+  {
+    content: [
+      { t: "  return", cls: "code-keyword" },
+      { t: " ", cls: "code-muted" },
+      { t: "UserSchema", cls: "code-name" },
+      { t: ".parse(json);", cls: "code-muted" },
+    ],
+  },
+  {
+    content: [{ t: "}", cls: "code-muted" }],
+  },
+  { content: "\n" },
+  {
+    content: [
+      { t: "const", cls: "code-keyword" },
+      { t: " ", cls: "code-muted" },
+      { t: "user", cls: "code-name" },
+      { t: ": ", cls: "code-muted" },
+      { t: "User", cls: "code-type" },
+      { t: " = await ", cls: "code-muted" },
+      { t: "fetchUser", cls: "code-name" },
+      { t: '("42");', cls: "code-string" },
+    ],
+  },
+  {
+    content: [
+      { t: "user.email.", cls: "code-muted" },
+      { t: "toLowerCase", cls: "code-name" },
+      { t: "(); ", cls: "code-muted" },
+      { t: "// ✓ IntelliSense & type checks", cls: "code-comment" },
+    ],
+  },
+];
+
+function codePartClassName(cls: string) {
+  switch (cls) {
+    case "code-keyword":
+      return "text-blue-400";
+    case "code-type":
+      return "text-amber-400";
+    case "code-name":
+      return "text-sky-300";
+    case "code-string":
+      return "text-emerald-400";
+    case "code-comment":
+      return "text-zinc-500 italic";
+    case "code-muted":
+      return "text-zinc-400";
+    default:
+      return "text-zinc-200";
+  }
+}
+
+export default function MiraculousPage() {
   return (
     <>
+      <Script id="typescript-development-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
+
         {/* HERO */}
-        <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
+        <section className="relative overflow-hidden bg-white py-16 sm:py-20">
             <div className="grid-bg absolute inset-0 opacity-45" />
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.16))]" />
 
-            <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-[1fr_390px] z-10">
+            <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
               {/* Left Column */}
               <div className="space-y-5">
-                  <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                    <span className="h-[2px] w-7 bg-red-600" />Typescript Development Services
-                  </div>
-
-                  <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-zinc-950 sm:text-[118px] md:text-[140px] lg:text-[168px]">
+                  <Subheading variant="default">Typescript Development Services</Subheading>
+                  <h1 className="uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
                     <span>Build </span>
                     <span className="text-red-600">Apps </span>
                     <span className="hero-outline outline-black">TypeScript</span>
                   </h1>
 
-                  <p className="max-w-xl text-[15px] leading-8 text-zinc-500">TypeScript helps you catch errors early, scale confidently, and build better applications with strong typing.</p>
+                  <p className="text-[15px] leading-8 text-zinc-600">TypeScript helps you catch errors early, scale confidently, and build better applications with strong typing.</p>
 
                   <div className="flex flex-wrap items-center gap-4">
-                      <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                          Start Your Project
-                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                      </Link>
-                      <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                          View Portfolio
-                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                      </Link>
+                      <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
                   </div>
 
-                  <div className="mt-7 grid grid-cols-2 gap-4 pt-7 sm:grid-cols-4">
-                    {stats.map((item) => {
-                        const numberOnly = item.num.replace(/[+%]/g, "");
-                        const suffix = item.num.includes("+") ? "+" : item.num.includes("%") ? "%" : "";
-                        return (
-                        <div key={item.label}>
-                            <div className="font-bebas-neue text-5xl leading-none text-zinc-950">
-                            {numberOnly}
-                            <span className="text-red-600">{suffix}</span>
-                            </div>
-                            <div className="mt-1 text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-950">{item.label}</div>
+                  <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                    {heroStats.map((stat) => (
+                        <div key={stat.label}>
+                        <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
+                        {stat.num.replace(/\+/, "")}
+                        {stat.num.includes("+") && <span className="text-red-600">+</span>}
                         </div>
-                        );
-                    })}
+                        <div className="text-sm text-zinc-950">{stat.label}</div>
+                        </div>
+                    ))}
                   </div>
               </div>
 
@@ -376,70 +644,70 @@ export default function MiraculousPage() {
                 <span className="absolute left-0 top-0 h-6 w-6 rounded-tl-md border-l-2 border-t-2 border-white/70" />
                 <span className="absolute bottom-0 right-0 h-6 w-6 rounded-br-md border-b-2 border-r-2 border-white/70" />
 
-                <pre className="overflow-x-auto text-xs leading-7 md:text-sm" aria-label="Code preview">
-                  {aboutCodeLines.map((line, index) => {
-                    if (line.type === "comment") {
-                      return (
-                        <span key={index} className="block text-zinc-500 italic">
-                          {line.content}
-                        </span>
-                      );
-                    }
-
-                    if (typeof line.content === "string") {
-                      return (
-                        <span key={index} className="block text-zinc-200">
-                          {line.content}
-                        </span>
-                      );
-                    }
-
-                    return (
-                      <span key={index} className="block text-zinc-200">
-                        {line.content.map((part, partIndex) => (
-                          <span
-                            key={partIndex}
-                            className={
-                              part.cls === "code-keyword"
-                                ? "text-blue-400"
-                                : part.cls === "code-string"
-                                ? "text-emerald-400"
-                                : "text-zinc-200"
-                            }
-                          >
-                            {part.t}
+                <div className="w-full overflow-hidden rounded-xl border border-white/[0.08] bg-[#0f0f0f] shadow-2xl">
+                  <div className="flex items-center justify-between border-b border-white/[0.06] px-4 py-2">
+                    <div className="flex items-center gap-2">
+                      <span className="h-3 w-3 rounded-full bg-red-500" />
+                      <span className="h-3 w-3 rounded-full bg-yellow-500" />
+                      <span className="h-3 w-3 rounded-full bg-green-500" />
+                    </div>
+                    <span className="font-mono text-[11px] text-zinc-500">userService.ts</span>
+                  </div>
+                  <pre className="overflow-x-auto p-4 font-mono text-xs leading-7 md:text-sm" aria-label="TypeScript code preview">
+                    {aboutCodeLines.map((line, index) => {
+                      if (line.type === "comment") {
+                        return (
+                          <span key={index} className="block text-zinc-500 italic">
+                            {line.content}
                           </span>
-                        ))}
-                      </span>
-                    );
-                  })}
-                </pre>
+                        );
+                      }
+
+                      if (typeof line.content === "string") {
+                        return line.content === "\n" ? (
+                          <span key={index} className="block h-3" aria-hidden />
+                        ) : (
+                          <span key={index} className="block text-zinc-200">
+                            {line.content}
+                          </span>
+                        );
+                      }
+
+                      return (
+                        <span key={index} className="block whitespace-pre text-zinc-200">
+                          {line.content.map((part, partIndex) => (
+                            <span key={partIndex} className={codePartClassName(part.cls)}>
+                              {part.t}
+                            </span>
+                          ))}
+                        </span>
+                      );
+                    })}
+                  </pre>
+                </div>
               </div>
               {/* right column */}
               <div className="relative space-y-4">
-                <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                    <span className="h-[2px] w-7 bg-red-600" />
-                    Why Typescript With Us
-                </div>
-                <h2 className="text-[50px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[70px] lg:text-[80px]">The Typescript <span className="text-red-600">Advantage</span></h2>
+                <Subheading variant="light">Why Typescript With Us</Subheading>
+                <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">The Typescript <span className="text-red-600">Advantage</span></h2>
                                 
-                <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">
+                <p className="text-[15px] leading-[1.8] text-white">
                 <strong className="text-white">TypeScript brings type safety to modern JavaScript</strong>{" "}
                 —helping you catch errors early, improve code reliability, and build scalable applications with confidence across large codebases.
                 </p>
 
-                <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">
+                <p className="text-[15px] leading-[1.8] text-white">
                 We leverage <strong className="text-white">strong typing, interfaces, generics, and advanced tooling</strong>{" "}
                 to create maintainable architectures that enhance developer productivity and reduce bugs throughout the development lifecycle.
                 </p>
 
-                <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">
+                <p className="text-[15px] leading-[1.8] text-white">
                 From small projects to enterprise platforms, we deliver{" "}
                 <strong className="text-white">robust, predictable, and future-proof applications</strong>{" "}
                 with clean code practices, seamless integrations, and production-ready workflows powered by TypeScript.
                 </p>
 
-                <div id="technologies" className="mt-7 flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2">
                   {technologies.map((item) => (
                     <span key={item} className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-blue-200">{item}</span>
                   ))}
@@ -486,7 +754,7 @@ export default function MiraculousPage() {
           }
           description="Let&apos;s transform your vision into a robust, production-ready TypeScript application. With strong typing, clean architecture, and scalable solutions, we’re ready to build—no matter the size or complexity."
           buttonText="Get a Free Quote →"
-          buttonHref="/"
+          buttonHref="/contact-us"
         />
 
     </>
