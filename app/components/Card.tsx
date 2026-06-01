@@ -64,7 +64,23 @@ export default function Card({
         </div>
         <div className={gridClassName}>
           {items.map((item, index) => {
-            const borderClasses = `${index % 3 !== 2 ? "xl:border-r" : ""} ${index < 3 ? "md:border-b xl:border-b" : ""} ${index % 2 !== 1 ? "md:border-r xl:border-r" : ""} ${index < 4 ? "md:border-b xl:border-b" : ""}`;
+            const total = items.length;
+            const xlCols = 3;
+            const mdCols = 2;
+            const xlRow = Math.floor(index / xlCols);
+            const mdRow = Math.floor(index / mdCols);
+            const xlCol = index % xlCols;
+            const mdCol = index % mdCols;
+            const xlTotalRows = Math.ceil(total / xlCols);
+            const mdTotalRows = Math.ceil(total / mdCols);
+            const borderClasses = [
+              mdCol !== mdCols - 1 && index !== total - 1 && "md:border-r",
+              mdRow < mdTotalRows - 1 && "md:border-b",
+              xlCol !== xlCols - 1 && index !== total - 1 && "xl:border-r",
+              xlRow < xlTotalRows - 1 && "xl:border-b",
+            ]
+              .filter(Boolean)
+              .join(" ");
             const content = (
               <>
                 {item.number ? <div className={indexClassName}>{item.number}</div> : null}

@@ -1,10 +1,61 @@
-import Link from "next/link";
+import type { Metadata } from "next";
+import Script from "next/script";
 import Marquee from "@/app/components/Marquee";
 import Card from "@/app/components/Card";
 import CtaStrip from "@/app/components/CtaStrip";
 import DevelopmentProcess from "@/app/components/DevelopmentProcess";
 import BoxCard from "@/app/components/BoxCard";
+import Subheading from "@/app/components/ui/Subheading";
+import DefaultButton from "@/app/components/ui/Button/defaultButton";
+import DataIntegrationsHubGraph from "@/app/components/graph/DataIntegrationsHubGraph";
+import { APP_NAME, BASE_URL, contactInfo } from "@/app/lib/config";
 
+const PAGE_URL = `${BASE_URL}/technologies/data-and-integrations`;
+const TECHNOLOGIES_URL = `${BASE_URL}/technologies`;
+
+export const metadata: Metadata = {
+  title: `Data & Integrations | ${APP_NAME}`,
+  description: `Hire expert data and integration engineers from ${APP_NAME}. We connect web apps to CRMs, payments, analytics, and warehouses with REST/GraphQL APIs, webhooks, ETL/ELT pipelines, data quality, PII controls, and secure sync — from discovery to production monitoring.`,
+  keywords: [
+    "data integration services",
+    "API integration development",
+    "webhook integration",
+    "ETL ELT data pipelines",
+    "REST GraphQL API development",
+    "CRM ERP integration",
+    "payment gateway integration",
+    "data warehouse integration",
+    "BigQuery Snowflake integration",
+    "data quality governance",
+    "third party app integration",
+    "SaaS data integration",
+    APP_NAME,
+  ],
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: `Data & Integrations | ${APP_NAME}`,
+    description: `Connect your web app to the tools that run your business with ${APP_NAME} — APIs, webhooks, event-driven workflows, ETL/ELT pipelines, CRM/payment connectors, analytics, and warehouse sync with governance and observability.`,
+    url: PAGE_URL,
+    type: "website",
+    siteName: APP_NAME,
+    images: [
+      {
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 1200,
+        height: 630,
+        alt: `${APP_NAME} — Data & Integrations`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Data & Integrations | ${APP_NAME}`,
+    description: `Reliable web app integrations — REST/GraphQL APIs, webhooks, Stripe/CRM connectors, ETL/ELT pipelines, data quality, PII security, migrations, and analytics built for SaaS and enterprise.`,
+    images: [`${BASE_URL}${contactInfo.logo}`],
+  },
+};
 
 const marqueeItems = [
   "API INTEGRATIONS (REST / GRAPHQL)",
@@ -19,6 +70,13 @@ const marqueeItems = [
   "WAREHOUSE & BI (BIGQUERY / SNOWFLAKE)",
   "DATA QUALITY, GOVERNANCE & PII CONTROLS",
   "SYNC, MIGRATIONS & BACKFILL STRATEGIES",
+];
+
+const heroStats = [
+  { num: "150+", label: "Integration Built" },
+  { num: "8+", label: "Years Experience" },
+  { num: "99.9%", label: "Delivery Slo" },
+  { num: "50+", label: "Experts" },
 ];
 
 const aboutCodeLines = [
@@ -291,218 +349,285 @@ const benefits = [
   },
 ];
 
-export default function DataAndIntegrationsPage() {
-    const stats = [
-        { num: "150+", label: "INTEGRATIONS BUILT" },
-        { num: "8+", label: "Years Experience" },
-        { num: "99.9%", label: "DELIVERY SLO" },
-        { num: "50+", label: "Experts" },
-      ];
-    
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: APP_NAME,
+      alternateName: APP_NAME,
+      url: BASE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 512,
+        height: 512,
+      },
+      image: `${BASE_URL}${contactInfo.logo}`,
+      description: `${APP_NAME} delivers data and integration engineering for web apps — REST/GraphQL APIs, webhooks, ETL/ELT pipelines, CRM and payment connectors, warehouse sync, data quality, PII governance, and reliable migrations for SaaS and enterprise products.`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        postalCode: "160062",
+        addressCountry: "IN",
+      },
+      sameAs: [
+        "https://www.facebook.com/miraculoussoft",
+        "https://twitter.com/miraculous_soft",
+        "https://www.instagram.com/miraculous_soft",
+        "https://www.pinterest.com/seomiraculoussoft",
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: ["IN", "Worldwide"],
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: "Worldwide",
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      url: BASE_URL,
+      name: APP_NAME,
+      description: `${APP_NAME} provides data and integration services — from API and webhook design through ETL/ELT pipelines, third-party connectors, analytics instrumentation, warehouse modeling, and ongoing data quality monitoring.`,
+      inLanguage: "en",
+      publisher: { "@id": `${BASE_URL}/#organization` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${PAGE_URL}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: BASE_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Technologies",
+          item: TECHNOLOGIES_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Data & Integrations",
+          item: PAGE_URL,
+        },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${PAGE_URL}/#webpage`,
+      url: PAGE_URL,
+      name: `Data & Integrations | ${APP_NAME}`,
+      isPartOf: { "@id": `${BASE_URL}/#website` },
+      about: { "@id": `${PAGE_URL}/#data-and-integrations` },
+      description: `Hire expert data and integration engineers from ${APP_NAME}. Connect web apps to CRMs, payments, analytics, and warehouses with APIs, webhooks, ETL/ELT pipelines, and secure sync.`,
+      inLanguage: "en",
+      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
+      mainEntity: { "@id": `${PAGE_URL}/#data-and-integrations` },
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#data-integrations-technology-stack`,
+      name: `${APP_NAME} Data & Integrations Technology Stack`,
+      numberOfItems: technologies.length,
+      itemListElement: technologies.map((tech, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}/#tech-${tech.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+          name: tech,
+          description: `${tech} used in ${APP_NAME} data and integration projects.`,
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#data-integrations-capabilities`,
+      name: `${APP_NAME} Data & Integrations Capabilities`,
+      numberOfItems: features.length,
+      itemListElement: features.map((feature, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}/#capability-${feature.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+          name: feature.title,
+          description: feature.description,
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#data-integrations-process`,
+      name: `${APP_NAME} Data & Integrations Delivery Process`,
+      numberOfItems: steps.length,
+      itemListElement: steps.map((step, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Service",
+          "@id": `${PAGE_URL}/#step-${step.num}`,
+          name: `${step.num} — ${step.title}`,
+          description: step.body,
+          url: PAGE_URL,
+          provider: { "@id": `${BASE_URL}/#organization` },
+          areaServed: ["India", "Worldwide"],
+          category: "Data & Integrations Process",
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#data-integrations-benefits`,
+      name: `Why Choose ${APP_NAME} for Data & Integrations`,
+      numberOfItems: benefits.length,
+      itemListElement: benefits.map((benefit, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}/#benefit-${benefit.no}`,
+          name: benefit.title,
+          description: benefit.body,
+        },
+      })),
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${PAGE_URL}/#data-and-integrations`,
+      name: `${APP_NAME} — Data & Integrations Services`,
+      alternateName: "Hire Data Integration Engineers",
+      url: PAGE_URL,
+      description: `${APP_NAME} connects web apps to the tools that run your business — secure APIs, reliable webhooks, ETL/ELT pipelines, CRM and payment connectors, analytics, and warehouse sync with governance and observability built in.`,
+      image: `${BASE_URL}${contactInfo.logo}`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        addressCountry: "IN",
+      },
+      areaServed: ["India", "Worldwide"],
+      provider: { "@id": `${BASE_URL}/#organization` },
+      serviceType: [
+        "Data & Integrations Services",
+        ...technologies,
+        ...features.map((feature) => feature.title),
+        ...marqueeItems,
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Data & Integrations Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Data & Integrations Engineering",
+              description: `End-to-end data and integration services with REST/GraphQL APIs, webhooks, ETL/ELT pipelines, CRM/payment connectors, analytics, warehouse sync, data quality, PII controls, migrations, and monitoring.`,
+              url: PAGE_URL,
+            },
+          },
+          ...features.map((feature) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: feature.title,
+              description: feature.description,
+              url: PAGE_URL,
+            },
+          })),
+          ...steps.map((step) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: step.title,
+              description: step.body,
+              url: PAGE_URL,
+            },
+          })),
+          ...benefits.map((benefit) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: benefit.title,
+              description: benefit.body,
+              url: PAGE_URL,
+            },
+          })),
+        ],
+      },
+    },
+  ],
+};
+
+export default function DataAndIntegrationsPage() {    
     return (
       <>
+        <Script
+          id="data-and-integrations-schema"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
+
         {/* Hero section */}
-        <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
+        <section className="relative overflow-hidden bg-white py-16 sm:py-20">
+            
             <div className="grid-bg absolute inset-0 opacity-45" />
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.16))]" />
 
-            <div className="relative mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 items-start gap-10 px-4 py-14 sm:py-20 lg:grid-cols-[minmax(0,1fr)_520px] lg:gap-14 xl:grid-cols-[minmax(0,1fr)_560px] z-10">
+            <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
                 {/* Left Column */}
                 <div className="space-y-5">
-                    <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                        <span className="h-[2px] w-7 bg-red-600" />Discover the future of tech
-                    </div>
-
-                    <h1 className="font-bebas-neue uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
+                    <Subheading variant="default">Discover the future of tech</Subheading>
+                    <h1 className="uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
                         <span>Data & </span>
                         <span className="text-red-600">Integrations </span>
                         <span className="hero-outline block outline-black">for Web Apps</span>
                     </h1>
 
-                    <p className="max-w-xl text-[15px] leading-8 text-zinc-500">Connect your web app to the tools that run your business—CRMs, payments, analytics, and warehouses—with secure APIs, webhooks, and reliable data pipelines.</p>
+                    <p className="text-[15px] leading-8 text-zinc-600">Connect your web app to the tools that run your business—CRMs, payments, analytics, and warehouses—with secure APIs, webhooks, and reliable data pipelines.</p>
 
                     <div className="flex flex-wrap items-center gap-4">
-                        <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                            Start Your Project
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                        </Link>
-                        <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                            View Portfolio
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                        </Link>
+                      <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
                     </div>
 
-                    <div className="mt-7 grid grid-cols-2 gap-4 pt-7 sm:grid-cols-4">
-                    {stats.map((item) => {
-                        const numberOnly = item.num.replace(/[+%]/g, "");
-                        const suffix = item.num.includes("+") ? "+" : item.num.includes("%") ? "%" : "";
-                        return (
-                        <div key={item.label}>
-                            <div className="font-bebas-neue text-5xl leading-none text-zinc-950">
-                            {numberOnly}
-                            <span className="text-red-600">{suffix}</span>
-                            </div>
-                            <div className="mt-1 text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-950">{item.label}</div>
-                        </div>
-                        );
-                    })}
+                    <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                      {heroStats.map((stat) => (
+                          <div key={stat.label}>
+                          <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
+                          {stat.num.replace(/\+/, "")}
+                          {stat.num.includes("+") && <span className="text-red-600">+</span>}
+                          </div>
+                          <div className="text-sm text-zinc-950">{stat.label}</div>
+                          </div>
+                      ))}
                     </div>
                 </div>
 
-                {/* Right Column */}
-                <div className="relative mx-auto hidden w-full lg:block" aria-hidden="true">
-
-                    {/* New UI: Integration Pipeline Board */}
-                    <div className="relative w-full rounded-2xl border border-zinc-200 bg-[linear-gradient(145deg,#ffffff,#f7f7fb)] shadow-[0_22px_70px_rgba(15,23,42,0.12)] min-h-[520px] xl:min-h-[560px]">
-                      {/* soft grid */}
-                      <div className="pointer-events-none absolute inset-0 opacity-60 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_45%,black,transparent_70%)]">
-                        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(2,6,23,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(2,6,23,0.06)_1px,transparent_1px)] bg-[size:22px_22px]" />
-                      </div>
-
-                      {/* header */}
-                      <div className="relative z-10 flex items-center justify-between border-b border-zinc-200/80 px-5 py-4">
-                        <div className="space-y-0.5">
-                          <div className="text-[11px] font-bold uppercase tracking-[0.14em] text-zinc-500">Integration Pipeline</div>
-                          <div className="text-base font-black text-zinc-950">Sources → Sync → Destinations</div>
-                        </div>
-                        <div className="flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-[11px] font-bold text-emerald-700">
-                          <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                          Healthy
-                        </div>
-                      </div>
-
-                      {/* body */}
-                      <div className="relative z-10 grid grid-cols-[1fr_1.1fr_1fr] gap-3 px-5 py-4">
-                        {/* Sources */}
-                        <div className="rounded-xl border border-zinc-200 bg-white/70 p-3">
-                          <div className="mb-2 flex items-center justify-between">
-                            <div className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-zinc-500">Sources</div>
-                            <div className="text-[10px] font-bold text-zinc-400">3</div>
-                          </div>
-                          <div className="space-y-2">
-                            {[
-                              { name: "Web App DB", meta: "users • orders", tone: "from-blue-50 to-cyan-50 border-blue-200 text-blue-700" },
-                              { name: "Product Events", meta: "clicks • funnels", tone: "from-purple-50 to-pink-50 border-purple-200 text-purple-700" },
-                              { name: "3rd‑party API", meta: "CRM • support", tone: "from-amber-50 to-orange-50 border-amber-200 text-amber-800" },
-                            ].map((s) => (
-                              <div key={s.name} className={`rounded-lg border bg-gradient-to-r ${s.tone} p-2`}>
-                                <div className="flex items-center justify-between">
-                                  <div className="text-[11px] font-extrabold">{s.name}</div>
-                                  <div className="h-2 w-2 rounded-full bg-emerald-500" />
-                                </div>
-                                <div className="mt-0.5 text-[10px] font-semibold text-zinc-600">{s.meta}</div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* Sync Layer */}
-                        <div className="relative overflow-hidden rounded-xl border border-zinc-200 bg-[linear-gradient(180deg,#0b1220,#0a0f1a)] p-3 text-white">
-                          <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-blue-500/25 blur-2xl" />
-                          <div className="pointer-events-none absolute -left-16 -bottom-16 h-48 w-48 rounded-full bg-red-500/15 blur-2xl" />
-
-                          <div className="relative flex items-center justify-between">
-                            <div className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-white/60">Sync Layer</div>
-                            <div className="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[10px] font-bold text-white/70">
-                              idempotent
-                            </div>
-                          </div>
-
-                          <div className="relative mt-3 space-y-2">
-                            <div className="rounded-lg border border-white/10 bg-white/5 p-3">
-                              <div className="flex items-center justify-between">
-                                <div className="text-[12px] font-black">API + Webhooks</div>
-                                <div className="text-[10px] font-bold text-emerald-300">p95 240ms</div>
-                              </div>
-                              <div className="mt-1 text-[10px] text-white/70">Auth • signatures • retries • DLQ</div>
-                              <div className="mt-3 grid grid-cols-3 gap-2">
-                                {[
-                                  { k: "Ack", v: "99.9%" },
-                                  { k: "Lag", v: "1m 42s" },
-                                  { k: "Errors", v: "0" },
-                                ].map((m) => (
-                                  <div key={m.k} className="rounded-md border border-white/10 bg-white/5 p-2">
-                                    <div className="text-[9px] font-bold uppercase tracking-[0.14em] text-white/55">{m.k}</div>
-                                    <div className="mt-0.5 text-[12px] font-black">{m.v}</div>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-
-                            <div className="rounded-lg border border-white/10 bg-white/5 p-3">
-                              <div className="flex items-center justify-between">
-                                <div className="text-[12px] font-black">ETL/ELT</div>
-                                <div className="text-[10px] font-bold text-cyan-300">freshness ok</div>
-                              </div>
-                              <div className="mt-2 flex items-center gap-2">
-                                {["extract", "transform", "load"].map((st, i) => (
-                                  <div key={st} className="flex items-center gap-2">
-                                    <div className="rounded-full bg-white/10 px-2 py-1 text-[10px] font-bold">{st}</div>
-                                    {i < 2 ? <div className="h-[2px] w-4 bg-gradient-to-r from-cyan-400/70 to-transparent" /> : null}
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Destinations */}
-                        <div className="rounded-xl border border-zinc-200 bg-white/70 p-3">
-                          <div className="mb-2 flex items-center justify-between">
-                            <div className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-zinc-500">Destinations</div>
-                            <div className="text-[10px] font-bold text-zinc-400">4</div>
-                          </div>
-
-                          <div className="grid grid-cols-2 gap-2">
-                            {[
-                              { name: "CRM", meta: "contacts", badge: "sync", cls: "border-emerald-200 bg-emerald-50 text-emerald-800" },
-                              { name: "Payments", meta: "invoices", badge: "events", cls: "border-blue-200 bg-blue-50 text-blue-800" },
-                              { name: "Analytics", meta: "funnels", badge: "batch", cls: "border-purple-200 bg-purple-50 text-purple-800" },
-                              { name: "Warehouse", meta: "BI", badge: "models", cls: "border-amber-200 bg-amber-50 text-amber-900" },
-                            ].map((d) => (
-                              <div key={d.name} className="rounded-lg border border-zinc-200 bg-white p-2 shadow-sm">
-                                <div className="flex items-start justify-between gap-2">
-                                  <div>
-                                    <div className="text-[11px] font-extrabold text-zinc-900">{d.name}</div>
-                                    <div className="text-[10px] font-semibold text-zinc-500">{d.meta}</div>
-                                  </div>
-                                  <div className={`rounded-full border px-2 py-0.5 text-[9px] font-bold ${d.cls}`}>{d.badge}</div>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-
-                          <div className="mt-3 rounded-lg border border-zinc-200 bg-gradient-to-r from-zinc-50 to-white p-2">
-                            <div className="flex items-center justify-between">
-                              <div className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-zinc-500">Governance</div>
-                              <div className="text-[10px] font-bold text-zinc-400">PII</div>
-                            </div>
-                            <div className="mt-1 flex flex-wrap gap-2 text-[10px] font-semibold text-zinc-600">
-                              <span className="rounded-full border border-zinc-200 bg-white px-2 py-1">tokenization</span>
-                              <span className="rounded-full border border-zinc-200 bg-white px-2 py-1">audit logs</span>
-                              <span className="rounded-full border border-zinc-200 bg-white px-2 py-1">least privilege</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* footer */}
-                      <div className="relative z-10 grid grid-cols-3 gap-2 border-t border-zinc-200/80 px-5 py-4">
-                        {[
-                          { k: "Events / day", v: "18,240" },
-                          { k: "Dedupe rate", v: "99.7%" },
-                          { k: "Failed deliveries", v: "0" },
-                        ].map((m) => (
-                          <div key={m.k} className="rounded-xl border border-zinc-200 bg-white px-3 py-2 shadow-sm">
-                            <div className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-zinc-500">{m.k}</div>
-                            <div className="mt-0.5 text-[18px] font-black text-zinc-950">{m.v}</div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                </div>
+                <DataIntegrationsHubGraph />
             </div>
         </section>
   
@@ -559,17 +684,11 @@ export default function DataAndIntegrationsPage() {
                 </pre>
               </div>
               {/* right column */}
-              <div className="relative space-y-4">
-                <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                    <span className="h-[2px] w-7 bg-red-600" />
-                    Data & Integrations Overview
-                </div>
-                <h2 className="text-[50px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[70px] lg:text-[80px]">The Data & Integrations <span className="text-red-600">Advantage</span></h2>
-                
-                <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]"><strong className="text-white">Data & integrations make your web app truly operational</strong>{" "} by connecting product workflows with CRMs, payments, support tools, analytics, and data platforms.</p>
-
-                <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">We build <strong className="text-white">secure, reliable, and observable integrations</strong>{" "} with strong schemas, idempotency, retries, and monitoring—so syncs keep working even when third-party systems fail.</p>
-
+              <div className="relative space-y-5">
+                <Subheading variant="light">Data & Integrations Overview</Subheading>
+                <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">The Data & Integrations <span className="text-red-600">Advantage</span></h2>
+                <p className="text-[15px] leading-[1.8] text-white"><strong className="text-white">Data & integrations make your web app truly operational</strong>{" "} by connecting product workflows with CRMs, payments, support tools, analytics, and data platforms.</p>
+                <p className="text-[15px] leading-[1.8] text-white">We build <strong className="text-white">secure, reliable, and observable integrations</strong>{" "} with strong schemas, idempotency, retries, and monitoring—so syncs keep working even when third-party systems fail.</p>
                 <div className="flex flex-wrap gap-2">
                   {technologies.map((item) => (
                     <span key={item} className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-blue-200">{item}</span>
@@ -633,7 +752,7 @@ export default function DataAndIntegrationsPage() {
             }
             description="Let&apos;s connect your web app with the systems you rely on—securely and reliably. Our team is ready when you are — no project too small, no challenge too large."
             buttonText="Get a Free Quote →"
-            buttonHref="/"
+            buttonHref="/contact-us"
         />
   
       </>

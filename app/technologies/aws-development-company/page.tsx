@@ -1,10 +1,61 @@
-"use client";
-import { useMemo } from "react";
-import Link from "next/link";
+import type { Metadata } from "next";
+import Script from "next/script";
 import Marquee from "@/app/components/Marquee";
 import Process from "@/app/components/Process";
 import BoxCard from "@/app/components/BoxCard";
 import CtaStrip from "@/app/components/CtaStrip";
+import Subheading from "@/app/components/ui/Subheading";
+import DefaultButton from "@/app/components/ui/Button/defaultButton";
+import { APP_NAME, BASE_URL, contactInfo } from "@/app/lib/config";
+
+const PAGE_URL = `${BASE_URL}/technologies/aws-development-company`;
+const TECHNOLOGIES_URL = `${BASE_URL}/technologies`;
+
+export const metadata: Metadata = {
+  title: `AWS Development Company | ${APP_NAME}`,
+  description: `Hire expert AWS developers from ${APP_NAME}. We build scalable cloud solutions with EC2, Lambda, S3, VPC, API Gateway, RDS, DynamoDB, ECS/EKS, CloudFormation, CodePipeline, CloudWatch, and IAM — from architecture to deployment and optimization.`,
+  keywords: [
+    "AWS development company",
+    "hire AWS developer",
+    "AWS cloud development services",
+    "AWS Lambda development",
+    "AWS serverless development",
+    "Amazon ECS EKS",
+    "AWS CloudFormation",
+    "AWS CodePipeline CI/CD",
+    "AWS RDS DynamoDB",
+    "AWS API Gateway",
+    "cloud migration AWS",
+    "enterprise AWS solutions",
+    APP_NAME,
+  ],
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: `AWS Development Company | ${APP_NAME}`,
+    description: `Build on AWS with ${APP_NAME} — serverless Lambda, containerized ECS/EKS, IaC with CloudFormation, secure IAM, auto-scaling, CloudFront CDN, and production monitoring for startups and enterprise.`,
+    url: PAGE_URL,
+    type: "website",
+    siteName: APP_NAME,
+    images: [
+      {
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 1200,
+        height: 630,
+        alt: `${APP_NAME} — AWS Development`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@miraculous_soft",
+    creator: "@miraculous_soft",
+    title: `AWS Development Company | ${APP_NAME}`,
+    description: `Hire AWS developers who ship cloud-native systems — Lambda, VPC, S3, RDS, DynamoDB, CodePipeline, CloudWatch, and cost-optimized infrastructure built for scale and uptime.`,
+    images: [`${BASE_URL}${contactInfo.logo}`],
+  },
+};
 
 const marqueeItems = [
     "Scalable Cloud Infrastructure",
@@ -19,6 +70,13 @@ const marqueeItems = [
     "Global CDN Delivery (CloudFront)",
     "Managed Databases (RDS & DynamoDB)",
     "Event-Driven Workflows (SNS & SQS)",
+];
+
+const heroStats = [
+  { num: "200+", label: "APIs BUILT" },
+  { num: "8+", label: "Years Experience" },
+  { num: "98%", label: "Uptime" },
+  { num: "50+", label: "Experts" },
 ];
 
 const aboutCodeLines = [
@@ -112,7 +170,7 @@ const aboutCodeLines = [
         { t: '{ "users": ["John", "Jane"] }', cls: "code-string" },
       ],
     },
-  ];
+];
 
 const technologies = [
     "CI/CD with CodePipeline",
@@ -151,89 +209,274 @@ const steps = [
       title: "Testing, Deployment & Optimization",
       body: "We implement automated testing and deploy via CI/CD pipelines. Using CloudWatch and monitoring tools, we track performance, optimize costs, ensure security, and scale infrastructure dynamically based on demand.",
     },
-  ];
+];
 
-  const reasons = [
+const reasons = [
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud-icon lucide-cloud"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>`,
+    title: "Cloud Expertise on AWS",
+    body: "We design and deploy production-grade cloud solutions using AWS services like EC2, Lambda, and S3—ensuring scalable, secure, and high-performing infrastructure tailored to your business needs.",
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package-icon lucide-package"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></svg>`,
+    title: "Reliable Cloud Deployment",
+    body: "With automated CI/CD pipelines, Infrastructure as Code, and best DevOps practices, we ensure smooth, consistent, and reliable deployments across AWS environments.",
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-airplay-icon lucide-airplay"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><path d="m12 15 5 6H7Z"/></svg>`,
+    title: "High Performance & Availability",
+    body: "AWS enables high availability with load balancing, auto-scaling, and global infrastructure—ensuring your applications perform consistently under any level of traffic.",
+  },
+  {
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M14 15H9v-5"></path><path d="M16 3h5v5"></path><path d="M21 3 9 15"></path></svg>`,
+    title: "Scalable & Future-Ready Architecture",
+    body: "From serverless to container-based systems, we build AWS architectures that scale effortlessly with demand while optimizing cost, security, and performance.",
+  },  
+];
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud-icon lucide-cloud"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>`,
-      title: "Cloud Expertise on AWS",
-      body: "We design and deploy production-grade cloud solutions using AWS services like EC2, Lambda, and S3—ensuring scalable, secure, and high-performing infrastructure tailored to your business needs.",
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: APP_NAME,
+      alternateName: APP_NAME,
+      url: BASE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 512,
+        height: 512,
+      },
+      image: `${BASE_URL}${contactInfo.logo}`,
+      description: `${APP_NAME} delivers expert AWS development — EC2, Lambda, S3, VPC, API Gateway, RDS, DynamoDB, ECS/EKS, CloudFormation, CodePipeline, CloudWatch, IAM, and serverless architectures for SaaS and enterprise cloud products.`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        postalCode: "160062",
+        addressCountry: "IN",
+      },
+      sameAs: [
+        "https://www.facebook.com/miraculoussoft",
+        "https://twitter.com/miraculous_soft",
+        "https://www.instagram.com/miraculous_soft",
+        "https://www.pinterest.com/seomiraculoussoft",
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: ["IN", "Worldwide"],
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: "Worldwide",
+        },
+      ],
     },
     {
-      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package-icon lucide-package"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></svg>`,
-      title: "Reliable Cloud Deployment",
-      body: "With automated CI/CD pipelines, Infrastructure as Code, and best DevOps practices, we ensure smooth, consistent, and reliable deployments across AWS environments.",
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      url: BASE_URL,
+      name: APP_NAME,
+      description: `${APP_NAME} provides AWS development services — from cloud architecture and IaC through serverless apps, container deployments, CI/CD automation, monitoring, and cost-optimized production operations.`,
+      inLanguage: "en",
+      publisher: { "@id": `${BASE_URL}/#organization` },
     },
     {
-      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-airplay-icon lucide-airplay"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><path d="m12 15 5 6H7Z"/></svg>`,
-      title: "High Performance & Availability",
-      body: "AWS enables high availability with load balancing, auto-scaling, and global infrastructure—ensuring your applications perform consistently under any level of traffic.",
+      "@type": "BreadcrumbList",
+      "@id": `${PAGE_URL}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: BASE_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Technologies",
+          item: TECHNOLOGIES_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "AWS Development",
+          item: PAGE_URL,
+        },
+      ],
     },
     {
-      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M14 15H9v-5"></path><path d="M16 3h5v5"></path><path d="M21 3 9 15"></path></svg>`,
-      title: "Scalable & Future-Ready Architecture",
-      body: "From serverless to container-based systems, we build AWS architectures that scale effortlessly with demand while optimizing cost, security, and performance.",
-    },  
-  ];
+      "@type": "WebPage",
+      "@id": `${PAGE_URL}/#webpage`,
+      url: PAGE_URL,
+      name: `AWS Development Company | ${APP_NAME}`,
+      isPartOf: { "@id": `${BASE_URL}/#website` },
+      about: { "@id": `${PAGE_URL}/#aws-development` },
+      description: `Hire expert AWS developers from ${APP_NAME}. Build scalable cloud solutions with Lambda, EC2, S3, VPC, API Gateway, RDS, DynamoDB, ECS, CloudFormation, and CodePipeline.`,
+      inLanguage: "en",
+      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
+      mainEntity: { "@id": `${PAGE_URL}/#aws-development` },
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#aws-technology-stack`,
+      name: `${APP_NAME} AWS Technology Stack`,
+      numberOfItems: technologies.length,
+      itemListElement: technologies.map((tech, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}/#tech-${tech.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+          name: tech,
+          description: `${tech} used in ${APP_NAME} AWS cloud development projects.`,
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#aws-development-process`,
+      name: `${APP_NAME} AWS Development Process`,
+      numberOfItems: steps.length,
+      itemListElement: steps.map((step, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Service",
+          "@id": `${PAGE_URL}/#step-${step.num}`,
+          name: `${step.num} — ${step.title}`,
+          description: step.body,
+          url: PAGE_URL,
+          provider: { "@id": `${BASE_URL}/#organization` },
+          areaServed: ["India", "Worldwide"],
+          category: "AWS Development Process",
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#why-aws`,
+      name: `Why Choose ${APP_NAME} for AWS`,
+      numberOfItems: reasons.length,
+      itemListElement: reasons.map((reason, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}/#reason-${String(index + 1).padStart(2, "0")}`,
+          name: reason.title,
+          description: reason.body,
+        },
+      })),
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${PAGE_URL}/#aws-development`,
+      name: `${APP_NAME} — AWS Development Company`,
+      alternateName: "Hire AWS Developers",
+      url: PAGE_URL,
+      description: `${APP_NAME} engineers production-grade AWS solutions — serverless Lambda, containerized ECS/EKS, secure IAM, auto-scaling, CloudFront CDN, and CloudWatch monitoring. Deploy faster, scale smarter, and optimize cloud costs with expert Amazon Web Services engineering.`,
+      image: `${BASE_URL}${contactInfo.logo}`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        addressCountry: "IN",
+      },
+      areaServed: ["India", "Worldwide"],
+      provider: { "@id": `${BASE_URL}/#organization` },
+      serviceType: ["AWS Development", ...technologies, ...marqueeItems],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "AWS Development Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "AWS Development",
+              description: `End-to-end AWS development with Lambda, EC2, S3, VPC, API Gateway, RDS, DynamoDB, ECS/EKS, CloudFormation, CodePipeline, CloudWatch, SNS/SQS, and cost-optimized cloud operations.`,
+              url: PAGE_URL,
+            },
+          },
+          ...steps.map((step) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: step.title,
+              description: step.body,
+              url: PAGE_URL,
+            },
+          })),
+          ...reasons.map((reason) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: reason.title,
+              description: reason.body,
+              url: PAGE_URL,
+            },
+          })),
+        ],
+      },
+    },
+  ],
+};
 
 export default function AWSDevelopmentCompanyPage() {
-
-    const stats = useMemo(
-        () => [
-          { num: "200+", label: "APIs BUILT" },
-          { num: "8+", label: "Years Experience" },
-          { num: "98%", label: "Uptime" },
-          { num: "50+", label: "Experts" },
-        ],
-        []
-    );
     return (
     <>
+        <Script
+          id="aws-development-schema"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
+
        {/* HERO */}
-       <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
+       <section className="relative overflow-hidden bg-white py-16 sm:py-20">
             <div className="grid-bg absolute inset-0 opacity-45" />
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.16))]" />
-            <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-[1fr_390px] z-10">
+            
+            <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
                 {/* Left Column */}
                 <div className="space-y-5">
-                    <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                        <span className="h-[2px] w-7 bg-red-600" />AWS Development Services
-                    </div>
-
-                    <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-zinc-950 sm:text-[118px] md:text-[140px] lg:text-[168px]">
+                    <Subheading variant="default">AWS Development Services</Subheading>
+                    <h1 className="uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
                         <span>HIRE </span>
                         <span className="text-red-600">AWS</span>
                         <span className="hero-outline block outline-black">DEVELOPERS</span>
                     </h1>
-
-                    <p className="max-w-xl text-[15px] leading-8 text-zinc-500">Build fast, scalable, and real-time backend systems using AWS and modern cloud architecture.</p>
+                    <p className="text-[15px] leading-8 text-zinc-600">Build fast, scalable, and real-time backend systems using AWS and modern cloud architecture.</p>
 
                     <div className="flex flex-wrap items-center gap-4">
-                        <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                            Start Your Project
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                        </Link>
-                        <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                            View Portfolio
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                        </Link>
+                      <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
                     </div>
 
-                    <div className="mt-7 grid grid-cols-2 gap-4 pt-7 sm:grid-cols-4">
-                        {stats.map((item) => {
-                            const numberOnly = item.num.replace(/[+%]/g, "");
-                            const suffix = item.num.includes("+") ? "+" : item.num.includes("%") ? "%" : "";
-                            return (
-                            <div key={item.label}>
-                                <div className="font-bebas-neue text-5xl leading-none text-zinc-950">
-                                {numberOnly}
-                                <span className="text-red-600">{suffix}</span>
-                                </div>
-                                <div className="mt-1 text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-950">{item.label}</div>
-                            </div>
-                            );
-                        })}
+                    <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                      {heroStats.map((stat) => (
+                          <div key={stat.label}>
+                          <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
+                          {stat.num.replace(/\+/, "")}
+                          {stat.num.includes("+") && <span className="text-red-600">+</span>}
+                          </div>
+                          <div className="text-sm text-zinc-950">{stat.label}</div>
+                          </div>
+                      ))}
                     </div>
                 </div>
 
@@ -357,18 +600,11 @@ export default function AWSDevelopmentCompanyPage() {
                 </pre>
               </div>
               {/* right column */}
-              <div className="relative space-y-4">
-                <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                    <span className="h-[2px] w-7 bg-red-600" />
-                    Why AWS With Us
-                </div>
-                <h2 className="text-[50px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[70px] lg:text-[80px]">The AWS <span className="text-red-600">Advantage</span></h2>
-                
-                <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]"><strong className="text-white">AWS powers modern cloud infrastructure</strong>{" "} with highly scalable, secure, and distributed systems—enabling businesses to deploy applications faster, handle massive traffic seamlessly, and ensure high availability across global regions.</p>
-
-                <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">We leverage <strong className="text-white">AWS services like Lambda, EC2, S3, ECS, EKS, and CI/CD pipelines</strong>{" "} to build cloud-native solutions that are resilient, cost-efficient, and optimized for performance at scale.</p>
-
-
+              <div className="relative space-y-5">
+                <Subheading variant="light">Why AWS With Us</Subheading>
+                <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">The AWS <span className="text-red-600">Advantage</span></h2>
+                <p className="text-[15px] leading-[1.8] text-white"><strong className="text-white">AWS powers modern cloud infrastructure</strong>{" "} with highly scalable, secure, and distributed systems—enabling businesses to deploy applications faster, handle massive traffic seamlessly, and ensure high availability across global regions.</p>
+                <p className="text-[15px] leading-[1.8] text-white">We leverage <strong className="text-white">AWS services like Lambda, EC2, S3, ECS, EKS, and CI/CD pipelines</strong>{" "} to build cloud-native solutions that are resilient, cost-efficient, and optimized for performance at scale.</p>
                 <div className="mt-7 flex flex-wrap gap-2">
                   {technologies.map((item) => (
                     <span key={item} className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-blue-200">{item}</span>
@@ -382,7 +618,7 @@ export default function AWSDevelopmentCompanyPage() {
        {/* PROCESS */}
        <Process
           steps={steps}
-          label="NodeJS Backend Development Process"
+          label="AWS Development Process"
           title={
             <>
               YOU BUILD SCALABLE <span className="text-red-600">SYSTEMS</span>
@@ -416,7 +652,7 @@ export default function AWSDevelopmentCompanyPage() {
             }
             description="Let&apos;s turn your vision into a production-grade AWS application. Our team is ready when you are — no project too small, no challenge too large."
             buttonText="Get a Free Quote →"
-            buttonHref="/"
+            buttonHref="/contact-us"
         />
 
     </>

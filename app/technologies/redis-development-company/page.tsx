@@ -1,10 +1,59 @@
-"use client";
-import { useMemo } from "react";
-import Link from "next/link";
+import type { Metadata } from "next";
+import Script from "next/script";
 import Marquee from "@/app/components/Marquee";
 import Process from "@/app/components/Process";
 import BoxCard from "@/app/components/BoxCard";
 import CtaStrip from "@/app/components/CtaStrip";
+import Subheading from "@/app/components/ui/Subheading";
+import DefaultButton from "@/app/components/ui/Button/defaultButton";
+import { APP_NAME, BASE_URL, contactInfo } from "@/app/lib/config";
+
+const PAGE_URL = `${BASE_URL}/technologies/redis-development-company`;
+const TECHNOLOGIES_URL = `${BASE_URL}/technologies`;
+
+export const metadata: Metadata = {
+  title: `Redis Development Company | ${APP_NAME}`,
+  description: `Hire expert Redis developers from ${APP_NAME}. We build in-memory caching, session stores, pub/sub messaging, and real-time data layers with Redis Cluster, Sentinel, RDB/AOF persistence, and sub-millisecond performance — from strategy to production monitoring.`,
+  keywords: [
+    "Redis development company",
+    "hire Redis developer",
+    "Redis development services",
+    "Redis caching solutions",
+    "in-memory database development",
+    "Redis pub/sub messaging",
+    "Redis Cluster Sentinel",
+    "session management Redis",
+    "Redis performance optimization",
+    "real-time data Redis",
+    "enterprise Redis development",
+    "SaaS Redis integration",
+    APP_NAME,
+  ],
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: `Redis Development Company | ${APP_NAME}`,
+    description: `Power real-time apps with ${APP_NAME} — Redis caching, pub/sub, data structures, clustering, high availability, persistence, and cloud-ready deployments for high-traffic SaaS and enterprise systems.`,
+    url: PAGE_URL,
+    type: "website",
+    siteName: APP_NAME,
+    images: [
+      {
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 1200,
+        height: 630,
+        alt: `${APP_NAME} — Redis Development`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Redis Development Company | ${APP_NAME}`,
+    description: `Hire Redis experts — sub-ms latency, distributed caching, pub/sub streams, Cluster & Sentinel HA, atomic ops, and optimized memory for scale and uptime.`,
+    images: [`${BASE_URL}${contactInfo.logo}`],
+  },
+};
 
 const marqueeItems = [
     "Ultra-Fast In-Memory Data Processing",
@@ -19,7 +68,14 @@ const marqueeItems = [
     "High Availability with Redis Sentinel",
     "Atomic Operations & Data Consistency",
     "Cloud-Ready Redis Deployments",
-  ];
+];
+
+const heroStats = [
+  { num: "150+", label: "Integration Built" },
+  { num: "8+", label: "Years Experience" },
+  { num: "99.9%", label: "Delivery Slo" },
+  { num: "50+", label: "Experts" },
+];
 
 const aboutCodeLines = [
     {
@@ -215,165 +271,348 @@ const reasons = [
     },  
 ];
 
-export default function PostgresqlDevelopmentCompanyPage() {
-
-    const stats = useMemo(
-        () => [
-          { num: "200+", label: "APIs BUILT" },
-          { num: "8+", label: "Years Experience" },
-          { num: "98%", label: "Uptime" },
-          { num: "50+", label: "Experts" },
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: APP_NAME,
+      alternateName: APP_NAME,
+      url: BASE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 512,
+        height: 512,
+      },
+      image: `${BASE_URL}${contactInfo.logo}`,
+      description: `${APP_NAME} delivers expert Redis development — in-memory caching, session management, pub/sub messaging, data structures, Redis Cluster, Sentinel HA, RDB/AOF persistence, and sub-millisecond real-time performance for SaaS and enterprise applications.`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        postalCode: "160062",
+        addressCountry: "IN",
+      },
+      sameAs: [
+        "https://www.facebook.com/miraculoussoft",
+        "https://twitter.com/miraculous_soft",
+        "https://www.instagram.com/miraculous_soft",
+        "https://www.pinterest.com/seomiraculoussoft",
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: ["IN", "Worldwide"],
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: "Worldwide",
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      url: BASE_URL,
+      name: APP_NAME,
+      description: `${APP_NAME} provides Redis development services — from caching strategy and provisioning through integration, clustering, Sentinel failover, performance tuning, and production monitoring.`,
+      inLanguage: "en",
+      publisher: { "@id": `${BASE_URL}/#organization` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${PAGE_URL}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: BASE_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Technologies",
+          item: TECHNOLOGIES_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Redis Development",
+          item: PAGE_URL,
+        },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${PAGE_URL}/#webpage`,
+      url: PAGE_URL,
+      name: `Redis Development Company | ${APP_NAME}`,
+      isPartOf: { "@id": `${BASE_URL}/#website` },
+      about: { "@id": `${PAGE_URL}/#redis-development` },
+      description: `Hire expert Redis developers from ${APP_NAME}. Build in-memory caching, pub/sub messaging, and real-time data layers with Cluster, Sentinel, and sub-millisecond performance.`,
+      inLanguage: "en",
+      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
+      mainEntity: { "@id": `${PAGE_URL}/#redis-development` },
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#redis-technology-stack`,
+      name: `${APP_NAME} Redis Technology Stack`,
+      numberOfItems: technologies.length,
+      itemListElement: technologies.map((tech, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}/#tech-${tech.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+          name: tech,
+          description: `${tech} used in ${APP_NAME} Redis development projects.`,
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#redis-development-process`,
+      name: `${APP_NAME} Redis Development Process`,
+      numberOfItems: steps.length,
+      itemListElement: steps.map((step, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Service",
+          "@id": `${PAGE_URL}/#step-${step.num}`,
+          name: `${step.num} — ${step.title}`,
+          description: step.body,
+          url: PAGE_URL,
+          provider: { "@id": `${BASE_URL}/#organization` },
+          areaServed: ["India", "Worldwide"],
+          category: "Redis Development Process",
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#why-redis`,
+      name: `Why Choose ${APP_NAME} for Redis`,
+      numberOfItems: reasons.length,
+      itemListElement: reasons.map((reason, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}/#reason-${String(index + 1).padStart(2, "0")}`,
+          name: reason.title,
+          description: reason.body,
+        },
+      })),
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${PAGE_URL}/#redis-development`,
+      name: `${APP_NAME} — Redis Development Company`,
+      alternateName: "Hire Redis Developers",
+      url: PAGE_URL,
+      description: `${APP_NAME} engineers production-grade Redis systems — blazing-fast in-memory caching, pub/sub event streaming, rich data structures, Cluster scaling, and Sentinel failover for always-on real-time applications.`,
+      image: `${BASE_URL}${contactInfo.logo}`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        addressCountry: "IN",
+      },
+      areaServed: ["India", "Worldwide"],
+      provider: { "@id": `${BASE_URL}/#organization` },
+      serviceType: ["Redis Development", ...technologies, ...marqueeItems],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Redis Development Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Redis Development",
+              description: `End-to-end Redis development with caching strategy, provisioning, data structuring, backend integration, Cluster and Sentinel HA, RDB/AOF persistence, and performance monitoring.`,
+              url: PAGE_URL,
+            },
+          },
+          ...steps.map((step) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: step.title,
+              description: step.body,
+              url: PAGE_URL,
+            },
+          })),
+          ...reasons.map((reason) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: reason.title,
+              description: reason.body,
+              url: PAGE_URL,
+            },
+          })),
         ],
-        []
-    );
+      },
+    },
+  ],
+};
+
+export default function RedisDevelopmentCompanyPage() {
     return (
     <>
+        <Script
+          id="redis-development-schema"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
+
        {/* HERO */}
-       <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
-            <div className="grid-bg absolute inset-0 opacity-45" />
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
-            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.16))]" />
-            <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-[1fr_390px] z-10">
-                {/* Left Column */}
-                <div className="space-y-5">
-                    <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                        <span className="h-[2px] w-7 bg-red-600" />Redis Real-Time Data Services
-                    </div>
-
-                    <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-zinc-950 sm:text-[118px] md:text-[140px] lg:text-[168px]">
-                        <span>HIRE </span>
-                        <span className="text-red-600">REDIS</span>
-                        <span className="hero-outline block outline-black">DEVELOPERS</span>
-                    </h1>
-
-                    <p className="max-w-xl text-[15px] leading-8 text-zinc-500">Power ultra-fast, real-time applications with Redis—leveraging in-memory caching, live data streaming, and sub-millisecond performance for modern scalable systems.</p>
-
-                    <div className="flex flex-wrap items-center gap-4">
-                        <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                            Start Your Project
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                        </Link>
-                        <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                            View Portfolio
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                        </Link>
-                    </div>
-
-                    <div className="mt-7 grid grid-cols-2 gap-4 pt-7 sm:grid-cols-4">
-                        {stats.map((item) => {
-                            const numberOnly = item.num.replace(/[+%]/g, "");
-                            const suffix = item.num.includes("+") ? "+" : item.num.includes("%") ? "%" : "";
-                            return (
-                            <div key={item.label}>
-                                <div className="font-bebas-neue text-5xl leading-none text-zinc-950">
-                                {numberOnly}
-                                <span className="text-red-600">{suffix}</span>
-                                </div>
-                                <div className="mt-1 text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-950">{item.label}</div>
-                            </div>
-                            );
-                        })}
-                    </div>
-                </div>
-
-                {/* Right Column */}
-                <div className="relative mx-auto hidden aspect-square w-full max-w-[440px] lg:block" aria-hidden="true">
-
-                    {/* Rings (faster + real-time vibe) */}
-                    <div className="absolute inset-0 rounded-full border-2 border-red-500/20 hero-ring" />
-                    <div className="absolute inset-[42px] rounded-full border border-orange-500/25 hero-ring-2" />
-                    <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-400 hero-ring-3" />
-
-                    {/* CENTER CORE */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-
-                        {/* CLIENT */}
-                        <div className="w-fit mx-auto rounded-xl bg-white px-3 py-1 shadow-sm">
-                        <span className="text-xs text-red-600">Client / API Request</span>
+       <section className="relative overflow-hidden bg-white py-16 sm:py-20">
+          <div className="grid-bg absolute inset-0 opacity-45" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.16))]" />
+          
+          <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
+              {/* Left Column */}
+              <div className="space-y-5">
+                  <Subheading variant="default">Redis Real-Time Data Services</Subheading>
+                  <h1 className="uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
+                      <span>HIRE </span>
+                      <span className="text-red-600">REDIS</span>
+                      <span className="hero-outline block outline-black">DEVELOPERS</span>
+                  </h1>
+                  <p className="max-w-xl text-[15px] leading-8 text-zinc-500">Power ultra-fast, real-time applications with Redis—leveraging in-memory caching, live data streaming, and sub-millisecond performance for modern scalable systems.</p>
+                  <div className="flex flex-wrap items-center gap-4">
+                    <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
+                  </div>
+                  <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                    {heroStats.map((stat) => (
+                        <div key={stat.label}>
+                        <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
+                        {stat.num.replace(/\+/, "")}
+                        {stat.num.includes("+") && <span className="text-red-600">+</span>}
                         </div>
-
-                        {/* Connector */}
-                        <div className="mx-auto h-8 w-[3px] bg-gradient-to-b from-red-400/60 to-transparent" />
-
-                        {/* REDIS CORE */}
-                        <div className="w-[260px] rounded-2xl border border-zinc-200 bg-white p-4 shadow-[0_10px_26px_rgba(15,23,42,0.10)]">
-                        <div className="mb-3 text-center text-xs font-semibold tracking-wide text-red-600">
-                            Redis In-Memory Engine
+                        <div className="text-sm text-zinc-950">{stat.label}</div>
                         </div>
+                    ))}
+                  </div>
+              </div>
 
-                        {/* DATA STRUCTURES */}
-                        <div className="grid grid-cols-2 gap-3 text-[10px]">
-                            <div className="rounded-lg border border-red-200 bg-red-50 p-2 text-center text-red-600">
-                            Strings
-                            </div>
-                            <div className="rounded-lg border border-orange-200 bg-orange-50 p-2 text-center text-orange-600">
-                            Hashes
-                            </div>
-                            <div className="rounded-lg border border-yellow-200 bg-yellow-50 p-2 text-center text-yellow-700">
-                            Lists
-                            </div>
-                            <div className="rounded-lg border border-pink-200 bg-pink-50 p-2 text-center text-pink-600">
-                            Sets
-                            </div>
-                        </div>
-                        </div>
+              {/* Right Column */}
+              <div className="relative mx-auto hidden aspect-square w-full max-w-[440px] lg:block" aria-hidden="true">
 
-                        {/* Connector */}
-                        <div className="mx-auto h-8 w-[3px] bg-gradient-to-b from-red-400/60 to-transparent" />
+                  {/* Rings (faster + real-time vibe) */}
+                  <div className="absolute inset-0 rounded-full border-2 border-red-500/20 hero-ring" />
+                  <div className="absolute inset-[42px] rounded-full border border-orange-500/25 hero-ring-2" />
+                  <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-400 hero-ring-3" />
 
-                        {/* CACHE + PUBSUB */}
-                        <div className="flex gap-6">
+                  {/* CENTER CORE */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
 
-                        {/* CACHE */}
-                        <div className="w-[120px] rounded-xl border border-zinc-200 bg-white p-3 shadow-sm">
-                            <div className="mb-2 text-center text-[12px] text-emerald-600">
-                            Cache Layer
-                            </div>
+                      {/* CLIENT */}
+                      <div className="w-fit mx-auto rounded-xl bg-white px-3 py-1 shadow-sm">
+                      <span className="text-xs text-red-600">Client / API Request</span>
+                      </div>
 
-                            <div className="flex justify-center gap-1">
-                            {[...Array(3)].map((_, i) => (
-                                <div key={i} className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                            ))}
-                            </div>
-                        </div>
+                      {/* Connector */}
+                      <div className="mx-auto h-8 w-[3px] bg-gradient-to-b from-red-400/60 to-transparent" />
 
-                        {/* PUB SUB */}
-                        <div className="w-[120px] rounded-xl border border-zinc-200 bg-white p-3 shadow-sm">
-                            <div className="mb-2 text-center text-[12px] text-purple-600">
-                            Pub / Sub
-                            </div>
+                      {/* REDIS CORE */}
+                      <div className="w-[260px] rounded-2xl border border-zinc-200 bg-white p-4 shadow-[0_10px_26px_rgba(15,23,42,0.10)]">
+                      <div className="mb-3 text-center text-xs font-semibold tracking-wide text-red-600">
+                          Redis In-Memory Engine
+                      </div>
 
-                            <div className="flex justify-center gap-1">
-                            {[...Array(3)].map((_, i) => (
-                                <div key={i} className="h-3 w-3 rounded-full bg-purple-500 animate-ping" />
-                            ))}
-                            </div>
-                        </div>
+                      {/* DATA STRUCTURES */}
+                      <div className="grid grid-cols-2 gap-3 text-[10px]">
+                          <div className="rounded-lg border border-red-200 bg-red-50 p-2 text-center text-red-600">
+                          Strings
+                          </div>
+                          <div className="rounded-lg border border-orange-200 bg-orange-50 p-2 text-center text-orange-600">
+                          Hashes
+                          </div>
+                          <div className="rounded-lg border border-yellow-200 bg-yellow-50 p-2 text-center text-yellow-700">
+                          Lists
+                          </div>
+                          <div className="rounded-lg border border-pink-200 bg-pink-50 p-2 text-center text-pink-600">
+                          Sets
+                          </div>
+                      </div>
+                      </div>
 
-                        </div>
+                      {/* Connector */}
+                      <div className="mx-auto h-8 w-[3px] bg-gradient-to-b from-red-400/60 to-transparent" />
 
-                        {/* Connector */}
-                        <div className="mx-auto h-8 w-[3px] bg-gradient-to-b from-orange-400/60 to-transparent" />
+                      {/* CACHE + PUBSUB */}
+                      <div className="flex gap-6">
 
-                        {/* PERSISTENCE */}
-                        <div className="w-fit mx-auto rounded-xl border border-zinc-200 bg-white px-4 py-2 shadow-sm">
-                        <span className="text-xs text-orange-600">Persistence (RDB / AOF)</span>
-                        </div>
+                      {/* CACHE */}
+                      <div className="w-[120px] rounded-xl border border-zinc-200 bg-white p-3 shadow-sm">
+                          <div className="mb-2 text-center text-[12px] text-emerald-600">
+                          Cache Layer
+                          </div>
 
-                        {/* Tagline */}
-                        <div className="text-center text-[12px] font-semibold tracking-wide text-zinc-600 mt-2">
-                        Real-Time, In-Memory & Ultra-Fast Data Engine
-                        </div>
-                    </div>
+                          <div className="flex justify-center gap-1">
+                          {[...Array(3)].map((_, i) => (
+                              <div key={i} className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                          ))}
+                          </div>
+                      </div>
 
-                    {/* FLOATING FEATURES */}
-                    <div className="hero-float absolute right-6 top-1/3 rounded-lg bg-white/90 backdrop-blur px-3 py-1 text-xs font-semibold text-red-600">Sub-ms Latency</div>
-                    <div className="hero-float absolute bottom-12 left-6 rounded-lg bg-white/90 backdrop-blur px-3 py-1 text-xs font-semibold text-emerald-600">Smart Caching</div>
-                    <div className="hero-float absolute left-6 top-1/3 rounded-lg bg-white/90 backdrop-blur px-3 py-1 text-xs font-semibold text-purple-600">Real-Time Events</div>
-                    <div className="absolute bottom-[120px] left-[20px] hero-float rounded-lg bg-white/90 backdrop-blur px-3 py-1 text-xs font-semibold text-orange-600">High Availability</div>
-                    <div className="absolute bottom-[120px] right-[20px] hero-float rounded-lg bg-white/90 backdrop-blur px-3 py-1 text-xs font-semibold text-pink-600">Horizontal Scaling</div>
-                </div>
-            </div>
+                      {/* PUB SUB */}
+                      <div className="w-[120px] rounded-xl border border-zinc-200 bg-white p-3 shadow-sm">
+                          <div className="mb-2 text-center text-[12px] text-purple-600">
+                          Pub / Sub
+                          </div>
+
+                          <div className="flex justify-center gap-1">
+                          {[...Array(3)].map((_, i) => (
+                              <div key={i} className="h-3 w-3 rounded-full bg-purple-500 animate-ping" />
+                          ))}
+                          </div>
+                      </div>
+
+                      </div>
+
+                      {/* Connector */}
+                      <div className="mx-auto h-8 w-[3px] bg-gradient-to-b from-orange-400/60 to-transparent" />
+
+                      {/* PERSISTENCE */}
+                      <div className="w-fit mx-auto rounded-xl border border-zinc-200 bg-white px-4 py-2 shadow-sm">
+                      <span className="text-xs text-orange-600">Persistence (RDB / AOF)</span>
+                      </div>
+
+                      {/* Tagline */}
+                      <div className="text-center text-[12px] font-semibold tracking-wide text-zinc-600 mt-2">
+                      Real-Time, In-Memory & Ultra-Fast Data Engine
+                      </div>
+                  </div>
+
+                  {/* FLOATING FEATURES */}
+                  <div className="hero-float absolute right-6 top-1/3 rounded-lg bg-white/90 backdrop-blur px-3 py-1 text-xs font-semibold text-red-600">Sub-ms Latency</div>
+                  <div className="hero-float absolute bottom-12 left-6 rounded-lg bg-white/90 backdrop-blur px-3 py-1 text-xs font-semibold text-emerald-600">Smart Caching</div>
+                  <div className="hero-float absolute left-6 top-1/3 rounded-lg bg-white/90 backdrop-blur px-3 py-1 text-xs font-semibold text-purple-600">Real-Time Events</div>
+                  <div className="absolute bottom-[120px] left-[20px] hero-float rounded-lg bg-white/90 backdrop-blur px-3 py-1 text-xs font-semibold text-orange-600">High Availability</div>
+                  <div className="absolute bottom-[120px] right-[20px] hero-float rounded-lg bg-white/90 backdrop-blur px-3 py-1 text-xs font-semibold text-pink-600">Horizontal Scaling</div>
+              </div>
+          </div>
         </section>
 
         {/* Marquee Section */}
@@ -429,16 +668,13 @@ export default function PostgresqlDevelopmentCompanyPage() {
                 </pre>
               </div>
               {/* right column */}
-              <div className="relative space-y-4">
-                <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                    <span className="h-[2px] w-7 bg-red-600" />
-                    Why Redis With Us
-                </div>
-                <h2 className="text-[50px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[70px] lg:text-[80px]">The Redis <span className="text-red-600">Real-Time Engine</span></h2>
+              <div className="relative space-y-5">
+                <Subheading variant="light">Why Redis With Us</Subheading>
+                <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">The Redis <span className="text-red-600">Real-Time Engine</span></h2>
                 
-                <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]"><strong className="text-white">Redis powers ultra-fast, real-time applications</strong>{" "} with in-memory data storage, sub-millisecond latency, and instant data access—making it ideal for caching, live analytics, and high-performance user experiences at scale.</p>
+                <p className="text-[15px] leading-[1.8] text-white">Redis powers ultra-fast, real-time applications with in-memory data storage, sub-millisecond latency, and instant data access—making it ideal for caching, live analytics, and high-performance user experiences at scale.</p>
 
-                <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">We leverage <strong className="text-white">efficient key design, advanced data structures, and distributed caching strategies</strong>{" "} to build Redis-powered systems that handle massive traffic, enable real-time data flow, and ensure seamless scalability across modern cloud architectures.</p>
+                <p className="text-[15px] leading-[1.8] text-white">We leverage efficient key design, advanced data structures, and distributed caching strategies to build Redis-powered systems that handle massive traffic, enable real-time data flow, and ensure seamless scalability across modern cloud architectures.</p>
 
                 <div className="flex flex-wrap gap-2">
                   {technologies.map((item) => (
@@ -453,10 +689,10 @@ export default function PostgresqlDevelopmentCompanyPage() {
        {/* PROCESS */}
        <Process
           steps={steps}
-          label="Redis Real-Time Data Process"
+          label="Redis Real-Time Data Deployment Process"
           title={
             <>
-              YOU BUILD REAL-TIME <span className="text-red-600">REDIS SYSTEMS</span>
+              HAVE A REAL-TIME <span className="text-red-600">REDIS SYSTEMS</span>
             </>
           }
           description="From caching strategy to real-time data flow, we build Redis-powered systems with sub-millisecond latency, high availability, and scalable in-memory architecture—perfect for modern high-performance applications."
@@ -480,14 +716,14 @@ export default function PostgresqlDevelopmentCompanyPage() {
         <CtaStrip
             title={
                 <>
-                BUILD REAL-TIME
+                HAVE A REAL-TIME
                 <br />
                 APPS <span className="text-black">AT SCALE?</span>
                 </>
             }
             description="Power your applications with Redis—achieve lightning-fast performance, seamless scalability, and real-time data processing for caching, streaming, and event-driven systems."
             buttonText="Get a Free Quote →"
-            buttonHref="/"
+            buttonHref="/contact-us"
         />
 
     </>

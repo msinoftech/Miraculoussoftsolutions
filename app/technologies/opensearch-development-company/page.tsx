@@ -1,10 +1,59 @@
-"use client";
-import { useMemo, useEffect, useState } from "react";
-import Link from "next/link";
+import type { Metadata } from "next";
+import Script from "next/script";
 import Marquee from "@/app/components/Marquee";
 import Process from "@/app/components/Process";
 import BoxCard from "@/app/components/BoxCard";
 import CtaStrip from "@/app/components/CtaStrip";
+import Subheading from "@/app/components/ui/Subheading";
+import DefaultButton from "@/app/components/ui/Button/defaultButton";
+import { APP_NAME, BASE_URL, contactInfo } from "@/app/lib/config";
+
+const PAGE_URL = `${BASE_URL}/technologies/opensearch-development-company`;
+const TECHNOLOGIES_URL = `${BASE_URL}/technologies`;
+
+export const metadata: Metadata = {
+  title: `OpenSearch Development Company | ${APP_NAME}`,
+  description: `Hire expert OpenSearch developers from ${APP_NAME}. We build full-text search, log analytics, and real-time insights with distributed clusters, indexing pipelines, Query DSL, sharding, replication, and relevance tuning — from strategy to production monitoring.`,
+  keywords: [
+    "OpenSearch development company",
+    "hire OpenSearch developer",
+    "OpenSearch development services",
+    "Elasticsearch OpenSearch consulting",
+    "full-text search development",
+    "log analytics OpenSearch",
+    "OpenSearch cluster setup",
+    "search relevance tuning",
+    "distributed search architecture",
+    "OpenSearch indexing pipelines",
+    "enterprise search solutions",
+    "SaaS OpenSearch integration",
+    APP_NAME,
+  ],
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: `OpenSearch Development Company | ${APP_NAME}`,
+    description: `Deliver fast search and analytics with ${APP_NAME} — OpenSearch full-text search, aggregations, JSON indexing, sharding, HA replication, secure clusters, and cloud deployments for SaaS and enterprise data platforms.`,
+    url: PAGE_URL,
+    type: "website",
+    siteName: APP_NAME,
+    images: [
+      {
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 1200,
+        height: 630,
+        alt: `${APP_NAME} — OpenSearch Development`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `OpenSearch Development Company | ${APP_NAME}`,
+    description: `Hire OpenSearch experts — full-text search, near real-time indexing, Query DSL, log analytics, shard/replica HA, and production clusters built for relevance and scale.`,
+    images: [`${BASE_URL}${contactInfo.logo}`],
+  },
+};
 
 const marqueeItems = [
     "Full-Text Search & Relevance Scoring",
@@ -176,6 +225,13 @@ const aboutCodeLines = [
 },
 ];
 
+const heroStats = [
+  { num: "150+", label: "Integration Built" },
+  { num: "8+", label: "Years Experience" },
+  { num: "99.9%", label: "Delivery Slo" },
+  { num: "50+", label: "Experts" },
+];
+
 const technologies = [
     "Advanced Search with Relevance Tuning",
     "Powerful Aggregations & Insights",
@@ -238,76 +294,251 @@ const reasons = [
     },  
 ];
 
-export default function PostgresqlDevelopmentCompanyPage() {
-
-    const stats = useMemo(
-        () => [
-          { num: "200+", label: "APIs BUILT" },
-          { num: "8+", label: "Years Experience" },
-          { num: "98%", label: "Uptime" },
-          { num: "50+", label: "Experts" },
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: APP_NAME,
+      alternateName: APP_NAME,
+      url: BASE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 512,
+        height: 512,
+      },
+      image: `${BASE_URL}${contactInfo.logo}`,
+      description: `${APP_NAME} delivers expert OpenSearch development — full-text search, log analytics, distributed clusters, indexing pipelines, Query DSL, sharding, replication, relevance tuning, and secure cloud-native search for SaaS and enterprise platforms.`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        postalCode: "160062",
+        addressCountry: "IN",
+      },
+      sameAs: [
+        "https://www.facebook.com/miraculoussoft",
+        "https://twitter.com/miraculous_soft",
+        "https://www.instagram.com/miraculous_soft",
+        "https://www.pinterest.com/seomiraculoussoft",
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: ["IN", "Worldwide"],
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: "Worldwide",
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      url: BASE_URL,
+      name: APP_NAME,
+      description: `${APP_NAME} provides OpenSearch development services — from search strategy and cluster setup through data indexing, sharding, replication, query optimization, and production monitoring.`,
+      inLanguage: "en",
+      publisher: { "@id": `${BASE_URL}/#organization` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${PAGE_URL}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: BASE_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Technologies",
+          item: TECHNOLOGIES_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "OpenSearch Development",
+          item: PAGE_URL,
+        },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${PAGE_URL}/#webpage`,
+      url: PAGE_URL,
+      name: `OpenSearch Development Company | ${APP_NAME}`,
+      isPartOf: { "@id": `${BASE_URL}/#website` },
+      about: { "@id": `${PAGE_URL}/#opensearch-development` },
+      description: `Hire expert OpenSearch developers from ${APP_NAME}. Build full-text search, log analytics, and real-time insights with distributed clusters, indexing, and relevance-tuned queries.`,
+      inLanguage: "en",
+      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
+      mainEntity: { "@id": `${PAGE_URL}/#opensearch-development` },
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#opensearch-technology-stack`,
+      name: `${APP_NAME} OpenSearch Technology Stack`,
+      numberOfItems: technologies.length,
+      itemListElement: technologies.map((tech, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}/#tech-${tech.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+          name: tech,
+          description: `${tech} used in ${APP_NAME} OpenSearch development projects.`,
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#opensearch-development-process`,
+      name: `${APP_NAME} OpenSearch Development Process`,
+      numberOfItems: steps.length,
+      itemListElement: steps.map((step, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Service",
+          "@id": `${PAGE_URL}/#step-${step.num}`,
+          name: `${step.num} — ${step.title}`,
+          description: step.body,
+          url: PAGE_URL,
+          provider: { "@id": `${BASE_URL}/#organization` },
+          areaServed: ["India", "Worldwide"],
+          category: "OpenSearch Development Process",
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#why-opensearch`,
+      name: `Why Choose ${APP_NAME} for OpenSearch`,
+      numberOfItems: reasons.length,
+      itemListElement: reasons.map((reason, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}/#reason-${String(index + 1).padStart(2, "0")}`,
+          name: reason.title,
+          description: reason.body,
+        },
+      })),
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${PAGE_URL}/#opensearch-development`,
+      name: `${APP_NAME} — OpenSearch Development Company`,
+      alternateName: "Hire OpenSearch Developers",
+      url: PAGE_URL,
+      description: `${APP_NAME} engineers production-grade OpenSearch platforms — intelligent full-text search, near real-time indexing, powerful aggregations, shard/replica HA, and relevance-tuned queries for search, observability, and analytics at scale.`,
+      image: `${BASE_URL}${contactInfo.logo}`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        addressCountry: "IN",
+      },
+      areaServed: ["India", "Worldwide"],
+      provider: { "@id": `${BASE_URL}/#organization` },
+      serviceType: ["OpenSearch Development", ...technologies, ...marqueeItems],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "OpenSearch Development Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "OpenSearch Development",
+              description: `End-to-end OpenSearch development with search strategy, cluster setup, data indexing, sharding and replication, Query DSL, relevance tuning, aggregations, security, and production monitoring.`,
+              url: PAGE_URL,
+            },
+          },
+          ...steps.map((step) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: step.title,
+              description: step.body,
+              url: PAGE_URL,
+            },
+          })),
+          ...reasons.map((reason) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: reason.title,
+              description: reason.body,
+              url: PAGE_URL,
+            },
+          })),
         ],
-        []
-    );
+      },
+    },
+  ],
+};
 
-    const [step, setStep] = useState(0);
-    const [time, setTime] = useState(8);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-        setStep((prev) => (prev + 1) % 4);
-        setTime(Math.floor(Math.random() * 10) + 5); // 5–15ms
-        }, 1200);
-
-        return () => clearInterval(interval);
-    }, []);
+export default function OpensearchDevelopmentCompanyPage() {
     return (
     <>
+        <Script
+          id="opensearch-development-schema"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
+
        {/* HERO */}
-       <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
+       <section className="relative overflow-hidden bg-white py-16 sm:py-20">
             <div className="grid-bg absolute inset-0 opacity-45" />
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.16))]" />
-            <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-[1fr_390px] z-10">
+            
+            <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
                 {/* Left Column */}
                 <div className="space-y-5">
-                    <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                        <span className="h-[2px] w-7 bg-red-600" />OpenSearch Development Services
-                    </div>
+                    <Subheading variant="default">OpenSearch Development Services</Subheading>
 
-                    <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-zinc-950 sm:text-[118px] md:text-[140px] lg:text-[168px]">
+                    <h1 className="uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
                         <span>HIRE </span>
                         <span className="text-red-600">OPENSEARCH</span>
                         <span className="hero-outline block outline-black">EXPERTS</span>
                     </h1>
 
-                    <p className="max-w-xl text-[15px] leading-8 text-zinc-500">Build powerful search and analytics systems with OpenSearch—enabling real-time insights, lightning-fast queries, and scalable distributed search across massive datasets.</p>
+                    <p className="text-[15px] leading-8 text-zinc-600">Build powerful search and analytics systems with OpenSearch—enabling real-time insights, lightning-fast queries, and scalable distributed search across massive datasets.</p>
 
                     <div className="flex flex-wrap items-center gap-4">
-                        <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                            Start Your Project
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                        </Link>
-                        <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                            View Portfolio
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                        </Link>
+                      <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
                     </div>
 
-                    <div className="mt-7 grid grid-cols-2 gap-4 pt-7 sm:grid-cols-4">
-                        {stats.map((item) => {
-                            const numberOnly = item.num.replace(/[+%]/g, "");
-                            const suffix = item.num.includes("+") ? "+" : item.num.includes("%") ? "%" : "";
-                            return (
-                            <div key={item.label}>
-                                <div className="font-bebas-neue text-5xl leading-none text-zinc-950">
-                                {numberOnly}
-                                <span className="text-red-600">{suffix}</span>
-                                </div>
-                                <div className="mt-1 text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-950">{item.label}</div>
-                            </div>
-                            );
-                        })}
+                    <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                      {heroStats.map((stat) => (
+                          <div key={stat.label}>
+                          <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
+                          {stat.num.replace(/\+/, "")}
+                          {stat.num.includes("+") && <span className="text-red-600">+</span>}
+                          </div>
+                          <div className="text-sm text-zinc-950">{stat.label}</div>
+                          </div>
+                      ))}
                     </div>
                 </div>
 
@@ -323,7 +554,7 @@ export default function PostgresqlDevelopmentCompanyPage() {
                     <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
 
                         {/* STEP 1: SEARCH QUERY */}
-                        <div className={`transition-all duration-500 ${step === 0 ? "scale-110" : "opacity-50"}`}>
+                        <div className={`transition-all duration-500 ${steps[0]?.title === "Search Use Case & Data Strategy" ? "scale-110" : "opacity-50"}`}>
                             <div className="rounded-xl bg-white px-4 py-2 shadow text-xs text-red-600 font-semibold">🔍 Search Query: "active users"</div>
                         </div>
 
@@ -331,13 +562,13 @@ export default function PostgresqlDevelopmentCompanyPage() {
                         <div className="h-6 w-[2px] bg-gradient-to-b from-red-400 to-transparent" />
 
                         {/* STEP 2: OPENSEARCH ENGINE */}
-                        <div className={`transition-all duration-500 ${step === 1 ? "scale-110" : "opacity-60"}`}>
+                        <div className={`transition-all duration-500 ${steps[1]?.title === "Cluster Setup & Configuration" ? "scale-110" : "opacity-60"}`}>
                             <div className="w-[260px] rounded-2xl bg-white p-4 shadow-sm">
                                 <div className="text-center text-xs font-semibold text-red-600 mb-2">OpenSearch Engine</div>
 
                                 <div className="grid grid-cols-3 gap-2">
                                 {[1, 2, 3].map((s) => (
-                                    <div key={s} className={`rounded-md p-2 text-[10px] text-center border  ${step === 1 ? "bg-red-50 border-red-300 animate-pulse" : "bg-zinc-50"}`}>Shard {s}</div>
+                                    <div key={s} className={`rounded-md p-2 text-[10px] text-center border  ${steps[1]?.title === "Cluster Setup & Configuration" ? "bg-red-50 border-red-300 animate-pulse" : "bg-zinc-50"}`}>Shard {s}</div>
                                 ))}
                                 </div>
                             </div>
@@ -347,7 +578,7 @@ export default function PostgresqlDevelopmentCompanyPage() {
                         <div className="h-6 w-[2px] bg-gradient-to-b from-orange-400 to-transparent" />
 
                         {/* STEP 3: RESULTS */}
-                        <div className={`transition-all duration-500 ${step === 2 ? "scale-110" : "opacity-60"}`}>
+                        <div className={`transition-all duration-500 ${steps[2]?.title === "Data Indexing & Integration" ? "scale-110" : "opacity-60"}`}>
                             <div className="rounded-xl bg-white px-4 py-2 shadow text-xs text-emerald-600 font-semibold">📊 Aggregating Results...</div>
                         </div>
 
@@ -355,8 +586,8 @@ export default function PostgresqlDevelopmentCompanyPage() {
                         <div className="h-6 w-[2px] bg-gradient-to-b from-emerald-400 to-transparent" />
 
                         {/* STEP 4: FINAL OUTPUT */}
-                        <div className={`transition-all duration-500 ${step === 3 ? "scale-110" : "opacity-60"}`}>
-                            <div className="rounded-xl bg-white px-4 py-2 shadow text-xs text-blue-600 font-semibold">✅ 245 Results • {time}ms</div>
+                        <div className={`transition-all duration-500 ${steps[3]?.title === "Sharding, Replication & Availability" ? "scale-110" : "opacity-60"}`}>
+                            <div className="rounded-xl bg-white px-4 py-2 shadow text-xs text-blue-600 font-semibold">✅ 245 Results • 12.34ms</div>
                         </div>
 
                     </div>
@@ -365,7 +596,7 @@ export default function PostgresqlDevelopmentCompanyPage() {
                     <div className="absolute top-6 right-6 text-xs bg-white px-3 py-1 rounded shadow text-red-600 font-semibold animate-bounce">Real-Time Search</div>
                     <div className="absolute bottom-6 left-6 text-xs bg-white px-3 py-1 rounded shadow text-emerald-600 font-semibold">Fast Aggregations</div>
                     <div className="absolute left-6 top-1/3 text-xs bg-white px-3 py-1 rounded shadow text-purple-600 font-semibold">Distributed Shards</div>
-                    <div className="absolute right-6 bottom-1/3 text-xs bg-white px-3 py-1 rounded shadow text-orange-600 font-semibold">{time}ms Response</div>
+                    <div className="absolute right-6 bottom-1/3 text-xs bg-white px-3 py-1 rounded shadow text-orange-600 font-semibold">12.34ms Response</div>
                 </div>
             </div>
         </section>
@@ -423,16 +654,13 @@ export default function PostgresqlDevelopmentCompanyPage() {
                 </pre>
               </div>
               {/* right column */}
-              <div className="relative space-y-4">
-                <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                    <span className="h-[2px] w-7 bg-red-600" />
-                    Why OpenSearch With Us
-                </div>
-                <h2 className="text-[50px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[70px] lg:text-[80px]">The OpenSearch <span className="text-red-600">Platform</span></h2>
+              <div className="relative space-y-5">
+                <Subheading variant="light">Why OpenSearch With Us</Subheading>
+                <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">The OpenSearch <span className="text-red-600">Platform</span></h2>
                 
-                <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]"><strong className="text-white">OpenSearch powers modern search and analytics applications</strong>{" "} with distributed indexing, full-text search, and near real-time data processing—enabling fast, relevant, and scalable insights across massive datasets.</p>
+                <p className="text-[15px] leading-[1.8] text-white">OpenSearch powers modern search and analytics applications with distributed indexing, full-text search, and near real-time data processing—enabling fast, relevant, and scalable insights across massive datasets.</p>
 
-                <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">We leverage <strong className="text-white">optimized indexing strategies, shard-based architecture, and advanced query capabilities</strong>{" "} to build OpenSearch solutions that deliver high-performance search, real-time analytics, and seamless scalability for data-intensive applications.</p>
+                <p className="text-[15px] leading-[1.8] text-white">We leverage optimized indexing strategies, shard-based architecture, and advanced query capabilities to build OpenSearch solutions that deliver high-performance search, real-time analytics, and seamless scalability for data-intensive applications.</p>
 
                 <div className="flex flex-wrap gap-2">
                   {technologies.map((item) => (
@@ -447,10 +675,10 @@ export default function PostgresqlDevelopmentCompanyPage() {
        {/* PROCESS */}
        <Process
           steps={steps}
-          label="OpenSearch Deployment Process"
+          label="OpenSearch Real-Time Data Deployment Process"
           title={
             <>
-              YOU BUILD POWERFUL <span className="text-red-600">OPENSEARCH SYSTEMS</span>
+              HAVE A POWERFUL <span className="text-red-600">OPENSEARCH SYSTEMS</span>
             </>
           }
           description="From indexing strategy to distributed cluster setup, we build OpenSearch solutions with fast query performance, real-time analytics, and scalable search architecture—designed for high-volume data and instant insights."
@@ -462,7 +690,7 @@ export default function PostgresqlDevelopmentCompanyPage() {
           label="Why Choose OpenSearch"
           title={
             <>
-            REASONS TO CHOOSE US
+            WHY CHOOSE US
             <br />
             <span className="text-red-600">OPENSEARCH</span>
             </>
@@ -474,14 +702,14 @@ export default function PostgresqlDevelopmentCompanyPage() {
         <CtaStrip
             title={
                 <>
-                BUILD SMART SEARCH
+                HAVE A SMART SEARCH
                 <br />
                 SYSTEMS <span className="text-black">AT SCALE?</span>
                 </>
             }
             description="Unlock the power of OpenSearch with lightning-fast queries, real-time insights, and scalable distributed architecture—perfect for search, analytics, and log monitoring platforms."
             buttonText="Get a Free Quote →"
-            buttonHref="/"
+            buttonHref="/contact-us"
         />
 
     </>

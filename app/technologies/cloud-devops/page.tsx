@@ -1,10 +1,61 @@
-import Link from "next/link";
+import type { Metadata } from "next";
+import Script from "next/script";
 import Marquee from "@/app/components/Marquee";
 import Card from "@/app/components/Card";
 import CtaStrip from "@/app/components/CtaStrip";
 import DevelopmentProcess from "@/app/components/DevelopmentProcess";
 import BoxCard from "@/app/components/BoxCard";
-import Process from "@/app/components/Process";
+import Subheading from "@/app/components/ui/Subheading";
+import DefaultButton from "@/app/components/ui/Button/defaultButton";
+import { APP_NAME, BASE_URL, contactInfo } from "@/app/lib/config";
+
+const PAGE_URL = `${BASE_URL}/technologies/cloud-devops`;
+const TECHNOLOGIES_URL = `${BASE_URL}/technologies`;
+
+export const metadata: Metadata = {
+  title: `Cloud & DevOps Services | ${APP_NAME}`,
+  description: `Hire expert cloud and DevOps engineers from ${APP_NAME}. We design, automate, and scale infrastructure on AWS, Azure, and GCP with Terraform, Kubernetes, Docker, CI/CD pipelines, observability, and DevSecOps — from strategy to production optimization.`,
+  keywords: [
+    "cloud DevOps services",
+    "hire DevOps engineer",
+    "cloud infrastructure services",
+    "AWS DevOps",
+    "Azure DevOps",
+    "GCP cloud services",
+    "Kubernetes orchestration",
+    "Docker containerization",
+    "Terraform infrastructure as code",
+    "CI/CD pipeline development",
+    "DevSecOps services",
+    "cloud migration services",
+    "SaaS cloud DevOps",
+    APP_NAME,
+  ],
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: `Cloud & DevOps Services | ${APP_NAME}`,
+    description: `Modern cloud and DevOps with ${APP_NAME} — multi-cloud architecture, automated CI/CD, IaC with Terraform, Kubernetes scaling, zero-downtime releases, monitoring, and cost-optimized infrastructure for startups and enterprise.`,
+    url: PAGE_URL,
+    type: "website",
+    siteName: APP_NAME,
+    images: [
+      {
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 1200,
+        height: 630,
+        alt: `${APP_NAME} — Cloud & DevOps`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Cloud & DevOps Services | ${APP_NAME}`,
+    description: `Ship faster with reliable cloud ops — AWS/Azure/GCP, Terraform, Kubernetes, Docker, CI/CD, observability, DevSecOps, and disaster recovery built for uptime and scale.`,
+    images: [`${BASE_URL}${contactInfo.logo}`],
+  },
+};
 
 const marqueeItems = [
   "MULTI-CLOUD INFRASTRUCTURE (AWS / AZURE / GCP)",
@@ -19,6 +70,13 @@ const marqueeItems = [
   "COST OPTIMIZATION & RESOURCE GOVERNANCE",
   "DISASTER RECOVERY & BACKUP STRATEGIES",
   "DEVSECOPS WORKFLOWS & COMPLIANCE READINESS",
+];
+
+const heroStats = [
+  { num: "150+", label: "APIs BUILT" },
+  { num: "8+", label: "Years Experience" },
+  { num: "98%", label: "Uptime" },
+  { num: "50+", label: "Experts" },
 ];
 
 const aboutCodeLines = [
@@ -299,68 +357,266 @@ const benefits = [
   },
 ];
 
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: APP_NAME,
+      alternateName: APP_NAME,
+      url: BASE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 512,
+        height: 512,
+      },
+      image: `${BASE_URL}${contactInfo.logo}`,
+      description: `${APP_NAME} delivers cloud and DevOps engineering — multi-cloud infrastructure on AWS, Azure, and GCP, Terraform IaC, Kubernetes, Docker, CI/CD pipelines, observability, DevSecOps, and disaster recovery for SaaS and enterprise platforms.`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        postalCode: "160062",
+        addressCountry: "IN",
+      },
+      sameAs: [
+        "https://www.facebook.com/miraculoussoft",
+        "https://twitter.com/miraculous_soft",
+        "https://www.instagram.com/miraculous_soft",
+        "https://www.pinterest.com/seomiraculoussoft",
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: ["IN", "Worldwide"],
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: "Worldwide",
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      url: BASE_URL,
+      name: APP_NAME,
+      description: `${APP_NAME} provides cloud and DevOps services — from infrastructure strategy and IaC through CI/CD automation, container orchestration, security hardening, monitoring, and continuous optimization.`,
+      inLanguage: "en",
+      publisher: { "@id": `${BASE_URL}/#organization` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${PAGE_URL}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: BASE_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Technologies",
+          item: TECHNOLOGIES_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Cloud & DevOps",
+          item: PAGE_URL,
+        },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${PAGE_URL}/#webpage`,
+      url: PAGE_URL,
+      name: `Cloud & DevOps Services | ${APP_NAME}`,
+      isPartOf: { "@id": `${BASE_URL}/#website` },
+      about: { "@id": `${PAGE_URL}/#cloud-devops` },
+      description: `Hire expert cloud and DevOps engineers from ${APP_NAME}. Design, automate, and scale infrastructure with AWS/Azure/GCP, Terraform, Kubernetes, Docker, CI/CD, observability, and DevSecOps.`,
+      inLanguage: "en",
+      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
+      mainEntity: { "@id": `${PAGE_URL}/#cloud-devops` },
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#cloud-devops-capabilities`,
+      name: `${APP_NAME} Cloud & DevOps Capabilities`,
+      numberOfItems: features.length,
+      itemListElement: features.map((feature, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}/#capability-${feature.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+          name: feature.title,
+          description: feature.description,
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#cloud-devops-process`,
+      name: `${APP_NAME} Cloud & DevOps Delivery Process`,
+      numberOfItems: steps.length,
+      itemListElement: steps.map((step, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Service",
+          "@id": `${PAGE_URL}/#step-${step.num}`,
+          name: `${step.num} — ${step.title}`,
+          description: step.body,
+          url: PAGE_URL,
+          provider: { "@id": `${BASE_URL}/#organization` },
+          areaServed: ["India", "Worldwide"],
+          category: "Cloud & DevOps Process",
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#cloud-devops-benefits`,
+      name: `Why Choose ${APP_NAME} for Cloud & DevOps`,
+      numberOfItems: benefits.length,
+      itemListElement: benefits.map((benefit, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}/#benefit-${benefit.no}`,
+          name: benefit.title,
+          description: benefit.body,
+        },
+      })),
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${PAGE_URL}/#cloud-devops`,
+      name: `${APP_NAME} — Cloud & DevOps Services`,
+      alternateName: "Hire Cloud DevOps Engineers",
+      url: PAGE_URL,
+      description: `${APP_NAME} designs and operates cloud-native platforms — automated CI/CD, infrastructure as code, Kubernetes at scale, proactive monitoring, and DevSecOps workflows. Ship faster releases with higher uptime and optimized cloud costs.`,
+      image: `${BASE_URL}${contactInfo.logo}`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        addressCountry: "IN",
+      },
+      areaServed: ["India", "Worldwide"],
+      provider: { "@id": `${BASE_URL}/#organization` },
+      serviceType: [
+        "Cloud & DevOps Services",
+        ...features.map((feature) => feature.title),
+        ...marqueeItems,
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Cloud & DevOps Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Cloud & DevOps Engineering",
+              description: `End-to-end cloud and DevOps with AWS/Azure/GCP, Terraform, Kubernetes, Docker, CI/CD pipelines, observability, DevSecOps, disaster recovery, and cost optimization.`,
+              url: PAGE_URL,
+            },
+          },
+          ...features.map((feature) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: feature.title,
+              description: feature.description,
+              url: PAGE_URL,
+            },
+          })),
+          ...steps.map((step) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: step.title,
+              description: step.body,
+              url: PAGE_URL,
+            },
+          })),
+          ...benefits.map((benefit) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: benefit.title,
+              description: benefit.body,
+              url: PAGE_URL,
+            },
+          })),
+        ],
+      },
+    },
+  ],
+};
+
 export default function CloudDevOpsPage() {
-    const stats = [
-        { num: "150+", label: "APIs BUILT" },
-        { num: "8+", label: "Years Experience" },
-        { num: "98%", label: "Uptime" },
-        { num: "50+", label: "Experts" },
-      ];
     
     return (
       <>
+        <Script
+          id="cloud-devops-schema"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
+
         {/* Hero section */}
-        <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
+        <section className="relative overflow-hidden bg-white py-16 sm:py-20">
             <div className="grid-bg absolute inset-0 opacity-45" />
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.16))]" />
 
-            <div className="relative mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 items-start gap-10 px-4 py-14 sm:py-20 lg:grid-cols-[minmax(0,1fr)_520px] lg:gap-14 xl:grid-cols-[minmax(0,1fr)_560px] z-10">
+            <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
                 {/* Left Column */}
                 <div className="space-y-5">
-                    <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                        <span className="h-[2px] w-7 bg-red-600" />Discover the future of tech
-                    </div>
-
-                    <h1 className="font-bebas-neue uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
+                    <Subheading variant="default">Discover the future of tech</Subheading>
+                    <h1 className="uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
                         <span>Cloud & </span>
                         <span className="text-red-600">DevOps </span>
                         <span className="hero-outline block outline-black">Scale</span>
                     </h1>
-
-                    <p className="max-w-xl text-[15px] leading-8 text-zinc-500">Design, automate, and scale your infrastructure with modern cloud architecture and DevOps workflows that deliver speed, reliability, and performance.</p>
-
+                    <p className="text-[15px] leading-8 text-zinc-600">Design, automate, and scale your infrastructure with modern cloud architecture and DevOps workflows that deliver speed, reliability, and performance.</p>
                     <div className="flex flex-wrap items-center gap-4">
-                        <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                            Start Your Project
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                        </Link>
-                        <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                            View Portfolio
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                        </Link>
+                      <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
                     </div>
-
-                    <div className="mt-7 grid grid-cols-2 gap-4 pt-7 sm:grid-cols-4">
-                    {stats.map((item) => {
-                        const numberOnly = item.num.replace(/[+%]/g, "");
-                        const suffix = item.num.includes("+") ? "+" : item.num.includes("%") ? "%" : "";
-                        return (
-                        <div key={item.label}>
-                            <div className="font-bebas-neue text-5xl leading-none text-zinc-950">
-                            {numberOnly}
-                            <span className="text-red-600">{suffix}</span>
-                            </div>
-                            <div className="mt-1 text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-950">{item.label}</div>
-                        </div>
-                        );
-                    })}
+                    <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                      {heroStats.map((stat) => (
+                          <div key={stat.label}>
+                          <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
+                          {stat.num.replace(/\+/, "")}
+                          {stat.num.includes("+") && <span className="text-red-600">+</span>}
+                          </div>
+                          <div className="text-sm text-zinc-950">{stat.label}</div>
+                          </div>
+                      ))}
                     </div>
                 </div>
 
                 {/* Right Column */}
                 <div className="relative mx-auto hidden aspect-square w-full lg:block" aria-hidden="true">
-  
                     {/* Rings */}
                     <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />
                     <div className="absolute inset-[42px] rounded-full border border-cyan-400/25 hero-ring-2" />
@@ -500,16 +756,10 @@ export default function CloudDevOpsPage() {
               </div>
               {/* right column */}
               <div className="relative space-y-4">
-                <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                    <span className="h-[2px] w-7 bg-red-600" />
-                    Cloud DevOps Overview
-                </div>
-                <h2 className="text-[50px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[70px] lg:text-[80px]">The Cloud DevOps <span className="text-red-600">Advantage</span></h2>
-                
-                <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]"><strong className="text-white">Cloud DevOps accelerates reliable software delivery</strong>{" "} through automated pipelines, infrastructure as code, and resilient platform engineering for modern distributed systems.</p>
-
-                <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">We build <strong className="text-white">secure, scalable, and observable cloud platforms</strong>{" "} with CI/CD, container orchestration, monitoring, and DevSecOps practices that keep deployments fast, safe, and production-ready.</p>
-
+                <Subheading variant="light">Cloud DevOps Overview</Subheading>
+                <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">The Cloud DevOps <span className="text-red-600">Advantage</span></h2>
+                <p className="text-[15px] leading-[1.8] text-white"><strong className="text-white">Cloud DevOps accelerates reliable software delivery</strong>{" "} through automated pipelines, infrastructure as code, and resilient platform engineering for modern distributed systems.</p>
+                <p className="text-[15px] leading-[1.8] text-white">We build <strong className="text-white">secure, scalable, and observable cloud platforms</strong>{" "} with CI/CD, container orchestration, monitoring, and DevSecOps practices that keep deployments fast, safe, and production-ready.</p>
                 <div className="flex flex-wrap gap-2">
                   {technologies.map((item) => (
                     <span key={item} className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-blue-200">{item}</span>
@@ -573,7 +823,7 @@ export default function CloudDevOpsPage() {
             }
             description="Let&apos;s turn your vision into a production-grade Cloud & DevOps platform. Our team is ready when you are — no project too small, no challenge too large."
             buttonText="Get a Free Quote →"
-            buttonHref="/"
+            buttonHref="/contact-us"
         />
   
       </>
