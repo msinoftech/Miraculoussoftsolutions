@@ -420,6 +420,7 @@ const schemaData = {
 export default function SecurityTechnologiesPage() {
   return (
     <>
+      {/* Schema.org */}
       <Script
         id="security-technologies-schema"
         type="application/ld+json"
@@ -427,6 +428,7 @@ export default function SecurityTechnologiesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
 
+      {/* HERO */}
       <section className="relative overflow-hidden bg-white py-16 sm:py-20">
         <div className="grid-bg absolute inset-0 opacity-45" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
@@ -465,8 +467,10 @@ export default function SecurityTechnologiesPage() {
         </div>
       </section>
 
+      {/* Marquee Section */}
       <Marquee items={marqueeItems} />
 
+      {/* About Section */}
       <section className="relative overflow-hidden border-y border-white/[0.04] bg-[linear-gradient(180deg,#141414,#121212)] py-16 md:py-20">
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[length:100%_44px] opacity-20" />
         <div className="relative mx-auto w-full max-w-7xl px-4">
@@ -534,16 +538,17 @@ await audit.log({
             {/* Security Overview */}
             <div className="relative space-y-5">
               <Subheading variant="light">Security Overview</Subheading>
+              
               <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">
                 Identity <span className="text-red-600">Security</span>
               </h2>
-
+              
               <p className="text-[15px] leading-[1.8] text-white"><strong className="text-white">Security technologies define who can access your product</strong> and what they can do—across web apps, mobile clients, APIs, and admin tools.</p>
-
+              
               <p className="text-[15px] leading-[1.8] text-white">Our stack covers <strong className="text-white">OAuth for delegated login</strong>,{" "} <strong className="text-white">JWT for stateless API auth</strong>, and{" "} <strong className="text-white">RBAC for fine-grained permissions</strong>—aligned with the Security layer on our main technologies page.</p>
-
+              
               <p className="text-[15px] leading-[1.8] text-white">We deliver <strong className="text-white">secure defaults, audit trails, and API-level enforcement</strong> so access stays correct as teams, tenants, and integrations grow.</p>
-
+              
               <div className="mt-7 flex flex-wrap gap-2">
                 {technologie.map((item) => (
                   <span key={item} className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-blue-200">
@@ -556,6 +561,7 @@ await audit.log({
         </div>
       </section>
 
+      {/* Features Section */}
       <Card
         label="Features"
         title={
@@ -570,30 +576,7 @@ await audit.log({
         gridClassName="grid border-2 border-zinc-950 md:grid-cols-3"
       />
 
-      <section className="bg-[var(--off-2)] py-14 sm:py-16">
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-8 max-w-2xl">
-            <Subheading variant="default">Stack Routes</Subheading>
-            <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">
-              Explore <span className="text-red-600">Each Layer</span>
-            </h2>
-            <p className="text-[15px] leading-[1.8] text-zinc-600">
-              Same structure as the Security row on{" "} <Link href="/technologies" className="text-red-600 hover:text-red-700">technologies</Link> —open OAuth, JWT, or RBAC for full service detail.</p>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-3">
-            {securityStack.map((item, index) => (
-              <Link key={item.href} href={item.href} className="group case-card-shine flex flex-col rounded-2xl border-2 border-zinc-950 bg-white p-6 shadow-[6px_6px_0_#0c0c0c] transition hover:-translate-y-0.5 hover:shadow-lg space-y-2">
-                <span className="font-bebas-neue text-4xl leading-none text-zinc-200">{String(index + 1).padStart(2, "0")}</span>
-                <div className="text-xl font-bold tracking-wide text-zinc-950 group-hover:text-red-600">{item.title}</div>
-                <p className="flex-1 text-[15px] leading-[1.8] text-zinc-600">{item.description}</p>
-                <span className="mt-5 text-[13px] font-semibold uppercase tracking-[0.1em] text-red-600">View {item.title} page ↗</span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      {/* Development Process Section */}
       <DevelopmentProcess
         steps={steps}
         label="Security Delivery Process"
@@ -605,6 +588,7 @@ await audit.log({
         description="A structured path from access mapping to hardened enforcement—so authentication and authorization stay maintainable as your product scales."
       />
 
+      {/* Benefits Section */}
       <BoxCard
         items={benefits}
         label="Security Benefits"
@@ -620,6 +604,7 @@ await audit.log({
         gridClassName="grid gap-4 sm:grid-cols-2 xl:grid-cols-4"
       />
 
+      {/* CTA Strip Section */}
       <CtaStrip
         title={
           <>

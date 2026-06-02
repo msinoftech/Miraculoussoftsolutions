@@ -1,10 +1,62 @@
-"use client";
-import { useMemo } from "react";
-import Link from "next/link";
+import type { Metadata } from "next";
+import Script from "next/script";
 import Marquee from "@/app/components/Marquee";
 import Process from "@/app/components/Process";
 import BoxCard from "@/app/components/BoxCard";
 import CtaStrip from "@/app/components/CtaStrip";
+import Subheading from "@/app/components/ui/Subheading";
+import DefaultButton from "@/app/components/ui/Button/defaultButton";
+import { APP_NAME, BASE_URL, contactInfo } from "@/app/lib/config";
+
+const PAGE_URL = `${BASE_URL}/technologies/rbac-development-company`;
+const TECHNOLOGIES_URL = `${BASE_URL}/technologies`;
+
+export const metadata: Metadata = {
+  title: `RBAC Development Company | ${APP_NAME}`,
+  description: `Hire RBAC developers from ${APP_NAME} to design and implement role-based access control for web and mobile apps. We build scalable role/permission models, policy enforcement, least-privilege defaults, audit-ready access governance, and secure API authorization.`,
+  keywords: [
+    "RBAC development company",
+    "hire RBAC developers",
+    "role based access control services",
+    "RBAC implementation services",
+    "access control development",
+    "roles and permissions system",
+    "fine grained authorization",
+    "API authorization middleware",
+    "least privilege access control",
+    "multi tenant RBAC",
+    "admin access management panel",
+    "audit logs access governance",
+    "separation of duties SoD",
+    "policy based authorization",
+    "RBAC for SaaS applications",
+    APP_NAME,
+  ],
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: `RBAC Development Company | ${APP_NAME}`,
+    description: `Build secure role-based authorization with ${APP_NAME} — role/permission architecture, policy enforcement, least-privilege defaults, multi-tenant scoping, admin controls, and audit-ready access governance for SaaS and enterprise apps.`,
+    url: PAGE_URL,
+    type: "website",
+    siteName: APP_NAME,
+    images: [
+      {
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 1200,
+        height: 630,
+        alt: `${APP_NAME} — RBAC Development Company`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `RBAC Development Company | ${APP_NAME}`,
+    description: `RBAC experts for secure authorization — role and permission models, policy checks, least-privilege access, admin workflows, audit trails, and scalable API access control for SaaS and enterprise products.`,
+    images: [`${BASE_URL}${contactInfo.logo}`],
+  },
+};
 
 const marqueeItems = [
     "Role-Based Access Control (RBAC)",
@@ -19,6 +71,13 @@ const marqueeItems = [
     "Permission Versioning & Rollback",
     "Secure Defaults for New Users",
     "Compliance-Ready Access Controls",
+];
+
+const heroStats = [
+  { num: "200+", label: "APIs BUILT" },
+  { num: "8+", label: "Years Experience" },
+  { num: "98%", label: "Uptime" },
+  { num: "50+", label: "Experts" },
 ];
 
 const aboutCodeLines = [
@@ -165,64 +224,280 @@ const reasons = [
 },  
 ];
 
-export default function RbacDevelopmentCompanyPage() {
-
-    const stats = useMemo(
-        () => [
-          { num: "200+", label: "APIs BUILT" },
-          { num: "8+", label: "Years Experience" },
-          { num: "98%", label: "Uptime" },
-          { num: "50+", label: "Experts" },
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: APP_NAME,
+      alternateName: APP_NAME,
+      url: BASE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 512,
+        height: 512,
+      },
+      image: `${BASE_URL}${contactInfo.logo}`,
+      description: `${APP_NAME} delivers RBAC development services for web and mobile apps — role and permission architecture, policy enforcement, least-privilege access, multi-tenant authorization, and audit-ready governance for SaaS and enterprise products.`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        postalCode: "160062",
+        addressCountry: "IN",
+      },
+      sameAs: [
+        "https://www.facebook.com/miraculoussoft",
+        "https://twitter.com/miraculous_soft",
+        "https://www.instagram.com/miraculous_soft",
+        "https://www.pinterest.com/seomiraculoussoft",
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: ["IN", "Worldwide"],
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: "Worldwide",
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      url: BASE_URL,
+      name: APP_NAME,
+      description: `${APP_NAME} provides RBAC development services — from role model design and permission mapping through policy checks, admin workflows, access reviews, and production monitoring.`,
+      inLanguage: "en",
+      publisher: { "@id": `${BASE_URL}/#organization` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${PAGE_URL}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: BASE_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Technologies",
+          item: TECHNOLOGIES_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "RBAC Development Company",
+          item: PAGE_URL,
+        },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${PAGE_URL}/#webpage`,
+      url: PAGE_URL,
+      name: `RBAC Development Company | ${APP_NAME}`,
+      isPartOf: { "@id": `${BASE_URL}/#website` },
+      about: { "@id": `${PAGE_URL}/#rbac-development` },
+      description: `Hire RBAC developers from ${APP_NAME}. We implement role-based access control with role hierarchies, permission mapping, policy checks, least-privilege defaults, and API authorization for production applications.`,
+      inLanguage: "en",
+      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
+      mainEntity: { "@id": `${PAGE_URL}/#rbac-development` },
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#rbac-technology-stack`,
+      name: `${APP_NAME} RBAC Development Stack`,
+      numberOfItems: technologies.length,
+      itemListElement: technologies.map((tech, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}/#tech-${tech.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+          name: tech,
+          description: `${tech} used in ${APP_NAME} RBAC development projects.`,
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#rbac-capabilities`,
+      name: `${APP_NAME} RBAC Capabilities`,
+      numberOfItems: marqueeItems.length,
+      itemListElement: marqueeItems.map((feature, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}/#capability-${feature.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+          name: feature,
+          description: `${feature} delivered as part of ${APP_NAME} RBAC implementation services.`,
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#rbac-process`,
+      name: `${APP_NAME} RBAC Implementation Process`,
+      numberOfItems: steps.length,
+      itemListElement: steps.map((step, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Service",
+          "@id": `${PAGE_URL}/#step-${step.num}`,
+          name: `${step.num} — ${step.title}`,
+          description: step.body,
+          url: PAGE_URL,
+          provider: { "@id": `${BASE_URL}/#organization` },
+          areaServed: ["India", "Worldwide"],
+          category: "RBAC Development Process",
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#rbac-benefits`,
+      name: `Why Choose ${APP_NAME} for RBAC Development`,
+      numberOfItems: reasons.length,
+      itemListElement: reasons.map((benefit, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}/#benefit-${index + 1}`,
+          name: benefit.title,
+          description: benefit.body,
+        },
+      })),
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${PAGE_URL}/#rbac-development`,
+      name: `${APP_NAME} — RBAC Development Services`,
+      alternateName: "Hire RBAC Developers",
+      url: PAGE_URL,
+      description: `${APP_NAME} builds production-ready RBAC authorization systems — role hierarchy design, permission policies, tenant-scoped access, admin governance workflows, and API middleware enforcement.`,
+      image: `${BASE_URL}${contactInfo.logo}`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        addressCountry: "IN",
+      },
+      areaServed: ["India", "Worldwide"],
+      provider: { "@id": `${BASE_URL}/#organization` },
+      serviceType: [
+        "RBAC Development Services",
+        ...technologies,
+        ...marqueeItems,
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "RBAC Development Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "RBAC Authorization Implementation",
+              description: `End-to-end RBAC development for web and mobile apps including role hierarchy design, permission matrices, policy enforcement middleware, tenant-scoped access controls, admin review workflows, and protected API authorization.`,
+              url: PAGE_URL,
+            },
+          },
+          ...technologies.map((tech) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: tech,
+              description: `${tech} integration and implementation by ${APP_NAME}.`,
+              url: PAGE_URL,
+            },
+          })),
+          ...steps.map((step) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: step.title,
+              description: step.body,
+              url: PAGE_URL,
+            },
+          })),
+          ...reasons.map((benefit) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: benefit.title,
+              description: benefit.body,
+              url: PAGE_URL,
+            },
+          })),
         ],
-        []
-    );
+      },
+    },
+  ],
+};
+
+export default function RbacDevelopmentCompanyPage() {
     return (
     <>
+
+      {/* Schema.org */}
+      <Script
+        id="rbac-development-company-schema"
+        type="application/ld+json"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+
        {/* HERO */}
-       <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
+       <section className="relative overflow-hidden bg-white py-16 sm:py-20">
             <div className="grid-bg absolute inset-0 opacity-45" />
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.16))]" />
-            <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-[1fr_390px] z-10">
+            
+            <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
                 {/* Left Column */}
                 <div className="space-y-5">
-                    <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                        <span className="h-[2px] w-7 bg-red-600" />RBAC Security Services
-                    </div>
-
-                    <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-zinc-950 sm:text-[118px] md:text-[140px] lg:text-[168px]">
+                    <Subheading variant="default">RBAC Security Services</Subheading>
+                    <h1 className="uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
                         <span>HIRE </span>
                         <span className="text-red-600">RBAC</span>
-                        <span className="hero-outline block outline-black">EXPERTS</span>
+                        <span className="hero-outline block outline-black">DEVELOPERS</span>
                     </h1>
-
-                    <p className="max-w-xl text-[15px] leading-8 text-zinc-500">Protect your product with Role-Based Access Control—clean roles, least-privilege permissions, strong enforcement, and audit-ready governance.</p>
-
+                    <p className="text-[15px] leading-8 text-zinc-600">Protect your product with Role-Based Access Control—clean roles, least-privilege permissions, strong enforcement, and audit-ready governance.</p>
+                    
                     <div className="flex flex-wrap items-center gap-4">
-                        <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-red-600 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                            Start Your Project
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                        </Link>
-                        <Link href="/" className="flex w-fit items-center justify-between rounded-[4px] bg-zinc-950 px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition">
-                            View Portfolio
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right transition group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" data-source-pos="954:16-954:116" data-source-name="ArrowRight"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                        </Link>
+                      <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
                     </div>
 
-                    <div className="mt-7 grid grid-cols-2 gap-4 pt-7 sm:grid-cols-4">
-                        {stats.map((item) => {
-                            const numberOnly = item.num.replace(/[+%]/g, "");
-                            const suffix = item.num.includes("+") ? "+" : item.num.includes("%") ? "%" : "";
-                            return (
-                            <div key={item.label}>
-                                <div className="font-bebas-neue text-5xl leading-none text-zinc-950">
-                                {numberOnly}
-                                <span className="text-red-600">{suffix}</span>
-                                </div>
-                                <div className="mt-1 text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-950">{item.label}</div>
-                            </div>
-                            );
-                        })}
+                    <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                      {heroStats.map((stat) => (
+                          <div key={stat.label}>
+                          <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
+                          {stat.num.replace(/\+/, "")}
+                          {stat.num.includes("+") && <span className="text-red-600">+</span>}
+                          </div>
+                          <div className="text-sm text-zinc-950">{stat.label}</div>
+                          </div>
+                      ))}
                     </div>
                 </div>
 
@@ -347,16 +622,13 @@ export default function RbacDevelopmentCompanyPage() {
               </div>
               {/* right column */}
               <div className="relative space-y-4">
-                <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                    <span className="h-[2px] w-7 bg-red-600" />
-                    Why RBAC With Us
-                </div>
-                <h2 className="text-[50px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[70px] lg:text-[80px]">The RBAC <span className="text-red-600">Advantage</span></h2>
+                <Subheading variant="light">Why RBAC With Us</Subheading>
                 
-                <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]"><strong className="text-white">RBAC keeps access simple, auditable, and secure</strong>{" "} by assigning permissions to roles and roles to users. It reduces risk, supports least privilege, and makes governance manageable across teams.</p>
-
-                <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">We implement <strong className="text-white">role design, permission taxonomy, enforcement in APIs, admin tooling, and audit trails</strong>{" "} so access stays correct—even as your product grows and org structures change.</p>
-
+                <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">The RBAC <span className="text-red-600">Advantage</span></h2>
+                
+                <p className="text-[15px] leading-[1.8] text-white">RBAC keeps access simple, auditable, and secure by assigning permissions to roles and roles to users. It reduces risk, supports least privilege, and makes governance manageable across teams.</p>
+                
+                <p className="text-[15px] leading-[1.8] text-white">We implement role design, permission taxonomy, enforcement in APIs, admin tooling, and audit trails so access stays correct—even as your product grows and org structures change.</p>
 
                 <div className="flex flex-wrap gap-2">
                   {technologies.map((item) => (
@@ -405,7 +677,7 @@ export default function RbacDevelopmentCompanyPage() {
             }
             description="Let&apos;s build a production-grade RBAC security model for your product—roles, permissions, admin tools, enforcement, and audits."
             buttonText="Get a Free Quote →"
-            buttonHref="/"
+            buttonHref="/contact-us"
         />
 
     </>
