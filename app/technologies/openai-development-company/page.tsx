@@ -1,11 +1,62 @@
-"use client";
-
-import { useEffect, useMemo, useState } from "react";
-import Link from "next/link";
+import type { Metadata } from "next";
+import Script from "next/script";
 import Marquee from "@/app/components/Marquee";
+import OpenaiModelHubGraph from "@/app/components/graph/OpenaiModelHubGraph";
 import Process from "@/app/components/Process";
 import BoxCard from "@/app/components/BoxCard";
 import CtaStrip from "@/app/components/CtaStrip";
+import Subheading from "@/app/components/ui/Subheading";
+import DefaultButton from "@/app/components/ui/Button/defaultButton";
+import { APP_NAME, BASE_URL, contactInfo } from "@/app/lib/config";
+
+const PAGE_URL = `${BASE_URL}/technologies/openai-development-company`;
+const TECHNOLOGIES_URL = `${BASE_URL}/technologies`;
+
+export const metadata: Metadata = {
+  title: `OpenAI Development Company | ${APP_NAME}`,
+  description: `Hire OpenAI developers from ${APP_NAME} to build production-ready GPT applications. We implement OpenAI API integrations, AI agents, RAG pipelines, function calling, structured outputs, guardrails, evaluations, and scalable LLM features for SaaS and enterprise products.`,
+  keywords: [
+    "OpenAI development company",
+    "hire OpenAI developers",
+    "OpenAI API integration services",
+    "GPT application development",
+    "LLM development services",
+    "OpenAI SDK development",
+    "AI agents development",
+    "RAG development with OpenAI",
+    "LangChain OpenAI integration",
+    "function calling OpenAI",
+    "structured outputs OpenAI",
+    "OpenAI guardrails and safety",
+    "vector search embeddings OpenAI",
+    "enterprise OpenAI solutions",
+    APP_NAME,
+  ],
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: `OpenAI Development Company | ${APP_NAME}`,
+    description: `Build secure, scalable OpenAI products with ${APP_NAME} — GPT integrations, agent workflows, RAG systems, tool use, observability, cost controls, and production deployment for SaaS and enterprise teams.`,
+    url: PAGE_URL,
+    type: "website",
+    siteName: APP_NAME,
+    images: [
+      {
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 1200,
+        height: 630,
+        alt: `${APP_NAME} — OpenAI Development Company`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `OpenAI Development Company | ${APP_NAME}`,
+    description: `OpenAI experts for production AI — GPT apps, agents, RAG, function calling, guardrails, evaluations, and reliable LLM deployment for SaaS and enterprise products.`,
+    images: [`${BASE_URL}${contactInfo.logo}`],
+  },
+};
 
 const marqueeItems = [
   "OpenAI API Integration (Responses API)",
@@ -22,200 +73,12 @@ const marqueeItems = [
   "PII Controls & Compliance Support",
 ];
 
-const OPENAI_MODELS = [
-  { id: "gpt41", name: "GPT-4.1", provider: "Frontier", accent: "#10a37f", chip: "text-emerald-700 bg-emerald-50 border-emerald-200" },
-  { id: "mini", name: "4.1 mini", provider: "Fast tier", accent: "#059669", chip: "text-emerald-800 bg-emerald-50 border-emerald-300" },
-  { id: "gpt4o", name: "GPT-4o", provider: "Multimodal", accent: "#2563eb", chip: "text-blue-800 bg-blue-50 border-blue-200" },
-  { id: "o3", name: "o3-mini", provider: "Reasoning", accent: "#7c3aed", chip: "text-violet-800 bg-violet-50 border-violet-200" },
-  { id: "embed", name: "Embeddings", provider: "RAG search", accent: "#ea580c", chip: "text-orange-800 bg-orange-50 border-orange-200" },
-  { id: "ft", name: "Fine-tune", provider: "Custom", accent: "#dc2626", chip: "text-red-800 bg-red-50 border-red-200" },
-] as const;
-
-const openaiGraphPositions = OPENAI_MODELS.map((_, index) => {
-  const angle = (index / OPENAI_MODELS.length) * Math.PI * 2 - Math.PI / 2;
-  const radius = 38;
-  const cx = 50;
-  const cy = 50;
-  return {
-    x: cx + Math.cos(angle) * radius,
-    y: cy + Math.sin(angle) * radius,
-    left: cx + Math.cos(angle) * radius,
-    top: cy + Math.sin(angle) * radius,
-  };
-});
-
-const OPENAI_PIPELINE = [
-  { key: "route", label: "Route", detail: "Responses API · model selected" },
-  { key: "rag", label: "RAG", detail: "docs retrieved (top_k=5)" },
-  { key: "tools", label: "Tools", detail: "function calling · CRM adapters" },
-  { key: "guard", label: "Guard", detail: "moderation + policy checks" },
-  { key: "out", label: "Output", detail: "structured JSON + streaming" },
-] as const;
-
-function OpenaiModelOrchestrator() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [tick, setTick] = useState(0);
-
-  const activeModel = OPENAI_MODELS[activeIndex];
-
-  useEffect(() => {
-    const rotate = setInterval(() => {
-      setActiveIndex((i) => (i + 1) % OPENAI_MODELS.length);
-      setTick(0);
-    }, 4000);
-    return () => clearInterval(rotate);
-  }, []);
-
-  useEffect(() => {
-    setTick(0);
-    const step = setInterval(() => setTick((t) => (t < OPENAI_PIPELINE.length ? t + 1 : t)), 700);
-    return () => clearInterval(step);
-  }, [activeIndex]);
-
-  return (
-    <div className="service-panel-frame service-panel-grid relative w-full">
-      <div className="relative flex flex-wrap items-center justify-between gap-3">
-        <div>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">OpenAI stack</p>
-          <p className="font-bebas-neue text-2xl leading-none tracking-wide text-zinc-950 sm:text-[28px]">
-            Model <span className="text-red-600">Router</span>
-          </p>
-        </div>
-        <span className="flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-600">
-          <span className="relative flex h-1.5 w-1.5">
-            <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 animate-ping opacity-50" />
-            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
-          </span>
-          Live routing
-        </span>
-      </div>
-
-      <div className="relative">
-        <div className="pointer-events-none absolute left-1/2 top-[38%] h-48 w-48 -translate-x-1/2 rounded-full blur-3xl sm:h-56 sm:w-56"
-          style={{ backgroundColor: `${activeModel.accent}18` }}/>
-
-        <div className="relative mx-auto aspect-square w-full">
-          <div className="pointer-events-none absolute inset-[5%] rounded-full border border-dashed border-zinc-300/90 service-graph-orbit" />
-          <div className="pointer-events-none absolute inset-[16%] rounded-full border border-dashed border-red-300/60 service-graph-orbit-reverse" />
-
-          <svg className="absolute inset-0 z-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" aria-hidden>
-            <defs>
-              <linearGradient id="openaiGraphLine" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#10a37f" stopOpacity="0.45" />
-                <stop offset="100%" stopColor="#a1a1aa" stopOpacity="0.25" />
-              </linearGradient>
-            </defs>
-            <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(0,0,0,0.05)" strokeWidth="0.3" strokeDasharray="1.4 1.1" />
-            {openaiGraphPositions.map((pos, i) => (
-              <line
-                key={OPENAI_MODELS[i].id}
-                x1="50"
-                y1="50"
-                x2={pos.x}
-                y2={pos.y}
-                stroke={i === activeIndex ? OPENAI_MODELS[i].accent : "url(#openaiGraphLine)"}
-                strokeWidth={i === activeIndex ? 0.7 : 0.4}
-                strokeLinecap="round"
-                strokeDasharray={i === activeIndex ? "none" : "1.2 0.8"}
-                className={i === activeIndex ? "opacity-100" : "service-graph-spoke opacity-70"}
-              />
-            ))}
-          </svg>
-
-          {OPENAI_MODELS.map((model, i) => {
-            const pos = openaiGraphPositions[i];
-            const isActive = i === activeIndex;
-            return (
-              <button
-                key={model.id}
-                type="button"
-                onClick={() => {
-                  setActiveIndex(i);
-                  setTick(0);
-                }}
-                className={`absolute z-20 max-w-[5.5rem] -translate-x-1/2 -translate-y-1/2 rounded-xl border px-2 py-2 text-left shadow-sm transition duration-300 sm:max-w-[6.25rem] sm:px-2.5 sm:py-2.5 ${
-                  isActive ? "scale-105 border-zinc-300 bg-white" : "border-zinc-200/90 bg-white/95 hover:border-zinc-300 hover:shadow-md"
-                }`}
-                style={{
-                  left: `${pos.left}%`,
-                  top: `${pos.top}%`,
-                  ...(isActive ? { boxShadow: `0 0 0 2px #fff, 0 0 0 4px ${model.accent}` } : {}),
-                }}
-                aria-pressed={isActive}
-                aria-label={`Select ${model.name}`}
-              >
-                <span className="block text-[8px] font-bold uppercase tracking-[0.12em] text-zinc-500">{model.provider}</span>
-                <span className="mt-0.5 block text-[10px] font-extrabold leading-tight text-zinc-900 sm:text-[11px]">{model.name}</span>
-                {isActive && (
-                  <span
-                    className="mt-1 inline-block rounded px-1 py-0.5 text-[7px] font-bold uppercase tracking-wider text-white"
-                    style={{ backgroundColor: model.accent }}
-                  >
-                    Active
-                  </span>
-                )}
-              </button>
-            );
-          })}
-
-          <div className="absolute left-1/2 top-1/2 z-30 w-[200px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-xl border border-zinc-200 bg-zinc-950 font-mono shadow-[0_20px_50px_rgba(0,0,0,0.25)]">
-            <div className="flex items-center justify-between border-b border-white/10 bg-zinc-900 px-3 py-2">
-              <span className="text-[9px] text-zinc-400">openai-agent.log</span>
-              <span className="rounded bg-emerald-500/20 px-1.5 py-0.5 text-[8px] font-bold uppercase text-emerald-400">run</span>
-            </div>
-            <div className="space-y-1 p-3 text-[9px] leading-relaxed sm:text-[10px]">
-              <p style={{ color: activeModel.accent }}>
-                ✔ Model → {activeModel.name} ({activeModel.provider})
-              </p>
-              {OPENAI_PIPELINE.map((step, i) => (
-                <p
-                  key={step.key}
-                  className={`transition-opacity duration-300 ${i < tick ? "text-zinc-300" : "text-zinc-600 opacity-40"}`}
-                >
-                  <span className="text-red-400">{step.label}:</span> {step.detail}
-                </p>
-              ))}
-              <p className="flex items-center pt-1 text-emerald-400">
-                <span>$</span>
-                <span className="ml-1 h-3 w-[5px] animate-pulse bg-emerald-400" />
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="relative flex flex-wrap justify-center gap-1.5">
-          {["Agents", "RAG", "Tools", "JSON", "Streaming", "Safety"].map((cap) => (
-            <span
-              key={cap}
-              className="rounded-full border border-zinc-200 bg-[var(--off)] px-2.5 py-1 text-[8px] font-bold uppercase tracking-[0.1em] text-zinc-600"
-            >
-              {cap}
-            </span>
-          ))}
-        </div>
-
-        <div className="mt-3 flex flex-wrap items-center justify-center gap-2">
-          {OPENAI_MODELS.map((model, i) => (
-            <button
-              key={model.id}
-              type="button"
-              onClick={() => {
-                setActiveIndex(i);
-                setTick(0);
-              }}
-              className={`rounded-full border px-2.5 py-1 text-[9px] font-bold uppercase tracking-wide transition ${model.chip} ${
-                i === activeIndex ? "ring-2 ring-offset-1 ring-offset-white" : "opacity-55 hover:opacity-100"
-              }`}
-              style={i === activeIndex ? { boxShadow: `0 0 0 2px ${model.accent}` } : undefined}
-            >
-              {model.name}
-            </button>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
+const heroStats = [
+  { num: "200+", label: "APIs BUILT" },
+  { num: "8+", label: "Years Experience" },
+  { num: "98%", label: "Uptime" },
+  { num: "50+", label: "Experts" },
+];
 
 const sectors = [
   {
@@ -256,18 +119,38 @@ const sectors = [
   },
 ];
 
-const stackItems = [
-  "Next.js",
-  "TypeScript",
-  "OpenAI SDK",
-  "LangChain",
-  "Vector DB",
-  "Node.js",
-  "PostgreSQL",
-  "Redis",
-  "Docker",
-  "Vercel",
+const stackLayers = [
+  {
+    id: "product",
+    title: "Product Layer",
+    subtitle: "Typed interfaces users trust",
+    accent: "#2563eb",
+    items: ["Next.js", "TypeScript"],
+  },
+  {
+    id: "ai",
+    title: "AI Orchestration",
+    subtitle: "Models, tools, and agents",
+    accent: "#10a37f",
+    items: ["OpenAI SDK", "LangChain"],
+  },
+  {
+    id: "data",
+    title: "Knowledge & Data",
+    subtitle: "Retrieval, memory, and state",
+    accent: "#7c3aed",
+    items: ["Vector DB", "PostgreSQL", "Redis"],
+  },
+  {
+    id: "runtime",
+    title: "Runtime & Delivery",
+    subtitle: "Scale, deploy, and observe",
+    accent: "#dc2626",
+    items: ["Node.js", "Docker", "Vercel"],
+  },
 ];
+
+const stackItemCount = stackLayers.reduce((total, layer) => total + layer.items.length, 0);
 
 const aboutCodeLines = [
   { type: "comment", content: "// OpenAI — structured output (JSON) example" },
@@ -401,76 +284,307 @@ const reasons = [
   },
 ];
 
-export default function OpenaiDevelopmentCompanyPage() {
-  const stats = useMemo(
-    () => [
-      { num: "200+", label: "APIs BUILT" },
-      { num: "8+", label: "Years Experience" },
-      { num: "98%", label: "Uptime" },
-      { num: "50+", label: "Experts" },
-    ],
-    []
-  );
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: APP_NAME,
+      alternateName: APP_NAME,
+      url: BASE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}${contactInfo.logo}`,
+        width: 512,
+        height: 512,
+      },
+      image: `${BASE_URL}${contactInfo.logo}`,
+      description: `${APP_NAME} delivers OpenAI development services for web and mobile apps — GPT API integrations, AI agents, RAG pipelines, function calling, structured outputs, guardrails, evaluations, and production-ready LLM features for SaaS and enterprise products.`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        postalCode: "160062",
+        addressCountry: "IN",
+      },
+      sameAs: [
+        "https://www.facebook.com/miraculoussoft",
+        "https://twitter.com/miraculous_soft",
+        "https://www.instagram.com/miraculous_soft",
+        "https://www.pinterest.com/seomiraculoussoft",
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: ["IN", "Worldwide"],
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: contactInfo.email,
+          availableLanguage: ["English", "Hindi", "Punjabi"],
+          areaServed: "Worldwide",
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      url: BASE_URL,
+      name: APP_NAME,
+      description: `${APP_NAME} provides OpenAI development services — from use-case discovery and model architecture through agent orchestration, RAG implementation, safety guardrails, evaluation pipelines, and production monitoring.`,
+      inLanguage: "en",
+      publisher: { "@id": `${BASE_URL}/#organization` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${PAGE_URL}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: BASE_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Technologies",
+          item: TECHNOLOGIES_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "OpenAI Development Company",
+          item: PAGE_URL,
+        },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${PAGE_URL}/#webpage`,
+      url: PAGE_URL,
+      name: `OpenAI Development Company | ${APP_NAME}`,
+      isPartOf: { "@id": `${BASE_URL}/#website` },
+      about: { "@id": `${PAGE_URL}/#openai-development` },
+      description: `Hire OpenAI developers from ${APP_NAME}. Build GPT-powered applications, AI agents, and RAG systems with function calling, guardrails, evaluations, and production-ready observability.`,
+      inLanguage: "en",
+      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
+      mainEntity: { "@id": `${PAGE_URL}/#openai-development` },
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#openai-technology-stack`,
+      name: `${APP_NAME} OpenAI Development Stack`,
+      numberOfItems: technologies.length,
+      itemListElement: technologies.map((tech, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}/#tech-${tech.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+          name: tech,
+          description: `${tech} used in ${APP_NAME} OpenAI development projects.`,
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#openai-capabilities`,
+      name: `${APP_NAME} OpenAI Capabilities`,
+      numberOfItems: marqueeItems.length,
+      itemListElement: marqueeItems.map((feature, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}/#capability-${feature.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+          name: feature,
+          description: `${feature} delivered as part of ${APP_NAME} OpenAI implementation services.`,
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#openai-use-cases`,
+      name: `${APP_NAME} OpenAI Use Cases`,
+      numberOfItems: sectors.length,
+      itemListElement: sectors.map((sector, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}/#use-case-${sector.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+          name: sector.title,
+          description: sector.desc,
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#openai-process`,
+      name: `${APP_NAME} OpenAI Implementation Process`,
+      numberOfItems: steps.length,
+      itemListElement: steps.map((step, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Service",
+          "@id": `${PAGE_URL}/#step-${step.num}`,
+          name: `${step.num} — ${step.title}`,
+          description: step.body,
+          url: PAGE_URL,
+          provider: { "@id": `${BASE_URL}/#organization` },
+          areaServed: ["India", "Worldwide"],
+          category: "OpenAI Development Process",
+        },
+      })),
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${PAGE_URL}/#openai-benefits`,
+      name: `Why Choose ${APP_NAME} for OpenAI Development`,
+      numberOfItems: reasons.length,
+      itemListElement: reasons.map((benefit, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Thing",
+          "@id": `${PAGE_URL}/#benefit-${index + 1}`,
+          name: benefit.title,
+          description: benefit.body,
+        },
+      })),
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${PAGE_URL}/#openai-development`,
+      name: `${APP_NAME} — OpenAI Development Services`,
+      alternateName: "Hire OpenAI Developers",
+      url: PAGE_URL,
+      description: `${APP_NAME} builds production-ready OpenAI applications — GPT integrations, agent workflows, RAG pipelines, function calling, structured outputs, safety guardrails, evaluation harnesses, and cost-aware deployment for scalable AI products.`,
+      image: `${BASE_URL}${contactInfo.logo}`,
+      email: contactInfo.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: contactInfo.address,
+        addressLocality: "Mohali",
+        addressRegion: "Punjab",
+        addressCountry: "IN",
+      },
+      areaServed: ["India", "Worldwide"],
+      provider: { "@id": `${BASE_URL}/#organization` },
+      serviceType: [
+        "OpenAI Development Services",
+        ...technologies,
+        ...stackLayers.flatMap((layer) => layer.items),
+        ...marqueeItems,
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "OpenAI Development Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "OpenAI Product Engineering",
+              description: `End-to-end OpenAI development including GPT API integration, multi-step agents, RAG pipelines, function calling, structured outputs, guardrails, evaluation suites, cost controls, and production monitoring.`,
+              url: PAGE_URL,
+            },
+          },
+          ...sectors.map((sector) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: sector.title,
+              description: sector.desc,
+              url: PAGE_URL,
+            },
+          })),
+          ...technologies.map((tech) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: tech,
+              description: `${tech} integration and implementation by ${APP_NAME}.`,
+              url: PAGE_URL,
+            },
+          })),
+          ...steps.map((step) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: step.title,
+              description: step.body,
+              url: PAGE_URL,
+            },
+          })),
+          ...reasons.map((benefit) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: benefit.title,
+              description: benefit.body,
+              url: PAGE_URL,
+            },
+          })),
+        ],
+      },
+    },
+  ],
+};
 
+export default function OpenaiDevelopmentCompanyPage() {
   return (
     <>
+      <Script id="openai-development-company-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
+
       {/* Hero */}
-      <section className="relative flex min-h-[88vh] overflow-hidden bg-white">
+      <section className="relative overflow-hidden bg-white py-16 sm:py-20">
         <div className="grid-bg absolute inset-0 opacity-45" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.12)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
 
-        <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 py-14 sm:py-20 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
+        <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
+          {/* left column */}
           <div className="space-y-5">
-            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-              <span className="h-[2px] w-7 bg-red-600" />
-              OpenAI Development Services
-            </div>
+            <Subheading variant="default">OpenAI Development Services</Subheading>
 
-            <h1 className="font-bebas-neue text-[72px] uppercase leading-[0.84] tracking-[0.02em] text-zinc-950 sm:text-[100px] md:text-[120px]">
+            <h1 className="uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
               <span>Hire </span>
               <span className="text-red-600">OpenAI</span>
               <span className="hero-outline block outline-black">Experts</span>
             </h1>
 
-            <p className="max-w-2xl text-[15px] leading-8 text-zinc-500">
+            <p className="text-[15px] leading-8 text-zinc-500">
               Build AI-powered products with OpenAI—chat, agents, RAG, and automation engineered for quality, safety, and
               measurable ROI on your Miraculous stack.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
-              <Link
-                href="/contact-us"
-                className="inline-flex items-center gap-2 rounded-[6px] bg-red-600 px-5 py-3 text-[12px] font-bold uppercase tracking-[0.08em] text-white transition hover:bg-red-700"
-              >
-                Start Your Project
-                <span aria-hidden="true">↗</span>
-              </Link>
-              <Link
-                href="/technologies/agents-development-company"
-                className="inline-flex items-center gap-2 rounded-[6px] border border-zinc-300 bg-white px-5 py-3 text-[12px] font-bold uppercase tracking-[0.08em] text-zinc-900 transition hover:bg-[var(--off)]"
-              >
-                AI Agents
-              </Link>
+              <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 pt-4 sm:grid-cols-4">
-              {stats.map((item) => {
-                const numberOnly = item.num.replace(/[+%]/g, "");
-                const suffix = item.num.includes("+") ? "+" : item.num.includes("%") ? "%" : "";
-                return (
-                  <div key={item.label}>
-                    <div className="font-bebas-neue text-4xl leading-none text-zinc-950 sm:text-5xl">
-                      {numberOnly}
-                      <span className="text-red-600">{suffix}</span>
-                    </div>
-                    <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-500">{item.label}</div>
+            <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
+              {heroStats.map((stat) => (
+                  <div key={stat.label}>
+                  <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
+                  {stat.num.replace(/\+/, "")}
+                  {stat.num.includes("+") && <span className="text-red-600">+</span>}
                   </div>
-                );
-              })}
+                  <div className="text-sm text-zinc-950">{stat.label}</div>
+                  </div>
+              ))}
             </div>
           </div>
-
-          <OpenaiModelOrchestrator />
+          {/* right column */}
+          <OpenaiModelHubGraph />
         </div>
       </section>
 
@@ -529,33 +643,17 @@ export default function OpenaiDevelopmentCompanyPage() {
 
             {/* right column */}
             <div className="relative space-y-4">
-              <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-                <span className="h-[2px] w-7 bg-red-600" />
-                Why OpenAI With Us
-              </div>
+              <Subheading variant="light">Why OpenAI With Us</Subheading>
 
-              <h2 className="font-bebas-neue text-[50px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[70px]">
-                The OpenAI <span className="text-red-600">Advantage</span>
-              </h2>
+              <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">The OpenAI <span className="text-red-600">Advantage</span></h2>
 
-              <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">
-                <strong className="text-white">OpenAI models unlock new product capabilities</strong>{" "}
-                like natural-language interfaces, workflow automation, summarization, and retrieval—when engineered with reliable outputs and clear safety boundaries.
-              </p>
+              <p className="text-[15px] leading-[1.8] text-white"><strong className="text-white">OpenAI models unlock new product capabilities</strong>{" "} like natural-language interfaces, workflow automation, summarization, and retrieval—when engineered with reliable outputs and clear safety boundaries.</p>
 
-              <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">
-                We build <strong className="text-white">agents, RAG pipelines, tool integrations, evaluation suites, and guardrails</strong>{" "}
-                so your AI features ship as dependable product functionality—not a fragile demo.
-              </p>
+              <p className="text-[15px] leading-[1.8] text-white">We build <strong className="text-white">agents, RAG pipelines, tool integrations, evaluation suites, and guardrails</strong>{" "} so your AI features ship as dependable product functionality—not a fragile demo.</p>
 
               <div className="mt-6 flex flex-wrap gap-2">
                 {technologies.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-red-500/30 bg-red-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-red-200"
-                  >
-                    {item}
-                  </span>
+                  <span key={item} className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-blue-200">{item}</span>
                 ))}
               </div>
             </div>
@@ -567,48 +665,50 @@ export default function OpenaiDevelopmentCompanyPage() {
       <section className="bg-[var(--off)] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-12">
-            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-              <span className="h-[2px] w-7 bg-red-600" />
-              OpenAI Use Cases
-            </div>
-            <h2 className="font-bebas-neue text-[52px] uppercase leading-[0.92] text-zinc-950 sm:text-[72px]">
-              Built With <span className="text-red-600">OpenAI</span>
-            </h2>
-            <p className="mt-4 text-[15px] leading-8 text-zinc-500">
-              Production patterns for support, sales, documents, knowledge search, workflows, and developer
-              copilots—with guardrails and evals baked in.
-            </p>
+            <Subheading variant="default">OpenAI Use Cases</Subheading>
+
+            <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">Built With <span className="text-red-600">OpenAI</span></h2>
+
+            <p className="text-[15px] leading-8 text-zinc-600">Production patterns for support, sales, documents, knowledge search, workflows, and developer copilots—with guardrails and evals baked in.</p>
           </div>
 
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
             {sectors.map((sector, index) => (
-              <article
-                key={sector.title}
-                className="group flex flex-col rounded-[14px] border border-[var(--border)] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-zinc-300 hover:shadow-md"
-                style={{ borderTopWidth: 3, borderTopColor: index % 2 === 0 ? "var(--red)" : "var(--blue)" }}
-              >
-                <div
-                  className="flex h-12 w-12 items-center justify-center rounded-lg border border-[var(--off-2)] bg-[var(--off)] text-red-600 [&_svg]:h-[22px] [&_svg]:w-[22px]"
-                  dangerouslySetInnerHTML={{ __html: sector.icon }}
+              <article key={sector.title} className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white transition-all duration-300 hover:-translate-y-0.5 hover:border-zinc-300 hover:shadow-[0_20px_45px_rgba(15,23,42,0.08)]">
+                <div className="h-1 w-full"
+                  style={{
+                    background:
+                      index % 3 === 0
+                        ? "linear-gradient(90deg, #10a37f, #059669)"
+                        : index % 3 === 1
+                          ? "linear-gradient(90deg, #dc2626, #ea580c)"
+                          : "linear-gradient(90deg, #2563eb, #7c3aed)",
+                  }}
                 />
-                <div className="mt-5 text-[17px] font-extrabold tracking-tight text-zinc-950">{sector.title}</div>
-                <p className="mt-3 flex-1 text-[14px] leading-[1.7] text-zinc-500">{sector.desc}</p>
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {sector.features.map((feature) => (
-                    <span
-                      key={feature}
-                      className="rounded-full border border-zinc-200 bg-[var(--off)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-zinc-600"
-                    >
-                      {feature}
+
+                <div className="flex flex-1 flex-col p-6 sm:p-7">
+                  <div className="mb-5 flex items-start justify-between gap-3">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-zinc-100 bg-zinc-50 text-emerald-600 transition-colors duration-300 group-hover:border-emerald-100 group-hover:bg-emerald-50 [&_svg]:h-[22px] [&_svg]:w-[22px]" dangerouslySetInnerHTML={{ __html: sector.icon }} />
+                    <span className="rounded-md border border-zinc-200 bg-zinc-50 px-2 py-1 font-bebas-neue text-lg leading-none tracking-wide text-zinc-400">
+                      {String(index + 1).padStart(2, "0")}
                     </span>
-                  ))}
+                  </div>
+
+                  <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">OpenAI use case</p>
+                  <div className="mb-3 text-[18px] font-extrabold tracking-[-0.02em] text-zinc-950 transition">{sector.title}</div>
+                  <p className="text-[15px] leading-[1.8] text-zinc-600">{sector.desc}</p>
+
+                  <div className="mt-5 border-t border-[var(--border)] pt-5">
+                    <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Capabilities</p>
+                    <div className="flex flex-wrap gap-2">
+                      {sector.features.map((feature) => (
+                        <span key={feature} className="rounded-md border border-zinc-200 bg-zinc-50 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-zinc-700">
+                          {feature}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <Link
-                  href="/contact-us"
-                  className="mt-6 inline-flex w-full items-center justify-center rounded-[6px] bg-zinc-950 py-3 text-[11px] font-bold uppercase tracking-[0.08em] text-white transition hover:bg-red-600"
-                >
-                  Build With OpenAI
-                </Link>
               </article>
             ))}
           </div>
@@ -626,30 +726,75 @@ export default function OpenaiDevelopmentCompanyPage() {
         description="We follow modern AI engineering practices: retrieval + tools, structured outputs, evaluation pipelines, guardrails, and monitoring—so your OpenAI features are stable, secure, and scalable."
       />
 
-      <section className="border-y border-[var(--border)] bg-white py-16 sm:py-20">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2">
-          <div>
-            <div className="mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-              <span className="h-[2px] w-7 bg-red-600" />
-              Technology Stack
+      <section className="relative overflow-hidden border-y border-[var(--border)] bg-white py-16 sm:py-20">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_100%_0%,rgba(16,163,127,0.08),transparent_55%),radial-gradient(ellipse_60%_45%_at_0%_100%,rgba(220,38,38,0.06),transparent_50%)]" />
+
+        <div className="relative mx-auto max-w-7xl px-4">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-end">
+            <div className="space-y-4">
+              <Subheading variant="default">Technology Stack</Subheading>
+              <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">OpenAI <span className="text-red-600">Tech Stack</span></h2>
+              <p className="text-[15px] leading-[1.8] text-zinc-600">A production architecture that connects product UX, model orchestration, retrieval systems, and cloud delivery—built as one cohesive platform, not disconnected tools.</p>
             </div>
-            <h2 className="font-bebas-neue text-[52px] uppercase leading-[0.92] text-zinc-950 sm:text-[72px]">
-              OpenAI <span className="text-red-600">Tech Stack</span>
-            </h2>
-            <p className="mt-4 max-w-xl text-[15px] leading-8 text-zinc-500">
-              Next.js platforms with OpenAI SDK, LangChain, vector search, and cloud infrastructure—engineered for
-              enterprise reliability.
-            </p>
+
+            <div className="rounded-2xl bg-zinc-950 p-5 text-white shadow-[0_24px_50px_rgba(15,23,42,0.14)] sm:p-6">
+              <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-zinc-400">Stack snapshot</p>
+              <p className="mt-2 text-[40px] font-extrabold leading-[0.9] tracking-[-0.02em] text-white">
+                {stackItemCount}
+                <span className="ml-2 text-2xl text-emerald-400">Technologies</span>
+              </p>
+              <p className="text-[15px] leading-[1.8] text-zinc-400">
+                Layered for reliability: ship fast in the UI, enforce quality in AI flows, ground answers in data, and deploy with confidence.
+              </p>
+            </div>
           </div>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-            {stackItems.map((tech) => (
-              <div
-                key={tech}
-                className="rounded-[10px] border border-[var(--border)] bg-[var(--off)] px-4 py-5 text-center text-[13px] font-bold uppercase tracking-[0.06em] text-zinc-800 transition hover:border-red-300 hover:bg-white hover:shadow-sm"
-              >
-                {tech}
-              </div>
-            ))}
+
+          <div className="mt-10 overflow-hidden rounded-2xl border border-zinc-200 bg-[var(--off)] p-4 sm:p-5">
+            <div className="mb-4 flex flex-wrap items-center justify-between gap-3 px-1">
+              <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Architecture flow</p>
+              <p className="text-[12px] font-semibold text-zinc-600">Product → AI → Data → Delivery</p>
+            </div>
+
+            <div className="hidden items-center justify-between gap-2 rounded-xl border border-zinc-200 bg-white px-4 py-3 sm:flex">
+              {stackLayers.map((layer, index) => (
+                <div key={layer.id} className="flex flex-1 items-center gap-2">
+                  <span className="inline-flex rounded-full border px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.08em]" style={{ borderColor: `${layer.accent}44`, color: layer.accent, backgroundColor: `${layer.accent}12` }}>
+                    {layer.title}
+                  </span>
+                  {index < stackLayers.length - 1 && <span className="text-zinc-300">→</span>}
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+              {stackLayers.map((layer, index) => (
+                <article key={layer.id} className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white p-5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_36px_rgba(15,23,42,0.08)]">
+                  <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full blur-2xl transition-opacity group-hover:opacity-100" style={{ backgroundColor: `${layer.accent}20` }} />
+
+                  <div className="relative flex items-start justify-between gap-3">
+                    <div>
+                      <p className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: layer.accent }}>
+                        Layer {String(index + 1).padStart(2, "0")}
+                      </p>
+                      <div className="mb-3 text-[18px] font-bold tracking-[-0.02em] text-zinc-950 transition">{layer.title}</div>
+                      <p className="text-[15px] leading-[1.8] text-zinc-600">{layer.subtitle}</p>
+                    </div>
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-[11px] font-bold" style={{ borderColor: `${layer.accent}55`, color: layer.accent, backgroundColor: `${layer.accent}10` }}>
+                      {layer.items.length}
+                    </span>
+                  </div>
+
+                  <ul className="relative mt-5 space-y-2">
+                    {layer.items.map((tech) => (
+                      <li key={tech} className="flex items-center justify-between rounded-lg border border-zinc-100 bg-zinc-50 px-3 py-2.5 transition-colors group-hover:border-zinc-200 group-hover:bg-white">
+                        <span className="text-[13px] font-semibold uppercase tracking-[0.08em] text-zinc-800">{tech}</span>
+                        <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: layer.accent }} />
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -678,7 +823,7 @@ export default function OpenaiDevelopmentCompanyPage() {
         }
         description="Let&apos;s build your AI product with OpenAI—agents, RAG, tool integrations, guardrails, and evaluation pipelines for production reliability."
         buttonText="Get a Free Quote →"
-        buttonHref="/contact"
+        buttonHref="/contact-us"
       />
     </>
   );
