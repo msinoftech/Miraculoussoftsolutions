@@ -190,32 +190,32 @@ const marqueeItems = [
 
 const features = [
     { 
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>`, 
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>`, 
         title: "Retail ERP Platforms", 
         description: "Multi-store management for products, pricing, branches, staff, customers, vendors, billing, and operations." 
     },
     { 
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>`, 
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>`, 
         title: "Smart POS & Checkout", 
         description: "Barcode billing, refunds, split payments, taxes, discounts, invoices, cash drawer, and counter-wise reporting." 
     },
     { 
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M18 21V10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v11"/><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 1.132-1.803l7.95-3.974a2 2 0 0 1 1.837 0l7.948 3.974A2 2 0 0 1 22 8z"/><path d="M6 13h12"/><path d="M6 17h12"/></svg>`, 
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M18 21V10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v11"/><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 1.132-1.803l7.95-3.974a2 2 0 0 1 1.837 0l7.948 3.974A2 2 0 0 1 22 8z"/><path d="M6 13h12"/><path d="M6 17h12"/></svg>`, 
         title: "Inventory Intelligence", 
         description: "Live stock, purchase orders, warehouse movement, batch tracking, expiry alerts, and automated replenishment." 
     },
     { 
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5"/><path d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"/><path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"/></svg>`, 
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5"/><path d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"/><path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"/></svg>`, 
         title: "Omnichannel Commerce", 
         description: "Connect physical stores with Shopify, WooCommerce, marketplaces, mobile apps, and custom ecommerce portals." 
     },
     { 
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`, 
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`, 
         title: "CRM & Loyalty Engine", 
         description: "Customer profiles, reward points, personalized offers, repeat purchase journeys, segmentation, and retention flows." 
     },
     { 
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7"/></svg>`, 
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7"/></svg>`, 
         title: "Executive Analytics", 
         description: "Sales trends, margin insights, branch comparison, demand forecasting, staff performance, and product-level reporting." 
     },
@@ -264,17 +264,17 @@ const metrics = [
 
 const featureCards = [
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M14 15H9v-5"/><path d="M16 3h5v5"/><path d="M21 3 9 15"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M14 15H9v-5"/><path d="M16 3h5v5"/><path d="M21 3 9 15"/></svg>`,
     title: "Real-Time Operations",
     desc: "Live sync across billing counters, warehouses, ecommerce orders, loyalty points, and branch-level performance.",
   },
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock-keyhole-icon lucide-lock-keyhole"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-lock-keyhole-icon lucide-lock-keyhole"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`,
     title: "Enterprise Security",
     desc: "Role-based access, secure APIs, audit logs, encryption-ready flows, admin approvals, and cloud deployment standards.",
   },
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M14 15H9v-5"/><path d="M16 3h5v5"/><path d="M21 3 9 15"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M14 15H9v-5"/><path d="M16 3h5v5"/><path d="M21 3 9 15"/></svg>`,
     title: "Built for Scale",
     desc: "Optimized architecture for growing stores, users, SKUs, order volume, integrations, and multi-location expansion.",
   },
@@ -312,24 +312,23 @@ export default function RetailIndustryPage() {
         <Script id="retail-software-development-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}/>
 
         {/* HERO SECTION */}
-        <section className="relative flex min-h-[88vh] flex-col overflow-hidden">
+        <section className="relative overflow-hidden bg-zinc-950 py-16 sm:py-20">
             
-            <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(220,38,38,0.28),transparent_30%),radial-gradient(circle_at_82%_20%,rgba(37,99,235,0.26),transparent_32%),radial-gradient(circle_at_50%_88%,rgba(255,255,255,0.08),transparent_28%),linear-gradient(135deg,#04060b_0%,#080b14_45%,#02030a_100%)]" />
-            <div className="absolute inset-0 z-10 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,.7)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.7)_1px,transparent_1px)] [background-size:72px_72px]" />
-            <div className="absolute -right-28 top-28 z-10 h-[430px] w-[430px] rounded-full border border-white/10"/>
-            <div className="absolute -left-24 bottom-8 z-10 h-[340px] w-[340px] rounded-full border border-red-500/20"/>
+            <div className="grid-bg absolute inset-0 opacity-10" />
+            <div className="absolute -right-28 top-28 z-10 h-[430px] w-[430px] rounded-full border border-red-500/20"/>
+            <div className="absolute right-[-10rem] top-20 h-[30rem] w-[30rem] rounded-full bg-red-600/10 blur-3xl mss-float-reverse" />
 
-            <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-2 z-10">
+            <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
                 {/* Left Side */}
                 <div className="space-y-5">
-                    <Subheading variant="light">Retail ERP</Subheading>
-                    <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-white">
-                    Next-Generation <span className="text-red-600">Retail Software</span> for <span className="hero-outline outline-white">High-Growth Businesses</span>.
+                    <Subheading variant="light">Retail Software</Subheading>
+                    <h1 className="uppercase leading-[0.84] tracking-wider text-[64px] text-white sm:text-[96px] md:text-[118px] lg:text-[132px]">
+                    Built for <span className="text-red-600">Retail</span> <span className="hero-outline outline-white">Growth</span>.
                     </h1>
 
-                    <p className="text-[15px] leading-8 text-white">We build powerful retail platforms that connect POS, inventory, ecommerce, payments, CRM, loyalty, logistics, and executive analytics into one premium digital operating system.</p>
+                    <p className="text-white/70">We build powerful retail platforms that connect POS, inventory, ecommerce, payments, CRM, loyalty, logistics, and executive analytics into one premium digital operating system.</p>
 
-                    <div className="flex flex-wrap items-center gap-4">
+                    <div className="relative">
                         <DefaultButton href="/contact-us" bgClassName="bg-red-600 hover:bg-red-700">Discuss Your Requirement</DefaultButton>
                     </div>
 
@@ -355,10 +354,7 @@ export default function RetailIndustryPage() {
         <Card
         label="Retail Engineering Services"
         title={
-            <>
-            Software solutions built for modern  <br />
-            <span className="text-red-600">retail complexity</span>
-            </>
+            <>built for modern <span className="text-red-600">retail complexity</span></>
         }
         description="From single-store businesses to enterprise retail chains, we create reliable, secure, and growth-ready systems that make operations faster and smarter."
         items={features}
@@ -379,7 +375,7 @@ export default function RetailIndustryPage() {
 
                         <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">One connected retail technology ecosystem</h2>
                         
-                        <p className="text-[15px] leading-8 text-white">We do not just build screens. We engineer connected platforms that improve stock accuracy, checkout speed, customer retention, reporting, and operational control.</p>
+                        <p className="text-white/70">We do not just build screens. We engineer connected platforms that improve stock accuracy, checkout speed, customer retention, reporting, and operational control.</p>
 
                         <DefaultButton href="/contact-us" bgClassName="bg-red-600 hover:bg-red-700">Discuss Your Retail Project</DefaultButton>
                     </div>
@@ -387,10 +383,10 @@ export default function RetailIndustryPage() {
                     {/* Right Column */}
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
                         {solutions.map((item, index) => (
-                        <div key={item} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.045] h-auto p-4 shadow-2xl shadow-black/20 transition hover:border-red-600/60">
-                            <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check-line-icon lucide-check-line text-red-400"><path d="M20 4L9 15"/><path d="M21 19L3 19"/><path d="M9 15L4 10"/></svg></span>
-                            <span className="text-sm text-white">{item}</span>
-                        </div>
+                          <div key={item} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.045] h-auto p-4 shadow-2xl shadow-black/20 transition hover:border-red-600/60">
+                              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 lucide lucide-check-icon lucide-check text-red-600"><path d="M20 6 9 17l-5-5"></path></svg></span>
+                              <span className="text-sm text-white">{item}</span>
+                          </div>
                         ))}
                     </div>
                 </div>
@@ -404,22 +400,20 @@ export default function RetailIndustryPage() {
                 {/* Left Column */}
                     <div className="border-b-2 border-[var(--border)] pb-12 lg:border-b-0 lg:border-r-2 lg:pb-0 lg:pr-14">
                         <Subheading variant="default">Delivery System</Subheading>
-                        <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">
-                        From retail idea to reliable <span className="text-red-600">software launch</span>
-                        </h2>
-                        <p className="text-[15px] leading-8 text-zinx-600">A structured delivery process helps us build software that is practical for your team, powerful for your business, and ready for future scale.</p>
+                        <h2 className="text-[58px] uppercase text-zinc-900 leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">From retail idea to reliable <span className="text-red-600">software launch</span></h2>
+                        <p>A structured delivery process helps us build software that is practical for your team, powerful for your business, and ready for future scale.</p>
                     </div>
 
                     {/* Right Column */}
                     <div className="pt-12 lg:pl-14 lg:pt-0">
                         {whyPointsold.map((point, index) => (
-                        <div key={point.title} className="grid grid-cols-[56px_1fr] gap-5 border-b border-[var(--border)] py-8 last:border-b-0 first:pt-0 last:pb-0">
-                            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-zinc-950 text-white transition hover:bg-red-600">
+                        <div key={point.title} className="group grid grid-cols-[56px_1fr] gap-5 border-b border-[var(--border)] py-8 last:border-b-0 first:pt-0 last:pb-0 ">
+                            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-zinc-950 text-white transition group-hover:bg-red-600">
                                 <span className="font-bebas-neue text-[22px] uppercase tracking-[0.04em]">{String(index + 1).padStart(2, "0")}</span>
                             </div>
                             <div>
-                                <div className="text-[17px] font-extrabold tracking-[-0.02em] text-zinc-950">{point.title}</div>
-                                <p className="text-[15px] leading-8 text-zinc-600">{point.description}</p>
+                                <div className="text-lg font-bold leading-[1.05] tracking-[-0.03em] text-zinc-950">{point.title}</div>
+                                <p>{point.description}</p>
                             </div>
                         </div>
                         ))}
@@ -434,10 +428,10 @@ export default function RetailIndustryPage() {
                 <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
                     {featureCards.map((item, index) => {
                         return (
-                        <div key={item.title} className="rounded-2xl bg-white p-7 shadow-xl space-y-4">
+                        <div key={item.title} className="rounded-2xl bg-white p-7 shadow-xl space-y-3">
                             <span className="mb-6 flex h-11 w-11 items-center justify-center rounded-[10px] border border-[var(--border)] bg-[var(--off)] transition group-hover:border-red-600 group-hover:bg-red-600" dangerouslySetInnerHTML={{ __html: item.icon }} />
                             <div className="text-[20px] font-extrabold tracking-[-0.02em] text-zinc-900">{item.title}</div>
-                            <p className="text-[15px] leading-6 text-zinc-600">{item.desc}</p>
+                            <p>{item.desc}</p>
                         </div>
                         );
                     })}
@@ -453,7 +447,7 @@ export default function RetailIndustryPage() {
                         <div className="flex items-center gap-3 rounded-xl border border-[var(--border)] bg-[var(--off)] px-4 py-2 text-sm font-bold text-zinc-600">API-first architecture</div>
                     </div>
 
-                    <div className="mt-10 flex flex-wrap gap-3 rounded-2xl border border-red-500/30 bg-gradient-to-r from-red-500/10 via-white/[0.03] to-blue-500/10 p-5 shadow-[0_0_0_1px_rgba(239,68,68,0.08),0_18px_40px_rgba(0,0,0,0.35)]">
+                    <div className="mt-10 flex flex-wrap gap-3 rounded-2xl bg-gradient-to-r from-red-500/10 via-white/[0.03] to-blue-500/10 p-5 shadow-xl">
                         {stack.map((item, index) => (
                         <span key={item} className="rounded-xl border border-[var(--border)] bg-[var(--off)] px-4 py-2 text-sm font-semibold text-zinc-600 shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:border-red-400/60 hover:bg-red-500/15">{item}</span>
                         ))}
@@ -466,11 +460,7 @@ export default function RetailIndustryPage() {
         {/* CTA STRIP */}
         <CtaStrip
         title={
-            <>
-            Ready to transform  
-            <br />
-            your <span className="text-black">retail business?</span>
-            </>
+            <>Ready to transform <span className="text-zinc-950">your retail business?</span></>
         }
         description="Partner with Miraculous Soft Solutions to build a custom retail platform that improves sales, operations, customer experience, and business visibility."
         buttonText="Start a Project →"

@@ -91,7 +91,7 @@ export default function AgentModelHubGraph({ className = "" }: AgentModelHubGrap
                 strokeLinecap="round"
                 strokeDasharray={i === activeIndex ? "none" : "1.2 0.8"}
                 className={i === activeIndex ? "opacity-100" : "service-graph-spoke opacity-70"}
-                style={{ transition: "stroke 0.4s ease, stroke-width 0.4s ease" }}
+                style={{ transition: "stroke 0.4s ease, strokeWidth 0.4s ease" }}
               />
             ))}
           </svg>
@@ -117,7 +117,7 @@ export default function AgentModelHubGraph({ className = "" }: AgentModelHubGrap
                 aria-pressed={isActive}
                 aria-label={`Select ${model.provider} ${model.name}`}
               >
-                <span className="block text-[8px] font-bold uppercase tracking-[0.12em] text-zinc-500">{model.provider}</span>
+                <span className="block text-[8px] font-bold uppercase tracking-[0.12em] text-zinc-600">{model.provider}</span>
                 <span className="mt-0.5 block text-[10px] font-extrabold leading-tight text-zinc-900 sm:text-[11px]">{model.name}</span>
                 {isActive && (
                   <span

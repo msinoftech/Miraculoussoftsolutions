@@ -30,12 +30,10 @@ export default function ProfessionalSuiteHubGraph({
         <div className="rounded-2xl border border-white/10 bg-[#080b13]/90 p-5">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-xs uppercase tracking-[0.28em] text-zinc-300">Live Ops Console</p>
-              <div className="mt-2 text-2xl font-bold text-white">Professional Suite</div>
+              <div className="text-xs font-bold uppercase tracking-[0.22em] text-white/70">Live Ops Console</div>
+              <div className="mt-2 text-2xl font-bold leading-[1.05] tracking-[-0.03em] text-white">Professional Suite</div>
             </div>
-            <span className="rounded-2xl border border-emerald-300/20 bg-emerald-400/10 px-3 py-1 text-xs font-black text-emerald-300">
-              Online
-            </span>
+            <span className="rounded-2xl border border-emerald-300/20 bg-emerald-400/10 px-3 py-1 text-xs font-bold leading-[1.05] tracking-[-0.03em] text-emerald-300">Online</span>
           </div>
 
           <div className="mt-5 grid gap-4 sm:grid-cols-[0.9fr_1.1fr]">
@@ -67,16 +65,16 @@ export default function ProfessionalSuiteHubGraph({
               <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-blue-500/20 blur-2xl" />
               <div className="absolute bottom-0 left-0 h-24 w-24 rounded-full bg-red-500/20 blur-2xl" />
               <div className="relative z-10">
-                <div className="flex items-center gap-3">
+                <div className="flex gap-3">
                   <div className="grid h-14 w-14 place-items-center rounded-2xl bg-white text-lg font-black text-black">
                     {selected?.number ?? "01"}
                   </div>
                   <div>
-                    <p className="text-xs text-white">Selected Module</p>
-                    <p className="font-bold text-white">{selected?.title ?? "Professional CRM"}</p>
+                    <div className="text-xs font-bold leading-[1.05] tracking-[-0.03em] text-white/70">Selected Module</div>
+                    <div className="font-bold leading-[1.05] tracking-[-0.03em] text-white">{selected?.title ?? "Professional CRM"}</div>
                   </div>
                 </div>
-                <p className="mt-5 text-sm leading-6 text-zinc-200">
+                <p className="mt-5 text-sm font-medium leading-[1.05] tracking-[-0.03em] text-white/70">
                   {selected?.description ?? "Select a module to preview its overview."}
                 </p>
                 <div className="mt-6 space-y-3">

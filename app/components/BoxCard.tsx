@@ -35,8 +35,7 @@ export default function BoxCard({
   cardClassName = "group relative min-h-[255px] overflow-hidden rounded-[14px] border border-white/10 bg-white p-6 shadow-sm transition hover:-translate-y-1",
   cardIndexClassName = "pointer-events-none absolute right-4 top-2 font-bebas-neue text-6xl leading-none text-zinc-200",
   iconWrapClassName = "mb-4 text-3xl w-12 h-12 flex items-center justify-center rounded-lg border border-[var(--off-2)] bg-[var(--off)]",
-  itemTitleClassName = "text-[18px] font-extrabold tracking-[-0.02em] text-zinc-950 transition leading-[1.2] mb-2",
-  itemBodyClassName = "mt-4 text-[14px] leading-[1.7] text-zinc-500",
+  itemTitleClassName = "text-[18px] font-bold tracking-[-0.02em] text-zinc-900 transition leading-[1.2] mb-2",
 }: BoxCardProps) {
   return (
     <section className={sectionClassName}>
@@ -47,11 +46,11 @@ export default function BoxCard({
           )}
 
           {title && (
-            <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">{title}</h2>
+            <h2 className="text-[58px] uppercase text-zinc-900 leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">{title}</h2>
           )}
 
           {description && (
-            <p className="text-[15px] leading-8 text-zinc-500">{description}</p>
+            <p>{description}</p>
           )}
         </div>
 
@@ -64,7 +63,7 @@ export default function BoxCard({
                 <span dangerouslySetInnerHTML={{ __html: item.icon }} />
               </div>
               <div className={itemTitleClassName}>{item.title}</div>
-              <div className={itemBodyClassName}>{item.body}</div>
+              <p>{item.body}</p>
             </div>
           ))}
         </div>

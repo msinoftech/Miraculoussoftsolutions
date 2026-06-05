@@ -50,37 +50,37 @@ const features = [
     number: "",
     title: "Multi-Tenant SaaS Platforms",
     description: "Build secure, scalable products with clean tenant separation, admin controls, and flexible account structures.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>`,
   },
   {
     number: "",
     title: "API-First Product Engineering",
     description: "Future-ready APIs for web, mobile, internal systems, third-party integrations, and automation workflows.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><circle cx="12" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9"/><path d="M12 12v3"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><circle cx="12" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9"/><path d="M12 12v3"/></svg>`,
   },
   {
     number: "",
     title: "Role-Based Dashboards",
     description: "Rich portals for admins, teams, customers, and partners with configurable permissions and reporting.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>`,
   },
   {
     number: "",
     title: "AI-Ready Features",
     description: "Add copilots, automation, summarization, smart search, and operational AI without breaking core product flow.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>`,
   },
   {
     number: "",
     title: "Cloud Deployment & Scaling",
     description: "Ship on modern cloud infrastructure with CI/CD, observability, autoscaling, and resilient delivery pipelines.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>`,
   },
   {
     number: "",
     title: "Security & Compliance Focus",
     description: "Strong authentication, audit trails, role control, data protection, and production-safe engineering practices.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`,
   },
 ];
 
@@ -255,28 +255,28 @@ const steps = [
 const benefits = [
   {
     no: "01",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rocket-icon lucide-rocket"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-rocket-icon lucide-rocket"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>`,
     title: "Fast MVP Momentum",
     body: "We help turn strong product ideas into launch-ready SaaS experiences without bloated delivery cycles.",
     tag: "",
   },
   {
     no: "02",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet-icon lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-wallet-icon lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>`,
     title: "Scalable Core Systems",
     body: "From auth and billing to dashboard logic and integrations, we build foundations made to grow.",
     tag: "",
   },
   {
     no: "03",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings2-icon lucide-settings-2"><path d="M14 17H5"/><path d="M19 7h-9"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-settings2-icon lucide-settings-2"><path d="M14 17H5"/><path d="M19 7h-9"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>`,
     title: "Modern Engineering",
     body: "Clean frontend architecture, resilient backend services, and product-grade code quality from day one.",
     tag: "",
   },
   {
     no: "04",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake-icon lucide-handshake"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-handshake-icon lucide-handshake"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>`,
     title: "Built for Outcomes",
     body: "We care about activation, retention, usability, performance, and business impact, not just screens.",
     tag: "",
@@ -322,26 +322,19 @@ export default function SaaSDevelopmentPage() {
     <Script id="saas-development-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}/>
 
     {/* HERO */}
-    <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-zinc-950">
+    <section className="relative overflow-hidden bg-white py-16 sm:py-20 bg-zinc-950">
         <div className="grid-bg absolute inset-0 opacity-5" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
         
-        <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-6 px-4 lg:grid-cols-2 z-10">
+        <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
           {/* Left Column */}
           <div className="space-y-5">
             <Subheading variant="light">SaaS Development Services</Subheading>
-            <h1 className="font-bebas-neue uppercase leading-[0.84] tracking-wider text-white text-[80px] sm:text-[100px] md:text-[140px]">
-              <span>BUILD </span>
-              <span className="text-red-600">SAAS</span>
-              <span className="hero-outline block outline-white">PLATFORMS</span>
-            </h1>
-            <p className="text-[15px] leading-8 text-white">We design and develop modern SaaS products with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
+            <h1 className="uppercase leading-[0.84] tracking-wider text-[64px] text-white sm:text-[96px] md:text-[118px] lg:text-[132px]"><span>BUILD </span><span className="text-red-600">SAAS</span><span className="hero-outline block outline-white">PLATFORMS</span></h1>
+            <p className="text-white/70">We design and develop modern SaaS products with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
 
-            <div className="flex flex-wrap items-center gap-4">
-              <DefaultButton 
-                href="/contact-us"
-                bgClassName="bg-red-600 hover:bg-red-700"
-              >Start Your Project</DefaultButton>
+            <div className="relative">
+              <DefaultButton href="/contact-us" bgClassName="bg-red-600 hover:bg-red-700">Start Your Project</DefaultButton>
             </div>
 
             <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -355,7 +348,7 @@ export default function SaaSDevelopmentPage() {
           </div>
 
           {/* Right Column */}
-          <div className="relative w-full space-y-4">
+          <div className="relative w-full space-y-4 bg-zinc-950">
             <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01)),linear-gradient(135deg,rgba(26,86,219,0.10),rgba(224,32,32,0.10))] p-4 shadow-2xl">
 
               <div className="relative">
@@ -473,7 +466,7 @@ export default function SaaSDevelopmentPage() {
                           <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4">
                               <div>
                                   <div className="mb-4 flex items-center justify-between gap-3">
-                                      <div className="text-[12px] font-bold uppercase tracking-[0.12em] text-zinc-500">Monthly Recurring Revenue</div>
+                                      <div className="text-[12px] font-bold uppercase tracking-[0.12em] text-zinc-600">Monthly Recurring Revenue</div>
                                       <div className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-xs font-semibold uppercase text-blue-200">+18.4%</div>
                                   </div>
                                   <div className="font-bebas-neue text-4xl leading-none text-white">$84K</div>
@@ -488,19 +481,19 @@ export default function SaaSDevelopmentPage() {
 
                           <div className="grid grid-cols-1 gap-4">
                               <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
-                                  <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Active Workspaces</div>
+                                  <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-600">Active Workspaces</div>
                                   <div className="font-bebas-neue text-4xl leading-none text-white">1,248</div>
                                   <div className="text-[12px] font-bold text-green-500">Stable growth</div>
                               </div>
 
                               <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
-                                  <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Churn Rate</div>
+                                  <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-600">Churn Rate</div>
                                   <div className="font-bebas-neue text-4xl leading-none text-white">2.1%</div>
                                   <div className="text-[12px] font-bold text-green-500">Healthy retention</div>
                               </div>
 
                               <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
-                                  <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Automation Runs</div>
+                                  <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-600">Automation Runs</div>
                                   <div className="font-bebas-neue text-4xl leading-none text-white">42K</div>
                                   <div className="text-[12px] font-bold text-green-500">Live workflows</div>
                               </div>
@@ -520,9 +513,9 @@ export default function SaaSDevelopmentPage() {
                     <Subheading variant="light">Why SaaS With Us</Subheading>
                     <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">SAAS PRODUCTS BUILT FOR <span className="text-red-600">REAL GROWTH</span></h2>
 
-                    <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">We build SaaS products that are not just visually strong, but strategically engineered for <strong className="text-white"> {" "} recurring revenue, user retention, product operations, and long-term scale</strong>.</p>
-                    <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">Whether you are launching a startup MVP, modernizing an internal B2B platform, or creating a vertical SaaS product, we shape the system around{" "} <strong className="text-white"> business logic, usability, security, and growth-readiness </strong>.</p>
-                    <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">Our approach combines premium product design with scalable engineering so your SaaS can launch fast, operate smoothly, and expand without needing a full rebuild later.</p>
+                    <p className="text-white/70">We build SaaS products that are not just visually strong, but strategically engineered for recurring revenue, user retention, product operations, and long-term scale.</p>
+                    <p className="text-white/70">Whether you are launching a startup MVP, modernizing an internal B2B platform, or creating a vertical SaaS product, we shape the system around business logic, usability, security, and growth-readiness.</p>
+                    <p className="text-white/70">Our approach combines premium product design with scalable engineering so your SaaS can launch fast, operate smoothly, and expand without needing a full rebuild later.</p>
                 </div>
             </div>
         </div>
@@ -532,10 +525,7 @@ export default function SaaSDevelopmentPage() {
     <Card
       label="What We Build"
       title={
-        <>
-          High-Value SaaS Capabilities for <br />
-          <span className="text-red-600">Modern Products</span>
-        </>
+        <>High-Value SaaS Capabilities for <span className="text-red-600">Modern Products</span></>
       }
       description="From MVP platforms to mature enterprise portals, we create SaaS systems engineered for usability, speed, flexibility, and scale."
       items={features}
@@ -546,9 +536,7 @@ export default function SaaSDevelopmentPage() {
       steps={steps}
       label="SaaS Development Process"
       title={
-        <>
-          FROM IDEA TO <span className="text-red-600">SCALABLE PLATFORM</span>
-        </>
+        <>FROM IDEA TO <span className="text-red-600">SCALABLE PLATFORM</span></>
       }
       description="We turn SaaS concepts into high-performance digital products through structured discovery, smart architecture, premium UX, and launch-ready engineering."
     />
@@ -558,13 +546,7 @@ export default function SaaSDevelopmentPage() {
       items={benefits}
       label="Why Choose Us"
       title={
-        <>
-          A Strong Fit for
-          <br />
-          <span className="text-red-600">SaaS Founders, Teams</span> 
-          <br />
-          and Growing Businesses
-        </>
+        <>SaaS Founders, Teams and <span className="text-red-600">Growing Businesses</span></>
       }
       description="We build with business clarity, engineering depth, and premium execution so your product feels credible from the first interaction to long-term scale."
       headerClassName="mb-12 text-left"
@@ -573,11 +555,7 @@ export default function SaaSDevelopmentPage() {
     {/* CTA STRIP */}
     <CtaStrip
       title={
-        <>
-          READY TO BUILD
-          <br />
-          YOUR <span className="text-black">SAAS?</span>
-        </>
+        <>READY TO BUILD YOUR <span className="text-black">SAAS?</span></>
       }
       description="Let's design a SaaS platform that is premium on the surface, strong in the backend, and ready for subscriptions, workflows, users, and scale."
       buttonText="Get a Free Quote →"

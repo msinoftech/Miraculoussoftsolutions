@@ -16,7 +16,7 @@ function navLiClass(isActive: boolean) {
 
 function navTriggerClass(isActive: boolean) {
   return `flex h-full items-center gap-2 text-[12px] font-bold uppercase tracking-wider transition ${
-    isActive ? "text-red-600" : "text-zinc-500 group-hover:text-red-600"
+    isActive ? "text-red-600" : "text-zinc-600 group-hover:text-red-600"
   }`;
 }
 
@@ -67,19 +67,13 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b-2 border-zinc-950 bg-[var(--bg)]">
-      <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="w-full h-full flex items-center justify-between">
-            <Link href="/" className="flex h-full items-center">
-              <div className="flex items-center gap-3">
-                <Logo />
-                  <div className="leading-none">
-                    <div className="text-[15px] font-extrabold tracking-tight text-neutral-900">Miraculous Soft</div>
-                    <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-neutral-500">Solutions</div>
-                  </div>
-                </div>
+      <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+          <div className="flex w-fit h-full min-w-0 flex-1 items-center">
+            <Link href="/" className="flex h-full shrink-0 items-center gap-3 pr-5">
+              <Logo />
             </Link>
 
-            <nav className="hidden items-center border-l border-[var(--border)] h-full xl:flex">
+            <nav className="hidden h-full items-center border-l border-[var(--border)] xl:flex">
               <ul className="flex h-full">
                 {/* Services block */}
                 <li className={navLiClass(navActive.services)}>
@@ -90,8 +84,8 @@ export default function Navbar() {
                   <div className="invisible absolute left-0 top-full z-40 w-[400px] translate-y-2 rounded-2xl border border-[#dadada] bg-white/95 p-6 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                     <div className="mb-3 border-b border-[#e0dbd2] pb-3">
                       <div className="flex items-center justify-between gap-2">
-                        <div className="text-[12px] font-bold uppercase tracking-wider text-zinc-500">SERVICES</div>
-                        <Link href="/services" className={`text-[12px] font-bold tracking-wider ${pathname === "/services" ? "text-red-600" : "text-zinc-500 hover:text-red-600"}`}>VIEW ALL</Link>
+                        <div className="text-[12px] font-bold uppercase tracking-wider text-zinc-600">SERVICES</div>
+                        <Link href="/services" className={`text-[12px] font-bold tracking-wider ${pathname === "/services" ? "text-red-600" : "text-zinc-600 hover:text-red-600"}`}>VIEW ALL</Link>
                       </div>
                       <div className="mt-1 text-[14px] font-extrabold text-zinc-950">What we build</div>
                     </div>
@@ -124,8 +118,8 @@ export default function Navbar() {
                   <div className="invisible absolute left-0 top-full z-40 w-[440px] translate-y-2 rounded-xl border border-[#dadada] bg-white/95 p-5 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                     <div className="mb-3 border-b border-[#e0dbd2] pb-3">
                       <div className="flex items-center justify-between gap-2">
-                        <div className="text-[12px] font-bold uppercase tracking-wider text-zinc-500">TECHNOLOGY</div>
-                        <Link href="/technologies" className={`text-[12px] font-bold tracking-wider ${pathname === "/technologies" ? "text-red-600" : "text-zinc-500 hover:text-red-600"}`}>VIEW ALL</Link>
+                        <div className="text-[12px] font-bold uppercase tracking-wider text-zinc-600">TECHNOLOGY</div>
+                        <Link href="/technologies" className={`text-[12px] font-bold tracking-wider ${pathname === "/technologies" ? "text-red-600" : "text-zinc-600 hover:text-red-600"}`}>VIEW ALL</Link>
                       </div>
                       <div className="mt-1 text-[14px] font-extrabold text-zinc-950">Modern engineering stack</div>
                     </div>
@@ -217,7 +211,7 @@ export default function Navbar() {
                     <div className="mb-3 border-b border-[#e0dbd2] pb-3">
                       <div className="flex items-center justify-between gap-2">
                         <div className="text-[12px] font-bold uppercase tracking-wider text-zinc-400">Industries</div>
-                        <Link href="/industries" className={`text-[12px] font-bold tracking-wider ${pathname === "/industries" ? "text-red-600" : "text-zinc-500 hover:text-red-600"}`}>VIEW ALL</Link>
+                        <Link href="/industries" className={`text-[12px] font-bold tracking-wider ${pathname === "/industries" ? "text-red-600" : "text-zinc-600 hover:text-red-600"}`}>VIEW ALL</Link>
                       </div>
                       <div className="mt-1 text-[14px] font-extrabold text-zinc-950">Domains we serve</div>
                     </div>
@@ -258,22 +252,22 @@ export default function Navbar() {
               </ul>
             </nav>
 
-            <div className="hidden h-16 items-center gap-2.5 xl:flex">
-              <Link href="/contact-us" className={`inline-flex h-[42px] items-center justify-center border px-6 text-[12px] font-semibold tracking-wider transition ${
-                  navActive.contact
-                    ? "border-red-600 bg-red-50 text-red-600"
-                    : "border-[#cfcfcf] bg-white text-[#222] hover:border-red-600 hover:text-red-600"
-                }`}
-                aria-current={navActive.contact ? "page" : undefined}
-              >
-                Contact Us
-              </Link>
-              <Link href={`tel:${contactInfo.phone}`} className="inline-flex h-[42px] items-center justify-center bg-[#0a0a13] px-6 text-[12px] font-semibold tracking-wider text-white">BOOK A CALL</Link>
-            </div>
-
           </div>
 
-          <button type="button" aria-label="Open menu" className="flex items-center p-1 bg-zinc-950 rounded-md justify-center cursor-pointer xl:hidden" onClick={() => setIsOpen(true)}>
+          <div className="hidden h-16 shrink-0 items-center gap-2.5 xl:flex">
+            <Link href="/contact-us" className={`inline-flex h-[42px] items-center justify-center border px-6 text-[12px] font-semibold tracking-wider transition ${
+                navActive.contact
+                  ? "border-red-600 bg-red-50 text-red-600"
+                  : "border-[#cfcfcf] bg-white text-[#222] hover:border-red-600 hover:text-red-600"
+              }`}
+              aria-current={navActive.contact ? "page" : undefined}
+            >
+              Contact Us
+            </Link>
+            <Link href={`tel:${contactInfo.phone}`} className="inline-flex h-[42px] items-center justify-center bg-[#0a0a13] px-6 text-[12px] font-semibold tracking-wider text-white">BOOK A CALL</Link>
+          </div>
+
+          <button type="button" aria-label="Open menu" className="flex shrink-0 items-center justify-center rounded-md bg-zinc-950 p-1 cursor-pointer xl:hidden" onClick={() => setIsOpen(true)}>
             <svg width="36px" height="36px" viewBox="0 0 24.00 24.00" fill="none"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 17H8M12 17H20M4 12H20M4 7H12M16 7H20" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path> </g></svg>
           </button>
 
@@ -297,7 +291,7 @@ export default function Navbar() {
             </button>
             {mobileDropdown === "services" && (
               <div className="space-y-2 border-t border-[#f0f0f0] px-6 py-3">
-                <Link href="/services" className={`block py-1 text-[11px] font-bold uppercase tracking-wider ${isLinkActive(pathname, "/services") ? "text-red-600" : "text-zinc-500"}`} onClick={closeMobileMenu}>
+                <Link href="/services" className={`block py-1 text-[11px] font-bold uppercase tracking-wider ${isLinkActive(pathname, "/services") ? "text-red-600" : "text-zinc-600"}`} onClick={closeMobileMenu}>
                   View all services
                 </Link>
                 {(
@@ -326,7 +320,7 @@ export default function Navbar() {
             </button>
             {mobileDropdown === "technology" && (
               <div className="space-y-3 border-t border-[#f0f0f0] px-6 py-3">
-                <Link href="/technologies" className={`block py-1 text-[11px] font-bold uppercase tracking-wider ${isLinkActive(pathname, "/technologies") ? "text-red-600" : "text-zinc-500"}`} onClick={closeMobileMenu}>
+                <Link href="/technologies" className={`block py-1 text-[11px] font-bold uppercase tracking-wider ${isLinkActive(pathname, "/technologies") ? "text-red-600" : "text-zinc-600"}`} onClick={closeMobileMenu}>
                   View all technology
                 </Link>
                 {(
@@ -409,7 +403,7 @@ export default function Navbar() {
             </button>
             {mobileDropdown === "industries" && (
               <div className="space-y-2 border-t border-[#f0f0f0] px-6 py-3">
-                <Link href="/industries" className={`block py-1 text-[11px] font-bold uppercase tracking-wider ${isLinkActive(pathname, "/industries") ? "text-red-600" : "text-zinc-500"}`} onClick={closeMobileMenu}>
+                <Link href="/industries" className={`block py-1 text-[11px] font-bold uppercase tracking-wider ${isLinkActive(pathname, "/industries") ? "text-red-600" : "text-zinc-600"}`} onClick={closeMobileMenu}>
                   View all industries
                 </Link>
                 {(

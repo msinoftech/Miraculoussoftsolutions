@@ -39,16 +39,14 @@ export default function Card({
   description,
   sectionClassName = "bg-white py-14 sm:py-20",
   containerClassName = "mx-auto max-w-7xl px-4",
-  headerClassName = "mb-14 flex flex-col justify-between gap-8 lg:flex-row lg:items-end",
-  // labelClassName = "mb-5 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500",
-  titleClassName = "text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]",
-  descriptionClassName = "max-w-xl text-[15px] leading-8 text-zinc-500",
+  headerClassName = "mb-14 grid grid-cols-1 gap-8 md:grid-cols-2 md:items-end",
+  titleClassName = "text-[58px] text-zinc-900 uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]",
   gridClassName = "grid border-2 border-zinc-950 md:grid-cols-2 xl:grid-cols-3",
   cardClassName = "group border-[var(--border)] p-8 transition duration-300 hover:bg-zinc-950",
-  indexClassName = "mb-6 text-[11px] font-bold uppercase tracking-[0.1em] text-zinc-500 transition group-hover:text-white/35",
+  indexClassName = "mb-6 text-[11px] font-bold uppercase tracking-[0.1em] text-zinc-600 transition group-hover:text-white/35",
   iconWrapClassName = "mb-6 flex h-11 w-11 items-center justify-center rounded-[10px] border border-[var(--border)] bg-[var(--off)] transition group-hover:border-red-600 group-hover:bg-red-600",
   cardTitleClassName = "mb-3 text-[18px] font-extrabold tracking-[-0.02em] text-zinc-950 transition group-hover:text-white",
-  cardDescriptionClassName = "mb-6 text-[13px] leading-7 text-zinc-500 transition group-hover:text-white/55",
+  cardDescriptionClassName = "transition group-hover:text-white/70",
   arrowClassName = "text-2xl text-[var(--border)] transition group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-red-600",
   showArrow = true,
 }: CardProps) {
@@ -60,7 +58,7 @@ export default function Card({
             <Subheading variant="default">{label}</Subheading>
             <h2 className={titleClassName}>{title}</h2>
           </div>
-          <p className={descriptionClassName}>{description}</p>
+          <p>{description}</p>
         </div>
         <div className={gridClassName}>
           {items.map((item, index) => {

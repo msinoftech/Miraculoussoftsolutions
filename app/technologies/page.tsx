@@ -588,10 +588,10 @@ export default function technologiesPage() {
                 <Link href={cat.parentHref} className={`tech-stack-rail flex w-[min(28%,220px)] shrink-0 flex-col justify-center gap-1 border-l-2 px-6 py-6 transition ${cat.rail}`}>
                   <span className="font-bebas-neue text-3xl leading-none text-white/20">{cat.step}</span>
                   <span className="text-[13px] font-extrabold uppercase tracking-wide text-white">{cat.category}</span>
-                  <span className="text-xs font-semibold text-zinc-500 transition group-hover:text-zinc-400">Hub page ↗</span>
+                  <span className="text-xs font-semibold text-zinc-600 transition group-hover:text-zinc-400">Hub page ↗</span>
                 </Link>
                 <div className="flex min-w-0 flex-1 flex-col justify-center gap-3 px-6 py-5">
-                  <p className="text-[12px] leading-6 text-zinc-500">{cat.description}</p>
+                  <p className="text-[12px] leading-6 text-zinc-600">{cat.description}</p>
                   <div className="flex flex-wrap items-center gap-2">
                     {cat.children.map((tech) => (
                       <Link key={tech.href} href={tech.href} className={`tech-chip-glow rounded-full border px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.08em] transition ${cat.chip}`}>
@@ -618,7 +618,7 @@ export default function technologiesPage() {
                   </div>
                   <span className={`h-2 w-2 shrink-0 rounded-full ${cat.dot}`} />
                 </div>
-                <p className="mt-2 text-[11px] leading-5 text-zinc-500">{cat.description}</p>
+                <p className="mt-2 text-[11px] leading-5 text-zinc-600">{cat.description}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {cat.children.map((tech) => (
                     <Link key={tech.href} href={tech.href} className={`rounded-lg border px-2.5 py-1 text-[9px] font-bold uppercase tracking-wide transition ${cat.chip}`}>{tech.label}</Link>
@@ -675,7 +675,7 @@ export default function technologiesPage() {
               <br />
               <span className="text-red-600">Choose.</span>
             </h2>
-            <p className="text-[15px] leading-8 text-zinc-500">When the stakes are high and execution matters, growth-stage businesses and enterprise teams choose a partner that can think strategically and build reliably.</p>
+            <p className="text-[15px] leading-8 text-zinc-600">When the stakes are high and execution matters, growth-stage businesses and enterprise teams choose a partner that can think strategically and build reliably.</p>
           </div>
 
           <div className="pt-12 lg:pl-14 lg:pt-0">
@@ -686,7 +686,7 @@ export default function technologiesPage() {
                 </div>
                 <div>
                   <div className="text-[17px] font-extrabold tracking-[-0.02em] text-zinc-950">{point.title}</div>
-                  <p className="mt-2 text-[13px] leading-7 text-zinc-500">{point.description}</p>
+                  <p className="mt-2 text-[13px] leading-7 text-zinc-600">{point.description}</p>
                 </div>
               </div>
             ))}

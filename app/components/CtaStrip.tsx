@@ -22,12 +22,12 @@ export default function CtaStrip({
   buttonText,
   buttonHref,
   sectionClassName = "bg-red-700 py-14 sm:py-20",
-  containerClassName = "mx-auto w-full max-w-7xl px-4",
-  gridClassName = "grid grid-cols-1 sm:grid-cols-2 gap-8",
+  containerClassName = "mx-auto max-w-7xl px-4",
+  gridClassName = "grid grid-cols-1 md:grid-cols-2 gap-8",
   titleWrapClassName = "relative",
-  titleClassName = "font-bebas-neue text-5xl uppercase leading-none tracking-[0.02em] text-white md:text-7xl",
+  titleClassName = "text-4xl uppercase leading-none tracking-[0.02em] text-white md:text-6xl",
   contentWrapClassName = "relative",
-  descriptionClassName = "mb-6 text-base leading-8 text-white/90",
+  descriptionClassName = "mb-6 text-white",
   buttonClassName = "rounded-[4px] bg-white px-6 py-4 text-[13px] font-bold uppercase tracking-[0.08em] text-zinc-950 transition hover:bg-zinc-100",
 }: CtaStripProps) {
   return (
@@ -40,9 +40,7 @@ export default function CtaStrip({
 
           <div className={contentWrapClassName}>
             <p className={descriptionClassName}>{description}</p>
-            <Link href={buttonHref} className={buttonClassName}>
-              {buttonText}
-            </Link>
+            <Link href={buttonHref} className={buttonClassName}>{buttonText}</Link>
           </div>
         </div>
       </div>

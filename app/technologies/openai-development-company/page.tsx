@@ -83,37 +83,37 @@ const heroStats = [
 const sectors = [
   {
     title: "Customer Support AI",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
     desc: "Ticket summarization, smart replies, and knowledge-base answers grounded in your help-center content.",
     features: ["Ticket AI", "KB Search", "Auto-reply", "CSAT Analytics"],
   },
   {
     title: "Sales & CRM Automation",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
     desc: "Lead scoring, outreach drafts, and CRM insights powered by OpenAI with secure tool integrations.",
     features: ["Lead Scoring", "Outreach AI", "CRM Tools", "Pipeline AI"],
   },
   {
     title: "Document Intelligence",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>`,
     desc: "Extract, summarize, and classify contracts, invoices, and reports with structured JSON outputs.",
     features: ["PDF Parse", "Summaries", "Extraction", "Classification"],
   },
   {
     title: "Internal Knowledge Search",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>`,
     desc: "Enterprise RAG over wikis, SOPs, and policies—with citations and access-controlled retrieval.",
     features: ["Enterprise RAG", "Citations", "RBAC", "Hybrid Search"],
   },
   {
     title: "Workflow Automation",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m16.2 7.8 2.9-2.9"/><path d="M18 12h4"/><path d="m16.2 16.2 2.9 2.9"/><path d="M12 18v4"/><path d="m4.9 19.1 2.9-2.9"/><path d="M2 12h4"/><path d="m4.9 4.9 2.9 2.9"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v4"/><path d="m16.2 7.8 2.9-2.9"/><path d="M18 12h4"/><path d="m16.2 16.2 2.9 2.9"/><path d="M12 18v4"/><path d="m4.9 19.1 2.9-2.9"/><path d="M2 12h4"/><path d="m4.9 4.9 2.9 2.9"/></svg>`,
     desc: "Automate ops tasks with agents that call APIs, update systems, and return auditable results.",
     features: ["Agents", "Webhooks", "Approvals", "Audit Logs"],
   },
   {
     title: "Code & Dev Assistants",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
     desc: "Code review, test generation, and internal developer copilots integrated into your SDLC tools.",
     features: ["Code Review", "Test Gen", "Docs AI", "CI Hooks"],
   },
@@ -263,22 +263,22 @@ const steps = [
 
 const reasons = [
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot-icon lucide-bot"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-bot-icon lucide-bot"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>`,
     title: "Production-Ready AI Engineering",
     body: "We focus on reliability: structured outputs, tool calling, retrieval quality, and evaluation pipelines—so AI features behave consistently in real user workflows.",
   },
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-icon lucide-shield"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-shield-icon lucide-shield"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>`,
     title: "Secure by Design",
     body: "We implement access control, tenant isolation, secret management, and safe logging. We add guardrails and injection defenses so your AI system stays compliant and resilient.",
   },
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-airplay-icon lucide-airplay"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><path d="m12 15 5 6H7Z"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-airplay-icon lucide-airplay"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><path d="m12 15 5 6H7Z"/></svg>`,
     title: "Great UX, Not Just a Demo",
     body: "We build real product experiences: streaming responses, smart fallbacks, human-in-the-loop flows, and measurable improvements—so AI becomes a feature users trust.",
   },
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-banknote-icon lucide-banknote"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-banknote-icon lucide-banknote"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>`,
     title: "Cost & Latency Discipline",
     body: "We optimize prompts, retrieval, caching, and model selection to keep token spend predictable and responses fast—without sacrificing quality.",
   },
@@ -562,7 +562,7 @@ export default function OpenaiDevelopmentCompanyPage() {
               <span className="hero-outline block outline-black">Experts</span>
             </h1>
 
-            <p className="text-[15px] leading-8 text-zinc-500">
+            <p className="text-[15px] leading-8 text-zinc-600">
               Build AI-powered products with OpenAI—chat, agents, RAG, and automation engineered for quality, safety, and
               measurable ROI on your Miraculous stack.
             </p>
@@ -605,7 +605,7 @@ export default function OpenaiDevelopmentCompanyPage() {
                 {aboutCodeLines.map((line, index) => {
                   if (line.type === "comment") {
                     return (
-                      <span key={index} className="block text-zinc-500 italic">
+                      <span key={index} className="block text-zinc-600 italic">
                         {line.content}
                       </span>
                     );
@@ -694,12 +694,12 @@ export default function OpenaiDevelopmentCompanyPage() {
                     </span>
                   </div>
 
-                  <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">OpenAI use case</p>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-600">OpenAI use case</p>
                   <div className="mb-3 text-[18px] font-extrabold tracking-[-0.02em] text-zinc-950 transition">{sector.title}</div>
                   <p className="text-[15px] leading-[1.8] text-zinc-600">{sector.desc}</p>
 
                   <div className="mt-5 border-t border-[var(--border)] pt-5">
-                    <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Capabilities</p>
+                    <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-600">Capabilities</p>
                     <div className="flex flex-wrap gap-2">
                       {sector.features.map((feature) => (
                         <span key={feature} className="rounded-md border border-zinc-200 bg-zinc-50 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-zinc-700">
@@ -751,7 +751,7 @@ export default function OpenaiDevelopmentCompanyPage() {
 
           <div className="mt-10 overflow-hidden rounded-2xl border border-zinc-200 bg-[var(--off)] p-4 sm:p-5">
             <div className="mb-4 flex flex-wrap items-center justify-between gap-3 px-1">
-              <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Architecture flow</p>
+              <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-600">Architecture flow</p>
               <p className="text-[12px] font-semibold text-zinc-600">Product → AI → Data → Delivery</p>
             </div>
 

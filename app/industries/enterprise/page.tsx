@@ -247,28 +247,28 @@ const deliveryProcess = [
 
 const metrics = [
   { value: "99.9%", label: "Reliability mindset" },
-  { value: "40%+", label: "Workflow efficiency potential" },
+  { value: "40%+", label: "Workflow efficiency" },
   { value: "360°", label: "Connected ecosystem" },
 ];
 
 const trustItems = [
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock-keyhole-icon lucide-lock-keyhole"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`,
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-lock-keyhole-icon lucide-lock-keyhole"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`,
   title: "Security Ready", 
   body: "Access control, audit-friendly flows, secure APIs, and enterprise governance thinking." 
 },
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-focus-icon lucide-focus"><circle cx="12" cy="12" r="3"/><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/></svg>`,
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-focus-icon lucide-focus"><circle cx="12" cy="12" r="3"/><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/></svg>`,
   title: "Performance Focused", 
   body: "Optimized frontends, clean APIs, database tuning, caching, and scalable architecture." 
 },
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-panel-top-icon lucide-layout-panel-top"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/></svg>`,
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-layout-panel-top-icon lucide-layout-panel-top"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/></svg>`,
   title: "Modular Foundation", 
   body: "Built with reusable modules, clean structure, maintainable components, and future-ready systems." 
 },
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-workflow-icon lucide-workflow"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>`,
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-workflow-icon lucide-workflow"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>`,
   title: "Integration Ready", 
   body: "Seamless integrations across ERP, CRM, HRMS, and legacy systems with stable connectors and reliable data flow." 
 },
@@ -282,24 +282,21 @@ export default function EnterprisePage() {
       <Script id="enterprise-software-development-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}/>
 
       {/* Hero section */}
-      <section className="relative flex min-h-[88vh] flex-col overflow-hidden">
+      <section className="relative overflow-hidden bg-zinc-950 py-16 sm:py-20">
         
-            <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(220,38,38,0.28),transparent_30%),radial-gradient(circle_at_82%_20%,rgba(37,99,235,0.26),transparent_32%),radial-gradient(circle_at_50%_88%,rgba(255,255,255,0.08),transparent_28%),linear-gradient(135deg,#04060b_0%,#080b14_45%,#02030a_100%)]" />
-            <div className="absolute inset-0 z-10 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,.7)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.7)_1px,transparent_1px)] [background-size:72px_72px]" />
-            <div className="absolute -right-28 top-28 z-10 h-[430px] w-[430px] rounded-full border border-white/10"/>
-            <div className="absolute -left-24 bottom-8 z-10 h-[340px] w-[340px] rounded-full border border-red-500/20"/>
+          <div className="grid-bg absolute inset-0 opacity-10" />
+          <div className="absolute -right-28 top-28 z-10 h-[430px] w-[430px] rounded-full border border-red-500/20"/>
+          <div className="absolute right-[-10rem] top-20 h-[30rem] w-[30rem] rounded-full bg-red-600/10 blur-3xl mss-float-reverse" />
 
-          <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-2 z-10">
+          <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
             {/* Left Column */}
             <div className="space-y-5">
-              <Subheading variant="light">High-Level Software Company • Enterprise Platforms</Subheading>
-              <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-white">
-                Engineering Digital Buildings For
-                <span className="text-red-600">Modern Enterprises.</span>
+              <Subheading variant="light">Enterprise Software</Subheading>
+              <h1 className="uppercase leading-[0.84] tracking-wider text-[64px] text-white sm:text-[96px] md:text-[118px] lg:text-[132px]">Building <span className="text-red-600">Smarter</span> <span className="hero-outline outline-white">Enterprises</span>.
               </h1>
-              <p className="text-[15px] leading-8 text-white">Miraculous Soft Solutions designs enterprise software like a digital skyscraper — strong foundation, secure architecture, connected floors, scalable cloud infrastructure, and premium user experiences.</p>
+              <p className="text-white/70">Miraculous Soft Solutions designs enterprise software like a digital skyscraper — strong foundation, secure architecture, connected floors, scalable cloud infrastructure, and premium user experiences.</p>
 
-              <div className="flex flex-wrap items-center gap-4">
+              <div className="relative">
                   <DefaultButton href="/contact-us" bgClassName="bg-red-600 hover:bg-red-700">Discuss Your Requirement</DefaultButton>
               </div>
 
@@ -326,28 +323,26 @@ export default function EnterprisePage() {
         points={whyPoints}
         label="Enterprise Solutions"
         title={
-          <>
-            Software ecosystems built for serious <span className="text-red-600">business operations.</span>
-          </>
+          <>Software ecosystems built for serious <span className="text-red-600">business operations.</span></>
         }
         description="From internal systems to cloud platforms, we design and develop software that connects departments, automates work, and creates operational clarity."
       />
 
       <section className="py-14 sm:py-20 bg-[var(--off-2)]">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-red-600/15 via-white/[0.04] to-blue-600/15 p-5 shadow-2xl lg:p-8">
+          <div className="relative overflow-hidden rounded-2xl bg-white p-5 shadow-xl lg:p-8">
             
             <div className="mb-7 flex flex-col justify-between gap-4">
               <Subheading variant="default">Enterprise Capabilities</Subheading>
-              <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">Everything required to operate smarter.</h2>
-              <p className="text-[15px] leading-8 text-zinc-600">We combine product strategy, enterprise UX, engineering discipline, and cloud infrastructure to deliver systems that feel premium and perform reliably.</p>
+              <h2 className="text-[58px] uppercase text-zinc-900 leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">Everything required to operate smarter.</h2>
+              <p>We combine product strategy, enterprise UX, engineering discipline, and cloud infrastructure to deliver systems that feel premium and perform reliably.</p>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {capabilities.map((item) => (
                 <div key={item} className="flex items-center gap-3 rounded-2xl border border-[var(--border)] bg-white p-4">
-                  <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-zinc-600"><path d="M20 6 9 17l-5-5"/></svg></span>
-                  <span className="text-sm font-bold text-zinc-600">{item}</span>
+                  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-zinc-600"><path d="M20 6 9 17l-5-5"/></svg></span>
+                  <div className="text-sm font-bold leading-[1.05] tracking-[-0.03em] text-zinc-600">{item}</div>
                 </div>
               ))}
             </div>
@@ -360,9 +355,7 @@ export default function EnterprisePage() {
           steps={deliveryProcess}
           label="Delivery Process"
           title={
-            <>
-              From strategy to <span className="text-red-600">enterprise impact.</span>
-            </>
+            <>From strategy to <span className="text-red-600">enterprise impact.</span></>
           }
           description=""
         />
@@ -372,9 +365,7 @@ export default function EnterprisePage() {
           items={trustItems}
           label="Enterprise Trust"
           title={
-            <>
-              Built with security, performance, and modular design.
-            </>
+            <>Built with <span className="text-red-600">security, performance,</span> and modular design.</>
           }
           description=""
           gridClassName = "grid gap-4 sm:grid-cols-2 xl:grid-cols-4"
@@ -383,10 +374,7 @@ export default function EnterprisePage() {
       {/* CTA STRIP */}
       <CtaStrip
         title={
-          <>
-            Ready to build an 
-            <span className="text-black"> enterprise platform </span>that feels world-class?
-          </>
+          <>Build an enterprise platform that feels <span className="text-zinc-950">world-class?</span></>
         }
         description="Let’s create secure, scalable, beautiful software that improves operations, connects teams, and supports serious business growth."
         buttonText="Get Free Consultation →"

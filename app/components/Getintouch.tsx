@@ -13,19 +13,19 @@ export default function Getintouch() {
           <div className="relative flex flex-col justify-center p-8 sm:p-10 lg:p-12">
             <div className="relative">
               <Subheading variant="light">Project Intake Form</Subheading>
-              <h2 className="font-bebas-neue text-[56px] uppercase leading-[0.9] tracking-wide text-white sm:text-[80px]">
-                Tell Us
-                <br />
-                <span className="text-red-600">Everything.</span>
-              </h2>
-              <p className="mt-6 max-w-md text-[15px] leading-8 text-zinc-400">
+              <h2 className="font-bebas-neue text-[56px] uppercase leading-[0.9] tracking-wide text-white sm:text-[80px]">Tell Us <span className="text-red-600">Everything.</span></h2>
+              <p className="mt-3 text-white/70">
                 Whether you are shaping a new SaaS product, modernising a platform, or scaling operations — share context and we will respond with clear next steps.
               </p>
 
-              <div className="mt-8 space-y-3 border-t border-white/10 pt-8">
-                <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-500">Or email directly</p>
-                <a href={`mailto:${contactInfo.email}`} className="block text-lg font-semibold text-white transition hover:text-red-400">
-                  {contactInfo.email}
+              <div className="mt-6 space-y-1 border-t border-white/10 pt-6">
+                <a href={`mailto:${contactInfo.email}`} className="group flex items-start gap-3 rounded-lg border p-2 transition border-white/10 bg-white/[0.04]">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-white/10 bg-white/5 text-red-500 transition group-hover:border-red-600 group-hover:bg-red-600 group-hover:text-white"><svg className="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                  </span>
+                  <span className="min-w-0 pt-0.5">
+                    <span className="block text-[10px] font-bold uppercase tracking-[0.14em] text-white/70">Email</span>
+                    <span className="mt-0.5 block text-[13px] leading-snug text-white/70 transition group-hover:text-white">{contactInfo.email}</span>
+                  </span>
                 </a>
               </div>
             </div>
@@ -33,12 +33,12 @@ export default function Getintouch() {
 
           <div className="relative border-t border-white/10 bg-[#0a0a0c] p-8 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
             <div className="pointer-events-none absolute right-0 top-0 h-full w-40 bg-gradient-to-b from-red-600/15 to-transparent blur-3xl" aria-hidden />
-            <div className="relative">
-              <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-zinc-500">Secure intake</p>
-              <div className="mt-1 text-xl font-extrabold text-white">Send Your Brief</div>
-              <p className="mt-2 mb-8 text-sm text-zinc-500">Fields marked required help us respond faster.</p>
-              <Contactform />
+            <div className="relative mb-4">
+              <Subheading variant="light">Secure intake</Subheading>
+              <div className="text-[20px] font-bold text-white">Send Your Brief</div>
+              <p className="text-white/70">Fields marked required help us respond faster.</p>
             </div>
+            <Contactform />
           </div>
         </div>
       </div>

@@ -118,7 +118,7 @@ export default function TechnologiesStack() {
       <div className="relative overflow-hidden rounded-[28px] border border-[var(--border)] bg-white p-4 shadow-[0_24px_80px_rgba(12,12,12,0.08)] sm:p-6">
         <div className="mb-4 flex items-start justify-between gap-4 rounded-2xl border border-[var(--border)] bg-[var(--off)] p-4">
           <div>
-            <div className="text-[10px] font-bold uppercase tracking-[0.16em] text-zinc-500">
+            <div className="text-[10px] font-bold uppercase tracking-[0.16em] text-zinc-600">
               Interactive Tech Orbit
             </div>
             <div className="mt-2 text-[22px] font-extrabold tracking-[-0.03em] text-zinc-950">
@@ -128,7 +128,7 @@ export default function TechnologiesStack() {
               {activeNode.category}
             </div>
           </div>
-          <div className="rounded-full border border-[var(--border)] bg-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-500">
+          <div className="rounded-full border border-[var(--border)] bg-white px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-600">
             Auto Sliding
           </div>
         </div>
@@ -208,7 +208,7 @@ export default function TechnologiesStack() {
           {capabilityTags.map((item) => (
             <div
               key={item}
-              className="rounded-xl border border-[var(--border)] bg-white px-3 py-2 text-center text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500"
+              className="rounded-xl border border-[var(--border)] bg-white px-3 py-2 text-center text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-600"
             >
               {item}
             </div>

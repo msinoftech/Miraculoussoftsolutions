@@ -213,32 +213,32 @@ const marqueeItems = [
 
 const capabilities = [
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>`,
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>`,
   title: "Workflow Automation", 
   description: "Digitize approvals, handoffs, reminders, document routing, internal reviews, and repeatable operations." 
 },
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>`,
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>`,
   title: "Client & Team Portals", 
   description: "Secure portals for clients, partners, staff, managers, consultants, and service teams." 
 },
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>`,
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>`,
   title: "Smart Scheduling Systems", 
   description: "Consultation slots, availability rules, follow-ups, reminders, and automated booking flows." 
 },
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/></svg>`,
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/></svg>`,
   title: "Document Management", 
   description: "Centralize proposals, contracts, case files, invoices, reports, templates, and knowledge assets." 
 },
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M4 4v16"/><path d="M9 4v16"/><path d="M14 4v16"/><path d="M19 4v16"/></svg>`, 
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M4 4v16"/><path d="M9 4v16"/><path d="M14 4v16"/><path d="M19 4v16"/></svg>`, 
   title: "Business Intelligence", 
   description: "Executive dashboards for revenue, clients, productivity, SLA, utilization, and project performance." 
 },
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
   title: "Secure Cloud Platforms", 
   description: "Authentication, audit logs, permissions, encrypted workflows, backups, and scalable architecture." 
 },
@@ -319,25 +319,20 @@ export default function ProfessionalIndustryPage() {
       <Script id="professional-services-software-development-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}/>
 
       {/* Hero Section */}
-      <section className="relative flex min-h-[88vh] flex-col overflow-hidden">
+      <section className="relative overflow-hidden bg-zinc-950 py-16 sm:py-20">
+          <div className="grid-bg absolute inset-0 opacity-10" />
+          <div className="absolute -right-28 top-28 z-10 h-[430px] w-[430px] rounded-full border border-red-500/20"/>
+          <div className="absolute right-[-10rem] top-20 h-[30rem] w-[30rem] rounded-full bg-red-600/10 blur-3xl mss-float-reverse" />
 
-        <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(220,38,38,0.28),transparent_30%),radial-gradient(circle_at_82%_20%,rgba(37,99,235,0.26),transparent_32%),radial-gradient(circle_at_50%_88%,rgba(255,255,255,0.08),transparent_28%),linear-gradient(135deg,#04060b_0%,#080b14_45%,#02030a_100%)]" />
-        <div className="absolute inset-0 z-10 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,.7)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.7)_1px,transparent_1px)] [background-size:72px_72px]" />
-        <div className="absolute -right-28 top-28 z-10 h-[430px] w-[430px] rounded-full border border-white/10"/>
-        <div className="absolute -left-24 bottom-8 z-10 h-[340px] w-[340px] rounded-full border border-red-500/20"/>
-
-        <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-2 z-10">
+        <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
           {/* Left Column */}
           <div className="space-y-5">
-            <Subheading variant="light">professional service businesses</Subheading>
-            <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-white">
-              Transform your professional firm into a
-              <span className="text-red-600"> digital command center.</span>
-            </h1>
+            <Subheading variant="light">Professional Service</Subheading>
+            <h1 className="uppercase leading-[0.84] tracking-wider text-[64px] text-white sm:text-[96px] md:text-[118px] lg:text-[132px]">Modernize <span className="text-red-600">Your</span> <span className="hero-outline outline-white">Firm.</span></h1>
 
-            <p className="text-[15px] leading-8 text-white">Miraculous Soft Solutions builds premium CRMs, portals, workflow automation, dashboards, scheduling systems, document platforms, and cloud software for consulting, legal, accounting, advisory, HR, finance, and service-led companies.</p>
+            <p className="text-white/70">Miraculous Soft Solutions builds premium CRMs, portals, workflow automation, dashboards, scheduling systems, document platforms, and cloud software for consulting, legal, accounting, advisory, HR, finance, and service-led companies.</p>
 
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="relative">
                 <DefaultButton href="/contact-us" bgClassName="bg-red-600 hover:bg-red-700">Discuss Your Requirement</DefaultButton>
             </div>
 
@@ -363,10 +358,7 @@ export default function ProfessionalIndustryPage() {
       <Card
         label="What we build"
         title={
-            <>
-            Software systems built around real
-            <span className="text-red-600"> professional workflows.</span>
-            </>
+            <>Transform <span className="text-red-600">Your Firm Digitally</span>.</>
         }
         description="From first enquiry to project delivery, billing, reporting, and client retention, we design every module to reduce manual work and increase operational clarity."
         items={capabilities}
@@ -374,11 +366,9 @@ export default function ProfessionalIndustryPage() {
 
       <WhyMiraculousSoft
         points={solutions}
-        label="Enterprise Solutions"
+        label="Solutions"
         title={
-          <>
-            Software ecosystems built for serious <span className="text-red-600">business operations.</span>
-          </>
+          <>Built for <span className="text-red-600">consultants, advisors,</span> and growth teams.</>
         }
         description="From internal systems to cloud platforms, we design and develop software that connects departments, automates work, and creates operational clarity."
       />
@@ -388,9 +378,7 @@ export default function ProfessionalIndustryPage() {
           steps={process}
           label="Delivery engine"
           title={
-            <>
-              A premium process from idea to <span className="text-red-600">production-grade software.</span>
-            </>
+            <>From strategy to <span className="text-red-600">digital impact.</span></>
           }
           description=""
         />
@@ -403,15 +391,15 @@ export default function ProfessionalIndustryPage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="space-y-5">
             <div className="relative">
-              <Subheading variant="default">Technology stack</Subheading>
-              <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">Modern, scalable, and enterprise-ready.</h2>
-              <p className="text-[15px] leading-8 text-zinc-600">We choose architecture based on performance, security, maintainability, and long-term business scale.</p>
+              <Subheading variant="default">Technology</Subheading>
+              <h2 className="text-[58px] uppercase text-zinc-900 leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">Modern, scalable, and enterprise-ready.</h2>
+              <p>We choose architecture based on performance, security, maintainability, and long-term business scale.</p>
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-3 rounded-2xl border border-red-500/30 bg-gradient-to-r from-red-500/10 via-white/[0.03] to-blue-500/10 p-5 shadow-[0_0_0_1px_rgba(239,68,68,0.08),0_18px_40px_rgba(0,0,0,0.35)]">
+            <div className="mt-10 flex flex-wrap gap-3 rounded-2xl bg-gradient-to-r from-red-500/10 via-white/[0.03] to-blue-500/10 p-5 shadow-xl">
               <div className="flex flex-wrap gap-3">
                 {techStack.map((tech) => (
-                  <span key={tech} className="rounded-xl border border-[var(--border)] bg-[var(--off)] px-4 py-2 text-sm font-semibold text-zinc-600 shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:border-red-400/60 hover:bg-red-500/15">{tech}</span>
+                  <span key={tech} className="rounded-xl border border-zinc-200 bg-white px-4 py-2 text-sm font-bold leading-[1.05] tracking-[-0.03em] text-zinc-600 shadow-sm transition hover:-translate-y-0.5 hover:border-red-400/60 hover:bg-red-500/15 hover:text-white">{tech}</span>
                 ))}
               </div>
             </div>
@@ -422,11 +410,7 @@ export default function ProfessionalIndustryPage() {
       {/* CTA STRIP */}
       <CtaStrip
         title={
-          <>
-            Ready for digital 
-            <br />
-            <span className="text-black">transformation</span>
-          </>
+          <>Ready for digital <span className="text-zinc-950">transformation?</span></>
         }
         description="Build a professional services platform that saves time, improves visibility, and scales with your business."
         buttonText="Discuss Your Project →"

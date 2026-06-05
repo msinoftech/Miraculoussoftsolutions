@@ -113,7 +113,7 @@ export default function OpenaiModelHubGraph({ className = "" }: OpenaiModelHubGr
                 aria-pressed={isActive}
                 aria-label={`Select ${model.name}`}
               >
-                <span className="block text-[8px] font-bold uppercase tracking-[0.12em] text-zinc-500">{model.provider}</span>
+                <span className="block text-[8px] font-bold uppercase tracking-[0.12em] text-zinc-600">{model.provider}</span>
                 <span className="mt-0.5 block text-[10px] font-extrabold leading-tight text-zinc-900 sm:text-[11px]">{model.name}</span>
                 {isActive && (
                   <span

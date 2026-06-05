@@ -184,14 +184,12 @@ export default function AboutStoryTimeline({ milestones }: { milestones: StoryMi
       <div className="relative p-4 sm:p-5">
         <header className="mb-4 flex items-start justify-between gap-3">
           <div>
-            <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-zinc-500">Company chronicle</p>
-            <p className="mt-1 font-bebas-neue text-2xl leading-none tracking-wide text-white">Our Growth Arc</p>
+            <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600">Company chronicle</div>
+            <div className="mt-1 text-[20px] font-bold text-white">Our Growth Arc</div>
           </div>
-          <div className="rounded-lg border px-2.5 py-1.5 text-right" style={{ borderColor: `${active.accent}44`, backgroundColor: `${active.accent}12` }}>
-            <p className="text-[8px] font-bold uppercase tracking-wider text-zinc-500">Chapter</p>
-            <p className="font-bebas-neue text-xl leading-none" style={{ color: active.accent }}>
-              {active.phase}
-            </p>
+          <div className="flex gap-2 items-center rounded-lg border p-2 text-right" style={{ borderColor: `${active.accent}44`, backgroundColor: `${active.accent}12` }}>
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/70">Chapter</span>
+            <span className="text-[20px] font-bold text-white" style={{ color: active.accent }}>{active.phase}</span>
           </div>
         </header>
 
@@ -226,17 +224,12 @@ export default function AboutStoryTimeline({ milestones }: { milestones: StoryMi
             </div>
 
             <div className="min-w-0">
-              <div className="text-base font-extrabold leading-snug tracking-tight text-white sm:text-lg">
-                {active.title}
-              </div>
-              <p className="mt-2 text-[13px] leading-relaxed text-zinc-400">{active.detail}</p>
-              <p
-                className="mt-3 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.12em]"
-                style={{ color: active.accent }}
-              >
+              <div className="text-[15px] font-bold text-white">{active.title}</div>
+              <p className="mt-2 text-white/70">{active.detail}</p>
+              <div className="mt-3 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.12em]" style={{ color: active.accent }}>
                 <span className="h-px w-6" style={{ backgroundColor: active.accent }} aria-hidden />
                 {active.highlight}
-              </p>
+              </div>
             </div>
           </div>
         </div>
@@ -297,7 +290,7 @@ export default function AboutStoryTimeline({ milestones }: { milestones: StoryMi
           </button>
         </div>
 
-        <p className="mt-3 text-center text-[9px] font-medium uppercase tracking-[0.16em] text-zinc-600">
+        <p className="mt-3 text-white/70">
           <span style={{ color: active.accent }}>{progressPct.toFixed(0)}%</span>
           <span className="mx-1.5 text-zinc-700">·</span>
           Studio to global product partner

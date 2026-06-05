@@ -50,38 +50,38 @@ const features = [
     number: "",
     title: "Brand Identity Systems",
     description: "Build a strong visual and messaging foundation with logo direction, voice guidelines, and consistent brand assets for every channel.",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M16 10h2"/><path d="M16 14h2"/><path d="M6.17 15a3 3 0 0 1 5.66 0"/><circle cx="9" cy="11" r="2"/><rect x="2" y="5" width="20" height="14" rx="2"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M16 10h2"/><path d="M16 14h2"/><path d="M6.17 15a3 3 0 0 1 5.66 0"/><circle cx="9" cy="11" r="2"/><rect x="2" y="5" width="20" height="14" rx="2"/></svg>`,
   },
   {
     number: "",
     title: "Digital Marketing Strategy",
     description: "Create channel-specific growth plans for search, social, paid campaigns, and content with clear goals, timelines, and KPI targets.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 11.207a.5.5 0 0 1 .146-.353l2-2a.5.5 0 0 1 .708 0l3.292 3.292a.5.5 0 0 0 .708 0l4.292-4.292a.5.5 0 0 1 .854.353V16a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1z"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 11.207a.5.5 0 0 1 .146-.353l2-2a.5.5 0 0 1 .708 0l3.292 3.292a.5.5 0 0 0 .708 0l4.292-4.292a.5.5 0 0 1 .854.353V16a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1z"/></svg>`,
     
   },
   {
     number: "",
     title: "Social Media Growth",
     description: "Increase audience trust and engagement through platform-native content calendars, community management, and campaign execution.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12 2a10 10 0 0 1 7.38 16.75"/><path d="M12 8v8"/><path d="M16 12H8"/><path d="M2.5 8.875a10 10 0 0 0-.5 3"/><path d="M2.83 16a10 10 0 0 0 2.43 3.4"/><path d="M4.636 5.235a10 10 0 0 1 .891-.857"/><path d="M8.644 21.42a10 10 0 0 0 7.631-.38"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12 2a10 10 0 0 1 7.38 16.75"/><path d="M12 8v8"/><path d="M16 12H8"/><path d="M2.5 8.875a10 10 0 0 0-.5 3"/><path d="M2.83 16a10 10 0 0 0 2.43 3.4"/><path d="M4.636 5.235a10 10 0 0 1 .891-.857"/><path d="M8.644 21.42a10 10 0 0 0 7.631-.38"/></svg>`,
   },
   {
     number: "",
     title: "Content & Creative Production",
     description: "Deliver high-converting creative assets, campaign visuals, and brand-led copy built to perform across digital touchpoints.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M16 5H3"/><path d="M16 12H3"/><path d="M16 19H3"/><path d="M21 5h.01"/><path d="M21 12h.01"/><path d="M21 19h.01"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M16 5H3"/><path d="M16 12H3"/><path d="M16 19H3"/><path d="M21 5h.01"/><path d="M21 12h.01"/><path d="M21 19h.01"/></svg>`,
   },
   {
     number: "",
     title: "SEO & Organic Visibility",
     description: "Improve rankings and discoverability through technical SEO, on-page optimization, content structure, and search intent mapping.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12 16v5"/><path d="M16 14.639V21"/><path d="M20 10.656V21"/><path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15"/><path d="M4 18.463V21"/><path d="M8 14.656V21"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12 16v5"/><path d="M16 14.639V21"/><path d="M20 10.656V21"/><path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15"/><path d="M4 18.463V21"/><path d="M8 14.656V21"/></svg>`,
   },
   {
     number: "",
     title: "Performance Analytics & CRO",
     description: "Track full-funnel performance, optimize conversion paths, and scale campaigns with data-backed experiments and reporting.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7"/></svg>`,
   },
 ];
 
@@ -256,25 +256,25 @@ const steps = [
 const benefits = [
   {
     no: "01",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rocket-icon lucide-rocket"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-rocket-icon lucide-rocket"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>`,
     title: "Stronger Brand Recall",
     body: "We shape distinct brand systems and messaging that help your business stay memorable across social, search, ads, and customer touchpoints.",
   },
   {
     no: "02",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet-icon lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-wallet-icon lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>`,
     title: "Higher Quality Leads",
     body: "Our campaign strategy focuses on intent-based targeting and optimized funnels, bringing in better-fit leads that are more likely to convert.",
   },
   {
     no: "03",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings2-icon lucide-settings-2"><path d="M14 17H5"/><path d="M19 7h-9"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-settings2-icon lucide-settings-2"><path d="M14 17H5"/><path d="M19 7h-9"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>`,
     title: "Consistent Multi-Channel Execution",
     body: "From SEO and content to paid ads and social media, we execute with one unified strategy so your brand voice stays consistent everywhere.",
   },
   {
     no: "04",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake-icon lucide-handshake"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-handshake-icon lucide-handshake"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>`,
     title: "Data-Backed Growth Partnership",
     body: "You get transparent reporting, continuous optimization, and a team focused on measurable growth outcomes, not vanity metrics.",
   },
@@ -323,22 +323,18 @@ export default function BrandingAndDigitalGrowthServicesPage() {
     <Script id="branding-digital-growth-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
 
     {/* HERO */}
-    <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
+    <section className="relative overflow-hidden bg-white py-16 sm:py-20">
         <div className="grid-bg absolute inset-0 opacity-45" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
         
-        <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-6 px-4 lg:grid-cols-2 z-10">
+        <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
           {/* Left Column */}
           <div className="space-y-5">
             <Subheading variant="default">Branding and Digital Growth Services</Subheading>
-            <h1 className="font-bebas-neue uppercase leading-[0.84] tracking-wider text-zinc-950 text-[80px] sm:text-[100px] md:text-[140px]">
-              <span className="block">BRANDING</span>
-              <span className="block text-red-600">DIGITAL</span>
-              <span className="hero-outline outline-black">GROWTH</span>
-            </h1>
-            <p className="text-[15px] leading-8 text-zinc-500">We design and develop modern mobile apps with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
+            <h1 className="uppercase leading-[0.84] tracking-wider text-[64px] text-zinc-950 sm:text-[96px] md:text-[118px] lg:text-[132px]"><span className="block">BRANDING</span><span className="block text-red-600">DIGITAL</span><span className="hero-outline outline-black">GROWTH</span></h1>
+            <p>We design and develop modern branding and digital growth services with scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems that are built to launch fast and scale with confidence.</p>
 
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="relative">
               <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
             </div>
 
@@ -360,7 +356,7 @@ export default function BrandingAndDigitalGrowthServicesPage() {
               <div className="relative">
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-500">Marketing Command Center</div>
+                    <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-600">Marketing Command Center</div>
                     <div className="text-[14px] font-extrabold uppercase tracking-[0.08em] text-zinc-900">Brand to Revenue Funnel</div>
                   </div>
                   <span className="rounded-full border border-zinc-200 bg-zinc-50 px-2.5 py-1 text-[9px] font-bold uppercase text-zinc-700">Quarterly Sprint</span>
@@ -368,7 +364,7 @@ export default function BrandingAndDigitalGrowthServicesPage() {
 
                 <div className="mt-4 grid gap-4 sm:grid-cols-2 grid-cols-1">
                   <div className="rounded-xl border border-zinc-200 bg-zinc-50 p-3">
-                    <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-500">Growth Funnel</div>
+                    <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-600">Growth Funnel</div>
                     <div className="mt-3 space-y-2">
                       <div className="rounded-lg border border-blue-200 bg-blue-50 px-3 py-2 text-center">
                         <div className="text-[9px] font-bold uppercase text-blue-700">Awareness</div>
@@ -390,7 +386,7 @@ export default function BrandingAndDigitalGrowthServicesPage() {
                   </div>
 
                   <div className="rounded-xl border border-zinc-200 bg-white p-3">
-                    <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-500">Channel Performance</div>
+                    <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-600">Channel Performance</div>
                     <div className="mt-3 space-y-2">
                       {[
                         ["SEO", "Top 3 Keywords", "1.2K"],
@@ -403,7 +399,7 @@ export default function BrandingAndDigitalGrowthServicesPage() {
                             <span className="text-[10px] font-bold uppercase text-zinc-700">{channel}</span>
                             <span className="text-[11px] font-extrabold text-zinc-900">{value}</span>
                           </div>
-                          <div className="mt-1 text-[9px] font-semibold text-zinc-500">{metric}</div>
+                          <div className="mt-1 text-[9px] font-semibold text-zinc-600">{metric}</div>
                         </div>
                       ))}
                     </div>
@@ -477,7 +473,7 @@ export default function BrandingAndDigitalGrowthServicesPage() {
                           <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4">
                               <div>
                                   <div className="mb-4 flex items-center justify-between gap-3">
-                                      <div className="text-[12px] font-bold uppercase tracking-[0.12em] text-zinc-500">Campaign Reach</div>
+                                      <div className="text-[12px] font-bold uppercase tracking-[0.12em] text-zinc-600">Campaign Reach</div>
                                       <div className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-xs font-semibold uppercase text-blue-200">+37.2%</div>
                                   </div>
                                   <div className="font-bebas-neue text-4xl leading-none text-white">2.6M</div>
@@ -492,19 +488,19 @@ export default function BrandingAndDigitalGrowthServicesPage() {
 
                           <div className="grid grid-cols-1 gap-4">
                               <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
-                                  <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Lead Conversion</div>
+                                  <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-600">Lead Conversion</div>
                                   <div className="font-bebas-neue text-4xl leading-none text-white">8.9%</div>
                                   <div className="text-[12px] font-bold text-green-500">Above benchmark</div>
                               </div>
 
                               <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
-                                  <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Cost Per Lead</div>
+                                  <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-600">Cost Per Lead</div>
                                   <div className="font-bebas-neue text-4xl leading-none text-white">$14</div>
                                   <div className="text-[12px] font-bold text-green-500">-21% optimized</div>
                               </div>
 
                               <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
-                                  <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">ROAS</div>
+                                  <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-600">ROAS</div>
                                   <div className="font-bebas-neue text-4xl leading-none text-white">4.7x</div>
                                   <div className="text-[12px] font-bold text-green-500">Profitable scale</div>
                               </div>
@@ -522,11 +518,11 @@ export default function BrandingAndDigitalGrowthServicesPage() {
                 {/* right column */}
                 <div className="relative space-y-4">
                     <Subheading variant="light">Why Digital Growth With Us</Subheading>
-                    <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">DIGITAL MARKETING BUILT FOR <span className="text-red-600">REAL RESULTS</span></h2>
+                    <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">Digital Marketing Built For <span className="text-red-600">Real Results</span></h2>
 
-                    <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">We combine strategy, creative direction, and performance execution to deliver <strong className="text-white"> measurable visibility, qualified leads, and stronger digital positioning</strong>.</p>
-                    <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">From SEO and paid media to social content and conversion funnels, every channel is aligned to <strong className="text-white"> one growth roadmap focused on ROI</strong>, not disconnected activities.</p>
-                    <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">You get a partner that continuously tests, improves, and scales campaigns so your brand keeps winning attention, trust, and revenue over time.</p>
+                    <p className="text-white/70">We combine strategy, creative direction, and performance execution to deliver measurable visibility, qualified leads, and stronger digital positioning.</p>
+                    <p className="text-white/70">From SEO and paid media to social content and conversion funnels, every channel is aligned to one growth roadmap focused on ROI, not disconnected activities.</p>
+                    <p className="text-white/70">You get a partner that continuously tests, improves, and scales campaigns so your brand keeps winning attention, trust, and revenue over time.</p>
                 </div>
             </div>
         </div>
@@ -536,10 +532,7 @@ export default function BrandingAndDigitalGrowthServicesPage() {
     <Card
       label="What We Build"
       title={
-        <>
-          Digital Growth <br />
-          <span className="text-red-600">Strategy and Execution</span>
-        </>
+        <>Digital Growth <span className="text-red-600">Strategy and Execution</span></>
       }
       description="From MVP platforms to mature enterprise portals, we create SaaS systems engineered for usability, speed, flexibility, and scale."
       items={features}
@@ -550,9 +543,7 @@ export default function BrandingAndDigitalGrowthServicesPage() {
       steps={steps}
       label="Digital Growth Process"
       title={
-        <>
-          IDEA TO <span className="text-red-600">SCALABLE DIGITAL GROWTH</span>
-        </>
+        <>FROM IDEA TO <span className="text-red-600">Scalable Digital Growth</span></>
       }
       description="We turn digital growth concepts into high-performance digital growth through structured discovery, smart architecture, premium UX, and launch-ready engineering."
     />
@@ -562,13 +553,7 @@ export default function BrandingAndDigitalGrowthServicesPage() {
           items={benefits}
           label="Why Choose Us"
           title={
-            <>
-              A Strong Fit for
-              <br />
-              <span className="text-red-600">Digital Founders, Teams</span> 
-              <br />
-              and Growing Brands
-            </>
+            <>Digital Founders, Teams and <span className="text-red-600">Growing Brands</span></>
           }
           description="We build with business clarity, engineering depth, and premium execution so your digital growth feels credible from the first interaction to long-term scale."
           headerClassName="mb-12 text-left"
@@ -577,11 +562,7 @@ export default function BrandingAndDigitalGrowthServicesPage() {
     {/* CTA STRIP */}
     <CtaStrip
       title={
-        <>
-          READY TO GROW
-          <br />
-          YOUR <span className="text-black">DIGITAL GROWTH?</span>
-        </>
+        <>READY TO GROW YOUR <span className="text-black">BRAND?</span></>
       }
       description="Let's design a digital growth strategy that is premium on the surface, strong in the backend, and ready for growth."
       buttonText="Get a Free Quote →"

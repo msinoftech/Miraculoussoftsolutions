@@ -95,7 +95,7 @@ export default function DataIntegrationsHubGraph({ className = "" }: DataIntegra
 
         <div className="relative z-10 flex shrink-0 items-center justify-between border-b border-zinc-200/80 px-3 py-2.5">
           <div>
-            <div className="text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-500">Integration Pipeline</div>
+            <div className="text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-600">Integration Pipeline</div>
             <div className="text-[12px] font-black leading-tight text-zinc-950">Sources → Sync → Destinations</div>
           </div>
           <div className="flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-[9px] font-bold text-emerald-700">
@@ -107,7 +107,7 @@ export default function DataIntegrationsHubGraph({ className = "" }: DataIntegra
         <div className="relative z-10 grid grid-cols-2 gap-2 px-3 py-2.5">
           <div className="flex flex-col gap-1.5 rounded-lg border border-zinc-200 bg-white/80 p-2">
             <div className="flex items-center justify-between">
-              <span className="text-[8px] font-extrabold uppercase tracking-[0.1em] text-zinc-500">Sources</span>
+              <span className="text-[8px] font-extrabold uppercase tracking-[0.1em] text-zinc-600">Sources</span>
               <span className="text-[8px] font-bold text-zinc-400">3</span>
             </div>
             {[
@@ -154,7 +154,7 @@ export default function DataIntegrationsHubGraph({ className = "" }: DataIntegra
 
         <div className="flex flex-col gap-1.5 rounded-lg border border-zinc-200 bg-white/80 p-2">
           <div className="flex items-center justify-between">
-            <span className="text-[8px] font-extrabold uppercase tracking-[0.1em] text-zinc-500">Destinations</span>
+            <span className="text-[8px] font-extrabold uppercase tracking-[0.1em] text-zinc-600">Destinations</span>
             <span className="text-[8px] font-bold text-zinc-400">4</span>
           </div>
           <div className="grid grid-cols-2 gap-1">
@@ -181,7 +181,7 @@ export default function DataIntegrationsHubGraph({ className = "" }: DataIntegra
             { k: "Failed", v: "0" },
           ].map((m) => (
             <div key={m.k} className="rounded-lg border border-zinc-200 bg-white px-2 py-1.5 text-center">
-              <div className="text-[7px] font-extrabold uppercase tracking-[0.08em] text-zinc-500">{m.k}</div>
+              <div className="text-[7px] font-extrabold uppercase tracking-[0.08em] text-zinc-600">{m.k}</div>
               <div className="text-[13px] font-black leading-tight text-zinc-950">{m.v}</div>
             </div>
           ))}

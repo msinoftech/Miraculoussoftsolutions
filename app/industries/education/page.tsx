@@ -213,37 +213,37 @@ const whyPoints = [
 
 const solutions = [
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M18 4.933V21"/><path d="m4 6 7.106-3.79a2 2 0 0 1 1.788 0L20 6"/><path d="m6 11-3.52 2.147a1 1 0 0 0-.48.854V19a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a1 1 0 0 0-.48-.853L18 11"/><path d="M6 4.933V21"/><circle cx="12" cy="9" r="2"/></svg>`, 
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M18 4.933V21"/><path d="m4 6 7.106-3.79a2 2 0 0 1 1.788 0L20 6"/><path d="m6 11-3.52 2.147a1 1 0 0 0-.48.854V19a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a1 1 0 0 0-.48-.853L18 11"/><path d="M6 4.933V21"/><circle cx="12" cy="9" r="2"/></svg>`, 
   title: "Smart Campus Portal", 
   description: "Admissions, departments, students, notices, events, staff workflows, and academic operations in one connected portal.", 
   metric: "01" 
 },
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8"/><path d="M10 19v-3.96 3.15"/><path d="M7 19h5"/><rect width="6" height="10" x="16" y="12" rx="2"/></svg>`, 
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8"/><path d="M10 19v-3.96 3.15"/><path d="M7 19h5"/><rect width="6" height="10" x="16" y="12" rx="2"/></svg>`, 
   title: "Custom LMS Platform", 
   description: "Course builder, lessons, tests, assignments, certificates, student progress, and modern learning journeys.", 
   metric: "02" 
 },
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>`, 
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>`, 
   title: "Parent & Student Apps", 
   description: "Attendance, homework, results, communication, fee reminders, and real-time academic updates on mobile.", 
   metric: "03" 
 },
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7"/></svg>`, 
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7"/></svg>`, 
   title: "Academic Intelligence", 
   description: "Executive dashboards for performance, attendance, admissions, fees, learning gaps, and institution-wide trends.", 
   metric: "04" 
 },
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M15.033 9.44a.647.647 0 0 1 0 1.12l-4.065 2.352a.645.645 0 0 1-.968-.56V7.648a.645.645 0 0 1 .967-.56z"/><path d="M12 17v4"/><path d="M8 21h8"/><rect x="2" y="3" width="20" height="14" rx="2"/></svg>`, 
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M15.033 9.44a.647.647 0 0 1 0 1.12l-4.065 2.352a.645.645 0 0 1-.968-.56V7.648a.645.645 0 0 1 .967-.56z"/><path d="M12 17v4"/><path d="M8 21h8"/><rect x="2" y="3" width="20" height="14" rx="2"/></svg>`, 
   title: "Virtual Classroom Suite", 
   description: "Live classes, video resources, discussion spaces, recorded lectures, and collaborative digital classrooms.", 
   metric: "05" 
 },
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`, 
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`, 
   title: "Secure Cloud Infrastructure", 
   description: "Role-based access, backups, audit trails, integrations, scalable deployment, and protected education data.", 
   metric: "06" 
@@ -293,32 +293,32 @@ const orbitItems = ["Admissions", "LMS", "Attendance", "Exams", "Fees", "Parents
 
 const ecosystem = [
   { 
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-user-icon lucide-shield-user"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M6.376 18.91a6 6 0 0 1 11.249.003"/><circle cx="12" cy="11" r="4"/></svg>`, 
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-shield-user-icon lucide-shield-user"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M6.376 18.91a6 6 0 0 1 11.249.003"/><circle cx="12" cy="11" r="4"/></svg>`, 
     label: "Admin Portal", 
     text: "Control academics, staff, finance, and operations." 
   },
   { 
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap-icon lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>`, 
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-graduation-cap-icon lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>`, 
     label: "Student Zone", 
     text: "Lessons, assignments, results, certificates, and progress." 
   },
   { 
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-minus-corner-icon lucide-file-minus-corner"><path d="M20 14V8a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M14 18h6"/></svg>`, 
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-file-minus-corner-icon lucide-file-minus-corner"><path d="M20 14V8a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M14 18h6"/></svg>`, 
     label: "Parent Access", 
     text: "Attendance, payments, notices, and performance updates." 
   },
   { 
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-text-icon lucide-book-text"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/><path d="M8 11h8"/><path d="M8 7h6"/></svg>`, 
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-book-text-icon lucide-book-text"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/><path d="M8 11h8"/><path d="M8 7h6"/></svg>`, 
     label: "Learning Hub", 
     text: "Courses, resources, tests, and blended learning." 
   },
   { 
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-credit-card-icon lucide-credit-card"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>`, 
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-credit-card-icon lucide-credit-card"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>`, 
     label: "Fee Engine", 
     text: "Invoices, dues, receipts, online payments, and reports." 
   },
   { 
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database-icon lucide-database"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>`, 
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-database-icon lucide-database"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>`, 
     label: "Data Core", 
     text: "Secure records, analytics, backups, and integrations." 
   },
@@ -326,22 +326,22 @@ const ecosystem = [
 
 const trustCards = [
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock-keyhole-icon lucide-lock-keyhole"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`, 
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-lock-keyhole-icon lucide-lock-keyhole"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`, 
   title: "Enterprise-grade security", 
   body: "Permission-controlled modules, secure records, encrypted workflows, and audit-friendly system design." 
 },
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud-icon lucide-cloud"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>`, 
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-cloud-icon lucide-cloud"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>`, 
   title: "Scalable cloud architecture", 
   body: "Designed for single institutes, coaching brands, multi-campus schools, universities, and digital academies." 
 },
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-star-icon lucide-user-star"><path d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"/><path d="M8 15H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/></svg>`, 
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-user-star-icon lucide-user-star"><path d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"/><path d="M8 15H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/></svg>`, 
   title: "Premium user experience", 
   body: "Clean dashboards, fast loading screens, mobile-first portals, and frictionless everyday workflows." 
 },
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-workflow-icon lucide-workflow"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>`,
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-workflow-icon lucide-workflow"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>`,
   title: "Seamless integration ecosystem",
   body: "Connect LMS, SIS, ERP, payment gateways, communication tools, and analytics platforms through integration-ready architecture."
 },
@@ -360,28 +360,24 @@ export default function EducationIndustryPage() {
       {/* SCHEMA DATA */}
       <Script id="education-software-development-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}/>
 
-      <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
+      <section className="relative overflow-hidden bg-white py-16 sm:py-20">
 
-        <div className="grid-bg absolute inset-0 opacity-45" />
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white to-transparent" />
-        <div className="absolute -right-28 top-28 z-10 h-[430px] w-[430px] rounded-full border border-red-500/20"/>
+          <div className="grid-bg absolute inset-0 opacity-45" />
+          <div className="absolute -right-28 top-28 z-10 h-[430px] w-[430px] rounded-full border border-red-500/20"/>
+          <div className="absolute right-[-10rem] top-20 h-[30rem] w-[30rem] rounded-full bg-red-600/10 blur-3xl mss-float-reverse" />
 
-        <div className="absolute left-[-12rem] top-[-12rem] h-[34rem] w-[34rem] rounded-full bg-blue-600/10 blur-3xl mss-float-soft" />
-        <div className="absolute right-[-10rem] top-20 h-[30rem] w-[30rem] rounded-full bg-red-600/10 blur-3xl mss-float-reverse" />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent" />
-
-        <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-10 px-4 lg:grid-cols-2 z-10">
+        <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
           {/* Left Column */}
           <div className="space-y-5">
             <Subheading variant="default">Education institutions software</Subheading>
 
-            <h1 className="font-bebas-neue text-[86px] uppercase leading-[0.84] tracking-[0.02em] text-zinc-950">
-              Build the <span className="text-red-600">digital operating system</span> for your <span className="hero-outline outline-black">education brand</span>.
+            <h1 className="uppercase leading-[0.84] tracking-wider text-[64px] text-zinc-950 sm:text-[96px] md:text-[118px] lg:text-[132px]">
+              digital <span className="text-red-600">operating system</span> for <span className="hero-outline outline-black">education</span>.
             </h1>
 
-            <p className="text-[15px] leading-8 text-zinc-500">Miraculous Soft Solutions designs and engineers premium education software for schools, colleges, universities, coaching institutes, and digital academies — from LMS and ERP systems to mobile apps, analytics, AI-ready learning tools, and secure cloud infrastructure.</p>
+            <p>Miraculous Soft Solutions designs and engineers premium education software for schools, colleges, universities, coaching institutes, and digital academies — from LMS and ERP systems to mobile apps, analytics, AI-ready learning tools, and secure cloud infrastructure.</p>
 
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="relative">
                 <DefaultButton href="/contact-us">Discuss Your Requirement</DefaultButton>
             </div>
 
@@ -408,10 +404,7 @@ export default function EducationIndustryPage() {
       <Card
         label="Education Software Expertise"
         title={
-            <>
-            Premium software for the
-            <span className="text-red-600"> complete education journey.</span>
-            </>
+            <>Premium software for the <span className="text-red-600"> education journey.</span></>
         }
         description="We create platforms that connect administration, learning, communication, finance, analytics, and cloud operations into one high-performance digital ecosystem."
         items={solutions}
@@ -422,20 +415,20 @@ export default function EducationIndustryPage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-12 max-w-3xl">
             <Subheading variant="default">Platform ecosystem</Subheading>
-            <h2 className="ttext-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">One system. Every <span className="text-red-600">stakeholder connected.</span></h2>
+            <h2 className="text-[58px] uppercase text-zinc-900 leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">One system. Every <span className="text-red-600">stakeholder connected.</span></h2>
           </div>
 
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {ecosystem.map((item) => (
               <div key={item.label} className="group rounded-2xl bg-white p-6 shadow-xl transition hover:-translate-y-1 hover:shadow-2xl">
-                <div className="mb-6 flex items-center justify-between">
+                <div className="mb-6 flex justify-between items-start">
                   <div className="grid h-14 w-14 place-items-center rounded-[10px] border border-[var(--border)] bg-[var(--off)]">
                     <span dangerouslySetInnerHTML={{ __html: item.icon }}></span>
                   </div>
-                  <span className="rounded-[10px] border border-[var(--border)] bg-[var(--off)] px-3 py-1 text-xs font-semibold text-zinc-600">Connected</span>
+                  <span className="rounded-[10px] border border-zinc-200 bg-zinc-50 px-3 py-1 text-xs font-medium leading-[1.05] tracking-[-0.03em] text-zinc-900">Connected</span>
                 </div>
-                <div className="text-xl font-black tracking-[-0.03em]">{item.label}</div>
-                <p className="mt-3 leading-7 text-slate-600">{item.text}</p>
+                <div className="text-xl font-bold leading-[1.05] tracking-[-0.03em] text-zinc-900">{item.label}</div>
+                <p>{item.text}</p>
               </div>
             ))}
           </div>
@@ -447,9 +440,7 @@ export default function EducationIndustryPage() {
         points={whyPoints}
         label="Next-level product layer"
         title={
-          <>
-            Designed like a premium SaaS product, like <span className="text-red-600">an enterprise platform.</span>
-          </>
+          <>Designed like a premium SaaS product, like <span className="text-red-600">an enterprise platform.</span></>
         }
         description="The page now communicates stronger value: automation, AI-readiness, mobile-first UX, multi-branch architecture, and complete education operations coverage."
       />
@@ -464,7 +455,7 @@ export default function EducationIndustryPage() {
                 <Subheading variant="light">Live product architecture</Subheading>
                 <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">Connected education workflows</h2>
               </div>
-              <span className="min-w-[250px] text-center rounded-full border border-white/10 bg-white/[0.06] px-3 py-2 text-xs font-black text-slate-300">Real-time • Secure • Modular</span>
+              <span className="min-w-[250px] text-center rounded-full border border-white/10 bg-white/[0.06] px-3 py-2 text-xs font-medium leading-[1.05] tracking-[-0.03em] text-zinc-300">Real-time • Secure • Modular</span>
             </div>
 
             <div className="grid gap-4 lg:grid-cols-3">
@@ -478,7 +469,7 @@ export default function EducationIndustryPage() {
                     {steps.map((step, stepIndex) => (
                       <div key={step} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/10 p-3">
                         <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition-all duration-500 border-white/10 bg-white/5 text-white/75 group-hover:border-white/20 group-hover:bg-white/10 group-hover:scale-105">{stepIndex + 1}</div>
-                        <span className="text-md font-semibold text-slate-200">{step}</span>
+                        <span className="text-md font-medium leading-[1.05] tracking-[-0.03em] text-white/70">{step}</span>
                       </div>
                     ))}
                   </div>
@@ -489,28 +480,27 @@ export default function EducationIndustryPage() {
         </div>
       </section>
 
-      <section className="pb-14 sm:pb-20 text-slate-950">
+      <section className="pb-14 sm:pb-20 text-zinc-950">
           <div className="mx-auto  max-w-7xl px-4">
               <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
                 <div className="rounded-2xl bg-zinc-950 p-8 text-white shadow-2xl shadow-slate-300/70">
-                  <div className="mb-7 flex items-center gap-4">
+                  <div className="mb-7 flex gap-4">
                     <div className="grid h-16 w-16 place-items-center rounded-2xl bg-white/10">
                       <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chart-spline-icon lucide-chart-spline"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7"/></svg></span>
                     </div>
                     <div>
-                      <Subheading variant="light">Selected capability</Subheading>
-                      <div className="text-2xl font-black">Academic Intelligence</div>
+                      <div className="text-2xl font-bold leading-[1.05] tracking-[-0.03em] text-white">Academic Intelligence</div>
                     </div>
                   </div>
-                  <p className="text-[15px] leading-8 text-white">Executive dashboards for performance, attendance, admissions, fees, learning gaps, and institution-wide trends.</p>
+                  <p>Executive dashboards for performance, attendance, admissions, fees, learning gaps, and institution-wide trends.</p>
                   <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.05] p-5">
-                    <p className="mb-4 text-sm font-black text-white">Built with enterprise-grade engineering</p>
+                    <div className="mb-4 text-sm font-black text-white">Built with enterprise-grade engineering</div>
                     <div className="grid gap-3 sm:grid-cols-2">
                       {[
                         "Next.js", "React", "Node APIs", "Cloud", "AI-ready", "Secure RBAC"
                       ].map((tech) => 
-                        <div key={tech} className="flex items-center gap-2 rounded-2xl bg-white/[0.06] px-3 py-3 text-sm font-semibold">
-                          <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check-icon lucide-check"><path d="M20 6 9 17l-5-5"/></svg></span> {tech}
+                        <div key={tech} className="flex items-center gap-2 rounded-2xl bg-white/[0.06] px-3 py-3 text-sm font-medium leading-[1.05] tracking-[-0.03em] text-white/70">
+                          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 lucide lucide-check-icon lucide-check"><path d="M20 6 9 17l-5-5"/></svg></span> {tech}
                         </div>
                       )}
                     </div>
@@ -520,18 +510,18 @@ export default function EducationIndustryPage() {
                 <div>
                   <div className="mb-8">
                     <Subheading variant="default">Core platform features</Subheading>
-                    <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">Built for daily operations and <span className="text-red-600">long-term scale.</span></h2>
+                    <h2 className="text-[58px] uppercase text-zinc-900 leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">Built for daily operations and <span className="text-red-600">long-term scale.</span></h2>
                   </div>
                   <div className="grid gap-4 sm:grid-cols-2">
                     {features.map(([title, text]) => (
                       <div key={title} className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-xl shadow-sm">
                         <div className="mb-3 flex items-center gap-3">
                           <div className="grid h-9 w-9 place-items-center rounded-xl bg-red-50 text-red-600">
-                            <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check-icon lucide-check"><path d="M20 6 9 17l-5-5"/></svg></span>
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 lucide lucide-check-icon lucide-check"><path d="M20 6 9 17l-5-5"/></svg></span>
                           </div>
                           <div className="font-bold text-zinc-950">{title}</div>
                         </div>
-                        <p className="leading-7 text-zinc-600">{text}</p>
+                        <p>{text}</p>
                       </div>
                     ))}
                   </div>
@@ -545,9 +535,7 @@ export default function EducationIndustryPage() {
           steps={process}
           label="Delivery process"
           title={
-            <>
-              A proven roadmap from idea to scalable <span className="text-red-600">education platform.</span>
-            </>
+            <>A proven roadmap from idea to scalable <span className="text-red-600">education platform.</span></>
           }
           description=""
         />
@@ -556,9 +544,7 @@ export default function EducationIndustryPage() {
           items={trustCards}
           label="Trusted by leading education institutions"
           title={
-            <>
-              Trusted by leading <span className="text-red-600">education institutions</span>
-            </>
+            <>Trusted by leading <span className="text-red-600">education institutions</span></>
           }
           description=""
           gridClassName = "grid gap-4 sm:grid-cols-2 xl:grid-cols-4"
@@ -567,11 +553,7 @@ export default function EducationIndustryPage() {
       {/* CTA STRIP */}
       <CtaStrip
           title={
-            <>
-              Ready to build a smarter
-              <br />
-              <span className="text-black">education platform?</span>
-            </>
+            <>Ready to build a smarter <span className="text-zinc-950">education platform?</span></>
           }
           description="Let Miraculous Soft Solutions design and develop a custom education solution that supports your institution today and scales with your future."
           buttonText="Discuss Your Project →"

@@ -95,31 +95,8 @@ export default function IndustryHubGraph({
 
   return (
     <div className="relative overflow-hidden">
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <div>
-          <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-zinc-500">
-            Industry network
-          </p>
-          <p className="font-bebas-neue text-xl leading-none tracking-wide text-zinc-950 sm:text-2xl">
-            {industries.length} <span className="text-red-600">Verticals</span>
-          </p>
-        </div>
-        {showAutoCycleBadge && cycleIntervalMs > 0 && (
-          <span className="flex items-center gap-2 rounded-full border border-zinc-950 bg-zinc-950 px-3 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-white">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            </span>
-            Auto cycle
-          </span>
-        )}
-      </div>
-
-      <div className="relative">
-        <div
-          className="pointer-events-none absolute left-1/2 top-[42%] h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl transition-[background-color] duration-500 sm:h-52 sm:w-52"
-          style={{ backgroundColor: `${active.accentSolid}22` }}
-        />
+       <div className="relative">
+        <div className="pointer-events-none absolute left-1/2 top-[42%] h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl transition-[background-color] duration-500 sm:h-52 sm:w-52" style={{ backgroundColor: `${active.accentSolid}22` }} />
 
         <div className="relative mx-auto aspect-square w-full">
           <div className="pointer-events-none absolute inset-[5%] rounded-full border border-dashed border-zinc-300 service-graph-orbit" />
@@ -162,14 +139,10 @@ export default function IndustryHubGraph({
             ))}
           </svg>
 
-          <div className="service-graph-hub-ring absolute left-1/2 top-1/2 z-20 flex w-[min(44%,8.75rem)] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border-2 border-zinc-950 bg-white p-3 text-center shadow-[4px_4px_0_#0c0c0c] transition-shadow duration-300 sm:p-4">
-            <span className="text-[8px] font-bold uppercase tracking-[0.16em] text-zinc-500">
-              {hubLabel}
-            </span>
-            <p className="mt-1 font-bebas-neue text-2xl leading-none text-zinc-950 transition-colors duration-300 sm:text-3xl">
-              {active.title}
-            </p>
-            <p className="mt-1 text-[9px] font-medium text-zinc-500">{hubSubtext}</p>
+          <div className="service-graph-hub-ring absolute left-1/2 top-1/2 z-20 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-white p-3 text-center transition-shadow duration-300 sm:p-4">
+            <div className="text-sm font-bold uppercase tracking-wider text-zinc-600">{hubLabel}</div>
+            <div className="mt-1 text-2xl leading-none text-zinc-950 transition-colors duration-300 sm:text-3xl">{active.title}</div>
+            <div className="mt-1 text-sm font-medium text-zinc-600">{hubSubtext}</div>
           </div>
 
           {spokes.map(({ item, pos }) => {
@@ -192,36 +165,11 @@ export default function IndustryHubGraph({
                 aria-pressed={isActive}
                 aria-label={`Select ${item.title}`}
               >
-                <span
-                  className={`mx-auto flex h-7 w-7 items-center justify-center rounded-md sm:h-8 sm:w-8 ${
-                    isActive ? "bg-white/10 text-white" : "bg-[var(--off)] text-zinc-700"
-                  }`}
-                  style={isActive ? undefined : { color: item.accentSolid }}
-                  dangerouslySetInnerHTML={{ __html: item.icon }}
-                />
-                <span className="mt-1 block line-clamp-2 text-center text-[7px] font-extrabold uppercase leading-tight tracking-wide sm:text-[8px]">
-                  {item.title}
-                </span>
+                <span className={`mx-auto flex h-7 w-7 items-center justify-center rounded-md sm:h-8 sm:w-8 ${ isActive ? "bg-white/10 text-white" : "bg-[var(--off)] text-zinc-700" }`} style={isActive ? undefined : { color: item.accentSolid }} dangerouslySetInnerHTML={{ __html: item.icon }} />
+                <span className="mt-1 block line-clamp-2 text-center text-[7px] font-extrabold uppercase leading-tight tracking-wide sm:text-[8px]">{item.title}</span>
               </button>
             );
           })}
-        </div>
-
-        <div className="relative mt-4 flex flex-wrap justify-center gap-1.5">
-          {industries.map((item) => (
-            <button
-              key={`pill-${item.id}`}
-              type="button"
-              onClick={() => selectIndustry(item.id)}
-              className={`rounded-full border px-2.5 py-1 text-[8px] font-bold uppercase tracking-[0.1em] transition sm:text-[9px] ${
-                activeId === item.id
-                  ? "border-zinc-950 bg-zinc-950 text-white"
-                  : "border-[var(--border)] bg-[var(--off)] text-zinc-600 hover:border-zinc-950"
-              }`}
-            >
-              {item.title}
-            </button>
-          ))}
         </div>
       </div>
     </div>

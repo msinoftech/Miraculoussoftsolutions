@@ -158,7 +158,7 @@ export default function SecurityControlPlane({ className = "" }: SecurityControl
 
         <div className="relative flex flex-wrap items-start justify-between gap-3">
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">Zero-trust control plane</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600">Zero-trust control plane</p>
             <p className="font-bebas-neue text-[28px] leading-none tracking-wide text-zinc-950 sm:text-[34px]">
               Identity <span className="text-red-600">Stack</span>
             </p>
@@ -254,7 +254,7 @@ export default function SecurityControlPlane({ className = "" }: SecurityControl
                   <span className="h-2 w-2 rounded-full bg-[#febc2e]/90 shadow-sm" />
                   <span className="h-2 w-2 rounded-full bg-[#28c840]/90 shadow-sm" />
                 </div>
-                <span className="text-[9px] font-semibold uppercase tracking-[0.1em] text-zinc-500">identity-control.log</span>
+                <span className="text-[9px] font-semibold uppercase tracking-[0.1em] text-zinc-600">identity-control.log</span>
                 <span
                   className="rounded-md border border-white/60 bg-white/50 px-1.5 py-0.5 text-[8px] font-bold uppercase backdrop-blur-sm"
                   style={{ color: active.accent }}

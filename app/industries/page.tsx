@@ -71,7 +71,7 @@ const industries: Industry[] = [
     capabilities: ["Telemedicine", "EHR / EMR", "Patient CRM", "Hospital HMS"],
     accent: "from-emerald-500 to-teal-600",
     accentSolid: "#0d9488",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>',
     featured: true,
   },
   {
@@ -85,7 +85,7 @@ const industries: Industry[] = [
     capabilities: ["LMS platforms", "Student SIS", "Admissions", "Live classes"],
     accent: "from-blue-500 to-indigo-600",
     accentSolid: "#4f46e5",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>',
   },
   {
     id: "finance",
@@ -98,7 +98,7 @@ const industries: Industry[] = [
     capabilities: ["Lending platforms", "Payments", "Risk dashboards", "KYC flows"],
     accent: "from-amber-500 to-orange-600",
     accentSolid: "#ea580c",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 18v-7"/><path d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></svg>',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10 18v-7"/><path d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></svg>',
   },
   {
     id: "logistics",
@@ -111,7 +111,7 @@ const industries: Industry[] = [
     capabilities: ["Fleet dispatch", "WMS", "Live tracking", "Route optimization"],
     accent: "from-cyan-500 to-blue-600",
     accentSolid: "#0284c7",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>',
   },
   {
     id: "retail",
@@ -124,7 +124,7 @@ const industries: Industry[] = [
     capabilities: ["eCommerce", "POS sync", "Inventory", "Loyalty CRM"],
     accent: "from-rose-500 to-pink-600",
     accentSolid: "#e11d48",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></svg>',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></svg>',
   },
   {
     id: "real-estate",
@@ -137,7 +137,7 @@ const industries: Industry[] = [
     capabilities: ["Listing portals", "Broker CRM", "Lead automation", "Document flows"],
     accent: "from-violet-500 to-fuchsia-600",
     accentSolid: "#a21caf",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12h4"/><path d="M10 8h4"/><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/></svg>',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10 12h4"/><path d="M10 8h4"/><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/></svg>',
   },
   {
     id: "professional",
@@ -150,7 +150,7 @@ const industries: Industry[] = [
     capabilities: ["Client portals", "Project ops", "Billing automation", "Resource planning"],
     accent: "from-zinc-600 to-zinc-900",
     accentSolid: "#27272a",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>',
   },
   {
     id: "enterprise",
@@ -163,7 +163,7 @@ const industries: Industry[] = [
     capabilities: ["ERP modules", "Internal tools", "Workflow automation", "Data hubs"],
     accent: "from-slate-700 to-slate-900",
     accentSolid: "#334155",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16h.01"/><path d="M16 16h.01"/><path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M8 16h.01"/></svg>',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 16h.01"/><path d="M16 16h.01"/><path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M8 16h.01"/></svg>',
     statLabel: "Scale-ready foundations",
   },
 ];
@@ -381,24 +381,20 @@ export default function IndustriesView() {
       <Script id="industries-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
 
       {/* Hero */}
-      <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
+      <section className="relative overflow-hidden bg-white py-16 sm:py-20">
         <div className="grid-bg absolute inset-0 opacity-45" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_78%_42%,rgba(26,86,219,0.11)_0%,transparent_65%),radial-gradient(ellipse_50%_75%_at_12%_88%,rgba(230,51,34,0.08)_0%,transparent_55%)]" />
 
-        <div className="relative z-10 mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 items-center gap-12 px-4 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
           
           {/* Left column */}
           <div className="space-y-5">
             <Subheading variant="default">Industries We Serve</Subheading>
-            <h1 className="text-[88px] uppercase leading-[0.82] tracking-[0.02em] text-zinc-950 sm:text-[118px] md:text-[142px] lg:text-[168px]">
-              <span className="block">Software</span>
-              <span className="text-red-600">For Every</span>
-              <span className="hero-outline block outline-black">Sector</span>
-            </h1>
+            <h1 className="uppercase leading-[0.84] tracking-wider text-[64px] text-zinc-950 sm:text-[96px] md:text-[118px] lg:text-[132px]"><span className="block">Software</span><span className="text-red-600">For Every</span><span className="hero-outline block outline-black">Sector</span></h1>
 
-            <p className="text-[15px] leading-8 text-zinc-500">From healthcare and finance to logistics and enterprise — we build vertical-specific platforms with the strategy, UX, and engineering depth your industry demands.</p>
+            <p>From healthcare and finance to logistics and enterprise — we build vertical-specific platforms with the strategy, UX, and engineering depth your industry demands.</p>
 
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="relative">
               <DefaultButton href="/contact-us">Discuss Your Industry</DefaultButton>
             </div>
 
@@ -416,9 +412,7 @@ export default function IndustriesView() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="relative">
             <Subheading variant="default">Industry Expertise</Subheading>
-            <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">
-              Vertical <span className="text-red-600">Solutions</span>
-            </h2>
+            <h2 className="text-[58px] uppercase text-zinc-900 leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">Vertical <span className="text-red-600">Solutions</span></h2>
           </div>
 
           <div className="space-y-0">
@@ -433,27 +427,23 @@ export default function IndustriesView() {
                       </span>
                       <div className="relative">
                         <div className="mb-4 flex items-center gap-3">
-                          <span className={`flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-to-br ${industry.accent} text-white [&_svg]:stroke-current`}>
+                          <span className={`flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-to-br ${industry.accent} text-white`}>
                             <span dangerouslySetInnerHTML={{ __html: industry.icon }} />
                           </span>
                         </div>
-                        <h3 className="text-[32px] font-extrabold leading-[1.05] tracking-[-0.03em] text-zinc-950 transition-colors hover:text-red-600 sm:text-[40px]">
-                          <Link href={industry.href}>{industry.title}</Link>
-                        </h3>
-                        <p className="mt-4 text-[15px] leading-8 text-zinc-600">{industry.description}</p>
-                        <p className="mt-4 border-l-2 border-red-600 pl-4 text-[14px] leading-7 text-zinc-700">
-                          {industry.highlight}
-                        </p>
+                        <h3 className="text-[32px] font-extrabold leading-[1.05] tracking-[-0.03em] text-zinc-950 transition-colors hover:text-red-600 sm:text-[40px]"><Link href={industry.href}>{industry.title}</Link></h3>
+                        <p>{industry.description}</p>
+                        <p className="mt-4">{industry.highlight}</p>
                         <ul className="mt-6 grid grid-cols-2 gap-2">
                           {industry.capabilities.map((item) => (
-                            <li key={item} className="flex items-center gap-2 rounded-[4px] border border-zinc-200 bg-white px-3 py-2 text-zinc-800">
+                            <li key={item} className="flex items-center gap-2 rounded-[4px] border border-zinc-200 bg-white px-3 py-2 text-zinc-700">
                               <span className="text-red-600">+</span>
                               {item}
                             </li>
                           ))}
                         </ul>
 
-                        <div className="mt-8 flex flex-wrap items-center gap-6">
+                        <div className="relative mt-8">
                           <DefaultButton href={industry.href}>View industry page</DefaultButton>
                         </div>
                       </div>
@@ -474,13 +464,8 @@ export default function IndustriesView() {
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
               <Subheading variant="light">Cross-Industry</Subheading>
-
-              <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">
-                One Partner.
-                <br />
-                <span className="text-red-600">Many Domains.</span>
-              </h2>
-              <p className="text-[15px] leading-8 text-white/45">Regardless of sector, we bring the same engineering standards — secure APIs, premium UX, cloud deployment, and long-term support.</p>
+              <h2 className="text-[58px] uppercase text-white leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">One Partner. <span className="text-red-600">Many Domains.</span></h2>
+              <p className="text-white/70">Regardless of sector, we bring the same engineering standards — secure APIs, premium UX, cloud deployment, and long-term support.</p>
             </div>
 
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -489,8 +474,8 @@ export default function IndustriesView() {
                   <span className="font-bebas-neue text-4xl leading-none text-white/10">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <p className="text-[16px] font-extrabold text-white">{item.title}</p>
-                  <p className="text-[12px] text-white/45">{item.detail}</p>
+                  <div className="text-[16px] font-extrabold text-white">{item.title}</div>
+                  <p className="text-white/70">{item.detail}</p>
                 </div>
               ))}
             </div>
@@ -502,29 +487,23 @@ export default function IndustriesView() {
       <section className="bg-[var(--off)] py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 gap-0 lg:grid-cols-2">
-            <div className="space-y-5 border-b-2 border-[var(--border)] pb-12 lg:border-b-0 lg:border-r-2 lg:pb-0 lg:pr-14">
+            <div className="space-y-3 border-b-2 border-[var(--border)] pb-12 lg:border-b-0 lg:border-r-2 lg:pb-0 lg:pr-14">
               <Subheading variant="default">Why Miraculous Soft</Subheading>
-              <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[70px] lg:text-[88px]">
-                Built For
-                <br />
-                <span className="text-red-600">Your Industry.</span>
-              </h2>
-              <p className="text-[15px] leading-8 text-zinc-500">Growth-stage businesses and enterprise teams choose us when domain expertise, execution quality, and long-term product thinking matter.</p>
+              <h2 className="text-[58px] uppercase text-zinc-900 leading-[0.94] tracking-[0.02em] sm:text-[70px] lg:text-[88px]">Built For <span className="text-red-600">Your Industry.</span></h2>
+              <p>Growth-stage businesses and enterprise teams choose us when domain expertise, execution quality, and long-term product thinking matter.</p>
 
               <DefaultButton href="/contact-us">Talk to our team</DefaultButton>
             </div>
 
             <div className="pt-12 lg:pl-14 lg:pt-0">
               {whyPoints.map((point, index) => (
-                <div key={point.title} className="grid grid-cols-[56px_1fr] gap-5 border-b border-[var(--border)] py-8 first:pt-0 last:border-b-0 last:pb-0">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-zinc-950 text-white transition hover:bg-red-600">
-                    <span className="font-bebas-neue text-[22px] leading-none uppercase tracking-[0.04em]">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
+                <div key={point.title} className="group grid grid-cols-[56px_1fr] gap-5 border-b border-[var(--border)] py-8 first:pt-0 last:border-b-0 last:pb-0">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-zinc-950 text-white group-hover:bg-red-600">
+                    <span className="font-bebas-neue text-[22px] leading-none uppercase tracking-[0.04em]">{String(index + 1).padStart(2, "0")}</span>
                   </div>
-                  <div>
-                    <p className="text-[17px] font-extrabold tracking-[-0.02em] text-zinc-950">{point.title}</p>
-                    <p className="mt-2 text-[13px] leading-7 text-zinc-500">{point.description}</p>
+                  <div className="space-y-2">
+                    <div className="text-xl font-extrabold leading-[1.05] tracking-[-0.03em] text-zinc-950">{point.title}</div>
+                    <p>{point.description}</p>
                   </div>
                 </div>
               ))}
@@ -535,11 +514,7 @@ export default function IndustriesView() {
 
       <CtaStrip
         title={
-          <>
-            Ready To Build
-            <br />
-            For Your Sector?
-          </>
+          <>Ready To Build <span className="text-zinc-950">For Your Sector?</span></>
         }
         description="Tell us about your industry, compliance needs, and product goals. We will map a tailored delivery plan from discovery to scale."
         buttonText="Start Your Project"

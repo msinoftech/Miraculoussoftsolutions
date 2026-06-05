@@ -196,22 +196,22 @@ const values = [
   {
     title: "Ownership Over Output",
     body: "We treat every engagement like our own product — clear accountability, proactive communication, and decisions that protect your roadmap.",
-    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>`,
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>`,
   },
   {
     title: "Engineering With Intent",
     body: "Clean architecture, secure APIs, and measurable quality — built for maintainability and scale, not short-term demos.",
-    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>`,
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>`,
   },
   {
     title: "Partnership First",
     body: "We embed with your goals, stakeholders, and constraints — aligning sprints, milestones, and outcomes with business reality.",
-    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
   },
   {
     title: "Ship Then Scale",
     body: "From MVP to enterprise rollout — deployment pipelines, observability, and iteration loops that keep products healthy after launch.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>`,
   },
 ];
 
@@ -287,28 +287,28 @@ const capabilities = [
 const cultureCards = [
   {
     no: "01",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>`,
     title: "Clear Communication",
     body: "Weekly demos, written specs, and honest trade-off conversations — no black-box delivery.",
     tag: "",
   },
   {
     no: "02",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12a10 10 0 1 0 20 0 10 10 0 0 0-20 0Z"/><path d="m9 12 2 2 4-4"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12a10 10 0 1 0 20 0 10 10 0 0 0-20 0Z"/><path d="m9 12 2 2 4-4"/></svg>`,
     title: "Quality Gates",
     body: "Code review, QA cycles, security checks, and performance benchmarks before every release.",
     tag: "",
   },
   {
     no: "03",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m16.2 7.8 2.9-2.9"/><path d="M18 12h4"/><path d="m16.2 16.2 2.9 2.9"/><path d="M12 18v4"/><path d="m4.9 19.1 2.9-2.9"/><path d="M2 12h4"/><path d="m4.9 4.9 2.9 2.9"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v4"/><path d="m16.2 7.8 2.9-2.9"/><path d="M18 12h4"/><path d="m16.2 16.2 2.9 2.9"/><path d="M12 18v4"/><path d="m4.9 19.1 2.9-2.9"/><path d="M2 12h4"/><path d="m4.9 4.9 2.9 2.9"/></svg>`,
     title: "Continuous Improvement",
     body: "Post-launch monitoring, feedback loops, and roadmap iteration for lasting product value.",
     tag: "",
   },
   {
     no: "04",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="M12 8v4"/><path d="M10 12h4"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="M12 8v4"/><path d="M10 12h4"/></svg>`,
     title: "Secure By Default",
     body: "Authentication, permissions, and data protection woven into architecture — not patched in at the end.",
     tag: "",
@@ -322,20 +322,16 @@ export default function AboutUsPage() {
       <Script id="about-us-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
 
       {/* Hero Section */}
-      <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
+      <section className="relative overflow-hidden bg-white py-16 sm:py-20">
         <div className="grid-bg absolute inset-0 opacity-45" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_75%_55%_at_85%_45%,rgba(220,38,38,0.1)_0%,transparent_65%),radial-gradient(ellipse_50%_70%_at_15%_90%,rgba(37,99,235,0.08)_0%,transparent_60%)]" />
 
-        <div className="relative z-10 mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 items-center gap-12 px-4 py-14 sm:py-20 lg:grid-cols-[minmax(0,1fr)_min(540px,44%)] lg:gap-14">
+        <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
           <div className="space-y-5">
             <Subheading variant="default">Company · About Us</Subheading>
-            <h1 className="uppercase leading-[0.84] tracking-wider text-[64px] text-zinc-950 sm:text-[96px] md:text-[118px] lg:text-[132px]">
-              <span>We Build </span>
-              <span className="text-red-600">Products</span>
-              <span className="hero-outline block outline-black">That Last</span>
-            </h1>
+            <h1 className="uppercase leading-[0.84] tracking-wider text-[64px] text-zinc-950 sm:text-[96px] md:text-[118px] lg:text-[132px]"><span>We Build </span> <span className="text-red-600">Products</span> <span className="hero-outline outline-black">That Last</span></h1>
 
-            <p className="text-[15px] leading-8 text-zinc-600">{APP_NAME} is a product engineering company — partnering with founders and enterprises to design, build, and scale SaaS, B2B platforms, ERP systems, and modern digital experiences.</p>
+            <p>{APP_NAME} is a product engineering company — partnering with founders and enterprises to design, build, and scale SaaS, B2B platforms, ERP systems, and modern digital experiences.</p>
 
             <div className="flex flex-wrap items-center gap-4">
                 <DefaultButton href="/contact-us" bgClassName="bg-red-600 hover:bg-red-700">Work With Us</DefaultButton>
@@ -367,20 +363,16 @@ export default function AboutUsPage() {
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[length:100%_48px] opacity-30" />
         <div className="relative mx-auto max-w-7xl px-4">
           
-          <div className="grid gap-10 sm:grid-cols-2 lg:items-start lg:gap-14 xl:gap-16">
+          <div className="grid gap-10 md:grid-cols-2 lg:items-start lg:gap-14 xl:gap-16">
             
             <div className="space-y-5">
               <Subheading variant="light">Our Story</Subheading>
-              <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">
-                Engineering
-                <br />
-                <span className="text-red-600">With Purpose.</span>
-              </h2>
-              <p className="text-[15px] leading-8 text-white">We started with a simple belief: great software is not a collection of features — it is a business instrument. Every architecture choice, sprint, and release should move your product closer to trust, adoption, and scale.</p>
+              <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">Engineering <span className="text-red-600">With Purpose.</span></h2>
+              <p className="text-white/70">We started with a simple belief: great software is not a collection of features — it is a business instrument. Every architecture choice, sprint, and release should move your product closer to trust, adoption, and scale.</p>
 
               <blockquote className="rounded-xl border border-white/10 bg-white/[0.04] p-5">
-                <p className="text-[20px] font-semibold leading-relaxed text-white/95">&ldquo;We do not chase trends. We build systems your team can own, extend, and scale.&rdquo;</p>
-                <footer className="mt-4 text-[10px] font-bold uppercase tracking-[0.14em] text-white/50">— {APP_NAME}</footer>
+                <div className="italic text-white/70">&ldquo;We do not chase trends. We build systems your team can own, extend, and scale.&rdquo;</div>
+                <div className="mt-4 text-[10px] font-bold uppercase tracking-[0.14em] text-white/70">— {APP_NAME}</div>
               </blockquote>
             </div>
 
@@ -411,8 +403,8 @@ export default function AboutUsPage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-10">
             <Subheading variant="default">What We Deliver</Subheading>
-            <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">Full-Stack <span className="text-red-600">Capability.</span></h2>
-            <p className="text-[15px] leading-8 text-zinc-600">One partner across strategy, engineering, and launch — explore how we work and what we build.</p>
+            <h2 className="text-[58px] uppercase text-zinc-900 leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">Full-Stack <span className="text-red-600">Capability.</span></h2>
+            <p>One partner across strategy, engineering, and launch — explore how we work and what we build.</p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((cap) => (
@@ -423,8 +415,8 @@ export default function AboutUsPage() {
                 </div>
 
                 <div className="relative flex items-center justify-between gap-3">
-                  <span className="text-[13px] font-extrabold uppercase tracking-[0.08em] text-zinc-900 transition group-hover:text-red-600">{cap.label}</span>
-                  <span className="grid h-8 w-8 place-items-center rounded-full border border-zinc-300 bg-white text-sm text-zinc-500 transition group-hover:border-red-600 group-hover:text-red-600">
+                  <div className="text-[15px] font-bold text-zinc-900 transition group-hover:text-red-600">{cap.label}</div>
+                  <span className="grid h-8 w-8 place-items-center rounded-full border border-zinc-300 bg-white text-sm text-zinc-600 transition group-hover:border-red-600 group-hover:text-red-600">
                     <span className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden>↗</span>
                   </span>
                 </div>
@@ -439,11 +431,7 @@ export default function AboutUsPage() {
         items={cultureCards}
         label="How We Work"
         title={
-          <>
-            Culture Built for
-            <br />
-            <span className="text-red-600">Clarity & Trust.</span>
-          </>
+          <>Culture Built for <span className="text-red-600">Clarity & Trust.</span></>
         }
         description="The operating habits behind every successful delivery — transparent, disciplined, and focused on outcomes."
         headerClassName="mb-12 text-left"
@@ -453,10 +441,7 @@ export default function AboutUsPage() {
       {/* Cta Strip Section */}
       <CtaStrip
         title={
-          <>
-            Ready to meet your
-            <br />
-            <span className="text-black">product engineering partner?</span>
+          <>Ready to meet your <span className="text-black">product engineering partner?</span>
           </>
         }
         description="Tell us about your product vision. We will respond with a practical plan — scope, stack, timeline, and the team structure to deliver it."

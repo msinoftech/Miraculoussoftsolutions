@@ -104,21 +104,6 @@ export default function ProcessWorkflowHubGraph({
     <div className="service-panel-light service-panel-frame relative mx-auto w-full">
       <div className="service-panel-shine pointer-events-none absolute inset-0 opacity-30" aria-hidden />
 
-      <div className="relative flex flex-wrap items-start justify-between gap-3">
-        <div>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">Software delivery workflow</p>
-          <p className="font-bebas-neue text-2xl leading-none tracking-wide text-zinc-950 sm:text-[30px]">
-            Build <span className="text-red-600">System</span>
-          </p>
-        </div>
-        <span className="flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-600">
-          <span className="relative flex h-1.5 w-1.5">
-            <span className="relative h-1.5 w-1.5 rounded-full bg-red-500" />
-          </span>
-          {`Live ${progressPercent}%`}
-        </span>
-      </div>
-
       <div className="relative px-1">
         <div className="pointer-events-none absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl transition-colors duration-500" style={{ backgroundColor: `${active.accent}18` }} />
 
@@ -192,7 +177,7 @@ export default function ProcessWorkflowHubGraph({
                 }}
                 aria-pressed={isActive}
               >
-                <span className="text-[7px] font-bold uppercase tracking-wider text-zinc-500">{node.id}</span>
+                <span className="text-[7px] font-bold uppercase tracking-wider text-zinc-600">{node.id}</span>
                 <span className="mt-0.5 block font-bebas-neue text-sm leading-none text-zinc-950 sm:text-base">{node.phase}</span>
                 {isActive && (
                   <span className="mt-0.5 inline-block rounded px-1 py-px text-[6px] font-bold uppercase text-white" style={{ backgroundColor: node.accent }}>
@@ -202,36 +187,6 @@ export default function ProcessWorkflowHubGraph({
               </button>
             );
           })}
-        </div>
-
-        <div className="mt-4 rounded-xl border border-zinc-200/70 bg-white/70 p-2">
-          <div className="mb-2 h-1.5 overflow-hidden rounded-full bg-zinc-200">
-            <div
-              className="h-full rounded-full bg-gradient-to-r from-red-500 to-blue-500 transition-all duration-500"
-              style={{ width: `${progressPercent}%` }}
-            />
-          </div>
-
-          <div className="relative flex items-center justify-center gap-0 px-1">
-          {active.pipeline.map((step, pi) => {
-            const done = pi < pipelineTick;
-            const current = pi === pipelineTick;
-            return (
-              <div key={step.detail} className="flex items-center">
-                {pi > 0 && <div className={`mx-0.5 h-px w-4 sm:w-8 ${done ? "bg-emerald-400" : "bg-zinc-200"}`} />}
-                <div
-                  className={`ai-step-node flex min-w-0 flex-col items-center rounded-lg border px-1.5 py-1.5 text-center transition sm:min-w-[4.5rem] sm:px-2 ${
-                    current ? "is-active" : done ? "is-done" : "border-zinc-200 bg-zinc-50 text-zinc-400"
-                  }`}
-                  style={current ? { color: active.accent } : undefined}
-                  title={step.detail}
-                >
-                  <span className="truncate text-[7px] font-extrabold uppercase sm:text-[8px]">{step.label}</span>
-                </div>
-              </div>
-            );
-          })}
-          </div>
         </div>
       </div>
     </div>

@@ -8,6 +8,7 @@ import Subheading from "@/app/components/ui/Subheading";
 import DefaultButton from "@/app/components/ui/Button/defaultButton";
 import ProcessWorkflowHubGraph from "@/app/components/graph/ProcessWorkflowHubGraph";
 import ProcessFrameworkSection from "@/app/components/ProcessFrameworkSection";
+import Marquee from "@/app/components/Marquee";
 
 const PAGE_URL = `${BASE_URL}/process`;
 
@@ -211,12 +212,25 @@ const schemaData = {
   ],
 };
 
+const marqueeItems = [
+  "Discovery & Planning",
+  "Goal Alignment",
+  "Product Blueprint",
+  "System Architecture",
+  "Sprint Delivery",
+  "Quality Validation",
+  "Deploy & Scale",
+  "Milestone Delivery",
+  "CI/CD & Production Launch",
+  "Post-Launch Optimization",
+];
+
 const processSteps = [
 { 
     id: "01", 
     phase: "Initiation", 
     title: "Goal Alignment", 
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-goal-icon lucide-goal"><path d="M12 13V2l8 4-8 4"/><path d="M20.561 10.222a9 9 0 1 1-12.55-5.29"/><path d="M8.002 9.997a5 5 0 1 0 8.9 2.02"/></svg>`, 
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-goal-icon lucide-goal"><path d="M12 13V2l8 4-8 4"/><path d="M20.561 10.222a9 9 0 1 1-12.55-5.29"/><path d="M8.002 9.997a5 5 0 1 0 8.9 2.02"/></svg>`, 
     tag: "Strategy", 
     description: "We define business objectives, user needs, product direction, scope boundaries, and measurable success outcomes.", points: ["Business goals", "Stakeholder clarity", "Success metrics"] 
 },
@@ -224,7 +238,7 @@ const processSteps = [
     id: "02", 
     phase: "Discovery", 
     title: "Product Blueprint", 
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-icon lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>`, 
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-users-icon lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>`, 
     tag: "Planning", 
     description: "We convert ideas into user flows, modules, feature priorities, technical assumptions, and a delivery roadmap.", points: ["User journeys", "Feature scope", "Roadmap"] 
 },
@@ -232,7 +246,7 @@ const processSteps = [
     id: "03", 
     phase: "Architecture", 
     title: "System Foundation", 
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layers-icon lucide-layers"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>`, 
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-layers-icon lucide-layers"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>`, 
     tag: "Engineering", 
     description: "We design secure, scalable architecture with APIs, data models, infrastructure, roles, and integration flows.", points: ["API design", "Database model", "Cloud planning"] 
 },
@@ -240,7 +254,7 @@ const processSteps = [
     id: "04", 
     phase: "Execution", 
     title: "Product Engineering", 
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-braces-icon lucide-braces"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg>`, 
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-braces-icon lucide-braces"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg>`, 
     tag: "Build", 
     description: "We build frontend, backend, dashboards, automation workflows, integrations, and core product modules in focused cycles.", points: ["Clean UI", "Backend logic", "Sprint delivery"] 
 },
@@ -248,7 +262,7 @@ const processSteps = [
     id: "05", 
     phase: "Testing", 
     title: "Quality Validation", 
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flask-conical-icon lucide-flask-conical"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/><path d="M6.453 15h11.094"/><path d="M8.5 2h7"/></svg>`, 
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-flask-conical-icon lucide-flask-conical"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/><path d="M6.453 15h11.094"/><path d="M8.5 2h7"/></svg>`, 
     tag: "QA", 
     description: "We test performance, responsiveness, security, roles, edge cases, integrations, and production readiness.", points: ["Functional QA", "Security checks", "Performance review"] 
 },
@@ -256,7 +270,7 @@ const processSteps = [
     id: "06", 
     phase: "Launch", 
     title: "Deploy & Scale", 
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rocket-icon lucide-rocket"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>`, 
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-rocket-icon lucide-rocket"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>`, 
     tag: "Growth", 
     description: "We launch, monitor, support, optimize, and continuously improve the platform for long-term business growth.", points: ["Deployment", "Monitoring", "Support"] 
 },
@@ -266,22 +280,22 @@ const pillars = [
     { 
       title: "Product Strategy", 
       description: "Clear discovery, requirement mapping, user-flow planning, and roadmap definition.", 
-      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 8h7"/><path d="M8 12h6"/><path d="M11 16h5"/></svg>`
+      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 8h7"/><path d="M8 12h6"/><path d="M11 16h5"/></svg>`
     },
     { 
       title: "Modern Engineering", 
       description: "React, Next.js, Node, Python, .NET, APIs, cloud systems, and scalable backend architecture.", 
-      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>`
+      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>`
     },
     { 
       title: "Secure Architecture", 
       description: "Role-based access, secure APIs, structured permissions, data protection, and audit-ready systems.", 
-      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>`
+      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>`
     },
     { 
       title: "Cloud Deployment", 
       description: "AWS-ready systems with CI/CD, monitoring, deployment pipelines, and stable infrastructure.", 
-      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>`
+      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>`
     },
 ];
 
@@ -306,28 +320,28 @@ const metrics = [
 const model = [
     {
       no: "01",
-      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rocket-icon lucide-rocket"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>`,
+      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-rocket-icon lucide-rocket"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>`,
       title: "Plan",
       body: "Scope, architecture, milestones, risks, timelines, and team responsibilities are clearly defined.",
       tag: "",
     },
     {
       no: "02",
-      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet-icon lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>`,
+      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-wallet-icon lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>`,
       title: "Build",
       body: "Focused sprints deliver working modules, clean interfaces, secure APIs, and business-ready workflows.",
       tag: "",
     },
     {
       no: "03",
-      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud-upload"><path d="M12 13v8"/><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="m8 17 4-4 4 4"/></svg>`,
+      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-cloud-upload"><path d="M12 13v8"/><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="m8 17 4-4 4 4"/></svg>`,
       title: "Launch",
       body: "Production deployment, CI/CD pipelines, environment hardening, and go-live support with stable, zero-downtime releases.",
       tag: "",
     },
     {
       no: "04",
-      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings2-icon lucide-settings-2"><path d="M14 17H5"/><path d="M19 7h-9"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>`,
+      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-settings2-icon lucide-settings-2"><path d="M14 17H5"/><path d="M19 7h-9"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>`,
       title: "Improve",
       body: "We monitor, optimize, and support the product after launch—iterating on performance, reliability, and long-term business value.",
       tag: "",
@@ -341,49 +355,47 @@ export default function ProcessPage() {
         <Script id="process-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
 
         {/* Hero Section */}
-        <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
+        <section className="relative overflow-hidden bg-white py-16 sm:py-20">
             <div className="grid-bg absolute inset-0 opacity-45" />
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.16))]" />
 
-            <div className="relative z-10 mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 items-center gap-10 px-4 py-14 sm:py-20 lg:grid-cols-[minmax(0,1fr)_min(560px,42%)] lg:gap-12">
+            <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
                 {/* Left column */}
                 <div className="space-y-5">
                     <Subheading variant="default">Miraculous Delivery Process</Subheading>
-                    <h1 className="text-[88px] uppercase leading-[0.82] tracking-[0.02em] text-zinc-950 sm:text-[118px] md:text-[142px] lg:text-[168px]">
-                        <span>Proven </span>
-                        <span className="text-red-600">Process</span>
-                        <span className="hero-outline block outline-black">Building</span>
+                    <h1 className="uppercase leading-[0.84] tracking-wider text-[64px] text-zinc-950 sm:text-[96px] md:text-[118px] lg:text-[132px]"><span>Proven </span> <span className="text-red-600">Process</span> <span className="hero-outline outline-black">Building</span>
                     </h1>
-                    <p className="text-[15px] leading-8 text-zinc-600">We help businesses move from idea to scalable digital product with strategy, architecture, UI engineering, secure backend systems, cloud deployment, and long-term support.</p>
+                    <p>We help businesses move from idea to scalable digital product with strategy, architecture, UI engineering, secure backend systems, cloud deployment, and long-term support.</p>
 
                     <div className="flex flex-wrap items-center gap-4">
                         <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
                     </div>
 
                     <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
-                        {metrics.map((metric) => (
-                            <div key={metric.label}>
-                            <div className="font-bebas-neue text-3xl leading-none text-zinc-950">{metric.value}</div>
-                            <div className="text-sm font-semibold text-zinc-950">{metric.label}</div>
+                        {metrics.map((stat) => (
+                            <div key={stat.label}>
+                            <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
+                              {stat.value.replace(/\+/, "")}
+                              {stat.value.includes("+") && <span className="text-red-600">+</span>}
+                            </div>
+                            <div className="text-sm text-zinc-950">{stat.label}</div>
                             </div>
                         ))}
-                    </div> 
+                    </div>
                 </div>
-                <ProcessWorkflowHubGraph
-                  processSteps={processSteps}
-                />
+
+                <ProcessWorkflowHubGraph processSteps={processSteps} />
             </div>
         </section>
+
+        {/* Marquee Section */}
+        <Marquee items={[...marqueeItems]} />
         
         <Card
             label="Delivery Capabilities"
             title={
-                <>
-                    What Powers
-                    <br />
-                    <span className="text-red-600">Every Build.</span>
-                </>
+                <>What Powers <span className="text-red-600">Every Build.</span></>
             }
             description="Four disciplines that sit behind our delivery process—strategy, engineering, security, and cloud—so every phase ships with structure, not guesswork."
             items={pillars}
@@ -401,19 +413,16 @@ export default function ProcessPage() {
           <div className="mx-auto grid items-start max-w-7xl px-4 gap-12 lg:grid-cols-[0.9fr_1.1fr]">
             {/* Left Column */}
             <div className="space-y-3">
-              <Subheading variant="default">Engineering Standards</Subheading>
-              <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">
-                  Built Like a Real Software <span className="text-red-600">Real Software.</span>
-              </h2>
-              <p className="text-[15px] leading-8 text-zinc-500">When the stakes are high and execution matters, growth-stage businesses and enterprise teams choose a partner that can think strategically and build reliably.</p>
+              <h2 className="text-[58px] uppercase text-zinc-900 leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">Built Like a Real Software <span className="text-red-600">Real Software.</span></h2>
+              <p>When the stakes are high and execution matters, growth-stage businesses and enterprise teams choose a partner that can think strategically and build reliably.</p>
             </div>
             
             {/* Right Column */}
             <div className="grid gap-4 sm:grid-cols-2">
               {standards.map((item) => (
                 <div key={item} className="flex items-center gap-3 rounded-xl p-2 border border-zinc-200 bg-white transition">
-                  <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-zinc-900 transition group-hover:text-white"><path d="M20 6 9 17l-5-5"/></svg></span>
-                  <span className="text-sm font-semibold text-zinc-600">{item}</span>
+                  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-zinc-900 transition group-hover:text-white"><path d="M20 6 9 17l-5-5"/></svg></span>
+                  <span className="text-[15px] font-medium text-zinc-700">{item}</span>
                 </div>
               ))}
             </div>
@@ -425,11 +434,7 @@ export default function ProcessPage() {
             items={model}
             label="Delivery Model"
             title={
-                <>
-                How We Keep
-                <br />
-                <span className="text-red-600">Projects Moving.</span> 
-                </>
+                <>How We Keep <span className="text-red-600">Projects Moving.</span></>
             }
             description=""
             headerClassName="mb-12 text-left"
@@ -439,11 +444,7 @@ export default function ProcessPage() {
         {/* CTA STRIP */}
         <CtaStrip
             title={
-                <>
-                Let’s turn your complex idea
-                <br />
-                into a <span className="text-black">scalable digital product.</span>
-                </>
+                <>Let’s turn your complex idea into a <span className="text-black">scalable digital product.</span></>
             }
             description="Whether you need SaaS development, B2B platforms, ERP automation, mobile apps, or cloud infrastructure, we bring the process and engineering discipline to deliver it right."
             buttonText="Get a Free Quote →"

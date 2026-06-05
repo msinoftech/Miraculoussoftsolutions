@@ -31,21 +31,21 @@ export default function EnterpriseHubGraph() {
       <div className="absolute left-1/2 top-1/2 h-[470px] w-[470px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
       <div className="absolute left-1/2 top-1/2 h-[350px] w-[350px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-blue-400/15" />
 
-      <div className="absolute -left-2 top-30 z-10 rounded-2xl border border-white/10 bg-white/10 px-4 py-3 backdrop-blur-xl">
-        <p className="text-xs text-slate-300">Foundation</p>
-        <p className="font-black text-blue-200">Cloud Native</p>
+      <div className="absolute -left-2 top-30 z-10 rounded-xl border border-white/10 bg-white/10 px-4 py-3 backdrop-blur-xl space-y-1">
+        <div className="text-xs text-white/70">Foundation</div>
+        <div className="font-bold leading-[1.05] tracking-[-0.03em] text-blue-200">Cloud Native</div>
       </div>
 
-      <div className="absolute -right-2 bottom-20 z-10 rounded-2xl border border-white/10 bg-white/10 px-4 py-3 backdrop-blur-xl">
-        <p className="text-xs text-slate-300">Architecture</p>
-        <p className="font-black text-red-200">Secure Scale</p>
+      <div className="absolute -right-2 bottom-20 z-10 rounded-2xl border border-white/10 bg-white/10 px-4 py-3 backdrop-blur-xl space-y-1">
+        <div className="text-xs text-white/70">Architecture</div>
+        <div className="font-bold leading-[1.05] tracking-[-0.03em] text-red-200">Secure Scale</div>
       </div>
 
-      <div className="relative rounded-2xl border border-white/10 bg-white/[0.075] p-5 shadow-2xl shadow-blue-950/30 backdrop-blur-2xl">
+      <div className="relative shadow-xl">
         <div className="rounded-2xl border border-white/10 bg-[#08101f]/95 p-5">
           <div className="mb-5 flex items-center justify-between gap-5">
             <div>
-              <p className="text-sm text-zinc-400">Digital Headquarters</p>
+              <div className="text-sm text-zinc-400">Digital Headquarters</div>
               <div className="text-2xl font-bold text-white">Enterprise Software Tower</div>
             </div>
             <div className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs text-emerald-300">LIVE</div>
@@ -61,14 +61,11 @@ export default function EnterpriseHubGraph() {
 
               <div className="mx-auto overflow-hidden rounded-t-[2rem] border border-white/15 bg-slate-950/70 shadow-2xl">
                 {towerFloors.map((item) => (
-                  <div
-                    key={item.floor}
-                    className="grid grid-cols-[42px_1fr_44px] items-center border-b border-white/10 bg-white/[0.045] px-4 py-3 last:border-b-0"
-                  >
+                  <div key={item.floor} className="grid grid-cols-[42px_1fr_44px] items-center border-b border-white/10 bg-white/[0.045] px-4 py-3 last:border-b-0">
                     <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-white/10">
                       <span dangerouslySetInnerHTML={{ __html: item.icon }} />
                     </div>
-                    <p className="text-sm font-black text-slate-100">{item.floor}</p>
+                    <div className="text-sm font-bold leading-[1.05] tracking-[-0.03em] text-white">{item.floor}</div>
                     <div className="grid grid-cols-2 gap-1">
                       <span className="h-2 rounded-sm bg-blue-400/60" />
                       <span className="h-2 rounded-sm bg-red-400/60" />

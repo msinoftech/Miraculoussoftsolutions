@@ -46,9 +46,9 @@ export default function ProfessionalProcessAnimation() {
       
       <div className="relative mb-5 flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <div className="text-[10px] font-bold uppercase tracking-[0.16em] text-zinc-500">Delivery Model Preview</div>
+          <div className="text-[10px] font-bold uppercase tracking-[0.16em] text-zinc-600">Delivery Model Preview</div>
           <div className="mt-1 text-[24px] font-extrabold tracking-[-0.02em] text-zinc-950">Idea to Launch Framework</div>
-          <p className="mt-1 max-w-xl text-[13px] leading-6 text-zinc-500">A visual flow of how we move from strategy to execution with predictable delivery.</p>
+          <p className="mt-1 max-w-xl text-[13px] leading-6 text-zinc-600">A visual flow of how we move from strategy to execution with predictable delivery.</p>
         </div>
       </div>
 
@@ -109,7 +109,7 @@ export default function ProfessionalProcessAnimation() {
           <div className="absolute left-[44.5%] top-[61%] text-[9px] font-semibold uppercase tracking-[0.22em] text-[#ef3b2d]/60 sm:left-[44.9%] sm:text-[10px] lg:left-[45.3%] lg:text-[11px] lg:tracking-[0.28em]">build</div>
           <div className="absolute left-[44.2%] top-[91%] -translate-y-full text-[9px] font-semibold uppercase tracking-[0.22em] text-black/25 sm:left-[44.7%] sm:text-[10px] lg:left-[45.1%] lg:text-[11px] lg:tracking-[0.28em]">execute</div>
 
-          <div className="absolute bottom-2 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full border border-[var(--border)] bg-white/85 px-3 py-1 text-[9px] font-semibold uppercase tracking-[0.14em] text-zinc-500 backdrop-blur sm:text-[10px]">
+          <div className="absolute bottom-2 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full border border-[var(--border)] bg-white/85 px-3 py-1 text-[9px] font-semibold uppercase tracking-[0.14em] text-zinc-600 backdrop-blur sm:text-[10px]">
             <span className="h-1.5 w-1.5 rounded-full bg-zinc-400" />
             Discovery
             <span className="h-1.5 w-1.5 rounded-full bg-[#ef3b2d]" />

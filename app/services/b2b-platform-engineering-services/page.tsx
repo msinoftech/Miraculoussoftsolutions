@@ -50,37 +50,37 @@ const features = [
     number: "",
     title: "Custom B2B Platform Architecture",
     description: "We design and build secure multi-tenant platform foundations tailored to your business workflows, data models, and long-term scale goals.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362a2 2 0 0 0 2.879.052 2.12 2.12 0 0 0-.004-3 2.124 2.124 0 1 0 3-3 2.124 2.124 0 0 0 3.004 0 2 2 0 0 0 0-2.828l-1.881-1.882a2.41 2.41 0 0 0-3.409 0l-1.71 1.71a2 2 0 0 1-2.828 0 2 2 0 0 1 0-2.828l2.823-2.762"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362a2 2 0 0 0 2.879.052 2.12 2.12 0 0 0-.004-3 2.124 2.124 0 1 0 3-3 2.124 2.124 0 0 0 3.004 0 2 2 0 0 0 0-2.828l-1.881-1.882a2.41 2.41 0 0 0-3.409 0l-1.71 1.71a2 2 0 0 1-2.828 0 2 2 0 0 1 0-2.828l2.823-2.762"/></svg>`,
   },
   {
     number: "",
     title: "Operational Dashboards & BI",
     description: "Get role-based dashboards, live KPI tracking, and business intelligence views that help leadership and teams act on real-time data.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>`,
   },
   {
     number: "",
     title: "B2B Billing & Contract Logic",
     description: "Implement subscriptions, custom pricing tiers, invoicing, renewals, procurement approvals, and account-level billing controls.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>`,
   },
   {
     number: "",
     title: "Enterprise Auth & Access Control",
     description: "Deliver secure SSO-ready authentication, granular permissions, team hierarchies, and workspace governance for enterprise clients.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M20 11v6"/><path d="M20 13h2"/><path d="M3 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 2.072.578"/><circle cx="10" cy="7" r="4"/><circle cx="20" cy="19" r="2"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M20 11v6"/><path d="M20 13h2"/><path d="M3 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 2.072.578"/><circle cx="10" cy="7" r="4"/><circle cx="20" cy="19" r="2"/></svg>`,
   },
   {
     number: "",
     title: "Workflow Automation & Integrations",
     description: "Automate approvals, notifications, document flows, and integrations with CRM, ERP, and internal tools to reduce manual operations.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>`,
   },
   {
     number: "",
     title: "Performance, Security & Scale",
     description: "Build for high availability, fast performance, secure data handling, and reliable expansion as your B2B customer base grows.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`,
   },
 ];
 
@@ -255,25 +255,25 @@ const steps = [
 const benefits = [
   {
     no: "01",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rocket-icon lucide-rocket"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-rocket-icon lucide-rocket"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>`,
     title: "Faster Enterprise Launch Cycles",
     body: "We deliver phased B2B releases that let you launch core capabilities early, validate workflows quickly, and reduce go-to-market delays.",
   },
   {
     no: "02",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet-icon lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-wallet-icon lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>`,
     title: "Revenue-Optimized B2B Operations",
     body: "From contract pricing and invoicing to renewals and account expansion, your platform is built to support predictable recurring revenue.",
   },
   {
     no: "03",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings2-icon lucide-settings-2"><path d="M14 17H5"/><path d="M19 7h-9"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-settings2-icon lucide-settings-2"><path d="M14 17H5"/><path d="M19 7h-9"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>`,
     title: "Scalable Enterprise Foundation",
     body: "We build modular, secure architecture that supports multi-team growth, heavier usage, and new business requirements without rework.",
   },
   {
     no: "04",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake-icon lucide-handshake"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-handshake-icon lucide-handshake"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>`,
     title: "Strategic Product Partnership",
     body: "After launch, we continuously optimize workflows, improve reliability, and evolve your B2B platform as your business scales.",
   },
@@ -318,21 +318,17 @@ export default function B2BPlatformEngineeringServicesPage() {
     <Script id="b2b-platform-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
 
     {/* HERO */}
-    <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-white">
+    <section className="relative overflow-hidden bg-white py-16 sm:py-20">
         <div className="grid-bg absolute inset-0 opacity-45" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.16))]" />
 
-        <div className="relative mx-auto grid w-full max-w-7xl py-14 sm:py-20 flex-1 grid-cols-1 items-center gap-6 px-4 lg:grid-cols-2 z-10">
+        <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
           {/* Left Column */}
           <div className="space-y-5">
-            <Subheading variant="default">B2B Platform Engineering Services</Subheading>
-            <h1 className="font-bebas-neue uppercase leading-[0.84] tracking-wider text-zinc-950 text-[80px] sm:text-[100px] md:text-[140px]">
-              <span>BUILD </span>
-              <span className="text-red-600">B2B</span>
-              <span className="hero-outline block outline-black">PLATFORMS</span>
-            </h1>
-            <p className="text-[15px] leading-8 text-zinc-500">We design and develop modern B2B platforms with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
+            <Subheading variant="default">B2B Platform Engineering</Subheading>
+            <h1 className="uppercase leading-[0.84] tracking-wider text-[64px] text-zinc-900 sm:text-[96px] md:text-[118px] lg:text-[132px]"><span>BUILD </span><span className="text-red-600">B2B</span><span className="hero-outline block outline-black">PLATFORMS</span></h1>
+            <p className="text-zinc-900/70">We design and develop modern B2B platforms with scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems that are built to launch fast and scale with confidence.</p>
 
             <div className="flex flex-wrap items-center gap-4">
               <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
@@ -357,7 +353,7 @@ export default function B2BPlatformEngineeringServicesPage() {
                 <div className="col-span-12 sm:col-span-7 rounded-xl border border-zinc-200 bg-white p-3">
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-500">B2B Product Delivery Board</div>
+                      <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-600">B2B Product Delivery Board</div>
                       <div className="text-[14px] font-extrabold uppercase tracking-[0.08em] text-zinc-900">Build Track + Deployment Track</div>
                     </div>
                     <span className="rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.1em] text-emerald-700">
@@ -394,7 +390,7 @@ export default function B2BPlatformEngineeringServicesPage() {
                 </div>
 
                 <div className="col-span-12 sm:col-span-5 rounded-xl border border-zinc-200 bg-white/90 p-3">
-                  <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-500">Deployment Matrix</div>
+                  <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-600">Deployment Matrix</div>
                   <div className="mt-3 space-y-2">
                     <div className="flex items-center justify-between rounded-md border border-zinc-200 bg-zinc-50 px-2.5 py-2 text-[10px] font-semibold text-zinc-800">
                       <span>CI/CD</span>
@@ -433,7 +429,7 @@ export default function B2BPlatformEngineeringServicesPage() {
             <div className="rounded-2xl bg-white p-4 shadow-lg">
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-500">Operational Runtime</div>
+                  <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-600">Operational Runtime</div>
                   <div className="text-sm font-extrabold uppercase tracking-[0.08em] text-zinc-900">How B2B Platform Works</div>
                 </div>
                 <span className="rounded-full border border-cyan-200 bg-cyan-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.1em] text-cyan-700">
@@ -443,19 +439,19 @@ export default function B2BPlatformEngineeringServicesPage() {
 
               <div className="mt-3 grid grid-cols-1 gap-2 md:grid-cols-4">
                 <div className="rounded-md border border-zinc-200 bg-zinc-50 px-3 py-2">
-                  <div className="text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-500">01</div>
+                  <div className="text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-600">01</div>
                   <div className="mt-1 text-[11px] font-semibold text-zinc-900">Client Workspace Request</div>
                 </div>
                 <div className="rounded-md border border-zinc-200 bg-zinc-50 px-3 py-2">
-                  <div className="text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-500">02</div>
+                  <div className="text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-600">02</div>
                   <div className="mt-1 text-[11px] font-semibold text-zinc-900">Policy + Approval Routing</div>
                 </div>
                 <div className="rounded-md border border-zinc-200 bg-zinc-50 px-3 py-2">
-                  <div className="text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-500">03</div>
+                  <div className="text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-600">03</div>
                   <div className="mt-1 text-[11px] font-semibold text-zinc-900">Workflow / Integration Execution</div>
                 </div>
                 <div className="rounded-md border border-zinc-200 bg-zinc-50 px-3 py-2">
-                  <div className="text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-500">04</div>
+                  <div className="text-[9px] font-bold uppercase tracking-[0.12em] text-zinc-600">04</div>
                   <div className="mt-1 text-[11px] font-semibold text-zinc-900">Reporting + Audit Record</div>
                 </div>
               </div>
@@ -487,7 +483,7 @@ export default function B2BPlatformEngineeringServicesPage() {
                 <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4">
                   <div>
                       <div className="mb-4 flex items-center justify-between gap-3">
-                          <div className="text-[12px] font-bold uppercase tracking-[0.12em] text-zinc-500">Annual Contract Value</div>
+                          <div className="text-[12px] font-bold uppercase tracking-[0.12em] text-zinc-600">Annual Contract Value</div>
                           <div className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-xs font-semibold uppercase text-blue-200">+22.7%</div>
                       </div>
                       <div className="font-bebas-neue text-4xl leading-none text-white">$2.4M</div>
@@ -502,19 +498,19 @@ export default function B2BPlatformEngineeringServicesPage() {
 
                 <div className="grid grid-cols-1 gap-4">
                   <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
-                      <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Enterprise Accounts</div>
+                      <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-600">Enterprise Accounts</div>
                       <div className="font-bebas-neue text-4xl leading-none text-white">312</div>
                       <div className="text-[12px] font-bold text-green-500">High-value pipeline</div>
                   </div>
 
                   <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
-                      <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Team Seats Active</div>
+                      <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-600">Team Seats Active</div>
                       <div className="font-bebas-neue text-4xl leading-none text-white">8,460</div>
                       <div className="text-[12px] font-bold text-green-500">Cross-team adoption</div>
                   </div>
 
                   <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
-                      <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Integration Health</div>
+                      <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-600">Integration Health</div>
                       <div className="font-bebas-neue text-4xl leading-none text-white">99.4%</div>
                       <div className="text-[12px] font-bold text-green-500">ERP + CRM synced</div>
                   </div>
@@ -534,9 +530,9 @@ export default function B2BPlatformEngineeringServicesPage() {
           <div className="relative space-y-4">
               <Subheading variant="light">Why B2B Platforms With Us</Subheading>
               <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">B2B PLATFORMS BUILT FOR <span className="text-red-600">REAL GROWTH</span></h2>
-              <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">We build B2B platforms that are not just visually strong, but strategically engineered for <strong className="text-white"> {" "} recurring revenue, user retention, product operations, and long-term scale</strong>.</p>
-              <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">Whether you are launching a startup MVP, modernizing an internal B2B platform, or creating a vertical B2B product, we shape the system around{" "} <strong className="text-white"> business logic, usability, security, and growth-readiness </strong>.</p>
-              <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">Our approach combines premium product design with scalable engineering so your B2B platform can launch fast, operate smoothly, and expand without needing a full rebuild later.</p>
+              <p className="text-white/70">We build B2B platforms that are not just visually strong, but strategically engineered for recurring revenue, user retention, product operations, and long-term scale.</p>
+              <p className="text-white/70">Whether you are launching a startup MVP, modernizing an internal B2B platform, or creating a vertical B2B product, we shape the system around business logic, usability, security, and growth-readiness.</p>
+              <p className="text-white/70">Our approach combines premium product design with scalable engineering so your B2B platform can launch fast, operate smoothly, and expand without needing a full rebuild later.</p>
           </div>
         </div>
       </div>
@@ -546,10 +542,7 @@ export default function B2BPlatformEngineeringServicesPage() {
     <Card
       label="Core Capabilities"
       title={
-        <>
-          Everything a modern <br />
-          <span className="text-red-600">B2B Platform Needs</span>
-        </>
+        <>Everything a modern <span className="text-red-600">B2B Platform Needs</span></>
       }
       description="We build B2B platforms with the product features, system controls, and operational layers needed to launch, manage, and scale a real software business."
       items={features}
@@ -560,9 +553,7 @@ export default function B2BPlatformEngineeringServicesPage() {
       steps={steps}
       label="B2B Platform Engineering Process"
       title={
-        <>
-          FROM IDEA TO <span className="text-red-600">SCALABLE B2B PLATFORM</span>
-        </>
+        <>FROM IDEA TO <span className="text-red-600">SCALABLE B2B PLATFORM</span></>
       }
       description="We turn B2B platform concepts into high-performance digital products through structured discovery, smart architecture, premium UX, and launch-ready engineering."
     />
@@ -572,11 +563,7 @@ export default function B2BPlatformEngineeringServicesPage() {
       items={benefits}
       label="Business Benefits"
       title={
-        <>
-          WHY BRANDS BUILD B2B PLATFORMS
-          <br />
-          WITH <span className="text-red-600">MIRACULOUS</span>
-        </>
+        <>WHY BRANDS BUILD B2B PLATFORMS WITH <span className="text-red-600">MIRACULOUS</span></>
       }
       description="We combine strategy, design, and engineering to create B2B platforms that are easier to launch, easier to manage, and better prepared for real-world growth."
       headerClassName="mb-12 text-left"
@@ -585,11 +572,7 @@ export default function B2BPlatformEngineeringServicesPage() {
     {/* CTA STRIP */}
     <CtaStrip
       title={
-        <>
-          READY TO BUILD
-          <br />
-          YOUR <span className="text-black">B2B PLATFORM?</span>
-        </>
+        <>READY TO BUILD YOUR <span className="text-black">B2B PLATFORM?</span></>
       }
       description="Let's design a B2B platform that is premium on the surface, strong in the backend, and ready for subscriptions, workflows, users, and scale."
       buttonText="Get a Free Quote →"

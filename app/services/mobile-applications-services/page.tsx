@@ -50,37 +50,37 @@ const features = [
     number: "",
     title: "Native & Cross-Platform Apps",
     description: "Build high-performance apps for iOS and Android using native and cross-platform technologies like Flutter and React Native.",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>`,
   },
   {
     number: "",
     title: "Mobile UI/UX Design",
     description: "Design intuitive, modern, and user-friendly interfaces that enhance engagement and improve user retention.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="7" height="18" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="7" height="18" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/></svg>`,
   },
   {
     number: "",
     title: "Push Notifications & Engagement",
     description: "Implement smart notification systems to boost engagement and keep users connected with your app.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>`,
   },
   {
     number: "",
     title: "Secure Authentication Systems",
     description: "Advanced security with login systems, user roles, data protection, and API-level authentication.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
   },
   {
     number: "",
     title: "High Performance Optimization",
     description: "Optimized apps for speed, responsiveness, and smooth performance across all devices.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>`,
   },
   {
     number: "",
     title: "API & Backend Integration",
     description: "Robust backend systems and seamless API integrations to power your mobile application.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M18 16.98h-5.99c-1.1 0-1.95.94-2.48 1.9A4 4 0 0 1 2 17c.01-.7.2-1.4.57-2"/><path d="m6 17 3.13-5.78c.53-.97.1-2.18-.5-3.1a4 4 0 1 1 6.89-4.06"/><path d="m12 6 3.13 5.73C15.66 12.7 16.9 13 18 13a4 4 0 0 1 0 8"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M18 16.98h-5.99c-1.1 0-1.95.94-2.48 1.9A4 4 0 0 1 2 17c.01-.7.2-1.4.57-2"/><path d="m6 17 3.13-5.78c.53-.97.1-2.18-.5-3.1a4 4 0 1 1 6.89-4.06"/><path d="m12 6 3.13 5.73C15.66 12.7 16.9 13 18 13a4 4 0 0 1 0 8"/></svg>`,
   },
 ];
 
@@ -255,25 +255,25 @@ const steps = [
 const benefits = [
   {
     no: "01",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rocket-icon lucide-rocket"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-rocket-icon lucide-rocket"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>`,
     title: "Faster App Launch",
     body: "We build MVPs quickly so you can validate your idea and enter the market faster.",
   },
   {
     no: "02",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet-icon lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-wallet-icon lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>`,
     title: "Better User Retention",
     body: "Apps designed for real user behavior, ensuring higher engagement and retention.",
   },
   {
     no: "03",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings2-icon lucide-settings-2"><path d="M14 17H5"/><path d="M19 7h-9"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-settings2-icon lucide-settings-2"><path d="M14 17H5"/><path d="M19 7h-9"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>`,
     title: "App Store Ready Quality",
     body: "We follow Apple and Google guidelines to ensure smooth approvals and performance.",
   },
   {
     no: "04",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake-icon lucide-handshake"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-handshake-icon lucide-handshake"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>`,
     title: "Long-Term Support & Scaling",
     body: "We help you grow your app with updates, new features, and scalability improvements.",
   },
@@ -318,7 +318,7 @@ export default function MobileApplicationsServicesPage() {
     <Script id="mobile-applications-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
 
     {/* HERO */}
-    <section className="relative flex min-h-[88vh] flex-col overflow-hidden bg-zinc-950">
+    <section className="relative overflow-hidden bg-zinc-950 py-16 sm:py-20">
         <div className="grid-bg absolute inset-0 opacity-5" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_80%_50%,rgba(26,86,219,0.15)_0%,transparent_70%),radial-gradient(ellipse_52%_80%_at_20%_82%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
         
@@ -326,18 +326,11 @@ export default function MobileApplicationsServicesPage() {
           {/* Left Column */}
           <div className="space-y-5">
             <Subheading variant="light">Mobile Applications Services</Subheading>
-            <h1 className="font-bebas-neue uppercase leading-[0.84] tracking-wider text-white text-[80px] sm:text-[100px] md:text-[140px]">
-              <span>BUILD </span>
-              <span className="text-red-600">MOBILE</span>
-              <span className="hero-outline outline-white"> APP</span>
-            </h1>
-            <p className="text-[15px] leading-8 text-white">We design and develop modern mobile apps with{" "} <strong> scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems </strong>{" "} that are built to launch fast and scale with confidence.</p>
+            <h1 className="uppercase leading-[0.84] tracking-wider text-[64px] text-white sm:text-[96px] md:text-[118px] lg:text-[132px]"><span>BUILD </span><span className="text-red-600">MOBILE</span><span className="hero-outline outline-white"> APP</span></h1>
+            <p className="text-white/70">We design and develop modern mobile apps with scalable architecture, premium dashboards, subscription billing, role-based access, and growth-ready systems that are built to launch fast and scale with confidence.</p>
 
-            <div className="flex flex-wrap items-center gap-4">
-              <DefaultButton 
-                href="/contact-us"
-                bgClassName="bg-red-600 hover:bg-red-700"
-              >Start Your Project</DefaultButton>
+            <div className="relative">
+              <DefaultButton href="/contact-us" bgClassName="bg-red-600 hover:bg-red-700">Start Your Project</DefaultButton>
             </div>
 
             <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -373,7 +366,7 @@ export default function MobileApplicationsServicesPage() {
                           <span>5G 86%</span>
                         </div>
                         <div className="mt-2 rounded-lg bg-white/80 p-2 shadow-sm">
-                          <div className="text-[9px] font-semibold text-zinc-500">Delivery App</div>
+                          <div className="text-[9px] font-semibold text-zinc-600">Delivery App</div>
                           <div className="mt-1 text-[13px] font-bold text-zinc-900">24 Active Orders</div>
                         </div>
                         <div className="mt-2 grid grid-cols-4 gap-1.5">
@@ -383,23 +376,23 @@ export default function MobileApplicationsServicesPage() {
                         </div>
                         <div className="mt-2 grid grid-cols-2 gap-1.5">
                           <div className="rounded-lg bg-white/85 p-1.5 shadow-sm">
-                            <div className="text-[8px] font-semibold text-zinc-500">Revenue</div>
+                            <div className="text-[8px] font-semibold text-zinc-600">Revenue</div>
                             <div className="text-[10px] font-bold text-zinc-900">$12.8K</div>
                           </div>
                           <div className="rounded-lg bg-white/85 p-1.5 shadow-sm">
-                            <div className="text-[8px] font-semibold text-zinc-500">Users</div>
+                            <div className="text-[8px] font-semibold text-zinc-600">Users</div>
                             <div className="text-[10px] font-bold text-zinc-900">2,148</div>
                           </div>
                         </div>
                         <div className="mt-2 rounded-lg bg-white/80 p-2 shadow-sm">
-                          <div className="text-[9px] font-semibold text-zinc-500">Sync Status</div>
+                          <div className="text-[9px] font-semibold text-zinc-600">Sync Status</div>
                           <div className="mt-1 h-1.5 w-full rounded-full bg-zinc-200">
                             <div className="h-full w-[78%] rounded-full bg-gradient-to-r from-blue-500 to-emerald-500" />
                           </div>
                         </div>
                         <div className="mt-2 rounded-lg bg-white/85 p-2 shadow-sm">
                           <div className="text-[9px] font-semibold text-zinc-800">Latest Notification</div>
-                          <div className="text-[8px] font-semibold text-zinc-500">Order #2456 delivered successfully</div>
+                          <div className="text-[8px] font-semibold text-zinc-600">Order #2456 delivered successfully</div>
                         </div>
                         <div className="absolute bottom-2 left-1/2 h-1 w-10 -translate-x-1/2 rounded-full bg-zinc-400" />
                       </div>
@@ -499,7 +492,7 @@ export default function MobileApplicationsServicesPage() {
                         <div className="absolute -left-8 -bottom-8 h-24 w-24 rounded-full bg-red-500/20 blur-2xl" />
                         <div className="relative">
                             <div className="mb-4 flex items-center justify-between gap-3">
-                                <div className="text-[12px] font-bold uppercase tracking-[0.12em] text-zinc-500">Daily Active Users</div>
+                                <div className="text-[12px] font-bold uppercase tracking-[0.12em] text-zinc-600">Daily Active Users</div>
                                 <div className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-xs font-semibold uppercase text-blue-200">+31.2%</div>
                             </div>
                             <div className="font-bebas-neue text-4xl leading-none text-white">128K</div>
@@ -514,19 +507,19 @@ export default function MobileApplicationsServicesPage() {
 
                     <div className="grid grid-cols-1 gap-4">
                         <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
-                            <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">App Store Rating</div>
+                            <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-600">App Store Rating</div>
                             <div className="font-bebas-neue text-4xl leading-none text-white">4.9</div>
                             <div className="text-[12px] font-bold text-green-500">Top-tier feedback</div>
                         </div>
 
                         <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
-                            <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Crash-Free Sessions</div>
+                            <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-600">Crash-Free Sessions</div>
                             <div className="font-bebas-neue text-4xl leading-none text-white">99.98%</div>
                             <div className="text-[12px] font-bold text-green-500">Highly stable build</div>
                         </div>
 
                         <div className="flex flex-col justify-between rounded-[14px] border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-4 space-y-2">
-                            <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-500">Push CTR</div>
+                            <div className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-600">Push CTR</div>
                             <div className="font-bebas-neue text-4xl leading-none text-white">18.6%</div>
                             <div className="text-[12px] font-bold text-green-500">Strong engagement</div>
                         </div>
@@ -545,11 +538,11 @@ export default function MobileApplicationsServicesPage() {
           {/* Right Column */}
           <div className="relative space-y-4">
               <Subheading variant="light">Why Build Mobile Apps With Us</Subheading>
-              <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">MOBILE APPS BUILT FOR <span className="text-red-600">REAL ENGAGEMENT</span></h2>
+              <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">Mobile Apps Built For <span className="text-red-600">Real Engagement</span></h2>
 
-              <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">We design and engineer mobile apps that go beyond visuals, built for <strong className="text-white">high retention, smooth journeys, performance, and long-term product growth</strong>.</p>
-              <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">From startup MVPs to enterprise mobility products, we align each build with{" "} <strong className="text-white">real user behavior, scalable architecture, app-store quality, and security-first engineering</strong>.</p>
-              <p className="mb-4 text-[16px] font-light leading-[1.8] text-[rgba(255,255,255,0.66)]">Our mobile-first execution blends premium UI, conversion-focused UX, and robust development so your app can launch faster and improve continuously without rework.</p>
+              <p className="text-white/70">We design and engineer mobile apps that go beyond visuals, built for high retention, smooth journeys, performance, and long-term product growth.</p>
+              <p className="text-white/70">From startup MVPs to enterprise mobility products, we align each build with real user behavior, scalable architecture, app-store quality, and security-first engineering.</p>
+              <p className="text-white/70">Our mobile-first execution blends premium UI, conversion-focused UX, and robust development so your app can launch faster and improve continuously without rework.</p>
 
           </div>
         </div>
@@ -560,10 +553,7 @@ export default function MobileApplicationsServicesPage() {
     <Card
       label="What We Build for Mobile Apps"
       title={
-        <>
-          Complete Mobile App <br />
-          <span className="text-red-600">Development Solutions</span>
-        </>
+        <>Complete Mobile App <span className="text-red-600">Development Solutions</span></>
       }
       description="From MVP apps to mature enterprise portals, we create mobile apps engineered for usability, speed, flexibility, and scale."
       items={features}
@@ -574,9 +564,7 @@ export default function MobileApplicationsServicesPage() {
       steps={steps}
       label="Mobile App Development Process"
       title={
-        <>
-          FROM IDEA TO <span className="text-red-600">SCALABLE APP</span>
-        </>
+        <>FROM IDEA TO <span className="text-red-600">Scalable App</span></>
       }
       description="We turn mobile app concepts into high-performance digital products through structured discovery, smart architecture, premium UX, and launch-ready engineering."
     />
@@ -586,13 +574,7 @@ export default function MobileApplicationsServicesPage() {
       items={benefits}
       label="Why Choose Us"
       title={
-        <>
-          A Strong Fit for
-          <br />
-          <span className="text-red-600">SaaS Founders, Teams</span> 
-          <br />
-          and Growing Businesses
-        </>
+        <>Mobile Founders, Teams and <span className="text-red-600">Growing Businesses</span></>
       }
       description="We build with business clarity, engineering depth, and premium execution so your product feels credible from the first interaction to long-term scale."
       headerClassName="mb-12 text-left"
@@ -601,11 +583,7 @@ export default function MobileApplicationsServicesPage() {
     {/* CTA STRIP */}
     <CtaStrip
       title={
-        <>
-          READY TO BUILD
-          <br />
-          YOUR <span className="text-black">MOBILE APPS?</span>
-        </>
+        <>READY TO BUILD YOUR <span className="text-black">MOBILE APP?</span></>
       }
       description="Let's design a mobile app that is premium on the surface, strong in the backend, and ready for subscriptions, workflows, users, and scale."
       buttonText="Get a Free Quote →"

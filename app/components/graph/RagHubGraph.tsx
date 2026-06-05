@@ -124,7 +124,7 @@ export default function RagHubGraph({ className = "" }: RagHubGraphProps) {
                 aria-pressed={isActive}
                 aria-label={`Select ${store.name} vector store`}
               >
-                <span className="block text-[8px] font-bold uppercase tracking-[0.12em] text-zinc-500">{store.provider}</span>
+                <span className="block text-[8px] font-bold uppercase tracking-[0.12em] text-zinc-600">{store.provider}</span>
                 <span className="mt-0.5 block text-[10px] font-extrabold leading-tight text-zinc-900 sm:text-[11px]">{store.name}</span>
                 {isActive && (
                   <span

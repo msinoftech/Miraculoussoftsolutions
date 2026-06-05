@@ -164,7 +164,7 @@ export default function AiWorkflowHubGraph() {
           </svg>
 
           <div className="ai-hub-pulse service-graph-hub-ring absolute left-1/2 top-[48%] z-20 flex h-[4.5rem] w-[4.5rem] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-2xl border-2 border-zinc-900 bg-white text-center shadow-lg sm:h-20 sm:w-20">
-            <span className="text-[7px] font-bold uppercase tracking-[0.16em] text-zinc-500">Hub</span>
+            <span className="text-[7px] font-bold uppercase tracking-[0.16em] text-zinc-600">Hub</span>
             <span className="font-bebas-neue text-lg leading-none text-zinc-950 sm:text-xl">AI</span>
             <span className="mt-0.5 text-[6px] font-bold uppercase tracking-wider text-red-600">Live</span>
           </div>
@@ -183,9 +183,9 @@ export default function AiWorkflowHubGraph() {
                 }}
                 aria-pressed={isActive}
               >
-                <span className="text-[8px] font-bold uppercase tracking-[0.12em] text-zinc-500">{node.step}</span>
+                <span className="text-[8px] font-bold uppercase tracking-[0.12em] text-zinc-600">{node.step}</span>
                 <span className="mt-0.5 block font-bebas-neue text-lg leading-none text-zinc-950">{node.shortLabel}</span>
-                <span className="mt-0.5 block truncate text-[8px] text-zinc-500">{node.badge}</span>
+                <span className="mt-0.5 block truncate text-[8px] text-zinc-600">{node.badge}</span>
                 {isActive && (
                   <span className="mt-1 inline-block rounded px-1 py-0.5 text-[7px] font-bold uppercase tracking-wider text-white" style={{ backgroundColor: node.accent }}>Running</span>
                 )}
@@ -207,7 +207,7 @@ export default function AiWorkflowHubGraph() {
                 {pi > 0 && <div className={`mx-1 h-px w-6 sm:w-10 ${done ? "bg-emerald-400" : "bg-zinc-200"}`} />}
                 <div className={`ai-step-node flex flex-col items-center rounded-lg border px-2 py-2 text-center transition sm:min-w-[5.5rem] sm:px-3 ${ current ? "is-active" : done ? "is-done" : "border-zinc-200 bg-zinc-50 text-zinc-400" }`} style={current ? { color: active.accent } : undefined}>
                   <span className="text-[10px] font-bold uppercase tracking-[0.08em] text-zinc-950">{step.label}</span>
-                  <span className="mt-0.5 hidden text-[10px] leading-snug text-zinc-500 sm:block">{step.detail}</span>
+                  <span className="mt-0.5 hidden text-[10px] leading-snug text-zinc-600 sm:block">{step.detail}</span>
                 </div>
               </div>
             );
