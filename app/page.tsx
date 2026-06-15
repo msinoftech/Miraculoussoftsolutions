@@ -565,15 +565,15 @@ export default function MiraculousSoftLandingPage() {
       {/* metrics */}
       <section className="bg-white relative">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="grid sm:grid-cols-2 xl:grid-cols-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-4">
             {metrics.map((metric, index) => (
               <div key={metric.label} className={`group relative overflow-hidden px-8 py-12 text-center transition hover:bg-[var(--off)] ${index !== metrics.length - 1 ? "border-r border-[var(--border)]" : ""}`}>
                 <div className="absolute bottom-0 left-0 right-0 h-1 origin-left scale-x-0 bg-red-600 transition duration-300 group-hover:scale-x-100" />
-                <div className="font-bebas-neue text-[72px] uppercase leading-none tracking-[0.02em] text-zinc-950">
+                <div className="font-bebas-neue text-[50px] uppercase leading-none tracking-[0.02em] text-zinc-950">
                   {metric.value}
-                  <span className="align-super text-[40px] text-red-600">{metric.suffix}</span>
+                  <span className="align-super text-[30px] text-red-600">{metric.suffix}</span>
                 </div>
-                <div className="mt-2 text-[12px] font-bold uppercase tracking-[0.08em] text-zinc-600">{metric.label}</div>
+                <div className="mt-2 text-xs font-bold uppercase tracking-[0.08em] text-zinc-600">{metric.label}</div>
               </div>
             ))}
           </div>

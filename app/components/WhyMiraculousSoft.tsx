@@ -40,17 +40,17 @@ export default function WhyMiraculousSoft({
   description,
   sectionClassName = "overflow-hidden bg-[var(--off)] py-14 sm:py-20",
   containerClassName = "mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 lg:grid-cols-2 lg:gap-10",
-  leftColumnClassName = "border-b-2 border-[var(--border)] pb-12 lg:border-b-0",
+  leftColumnClassName = "relative",
   rightColumnClassName = "relative",
   featuredPanelClassName = "mt-10 hidden lg:block",
   featuredNumberClassName = "text-[110px] font-bebas-neue font-extrabold leading-none tracking-[0.02em] text-zinc-600 opacity-40",
   featuredTitleClassName = "mt-4 text-[30px] font-extrabold tracking-[-0.03em] text-zinc-950",
   timelineClassName = "space-y-10 lg:space-y-12",
   itemClassName = "group border-b border-[var(--border)] transition-all duration-500 last:border-b-0 last:pb-0",
-  itemNumberClassName = "why-item-line text-[11px] font-bold uppercase tracking-[0.2em]",
+  itemNumberClassName = "why-item-line text-xs font-bold uppercase tracking-[0.2em]",
   itemTitleClassName = "mt-4 text-[24px] font-extrabold tracking-[-0.03em] transition-all duration-500 sm:text-[26px]",
   showActiveBadge = true,
-  activeBadgeClassName = "text-[10px] font-bold uppercase tracking-[0.22em] text-red-600",
+  activeBadgeClassName = "text-xs font-bold uppercase tracking-[0.22em] text-red-600",
   autoRotateMs = 3000,
 }: WhyMiraculousSoftProps) {
   const [activeWhyIndex, setActiveWhyIndex] = useState(0);
@@ -115,7 +115,7 @@ export default function WhyMiraculousSoft({
                       <span className={`${itemNumberClassName} ${isActive ? "text-red-600" : "text-zinc-600"}`}>
                         {point.number}
                       </span>
-                      <span className={`why-item-line h-px w-10 ${isActive ? "bg-red-600" : "bg-black/20"}`} />
+                      <span className={`why-item-line h-px w-6 ${isActive ? "bg-red-600" : "bg-black/20"}`} />
                       {showActiveBadge && isActive ? (
                         <span className={activeBadgeClassName}>Active</span>
                       ) : null}

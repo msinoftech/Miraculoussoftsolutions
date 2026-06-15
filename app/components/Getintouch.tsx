@@ -5,7 +5,7 @@ import Subheading from "./ui/Subheading";
 
 export default function Getintouch() {
   return (
-    <section className="relative overflow-hidden bg-zinc-100 py-16 px-4 sm:py-20">
+    <section className="relative overflow-hidden py-16 px-4 sm:py-20">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_0%_100%,rgba(220,38,38,0.06)_0%,transparent_50%)]" aria-hidden />
 
       <div className="relative mx-auto max-w-7xl overflow-hidden rounded-2xl bg-zinc-950 shadow-2xl">

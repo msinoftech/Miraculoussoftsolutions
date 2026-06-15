@@ -410,7 +410,7 @@ export default function ProcessPage() {
           <div className="absolute left-0 top-0 h-80 w-80 rounded-full bg-blue-500/20 blur-3xl mss-float-soft" />
           <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-red-500/20 blur-3xl mss-float-reverse" />
 
-          <div className="mx-auto grid items-start max-w-7xl px-4 gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="mx-auto grid items-start max-w-7xl px-4 gap-12 lg:grid-cols-2">
             {/* Left Column */}
             <div className="space-y-3">
               <h2 className="text-[58px] uppercase text-zinc-900 leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">Built Like a Real Software <span className="text-red-600">Real Software.</span></h2>

@@ -72,21 +72,19 @@ const footerContactItems = [
 ] as const;
 
 export default function Footer() {
-    return (
+  return (
     <>
-    <footer className="bg-neutral-950 relative">
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="grid gap-12 lg:grid-cols-[1.8fr_1fr_1fr_1fr] py-14 sm:py-20">
-            <div>
+      <footer className="relative bg-neutral-950">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="grid grid-cols-1 gap-10 py-10 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 sm:py-14 lg:grid-cols-12 lg:gap-10 lg:py-20">
+            <div className="sm:col-span-2 lg:col-span-4">
               <div className="mb-4">
                 <Link href="/"><Logo variant="white" /></Link>
               </div>
-              <p className="text-white/70">
-                Premium software engineering for SaaS, B2B platforms, ERP systems, eCommerce, and modern digital growth.
-              </p>
+              <p className="text-white/70">Premium software engineering for SaaS, B2B platforms, ERP systems, eCommerce, and modern digital growth.</p>
             </div>
 
-            <div>
+            <div className="lg:col-span-2">
               <div className="mb-4 text-xs font-bold uppercase tracking-wide text-white">Services</div>
               <div className="flex flex-col gap-3">
                 {footerServices.map((item) => (
@@ -97,7 +95,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div>
+            <div className="lg:col-span-2">
               <div className="mb-4 text-xs font-bold uppercase tracking-wide text-white">Company</div>
               <div className="flex flex-col gap-3">
                 {footerCompany.map((item) => (
@@ -108,9 +106,9 @@ export default function Footer() {
               </div>
             </div>
 
-            <div>
+            <div className="sm:col-span-2 lg:col-span-4">
               <div className="mb-4 text-xs font-bold uppercase tracking-wide text-white">Contact</div>
-              <ul className="flex flex-col gap-2.5">
+              <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-1">
                 {footerContactItems.map((item) => {
                   const Icon = item.Icon;
                   const content = (
@@ -120,7 +118,7 @@ export default function Footer() {
                       </span>
                       <span className="min-w-0 pt-0.5">
                         <span className="block text-[10px] font-bold uppercase tracking-[0.14em] text-white/70">{item.label}</span>
-                        <span className="mt-0.5 block text-[13px] leading-snug text-white/70 transition group-hover:text-white">
+                        <span className="mt-0.5 block break-words text-[13px] leading-snug text-white/70 transition group-hover:text-white">
                           {item.value}
                         </span>
                       </span>
@@ -130,7 +128,9 @@ export default function Footer() {
                   return (
                     <li key={item.id}>
                       {item.href ? (
-                        <a href={item.href} className="group flex items-start gap-3 rounded-lg border border-transparent p-2 transition hover:border-white/10 hover:bg-white/[0.04]">{content}</a>
+                        <a href={item.href} className="group flex items-start gap-3 rounded-lg border border-transparent p-2 transition hover:border-white/10 hover:bg-white/[0.04]">
+                          {content}
+                        </a>
                       ) : (
                         <div className="group flex items-start gap-3 rounded-lg border border-transparent p-2">{content}</div>
                       )}
@@ -138,26 +138,34 @@ export default function Footer() {
                   );
                 })}
               </ul>
-              <Link href="/contact-us" className="mt-4 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.12em] text-white/70 transition hover:text-red-500">Get in touch
+              <Link href="/contact-us" className="mt-4 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.12em] text-white/70 transition hover:text-red-500">
+                Get in touch
                 <span aria-hidden>→</span>
               </Link>
             </div>
           </div>
 
-          <div className="flex flex-col gap-5 border-t border-white/10 py-3 text-sm text-white/70 sm:flex-row sm:items-center sm:justify-between">
-            <div>© 2026 Miraculous Soft Solutions. All rights reserved.</div>
-            <div className="flex gap-3">
+          <div className="flex flex-col gap-4 border-t border-white/10 py-4 text-center text-sm text-white/70 sm:flex-row sm:items-center sm:justify-between sm:py-5 sm:text-left">
+            <div className="order-2 sm:order-1">© 2026 Miraculous Soft Solutions. All rights reserved.</div>
+            <div className="order-1 flex justify-center gap-3 sm:order-2 sm:justify-end">
               {socialLinks.map((item) => (
-                <a key={item.ariaLabel} href={item.link} target="_blank" rel="noopener noreferrer" aria-label={item.ariaLabel} className="flex h-9 w-9 items-center justify-center rounded-md border border-white/30 text-white/70 transition hover:border-red-600 hover:bg-red-600 hover:text-white">
+                <a
+                  key={item.ariaLabel}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={item.ariaLabel}
+                  className="flex h-9 w-9 items-center justify-center rounded-md border border-white/30 text-white/70 transition hover:border-red-600 hover:bg-red-600 hover:text-white"
+                >
                   <span dangerouslySetInnerHTML={{ __html: item.icon }} />
                 </a>
               ))}
             </div>
           </div>
         </div>
-    </footer>
+      </footer>
 
-    <ContactActions />
-</>
+      <ContactActions />
+    </>
   );
 }

@@ -204,12 +204,9 @@ export default function TechnologiesStack() {
           </text>
         </svg>
 
-        <div className="mt-4 grid gap-2 sm:grid-cols-3">
+        <div className="mt-4 grid gap-2 grid-cols-2 sm:grid-cols-3">
           {capabilityTags.map((item) => (
-            <div
-              key={item}
-              className="rounded-xl border border-[var(--border)] bg-white px-3 py-2 text-center text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-600"
-            >
+            <div key={item} className="rounded-xl border border-[var(--border)] bg-white px-3 py-2 text-center text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-600">
               {item}
             </div>
           ))}

@@ -36,7 +36,7 @@ export default function DevelopmentProcess({
   headerClassName = "mb-14 space-y-2",
   cardClassName = "overflow-hidden rounded-xl border-2 border-zinc-950",
   rowClassName = "group grid items-center gap-5 px-6 py-7 transition hover:bg-zinc-950 lg:grid-cols-[80px_1fr_1fr_auto] lg:px-10",
-  numberClassName = "font-bebas-neue text-[50px] uppercase leading-none tracking-[0.02em] text-[var(--off-2)] transition group-hover:text-red-600",
+  numberClassName = "font-bebas-neue text-[50px] uppercase leading-none tracking-[0.02em] text-zinc-600 opacity-40 transition group-hover:text-red-600 group-hover:opacity-100",
   titleClassName = "text-[18px] font-bold tracking-[-0.02em] text-zinc-950 transition group-hover:text-white/90",
   bodyClassName = "transition group-hover:text-white/70",
   rowDividerClassName = "border-b border-zinc-200",

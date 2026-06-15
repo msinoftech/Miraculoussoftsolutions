@@ -395,7 +395,7 @@ export default function AboutUsPage() {
         }
         description="Principles we apply on every engagement — from discovery workshops to production launches and beyond."
         items={valueFeatures}
-        gridClassName="grid border-2 border-zinc-950 sm:grid-cols-2 md:grid-cols-4"
+        gridClassName="grid border-2 border-zinc-950 md:grid-cols-2 lg:grid-cols-4"
       />
 
       {/* What We Deliver Section */}

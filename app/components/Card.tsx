@@ -43,7 +43,7 @@ export default function Card({
   titleClassName = "text-[58px] text-zinc-900 uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]",
   gridClassName = "grid border-2 border-zinc-950 md:grid-cols-2 xl:grid-cols-3",
   cardClassName = "group border-[var(--border)] p-8 transition duration-300 hover:bg-zinc-950",
-  indexClassName = "mb-6 text-[11px] font-bold uppercase tracking-[0.1em] text-zinc-600 transition group-hover:text-white/35",
+  indexClassName = "mb-6 text-xs font-bold uppercase tracking-[0.1em] text-zinc-600 transition group-hover:text-white/35",
   iconWrapClassName = "mb-6 flex h-11 w-11 items-center justify-center rounded-[10px] border border-[var(--border)] bg-[var(--off)] transition group-hover:border-red-600 group-hover:bg-red-600",
   cardTitleClassName = "mb-3 text-[18px] font-extrabold tracking-[-0.02em] text-zinc-950 transition group-hover:text-white",
   cardDescriptionClassName = "transition group-hover:text-white/70",
@@ -73,9 +73,9 @@ export default function Card({
             const mdTotalRows = Math.ceil(total / mdCols);
             const borderClasses = [
               mdCol !== mdCols - 1 && index !== total - 1 && "md:border-r",
-              mdRow < mdTotalRows - 1 && "md:border-b",
-              xlCol !== xlCols - 1 && index !== total - 1 && "xl:border-r",
-              xlRow < xlTotalRows - 1 && "xl:border-b",
+              mdRow < mdTotalRows - 1 && "md:border-b sm:border-b border-b",
+              xlCol !== xlCols - 1 && index !== total - 1 && "lg:border-r",
+              xlRow < xlTotalRows - 1 && "lg:border-b sm:border-b border-b",
             ]
               .filter(Boolean)
               .join(" ");
