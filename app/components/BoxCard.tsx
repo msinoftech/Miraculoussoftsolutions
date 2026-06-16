@@ -32,7 +32,7 @@ export default function BoxCard({
   containerClassName = "mx-auto w-full max-w-7xl px-4",
   headerClassName = "mb-12 text-center",
   gridClassName = "grid gap-4 sm:grid-cols-2 xl:grid-cols-4",
-  cardClassName = "group relative min-h-[255px] overflow-hidden rounded-[14px] border border-white/10 bg-white p-6 shadow-sm transition hover:-translate-y-1",
+  cardClassName = "group relative overflow-hidden rounded-[14px] border border-white/10 bg-white p-6 shadow-sm transition hover:-translate-y-1",
   cardIndexClassName = "pointer-events-none absolute right-4 top-2 font-bebas-neue text-6xl leading-none text-zinc-200",
   iconWrapClassName = "mb-4 text-3xl w-12 h-12 flex items-center justify-center rounded-lg border border-[var(--off-2)] bg-[var(--off)]",
   itemTitleClassName = "text-[18px] font-bold tracking-[-0.02em] text-zinc-900 transition leading-[1.2] mb-2",

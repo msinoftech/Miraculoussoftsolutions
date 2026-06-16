@@ -39,7 +39,7 @@ export default function Card({
   description,
   sectionClassName = "bg-white py-14 sm:py-20",
   containerClassName = "mx-auto max-w-7xl px-4",
-  headerClassName = "mb-14 grid grid-cols-1 gap-8 md:grid-cols-2 md:items-end",
+  headerClassName = "mb-14 grid grid-cols-1 gap-8 lg:grid-cols-2 md:items-end",
   titleClassName = "text-[58px] text-zinc-900 uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]",
   gridClassName = "grid border-2 border-zinc-950 md:grid-cols-2 xl:grid-cols-3",
   cardClassName = "group border-[var(--border)] p-8 transition duration-300 hover:bg-zinc-950",
@@ -74,7 +74,7 @@ export default function Card({
             const borderClasses = [
               mdCol !== mdCols - 1 && index !== total - 1 && "md:border-r",
               mdRow < mdTotalRows - 1 && "md:border-b sm:border-b border-b",
-              xlCol !== xlCols - 1 && index !== total - 1 && "lg:border-r",
+              xlCol !== xlCols - 1 && index !== total - 1 && "lg:border-r border-b",
               xlRow < xlTotalRows - 1 && "lg:border-b sm:border-b border-b",
             ]
               .filter(Boolean)

@@ -72,7 +72,7 @@ const services: Service[] = [
     deliverables: ["Multi-tenant core", "Stripe billing", "Admin dashboards", "Cloud deploy"],
     accent: "from-blue-500 to-indigo-600",
     accentSolid: "#4f46e5",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>',
     featured: true,
     stat: "14wk",
     statLabel: "Avg. MVP timeline",
@@ -89,7 +89,7 @@ const services: Service[] = [
     deliverables: ["Workflow engine", "RBAC", "Partner portals", "API integrations"],
     accent: "from-red-500 to-orange-600",
     accentSolid: "#ea580c",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>',
     stat: "10×",
     statLabel: "Workflow efficiency",
   },
@@ -105,7 +105,7 @@ const services: Service[] = [
     deliverables: ["Headless storefront", "Payments", "Inventory sync", "Automation"],
     accent: "from-emerald-500 to-teal-600",
     accentSolid: "#0d9488",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>',
     stat: "28%",
     statLabel: "Conversion uplift",
   },
@@ -121,7 +121,7 @@ const services: Service[] = [
     deliverables: ["ERP modules", "Reporting", "Approvals", "Integrations"],
     accent: "from-violet-500 to-fuchsia-600",
     accentSolid: "#a21caf",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3v18"/><path d="m8 7 4-4 4 4"/><path d="M8 17l4 4 4-4"/><path d="M3 12h18"/></svg>',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="m8 7 4-4 4 4"/><path d="M8 17l4 4 4-4"/><path d="M3 12h18"/></svg>',
     stat: "55%",
     statLabel: "Process time saved",
   },
@@ -137,7 +137,7 @@ const services: Service[] = [
     deliverables: ["iOS & Android", "Offline mode", "Push alerts", "API sync"],
     accent: "from-cyan-500 to-blue-600",
     accentSolid: "#0284c7",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>',
     stat: "4.8★",
     statLabel: "Avg. app experience",
   },
@@ -153,7 +153,7 @@ const services: Service[] = [
     deliverables: ["Brand identity", "Marketing sites", "SEO setup", "Analytics"],
     accent: "from-amber-500 to-red-600",
     accentSolid: "#dc2626",
-    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>',
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>',
     stat: "3×",
     statLabel: "Lead generation lift",
   },
@@ -341,28 +341,28 @@ const deliveryPhases = [
 const whyPoints = [
   {
     no: "01",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-tangent-icon lucide-tangent"><circle cx="17" cy="4" r="2"/><path d="M15.59 5.41 5.41 15.59"/><circle cx="4" cy="17" r="2"/><path d="M12 22s-4-9-1.5-11.5S22 12 22 12"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tangent-icon lucide-tangent"><circle cx="17" cy="4" r="2"/><path d="M15.59 5.41 5.41 15.59"/><circle cx="4" cy="17" r="2"/><path d="M12 22s-4-9-1.5-11.5S22 12 22 12"/></svg>`,
     title: "Reliability by design",
     body: "Resilient architecture, recovery paths, and maintainability from day one.",
     tag: "",
   },
   {
     no: "02",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-users-icon lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-icon lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>`,
     title: "Embedded product team",
     body: "A focused squad that understands your business and ships like owners.",
     tag: "",
   },
   {
     no: "03",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M14 15H9v-5"/><path d="M16 3h5v5"/><path d="M21 3 9 15"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M14 15H9v-5"/><path d="M16 3h5v5"/><path d="M21 3 9 15"/></svg>`,
     title: "Built for 10× scale",
     body: "Modular APIs and clean foundations without constant rewrites.",
     tag: "",
   },
   {
     no: "04",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-package-icon lucide-package"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package-icon lucide-package"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></svg>`,
     title: "Zero-surprise delivery",
     body: "Clear milestones, visible progress, and aligned collaboration.",
     tag: "",
@@ -378,7 +378,7 @@ function TerminalMockup({ service }: { service: Service }) {
   ];
 
   return (
-    <div className="overflow-hidden rounded-xl border-2 border-zinc-950 bg-zinc-950 shadow-[8px_8px_0_rgba(230,51,34,0.85)]">
+    <div className="overflow-hidden rounded-xl border-2 border-zinc-950 bg-zinc-950 shadow-[8px_8px_0] shadow-red-600">
       <div className="flex items-center gap-2 border-b border-white/10 bg-zinc-900 px-4 py-2.5">
         <span className="h-2.5 w-2.5 rounded-full bg-red-500" />
         <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
@@ -415,7 +415,8 @@ export default function ServicesView() {
           {/* Left column */}
           <div className="space-y-5">
             <Subheading variant="default">What We Build</Subheading>
-            <h1 className="uppercase leading-[0.84] tracking-wider text-[64px] text-zinc-950 sm:text-[96px] md:text-[118px] lg:text-[132px]"><span>One Team.</span> <span className="text-red-600">Six</span> <span className="hero-outline outline-black">Engines</span></h1>
+            <h1 className="flex flex-wrap uppercase leading-[0.84] tracking-wider text-[64px] text-zinc-950 sm:text-[96px] md:text-[118px] lg:text-[132px]"><span>One Team.</span> <span className="text-red-600">Six</span> <span className="hero-outline outline-black">Engines</span></h1>
+            
             <p>We design and engineer digital products that combine business strategy, premium experience, and strong technical foundations across SaaS, B2B, eCommerce, ERP, mobile, and growth ecosystems.</p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -492,8 +493,8 @@ export default function ServicesView() {
       <Marquee items={marqueeItems} />
 
       {/* Alternating service bands */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:py-20">
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4">
           <div className="mb-14">
             <Subheading variant="default">Service breakdown</Subheading>
             <h2 className="text-[58px] uppercase text-zinc-950 leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">What We <span className="text-red-600">Deliver</span></h2>
@@ -504,8 +505,8 @@ export default function ServicesView() {
             {services.map((service, index) => {
               const isEven = index % 2 === 0;
               return (
-                <article key={service.id} id={service.id} className={`scroll-mt-28 px-8 ${ isEven ? "bg-white" : "bg-[var(--off)]" }`}>
-                  <div className={`grid grid-cols-1 items-center gap-10 py-12 sm:py-16 lg:grid-cols-2 lg:gap-16 ${ isEven ? "" : "lg:[&>*:first-child]:order-2" }`}>
+                <article key={service.id} id={service.id} className={`scroll-mt-28 lg:px-8 py-12 sm:py-16 ${ isEven ? "bg-white" : "lg:bg-[var(--off)] rounded-2xl" }`}>
+                  <div className={`grid grid-cols-1 items-center gap-10 lg:grid-cols-2 ${ isEven ? "" : "lg:[&>*:first-child]:order-2" }`}>
                     <div className="relative px-2 sm:px-4">
                       <span className="pointer-events-none absolute -top-6 left-0 font-bebas-neue text-[120px] leading-none opacity-10 sm:text-[160px]" aria-hidden>
                         {String(index + 1).padStart(2, "0")}
@@ -655,15 +656,15 @@ export default function ServicesView() {
       </section>
 
       {/* Horizontal process timeline */}
-      <section className="bg-[var(--off)] py-16 sm:py-24">
+      <section className="bg-[var(--off)] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-12 text-center">
             <Subheading variant="default">How we work</Subheading>
             <h2 className="text-[58px] uppercase text-zinc-900 leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">Delivery <span className="text-red-600">Pipeline</span></h2>
           </div>
 
-          <div className="overflow-hidden rounded-[28px] border-2 border-zinc-950 bg-white shadow-[8px_8px_0_#0c0c0c]">
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-zinc-950 bg-zinc-950 px-5 py-4 text-white sm:px-6">
+          <div className="overflow-hidden rounded-2xl bg-white">
+            <div className="flex flex-wrap items-center justify-between gap-3 bg-zinc-900 px-5 py-4 text-white sm:px-6">
               <div className="text-[11px] font-bold uppercase tracking-[0.16em] text-white/70">End-to-end delivery</div>
               <div className="flex flex-wrap items-center gap-2">
                 {deliveryPhases.map((phase, index) => (
@@ -677,10 +678,10 @@ export default function ServicesView() {
               </div>
             </div>
 
-            <ol className="relative grid divide-y-2 divide-zinc-950 md:grid-cols-2 lg:grid-cols-4 lg:divide-x-2 lg:divide-y-0">
+            <ol className="relative grid md:grid-cols-2 lg:grid-cols-4 lg:divide-x-2 lg:divide-y-0">
               {deliveryPhases.map((phase, index) => (
-                <li key={phase.step} className="group relative flex flex-col p-6 transition-colors hover:bg-[var(--off)] sm:p-7">
-                  <span className="pointer-events-none absolute right-4 top-3 font-bebas-neue text-[40px] leading-none tracking-[0.02em] text-zinc-100 transition-colors group-hover:text-red-600/10" aria-hidden="true">
+                <li key={phase.step} className="group relative flex flex-col p-6 transition-colors sm:p-7">
+                  <span className="pointer-events-none absolute right-4 top-3 font-bebas-neue text-[40px] leading-none tracking-[0.02em] text-zinc-400 transition-colors group-hover:text-red-600" aria-hidden="true">
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
@@ -689,9 +690,6 @@ export default function ServicesView() {
                       <span className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-zinc-950 bg-red-600 font-bebas-neue text-[18px] text-white shadow-[3px_3px_0_#0c0c0c] transition group-hover:scale-105">
                         {index + 1}
                       </span>
-                      {index < deliveryPhases.length - 1 ? (
-                        <span className="absolute left-1/2 top-full hidden h-8 w-px -translate-x-1/2 bg-zinc-300 lg:block" aria-hidden="true"/>
-                      ) : null}
                     </div>
                     <div className="min-w-0 flex-1 pt-0.5">
                       <span className="inline-flex rounded-full border border-red-600/20 bg-red-600/10 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.12em] text-red-600">
