@@ -21,23 +21,9 @@ export default function FinanceHubGraph({
   transactionFlow,
 }: FinanceHubGraphProps) {
   return (
-    <div className="relative">
-      <div className="absolute -right-8 -top-8 z-20 rounded-2xl border border-white/10 bg-white/10 p-4 shadow-2xl shadow-black/30 backdrop-blur-xl">
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-500/15 text-emerald-300">
-            <span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-shield-icon lucide-shield"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
-            </span>
-          </div>
-          <div>
-            <p className="text-sm text-white">Risk Engine</p>
-            <p className="text-md font-bold text-white">Protected</p>
-          </div>
-        </div>
-      </div>
-
+    <div className="relative hidden lg:block">
       <div className="relative overflow-hidden shadow-2xl shadow-black/40 backdrop-blur-2xl">
-        <div className="rounded-2xl bg-[#070a13]/90 p-5">
+        <div className="rounded-2xl bg-white/5 p-5">
           <div className="mb-5 flex items-center justify-between">
             <div>
               <p className="text-sm text-white">Finance Command Center</p>

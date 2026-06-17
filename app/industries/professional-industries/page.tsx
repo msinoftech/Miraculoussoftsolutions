@@ -213,32 +213,32 @@ const marqueeItems = [
 
 const capabilities = [
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>`,
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>`,
   title: "Workflow Automation", 
   description: "Digitize approvals, handoffs, reminders, document routing, internal reviews, and repeatable operations." 
 },
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>`,
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>`,
   title: "Client & Team Portals", 
   description: "Secure portals for clients, partners, staff, managers, consultants, and service teams." 
 },
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>`,
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>`,
   title: "Smart Scheduling Systems", 
   description: "Consultation slots, availability rules, follow-ups, reminders, and automated booking flows." 
 },
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/></svg>`,
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/></svg>`,
   title: "Document Management", 
   description: "Centralize proposals, contracts, case files, invoices, reports, templates, and knowledge assets." 
 },
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M4 4v16"/><path d="M9 4v16"/><path d="M14 4v16"/><path d="M19 4v16"/></svg>`, 
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M4 4v16"/><path d="M9 4v16"/><path d="M14 4v16"/><path d="M19 4v16"/></svg>`, 
   title: "Business Intelligence", 
   description: "Executive dashboards for revenue, clients, productivity, SLA, utilization, and project performance." 
 },
 { 
-  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
+  icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
   title: "Secure Cloud Platforms", 
   description: "Authentication, audit logs, permissions, encrypted workflows, backups, and scalable architecture." 
 },
@@ -249,7 +249,6 @@ const solutions = [
     number: "01",
     title: "Professional CRM", 
     description: "Manage leads, accounts, client history, communication, tasks, quotes, and service pipelines from one high-performance workspace.", 
-    
   },
   { 
     number: "02",
@@ -265,7 +264,6 @@ const solutions = [
     number: "04",
     title: "AI-Ready Knowledge Base", 
     description: "Build searchable knowledge systems for SOPs, reports, policies, client notes, decision logs, and team learning.", 
-
   },
 ];
 
@@ -324,11 +322,11 @@ export default function ProfessionalIndustryPage() {
           <div className="absolute -right-28 top-28 z-10 h-[430px] w-[430px] rounded-full border border-red-500/20"/>
           <div className="absolute right-[-10rem] top-20 h-[30rem] w-[30rem] rounded-full bg-red-600/10 blur-3xl mss-float-reverse" />
 
-        <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
+        <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
           {/* Left Column */}
           <div className="space-y-5">
             <Subheading variant="light">Professional Service</Subheading>
-            <h1 className="uppercase leading-[0.84] tracking-wider text-[64px] text-white sm:text-[96px] md:text-[118px] lg:text-[132px]">Modernize <span className="text-red-600">Your</span> <span className="hero-outline outline-white">Firm.</span></h1>
+            <h1 className="flex flex-wrap uppercase leading-[0.84] tracking-wider text-[64px] text-white sm:text-[96px] md:text-[118px] lg:text-[132px]">Modernize <span className="text-red-600">Your</span> <span className="hero-outline outline-white">Firm.</span></h1>
 
             <p className="text-white/70">Miraculous Soft Solutions builds premium CRMs, portals, workflow automation, dashboards, scheduling systems, document platforms, and cloud software for consulting, legal, accounting, advisory, HR, finance, and service-led companies.</p>
 
@@ -395,13 +393,10 @@ export default function ProfessionalIndustryPage() {
               <h2 className="text-[58px] uppercase text-zinc-900 leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">Modern, scalable, and enterprise-ready.</h2>
               <p>We choose architecture based on performance, security, maintainability, and long-term business scale.</p>
             </div>
-
-            <div className="mt-10 flex flex-wrap gap-3 rounded-2xl bg-gradient-to-r from-red-500/10 via-white/[0.03] to-blue-500/10 p-5 shadow-xl">
-              <div className="flex flex-wrap gap-3">
-                {techStack.map((tech) => (
-                  <span key={tech} className="rounded-xl border border-zinc-200 bg-white px-4 py-2 text-sm font-bold leading-[1.05] tracking-[-0.03em] text-zinc-600 shadow-sm transition hover:-translate-y-0.5 hover:border-red-400/60 hover:bg-red-500/15 hover:text-white">{tech}</span>
-                ))}
-              </div>
+            <div className="flex flex-wrap gap-3 relative">
+              {techStack.map((tech) => (
+                <span key={tech} className="rounded-xl border border-white/10 bg-white px-4 py-4 text-center text-sm font-bold text-zinc-600 transition hover:border-red-400/50 hover:text-red-600">{tech}</span>
+              ))}
             </div>
           </div>
         </div>

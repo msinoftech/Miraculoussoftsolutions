@@ -12,9 +12,9 @@ type RetailHubGraphProps = {
 
 export default function RetailHubGraph({ channels }: RetailHubGraphProps) {
   return (
-    <div className="relative">
-      <div className="relative shadow-2xl">
-        <div className="rounded-2xl border border-white/10 bg-zinc-950 p-5">
+    <div className="relative hidden lg:block">
+      <div className="relative overflow-hidden shadow-2xl shadow-black/40 backdrop-blur-2xl">
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
           <div className="mb-6 flex items-center justify-between gap-5">
             <div>
               <p className="text-sm text-zinc-400">Retail Command Center</p>

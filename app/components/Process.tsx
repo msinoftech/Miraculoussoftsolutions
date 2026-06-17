@@ -28,10 +28,10 @@ export default function Process({
   sectionClassName = "bg-zinc-950 py-14 sm:py-20",
   containerClassName = "mx-auto w-full max-w-7xl px-4",
   stepsWrapperClassName = "border-t border-white/10",
-  stepClassName = "group relative grid grid-cols-[76px_1fr] gap-6 border-b border-[rgba(255,255,255,0.05)] py-[42px] transition duration-200 hover:translate-x-1 lg:grid-cols-[88px_minmax(180px,300px)_1fr] lg:gap-9",
+  stepClassName = "group relative grid grid-cols-1 gap-6 border-b border-[rgba(255,255,255,0.05)] py-[42px] transition duration-200 hover:translate-x-1 lg:grid-cols-[88px_minmax(180px,300px)_1fr] lg:gap-9",
   numberClassName = "relative z-[1] grid h-[84px] w-[84px] place-items-center rounded-xl border-2 border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.01)] text-[56px] leading-none text-[rgba(255,255,255,0.1)] transition duration-300 group-hover:border-[rgba(224,32,32,0.55)] group-hover:text-[#E02020] font-bebas-neue",
   stepTitleClassName = "font-bebas-neue text-white text-[32px] uppercase leading-[1.2] tracking-widest flex items-center gap-4",
-  stepBodyClassName = "max-w-3xl text-[15px] leading-7 text-white/60",
+  stepBodyClassName = "text-[15px] leading-7 text-white/60",
 }: ProcessProps) {
   return (
     <section className={sectionClassName}>

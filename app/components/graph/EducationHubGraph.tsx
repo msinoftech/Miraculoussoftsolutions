@@ -30,7 +30,7 @@ export default function EducationHubGraph({ orbitItems }: EducationHubGraphProps
       <div className="absolute inset-[86px] rounded-full border border-dashed border-zinc-500 hero-ring-3" />
 
       {orbitNodes.map(({ item, x, y }) => (
-        <div key={item} style={{ transform: `translate(${x}px, ${y}px)` }} className="absolute left-1/2 top-1/2 -ml-14 -mt-6 flex h-12 w-28 items-center justify-center rounded-2xl border border-slate-200 bg-white/90 text-xs font-black text-slate-700 shadow-xl shadow-slate-300/50 backdrop-blur-xl">{item}</div>
+        <div key={item} style={{ transform: `translate(${x}px, ${y}px)` }} className="hidden md:flex absolute left-1/2 top-1/2 -ml-14 -mt-6 h-12 w-28 items-center justify-center rounded-2xl border border-slate-200 bg-white/90 text-xs font-black text-slate-700 shadow-xl shadow-slate-300/50 backdrop-blur-xl">{item}</div>
       ))}
 
       <div className="relative z-10 w-[335px] rounded-[2.2rem] border border-slate-200 bg-white/95 p-5 shadow-2xl shadow-slate-300/60 backdrop-blur-2xl">

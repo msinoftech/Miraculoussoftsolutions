@@ -190,32 +190,32 @@ const marqueeItems = [
 
 const features = [
     { 
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>`, 
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>`, 
         title: "Retail ERP Platforms", 
         description: "Multi-store management for products, pricing, branches, staff, customers, vendors, billing, and operations." 
     },
     { 
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>`, 
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>`, 
         title: "Smart POS & Checkout", 
         description: "Barcode billing, refunds, split payments, taxes, discounts, invoices, cash drawer, and counter-wise reporting." 
     },
     { 
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M18 21V10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v11"/><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 1.132-1.803l7.95-3.974a2 2 0 0 1 1.837 0l7.948 3.974A2 2 0 0 1 22 8z"/><path d="M6 13h12"/><path d="M6 17h12"/></svg>`, 
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M18 21V10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v11"/><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 1.132-1.803l7.95-3.974a2 2 0 0 1 1.837 0l7.948 3.974A2 2 0 0 1 22 8z"/><path d="M6 13h12"/><path d="M6 17h12"/></svg>`, 
         title: "Inventory Intelligence", 
         description: "Live stock, purchase orders, warehouse movement, batch tracking, expiry alerts, and automated replenishment." 
     },
     { 
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5"/><path d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"/><path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"/></svg>`, 
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5"/><path d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"/><path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"/></svg>`, 
         title: "Omnichannel Commerce", 
         description: "Connect physical stores with Shopify, WooCommerce, marketplaces, mobile apps, and custom ecommerce portals." 
     },
     { 
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`, 
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`, 
         title: "CRM & Loyalty Engine", 
         description: "Customer profiles, reward points, personalized offers, repeat purchase journeys, segmentation, and retention flows." 
     },
     { 
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7"/></svg>`, 
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7"/></svg>`, 
         title: "Executive Analytics", 
         description: "Sales trends, margin insights, branch comparison, demand forecasting, staff performance, and product-level reporting." 
     },
@@ -223,21 +223,21 @@ const features = [
 
 const whyPointsold = [
     {
-        title: "Retail Workflow Mapping",
-        description: "We study your store operations, billing process, product flow, inventory gaps, customer lifecycle, and business goals.",
-      },
-      {
-        title: "Experience & System Blueprint",
-        description: "We design a premium software architecture covering POS, ERP, CRM, ecommerce, analytics, cloud, roles, and integrations.",
-      },
-      {
-        title: "Agile Product Engineering",
-        description: "We build secure, scalable modules with modern frontend, robust APIs, clean database design, and deployment-ready code.",
-      },
-      {
-        title: "Launch, Training & Scale",
-        description: "We deploy, train teams, monitor performance, optimize flows, and continuously improve your retail digital ecosystem.",
-      },
+      title: "Retail Workflow Mapping",
+      description: "We study your store operations, billing process, product flow, inventory gaps, customer lifecycle, and business goals.",
+    },
+    {
+      title: "Experience & System Blueprint",
+      description: "We design a premium software architecture covering POS, ERP, CRM, ecommerce, analytics, cloud, roles, and integrations.",
+    },
+    {
+      title: "Agile Product Engineering",
+      description: "We build secure, scalable modules with modern frontend, robust APIs, clean database design, and deployment-ready code.",
+    },
+    {
+      title: "Launch, Training & Scale",
+      description: "We deploy, train teams, monitor performance, optimize flows, and continuously improve your retail digital ecosystem.",
+    },
 ];
 
 const solutions = [
@@ -264,44 +264,51 @@ const metrics = [
 
 const featureCards = [
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M14 15H9v-5"/><path d="M16 3h5v5"/><path d="M21 3 9 15"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M14 15H9v-5"/><path d="M16 3h5v5"/><path d="M21 3 9 15"/></svg>`,
     title: "Real-Time Operations",
     desc: "Live sync across billing counters, warehouses, ecommerce orders, loyalty points, and branch-level performance.",
   },
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-lock-keyhole-icon lucide-lock-keyhole"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock-keyhole-icon lucide-lock-keyhole"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`,
     title: "Enterprise Security",
     desc: "Role-based access, secure APIs, audit logs, encryption-ready flows, admin approvals, and cloud deployment standards.",
   },
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M14 15H9v-5"/><path d="M16 3h5v5"/><path d="M21 3 9 15"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M14 15H9v-5"/><path d="M16 3h5v5"/><path d="M21 3 9 15"/></svg>`,
     title: "Built for Scale",
     desc: "Optimized architecture for growing stores, users, SKUs, order volume, integrations, and multi-location expansion.",
   },
 ];
 
-const stack = ["Next.js", "React", "Node.js", "Laravel", ".NET", "Python", "PostgreSQL", "MongoDB", "AWS", "Docker", "Redis", "Stripe"];
+const stackHighlights = ["API-first architecture", "Cloud-native deployment", "Multi-store ready"];
+
+const stackGroups = [
+  { label: "Frontend", items: ["Next.js", "React"] },
+  { label: "Backend", items: ["Node.js", "Laravel", ".NET", "Python"] },
+  { label: "Data & Cloud", items: ["PostgreSQL", "MongoDB", "Redis", "AWS", "Docker"] },
+  { label: "Payments", items: ["Stripe"] },
+];
 
 const channels = [
 { 
     name: "POS", 
     value: "98%", 
-    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-credit-card-icon lucide-credit-card text-red-600"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>` 
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-credit-card-icon lucide-credit-card text-red-600"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>` 
 },
 { 
     name: "Inventory", 
     value: "92%", 
-    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-boxes-icon lucide-boxes"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/></svg>` 
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-boxes-icon lucide-boxes"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/></svg>` 
 },
 { 
     name: "Ecommerce", 
     value: "87%", 
-    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-shopping-bag-icon lucide-shopping-bag"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></svg>` 
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag-icon lucide-shopping-bag"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></svg>` 
 },
 { 
     name: "Logistics", 
     value: "76%", 
-    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-truck-icon lucide-truck"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>` 
+    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck-icon lucide-truck"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>` 
 },
 ];
 
@@ -318,11 +325,11 @@ export default function RetailIndustryPage() {
             <div className="absolute -right-28 top-28 z-10 h-[430px] w-[430px] rounded-full border border-red-500/20"/>
             <div className="absolute right-[-10rem] top-20 h-[30rem] w-[30rem] rounded-full bg-red-600/10 blur-3xl mss-float-reverse" />
 
-            <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
+            <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
                 {/* Left Side */}
                 <div className="space-y-5">
                     <Subheading variant="light">Retail Software</Subheading>
-                    <h1 className="uppercase leading-[0.84] tracking-wider text-[64px] text-white sm:text-[96px] md:text-[118px] lg:text-[132px]">
+                    <h1 className="flex flex-wrap uppercase leading-[0.84] tracking-wider text-[64px] text-white sm:text-[96px] md:text-[118px] lg:text-[132px]">
                     Built for <span className="text-red-600">Retail</span> <span className="hero-outline outline-white">Growth</span>.
                     </h1>
 
@@ -368,24 +375,18 @@ export default function RetailIndustryPage() {
             <div className="mx-auto px-4 max-w-7xl">
                 <div className="grid gap-10 lg:grid-cols-2 items-start">
                     {/* Left Column */}
-                    <div className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-8 backdrop-blur space-y-4">
-                        <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10">
-                            <span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-red-600"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg></span>
-                        </div>
-
+                    <div className="rounded-2xl bg-white/[0.05] p-8 backdrop-blur space-y-4">
                         <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">One connected retail technology ecosystem</h2>
-                        
                         <p className="text-white/70">We do not just build screens. We engineer connected platforms that improve stock accuracy, checkout speed, customer retention, reporting, and operational control.</p>
-
                         <DefaultButton href="/contact-us" bgClassName="bg-red-600 hover:bg-red-700">Discuss Your Retail Project</DefaultButton>
                     </div>
 
                     {/* Right Column */}
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
                         {solutions.map((item, index) => (
-                          <div key={item} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.045] h-auto p-4 shadow-2xl shadow-black/20 transition hover:border-red-600/60">
-                              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 lucide lucide-check-icon lucide-check text-red-600"><path d="M20 6 9 17l-5-5"></path></svg></span>
-                              <span className="text-sm text-white">{item}</span>
+                          <div key={item} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/10 p-4">
+                            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 lucide lucide-check-icon lucide-check text-red-600"><path d="M20 6 9 17l-5-5"/></svg></span>
+                            <span className="font-medium leading-[1.05] tracking-[-0.03em] text-white/70">{item}</span>
                           </div>
                         ))}
                     </div>
@@ -398,7 +399,7 @@ export default function RetailIndustryPage() {
             <div className="mx-auto px-4 max-w-7xl ">
                <div className="grid grid-cols-1 gap-0 lg:grid-cols-2">
                 {/* Left Column */}
-                    <div className="border-b-2 border-[var(--border)] pb-12 lg:border-b-0 lg:border-r-2 lg:pb-0 lg:pr-14">
+                    <div className="border-[var(--border)] lg:border-r-2 lg:pr-14">
                         <Subheading variant="default">Delivery System</Subheading>
                         <h2 className="text-[58px] uppercase text-zinc-900 leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">From retail idea to reliable <span className="text-red-600">software launch</span></h2>
                         <p>A structured delivery process helps us build software that is practical for your team, powerful for your business, and ready for future scale.</p>
@@ -422,38 +423,81 @@ export default function RetailIndustryPage() {
             </div>
         </section>
         
-        {/* technology stack */}
-        <section className="py-14 sm:py-20 bg-[var(--off-2)]">
-            <div className="mx-auto px-4 max-w-7xl space-y-10">
-                <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-                    {featureCards.map((item, index) => {
-                        return (
-                        <div key={item.title} className="rounded-2xl bg-white p-7 shadow-xl space-y-3">
-                            <span className="mb-6 flex h-11 w-11 items-center justify-center rounded-[10px] border border-[var(--border)] bg-[var(--off)] transition group-hover:border-red-600 group-hover:bg-red-600" dangerouslySetInnerHTML={{ __html: item.icon }} />
-                            <div className="text-[20px] font-extrabold tracking-[-0.02em] text-zinc-900">{item.title}</div>
-                            <p>{item.desc}</p>
-                        </div>
-                        );
-                    })}
-                </div>
-                
-                {/* Technology Stack */}
-                <div className="mx-auto px-4 max-w-7xl rounded-2xl border border-[var(--border)] bg-white p-8 shadow-2xl shadow-black/30 sm:p-10">
-                    <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
-                        <div className="max-w-3xl">
-                            <Subheading variant="default">Technology Stack</Subheading>
-                            <h3 className="text-[38px] font-extrabold leading-[1.02] tracking-[-0.02em] ">Modern stack for secure and scalable retail products</h3>
-                        </div>
-                        <div className="flex items-center gap-3 rounded-xl border border-[var(--border)] bg-[var(--off)] px-4 py-2 text-sm font-bold text-zinc-600">API-first architecture</div>
-                    </div>
+        {/* platform engineering & technology stack */}
+        <section className="relative overflow-hidden py-14 sm:py-20 bg-[var(--off-2)]">
+            <div className="absolute left-0 top-0 h-80 w-80 rounded-full bg-blue-500/15 blur-3xl mss-float-soft" />
+            <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-red-500/15 blur-3xl mss-float-reverse" />
 
-                    <div className="mt-10 flex flex-wrap gap-3 rounded-2xl bg-gradient-to-r from-red-500/10 via-white/[0.03] to-blue-500/10 p-5 shadow-xl">
-                        {stack.map((item, index) => (
-                        <span key={item} className="rounded-xl border border-[var(--border)] bg-[var(--off)] px-4 py-2 text-sm font-semibold text-zinc-600 shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:border-red-400/60 hover:bg-red-500/15">{item}</span>
+            <div className="relative mx-auto max-w-7xl px-4">
+                <div className="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-end">
+                    <div>
+                        <Subheading variant="default">Platform Engineering</Subheading>
+                        <h2 className="text-[58px] uppercase text-zinc-900 leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">
+                            Built for scale. <span className="text-red-600">Powered by proven tech.</span>
+                        </h2>
+                    </div>
+                    <p>Retail platforms need real-time reliability, enterprise-grade security, and a modern stack that can grow with stores, SKUs, channels, and transaction volume.</p>
+                </div>
+
+                <div className="grid gap-6 lg:grid-cols-12 lg:items-stretch">
+                    <div className="flex flex-col gap-4 lg:col-span-5">
+                        {featureCards.map((item, index) => (
+                            <div key={item.title} className="group relative overflow-hidden rounded-2xl border border-[var(--border)] bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-zinc-950 hover:shadow-[6px_6px_0_#0c0c0c]">
+                                <div className="pointer-events-none absolute -right-3 -top-4 font-bebas-neue text-[72px] leading-none tracking-wide text-zinc-100 transition group-hover:text-red-50">
+                                    {String(index + 1).padStart(2, "0")}
+                                </div>
+
+                                <div className="relative flex items-start gap-4">
+                                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--off)] transition group-hover:border-red-600 group-hover:bg-red-600 [&_svg]:transition group-hover:[&_svg]:text-white"
+                                        dangerouslySetInnerHTML={{ __html: item.icon }}/>
+                                    <div className="space-y-2">
+                                        <div className="text-[11px] font-bold uppercase tracking-[0.14em] text-zinc-500">Capability {String(index + 1).padStart(2, "0")}</div>
+                                        <div className="text-[20px] font-extrabold tracking-[-0.02em] text-zinc-900">{item.title}</div>
+                                        <p>{item.desc}</p>
+                                    </div>
+                                </div>
+                            </div>
                         ))}
                     </div>
-                </div>
 
+                    <div className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 p-8 shadow-2xl shadow-black/30 sm:p-10 lg:col-span-7">
+                        <div className="absolute right-[-80px] top-[-80px] h-64 w-64 rounded-full bg-red-600/15 blur-3xl" />
+                        <div className="absolute bottom-[-100px] left-[-80px] h-72 w-72 rounded-full bg-blue-600/10 blur-3xl" />
+
+                        <div className="relative z-10">
+                            <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+                                <div className="max-w-2xl space-y-3">
+                                    <Subheading variant="light">Technology Stack</Subheading>
+                                    <h3 className="text-[34px] font-extrabold uppercase leading-[0.98] tracking-[-0.02em] text-white sm:text-[42px]">
+                                        Modern stack for secure and scalable retail products
+                                    </h3>
+                                </div>
+                                <div className="flex flex-wrap gap-2">
+                                    {stackHighlights.map((item) => (
+                                        <span key={item} className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.12em] text-white/80">
+                                            {item}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="mt-10 grid gap-4 sm:grid-cols-2">
+                                {stackGroups.map((group) => (
+                                    <div key={group.label} className="rounded-xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm transition hover:border-red-500/30 hover:bg-white/[0.06]">
+                                        <div className="mb-4 text-[11px] font-bold uppercase tracking-[0.14em] text-white/50">{group.label}</div>
+                                        <div className="flex flex-wrap gap-2">
+                                            {group.items.map((item) => (
+                                                <span key={item} className="rounded-lg border border-white/10 bg-zinc-900 px-3 py-2 text-sm font-semibold text-white/80 transition hover:-translate-y-0.5 hover:border-red-400/50 hover:bg-red-600/20 hover:text-white">
+                                                    {item}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 

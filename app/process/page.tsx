@@ -421,12 +421,16 @@ export default function ProcessPage() {
             gridClassName="grid border-2 border-zinc-700 md:grid-cols-2 xl:grid-cols-4"
         />
 
-        <ProcessFrameworkSection 
-          label="Delivery Capabilities"
-          title="What Powers Every Build."
-          description="Four disciplines that sit behind our delivery process—strategy, engineering, security, and cloud—so every phase ships with structure, not guesswork."
-          items={processSteps}
-        />
+        <section className="relative pb-14 lg:pb-20">
+          <div className="mx-auto max-w-7xl px-4">
+            <ProcessFrameworkSection 
+              label="Delivery Capabilities"
+              title="What Powers Every Build."
+              description="Four disciplines that sit behind our delivery process—strategy, engineering, security, and cloud—so every phase ships with structure, not guesswork."
+              items={processSteps}
+            />
+          </div>
+        </section>
         
         {/* Standard */}
         <section className="relative overflow-hidden py-14 sm:py-20 bg-[var(--off)]">
@@ -441,7 +445,7 @@ export default function ProcessPage() {
             </div>
             
             {/* Right Column */}
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-2 relative">
               {standards.map((item) => (
                 <div key={item} className="flex items-center gap-3 rounded-xl p-2 border border-zinc-200 bg-white transition">
                   <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-zinc-900 transition group-hover:text-white"><path d="M20 6 9 17l-5-5"/></svg></span>

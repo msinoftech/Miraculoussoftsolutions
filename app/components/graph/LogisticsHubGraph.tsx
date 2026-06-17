@@ -13,7 +13,7 @@ export default function LogisticsHubGraph() {
   );
 
   return (
-    <div className="relative mx-auto h-[520px] w-full max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-black/55 p-5 shadow-2xl shadow-blue-950/40 backdrop-blur-xl">
+    <div className="relative mx-auto h-[520px] w-full hidden lg:block max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-black/55 p-5 shadow-2xl shadow-blue-950/40 backdrop-blur-xl">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(37,99,235,0.32),transparent_31%),radial-gradient(circle_at_82%_24%,rgba(220,38,38,0.28),transparent_30%),radial-gradient(circle_at_50%_85%,rgba(255,255,255,0.09),transparent_38%)]" />
   
         <div className="hero-spin-slow absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-white/10" />

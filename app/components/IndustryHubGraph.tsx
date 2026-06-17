@@ -94,7 +94,7 @@ export default function IndustryHubGraph({
   }
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden hidden lg:block">
        <div className="relative">
         <div className="pointer-events-none absolute left-1/2 top-[42%] h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl transition-[background-color] duration-500 sm:h-52 sm:w-52" style={{ backgroundColor: `${active.accentSolid}22` }} />
 

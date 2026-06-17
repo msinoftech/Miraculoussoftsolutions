@@ -25,7 +25,7 @@ export default function ProfessionalSuiteHubGraph({
   const selected = safeIndex >= 0 ? solutions[safeIndex] : null;
 
   return (
-    <div className="relative mx-auto w-full">
+    <div className="relative mx-auto w-full hidden lg:block">
       <div className="relative">
         <div className="rounded-2xl border border-white/10 bg-[#080b13]/90 p-5">
           <div className="flex items-center justify-between">
