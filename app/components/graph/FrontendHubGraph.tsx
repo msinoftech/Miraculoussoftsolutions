@@ -33,14 +33,10 @@ export default function FrontendHubGraph({ className = "" }: FrontendHubGraphPro
     [],
   );
 
-  const chipClass =
-    "rounded-lg border border-white/10 bg-zinc-900/90 px-3 py-2 text-[11px] font-bold shadow-lg backdrop-blur-sm transition duration-300 hover:scale-105 hover:border-white/25 hover:shadow-xl";
+  const chipClass = "rounded-lg border border-white/10 bg-zinc-900/90 px-3 py-2 text-[11px] font-bold shadow-lg backdrop-blur-sm transition duration-300 hover:scale-105 hover:border-white/25 hover:shadow-xl";
 
   return (
-    <div
-      className={`relative mx-auto hidden aspect-square w-full max-w-[440px] lg:block ${className}`.trim()}
-      aria-hidden="true"
-    >
+    <div className={`relative mx-auto hidden aspect-square w-full max-w-[440px] lg:block ${className}`.trim()} aria-hidden="true">
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[min(72%,300px)] w-[min(72%,300px)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/10 blur-3xl" />
 
       <div className="absolute inset-0 rounded-full border-2 border-blue-500/20 hero-ring" />

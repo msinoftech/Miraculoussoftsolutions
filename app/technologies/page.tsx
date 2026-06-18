@@ -431,13 +431,12 @@ export default function technologiesPage() {
         {/* Left column */}
         <div className="space-y-5">
           <Subheading variant="default">Technologies</Subheading>
-          <h1 className="uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
-            <span>BUILD </span>
+          <h1 className="flex flex-wrap uppercase leading-[0.84] tracking-wider text-[64px] text-zinc-950 sm:text-[96px] md:text-[118px] lg:text-[132px]">
+            <span>Build </span>
             <span className="text-red-600">Scale</span>
-            <span className="block text-zinc-900">Operate with</span>
-            <span className="hero-outline block outline-black"> Clarity</span>
+            <span className="hero-outline outline-black">Succeed</span>
           </h1>
-          <p className="text-[15px] leading-8 text-zinc-600">We design and engineer digital products that combine business strategy, premium experience, and strong technical foundations across SaaS, B2B, eCommerce, ERP, mobile, and growth ecosystems.</p>
+          <p>We design and engineer digital products that combine business strategy, premium experience, and strong technical foundations across SaaS, B2B, eCommerce, ERP, mobile, and growth ecosystems.</p>
           
           <div className="flex flex-wrap items-center gap-4">
               <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
@@ -492,11 +491,9 @@ export default function technologiesPage() {
 
                 {/* Center core */}
                 <div className="absolute left-1/2 top-1/2 z-30 flex w-[min(42%,11rem)] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-zinc-700 bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-800 p-4 text-center text-white shadow-[0_0_80px_rgba(239,68,68,0.28)] ring-2 ring-white/90 sm:p-5">
-                  <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[8px] font-bold uppercase tracking-[0.2em] text-red-400 sm:text-[9px]">
-                    Tech engine
-                  </span>
-                  <h3 className="mt-3 font-bebas-neue text-[2.25rem] leading-none tracking-wide sm:text-5xl">Stack</h3>
-                  <ul className="mt-3 space-y-0.5 text-[9px] leading-snug text-zinc-400 sm:text-[10px]">
+                  <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[8px] font-bold uppercase tracking-[0.2em] text-red-400 sm:text-[9px]">Tech engine</span>
+                  <div className="mt-3 font-bebas-neue text-4xl leading-none tracking-wide">Stack</div>
+                  <ul className="space-y-0.5 text-xs text-zinc-400">
                     <li>Cloud infrastructure</li>
                     <li>API ecosystem</li>
                     <li>Distributed compute</li>
@@ -512,19 +509,13 @@ export default function technologiesPage() {
                       transform: "translate(-50%, -50%)",
                     }}
                   >
-                    <div className={`rounded-2xl border p-3 ring-2 ring-white/90 transition duration-300 hover:scale-[1.04] hover:shadow-lg sm:p-4 hero-float ${techNodeColorClasses[node.color]}`}>
+                    <div className={`rounded-2xl border p-3 ring-2 ring-white/90 transition duration-300 hover:scale-[1.04] hover:shadow-xl sm:p-4 hero-float ${techNodeColorClasses[node.color]}`}>
                       <div className="flex items-center justify-between gap-1">
-                        <span className="h-1.5 w-8 rounded-full bg-current opacity-25" />
-                        <span className="rounded-full border border-current/25 px-1.5 py-0.5 text-[7px] font-bold uppercase tracking-[0.14em] sm:text-[8px]">
-                          Live
-                        </span>
+                        <span className="h-1 w-6 rounded-full bg-current opacity-25" />
+                        <span className="rounded-full border border-current/25 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide">Live</span>
                       </div>
-                      <div className="mt-2 text-[11px] font-extrabold uppercase tracking-wide sm:mt-3 sm:text-sm">{node.title}</div>
-                      <p className="mt-1 text-[9px] font-medium leading-snug opacity-85 sm:text-[10px]">{node.stack}</p>
-                      <div className="mt-2 hidden flex-wrap gap-1 sm:flex">
-                        <span className="rounded-full bg-white/75 px-2 py-0.5 text-[7px] font-bold uppercase text-zinc-700">Enterprise</span>
-                        <span className="rounded-full bg-white/75 px-2 py-0.5 text-[7px] font-bold uppercase text-zinc-700">Scale</span>
-                      </div>
+                      <div className="mt-2 text-sm font-extrabold uppercase tracking-wide">{node.title}</div>
+                      <div className="mt-1 text-xs font-medium opacity-85">{node.stack}</div>
                     </div>
                   </div>
                 ))}
@@ -533,12 +524,9 @@ export default function technologiesPage() {
               {/* Mobile stack list — visible when orbit cards are tight */}
               <ul className="relative z-20 mt-4 grid grid-cols-2 gap-2 sm:hidden">
                 {techNodes.map((node) => (
-                  <li
-                    key={`m-${node.title}`}
-                    className={`rounded-xl border px-2.5 py-2 text-center ${techNodeColorClasses[node.color]}`}
-                  >
-                    <span className="block text-[10px] font-extrabold uppercase">{node.title}</span>
-                    <span className="mt-0.5 block truncate text-[8px] font-medium opacity-80">{node.stack}</span>
+                  <li key={`m-${node.title}`} className={`rounded-lg border p-2 text-center ${techNodeColorClasses[node.color]}`}>
+                    <span className="block text-sm font-extrabold uppercase">{node.title}</span>
+                    <span className="block truncate text-xs font-medium opacity-80">{node.stack}</span>
                   </li>
                 ))}
               </ul>
@@ -560,41 +548,35 @@ export default function technologiesPage() {
         <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <Subheading variant="light">Stack architecture</Subheading>
-            <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">
-              Technology <span className="text-red-600">Layers</span>
-            </h2>
-            <p className="text-[15px] leading-8 text-white">Six disciplined layers from interface to intelligence—each hub opens a pillar, every chip links to a dedicated stack page.</p>
+            <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">Technology <span className="text-red-600">Layers</span></h2>
+            <p className="text-white/70">Six disciplined layers from interface to intelligence—each hub opens a pillar, every chip links to a dedicated stack page.</p>
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
-            <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-300">
-              {technologyCatalog.length} layers
-            </span>
-            <span className="rounded-full border border-red-500/30 bg-red-500/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.12em] text-red-300">
-              {allTechnologyPages.length} pages
-            </span>
+            <div className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-bold uppercase tracking-wide text-zinc-300">{technologyCatalog.length} layers</div>
+            <div className="rounded-full border border-red-500/30 bg-red-500/10 px-4 py-2 text-xs font-bold uppercase tracking-wide text-red-300">{allTechnologyPages.length} pages</div>
           </div>
         </div>
 
         {/* Desktop: horizontal stack layers */}
         <div className="tech-branch-reveal mb-10 hidden overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] shadow-2xl backdrop-blur-sm lg:block">
           <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
-            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-white">Build order</span>
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white">Surface → Core → Scale</span>
+            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">Build order</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Surface → Core → Scale</span>
           </div>
           <div className="divide-y divide-white/10">
             {technologyCategories.map((cat, index) => (
               <article key={cat.category} id={cat.category.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and")} className="tech-stack-layer group flex scroll-mt-28" style={{ animationDelay: `${index * 0.06}s` }}>
                 <Link href={cat.parentHref} className={`tech-stack-rail flex w-[min(28%,220px)] shrink-0 flex-col justify-center gap-1 border-l-2 px-6 py-6 transition ${cat.rail}`}>
                   <span className="font-bebas-neue text-3xl leading-none text-white/20">{cat.step}</span>
-                  <span className="text-[13px] font-extrabold uppercase tracking-wide text-white">{cat.category}</span>
-                  <span className="text-xs font-semibold text-zinc-600 transition group-hover:text-zinc-400">Hub page ↗</span>
+                  <span className="text-sm font-extrabold uppercase tracking-wide text-white">{cat.category}</span>
+                  <span className="text-xs font-semibold text-white/70 transition group-hover:text-white">Hub page ↗</span>
                 </Link>
                 <div className="flex min-w-0 flex-1 flex-col justify-center gap-3 px-6 py-5">
-                  <p className="text-[12px] leading-6 text-zinc-600">{cat.description}</p>
+                  <p className="text-white/70">{cat.description}</p>
                   <div className="flex flex-wrap items-center gap-2">
                     {cat.children.map((tech) => (
-                      <Link key={tech.href} href={tech.href} className={`tech-chip-glow rounded-full border px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.08em] transition ${cat.chip}`}>
+                      <Link key={tech.href} href={tech.href} className={`tech-chip-glow rounded-full border px-3 py-1.5 text-xs font-bold uppercase tracking-wide transition ${cat.chip}`}>
                         {tech.label}
                       </Link>
                     ))}
@@ -608,38 +590,24 @@ export default function technologiesPage() {
         {/* Mobile + tablet: bento mosaic */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-12">
           {technologyCategories.map((cat, index) => (
-            <article key={`bento-${cat.category}`} className={`tech-branch-reveal case-card-shine group relative overflow-hidden rounded-[20px] border border-white/10 bg-white/[0.04] p-5 ring-1 ring-white/10 transition duration-300 hover:bg-white/[0.07] hover:ring-white/20 lg:hidden ${cat.bento}`} style={{ animationDelay: `${index * 0.08}s` }}>
+            <article key={`bento-${cat.category}`} className={`tech-branch-reveal case-card-shine group relative overflow-hidden rounded-[20px] border border-white/10 bg-white/[0.04] p-5 ring-1 ring-white/10 transition duration-300 hover:bg-white/[0.07] hover:ring-white/20 lg:hidden ${cat.bento}`}>
               <div className={`absolute left-0 top-0 h-full w-px bg-gradient-to-b ${cat.accent}`} />
               <div className="relative pl-3">
                 <div className="flex items-start justify-between gap-2">
                   <div>
-                    <span className="font-bebas-neue text-2xl leading-none text-white/20">{cat.step}</span>
-                    <Link href={cat.parentHref} className="mt-1 block text-[17px] font-extrabold text-white transition hover:text-red-400">{cat.category}</Link>
+                    <span className="font-bebas-neue text-3xl leading-none text-white/20">{cat.step}</span>
+                    <Link href={cat.parentHref} className="mt-1 block text-xl font-bold text-white transition hover:text-red-600">{cat.category}</Link>
                   </div>
                   <span className={`h-2 w-2 shrink-0 rounded-full ${cat.dot}`} />
                 </div>
-                <p className="mt-2 text-[11px] leading-5 text-zinc-600">{cat.description}</p>
+                <p className="text-white/70">{cat.description}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {cat.children.map((tech) => (
-                    <Link key={tech.href} href={tech.href} className={`rounded-lg border px-2.5 py-1 text-[9px] font-bold uppercase tracking-wide transition ${cat.chip}`}>{tech.label}</Link>
+                    <Link key={tech.href} href={tech.href} className={`rounded-lg border px-3 py-1.5 text-xs font-bold uppercase tracking-wide transition ${cat.chip}`}>{tech.label}</Link>
                   ))}
                 </div>
               </div>
             </article>
-          ))}
-        </div>
-
-        {/* Desktop bento accent grid (companion to stack board) */}
-        <div className="mt-6 hidden gap-4 lg:grid lg:grid-cols-3">
-          {technologyCategories.slice(0, 3).map((cat) => (
-            <Link key={`quick-${cat.category}`} href={cat.parentHref} className="case-card-shine group rounded-2xl border border-white/10 bg-white/[0.04] p-5 ring-1 ring-white/5 transition hover:border-white/20 hover:bg-white/[0.08]">
-              <div className={`mb-3 h-px w-10 rounded-full bg-gradient-to-r ${cat.accent}`} />
-              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white">{cat.category}</p>
-              <p className="mt-2 text-sm text-white/80">{cat.children.map((t) => t.label).join(" · ")}</p>
-              <span className="mt-4 inline-block text-xs font-semibold uppercase tracking-wider text-red-400 opacity-0 transition group-hover:opacity-100">
-                Open hub ↗
-              </span>
-            </Link>
           ))}
         </div>
 
@@ -650,13 +618,13 @@ export default function technologiesPage() {
               <Subheading variant="light">Index matrix</Subheading>
               <h3 className="text-2xl uppercase tracking-wide text-white sm:text-3xl">All technology routes</h3>
             </div>
-            <p className="text-sm text-white/80">Hubs + stack expertise pages</p>
+            <div className="text-sm text-white/70">Hubs + stack expertise pages</div>
           </div>
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {allTechnologyPages.map((item, i) => (
               <Link key={`${item.href}-${i}`} href={item.href} className="tech-chip-glow group flex flex-col rounded-lg border border-white/10 bg-white/[0.03] px-3 py-4 transition hover:border-red-500/40 hover:bg-red-500/10">
-                <span className="truncate text-[10px] font-bold uppercase tracking-[0.12em] text-zinc-600 group-hover:text-red-300/80">{item.group}</span>
-                <span className="mt-0.5 truncate text-[12px] font-extrabold uppercase text-zinc-200 group-hover:text-white">{item.label}</span>
+                <span className="truncate text-xs font-bold uppercase tracking-wide text-zinc-400 group-hover:text-red-300/80">{item.group}</span>
+                <span className="mt-0.5 truncate text-sm font-extrabold uppercase text-zinc-200 group-hover:text-white">{item.label}</span>
               </Link>
             ))}
           </div>
@@ -666,19 +634,13 @@ export default function technologiesPage() {
 
     <section className="overflow-hidden bg-[var(--off)] py-24 lg:py-28">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-0 px-6 lg:grid-cols-2 lg:px-10">
-          <div className="border-b-2 border-[var(--border)] pb-12 lg:border-b-0 lg:border-r-2 lg:pb-0 lg:pr-14">
+          <div className="border-[var(--border)] pb-12 lg:border-r-2 lg:pb-0 lg:pr-14">
             <Subheading variant="default">Why Miraculous Soft</Subheading>
-            <h2 className="font-hero text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[70px] lg:text-[88px]">
-              The Partner
-              <br />
-              Businesses
-              <br />
-              <span className="text-red-600">Choose.</span>
-            </h2>
-            <p className="text-[15px] leading-8 text-zinc-600">When the stakes are high and execution matters, growth-stage businesses and enterprise teams choose a partner that can think strategically and build reliably.</p>
+            <h2 className="text-zinc-950 text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[70px] lg:text-[88px]">The Partner Businesses <span className="text-red-600">Choose.</span></h2>
+            <p>When the stakes are high and execution matters, growth-stage businesses and enterprise teams choose a partner that can think strategically and build reliably.</p>
           </div>
 
-          <div className="pt-12 lg:pl-14 lg:pt-0">
+          <div className="lg:pl-14">
             {whyPointsold.map((point, index) => (
               <div key={point.title} className="grid grid-cols-[56px_1fr] gap-5 border-b border-[var(--border)] py-8 last:border-b-0 first:pt-0 last:pb-0">
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-zinc-950 text-white transition hover:bg-red-600">
