@@ -232,22 +232,22 @@ const steps = [
 
 const reasons = [
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-lock-keyhole-icon lucide-lock-keyhole"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock-keyhole-icon lucide-lock-keyhole"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`,
     title: "JWT Security Best Practices",
     body: "We implement correct signing, validation, and claim design—avoiding common pitfalls like weak storage, missing audience checks, and unsafe token lifetimes. Your auth becomes secure by default.",
   },
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-rotate-ccw-square-icon lucide-rotate-ccw-square"><path d="M20 9V7a2 2 0 0 0-2-2h-6"/><path d="m15 2-3 3 3 3"/><path d="M20 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw-square-icon lucide-rotate-ccw-square"><path d="M20 9V7a2 2 0 0 0-2-2h-6"/><path d="m15 2-3 3 3 3"/><path d="M20 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2"/></svg>`,
     title: "Reliable Key Rotation",
     body: "We design key rotation and verification (JWKS) so microservices and gateways keep validating tokens without downtime—while still responding quickly to compromised keys or forced logout events.",
   },
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-rocket-icon lucide-rocket"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rocket-icon lucide-rocket"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>`,
     title: "Fast, Secure API Access",
     body: "JWT validation is efficient when done correctly. We balance performance and security with caching, key fetching strategy, and precise authorization checks—so your APIs stay fast and protected.",
   },
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M14 15H9v-5"></path><path d="M16 3h5v5"></path><path d="M21 3 9 15"></path></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M14 15H9v-5"></path><path d="M16 3h5v5"></path><path d="M21 3 9 15"></path></svg>`,
     title: "Scalable Token-Based Architecture",
     body: "We help you evolve from simple JWT auth to enterprise-ready patterns: multi-tenant claims, fine-grained permissions, step-up auth, and clean separation between authentication and authorization.",
   },  
@@ -259,223 +259,223 @@ const schemaData = {
     {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
-      name: APP_NAME,
-      alternateName: APP_NAME,
-      url: BASE_URL,
-      logo: {
+      "name": `${APP_NAME}`,
+      "alternateName": APP_NAME,
+      "url": BASE_URL,
+      "logo": {
         "@type": "ImageObject",
-        url: `${BASE_URL}${contactInfo.logo}`,
-        width: 512,
-        height: 512,
+        "url": `${BASE_URL}${contactInfo.logo}`,
+        "width": 512,
+        "height": 512,
       },
-      image: `${BASE_URL}${contactInfo.logo}`,
-      description: `${APP_NAME} delivers JWT development services for web and mobile apps — token issuing and verification, RS256/HS256 signing, JWKS key rotation, refresh token strategy, claims design, and secure API authorization for SaaS and enterprise products.`,
-      email: contactInfo.email,
-      address: {
+      "image": `${BASE_URL}${contactInfo.logo}`,
+      "description": `${APP_NAME} delivers JWT development services for web and mobile apps — token issuing and verification, RS256/HS256 signing, JWKS key rotation, refresh token strategy, claims design, and secure API authorization for SaaS and enterprise products.`,
+      "email": contactInfo.email,
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: contactInfo.address,
-        addressLocality: "Mohali",
-        addressRegion: "Punjab",
-        postalCode: "160062",
-        addressCountry: "IN",
+        "streetAddress": contactInfo.address,
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "postalCode": "160062",
+        "addressCountry": "IN",
       },
-      sameAs: [
+      "sameAs": [
         "https://www.facebook.com/miraculoussoft",
         "https://twitter.com/miraculous_soft",
         "https://www.instagram.com/miraculous_soft",
         "https://www.pinterest.com/seomiraculoussoft",
       ],
-      contactPoint: [
+      "contactPoint": [
         {
           "@type": "ContactPoint",
-          contactType: "sales",
-          email: contactInfo.email,
-          availableLanguage: ["English", "Hindi", "Punjabi"],
-          areaServed: ["IN", "Worldwide"],
+          "contactType": "sales",
+          "email": contactInfo.email,
+          "availableLanguage": ["English", "Hindi", "Punjabi"],
+          "areaServed": ["IN", "Worldwide"],
         },
         {
           "@type": "ContactPoint",
-          contactType: "customer support",
-          email: contactInfo.email,
-          availableLanguage: ["English", "Hindi", "Punjabi"],
-          areaServed: "Worldwide",
+          "contactType": "customer support",
+          "email": contactInfo.email,
+          "availableLanguage": ["English", "Hindi", "Punjabi"],
+          "areaServed": "Worldwide",
         },
       ],
     },
     {
       "@type": "WebSite",
       "@id": `${BASE_URL}/#website`,
-      url: BASE_URL,
-      name: APP_NAME,
-      description: `${APP_NAME} provides JWT development services — from token architecture and signing strategy through middleware verification, refresh/revocation controls, claim governance, and production monitoring.`,
-      inLanguage: "en",
-      publisher: { "@id": `${BASE_URL}/#organization` },
+      "url": BASE_URL,
+      "name": APP_NAME,
+      "description": `${APP_NAME} provides JWT development services — from token architecture and signing strategy through middleware verification, refresh/revocation controls, claim governance, and production monitoring.`,
+      "inLanguage": "en",
+      "publisher": { "@id": `${BASE_URL}/#organization` },
     },
     {
       "@type": "BreadcrumbList",
       "@id": `${PAGE_URL}/#breadcrumb`,
-      itemListElement: [
+      "itemListElement": [
         {
           "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: BASE_URL,
+          "position": 1,
+          "name": "Home",
+          "item": BASE_URL,
         },
         {
           "@type": "ListItem",
-          position: 2,
-          name: "Technologies",
-          item: TECHNOLOGIES_URL,
+          "position": 2,
+          "name": "Technologies",
+          "item": TECHNOLOGIES_URL,
         },
         {
           "@type": "ListItem",
-          position: 3,
-          name: "JWT Development Company",
-          item: PAGE_URL,
+          "position": 3,
+          "name": "JWT Development Company",
+          "item": PAGE_URL,
         },
       ],
     },
     {
       "@type": "WebPage",
       "@id": `${PAGE_URL}/#webpage`,
-      url: PAGE_URL,
-      name: `JWT Development Company | ${APP_NAME}`,
-      isPartOf: { "@id": `${BASE_URL}/#website` },
-      about: { "@id": `${PAGE_URL}/#jwt-development` },
-      description: `Hire JWT developers from ${APP_NAME}. We implement secure token-based authentication with RS256/HS256 signing, claims validation, key rotation, refresh/revocation strategy, and API authorization for production applications.`,
-      inLanguage: "en",
-      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
-      mainEntity: { "@id": `${PAGE_URL}/#jwt-development` },
+      "url": PAGE_URL,
+      "name": `JWT Development Company | ${APP_NAME}`,
+      "isPartOf": { "@id": `${BASE_URL}/#website` },
+      "about": { "@id": `${PAGE_URL}/#jwt-development` },
+      "description": `Hire JWT developers from ${APP_NAME}. We implement secure token-based authentication with RS256/HS256 signing, claims validation, key rotation, refresh/revocation strategy, and API authorization for production applications.`,
+      "inLanguage": "en",
+      "breadcrumb": { "@id": `${PAGE_URL}/#breadcrumb` },
+      "mainEntity": { "@id": `${PAGE_URL}/#jwt-development` },
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#jwt-technology-stack`,
-      name: `${APP_NAME} JWT Development Stack`,
-      numberOfItems: technologies.length,
-      itemListElement: technologies.map((tech, index) => ({
+      "name": `${APP_NAME} JWT Development Stack`,
+      "numberOfItems": technologies.length,
+      "itemListElement": technologies.map((tech, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#tech-${tech.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
-          name: tech,
-          description: `${tech} used in ${APP_NAME} JWT development projects.`,
+          "name": tech,
+          "description": `${tech} used in ${APP_NAME} JWT development projects.`,
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#jwt-capabilities`,
-      name: `${APP_NAME} JWT Capabilities`,
-      numberOfItems: marqueeItems.length,
-      itemListElement: marqueeItems.map((feature, index) => ({
+      "name": `${APP_NAME} JWT Capabilities`,
+      "numberOfItems": marqueeItems.length,
+      "itemListElement": marqueeItems.map((feature, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#capability-${feature.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
-          name: feature,
-          description: `${feature} delivered as part of ${APP_NAME} JWT implementation services.`,
+          "name": feature,
+          "description": `${feature} delivered as part of ${APP_NAME} JWT implementation services.`,
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#jwt-process`,
-      name: `${APP_NAME} JWT Security Implementation Process`,
-      numberOfItems: steps.length,
-      itemListElement: steps.map((step, index) => ({
+      "name": `${APP_NAME} JWT Security Implementation Process`,
+      "numberOfItems": steps.length,
+      "itemListElement": steps.map((step, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Service",
           "@id": `${PAGE_URL}/#step-${step.num}`,
-          name: `${step.num} — ${step.title}`,
-          description: step.body,
-          url: PAGE_URL,
-          provider: { "@id": `${BASE_URL}/#organization` },
-          areaServed: ["India", "Worldwide"],
-          category: "JWT Development Process",
+          "name": `${step.num} — ${step.title}`,
+          "description": step.body,
+          "url": PAGE_URL,
+          "provider": { "@id": `${BASE_URL}/#organization` },
+          "areaServed": ["India", "Worldwide"],
+          "category": "JWT Development Process",
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#jwt-benefits`,
-      name: `Why Choose ${APP_NAME} for JWT Development`,
-      numberOfItems: reasons.length,
-      itemListElement: reasons.map((benefit, index) => ({
+      "name": `Why Choose ${APP_NAME} for JWT Development`,
+      "numberOfItems": reasons.length,
+      "itemListElement": reasons.map((benefit, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#benefit-${index + 1}`,
-          name: benefit.title,
-          description: benefit.body,
+          "name": benefit.title,
+          "description": benefit.body,
         },
       })),
     },
     {
       "@type": "ProfessionalService",
       "@id": `${PAGE_URL}/#jwt-development`,
-      name: `${APP_NAME} — JWT Development Services`,
-      alternateName: "Hire JWT Developers",
-      url: PAGE_URL,
-      description: `${APP_NAME} builds production-ready JWT authentication and authorization systems — secure token issuing, RS256/HS256 signing, claims validation, JWKS key rotation, refresh/revocation controls, and API middleware enforcement.`,
-      image: `${BASE_URL}${contactInfo.logo}`,
-      email: contactInfo.email,
-      address: {
+      "name": `${APP_NAME} — JWT Development Services`,
+      "alternateName": "Hire JWT Developers",
+      "url": PAGE_URL,
+      "description": `${APP_NAME} builds production-ready JWT authentication and authorization systems — secure token issuing, RS256/HS256 signing, claims validation, JWKS key rotation, refresh/revocation controls, and API middleware enforcement.`,
+      "image": `${BASE_URL}${contactInfo.logo}`,
+      "email": contactInfo.email,
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: contactInfo.address,
-        addressLocality: "Mohali",
-        addressRegion: "Punjab",
-        addressCountry: "IN",
+        "streetAddress": contactInfo.address,
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "addressCountry": "IN",
       },
-      areaServed: ["India", "Worldwide"],
-      provider: { "@id": `${BASE_URL}/#organization` },
-      serviceType: [
+      "areaServed": ["India", "Worldwide"],
+      "provider": { "@id": `${BASE_URL}/#organization` },
+      "serviceType": [
         "JWT Development Services",
         ...technologies,
         ...marqueeItems,
       ],
-      hasOfferCatalog: {
+      "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        name: "JWT Development Services",
-        itemListElement: [
+        "name": "JWT Development Services",
+        "itemListElement": [
           {
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: "JWT Authentication & Authorization Implementation",
-              description: `End-to-end JWT development for web and mobile apps including token issuing and verification, RS256/HS256 strategy, custom claims, refresh token flows, JWKS rotation, revocation controls, and protected API access.`,
-              url: PAGE_URL,
+              "name": "JWT Authentication & Authorization Implementation",
+              "description": `End-to-end JWT development for web and mobile apps including token issuing and verification, RS256/HS256 strategy, custom claims, refresh token flows, JWKS rotation, revocation controls, and protected API access.`,
+              "url": PAGE_URL,
             },
           },
           ...technologies.map((tech) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: tech,
-              description: `${tech} integration and implementation by ${APP_NAME}.`,
-              url: PAGE_URL,
+              "name": tech,
+              "description": `${tech} integration and implementation by ${APP_NAME}.`,
+              "url": PAGE_URL,
             },
           })),
           ...steps.map((step) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: step.title,
-              description: step.body,
-              url: PAGE_URL,
+              "name": step.title,
+              "description": step.body,
+              "url": PAGE_URL,
             },
           })),
           ...reasons.map((benefit) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: benefit.title,
-              description: benefit.body,
-              url: PAGE_URL,
+              "name": benefit.title,
+              "description": benefit.body,
+              "url": PAGE_URL,
             },
           })),
         ],
@@ -488,12 +488,7 @@ export default function JwtDevelopmentCompanyPage() {
     return (
     <>
       {/* Schema.org */}
-      <Script
-        id="jwt-development-company-schema"
-        type="application/ld+json"
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-      />
+      <Script id="jwt-development-company-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
 
        {/* HERO */}
        <section className="relative overflow-hidden bg-white py-16 sm:py-20">
@@ -505,23 +500,23 @@ export default function JwtDevelopmentCompanyPage() {
                 {/* Left Column */}
                 <div className="space-y-5">
                     <Subheading variant="default">JWT Security Services</Subheading>
-                    <h1 className="uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
+                    <h1 className="flex flex-wrap uppercase leading-[0.84] tracking-wider text-[64px] text-zinc-950 sm:text-[96px] md:text-[118px] lg:text-[132px]">
                         <span>HIRE </span>
                         <span className="text-red-600">JWT</span>
-                        <span className="hero-outline block outline-black">EXPERTS</span>
+                        <span className="hero-outline outline-black">EXPERTS</span>
                     </h1>
-                    <p className="text-[15px] leading-8 text-zinc-600">Secure your APIs with signed JWTs—correct token issuing, validation, claims, rotation, and refresh strategy built for production.</p>
+                    <p>Secure your APIs with signed JWTs—correct token issuing, validation, claims, rotation, and refresh strategy built for production.</p>
                     <div className="flex flex-wrap items-center gap-4">
                       <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
                     </div>
                     <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
                       {heroStats.map((stat) => (
                           <div key={stat.label}>
-                          <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
-                          {stat.num.replace(/\+/, "")}
-                          {stat.num.includes("+") && <span className="text-red-600">+</span>}
-                          </div>
-                          <div className="text-sm text-zinc-950">{stat.label}</div>
+                            <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
+                            {stat.num.replace(/\+/, "")}
+                            {stat.num.includes("+") && <span className="text-red-600">+</span>}
+                            </div>
+                            <div className="text-sm text-zinc-950">{stat.label}</div>
                           </div>
                       ))}
                     </div>
@@ -607,7 +602,7 @@ export default function JwtDevelopmentCompanyPage() {
                 <span className="absolute left-0 top-0 h-6 w-6 rounded-tl-md border-l-2 border-t-2 border-white/70" />
                 <span className="absolute bottom-0 right-0 h-6 w-6 rounded-br-md border-b-2 border-r-2 border-white/70" />
 
-                <pre className="overflow-x-auto text-xs leading-7 md:text-sm" aria-label="Code preview">
+                <pre className="overflow-x-auto" aria-label="Code preview">
                   {aboutCodeLines.map((line, index) => {
                     if (line.type === "comment") {
                       return (
@@ -649,12 +644,10 @@ export default function JwtDevelopmentCompanyPage() {
               {/* right column */}
               <div className="relative space-y-4">
                 <Subheading variant="light">Why JWT With Us</Subheading>
-                
                 <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">The JWT <span className="text-red-600">Advantage</span></h2>
+                <p className="text-white/70">JWTs are a compact, signed way to prove identity and permissions across services. With proper signing and verification, JWT-based security enables stateless authorization for APIs and microservices.</p>
                 
-                <p className="text-[15px] leading-[1.8] text-white">JWTs are a compact, signed way to prove identity and permissions across services. With proper signing and verification, JWT-based security enables stateless authorization for APIs and microservices.</p>
-                
-                <p className="text-[15px] leading-[1.8] text-white">We build <strong className="text-white">secure token issuing, claim design, key rotation, refresh strategy, and strict validation</strong> so your APIs can trust tokens—and attackers can’t exploit missing checks or weak storage.</p>
+                <p className="text-white/70">We build <strong>secure token issuing, claim design, key rotation, refresh strategy, and strict validation</strong> so your APIs can trust tokens—and attackers can’t exploit missing checks or weak storage.</p>
 
                 <div className="flex flex-wrap gap-2">
                   {technologies.map((item) => (
@@ -671,9 +664,7 @@ export default function JwtDevelopmentCompanyPage() {
           steps={steps}
           label="JWT Security Implementation Process"
           title={
-            <>
-              YOU BUILD SECURE <span className="text-red-600">TOKENS</span>
-            </>
+            <>You Build Secure <span className="text-red-600">Access</span></>
           }
           description="We follow modern security practices: strong signing algorithms, safe claim design, key rotation, strict verification, and end-to-end tests—so your JWT security is production-ready."
         />
@@ -683,11 +674,7 @@ export default function JwtDevelopmentCompanyPage() {
           items={reasons}
           label="Why Choose Us"
           title={
-            <>
-              REASONS TO CHOOSE
-              <br />
-              <span className="text-red-600">MIRACULOUS SOFT</span>
-            </>
+            <>Reasons To Choose <span className="text-red-600">Miraculous Soft</span></>
           }
           description="Deep identity and API security experience, strong delivery discipline, and a relentless commitment to building JWT systems that are secure, reliable, and maintainable."
         />
@@ -695,11 +682,7 @@ export default function JwtDevelopmentCompanyPage() {
         {/* CTA STRIP */}
         <CtaStrip
             title={
-                <>
-                GOT A PROJECT
-                <br />
-                IN <span className="text-black">MIND?</span>
-                </>
+                <>Got A Project In <span className="text-black">Mind?</span></>
             }
             description="Let&apos;s secure your platform with a production-grade JWT security system—safe token issuing, strict verification, key rotation, and protected APIs."
             buttonText="Get a Free Quote →"

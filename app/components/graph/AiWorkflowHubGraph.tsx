@@ -116,7 +116,7 @@ export default function AiWorkflowHubGraph() {
   };
 
   return (
-    <div className="relative mx-auto w-full overflow-hidden">
+    <div className="relative mx-auto w-full overflow-hidden hidden lg:block">
       <div className="relative">
         <div className="pointer-events-none absolute left-1/2 top-[42%] h-44 w-44 -translate-x-1/2 rounded-full blur-3xl transition-colors duration-500 sm:h-52 sm:w-52" style={{ backgroundColor: active.accentSoft }}/>
 
@@ -215,36 +215,23 @@ export default function AiWorkflowHubGraph() {
         </div>
       </div>
 
-      <div className="relative mt-4 overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950 font-mono shadow-[0_16px_40px_rgba(0,0,0,0.2)]">
-        <div className="flex items-center justify-between border-b border-white/10 bg-zinc-900 px-3 py-2">
-          <div className="flex items-center gap-1.5">
-            <span className="h-2 w-2 rounded-full bg-[#ff5f57]" />
-            <span className="h-2 w-2 rounded-full bg-[#febc2e]" />
-            <span className="h-2 w-2 rounded-full bg-[#28c840]" />
-          </div>
-          <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-zinc-400">agent-pipeline.log</span>
-          <Link href={active.href} className="rounded px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] transition hover:bg-white/10 hover:text-red-600" style={{ color: active.accent }}>
-            {active.shortLabel} ↗
-          </Link>
-        </div>
-        <div key={active.id} className="space-y-1 p-3 text-[9px] leading-relaxed sm:text-[10px]">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-zinc-400" style={{ color: active.accent }}>
+      <div className="relative mt-4 overflow-hidden rounded-xl bg-zinc-950 font-mono shadow-xl">
+        <div key={active.id} className="space-y-1 p-3 leading-relaxed">
+          <div className="text-sm tracking-[0.08em] text-zinc-400" style={{ color: active.accent }}>
             ▶ {active.step} · {active.title} — {active.subtitle}
-          </p>
+          </div>
           {active.pipeline.map((step, pi) => (
-            <p key={step.label} className={`text-[10px] font-semibold uppercase tracking-[0.08em] transition-opacity duration-300 ${pi < pipelineTick ? "text-zinc-300" : "text-zinc-600 opacity-40"}`}>
+            <div key={step.label} className={`text-sm font-semibold uppercase tracking-[0.08em] transition-opacity duration-300 ${pi < pipelineTick ? "text-zinc-300" : "text-zinc-600 opacity-40"}`}>
               <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-red-400">{step.label}:</span> {step.detail}
-            </p>
+            </div>
           ))}
           {active.logs.map((line) => (
-            <p key={line.t} className={`text-[10px] font-semibold uppercase tracking-[0.08em] ${line.c}`}>
-              › {line.t}
-            </p>
+            <div key={line.t} className={`text-[10px] font-semibold uppercase tracking-[0.08em] ${line.c}`}>› {line.t}</div>
           ))}
-          <p className="flex items-center pt-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-violet-400">
+          <div className="flex items-center pt-1 text-sm font-semibold uppercase tracking-[0.08em] text-violet-400">
             <span>$</span>
             <span className="ml-1 inline-block h-3 w-2 animate-pulse bg-violet-400" />
-          </p>
+          </div>
         </div>
       </div>
     </div>

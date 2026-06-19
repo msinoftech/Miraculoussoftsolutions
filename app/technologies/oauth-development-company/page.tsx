@@ -228,22 +228,22 @@ const steps = [
 
 const reasons = [
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-user-star-icon lucide-user-star"><path d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"></path><path d="M8 15H7a4 4 0 0 0-4 4v2"></path><circle cx="10" cy="7" r="4"></circle></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-star-icon lucide-user-star"><path d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"></path><path d="M8 15H7a4 4 0 0 0-4 4v2"></path><circle cx="10" cy="7" r="4"></circle></svg>`,
     title: "OAuth Security Expertise",
     body: "We implement production-grade OAuth 2.0 and OpenID Connect with secure defaults—PKCE, state/nonce validation, correct token verification, and safe session strategies that stand up to real-world attacks.",
   },
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-package-icon lucide-package"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package-icon lucide-package"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></svg>`,
     title: "SSO That Works Across Platforms",
     body: "We deliver consistent sign-in for web, mobile, and internal tools—integrating with providers like Azure AD, Okta, Google, and GitHub while keeping consent, account linking, and logout behavior predictable.",
   },
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-lock-icon lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock-icon lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
     title: "Secure API Access at Scale",
     body: "We design token validation and authorization for microservices and APIs, enforce least privilege with scopes/roles, and support key rotation, revocation, and audit logging without impacting performance.",
   },
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-gem-icon lucide-gem"><path d="M11.5 2.75a2.25 2.25 0 0 1 2 0l7.5 4.5a2.25 2.25 0 0 1 1.1 1.95v9a2.25 2.25 0 0 1-1.1 1.95l-7.5 4.5a2.25 2.25 0 0 1-2 0l-7.5-4.5A2.25 2.25 0 0 1 2 16.5v-9a2.25 2.25 0 0 1 1.1-1.95z"/><path d="M12 12a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5z"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gem-icon lucide-gem"><path d="M11.5 2.75a2.25 2.25 0 0 1 2 0l7.5 4.5a2.25 2.25 0 0 1 1.1 1.95v9a2.25 2.25 0 0 1-1.1 1.95l-7.5 4.5a2.25 2.25 0 0 1-2 0l-7.5-4.5A2.25 2.25 0 0 1 2 16.5v-9a2.25 2.25 0 0 1 1.1-1.95z"/><path d="M12 12a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5z"/></svg>`,
     title: "Future-Ready Identity Architecture",
     body: "We build for long-term flexibility: multi-tenant setups, multiple IdPs, step-up authentication, and clean separation between identity and application logic—so your security system evolves as your business grows.",
   },  
@@ -255,223 +255,223 @@ const schemaData = {
     {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
-      name: APP_NAME,
-      alternateName: APP_NAME,
-      url: BASE_URL,
-      logo: {
+      "name": APP_NAME,
+      "alternateName": APP_NAME,
+      "url": BASE_URL,
+      "logo": {
         "@type": "ImageObject",
-        url: `${BASE_URL}${contactInfo.logo}`,
-        width: 512,
-        height: 512,
+        "url": `${BASE_URL}${contactInfo.logo}`,
+        "width": 512,
+        "height": 512,
       },
-      image: `${BASE_URL}${contactInfo.logo}`,
-      description: `${APP_NAME} delivers OAuth development services for web and mobile apps — OAuth 2.0 and OpenID Connect implementation, PKCE flows, SSO integration, secure token lifecycle management, and API access protection for SaaS and enterprise products.`,
-      email: contactInfo.email,
-      address: {
+      "image": `${BASE_URL}${contactInfo.logo}`,
+      "description": `${APP_NAME} delivers OAuth development services for web and mobile apps — OAuth 2.0 and OpenID Connect implementation, PKCE flows, SSO integration, secure token lifecycle management, and API access protection for SaaS and enterprise products.`,
+      "email": contactInfo.email,
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: contactInfo.address,
-        addressLocality: "Mohali",
-        addressRegion: "Punjab",
-        postalCode: "160062",
-        addressCountry: "IN",
+        "streetAddress": contactInfo.address,
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "postalCode": "160062",
+        "addressCountry": "IN",
       },
-      sameAs: [
+      "sameAs": [
         "https://www.facebook.com/miraculoussoft",
         "https://twitter.com/miraculous_soft",
         "https://www.instagram.com/miraculous_soft",
         "https://www.pinterest.com/seomiraculoussoft",
       ],
-      contactPoint: [
+      "contactPoint": [
         {
           "@type": "ContactPoint",
-          contactType: "sales",
-          email: contactInfo.email,
-          availableLanguage: ["English", "Hindi", "Punjabi"],
-          areaServed: ["IN", "Worldwide"],
+          "contactType": "sales",
+          "email": contactInfo.email,
+          "availableLanguage": ["English", "Hindi", "Punjabi"],
+          "areaServed": ["IN", "Worldwide"],
         },
         {
           "@type": "ContactPoint",
-          contactType: "customer support",
-          email: contactInfo.email,
-          availableLanguage: ["English", "Hindi", "Punjabi"],
-          areaServed: "Worldwide",
+          "contactType": "customer support",
+          "email": contactInfo.email,
+          "availableLanguage": ["English", "Hindi", "Punjabi"],
+          "areaServed": "Worldwide",
         },
       ],
     },
     {
       "@type": "WebSite",
       "@id": `${BASE_URL}/#website`,
-      url: BASE_URL,
-      name: APP_NAME,
-      description: `${APP_NAME} provides OAuth development services — from OAuth/OIDC architecture and provider integrations through secure callback handling, token validation, refresh rotation, API authorization, and production monitoring.`,
-      inLanguage: "en",
-      publisher: { "@id": `${BASE_URL}/#organization` },
+      "url": BASE_URL,
+      "name": APP_NAME,
+      "description": `${APP_NAME} provides OAuth development services — from OAuth/OIDC architecture and provider integrations through secure callback handling, token validation, refresh rotation, API authorization, and production monitoring.`,
+      "inLanguage": "en",
+      "publisher": { "@id": `${BASE_URL}/#organization` },
     },
     {
       "@type": "BreadcrumbList",
       "@id": `${PAGE_URL}/#breadcrumb`,
-      itemListElement: [
+      "itemListElement": [
         {
           "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: BASE_URL,
+          "position": 1,
+          "name": "Home",
+          "item": BASE_URL,
         },
         {
           "@type": "ListItem",
-          position: 2,
-          name: "Technologies",
-          item: TECHNOLOGIES_URL,
+          "position": 2,
+          "name": "Technologies",
+          "item": TECHNOLOGIES_URL,
         },
         {
           "@type": "ListItem",
-          position: 3,
-          name: "OAuth Development Company",
-          item: PAGE_URL,
+          "position": 3,
+          "name": "OAuth Development Company",
+          "item": PAGE_URL,
         },
       ],
     },
     {
       "@type": "WebPage",
       "@id": `${PAGE_URL}/#webpage`,
-      url: PAGE_URL,
-      name: `OAuth Development Company | ${APP_NAME}`,
-      isPartOf: { "@id": `${BASE_URL}/#website` },
-      about: { "@id": `${PAGE_URL}/#oauth-development` },
-      description: `Hire OAuth developers from ${APP_NAME}. We implement secure OAuth 2.0 and OpenID Connect authentication, SSO, Authorization Code + PKCE, token lifecycle controls, and API authorization for production applications.`,
-      inLanguage: "en",
-      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
-      mainEntity: { "@id": `${PAGE_URL}/#oauth-development` },
+      "url": PAGE_URL,
+      "name": `OAuth Development Company | ${APP_NAME}`,
+      "isPartOf": { "@id": `${BASE_URL}/#website` },
+      "about": { "@id": `${PAGE_URL}/#oauth-development` },
+      "description": `Hire OAuth developers from ${APP_NAME}. We implement secure OAuth 2.0 and OpenID Connect authentication, SSO, Authorization Code + PKCE, token lifecycle controls, and API authorization for production applications.`,
+      "inLanguage": "en",
+      "breadcrumb": { "@id": `${PAGE_URL}/#breadcrumb` },
+      "mainEntity": { "@id": `${PAGE_URL}/#oauth-development` },
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#oauth-technology-stack`,
-      name: `${APP_NAME} OAuth Development Stack`,
-      numberOfItems: technologies.length,
-      itemListElement: technologies.map((tech, index) => ({
+      "name": `${APP_NAME} OAuth Development Stack`,
+      "numberOfItems": technologies.length,
+      "itemListElement": technologies.map((tech, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#tech-${tech.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
-          name: tech,
-          description: `${tech} used in ${APP_NAME} OAuth development projects.`,
+          "name": tech,
+          "description": `${tech} used in ${APP_NAME} OAuth development projects.`,
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#oauth-capabilities`,
-      name: `${APP_NAME} OAuth Capabilities`,
-      numberOfItems: marqueeItems.length,
-      itemListElement: marqueeItems.map((feature, index) => ({
+      "name": `${APP_NAME} OAuth Capabilities`,
+      "numberOfItems": marqueeItems.length,
+      "itemListElement": marqueeItems.map((feature, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#capability-${feature.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
-          name: feature,
-          description: `${feature} delivered as part of ${APP_NAME} OAuth implementation services.`,
+          "name": feature,
+          "description": `${feature} delivered as part of ${APP_NAME} OAuth implementation services.`,
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#oauth-process`,
-      name: `${APP_NAME} OAuth Security Implementation Process`,
-      numberOfItems: steps.length,
-      itemListElement: steps.map((step, index) => ({
+      "name": `${APP_NAME} OAuth Security Implementation Process`,
+      "numberOfItems": steps.length,
+      "itemListElement": steps.map((step, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Service",
           "@id": `${PAGE_URL}/#step-${step.num}`,
-          name: `${step.num} — ${step.title}`,
-          description: step.body,
-          url: PAGE_URL,
-          provider: { "@id": `${BASE_URL}/#organization` },
-          areaServed: ["India", "Worldwide"],
-          category: "OAuth Development Process",
+          "name": `${step.num} — ${step.title}`,
+          "description": step.body,
+          "url": PAGE_URL,
+          "provider": { "@id": `${BASE_URL}/#organization` },
+          "areaServed": ["India", "Worldwide"],
+          "category": "OAuth Development Process",
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#oauth-benefits`,
-      name: `Why Choose ${APP_NAME} for OAuth Development`,
-      numberOfItems: reasons.length,
-      itemListElement: reasons.map((benefit, index) => ({
+      "name": `Why Choose ${APP_NAME} for OAuth Development`,
+      "numberOfItems": reasons.length,
+      "itemListElement": reasons.map((benefit, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#benefit-${index + 1}`,
-          name: benefit.title,
-          description: benefit.body,
+          "name": benefit.title,
+          "description": benefit.body,
         },
       })),
     },
     {
       "@type": "ProfessionalService",
       "@id": `${PAGE_URL}/#oauth-development`,
-      name: `${APP_NAME} — OAuth Development Services`,
-      alternateName: "Hire OAuth Developers",
-      url: PAGE_URL,
-      description: `${APP_NAME} builds production-ready OAuth authentication and delegated authorization systems — OAuth 2.0/OIDC flows, Authorization Code + PKCE, SSO integrations, secure callback handling, token validation, refresh rotation, and API access control.`,
-      image: `${BASE_URL}${contactInfo.logo}`,
-      email: contactInfo.email,
-      address: {
+      "name": `${APP_NAME} — OAuth Development Services`,
+      "alternateName": "Hire OAuth Developers",
+      "url": PAGE_URL,
+      "description": `${APP_NAME} builds production-ready OAuth authentication and delegated authorization systems — OAuth 2.0/OIDC flows, Authorization Code + PKCE, SSO integrations, secure callback handling, token validation, refresh rotation, and API access control.`,
+      "image": `${BASE_URL}${contactInfo.logo}`,
+      "email": contactInfo.email,
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: contactInfo.address,
-        addressLocality: "Mohali",
-        addressRegion: "Punjab",
-        addressCountry: "IN",
+        "streetAddress": contactInfo.address,
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "addressCountry": "IN",
       },
-      areaServed: ["India", "Worldwide"],
-      provider: { "@id": `${BASE_URL}/#organization` },
-      serviceType: [
+      "areaServed": ["India", "Worldwide"],
+      "provider": { "@id": `${BASE_URL}/#organization` },
+      "serviceType": [
         "OAuth Development Services",
         ...technologies,
         ...marqueeItems,
       ],
-      hasOfferCatalog: {
+      "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        name: "OAuth Development Services",
-        itemListElement: [
+        "name": "OAuth Development Services",
+        "itemListElement": [
           {
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: "OAuth 2.0 & OIDC Implementation",
-              description: `End-to-end OAuth development for web and mobile apps including Authorization Code + PKCE, provider integrations, secure redirects, scope/consent design, token validation, refresh rotation, revocation, and protected API access.`,
-              url: PAGE_URL,
+              "name": "OAuth 2.0 & OIDC Implementation",
+              "description": `End-to-end OAuth development for web and mobile apps including Authorization Code + PKCE, provider integrations, secure redirects, scope/consent design, token validation, refresh rotation, revocation, and protected API access.`,
+              "url": PAGE_URL,
             },
           },
           ...technologies.map((tech) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: tech,
-              description: `${tech} integration and implementation by ${APP_NAME}.`,
-              url: PAGE_URL,
+              "name": tech,
+              "description": `${tech} integration and implementation by ${APP_NAME}.`,
+              "url": PAGE_URL,
             },
           })),
           ...steps.map((step) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: step.title,
-              description: step.body,
-              url: PAGE_URL,
+              "name": step.title,
+              "description": step.body,
+              "url": PAGE_URL,
             },
           })),
           ...reasons.map((benefit) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: benefit.title,
-              description: benefit.body,
-              url: PAGE_URL,
+              "name": benefit.title,
+              "description": benefit.body,
+              "url": PAGE_URL,
             },
           })),
         ],
@@ -484,12 +484,7 @@ export default function OauthDevelopmentCompanyPage() {
     return (
     <>
       {/* Schema.org */}
-        <Script
-          id="oauth-development-company-schema"
-          type="application/ld+json"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-        />
+        <Script id="oauth-development-company-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}/>
 
        {/* HERO */}
        <section className="relative overflow-hidden bg-white py-16 sm:py-20">
@@ -502,23 +497,23 @@ export default function OauthDevelopmentCompanyPage() {
                 {/* Left Column */}
                 <div className="space-y-5">
                     <Subheading variant="default">OAuth Security Services</Subheading>
-                    <h1 className="uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
+                    <h1 className="flex flex-wrap uppercase leading-[0.84] tracking-wider text-[64px] text-zinc-950 sm:text-[96px] md:text-[118px] lg:text-[132px]">
                         <span>HIRE </span>
                         <span className="text-red-600">OAUTH</span>
-                        <span className="hero-outline block outline-black">EXPERTS</span>
+                        <span className="hero-outline outline-black">EXPERTS</span>
                     </h1>
-                    <p className="text-[15px] leading-8 text-zinc-600">Secure your apps with OAuth 2.0 and SSO—safe token flows, scoped access, and reliable login across web, mobile, and APIs.</p>
+                    <p>Secure your apps with OAuth 2.0 and SSO—safe token flows, scoped access, and reliable login across web, mobile, and APIs.</p>
                     <div className="flex flex-wrap items-center gap-4">
                       <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
                     </div>
                     <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
                       {heroStats.map((stat) => (
                           <div key={stat.label}>
-                          <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
-                          {stat.num.replace(/\+/, "")}
-                          {stat.num.includes("+") && <span className="text-red-600">+</span>}
-                          </div>
-                          <div className="text-sm text-zinc-950">{stat.label}</div>
+                            <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
+                            {stat.num.replace(/\+/, "")}
+                            {stat.num.includes("+") && <span className="text-red-600">+</span>}
+                            </div>
+                            <div className="text-sm text-zinc-950">{stat.label}</div>
                           </div>
                       ))}
                     </div>
@@ -646,15 +641,10 @@ export default function OauthDevelopmentCompanyPage() {
               {/* right column */}
               <div className="relative space-y-4">
                 <Subheading variant="light">Why OAuth With Us</Subheading>
-                
                 <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">The OAuth <span className="text-red-600">Advantage</span></h2>
-                
-                <p className="text-[15px] leading-[1.8] text-white"><strong className="text-white">OAuth 2.0 is the industry standard for delegated authorization</strong>{" "}—it lets your applications access resources securely without sharing passwords, while enabling modern SSO experiences across devices and platforms.</p>
-                
-                <p className="text-[15px] leading-[1.8] text-white">We implement <strong className="text-white">secure OAuth/OIDC flows (Authorization Code + PKCE), scopes, token validation, refresh rotation, and session strategy</strong>{" "} so your login stays reliable and your APIs stay protected as usage scales.</p>
-                
-                <p className="text-[15px] leading-[1.8] text-white">We deliver <strong className="text-white">secure defaults, audit trails, and API-level enforcement</strong> so access stays correct as teams, tenants, and integrations grow.</p>
-                
+                <p className="text-white/70"><strong>OAuth 2.0 is the industry standard for delegated authorization</strong>{" "}—it lets your applications access resources securely without sharing passwords, while enabling modern SSO experiences across devices and platforms.</p>
+                <p className="text-white/70">We implement <strong>secure OAuth/OIDC flows (Authorization Code + PKCE), scopes, token validation, refresh rotation, and session strategy</strong>{" "} so your login stays reliable and your APIs stay protected as usage scales.</p>
+                <p className="text-white/70">We deliver <strong>secure defaults, audit trails, and API-level enforcement</strong> so access stays correct as teams, tenants, and integrations grow.</p>
                 <div className="flex flex-wrap gap-2">
                   {technologies.map((item) => (
                     <span key={item} className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-blue-200">{item}</span>
@@ -670,9 +660,7 @@ export default function OauthDevelopmentCompanyPage() {
           steps={steps}
           label="OAuth Security Implementation Process"
           title={
-            <>
-              YOU BUILD SECURE <span className="text-red-600">ACCESS</span>
-            </>
+            <>You Build Secure <span className="text-red-600">Access</span></>
           }
           description="We follow modern identity security practices: correct OAuth/OIDC flows, secure token handling, least-privilege authorization, and end-to-end testing—so your authentication and API access are production-ready."
         />
@@ -682,11 +670,7 @@ export default function OauthDevelopmentCompanyPage() {
           items={reasons}
           label="Why Choose Us"
           title={
-            <>
-              REASONS TO CHOOSE
-              <br />
-              <span className="text-red-600">MIRACULOUS SOFT</span>
-            </>
+              <>Reasons To Choose <span className="text-red-600">Miraculous Soft</span></>
           }
           description="Deep identity and API security experience, strong delivery discipline, and a relentless commitment to building OAuth systems that are secure, reliable, and maintainable."
         />
@@ -694,11 +678,7 @@ export default function OauthDevelopmentCompanyPage() {
         {/* CTA STRIP */}
         <CtaStrip
             title={
-                <>
-                GOT A PROJECT
-                <br />
-                IN <span className="text-black">MIND?</span>
-                </>
+                <>Got A Project In <span className="text-black">Mind?</span></>
             }
             description="Let&apos;s implement a production-grade OAuth security system for your app—SSO, secure token flows, and protected APIs. Our team is ready when you are."
             buttonText="Get a Free Quote →"

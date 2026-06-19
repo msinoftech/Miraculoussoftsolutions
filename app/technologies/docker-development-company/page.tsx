@@ -118,22 +118,22 @@ const steps = [
 
 const reasons = [
     {
-      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-user-star-icon lucide-user-star"><path d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"></path><path d="M8 15H7a4 4 0 0 0-4 4v2"></path><circle cx="10" cy="7" r="4"></circle></svg>`,
+      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-star-icon lucide-user-star"><path d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"></path><path d="M8 15H7a4 4 0 0 0-4 4v2"></path><circle cx="10" cy="7" r="4"></circle></svg>`,
       title: "Containerization Expertise",
       body: "We build production-ready containerized applications using Docker, ensuring consistent environments across development, staging, and production for seamless delivery.",
     },
     {
-      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-package-icon lucide-package"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></svg>`,
+      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package-icon lucide-package"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></svg>`,
       title: "Reliable & Fast Deployment",
       body: "Docker enables rapid and reliable deployments with pre-built images, reducing setup time and eliminating environment-related issues across teams and platforms.",
     },
     {
-      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-airplay-icon lucide-airplay"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><path d="m12 15 5 6H7Z"/></svg>`,
+      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-airplay-icon lucide-airplay"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><path d="m12 15 5 6H7Z"/></svg>`,
       title: "High Performance & Isolation",
       body: "Containers run lightweight and isolated processes, ensuring high performance while preventing conflicts between applications and dependencies.",
     },
     {
-      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M14 15H9v-5"></path><path d="M16 3h5v5"></path><path d="M21 3 9 15"></path></svg>`,
+      icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M14 15H9v-5"></path><path d="M16 3h5v5"></path><path d="M21 3 9 15"></path></svg>`,
       title: "Scalable & Portable Systems",
       body: "Docker containers are portable across environments and scale effortlessly with orchestration tools like Kubernetes, making them ideal for modern cloud-native applications.",
     },  
@@ -145,194 +145,194 @@ const schemaData = {
     {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
-      name: APP_NAME,
-      alternateName: APP_NAME,
-      url: BASE_URL,
-      logo: {
+      "name": `${APP_NAME}`,
+      "alternateName": `${APP_NAME}`,
+      "url": BASE_URL,
+      "logo": {
         "@type": "ImageObject",
-        url: `${BASE_URL}${contactInfo.logo}`,
-        width: 512,
-        height: 512,
+        "url": `${BASE_URL}${contactInfo.logo}`,
+        "width": 512,
+        "height": 512,
       },
-      image: `${BASE_URL}${contactInfo.logo}`,
-      description: `${APP_NAME} delivers expert Docker development — optimized Dockerfiles, Docker Compose, container image builds, CI/CD integration, microservices isolation, and Kubernetes-ready deployments for SaaS and enterprise products.`,
-      email: contactInfo.email,
-      address: {
+      "image": `${BASE_URL}${contactInfo.logo}`,
+      "description": `${APP_NAME} delivers expert Docker development — optimized Dockerfiles, Docker Compose, container image builds, CI/CD integration, microservices isolation, and Kubernetes-ready deployments for SaaS and enterprise products.`,
+      "email": contactInfo.email,
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: contactInfo.address,
-        addressLocality: "Mohali",
-        addressRegion: "Punjab",
-        postalCode: "160062",
-        addressCountry: "IN",
+        "streetAddress": contactInfo.address,
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "postalCode": "160062",
+        "addressCountry": "IN",
       },
-      sameAs: [
+      "sameAs": [
         "https://www.facebook.com/miraculoussoft",
         "https://twitter.com/miraculous_soft",
         "https://www.instagram.com/miraculous_soft",
         "https://www.pinterest.com/seomiraculoussoft",
       ],
-      contactPoint: [
+      "contactPoint": [
         {
           "@type": "ContactPoint",
-          contactType: "sales",
-          email: contactInfo.email,
-          availableLanguage: ["English", "Hindi", "Punjabi"],
-          areaServed: ["IN", "Worldwide"],
+          "contactType": "sales",
+          "email": contactInfo.email,
+          "availableLanguage": ["English", "Hindi", "Punjabi"],
+          "areaServed": ["IN", "Worldwide"],
         },
         {
           "@type": "ContactPoint",
-          contactType: "customer support",
-          email: contactInfo.email,
-          availableLanguage: ["English", "Hindi", "Punjabi"],
-          areaServed: "Worldwide",
+          "contactType": "customer support",
+          "email": contactInfo.email,
+          "availableLanguage": ["English", "Hindi", "Punjabi"],
+          "areaServed": "Worldwide",
         },
       ],
     },
     {
       "@type": "WebSite",
       "@id": `${BASE_URL}/#website`,
-      url: BASE_URL,
-      name: APP_NAME,
-      description: `${APP_NAME} provides Docker development services — from container strategy and Dockerfile optimization through Compose setups, image builds, CI/CD automation, and production orchestration with Kubernetes.`,
-      inLanguage: "en",
-      publisher: { "@id": `${BASE_URL}/#organization` },
+      "url": BASE_URL,
+      "name": APP_NAME,
+      "description": `${APP_NAME} provides Docker development services — from container strategy and Dockerfile optimization through Compose setups, image builds, CI/CD automation, and production orchestration with Kubernetes.`,
+      "inLanguage": "en",
+      "publisher": { "@id": `${BASE_URL}/#organization` },
     },
     {
       "@type": "BreadcrumbList",
       "@id": `${PAGE_URL}/#breadcrumb`,
-      itemListElement: [
+      "itemListElement": [
         {
           "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: BASE_URL,
+          "position": 1,
+          "name": "Home",
+          "item": BASE_URL,
         },
         {
           "@type": "ListItem",
-          position: 2,
-          name: "Technologies",
-          item: TECHNOLOGIES_URL,
+          "position": 2,
+          "name": "Technologies",
+          "item": TECHNOLOGIES_URL,
         },
         {
           "@type": "ListItem",
-          position: 3,
-          name: "Docker Development",
-          item: PAGE_URL,
+          "position": 3,
+          "name": "Docker Development",
+          "item": PAGE_URL,
         },
       ],
     },
     {
       "@type": "WebPage",
       "@id": `${PAGE_URL}/#webpage`,
-      url: PAGE_URL,
-      name: `Docker Development Company | ${APP_NAME}`,
-      isPartOf: { "@id": `${BASE_URL}/#website` },
-      about: { "@id": `${PAGE_URL}/#docker-development` },
-      description: `Hire expert Docker developers from ${APP_NAME}. Containerize applications with optimized Dockerfiles, Docker Compose, CI/CD pipelines, and Kubernetes-ready deployments.`,
-      inLanguage: "en",
-      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
-      mainEntity: { "@id": `${PAGE_URL}/#docker-development` },
+      "url": PAGE_URL,
+      "name": `Docker Development Company | ${APP_NAME}`,
+      "isPartOf": { "@id": `${BASE_URL}/#website` },
+      "about": { "@id": `${PAGE_URL}/#docker-development` },
+      "description": `Hire expert Docker developers from ${APP_NAME}. Containerize applications with optimized Dockerfiles, Docker Compose, CI/CD pipelines, and Kubernetes-ready deployments.`,
+      "inLanguage": "en",
+      "breadcrumb": { "@id": `${PAGE_URL}/#breadcrumb` },
+      "mainEntity": { "@id": `${PAGE_URL}/#docker-development` },
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#docker-technology-stack`,
-      name: `${APP_NAME} Docker Technology Stack`,
-      numberOfItems: technologies.length,
-      itemListElement: technologies.map((tech, index) => ({
+      "name": `${APP_NAME} Docker Technology Stack`,
+      "numberOfItems": technologies.length,
+      "itemListElement": technologies.map((tech, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#tech-${tech.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
-          name: tech,
-          description: `${tech} used in ${APP_NAME} Docker containerization projects.`,
+          "name": tech,
+          "description": `${tech} used in ${APP_NAME} Docker containerization projects.`,
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#docker-development-process`,
-      name: `${APP_NAME} Docker Development Process`,
-      numberOfItems: steps.length,
-      itemListElement: steps.map((step, index) => ({
+      "name": `${APP_NAME} Docker Development Process`,
+      "numberOfItems": steps.length,
+      "itemListElement": steps.map((step, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Service",
           "@id": `${PAGE_URL}/#step-${step.num}`,
-          name: `${step.num} — ${step.title}`,
-          description: step.body,
-          url: PAGE_URL,
-          provider: { "@id": `${BASE_URL}/#organization` },
-          areaServed: ["India", "Worldwide"],
-          category: "Docker Development Process",
+          "name": `${step.num} — ${step.title}`,
+          "description": step.body,
+          "url": PAGE_URL,
+          "provider": { "@id": `${BASE_URL}/#organization` },
+          "areaServed": ["India", "Worldwide"],
+          "category": "Docker Development Process",
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#why-docker`,
-      name: `Why Choose ${APP_NAME} for Docker`,
-      numberOfItems: reasons.length,
-      itemListElement: reasons.map((reason, index) => ({
+      "name": `Why Choose ${APP_NAME} for Docker`,
+      "numberOfItems": reasons.length,
+      "itemListElement": reasons.map((reason, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#reason-${String(index + 1).padStart(2, "0")}`,
-          name: reason.title,
-          description: reason.body,
+          "name": reason.title,
+          "description": reason.body,
         },
       })),
     },
     {
       "@type": "ProfessionalService",
       "@id": `${PAGE_URL}/#docker-development`,
-      name: `${APP_NAME} — Docker Development Company`,
-      alternateName: "Hire Docker Developers",
-      url: PAGE_URL,
-      description: `${APP_NAME} engineers production-grade containerized systems — lightweight Docker images, consistent environments, Docker Compose multi-service stacks, and CI/CD-ready workflows. Ship faster with portable, scalable containers built for modern cloud-native delivery.`,
-      image: `${BASE_URL}${contactInfo.logo}`,
-      email: contactInfo.email,
-      address: {
+      "name": `${APP_NAME} — Docker Development Company`,
+      "alternateName": "Hire Docker Developers",
+      "url": PAGE_URL,
+      "description": `${APP_NAME} engineers production-grade containerized systems — lightweight Docker images, consistent environments, Docker Compose multi-service stacks, and CI/CD-ready workflows. Ship faster with portable, scalable containers built for modern cloud-native delivery.`,
+      "image": `${BASE_URL}${contactInfo.logo}`,
+      "email": contactInfo.email,
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: contactInfo.address,
-        addressLocality: "Mohali",
-        addressRegion: "Punjab",
-        addressCountry: "IN",
+        "streetAddress": contactInfo.address,
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "addressCountry": "IN",
       },
-      areaServed: ["India", "Worldwide"],
-      provider: { "@id": `${BASE_URL}/#organization` },
-      serviceType: ["Docker Development", ...technologies, ...marqueeItems],
-      hasOfferCatalog: {
+      "areaServed": ["India", "Worldwide"],
+      "provider": { "@id": `${BASE_URL}/#organization` },
+      "serviceType": ["Docker Development", ...technologies, ...marqueeItems],
+      "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        name: "Docker Development Services",
-        itemListElement: [
+        "name": "Docker Development Services",
+        "itemListElement": [
           {
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: "Docker Development",
-              description: `End-to-end Docker development with optimized Dockerfiles, Docker Compose, image registries, microservices containerization, CI/CD integration, and Kubernetes orchestration.`,
-              url: PAGE_URL,
+              "name": "Docker Development",
+              "description": `End-to-end Docker development with optimized Dockerfiles, Docker Compose, image registries, microservices containerization, CI/CD integration, and Kubernetes orchestration.`,
+              "url": PAGE_URL,
             },
           },
           ...steps.map((step) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: step.title,
-              description: step.body,
-              url: PAGE_URL,
+              "name": step.title,
+              "description": step.body,
+              "url": PAGE_URL,
             },
           })),
           ...reasons.map((reason) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: reason.title,
-              description: reason.body,
-              url: PAGE_URL,
+              "name": reason.title,
+              "description": reason.body,
+              "url": PAGE_URL,
             },
           })),
         ],
@@ -344,12 +344,7 @@ const schemaData = {
 export default function DockerDevelopmentCompanyPage() {
     return (
     <>
-        <Script
-          id="docker-development-schema"
-          type="application/ld+json"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-        />
+        <Script id="docker-development-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
 
        {/* HERO */}
        <section className="relative overflow-hidden bg-white py-16 sm:py-20">
@@ -361,16 +356,15 @@ export default function DockerDevelopmentCompanyPage() {
               {/* Left Column */}
               <div className="space-y-5">
                   <Subheading variant="default">Docker Development Services</Subheading>
-                  <h1 className="uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
+                  <h1 className="flex flex-wrap uppercase leading-[0.84] tracking-wider text-[64px] text-zinc-950 sm:text-[96px] md:text-[118px] lg:text-[132px]">
                       <span>HIRE </span>
                       <span className="text-red-600">DOCKER</span>
-                      <span className="hero-outline block outline-black">DEVELOPERS</span>
+                      <span className="hero-outline outline-black">DEVELOPERS</span>
                   </h1>
-                  <p className="text-[15px] leading-8 text-zinc-600">Build fast, scalable, and real-time backend systems using Docker and modern cloud architecture.</p>
+                  <p>Build fast, scalable, and real-time backend systems using Docker and modern cloud architecture.</p>
                   <div className="flex flex-wrap items-center gap-4">
                     <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
                   </div>
-
                   <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
                     {heroStats.map((stat) => (
                         <div key={stat.label}>
@@ -463,9 +457,8 @@ export default function DockerDevelopmentCompanyPage() {
               <div className="relative space-y-5">
                 <Subheading variant="light">Why Docker With Us</Subheading>
                 <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">The Docker <span className="text-red-600">Advantage</span></h2>
-                <p className="text-[15px] leading-[1.8] text-white"><strong className="text-white">Docker powers scalable backend systems</strong>{" "} with its containerized architecture—enabling high-performance APIs, real-time applications, and seamless handling of concurrent requests.</p>
-                <p className="text-[15px] leading-[1.8] text-white"> We leverage <strong className="text-white">Express.js, microservices architecture, and REST/GraphQL APIs</strong>{" "} to build backend solutions that are fast, maintainable, and ready for production at scale.</p>
-                
+                <p className="text-white/70"><strong>Docker powers scalable backend systems</strong>{" "} with its containerized architecture—enabling high-performance APIs, real-time applications, and seamless handling of concurrent requests.</p>
+                <p className="text-white/70"> We leverage <strong>Express.js, microservices architecture, and REST/GraphQL APIs</strong>{" "} to build backend solutions that are fast, maintainable, and ready for production at scale.</p>
                 <div className="flex flex-wrap gap-2">
                   {technologies.map((item) => (
                     <span key={item} className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-blue-200">{item}</span>
@@ -481,9 +474,7 @@ export default function DockerDevelopmentCompanyPage() {
           steps={steps}
           label="Docker Development Process"
           title={
-            <>
-              YOU BUILD SCALABLE <span className="text-red-600">SYSTEMS</span>
-            </>
+            <>You Build Scalable <span className="text-red-600">Systems</span></>
           }
           description="We follow modern docker engineering practices: API-first development, clean architecture, automated testing, and cloud-native deployment — ensuring every system is secure, scalable, and production-ready."
         />
@@ -493,11 +484,7 @@ export default function DockerDevelopmentCompanyPage() {
           items={reasons}
           label="Why Docker With Us"
           title={
-            <>
-              REASONS TO CHOOSE DOCKER
-              <br />
-              <span className="text-red-600">WITH US</span>
-            </>
+            <>Reasons To Choose <span className="text-red-600">Miraculous Soft</span></>
           }
           description="A decade of expertise, strong delivery discipline, and a relentless commitment to shipping excellence in Docker development."
         />
@@ -505,11 +492,7 @@ export default function DockerDevelopmentCompanyPage() {
         {/* CTA STRIP */}
         <CtaStrip
             title={
-                <>
-                GOT A PROJECT
-                <br />
-                IN <span className="text-black">MIND?</span>
-                </>
+                <>Ready To Build Your <span className="text-black">Docker Platform?</span></>
             }
             description="Let&apos;s turn your vision into a production-grade Docker application. Our team is ready when you are — no project too small, no challenge too large."
             buttonText="Get a Free Quote →"

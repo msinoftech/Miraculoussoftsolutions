@@ -250,22 +250,22 @@ const steps = [
 
 const reasons = [
     {
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-rocket-icon lucide-rocket"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>`,
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rocket-icon lucide-rocket"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>`,
         title: "Blazing-Fast In-Memory Performance",
         body: "Redis delivers sub-millisecond response times by storing data in memory, making it ideal for high-speed applications, real-time analytics, and ultra-fast user experiences.",
     },
     {
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-database-icon lucide-database"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>`,
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database-icon lucide-database"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>`,
         title: "Powerful Data Structures",
         body: "Beyond simple key-value storage, Redis supports lists, sets, hashes, sorted sets, and streams—enabling flexible modeling for queues, leaderboards, sessions, and more.",
     },
     {
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-message-circle-check-icon lucide-message-circle-check"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/><path d="m9 12 2 2 4-4"/></svg>`,
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle-check-icon lucide-message-circle-check"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/><path d="m9 12 2 2 4-4"/></svg>`,
         title: "Real-Time Processing & Messaging",
         body: "With built-in Pub/Sub and streaming capabilities, Redis powers real-time applications like live notifications, chat systems, event-driven architectures, and analytics pipelines.",
     },
     {
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M14 15H9v-5"></path><path d="M16 3h5v5"></path><path d="M21 3 9 15"></path></svg>`,
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M14 15H9v-5"></path><path d="M16 3h5v5"></path><path d="M21 3 9 15"></path></svg>`,
         title: "High Availability & Scalability",
         body: "Redis ensures reliability with replication, clustering, and Sentinel-based failover—allowing seamless horizontal scaling and always-on performance for critical systems.",
     },  
@@ -277,194 +277,194 @@ const schemaData = {
     {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
-      name: APP_NAME,
-      alternateName: APP_NAME,
-      url: BASE_URL,
-      logo: {
+      "name": `${APP_NAME}`,
+      "alternateName": `${APP_NAME}`,
+      "url": BASE_URL,
+      "logo": {
         "@type": "ImageObject",
-        url: `${BASE_URL}${contactInfo.logo}`,
-        width: 512,
-        height: 512,
+        "url": `${BASE_URL}${contactInfo.logo}`,
+        "width": 512,
+        "height": 512,
       },
-      image: `${BASE_URL}${contactInfo.logo}`,
-      description: `${APP_NAME} delivers expert Redis development — in-memory caching, session management, pub/sub messaging, data structures, Redis Cluster, Sentinel HA, RDB/AOF persistence, and sub-millisecond real-time performance for SaaS and enterprise applications.`,
-      email: contactInfo.email,
-      address: {
+      "image": `${BASE_URL}${contactInfo.logo}`,
+      "description": `${APP_NAME} delivers expert Redis development — in-memory caching, session management, pub/sub messaging, data structures, Redis Cluster, Sentinel HA, RDB/AOF persistence, and sub-millisecond real-time performance for SaaS and enterprise applications.`,
+      "email": contactInfo.email,
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: contactInfo.address,
-        addressLocality: "Mohali",
-        addressRegion: "Punjab",
-        postalCode: "160062",
-        addressCountry: "IN",
+        "streetAddress": contactInfo.address,
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "postalCode": "160062",
+        "addressCountry": "IN",
       },
-      sameAs: [
+      "sameAs": [
         "https://www.facebook.com/miraculoussoft",
         "https://twitter.com/miraculous_soft",
         "https://www.instagram.com/miraculous_soft",
         "https://www.pinterest.com/seomiraculoussoft",
       ],
-      contactPoint: [
+      "contactPoint": [
         {
           "@type": "ContactPoint",
-          contactType: "sales",
-          email: contactInfo.email,
-          availableLanguage: ["English", "Hindi", "Punjabi"],
-          areaServed: ["IN", "Worldwide"],
+          "contactType": "sales",
+          "email": contactInfo.email,
+          "availableLanguage": ["English", "Hindi", "Punjabi"],
+          "areaServed": ["IN", "Worldwide"],
         },
         {
           "@type": "ContactPoint",
-          contactType: "customer support",
-          email: contactInfo.email,
-          availableLanguage: ["English", "Hindi", "Punjabi"],
-          areaServed: "Worldwide",
+          "contactType": "customer support",
+          "email": contactInfo.email,
+          "availableLanguage": ["English", "Hindi", "Punjabi"],
+          "areaServed": "Worldwide",
         },
       ],
     },
     {
       "@type": "WebSite",
       "@id": `${BASE_URL}/#website`,
-      url: BASE_URL,
-      name: APP_NAME,
-      description: `${APP_NAME} provides Redis development services — from caching strategy and provisioning through integration, clustering, Sentinel failover, performance tuning, and production monitoring.`,
-      inLanguage: "en",
-      publisher: { "@id": `${BASE_URL}/#organization` },
+      "url": BASE_URL,
+      "name": APP_NAME,
+      "description": `${APP_NAME} provides Redis development services — from caching strategy and provisioning through integration, clustering, Sentinel failover, performance tuning, and production monitoring.`,
+      "inLanguage": "en",
+      "publisher": { "@id": `${BASE_URL}/#organization` },
     },
     {
       "@type": "BreadcrumbList",
       "@id": `${PAGE_URL}/#breadcrumb`,
-      itemListElement: [
+      "itemListElement": [
         {
           "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: BASE_URL,
+          "position": 1,
+          "name": "Home",
+          "item": BASE_URL,
         },
         {
           "@type": "ListItem",
-          position: 2,
-          name: "Technologies",
-          item: TECHNOLOGIES_URL,
+          "position": 2,
+          "name": "Technologies",
+          "item": TECHNOLOGIES_URL,
         },
         {
           "@type": "ListItem",
-          position: 3,
-          name: "Redis Development",
-          item: PAGE_URL,
+          "position": 3,
+          "name": "Redis Development",
+          "item": PAGE_URL,
         },
       ],
     },
     {
       "@type": "WebPage",
       "@id": `${PAGE_URL}/#webpage`,
-      url: PAGE_URL,
-      name: `Redis Development Company | ${APP_NAME}`,
-      isPartOf: { "@id": `${BASE_URL}/#website` },
-      about: { "@id": `${PAGE_URL}/#redis-development` },
-      description: `Hire expert Redis developers from ${APP_NAME}. Build in-memory caching, pub/sub messaging, and real-time data layers with Cluster, Sentinel, and sub-millisecond performance.`,
-      inLanguage: "en",
-      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
-      mainEntity: { "@id": `${PAGE_URL}/#redis-development` },
+      "url": PAGE_URL,
+      "name": `Redis Development Company | ${APP_NAME}`,
+      "isPartOf": { "@id": `${BASE_URL}/#website` },
+      "about": { "@id": `${PAGE_URL}/#redis-development` },
+      "description": `Hire expert Redis developers from ${APP_NAME}. Build in-memory caching, pub/sub messaging, and real-time data layers with Cluster, Sentinel, and sub-millisecond performance.`,
+      "inLanguage": "en",
+      "breadcrumb": { "@id": `${PAGE_URL}/#breadcrumb` },
+      "mainEntity": { "@id": `${PAGE_URL}/#redis-development` },
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#redis-technology-stack`,
-      name: `${APP_NAME} Redis Technology Stack`,
-      numberOfItems: technologies.length,
-      itemListElement: technologies.map((tech, index) => ({
+      "name": `${APP_NAME} Redis Technology Stack`,
+      "numberOfItems": technologies.length,
+      "itemListElement": technologies.map((tech, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#tech-${tech.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
-          name: tech,
-          description: `${tech} used in ${APP_NAME} Redis development projects.`,
+          "name": tech,
+          "description": `${tech} used in ${APP_NAME} Redis development projects.`,
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#redis-development-process`,
-      name: `${APP_NAME} Redis Development Process`,
-      numberOfItems: steps.length,
-      itemListElement: steps.map((step, index) => ({
+      "name": `${APP_NAME} Redis Development Process`,
+      "numberOfItems": steps.length,
+      "itemListElement": steps.map((step, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Service",
           "@id": `${PAGE_URL}/#step-${step.num}`,
-          name: `${step.num} — ${step.title}`,
-          description: step.body,
-          url: PAGE_URL,
-          provider: { "@id": `${BASE_URL}/#organization` },
-          areaServed: ["India", "Worldwide"],
-          category: "Redis Development Process",
+          "name": `${step.num} — ${step.title}`,
+          "description": step.body,
+          "url": PAGE_URL,
+          "provider": { "@id": `${BASE_URL}/#organization` },
+          "areaServed": ["India", "Worldwide"],
+          "category": "Redis Development Process",
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#why-redis`,
-      name: `Why Choose ${APP_NAME} for Redis`,
-      numberOfItems: reasons.length,
-      itemListElement: reasons.map((reason, index) => ({
+      "name": `Why Choose ${APP_NAME} for Redis`,
+      "numberOfItems": reasons.length,
+      "itemListElement": reasons.map((reason, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#reason-${String(index + 1).padStart(2, "0")}`,
-          name: reason.title,
-          description: reason.body,
+          "name": reason.title,
+          "description": reason.body,
         },
       })),
     },
     {
       "@type": "ProfessionalService",
       "@id": `${PAGE_URL}/#redis-development`,
-      name: `${APP_NAME} — Redis Development Company`,
-      alternateName: "Hire Redis Developers",
-      url: PAGE_URL,
-      description: `${APP_NAME} engineers production-grade Redis systems — blazing-fast in-memory caching, pub/sub event streaming, rich data structures, Cluster scaling, and Sentinel failover for always-on real-time applications.`,
-      image: `${BASE_URL}${contactInfo.logo}`,
-      email: contactInfo.email,
-      address: {
+      "name": `${APP_NAME} — Redis Development Company`,
+      "alternateName": "Hire Redis Developers",
+      "url": PAGE_URL,
+      "description": `${APP_NAME} engineers production-grade Redis systems — blazing-fast in-memory caching, pub/sub event streaming, rich data structures, Cluster scaling, and Sentinel failover for always-on real-time applications.`,
+      "image": `${BASE_URL}${contactInfo.logo}`,
+      "email": contactInfo.email,
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: contactInfo.address,
-        addressLocality: "Mohali",
-        addressRegion: "Punjab",
-        addressCountry: "IN",
+        "streetAddress": contactInfo.address,
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "addressCountry": "IN",
       },
-      areaServed: ["India", "Worldwide"],
-      provider: { "@id": `${BASE_URL}/#organization` },
-      serviceType: ["Redis Development", ...technologies, ...marqueeItems],
-      hasOfferCatalog: {
+      "areaServed": ["India", "Worldwide"],
+      "provider": { "@id": `${BASE_URL}/#organization` },
+      "serviceType": ["Redis Development", ...technologies, ...marqueeItems],
+      "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        name: "Redis Development Services",
-        itemListElement: [
+        "name": "Redis Development Services",
+        "itemListElement": [
           {
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: "Redis Development",
-              description: `End-to-end Redis development with caching strategy, provisioning, data structuring, backend integration, Cluster and Sentinel HA, RDB/AOF persistence, and performance monitoring.`,
-              url: PAGE_URL,
+              "name": "Redis Development",
+              "description": `End-to-end Redis development with caching strategy, provisioning, data structuring, backend integration, Cluster and Sentinel HA, RDB/AOF persistence, and performance monitoring.`,
+              "url": PAGE_URL,
             },
           },
           ...steps.map((step) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: step.title,
-              description: step.body,
-              url: PAGE_URL,
+              "name": step.title,
+              "description": step.body,
+              "url": PAGE_URL,
             },
           })),
           ...reasons.map((reason) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: reason.title,
-              description: reason.body,
-              url: PAGE_URL,
+              "name": reason.title,
+              "description": reason.body,
+              "url": PAGE_URL,
             },
           })),
         ],
@@ -476,12 +476,7 @@ const schemaData = {
 export default function RedisDevelopmentCompanyPage() {
     return (
     <>
-        <Script
-          id="redis-development-schema"
-          type="application/ld+json"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-        />
+        <Script id="redis-development-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
 
        {/* HERO */}
        <section className="relative overflow-hidden bg-white py-16 sm:py-20">
@@ -493,23 +488,23 @@ export default function RedisDevelopmentCompanyPage() {
               {/* Left Column */}
               <div className="space-y-5">
                   <Subheading variant="default">Redis Real-Time Data Services</Subheading>
-                  <h1 className="uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
+                  <h1 className="flex flex-wrap uppercase leading-[0.84] tracking-wider text-[64px] text-zinc-950 sm:text-[96px] md:text-[118px] lg:text-[132px]">
                       <span>HIRE </span>
                       <span className="text-red-600">REDIS</span>
-                      <span className="hero-outline block outline-black">DEVELOPERS</span>
+                      <span className="hero-outline outline-black">DEVELOPERS</span>
                   </h1>
-                  <p className="max-w-xl text-[15px] leading-8 text-zinc-600">Power ultra-fast, real-time applications with Redis—leveraging in-memory caching, live data streaming, and sub-millisecond performance for modern scalable systems.</p>
+                  <p>Power ultra-fast, real-time applications with Redis—leveraging in-memory caching, live data streaming, and sub-millisecond performance for modern scalable systems.</p>
                   <div className="flex flex-wrap items-center gap-4">
                     <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
                   </div>
                   <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
                     {heroStats.map((stat) => (
                         <div key={stat.label}>
-                        <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
-                        {stat.num.replace(/\+/, "")}
-                        {stat.num.includes("+") && <span className="text-red-600">+</span>}
-                        </div>
-                        <div className="text-sm text-zinc-950">{stat.label}</div>
+                          <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
+                          {stat.num.replace(/\+/, "")}
+                          {stat.num.includes("+") && <span className="text-red-600">+</span>}
+                          </div>
+                          <div className="text-sm text-zinc-950">{stat.label}</div>
                         </div>
                     ))}
                   </div>
@@ -536,7 +531,7 @@ export default function RedisDevelopmentCompanyPage() {
 
                       {/* REDIS CORE */}
                       <div className="w-[260px] rounded-2xl border border-zinc-200 bg-white p-4 shadow-[0_10px_26px_rgba(15,23,42,0.10)]">
-                      <div className="mb-3 text-center text-xs font-semibold tracking-wide text-red-600">
+                      <div className="mb-3 text-center text-xs font-semibold tracking-wide text-zinc-700">
                           Redis In-Memory Engine
                       </div>
 
@@ -628,7 +623,7 @@ export default function RedisDevelopmentCompanyPage() {
                 <span className="absolute left-0 top-0 h-6 w-6 rounded-tl-md border-l-2 border-t-2 border-white/70" />
                 <span className="absolute bottom-0 right-0 h-6 w-6 rounded-br-md border-b-2 border-r-2 border-white/70" />
 
-                <pre className="overflow-x-auto text-xs leading-7 md:text-sm" aria-label="Code preview">
+                <pre className="overflow-x-auto text-sm leading-7" aria-label="Code preview">
                   {aboutCodeLines.map((line, index) => {
                     if (line.type === "comment") {
                       return (
@@ -672,9 +667,9 @@ export default function RedisDevelopmentCompanyPage() {
                 <Subheading variant="light">Why Redis With Us</Subheading>
                 <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">The Redis <span className="text-red-600">Real-Time Engine</span></h2>
                 
-                <p className="text-[15px] leading-[1.8] text-white">Redis powers ultra-fast, real-time applications with in-memory data storage, sub-millisecond latency, and instant data access—making it ideal for caching, live analytics, and high-performance user experiences at scale.</p>
+                <p className="text-white/70">Redis powers ultra-fast, real-time applications with in-memory data storage, sub-millisecond latency, and instant data access—making it ideal for caching, live analytics, and high-performance user experiences at scale.</p>
 
-                <p className="text-[15px] leading-[1.8] text-white">We leverage efficient key design, advanced data structures, and distributed caching strategies to build Redis-powered systems that handle massive traffic, enable real-time data flow, and ensure seamless scalability across modern cloud architectures.</p>
+                <p className="text-white/70">We leverage efficient key design, advanced data structures, and distributed caching strategies to build Redis-powered systems that handle massive traffic, enable real-time data flow, and ensure seamless scalability across modern cloud architectures.</p>
 
                 <div className="flex flex-wrap gap-2">
                   {technologies.map((item) => (
@@ -691,9 +686,7 @@ export default function RedisDevelopmentCompanyPage() {
           steps={steps}
           label="Redis Real-Time Data Deployment Process"
           title={
-            <>
-              HAVE A REAL-TIME <span className="text-red-600">REDIS SYSTEMS</span>
-            </>
+            <>You Build Real-Time <span className="text-red-600">Redis Systems</span></>
           }
           description="From caching strategy to real-time data flow, we build Redis-powered systems with sub-millisecond latency, high availability, and scalable in-memory architecture—perfect for modern high-performance applications."
         />
@@ -703,11 +696,7 @@ export default function RedisDevelopmentCompanyPage() {
           items={reasons}
           label="Why Choose Redis"
           title={
-            <>
-              REASONS TO CHOOSE US
-              <br />
-              <span className="text-red-600">REDIS</span>
-            </>
+            <>Reasons To Choose <span className="text-red-600">Miraculous Soft</span></>
           }
           description="Deep expertise in Redis architecture, real-time systems, and distributed caching—delivering ultra-fast, scalable, and resilient data solutions for modern applications."
         />
@@ -715,11 +704,7 @@ export default function RedisDevelopmentCompanyPage() {
         {/* CTA STRIP */}
         <CtaStrip
             title={
-                <>
-                HAVE A REAL-TIME
-                <br />
-                APPS <span className="text-black">AT SCALE?</span>
-                </>
+              <>Ready To Build Your <span className="text-black">Real-Time Redis Systems?</span></>
             }
             description="Power your applications with Redis—achieve lightning-fast performance, seamless scalability, and real-time data processing for caching, streaming, and event-driven systems."
             buttonText="Get a Free Quote →"

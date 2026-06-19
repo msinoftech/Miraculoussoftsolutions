@@ -62,23 +62,20 @@ const securityStack = [
   {
     title: "OAuth",
     href: "/technologies/oauth-development-company",
-    description:
-      "OAuth 2.0 and OpenID Connect flows for SSO, delegated access, and secure token exchange across apps and APIs.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>`,
+    description: "OAuth 2.0 and OpenID Connect flows for SSO, delegated access, and secure token exchange across apps and APIs.",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>`,
   },
   {
     title: "JWT",
     href: "/technologies/jwt-development-company",
-    description:
-      "Signed access tokens with RS256/ES256, JWKS rotation, refresh strategy, and strict API validation for stateless auth.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
+    description: "Signed access tokens with RS256/ES256, JWKS rotation, refresh strategy, and strict API validation for stateless auth.",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
   },
   {
     title: "RBAC",
     href: "/technologies/rbac-development-company",
-    description:
-      "Role-based access control with least privilege, tenant scoping, admin tooling, and audit-ready permission enforcement.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+    description: "Role-based access control with least privilege, tenant scoping, admin tooling, and audit-ready permission enforcement.",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
   },
 ];
 
@@ -160,25 +157,25 @@ const steps = [
 const benefits = [
   {
     no: "01",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" strokeLinejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>`,
     title: "Enterprise-Grade Identity",
     body: "Production-ready OAuth, JWT, and RBAC patterns—not shortcuts that break under scale, compliance reviews, or multi-tenant growth.",
   },
   {
     no: "02",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-lock-keyhole"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" strokeLinejoin="round" class="lucide lucide-lock-keyhole"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>`,
     title: "Defense in Depth",
     body: "Authentication and authorization enforced at the API layer with least privilege, safe defaults, and consistent 401/403 behavior.",
   },
   {
     no: "03",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-fingerprint"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"/><path d="M2 12a10 10 0 0 1 18-6"/><path d="M2 16h.01"/><path d="M21.8 16c.2-2 .131-5.354 0-6"/><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"/><path d="M8.65 22c.21-.66.45-1.32.57-2"/><path d="M9 6.8a6 6 0 0 1 9 5.2v2"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" strokeLinejoin="round" class="lucide lucide-fingerprint"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"/><path d="M2 12a10 10 0 0 1 18-6"/><path d="M2 16h.01"/><path d="M21.8 16c.2-2 .131-5.354 0-6"/><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"/><path d="M8.65 22c.21-.66.45-1.32.57-2"/><path d="M9 6.8a6 6 0 0 1 9 5.2v2"/></svg>`,
     title: "Standards-Aligned Flows",
     body: "OAuth 2.0, OIDC, and JWT best practices—including PKCE, state checks, audience validation, and rotation-friendly key management.",
   },
   {
     no: "04",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-clipboard-list"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" strokeLinejoin="round" class="lucide lucide-clipboard-list"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>`,
     title: "Audit & Governance Ready",
     body: "Access reviews, audit logs, and separation-of-duties patterns so security teams can trust how permissions change over time.",
   },
@@ -190,225 +187,225 @@ const schemaData = {
     {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
-      name: APP_NAME,
-      alternateName: APP_NAME,
-      url: BASE_URL,
-      logo: {
+      "name": `${APP_NAME}`,
+      "alternateName": APP_NAME,
+      "url": BASE_URL,
+      "logo": {
         "@type": "ImageObject",
-        url: `${BASE_URL}${contactInfo.logo}`,
-        width: 512,
-        height: 512,
+        "url": `${BASE_URL}${contactInfo.logo}`,
+        "width": 512,
+        "height": 512,
       },
-      image: `${BASE_URL}${contactInfo.logo}`,
-      description: `${APP_NAME} delivers security and identity engineering for web apps — OAuth 2.0, OpenID Connect, JWT, RBAC, SSO, API guards, token rotation, audit logs, and least-privilege access for SaaS and enterprise products.`,
-      email: contactInfo.email,
-      address: {
+      "image": `${BASE_URL}${contactInfo.logo}`,
+      "description": `${APP_NAME} delivers security and identity engineering for web apps — OAuth 2.0, OpenID Connect, JWT, RBAC, SSO, API guards, token rotation, audit logs, and least-privilege access for SaaS and enterprise products.`,
+      "email": contactInfo.email,
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: contactInfo.address,
-        addressLocality: "Mohali",
-        addressRegion: "Punjab",
-        postalCode: "160062",
-        addressCountry: "IN",
+        "streetAddress": contactInfo.address,
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "postalCode": "160062",
+        "addressCountry": "IN",
       },
-      sameAs: [
+      "sameAs": [
         "https://www.facebook.com/miraculoussoft",
         "https://twitter.com/miraculous_soft",
         "https://www.instagram.com/miraculous_soft",
         "https://www.pinterest.com/seomiraculoussoft",
       ],
-      contactPoint: [
+      "contactPoint": [
         {
           "@type": "ContactPoint",
-          contactType: "sales",
-          email: contactInfo.email,
-          availableLanguage: ["English", "Hindi", "Punjabi"],
-          areaServed: ["IN", "Worldwide"],
+          "contactType": "sales",
+          "email": contactInfo.email,
+          "availableLanguage": ["English", "Hindi", "Punjabi"],
+          "areaServed": ["IN", "Worldwide"],
         },
         {
           "@type": "ContactPoint",
-          contactType: "customer support",
-          email: contactInfo.email,
-          availableLanguage: ["English", "Hindi", "Punjabi"],
-          areaServed: "Worldwide",
+          "contactType": "customer support",
+          "email": contactInfo.email,
+          "availableLanguage": ["English", "Hindi", "Punjabi"],
+          "areaServed": "Worldwide",
         },
       ],
     },
     {
       "@type": "WebSite",
       "@id": `${BASE_URL}/#website`,
-      url: BASE_URL,
-      name: APP_NAME,
-      description: `${APP_NAME} provides security and identity services — from threat modeling and OAuth/OIDC design through JWT issuance, RBAC enforcement, SSO federation, API middleware guards, and audit-ready governance.`,
-      inLanguage: "en",
-      publisher: { "@id": `${BASE_URL}/#organization` },
+      "url": BASE_URL,
+      "name": APP_NAME,
+      "description": `${APP_NAME} provides security and identity services — from threat modeling and OAuth/OIDC design through JWT issuance, RBAC enforcement, SSO federation, API middleware guards, and audit-ready governance.`,
+      "inLanguage": "en",
+      "publisher": { "@id": `${BASE_URL}/#organization` },
     },
     {
       "@type": "BreadcrumbList",
       "@id": `${PAGE_URL}/#breadcrumb`,
-      itemListElement: [
+      "itemListElement": [
         {
           "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: BASE_URL,
+          "position": 1,
+          "name": "Home",
+          "item": BASE_URL,
         },
         {
           "@type": "ListItem",
-          position: 2,
-          name: "Technologies",
-          item: TECHNOLOGIES_URL,
+          "position": 2,
+          "name": "Technologies",
+          "item": TECHNOLOGIES_URL,
         },
         {
           "@type": "ListItem",
-          position: 3,
-          name: "Security Technologies",
-          item: PAGE_URL,
+          "position": 3,
+          "name": "Security Technologies",
+          "item": PAGE_URL,
         },
       ],
     },
     {
       "@type": "WebPage",
       "@id": `${PAGE_URL}/#webpage`,
-      url: PAGE_URL,
-      name: `Security Technologies | ${APP_NAME}`,
-      isPartOf: { "@id": `${BASE_URL}/#website` },
-      about: { "@id": `${PAGE_URL}/#security-technologies` },
-      description: `Hire expert security and identity engineers from ${APP_NAME}. Implement OAuth, OIDC, JWT, RBAC, SSO, PKCE, API guards, and audit-ready access control for production web apps.`,
-      inLanguage: "en",
-      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
-      mainEntity: { "@id": `${PAGE_URL}/#security-technologies` },
+      "url": PAGE_URL,
+      "name": `Security Technologies | ${APP_NAME}`,
+      "isPartOf": { "@id": `${BASE_URL}/#website` },
+      "about": { "@id": `${PAGE_URL}/#security-technologies` },
+      "description": `Hire expert security and identity engineers from ${APP_NAME}. Implement OAuth, OIDC, JWT, RBAC, SSO, PKCE, API guards, and audit-ready access control for production web apps.`,
+      "inLanguage": "en",
+      "breadcrumb": { "@id": `${PAGE_URL}/#breadcrumb` },
+      "mainEntity": { "@id": `${PAGE_URL}/#security-technologies` },
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#security-technology-stack`,
-      name: `${APP_NAME} Security Technology Stack`,
-      numberOfItems: technologie.length,
-      itemListElement: technologie.map((tech, index) => ({
+      "name": `${APP_NAME} Security Technology Stack`,
+      "numberOfItems": technologie.length,
+      "itemListElement": technologie.map((tech, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#tech-${tech.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
-          name: tech,
-          description: `${tech} used in ${APP_NAME} identity and access control projects.`,
+          "name": tech,
+          "description": `${tech} used in ${APP_NAME} identity and access control projects.`,
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#security-capabilities`,
-      name: `${APP_NAME} Security Capabilities`,
-      numberOfItems: features.length,
-      itemListElement: features.map((feature, index) => ({
+      "name": `${APP_NAME} Security Capabilities`,
+      "numberOfItems": features.length,
+      "itemListElement": features.map((feature, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#capability-${feature.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
-          name: feature.title,
-          description: feature.description,
-          url: feature.href ? `${BASE_URL}${feature.href}` : PAGE_URL,
+          "name": feature.title,
+          "description": feature.description,
+          "url": feature.href ? `${BASE_URL}${feature.href}` : PAGE_URL,
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#security-process`,
-      name: `${APP_NAME} Security Delivery Process`,
-      numberOfItems: steps.length,
-      itemListElement: steps.map((step, index) => ({
+      "name": `${APP_NAME} Security Delivery Process`,
+      "numberOfItems": steps.length,
+      "itemListElement": steps.map((step, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Service",
           "@id": `${PAGE_URL}/#step-${step.num}`,
-          name: `${step.num} — ${step.title}`,
-          description: step.body,
-          url: PAGE_URL,
-          provider: { "@id": `${BASE_URL}/#organization` },
-          areaServed: ["India", "Worldwide"],
-          category: "Security & Identity Process",
+          "name": `${step.num} — ${step.title}`,
+          "description": step.body,
+          "url": PAGE_URL,
+          "provider": { "@id": `${BASE_URL}/#organization` },
+          "areaServed": ["India", "Worldwide"],
+          "category": "Security & Identity Process",
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#security-benefits`,
-      name: `Why Choose ${APP_NAME} for Security & Identity`,
-      numberOfItems: benefits.length,
-      itemListElement: benefits.map((benefit, index) => ({
+      "name": `Why Choose ${APP_NAME} for Security & Identity`,
+      "numberOfItems": benefits.length,
+      "itemListElement": benefits.map((benefit, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#benefit-${benefit.no}`,
-          name: benefit.title,
-          description: benefit.body,
+          "name": benefit.title,
+          "description": benefit.body,
         },
       })),
     },
     {
       "@type": "ProfessionalService",
       "@id": `${PAGE_URL}/#security-technologies`,
-      name: `${APP_NAME} — Security & Identity Services`,
-      alternateName: "Hire Security & Identity Engineers",
-      url: PAGE_URL,
-      description: `${APP_NAME} engineers authentication and authorization for production platforms — OAuth/OIDC login, signed JWT tokens, RBAC permissions, SSO federation, API middleware guards, key rotation, and audit-ready governance.`,
-      image: `${BASE_URL}${contactInfo.logo}`,
-      email: contactInfo.email,
-      address: {
+      "name": `${APP_NAME} — Security & Identity Services`,
+      "alternateName": "Hire Security & Identity Engineers",
+      "url": PAGE_URL,
+      "description": `${APP_NAME} engineers authentication and authorization for production platforms — OAuth/OIDC login, signed JWT tokens, RBAC permissions, SSO federation, API middleware guards, key rotation, and audit-ready governance.`,
+      "image": `${BASE_URL}${contactInfo.logo}`,
+      "email": contactInfo.email,
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: contactInfo.address,
-        addressLocality: "Mohali",
-        addressRegion: "Punjab",
-        addressCountry: "IN",
+        "streetAddress": contactInfo.address,
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "addressCountry": "IN",
       },
-      areaServed: ["India", "Worldwide"],
-      provider: { "@id": `${BASE_URL}/#organization` },
-      serviceType: [
+      "areaServed": ["India", "Worldwide"],
+      "provider": { "@id": `${BASE_URL}/#organization` },
+      "serviceType": [
         "Security & Identity Services",
         ...technologie,
         ...features.map((feature) => feature.title),
         ...marqueeItems,
       ],
-      hasOfferCatalog: {
+      "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        name: "Security & Identity Services",
-        itemListElement: [
+        "name": "Security & Identity Services",
+        "itemListElement": [
           {
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: "Security & Identity Engineering",
-              description: `End-to-end identity and access control — OAuth 2.0/OIDC flows, JWT token strategy, RBAC enforcement, SSO, PKCE, API guards, token revocation, multi-tenant scoping, audit trails, and production hardening.`,
-              url: PAGE_URL,
+              "name": "Security & Identity Engineering",
+              "description": `End-to-end identity and access control — OAuth 2.0/OIDC flows, JWT token strategy, RBAC enforcement, SSO, PKCE, API guards, token revocation, multi-tenant scoping, audit trails, and production hardening.`,
+              "url": PAGE_URL,
             },
           },
           ...features.map((feature) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: feature.title,
-              description: feature.description,
-              url: feature.href ? `${BASE_URL}${feature.href}` : PAGE_URL,
+              "name": feature.title,
+              "description": feature.description,
+              "url": feature.href ? `${BASE_URL}${feature.href}` : PAGE_URL,
             },
           })),
           ...steps.map((step) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: step.title,
-              description: step.body,
-              url: PAGE_URL,
+              "name": step.title,
+              "description": step.body,
+              "url": PAGE_URL,
             },
           })),
           ...benefits.map((benefit) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: benefit.title,
-              description: benefit.body,
-              url: PAGE_URL,
+              "name": benefit.title,
+              "description": benefit.body,
+              "url": PAGE_URL,
             },
           })),
         ],
@@ -421,12 +418,7 @@ export default function SecurityTechnologiesPage() {
   return (
     <>
       {/* Schema.org */}
-      <Script
-        id="security-technologies-schema"
-        type="application/ld+json"
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-      />
+      <Script id="security-technologies-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}/>
 
       {/* HERO */}
       <section className="relative overflow-hidden bg-white py-16 sm:py-20">
@@ -435,34 +427,34 @@ export default function SecurityTechnologiesPage() {
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.16))]" />
 
         <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
+          {/* Left Column */}
           <div className="space-y-5">
+            {/* Subheading */}
             <Subheading variant="default">Security Technologies</Subheading>
-
-            <h1 className="uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
+            {/* Heading */}
+            <h1 className="flex flex-wrap uppercase leading-[0.84] tracking-wider text-[64px] text-zinc-950 sm:text-[96px] md:text-[118px] lg:text-[132px]">
               <span>HIRE </span>
               <span className="text-red-600">Security</span>
-              <span className="hero-outline block outline-black">Experts</span>
+              <span className="hero-outline outline-black">Experts</span>
             </h1>
-
-            <p className="text-[15px] leading-8 text-zinc-600">Authentication, authorization, and identity patterns for enterprise-grade access control—OAuth, JWT, and RBAC engineered for production APIs and SaaS platforms.</p>
-
+            <p>Authentication, authorization, and identity patterns for enterprise-grade access control—OAuth, JWT, and RBAC engineered for production APIs and SaaS platforms.</p>
             <div className="flex flex-wrap items-center gap-4">
               <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
             </div>
-
             <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
               {heroStats.map((stat) => (
                   <div key={stat.label}>
-                  <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
-                  {stat.num.replace(/\+/, "")}
-                  {stat.num.includes("+") && <span className="text-red-600">+</span>}
-                  </div>
-                  <div className="text-sm text-zinc-950">{stat.label}</div>
+                    <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
+                    {stat.num.replace(/\+/, "")}
+                    {stat.num.includes("+") && <span className="text-red-600">+</span>}
+                    </div>
+                    <div className="text-sm text-zinc-950">{stat.label}</div>
                   </div>
               ))}
             </div>
           </div>
-
+              
+          {/* Right Column */}
           <SecurityHubGraph />
         </div>
       </section>
@@ -474,8 +466,9 @@ export default function SecurityTechnologiesPage() {
       <section className="relative overflow-hidden border-y border-white/[0.04] bg-[linear-gradient(180deg,#141414,#121212)] py-16 md:py-20">
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[length:100%_44px] opacity-20" />
         <div className="relative mx-auto w-full max-w-7xl px-4">
+          
           <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-12">
-            {/* Example Code */}
+            {/* Left Column */}
             <div className="relative flex min-h-[390px] items-center justify-center overflow-hidden rounded-md border border-white/[0.07] bg-[linear-gradient(135deg,rgba(245,158,11,0.08),rgba(16,185,129,0.08))] p-[32px]">
               <span className="absolute left-0 top-0 h-6 w-6 rounded-tl-md border-l-2 border-t-2 border-white/70" />
               <span className="absolute bottom-0 right-0 h-6 w-6 rounded-br-md border-b-2 border-r-2 border-white/70" />
@@ -535,7 +528,7 @@ await audit.log({
               </div>
             </div>
 
-            {/* Security Overview */}
+            {/* Right Column */}
             <div className="relative space-y-5">
               <Subheading variant="light">Security Overview</Subheading>
               
@@ -543,11 +536,11 @@ await audit.log({
                 Identity <span className="text-red-600">Security</span>
               </h2>
               
-              <p className="text-[15px] leading-[1.8] text-white"><strong className="text-white">Security technologies define who can access your product</strong> and what they can do—across web apps, mobile clients, APIs, and admin tools.</p>
+              <p className="text-white/70"><strong>Security technologies define who can access your product</strong> and what they can do—across web apps, mobile clients, APIs, and admin tools.</p>
               
-              <p className="text-[15px] leading-[1.8] text-white">Our stack covers <strong className="text-white">OAuth for delegated login</strong>,{" "} <strong className="text-white">JWT for stateless API auth</strong>, and{" "} <strong className="text-white">RBAC for fine-grained permissions</strong>—aligned with the Security layer on our main technologies page.</p>
+              <p className="text-white/70">Our stack covers <strong>OAuth for delegated login</strong>,{" "} <strong>JWT for stateless API auth</strong>, and{" "} <strong>RBAC for fine-grained permissions</strong>—aligned with the Security layer on our main technologies page.</p>
               
-              <p className="text-[15px] leading-[1.8] text-white">We deliver <strong className="text-white">secure defaults, audit trails, and API-level enforcement</strong> so access stays correct as teams, tenants, and integrations grow.</p>
+              <p className="text-white/70">We deliver <strong>secure defaults, audit trails, and API-level enforcement</strong> so access stays correct as teams, tenants, and integrations grow.</p>
               
               <div className="mt-7 flex flex-wrap gap-2">
                 {technologie.map((item) => (
@@ -565,11 +558,7 @@ await audit.log({
       <Card
         label="Features"
         title={
-          <>
-            Security
-            <br />
-            <span className="text-red-600">Technologies</span>
-          </>
+          <>Security <span className="text-red-600">Technologies</span></>
         }
         description="Three pillars from our technology catalog—each links to a dedicated expertise page."
         items={features}
@@ -581,9 +570,7 @@ await audit.log({
         steps={steps}
         label="Security Delivery Process"
         title={
-          <>
-            From Identity to <span className="text-red-600">Protected APIs</span>
-          </>
+          <>From Identity to <span className="text-red-600">Protected APIs</span></>
         }
         description="A structured path from access mapping to hardened enforcement—so authentication and authorization stay maintainable as your product scales."
       />
@@ -593,11 +580,7 @@ await audit.log({
         items={benefits}
         label="Security Benefits"
         title={
-          <>
-            WHY PRODUCTS NEED
-            <br />
-            <span className="text-red-600">STRONG IDENTITY</span>
-          </>
+          <>Why Products Need <span className="text-red-600">Strong Identity</span></>
         }
         description="We combine standards-aligned auth flows, API enforcement, and governance-ready controls so your platform stays secure under real-world usage."
         headerClassName="mb-12 text-left"
@@ -607,11 +590,7 @@ await audit.log({
       {/* CTA Strip Section */}
       <CtaStrip
         title={
-          <>
-            Secure Your
-            <br />
-            Platform <span className="text-black">Today</span>
-          </>
+          <>Secure Your Platform <span className="text-black">Today</span></>
         }
         description="Let's design production-grade OAuth, JWT, and RBAC for your product—secure token flows, permission models, and API guards built for scale."
         buttonText="Get a Free Quote →"

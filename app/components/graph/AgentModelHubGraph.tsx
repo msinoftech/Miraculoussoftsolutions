@@ -63,7 +63,7 @@ export default function AgentModelHubGraph({ className = "" }: AgentModelHubGrap
   };
 
   return (
-    <div className={`service-panel-frame service-panel-grid relative w-full ${className}`.trim()}>
+    <div className={`service-panel-frame service-panel-grid relative w-full hidden lg:block ${className}`.trim()}>
       <div className="relative">
         <div className="pointer-events-none absolute left-1/2 top-[38%] h-48 w-48 -translate-x-1/2 rounded-full blur-3xl" style={{ backgroundColor: `${activeModel.accent}18` }} />
 
@@ -131,27 +131,22 @@ export default function AgentModelHubGraph({ className = "" }: AgentModelHubGrap
             );
           })}
 
-          <div className="absolute left-1/2 top-1/2 z-30 w-[200px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-xl border border-zinc-200 bg-zinc-950 font-mono shadow-[0_20px_50px_rgba(0,0,0,0.25)]">
+          <div className="absolute left-1/2 top-1/2 z-30 w-[250px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-xl border border-zinc-200 bg-zinc-950 font-mono shadow-[0_20px_50px_rgba(0,0,0,0.25)]">
             <div className="flex items-center justify-between border-b border-white/10 bg-zinc-900 px-3 py-2">
               <span className="text-[9px] text-zinc-400">agent-orchestrator.log</span>
               <span className="rounded bg-emerald-500/20 px-1.5 py-0.5 text-[8px] font-bold uppercase text-emerald-400">run</span>
             </div>
             <div className="space-y-1 p-3 text-[9px] leading-relaxed sm:text-[10px]">
-              <p style={{ color: activeModel.accent }}>
-                ✔ Model → {activeModel.provider} / {activeModel.name}
-              </p>
+              <div style={{ color: activeModel.accent }}>✔ Model → {activeModel.provider} / {activeModel.name}</div>
               {AGENT_PIPELINE.map((step, i) => (
-                <p
-                  key={step.key}
-                  className={`transition-opacity duration-300 ${i < tick ? "text-zinc-300" : "text-zinc-600 opacity-40"}`}
-                >
+                <div key={step.key} className={`transition-opacity duration-300 ${i < tick ? "text-zinc-300" : "text-zinc-600 opacity-40"}`}>
                   <span className="text-red-400">{step.label}:</span> {step.detail}
-                </p>
+                </div>
               ))}
-              <p className="flex items-center pt-1 text-emerald-400">
+              <div className="flex items-center pt-1 text-emerald-400">
                 <span>$</span>
                 <span className="ml-1 h-3 w-[5px] animate-pulse bg-emerald-400" />
-              </p>
+              </div>
             </div>
           </div>
         </div>

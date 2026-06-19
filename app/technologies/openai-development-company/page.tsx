@@ -83,37 +83,37 @@ const heroStats = [
 const sectors = [
   {
     title: "Customer Support AI",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
     desc: "Ticket summarization, smart replies, and knowledge-base answers grounded in your help-center content.",
     features: ["Ticket AI", "KB Search", "Auto-reply", "CSAT Analytics"],
   },
   {
     title: "Sales & CRM Automation",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
     desc: "Lead scoring, outreach drafts, and CRM insights powered by OpenAI with secure tool integrations.",
     features: ["Lead Scoring", "Outreach AI", "CRM Tools", "Pipeline AI"],
   },
   {
     title: "Document Intelligence",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>`,
     desc: "Extract, summarize, and classify contracts, invoices, and reports with structured JSON outputs.",
     features: ["PDF Parse", "Summaries", "Extraction", "Classification"],
   },
   {
     title: "Internal Knowledge Search",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>`,
     desc: "Enterprise RAG over wikis, SOPs, and policies—with citations and access-controlled retrieval.",
     features: ["Enterprise RAG", "Citations", "RBAC", "Hybrid Search"],
   },
   {
     title: "Workflow Automation",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v4"/><path d="m16.2 7.8 2.9-2.9"/><path d="M18 12h4"/><path d="m16.2 16.2 2.9 2.9"/><path d="M12 18v4"/><path d="m4.9 19.1 2.9-2.9"/><path d="M2 12h4"/><path d="m4.9 4.9 2.9 2.9"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m16.2 7.8 2.9-2.9"/><path d="M18 12h4"/><path d="m16.2 16.2 2.9 2.9"/><path d="M12 18v4"/><path d="m4.9 19.1 2.9-2.9"/><path d="M2 12h4"/><path d="m4.9 4.9 2.9 2.9"/></svg>`,
     desc: "Automate ops tasks with agents that call APIs, update systems, and return auditable results.",
     features: ["Agents", "Webhooks", "Approvals", "Audit Logs"],
   },
   {
     title: "Code & Dev Assistants",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
     desc: "Code review, test generation, and internal developer copilots integrated into your SDLC tools.",
     features: ["Code Review", "Test Gen", "Docs AI", "CI Hooks"],
   },
@@ -263,22 +263,22 @@ const steps = [
 
 const reasons = [
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-bot-icon lucide-bot"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot-icon lucide-bot"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>`,
     title: "Production-Ready AI Engineering",
     body: "We focus on reliability: structured outputs, tool calling, retrieval quality, and evaluation pipelines—so AI features behave consistently in real user workflows.",
   },
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-shield-icon lucide-shield"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-icon lucide-shield"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>`,
     title: "Secure by Design",
     body: "We implement access control, tenant isolation, secret management, and safe logging. We add guardrails and injection defenses so your AI system stays compliant and resilient.",
   },
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-airplay-icon lucide-airplay"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><path d="m12 15 5 6H7Z"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-airplay-icon lucide-airplay"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><path d="m12 15 5 6H7Z"/></svg>`,
     title: "Great UX, Not Just a Demo",
     body: "We build real product experiences: streaming responses, smart fallbacks, human-in-the-loop flows, and measurable improvements—so AI becomes a feature users trust.",
   },
   {
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-banknote-icon lucide-banknote"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-banknote-icon lucide-banknote"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>`,
     title: "Cost & Latency Discipline",
     body: "We optimize prompts, retrieval, caching, and model selection to keep token spend predictable and responses fast—without sacrificing quality.",
   },
@@ -290,249 +290,249 @@ const schemaData = {
     {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
-      name: APP_NAME,
-      alternateName: APP_NAME,
-      url: BASE_URL,
-      logo: {
+      "name": APP_NAME,
+      "alternateName": APP_NAME,
+      "url": BASE_URL,
+      "logo": {
         "@type": "ImageObject",
-        url: `${BASE_URL}${contactInfo.logo}`,
-        width: 512,
-        height: 512,
+        "url": `${BASE_URL}${contactInfo.logo}`,
+        "width": 512,
+        "height": 512,
       },
-      image: `${BASE_URL}${contactInfo.logo}`,
-      description: `${APP_NAME} delivers OpenAI development services for web and mobile apps — GPT API integrations, AI agents, RAG pipelines, function calling, structured outputs, guardrails, evaluations, and production-ready LLM features for SaaS and enterprise products.`,
-      email: contactInfo.email,
-      address: {
+      "image": `${BASE_URL}${contactInfo.logo}`,
+      "description": `${APP_NAME} delivers OpenAI development services for web and mobile apps — GPT API integrations, AI agents, RAG pipelines, function calling, structured outputs, guardrails, evaluations, and production-ready LLM features for SaaS and enterprise products.`,
+      "email": contactInfo.email,
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: contactInfo.address,
-        addressLocality: "Mohali",
-        addressRegion: "Punjab",
-        postalCode: "160062",
-        addressCountry: "IN",
+        "streetAddress": contactInfo.address,
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "postalCode": "160062",
+        "addressCountry": "IN",
       },
-      sameAs: [
+      "sameAs": [
         "https://www.facebook.com/miraculoussoft",
         "https://twitter.com/miraculous_soft",
         "https://www.instagram.com/miraculous_soft",
         "https://www.pinterest.com/seomiraculoussoft",
       ],
-      contactPoint: [
+      "contactPoint": [
         {
           "@type": "ContactPoint",
-          contactType: "sales",
-          email: contactInfo.email,
-          availableLanguage: ["English", "Hindi", "Punjabi"],
-          areaServed: ["IN", "Worldwide"],
+          "contactType": "sales",
+          "email": contactInfo.email,
+          "availableLanguage": ["English", "Hindi", "Punjabi"],
+          "areaServed": ["IN", "Worldwide"],
         },
         {
           "@type": "ContactPoint",
-          contactType: "customer support",
-          email: contactInfo.email,
-          availableLanguage: ["English", "Hindi", "Punjabi"],
-          areaServed: "Worldwide",
+          "contactType": "customer support",
+          "email": contactInfo.email,
+          "availableLanguage": ["English", "Hindi", "Punjabi"],
+          "areaServed": "Worldwide",
         },
       ],
     },
     {
       "@type": "WebSite",
       "@id": `${BASE_URL}/#website`,
-      url: BASE_URL,
-      name: APP_NAME,
-      description: `${APP_NAME} provides OpenAI development services — from use-case discovery and model architecture through agent orchestration, RAG implementation, safety guardrails, evaluation pipelines, and production monitoring.`,
-      inLanguage: "en",
-      publisher: { "@id": `${BASE_URL}/#organization` },
+      "url": BASE_URL,
+      "name": APP_NAME,
+      "description": `${APP_NAME} provides OpenAI development services — from use-case discovery and model architecture through agent orchestration, RAG implementation, safety guardrails, evaluation pipelines, and production monitoring.`,
+      "inLanguage": "en",
+      "publisher": { "@id": `${BASE_URL}/#organization` },
     },
     {
       "@type": "BreadcrumbList",
       "@id": `${PAGE_URL}/#breadcrumb`,
-      itemListElement: [
+      "itemListElement": [
         {
           "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: BASE_URL,
+          "position": 1,
+          "name": "Home",
+          "item": BASE_URL,
         },
         {
           "@type": "ListItem",
-          position: 2,
-          name: "Technologies",
-          item: TECHNOLOGIES_URL,
+          "position": 2,
+          "name": "Technologies",
+          "item": TECHNOLOGIES_URL,
         },
         {
           "@type": "ListItem",
-          position: 3,
-          name: "OpenAI Development Company",
-          item: PAGE_URL,
+          "position": 3,
+          "name": "OpenAI Development Company",
+          "item": PAGE_URL,
         },
       ],
     },
     {
       "@type": "WebPage",
       "@id": `${PAGE_URL}/#webpage`,
-      url: PAGE_URL,
-      name: `OpenAI Development Company | ${APP_NAME}`,
-      isPartOf: { "@id": `${BASE_URL}/#website` },
-      about: { "@id": `${PAGE_URL}/#openai-development` },
-      description: `Hire OpenAI developers from ${APP_NAME}. Build GPT-powered applications, AI agents, and RAG systems with function calling, guardrails, evaluations, and production-ready observability.`,
-      inLanguage: "en",
-      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
-      mainEntity: { "@id": `${PAGE_URL}/#openai-development` },
+      "url": PAGE_URL,
+      "name": `OpenAI Development Company | ${APP_NAME}`,
+      "isPartOf": { "@id": `${BASE_URL}/#website` },
+      "about": { "@id": `${PAGE_URL}/#openai-development` },
+      "description": `Hire OpenAI developers from ${APP_NAME}. Build GPT-powered applications, AI agents, and RAG systems with function calling, guardrails, evaluations, and production-ready observability.`,
+      "inLanguage": "en",
+      "breadcrumb": { "@id": `${PAGE_URL}/#breadcrumb` },
+      "mainEntity": { "@id": `${PAGE_URL}/#openai-development` },
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#openai-technology-stack`,
-      name: `${APP_NAME} OpenAI Development Stack`,
-      numberOfItems: technologies.length,
-      itemListElement: technologies.map((tech, index) => ({
+      "name": `${APP_NAME} OpenAI Development Stack`,
+      "numberOfItems": technologies.length,
+      "itemListElement": technologies.map((tech, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#tech-${tech.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
-          name: tech,
-          description: `${tech} used in ${APP_NAME} OpenAI development projects.`,
+          "name": tech,
+          "description": `${tech} used in ${APP_NAME} OpenAI development projects.`,
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#openai-capabilities`,
-      name: `${APP_NAME} OpenAI Capabilities`,
-      numberOfItems: marqueeItems.length,
-      itemListElement: marqueeItems.map((feature, index) => ({
+      "name": `${APP_NAME} OpenAI Capabilities`,
+      "numberOfItems": marqueeItems.length,
+      "itemListElement": marqueeItems.map((feature, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#capability-${feature.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
-          name: feature,
-          description: `${feature} delivered as part of ${APP_NAME} OpenAI implementation services.`,
+          "name": feature,
+          "description": `${feature} delivered as part of ${APP_NAME} OpenAI implementation services.`,
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#openai-use-cases`,
-      name: `${APP_NAME} OpenAI Use Cases`,
-      numberOfItems: sectors.length,
-      itemListElement: sectors.map((sector, index) => ({
+      "name": `${APP_NAME} OpenAI Use Cases`,
+      "numberOfItems": sectors.length,
+      "itemListElement": sectors.map((sector, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#use-case-${sector.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
-          name: sector.title,
-          description: sector.desc,
+          "name": sector.title,
+          "description": sector.desc,
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#openai-process`,
-      name: `${APP_NAME} OpenAI Implementation Process`,
-      numberOfItems: steps.length,
-      itemListElement: steps.map((step, index) => ({
+      "name": `${APP_NAME} OpenAI Implementation Process`,
+      "numberOfItems": steps.length,
+      "itemListElement": steps.map((step, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Service",
           "@id": `${PAGE_URL}/#step-${step.num}`,
-          name: `${step.num} — ${step.title}`,
-          description: step.body,
-          url: PAGE_URL,
-          provider: { "@id": `${BASE_URL}/#organization` },
-          areaServed: ["India", "Worldwide"],
-          category: "OpenAI Development Process",
+          "name": `${step.num} — ${step.title}`,
+          "description": step.body,
+          "url": PAGE_URL,
+          "provider": { "@id": `${BASE_URL}/#organization` },
+          "areaServed": ["India", "Worldwide"],
+          "category": "OpenAI Development Process",
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#openai-benefits`,
-      name: `Why Choose ${APP_NAME} for OpenAI Development`,
-      numberOfItems: reasons.length,
-      itemListElement: reasons.map((benefit, index) => ({
+      "name": `Why Choose ${APP_NAME} for OpenAI Development`,
+      "numberOfItems": reasons.length,
+      "itemListElement": reasons.map((benefit, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#benefit-${index + 1}`,
-          name: benefit.title,
-          description: benefit.body,
+          "name": benefit.title,
+          "description": benefit.body,
         },
       })),
     },
     {
       "@type": "ProfessionalService",
       "@id": `${PAGE_URL}/#openai-development`,
-      name: `${APP_NAME} — OpenAI Development Services`,
-      alternateName: "Hire OpenAI Developers",
-      url: PAGE_URL,
-      description: `${APP_NAME} builds production-ready OpenAI applications — GPT integrations, agent workflows, RAG pipelines, function calling, structured outputs, safety guardrails, evaluation harnesses, and cost-aware deployment for scalable AI products.`,
-      image: `${BASE_URL}${contactInfo.logo}`,
-      email: contactInfo.email,
-      address: {
+      "name": `${APP_NAME} — OpenAI Development Services`,
+      "alternateName": "Hire OpenAI Developers",
+      "url": PAGE_URL,
+      "description": `${APP_NAME} builds production-ready OpenAI applications — GPT integrations, agent workflows, RAG pipelines, function calling, structured outputs, safety guardrails, evaluation harnesses, and cost-aware deployment for scalable AI products.`,
+      "image": `${BASE_URL}${contactInfo.logo}`,
+      "email": contactInfo.email,
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: contactInfo.address,
-        addressLocality: "Mohali",
-        addressRegion: "Punjab",
-        addressCountry: "IN",
+        "streetAddress": contactInfo.address,
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "addressCountry": "IN",
       },
-      areaServed: ["India", "Worldwide"],
-      provider: { "@id": `${BASE_URL}/#organization` },
-      serviceType: [
+      "areaServed": ["India", "Worldwide"],
+      "provider": { "@id": `${BASE_URL}/#organization` },
+      "serviceType": [
         "OpenAI Development Services",
         ...technologies,
         ...stackLayers.flatMap((layer) => layer.items),
         ...marqueeItems,
       ],
-      hasOfferCatalog: {
+      "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        name: "OpenAI Development Services",
-        itemListElement: [
+        "name": "OpenAI Development Services",
+        "itemListElement": [
           {
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: "OpenAI Product Engineering",
-              description: `End-to-end OpenAI development including GPT API integration, multi-step agents, RAG pipelines, function calling, structured outputs, guardrails, evaluation suites, cost controls, and production monitoring.`,
-              url: PAGE_URL,
+              "name": "OpenAI Product Engineering",
+              "description": `End-to-end OpenAI development including GPT API integration, multi-step agents, RAG pipelines, function calling, structured outputs, guardrails, evaluation suites, cost controls, and production monitoring.`,
+              "url": PAGE_URL,
             },
           },
           ...sectors.map((sector) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: sector.title,
-              description: sector.desc,
-              url: PAGE_URL,
+              "name": sector.title,
+              "description": sector.desc,
+              "url": PAGE_URL,
             },
           })),
           ...technologies.map((tech) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: tech,
-              description: `${tech} integration and implementation by ${APP_NAME}.`,
-              url: PAGE_URL,
+              "name": tech,
+              "description": `${tech} integration and implementation by ${APP_NAME}.`,
+              "url": PAGE_URL,
             },
           })),
           ...steps.map((step) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: step.title,
-              description: step.body,
-              url: PAGE_URL,
+              "name": step.title,
+              "description": step.body,
+              "url": PAGE_URL,
             },
           })),
           ...reasons.map((benefit) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: benefit.title,
-              description: benefit.body,
-              url: PAGE_URL,
+              "name": benefit.title,
+              "description": benefit.body,
+              "url": PAGE_URL,
             },
           })),
         ],
@@ -555,30 +555,23 @@ export default function OpenaiDevelopmentCompanyPage() {
           {/* left column */}
           <div className="space-y-5">
             <Subheading variant="default">OpenAI Development Services</Subheading>
-
-            <h1 className="uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
+            <h1 className="flex flex-wrap uppercase leading-[0.84] tracking-wider text-[64px] text-zinc-950 sm:text-[96px] md:text-[118px] lg:text-[132px]">
               <span>Hire </span>
               <span className="text-red-600">OpenAI</span>
-              <span className="hero-outline block outline-black">Experts</span>
+              <span className="hero-outline outline-black">Experts</span>
             </h1>
-
-            <p className="text-[15px] leading-8 text-zinc-600">
-              Build AI-powered products with OpenAI—chat, agents, RAG, and automation engineered for quality, safety, and
-              measurable ROI on your Miraculous stack.
-            </p>
-
+            <p>Build AI-powered products with OpenAI—chat, agents, RAG, and automation engineered for quality, safety, and measurable ROI on your Miraculous stack.</p>
             <div className="flex flex-wrap items-center gap-4">
               <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
             </div>
-
             <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
               {heroStats.map((stat) => (
                   <div key={stat.label}>
-                  <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
-                  {stat.num.replace(/\+/, "")}
-                  {stat.num.includes("+") && <span className="text-red-600">+</span>}
-                  </div>
-                  <div className="text-sm text-zinc-950">{stat.label}</div>
+                    <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
+                    {stat.num.replace(/\+/, "")}
+                    {stat.num.includes("+") && <span className="text-red-600">+</span>}
+                    </div>
+                    <div className="text-sm text-zinc-950">{stat.label}</div>
                   </div>
               ))}
             </div>
@@ -601,7 +594,7 @@ export default function OpenaiDevelopmentCompanyPage() {
               <span className="absolute left-0 top-0 h-6 w-6 rounded-tl-md border-l-2 border-t-2 border-white/70" />
               <span className="absolute bottom-0 right-0 h-6 w-6 rounded-br-md border-b-2 border-r-2 border-white/70" />
 
-              <pre className="overflow-x-auto text-xs leading-7 md:text-sm" aria-label="Code preview">
+              <pre className="overflow-x-auto text-sm leading-relaxed" aria-label="Code preview">
                 {aboutCodeLines.map((line, index) => {
                   if (line.type === "comment") {
                     return (
@@ -644,13 +637,9 @@ export default function OpenaiDevelopmentCompanyPage() {
             {/* right column */}
             <div className="relative space-y-4">
               <Subheading variant="light">Why OpenAI With Us</Subheading>
-
               <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">The OpenAI <span className="text-red-600">Advantage</span></h2>
-
-              <p className="text-[15px] leading-[1.8] text-white"><strong className="text-white">OpenAI models unlock new product capabilities</strong>{" "} like natural-language interfaces, workflow automation, summarization, and retrieval—when engineered with reliable outputs and clear safety boundaries.</p>
-
-              <p className="text-[15px] leading-[1.8] text-white">We build <strong className="text-white">agents, RAG pipelines, tool integrations, evaluation suites, and guardrails</strong>{" "} so your AI features ship as dependable product functionality—not a fragile demo.</p>
-
+              <p className="text-white/70"><strong>OpenAI models unlock new product capabilities</strong>{" "} like natural-language interfaces, workflow automation, summarization, and retrieval—when engineered with reliable outputs and clear safety boundaries.</p>
+              <p className="text-white/70">We build <strong>agents, RAG pipelines, tool integrations, evaluation suites, and guardrails</strong>{" "} so your AI features ship as dependable product functionality—not a fragile demo.</p>
               <div className="mt-6 flex flex-wrap gap-2">
                 {technologies.map((item) => (
                   <span key={item} className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-blue-200">{item}</span>
@@ -666,43 +655,29 @@ export default function OpenaiDevelopmentCompanyPage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-12">
             <Subheading variant="default">OpenAI Use Cases</Subheading>
-
-            <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">Built With <span className="text-red-600">OpenAI</span></h2>
-
-            <p className="text-[15px] leading-8 text-zinc-600">Production patterns for support, sales, documents, knowledge search, workflows, and developer copilots—with guardrails and evals baked in.</p>
+            <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-zinc-950 sm:text-[72px] lg:text-[88px]">Built With <span className="text-red-600">OpenAI</span></h2>
+            <p>Production patterns for support, sales, documents, knowledge search, workflows, and developer copilots—with guardrails and evals baked in.</p>
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
             {sectors.map((sector, index) => (
               <article key={sector.title} className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white transition-all duration-300 hover:-translate-y-0.5 hover:border-zinc-300 hover:shadow-[0_20px_45px_rgba(15,23,42,0.08)]">
-                <div className="h-1 w-full"
-                  style={{
-                    background:
-                      index % 3 === 0
-                        ? "linear-gradient(90deg, #10a37f, #059669)"
-                        : index % 3 === 1
-                          ? "linear-gradient(90deg, #dc2626, #ea580c)"
-                          : "linear-gradient(90deg, #2563eb, #7c3aed)",
-                  }}
-                />
-
                 <div className="flex flex-1 flex-col p-6 sm:p-7">
                   <div className="mb-5 flex items-start justify-between gap-3">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-zinc-100 bg-zinc-50 text-emerald-600 transition-colors duration-300 group-hover:border-emerald-100 group-hover:bg-emerald-50 [&_svg]:h-[22px] [&_svg]:w-[22px]" dangerouslySetInnerHTML={{ __html: sector.icon }} />
-                    <span className="rounded-md border border-zinc-200 bg-zinc-50 px-2 py-1 font-bebas-neue text-lg leading-none tracking-wide text-zinc-400">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-zinc-100 bg-zinc-50 text-red-600 transition-colors duration-300 group-hover:border-red-100 group-hover:bg-red-50" dangerouslySetInnerHTML={{ __html: sector.icon }} />
+                    <span className="text-5xl font-bebas-neue leading-none tracking-wide text-zinc-400/20">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
 
-                  <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-600">OpenAI use case</p>
-                  <div className="mb-3 text-[18px] font-extrabold tracking-[-0.02em] text-zinc-950 transition">{sector.title}</div>
-                  <p className="text-[15px] leading-[1.8] text-zinc-600">{sector.desc}</p>
-
-                  <div className="mt-5 border-t border-[var(--border)] pt-5">
-                    <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-600">Capabilities</p>
+                  <div className="text-xs font-bold uppercase tracking-[0.12em] text-zinc-600">OpenAI use case</div>
+                  <div className="mb-3 text-xl font-extrabold tracking-[-0.02em] text-zinc-950 transition">{sector.title}</div>
+                  <p>{sector.desc}</p>
+                  <div className="mt-5 border-t border-zinc-200 pt-5">
+                    <div className="mb-3 text-xs font-bold uppercase tracking-[0.12em] text-zinc-600">Capabilities</div>
                     <div className="flex flex-wrap gap-2">
                       {sector.features.map((feature) => (
-                        <span key={feature} className="rounded-md border border-zinc-200 bg-zinc-50 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-zinc-700">
+                        <span key={feature} className="rounded-md border border-zinc-200 bg-zinc-50 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-zinc-700">
                           {feature}
                         </span>
                       ))}
@@ -719,9 +694,7 @@ export default function OpenaiDevelopmentCompanyPage() {
         steps={steps}
         label="OpenAI Implementation Process"
         title={
-          <>
-            How We <span className="text-red-600">Build</span> With OpenAI
-          </>
+          <>You Build Scalable <span className="text-red-600">Systems</span></>
         }
         description="We follow modern AI engineering practices: retrieval + tools, structured outputs, evaluation pipelines, guardrails, and monitoring—so your OpenAI features are stable, secure, and scalable."
       />
@@ -733,26 +706,15 @@ export default function OpenaiDevelopmentCompanyPage() {
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-end">
             <div className="space-y-4">
               <Subheading variant="default">Technology Stack</Subheading>
-              <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] sm:text-[72px] lg:text-[88px]">OpenAI <span className="text-red-600">Tech Stack</span></h2>
-              <p className="text-[15px] leading-[1.8] text-zinc-600">A production architecture that connects product UX, model orchestration, retrieval systems, and cloud delivery—built as one cohesive platform, not disconnected tools.</p>
-            </div>
-
-            <div className="rounded-2xl bg-zinc-950 p-5 text-white shadow-[0_24px_50px_rgba(15,23,42,0.14)] sm:p-6">
-              <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-zinc-400">Stack snapshot</p>
-              <p className="mt-2 text-[40px] font-extrabold leading-[0.9] tracking-[-0.02em] text-white">
-                {stackItemCount}
-                <span className="ml-2 text-2xl text-emerald-400">Technologies</span>
-              </p>
-              <p className="text-[15px] leading-[1.8] text-zinc-400">
-                Layered for reliability: ship fast in the UI, enforce quality in AI flows, ground answers in data, and deploy with confidence.
-              </p>
+              <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-zinc-950 sm:text-[72px] lg:text-[88px]">OpenAI <span className="text-red-600">Tech Stack</span></h2>
+              <p>A production architecture that connects product UX, model orchestration, retrieval systems, and cloud delivery—built as one cohesive platform, not disconnected tools.</p>
             </div>
           </div>
 
           <div className="mt-10 overflow-hidden rounded-2xl border border-zinc-200 bg-[var(--off)] p-4 sm:p-5">
             <div className="mb-4 flex flex-wrap items-center justify-between gap-3 px-1">
-              <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-600">Architecture flow</p>
-              <p className="text-[12px] font-semibold text-zinc-600">Product → AI → Data → Delivery</p>
+              <div className="text-xs font-bold uppercase tracking-[0.12em] text-zinc-600">Architecture flow</div>
+              <div className="text-xs font-medium text-zinc-600">Product → AI → Data → Runtime</div>
             </div>
 
             <div className="hidden items-center justify-between gap-2 rounded-xl border border-zinc-200 bg-white px-4 py-3 sm:flex">
@@ -761,7 +723,7 @@ export default function OpenaiDevelopmentCompanyPage() {
                   <span className="inline-flex rounded-full border px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.08em]" style={{ borderColor: `${layer.accent}44`, color: layer.accent, backgroundColor: `${layer.accent}12` }}>
                     {layer.title}
                   </span>
-                  {index < stackLayers.length - 1 && <span className="text-zinc-300">→</span>}
+                  {index < stackLayers.length - 1 && <span className="text-zinc-400">→</span>}
                 </div>
               ))}
             </div>
@@ -773,11 +735,9 @@ export default function OpenaiDevelopmentCompanyPage() {
 
                   <div className="relative flex items-start justify-between gap-3">
                     <div>
-                      <p className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: layer.accent }}>
-                        Layer {String(index + 1).padStart(2, "0")}
-                      </p>
+                      <div className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: layer.accent }}>Layer {String(index + 1).padStart(2, "0")}</div>
                       <div className="mb-3 text-[18px] font-bold tracking-[-0.02em] text-zinc-950 transition">{layer.title}</div>
-                      <p className="text-[15px] leading-[1.8] text-zinc-600">{layer.subtitle}</p>
+                      <p>{layer.subtitle}</p>
                     </div>
                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-[11px] font-bold" style={{ borderColor: `${layer.accent}55`, color: layer.accent, backgroundColor: `${layer.accent}10` }}>
                       {layer.items.length}
@@ -787,7 +747,7 @@ export default function OpenaiDevelopmentCompanyPage() {
                   <ul className="relative mt-5 space-y-2">
                     {layer.items.map((tech) => (
                       <li key={tech} className="flex items-center justify-between rounded-lg border border-zinc-100 bg-zinc-50 px-3 py-2.5 transition-colors group-hover:border-zinc-200 group-hover:bg-white">
-                        <span className="text-[13px] font-semibold uppercase tracking-[0.08em] text-zinc-800">{tech}</span>
+                        <span className="text-xs font-semibold uppercase tracking-[0.08em] text-zinc-800">{tech}</span>
                         <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: layer.accent }} />
                       </li>
                     ))}
@@ -803,11 +763,7 @@ export default function OpenaiDevelopmentCompanyPage() {
         items={reasons}
         label="Why Choose Us"
         title={
-          <>
-            REASONS TO CHOOSE
-            <br />
-            <span className="text-red-600">MIRACULOUS SOFT</span>
-          </>
+          <>Reasons To Choose <span className="text-red-600">Miraculous Soft</span></>
         }
         description="Deep AI product engineering experience, strong delivery discipline, and a focus on measurable outcomes—so your OpenAI initiative becomes a real competitive advantage."
         headerClassName="mb-12 max-w-3xl"
@@ -815,11 +771,7 @@ export default function OpenaiDevelopmentCompanyPage() {
 
       <CtaStrip
         title={
-          <>
-            Ready To Build
-            <br />
-            With <span className="text-black">OpenAI?</span>
-          </>
+          <>Ready To Build Your <span className="text-black">OpenAI Product?</span></>
         }
         description="Let&apos;s build your AI product with OpenAI—agents, RAG, tool integrations, guardrails, and evaluation pipelines for production reliability."
         buttonText="Get a Free Quote →"

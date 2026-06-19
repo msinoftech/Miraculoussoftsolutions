@@ -251,22 +251,22 @@ const steps = [
 
 const reasons = [
     {
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-monitor-cloud-icon lucide-monitor-cloud"><path d="M11 13a3 3 0 1 1 2.83-4H14a2 2 0 0 1 0 4z"/><path d="M12 17v4"/><path d="M8 21h8"/><rect x="2" y="3" width="20" height="14" rx="2"/></svg>`,
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor-cloud-icon lucide-monitor-cloud"><path d="M11 13a3 3 0 1 1 2.83-4H14a2 2 0 0 1 0 4z"/><path d="M12 17v4"/><path d="M8 21h8"/><rect x="2" y="3" width="20" height="14" rx="2"/></svg>`,
         title: "Simple & Rapid Development",
         body: "Python’s clean and readable syntax allows faster development cycles, making it ideal for building MVPs, scaling products quickly, and reducing time-to-market.",
     },
     {
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-hand-fist-icon lucide-hand-fist"><path d="M12.035 17.012a3 3 0 0 0-3-3l-.311-.002a.72.72 0 0 1-.505-1.229l1.195-1.195A2 2 0 0 1 10.828 11H12a2 2 0 0 0 0-4H9.243a3 3 0 0 0-2.122.879l-2.707 2.707A4.83 4.83 0 0 0 3 14a8 8 0 0 0 8 8h2a8 8 0 0 0 8-8V7a2 2 0 1 0-4 0v2a2 2 0 1 0 4 0"/><path d="M13.888 9.662A2 2 0 0 0 17 8V5A2 2 0 1 0 13 5"/><path d="M9 5A2 2 0 1 0 5 5V10"/><path d="M9 7V4A2 2 0 1 1 13 4V7.268"/></svg>`,
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hand-fist-icon lucide-hand-fist"><path d="M12.035 17.012a3 3 0 0 0-3-3l-.311-.002a.72.72 0 0 1-.505-1.229l1.195-1.195A2 2 0 0 1 10.828 11H12a2 2 0 0 0 0-4H9.243a3 3 0 0 0-2.122.879l-2.707 2.707A4.83 4.83 0 0 0 3 14a8 8 0 0 0 8 8h2a8 8 0 0 0 8-8V7a2 2 0 1 0-4 0v2a2 2 0 1 0 4 0"/><path d="M13.888 9.662A2 2 0 0 0 17 8V5A2 2 0 1 0 13 5"/><path d="M9 5A2 2 0 1 0 5 5V10"/><path d="M9 7V4A2 2 0 1 1 13 4V7.268"/></svg>`,
         title: "Powerful Ecosystem",
         body: "With thousands of libraries available via pip, Python supports everything from web development and automation to data science, AI, and machine learning.",
     },
     {
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-database-backup-icon lucide-database-backup"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 12a9 3 0 0 0 5 2.69"/><path d="M21 9.3V5"/><path d="M3 5v14a9 3 0 0 0 6.47 2.88"/><path d="M12 12v4h4"/><path d="M13 20a5 5 0 0 0 9-3 4.5 4.5 0 0 0-4.5-4.5c-1.33 0-2.54.54-3.41 1.41L12 16"/></svg>`,
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database-backup-icon lucide-database-backup"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 12a9 3 0 0 0 5 2.69"/><path d="M21 9.3V5"/><path d="M3 5v14a9 3 0 0 0 6.47 2.88"/><path d="M12 12v4h4"/><path d="M13 20a5 5 0 0 0 9-3 4.5 4.5 0 0 0-4.5-4.5c-1.33 0-2.54.54-3.41 1.41L12 16"/></svg>`,
         title: "Data, AI & Automation",
         body: "Python leads in data analysis and AI with tools like Pandas, NumPy, and TensorFlow, making it the go-to choice for intelligent and data-driven applications.",
     },
     {
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M14 15H9v-5"/><path d="M16 3h5v5"/><path d="M21 3 9 15"/></svg>`,
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M14 15H9v-5"/><path d="M16 3h5v5"/><path d="M21 3 9 15"/></svg>`,
         title: "Scalable & Versatile",
         body: "From web applications to enterprise systems and AI platforms, Python adapts to any use case with scalable architectures, cloud integrations, and long-term maintainability.",
     },  
@@ -278,194 +278,194 @@ const schemaData = {
     {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
-      name: APP_NAME,
-      alternateName: APP_NAME,
-      url: BASE_URL,
-      logo: {
+      "name": APP_NAME,
+      "alternateName": APP_NAME,
+      "url": BASE_URL,
+      "logo": {
         "@type": "ImageObject",
-        url: `${BASE_URL}${contactInfo.logo}`,
-        width: 512,
-        height: 512,
+        "url": `${BASE_URL}${contactInfo.logo}`,
+        "width": 512,
+        "height": 512,
       },
-      image: `${BASE_URL}${contactInfo.logo}`,
-      description: `${APP_NAME} delivers expert Python development — Django, Flask, FastAPI backends, data pipelines with Pandas & NumPy, AI/ML with TensorFlow, automation, and cloud deployment for SaaS, enterprise, and growth-stage products.`,
-      email: contactInfo.email,
-      address: {
+      "image": `${BASE_URL}${contactInfo.logo}`,
+      "description": `${APP_NAME} delivers expert Python development — Django, Flask, FastAPI backends, data pipelines with Pandas & NumPy, AI/ML with TensorFlow, automation, and cloud deployment for SaaS, enterprise, and growth-stage products.`,
+      "email": contactInfo.email,
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: contactInfo.address,
-        addressLocality: "Mohali",
-        addressRegion: "Punjab",
-        postalCode: "160062",
-        addressCountry: "IN",
+        "streetAddress": contactInfo.address,
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "postalCode": "160062",
+        "addressCountry": "IN",
       },
-      sameAs: [
+      "sameAs": [
         "https://www.facebook.com/miraculoussoft",
         "https://twitter.com/miraculous_soft",
         "https://www.instagram.com/miraculous_soft",
         "https://www.pinterest.com/seomiraculoussoft",
       ],
-      contactPoint: [
+      "contactPoint": [
         {
           "@type": "ContactPoint",
-          contactType: "sales",
-          email: contactInfo.email,
-          availableLanguage: ["English", "Hindi", "Punjabi"],
-          areaServed: ["IN", "Worldwide"],
+          "contactType": "sales",
+          "email": contactInfo.email,
+          "availableLanguage": ["English", "Hindi", "Punjabi"],
+          "areaServed": ["IN", "Worldwide"],
         },
         {
           "@type": "ContactPoint",
-          contactType: "customer support",
-          email: contactInfo.email,
-          availableLanguage: ["English", "Hindi", "Punjabi"],
-          areaServed: "Worldwide",
+          "contactType": "customer support",
+          "email": contactInfo.email,
+          "availableLanguage": ["English", "Hindi", "Punjabi"],
+          "areaServed": "Worldwide",
         },
       ],
     },
     {
       "@type": "WebSite",
       "@id": `${BASE_URL}/#website`,
-      url: BASE_URL,
-      name: APP_NAME,
-      description: `${APP_NAME} provides Python development services — from solution architecture and API design through web apps, data systems, AI/ML, testing, deployment, and long-term scaling.`,
-      inLanguage: "en",
-      publisher: { "@id": `${BASE_URL}/#organization` },
+      "url": BASE_URL,
+      "name": APP_NAME,
+      "description": `${APP_NAME} provides Python development services — from solution architecture and API design through web apps, data systems, AI/ML, testing, deployment, and long-term scaling.`,
+      "inLanguage": "en",
+      "publisher": { "@id": `${BASE_URL}/#organization` },
     },
     {
       "@type": "BreadcrumbList",
       "@id": `${PAGE_URL}/#breadcrumb`,
-      itemListElement: [
+      "itemListElement": [
         {
           "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: BASE_URL,
+          "position": 1,
+          "name": "Home",
+          "item": BASE_URL,
         },
         {
           "@type": "ListItem",
-          position: 2,
-          name: "Technologies",
-          item: TECHNOLOGIES_URL,
+          "position": 2,
+          "name": "Technologies",
+          "item": TECHNOLOGIES_URL,
         },
         {
           "@type": "ListItem",
-          position: 3,
-          name: "Python Development",
-          item: PAGE_URL,
+          "position": 3,
+          "name": "Python Development",
+          "item": PAGE_URL,
         },
       ],
     },
     {
       "@type": "WebPage",
       "@id": `${PAGE_URL}/#webpage`,
-      url: PAGE_URL,
-      name: `Python Development Company | ${APP_NAME}`,
-      isPartOf: { "@id": `${BASE_URL}/#website` },
-      about: { "@id": `${PAGE_URL}/#python-development` },
-      description: `Hire expert Python developers from ${APP_NAME}. We build scalable backends, APIs, and data-driven applications with Django, Flask, FastAPI, Pandas, AI/ML, Celery, and cloud-native infrastructure.`,
-      inLanguage: "en",
-      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
-      mainEntity: { "@id": `${PAGE_URL}/#python-development` },
+      "url": PAGE_URL,
+      "name": `Python Development Company | ${APP_NAME}`,
+      "isPartOf": { "@id": `${BASE_URL}/#website` },
+      "about": { "@id": `${PAGE_URL}/#python-development` },
+      "description": `Hire expert Python developers from ${APP_NAME}. We build scalable backends, APIs, and data-driven applications with Django, Flask, FastAPI, Pandas, AI/ML, Celery, and cloud-native infrastructure.`,
+      "inLanguage": "en",
+      "breadcrumb": { "@id": `${PAGE_URL}/#breadcrumb` },
+      "mainEntity": { "@id": `${PAGE_URL}/#python-development` },
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#python-technology-stack`,
-      name: `${APP_NAME} Python Technology Stack`,
-      numberOfItems: technologies.length,
-      itemListElement: technologies.map((tech, index) => ({
+      "name": `${APP_NAME} Python Technology Stack`,
+      "numberOfItems": technologies.length,
+      "itemListElement": technologies.map((tech, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#tech-${tech.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
-          name: tech,
-          description: `${tech} used in ${APP_NAME} Python development projects.`,
+          "name": tech,
+          "description": `${tech} used in ${APP_NAME} Python development projects.`,
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#python-development-process`,
-      name: `${APP_NAME} Python Development Process`,
-      numberOfItems: steps.length,
-      itemListElement: steps.map((step, index) => ({
+      "name": `${APP_NAME} Python Development Process`,
+      "numberOfItems": steps.length,
+      "itemListElement": steps.map((step, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Service",
           "@id": `${PAGE_URL}/#step-${step.num}`,
-          name: `${step.num} — ${step.title}`,
-          description: step.body,
-          url: PAGE_URL,
-          provider: { "@id": `${BASE_URL}/#organization` },
-          areaServed: ["India", "Worldwide"],
-          category: "Python Development Process",
+          "name": `${step.num} — ${step.title}`,
+          "description": step.body,
+          "url": PAGE_URL,
+          "provider": { "@id": `${BASE_URL}/#organization` },
+          "areaServed": ["India", "Worldwide"],
+          "category": "Python Development Process",
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#why-python`,
-      name: `Why Choose ${APP_NAME} for Python`,
-      numberOfItems: reasons.length,
-      itemListElement: reasons.map((reason, index) => ({
+      "name": `Why Choose ${APP_NAME} for Python`,
+      "numberOfItems": reasons.length,
+      "itemListElement": reasons.map((reason, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#reason-${String(index + 1).padStart(2, "0")}`,
-          name: reason.title,
-          description: reason.body,
+          "name": reason.title,
+          "description": reason.body,
         },
       })),
     },
     {
       "@type": "ProfessionalService",
       "@id": `${PAGE_URL}/#python-development`,
-      name: `${APP_NAME} — Python Development Company`,
-      alternateName: "Hire Python Developers",
-      url: PAGE_URL,
-      description: `${APP_NAME} engineers production-grade Python applications — web platforms, FastAPI backends, data pipelines, AI/ML models, and automation. Build faster, analyze smarter, and scale without limits with versatile Python engineering.`,
-      image: `${BASE_URL}${contactInfo.logo}`,
-      email: contactInfo.email,
-      address: {
+      "name": `${APP_NAME} — Python Development Company`,
+      "alternateName": "Hire Python Developers",
+      "url": PAGE_URL,
+      "description": `${APP_NAME} engineers production-grade Python applications — web platforms, FastAPI backends, data pipelines, AI/ML models, and automation. Build faster, analyze smarter, and scale without limits with versatile Python engineering.`,
+      "image": `${BASE_URL}${contactInfo.logo}`,
+      "email": contactInfo.email,
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: contactInfo.address,
-        addressLocality: "Mohali",
-        addressRegion: "Punjab",
-        addressCountry: "IN",
+        "streetAddress": contactInfo.address,
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "addressCountry": "IN",
       },
-      areaServed: ["India", "Worldwide"],
-      provider: { "@id": `${BASE_URL}/#organization` },
-      serviceType: ["Python Development", ...technologies, ...marqueeItems],
-      hasOfferCatalog: {
+      "areaServed": ["India", "Worldwide"],
+      "provider": { "@id": `${BASE_URL}/#organization` },
+      "serviceType": ["Python Development", ...technologies, ...marqueeItems],
+      "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        name: "Python Development Services",
-        itemListElement: [
+        "name": "Python Development Services",
+        "itemListElement": [
           {
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: "Python Development",
-              description: `End-to-end Python development with Django, Flask, FastAPI, Pandas, NumPy, TensorFlow, Celery background jobs, REST APIs, Docker, cloud deployment, and automated testing.`,
-              url: PAGE_URL,
+              "name": "Python Development",
+              "description": `End-to-end Python development with Django, Flask, FastAPI, Pandas, NumPy, TensorFlow, Celery background jobs, REST APIs, Docker, cloud deployment, and automated testing.`,
+              "url": PAGE_URL,
             },
           },
           ...steps.map((step) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: step.title,
-              description: step.body,
-              url: PAGE_URL,
+              "name": step.title,
+              "description": step.body,
+              "url": PAGE_URL,
             },
           })),
           ...reasons.map((reason) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: reason.title,
-              description: reason.body,
-              url: PAGE_URL,
+              "name": reason.title,
+              "description": reason.body,
+              "url": PAGE_URL,
             },
           })),
         ],
@@ -494,18 +494,15 @@ export default function PythonDevelopmentCompanyPage() {
                 {/* Left Column */}
                 <div className="space-y-5">
                     <Subheading variant="default">Python Development Services</Subheading>
-                    <h1 className="uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
+                    <h1 className="flex flex-wrap uppercase leading-[0.84] tracking-wider text-[64px] text-zinc-950 sm:text-[96px] md:text-[118px] lg:text-[132px]">
                     <span>HIRE </span>
                     <span className="text-red-600">Python</span>
-                    <span className="hero-outline block outline-black">DEVELOPERS</span>
+                    <span className="hero-outline outline-black">DEVELOPERS</span>
                     </h1>
-
-                    <p className="text-[15px] leading-8 text-zinc-600">Build fast, scalable, and real-time backend systems using python and modern cloud architecture.</p>
-
+                    <p>Build fast, scalable, and real-time backend systems using python and modern cloud architecture.</p>
                     <div className="flex flex-wrap items-center gap-4">
                       <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
                     </div>
-
                     <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
                       {heroStats.map((stat) => (
                           <div key={stat.label}>
@@ -602,12 +599,9 @@ export default function PythonDevelopmentCompanyPage() {
                       <span className="h-3 w-3 rounded-full bg-yellow-500" />
                       <span className="h-3 w-3 rounded-full bg-green-500" />
                     </div>
-                    <span className="font-mono text-[11px] text-zinc-600">users_api.py</span>
+                    <span>users_api.py</span>
                   </div>
-                  <pre
-                    className="overflow-x-auto p-4 font-mono text-xs leading-7 md:text-sm"
-                    aria-label="Python code preview"
-                  >
+                  <pre className="overflow-x-auto p-4" aria-label="Python code preview">
                     {aboutCodeLines.map((line, index) => {
                       if (line.type === "comment") {
                         return (
@@ -643,14 +637,9 @@ export default function PythonDevelopmentCompanyPage() {
               {/* right column */}
               <div className="relative space-y-4">
                 <Subheading variant="light">Why Python With Us</Subheading>
-
                 <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">The Python <span className="text-red-600">Advantage</span></h2>
-                
-                <p className="text-[15px] leading-[1.8] text-white"><strong className="text-white">Python powers modern, versatile applications</strong>{" "} with its clean syntax and massive ecosystem—enabling rapid development across web platforms, data engineering, automation, and AI-driven solutions.</p>
-
-                <p className="text-[15px] leading-[1.8] text-white">We leverage <strong className="text-white">Django, FastAPI, and Flask</strong>{" "} to build secure and scalable backend systems, along with powerful libraries like{" "} <strong className="text-white">Pandas, NumPy, and TensorFlow</strong>{" "} for data processing and intelligent application development.</p>
-
-
+                <p className="text-white/70"><strong>Python powers modern, versatile applications</strong>{" "} with its clean syntax and massive ecosystem—enabling rapid development across web platforms, data engineering, automation, and AI-driven solutions.</p>
+                <p className="text-white/70">We leverage <strong>Django, FastAPI, and Flask</strong>{" "} to build secure and scalable backend systems, along with powerful libraries like{" "} <strong>Pandas, NumPy, and TensorFlow</strong>{" "} for data processing and intelligent application development.</p>
                 <div className="flex flex-wrap gap-2">
                   {technologies.map((item) => (
                     <span key={item} className="rounded-full border border-blue-500/35 bg-blue-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-blue-200">{item}</span>
@@ -666,9 +655,7 @@ export default function PythonDevelopmentCompanyPage() {
           steps={steps}
           label="Python Development Process"
           title={
-            <>
-              YOU BUILD SCALABLE <span className="text-red-600">SYSTEMS</span>
-            </>
+            <>You Build Scalable <span className="text-red-600">Systems</span></>
           }
           description="We follow modern backend engineering practices: API-first development, clean architecture, automated testing, and cloud-native deployment — ensuring every system is secure, scalable, and production-ready."
         />
@@ -678,11 +665,7 @@ export default function PythonDevelopmentCompanyPage() {
           items={reasons}
           label="Why Choose Us"
           title={
-            <>
-              REASONS TO CHOOSE
-              <br />
-              <span className="text-red-600">MIRACULOUS SOFT</span>
-            </>
+            <>Reasons To Choose <span className="text-red-600">Miraculous Soft</span></>
           }
           description="A decade of expertise, strong delivery discipline, and a relentless commitment to shipping excellence."
         />
@@ -690,11 +673,7 @@ export default function PythonDevelopmentCompanyPage() {
         {/* CTA STRIP */}
         <CtaStrip
             title={
-                <>
-                GOT A PROJECT
-                <br />
-                IN <span className="text-black">MIND?</span>
-                </>
+                <>Got a Project in <span className="text-black">Mind?</span></>
             }
             description="Let&apos;s turn your vision into a production-grade Python application. Our team is ready when you are — no project too small, no challenge too large."
             buttonText="Get a Free Quote →"

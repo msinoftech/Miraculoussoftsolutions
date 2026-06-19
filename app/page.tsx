@@ -14,6 +14,7 @@ import OutlineButton from "./components/ui/Button/outlineButton";
 import TechnologiesStack from "./components/tecnologiesStack";
 import WhyMiraculousSoft from "./components/WhyMiraculousSoft";
 import CardFloatGrid, { type CardFloatItem } from "./components/cardFloat";
+//import HeroBanner from "./components/HeroBanner";
 
 export const metadata: Metadata = {
   title: "Top Website Design and Development Company - MiraculousSoftsolutions",
@@ -54,89 +55,89 @@ const schemaData = {
     {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
-      name: APP_NAME,
-      alternateName: "Miraculous Soft Solutions",
-      url: BASE_URL,
-      logo: {
+      "name": APP_NAME,
+      "alternateName": "Miraculous Soft Solutions",
+      "url": BASE_URL,
+      "logo": {
         "@type": "ImageObject",
-        url: `${BASE_URL}${contactInfo.logo}`,
-        width: 512,
-        height: 512,
+        "url": `${BASE_URL}${contactInfo.logo}`,
+        "width": 512,
+        "height": 512,
       },
-      image: `${BASE_URL}${contactInfo.logo}`,
-      description: "MiraculousSoftsolutions is #1 Top Ranked Website Design and Development Company dedicated to build up web applications for to make online presence",
-      email: contactInfo.email,
-      telephone: `+${contactInfo.phone.replace(/[^+\d]/g, "")}`,
-      address: {
+      "image": `${BASE_URL}${contactInfo.logo}`,
+      "description": "MiraculousSoftsolutions is #1 Top Ranked Website Design and Development Company dedicated to build up web applications for to make online presence",
+      "email": contactInfo.email,
+      "telephone": `+${contactInfo.phone.replace(/[^+\d]/g, "")}`,
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: contactInfo.address,
-        addressLocality: "Mohali",
-        addressRegion: "Punjab",
-        postalCode: "160062",
-        addressCountry: "IN",
+        "streetAddress": contactInfo.address,
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "postalCode": "160062",
+        "addressCountry": "IN",
       },
-      sameAs: [
+      "sameAs": [
         "https://www.facebook.com/miraculoussoft",
         "https://twitter.com/miraculous_soft",
         "https://www.instagram.com/miraculous_soft",
         "https://www.pinterest.com/seomiraculoussoft",
       ],
-      contactPoint: [
+      "contactPoint": [
         {
           "@type": "ContactPoint",
-          contactType: "sales",
-          email: contactInfo.email,
-          telephone: `+${contactInfo.phone.replace(/[^+\d]/g, "")}`,
-          availableLanguage: ["English", "Hindi", "Punjabi"],
-          areaServed: ["IN", "Worldwide"],
+          "contactType": "sales",
+          "email": contactInfo.email,
+          "telephone": `+${contactInfo.phone.replace(/[^+\d]/g, "")}`,
+          "availableLanguage": ["English", "Hindi", "Punjabi"],
+          "areaServed": ["IN", "Worldwide"],
         },
         {
           "@type": "ContactPoint",
-          contactType: "customer support",
-          email: contactInfo.email,
-          availableLanguage: ["English", "Hindi", "Punjabi"],
-          areaServed: "Worldwide",
+          "contactType": "customer support",
+          "email": contactInfo.email,
+          "availableLanguage": ["English", "Hindi", "Punjabi"],
+          "areaServed": "Worldwide",
         },
       ],
     },
     {
       "@type": "WebSite",
       "@id": `${BASE_URL}/#website`,
-      url: BASE_URL,
-      name: APP_NAME,
-      description: "MiraculousSoftsolutions is #1 Top Ranked Website Design and Development Company dedicated to build up web applications for to make online presence",
-      inLanguage: "en",
-      publisher: { "@id": `${BASE_URL}/#organization` },
+      "url": BASE_URL,
+      "name": APP_NAME,
+      "description": "MiraculousSoftsolutions is #1 Top Ranked Website Design and Development Company dedicated to build up web applications for to make online presence",
+      "inLanguage": "en",
+      "publisher": { "@id": `${BASE_URL}/#organization` },
     },
     {
       "@type": "WebPage",
       "@id": `${BASE_URL}/#webpage`,
-      url: BASE_URL,
-      name: "Home | Product Engineering & Software Development",
-      isPartOf: { "@id": `${BASE_URL}/#website` },
-      about: { "@id": `${BASE_URL}/#professional-service` },
-      description: "MiraculousSoftsolutions is #1 Top Ranked Website Design and Development Company dedicated to build up web applications for to make online presence",
-      inLanguage: "en",
+      "url": BASE_URL,
+      "name": "Home | Product Engineering & Software Development",
+      "isPartOf": { "@id": `${BASE_URL}/#website` },
+      "about": { "@id": `${BASE_URL}/#professional-service` },
+      "description": "MiraculousSoftsolutions is #1 Top Ranked Website Design and Development Company dedicated to build up web applications for to make online presence",
+      "inLanguage": "en",
     },
     {
       "@type": "ProfessionalService",
       "@id": `${BASE_URL}/#professional-service`,
-      name: APP_NAME,
-      alternateName: "Miraculous Soft Solutions",
-      url: BASE_URL,
-      description: "MiraculousSoftsolutions is #1 Top Ranked Website Design and Development Company dedicated to build up web applications for to make online presence",
-      image: `${BASE_URL}${contactInfo.logo}`,
-      telephone: `+${contactInfo.phone.replace(/[^+\d]/g, "")}`,
-      email: contactInfo.email,
-      address: {
+      "name": APP_NAME,
+      "alternateName": "Miraculous Soft Solutions",
+      "url": BASE_URL,
+      "description": "MiraculousSoftsolutions is #1 Top Ranked Website Design and Development Company dedicated to build up web applications for to make online presence",
+      "image": `${BASE_URL}${contactInfo.logo}`,
+      "telephone": `+${contactInfo.phone.replace(/[^+\d]/g, "")}`,
+      "email": contactInfo.email,
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: contactInfo.address,
-        addressLocality: "Mohali",
-        addressRegion: "Punjab",
-        addressCountry: "IN",
+        "streetAddress": contactInfo.address,
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "addressCountry": "IN",
       },
-      areaServed: ["India", "Worldwide"],
-      serviceType: [
+      "areaServed": ["India", "Worldwide"],
+      "serviceType": [
         "SaaS Product Development",
         "B2B Platform Engineering",
         "ERP & Business Automation",
@@ -384,14 +385,14 @@ export default function MiraculousSoftLandingPage() {
         <div className="absolute bottom-0 right-[-120px] top-0 hidden w-[480px] bg-red-600 [clip-path:polygon(18%_0,100%_0,100%_100%,0_100%)] lg:block z-[1]" />
 
         <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
-          {/* Left Column */}
+          
           <div className="relative">
             <h1 className="flex flex-wrap text-[86px] sm:text-[118px] md:text-[140px] lg:text-[168px] uppercase leading-[0.84] tracking-[0.02em] text-zinc-900">
               <span>We</span> <span className="text-red-600">Engineer</span> <span className="hero-outline outline-black">Digital</span> <span>Futures.</span>
             </h1>
           </div>
 
-          {/* Right Column */}
+          
           <div className="relative z-10 space-y-5">
             <Subheading variant="default">Enterprise Software Partner</Subheading>
             <p>SaaS platforms, B2B systems, ERP automation, eCommerce products, and mobile applications — built to launch fast, scale hard, and last.</p>
@@ -402,6 +403,8 @@ export default function MiraculousSoftLandingPage() {
           </div>
         </div>
       </section>
+
+      {/* <HeroBanner /> */}
 
       {/* Ticker Section */}
       <section className="relative overflow-hidden border-t-2 border-zinc-950 bg-zinc-950">

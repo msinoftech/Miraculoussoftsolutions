@@ -251,22 +251,22 @@ const steps = [
 
 const reasons = [
     {
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-database-icon lucide-database"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>`,
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database-icon lucide-database"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>`,
         title: "Advanced & Reliable Database Engine",
         body: "PostgreSQL is a powerful, enterprise-grade relational database known for its proven reliability, ACID compliance, and ability to handle complex queries with consistency and accuracy.",
     },
     {
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M14 15H9v-5"></path><path d="M16 3h5v5"></path><path d="M21 3 9 15"></path></svg>`,
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M14 15H9v-5"></path><path d="M16 3h5v5"></path><path d="M21 3 9 15"></path></svg>`,
         title: "Scalability & High Availability",
         body: "With support for replication, partitioning, and parallel queries, PostgreSQL scales effortlessly while ensuring high availability and minimal downtime for mission-critical applications.",
     },
     {
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-airplay-icon lucide-airplay"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><path d="m12 15 5 6H7Z"/></svg>`,
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-airplay-icon lucide-airplay"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><path d="m12 15 5 6H7Z"/></svg>`,
         title: "Performance & Query Optimization",
         body: "PostgreSQL delivers high performance with advanced indexing, query planning, and execution optimization—ensuring fast data retrieval even for large-scale datasets.",
     },
     {
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-file-braces-icon lucide-file-braces"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 12a1 1 0 0 0-1 1v1a1 1 0 0 1-1 1 1 1 0 0 1 1 1v1a1 1 0 0 0 1 1"/><path d="M14 18a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1 1 1 0 0 1-1-1v-1a1 1 0 0 0-1-1"/></svg>`,
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-braces-icon lucide-file-braces"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 12a1 1 0 0 0-1 1v1a1 1 0 0 1-1 1 1 1 0 0 1 1 1v1a1 1 0 0 0 1 1"/><path d="M14 18a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1 1 1 0 0 1-1-1v-1a1 1 0 0 0-1-1"/></svg>`,
         title: "Flexible & Extensible",
         body: "Beyond traditional relational data, PostgreSQL supports JSON, custom data types, extensions, and advanced functions—making it ideal for modern, data-driven applications.",
     },  
@@ -278,194 +278,194 @@ const schemaData = {
     {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
-      name: APP_NAME,
-      alternateName: APP_NAME,
-      url: BASE_URL,
-      logo: {
+      "name": APP_NAME,
+      "alternateName": APP_NAME,
+      "url": BASE_URL,
+      "logo": {
         "@type": "ImageObject",
-        url: `${BASE_URL}${contactInfo.logo}`,
-        width: 512,
-        height: 512,
+        "url": `${BASE_URL}${contactInfo.logo}`,
+        "width": 512,
+        "height": 512,
       },
-      image: `${BASE_URL}${contactInfo.logo}`,
-      description: `${APP_NAME} delivers expert PostgreSQL development — database architecture, schema design, migrations, replication, high availability, query optimization, JSON/JSONB, security hardening, and cloud-native PostgreSQL for SaaS and enterprise applications.`,
-      email: contactInfo.email,
-      address: {
+      "image": `${BASE_URL}${contactInfo.logo}`,
+      "description": `${APP_NAME} delivers expert PostgreSQL development — database architecture, schema design, migrations, replication, high availability, query optimization, JSON/JSONB, security hardening, and cloud-native PostgreSQL for SaaS and enterprise applications.`,
+      "email": contactInfo.email,
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: contactInfo.address,
-        addressLocality: "Mohali",
-        addressRegion: "Punjab",
-        postalCode: "160062",
-        addressCountry: "IN",
+        "streetAddress": contactInfo.address,
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "postalCode": "160062",
+        "addressCountry": "IN",
       },
-      sameAs: [
+      "sameAs": [
         "https://www.facebook.com/miraculoussoft",
         "https://twitter.com/miraculous_soft",
         "https://www.instagram.com/miraculous_soft",
         "https://www.pinterest.com/seomiraculoussoft",
       ],
-      contactPoint: [
+      "contactPoint": [
         {
           "@type": "ContactPoint",
-          contactType: "sales",
-          email: contactInfo.email,
-          availableLanguage: ["English", "Hindi", "Punjabi"],
-          areaServed: ["IN", "Worldwide"],
+          "contactType": "sales",
+          "email": contactInfo.email,
+          "availableLanguage": ["English", "Hindi", "Punjabi"],
+          "areaServed": ["IN", "Worldwide"],
         },
         {
           "@type": "ContactPoint",
-          contactType: "customer support",
-          email: contactInfo.email,
-          availableLanguage: ["English", "Hindi", "Punjabi"],
-          areaServed: "Worldwide",
+          "contactType": "customer support",
+          "email": contactInfo.email,
+          "availableLanguage": ["English", "Hindi", "Punjabi"],
+          "areaServed": "Worldwide",
         },
       ],
     },
     {
       "@type": "WebSite",
       "@id": `${BASE_URL}/#website`,
-      url: BASE_URL,
-      name: APP_NAME,
-      description: `${APP_NAME} provides PostgreSQL development services — from database architecture and provisioning through migrations, replication, performance tuning, and production operations on cloud and on-premise environments.`,
-      inLanguage: "en",
-      publisher: { "@id": `${BASE_URL}/#organization` },
+      "url": BASE_URL,
+      "name": APP_NAME,
+      "description": `${APP_NAME} provides PostgreSQL development services — from database architecture and provisioning through migrations, replication, performance tuning, and production operations on cloud and on-premise environments.`,
+      "inLanguage": "en",
+      "publisher": { "@id": `${BASE_URL}/#organization` },
     },
     {
       "@type": "BreadcrumbList",
       "@id": `${PAGE_URL}/#breadcrumb`,
-      itemListElement: [
+      "itemListElement": [
         {
           "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: BASE_URL,
+          "position": 1,
+          "name": "Home",
+          "item": BASE_URL,
         },
         {
           "@type": "ListItem",
-          position: 2,
-          name: "Technologies",
-          item: TECHNOLOGIES_URL,
+          "position": 2,
+          "name": "Technologies",
+          "item": TECHNOLOGIES_URL,
         },
         {
           "@type": "ListItem",
-          position: 3,
-          name: "PostgreSQL Development",
-          item: PAGE_URL,
+          "position": 3,
+          "name": "PostgreSQL Development",
+          "item": PAGE_URL,
         },
       ],
     },
     {
       "@type": "WebPage",
       "@id": `${PAGE_URL}/#webpage`,
-      url: PAGE_URL,
-      name: `PostgreSQL Development Company | ${APP_NAME}`,
-      isPartOf: { "@id": `${BASE_URL}/#website` },
-      about: { "@id": `${PAGE_URL}/#postgresql-development` },
-      description: `Hire expert PostgreSQL developers from ${APP_NAME}. Design, tune, and scale production databases with schema design, replication, HA, query optimization, and secure cloud deployments.`,
-      inLanguage: "en",
-      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
-      mainEntity: { "@id": `${PAGE_URL}/#postgresql-development` },
+      "url": PAGE_URL,
+      "name": `PostgreSQL Development Company | ${APP_NAME}`,
+      "isPartOf": { "@id": `${BASE_URL}/#website` },
+      "about": { "@id": `${PAGE_URL}/#postgresql-development` },
+      "description": `Hire expert PostgreSQL developers from ${APP_NAME}. Design, tune, and scale production databases with schema design, replication, HA, query optimization, and secure cloud deployments.`,
+      "inLanguage": "en",
+      "breadcrumb": { "@id": `${PAGE_URL}/#breadcrumb` },
+      "mainEntity": { "@id": `${PAGE_URL}/#postgresql-development` },
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#postgresql-technology-stack`,
-      name: `${APP_NAME} PostgreSQL Technology Stack`,
-      numberOfItems: technologies.length,
-      itemListElement: technologies.map((tech, index) => ({
+      "name": `${APP_NAME} PostgreSQL Technology Stack`,
+      "numberOfItems": technologies.length,
+      "itemListElement": technologies.map((tech, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#tech-${tech.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
-          name: tech,
-          description: `${tech} used in ${APP_NAME} PostgreSQL database projects.`,
+          "name": tech,
+          "description": `${tech} used in ${APP_NAME} PostgreSQL database projects.`,
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#postgresql-development-process`,
-      name: `${APP_NAME} PostgreSQL Development Process`,
-      numberOfItems: steps.length,
-      itemListElement: steps.map((step, index) => ({
+      "name": `${APP_NAME} PostgreSQL Development Process`,
+      "numberOfItems": steps.length,
+      "itemListElement": steps.map((step, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Service",
           "@id": `${PAGE_URL}/#step-${step.num}`,
-          name: `${step.num} — ${step.title}`,
-          description: step.body,
-          url: PAGE_URL,
-          provider: { "@id": `${BASE_URL}/#organization` },
-          areaServed: ["India", "Worldwide"],
-          category: "PostgreSQL Development Process",
+          "name": `${step.num} — ${step.title}`,
+          "description": step.body,
+          "url": PAGE_URL,
+          "provider": { "@id": `${BASE_URL}/#organization` },
+          "areaServed": ["India", "Worldwide"],
+          "category": "PostgreSQL Development Process",
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#why-postgresql`,
-      name: `Why Choose ${APP_NAME} for PostgreSQL`,
-      numberOfItems: reasons.length,
-      itemListElement: reasons.map((reason, index) => ({
+      "name": `Why Choose ${APP_NAME} for PostgreSQL`,
+      "numberOfItems": reasons.length,
+      "itemListElement": reasons.map((reason, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#reason-${String(index + 1).padStart(2, "0")}`,
-          name: reason.title,
-          description: reason.body,
+          "name": reason.title,
+          "description": reason.body,
         },
       })),
     },
     {
       "@type": "ProfessionalService",
       "@id": `${PAGE_URL}/#postgresql-development`,
-      name: `${APP_NAME} — PostgreSQL Development Company`,
-      alternateName: "Hire PostgreSQL Developers",
-      url: PAGE_URL,
-      description: `${APP_NAME} engineers production-grade PostgreSQL databases — ACID-compliant schemas, optimized queries, replication and failover, partitioning, JSON support, and fault-tolerant clusters built for performance and uptime.`,
-      image: `${BASE_URL}${contactInfo.logo}`,
-      email: contactInfo.email,
-      address: {
+      "name": `${APP_NAME} — PostgreSQL Development Company`,
+      "alternateName": "Hire PostgreSQL Developers",
+      "url": PAGE_URL,
+      "description": `${APP_NAME} engineers production-grade PostgreSQL databases — ACID-compliant schemas, optimized queries, replication and failover, partitioning, JSON support, and fault-tolerant clusters built for performance and uptime.`,
+      "image": `${BASE_URL}${contactInfo.logo}`,
+      "email": contactInfo.email,
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: contactInfo.address,
-        addressLocality: "Mohali",
-        addressRegion: "Punjab",
-        addressCountry: "IN",
+        "streetAddress": contactInfo.address,
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "addressCountry": "IN",
       },
-      areaServed: ["India", "Worldwide"],
-      provider: { "@id": `${BASE_URL}/#organization` },
-      serviceType: ["PostgreSQL Development", ...technologies, ...marqueeItems],
-      hasOfferCatalog: {
+      "areaServed": ["India", "Worldwide"],
+      "provider": { "@id": `${BASE_URL}/#organization` },
+      "serviceType": ["PostgreSQL Development", ...technologies, ...marqueeItems],
+      "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        name: "PostgreSQL Development Services",
-        itemListElement: [
+        "name": "PostgreSQL Development Services",
+        "itemListElement": [
           {
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: "PostgreSQL Development",
-              description: `End-to-end PostgreSQL development with architecture, provisioning, migrations, replication, high availability, query optimization, indexing, partitioning, security, and cloud-native deployments.`,
-              url: PAGE_URL,
+              "name": "PostgreSQL Development",
+              "description": `End-to-end PostgreSQL development with architecture, provisioning, migrations, replication, high availability, query optimization, indexing, partitioning, security, and cloud-native deployments.`,
+              "url": PAGE_URL,
             },
           },
           ...steps.map((step) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: step.title,
-              description: step.body,
-              url: PAGE_URL,
+              "name": step.title,
+              "description": step.body,
+              "url": PAGE_URL,
             },
           })),
           ...reasons.map((reason) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: reason.title,
-              description: reason.body,
-              url: PAGE_URL,
+              "name": reason.title,
+              "description": reason.body,
+              "url": PAGE_URL,
             },
           })),
         ],
@@ -477,12 +477,7 @@ const schemaData = {
 export default function PostgresqlDevelopmentCompanyPage() {
     return (
     <>
-        <Script
-          id="postgresql-development-schema"
-          type="application/ld+json"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-        />
+        <Script id="postgresql-development-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
 
        {/* HERO */}
        <section className="relative overflow-hidden bg-white py-16 sm:py-20">
@@ -493,28 +488,24 @@ export default function PostgresqlDevelopmentCompanyPage() {
             <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
                 {/* Left Column */}
                 <div className="space-y-5">
-                    <Subheading variant="default">Discover the future of tech</Subheading>
-
-                    <h1 className="uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
+                    <Subheading variant="default">PostgreSQL Development Services</Subheading>
+                    <h1 className="flex flex-wrap uppercase leading-[0.84] tracking-wider text-[64px] text-zinc-950 sm:text-[96px] md:text-[118px] lg:text-[132px]">
                         <span>HIRE </span>
-                        <span className="text-red-600">postgresql</span>
-                        <span className="hero-outline block outline-black">DEVELOPERS</span>
+                        <span className="text-red-600">PostgreSQL</span>
+                        <span className="hero-outline outline-black">DEVELOPERS</span>
                     </h1>
-
-                    <p className="text-[15px] leading-8 text-zinc-600">Build fast, scalable, and real-time backend systems using postgresql and modern cloud architecture.</p>
-
+                    <p>Build fast, scalable, and real-time backend systems using postgresql and modern cloud architecture.</p>
                     <div className="flex flex-wrap items-center gap-4">
                       <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
                     </div>
-
                     <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
                       {heroStats.map((stat) => (
                           <div key={stat.label}>
-                          <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
-                          {stat.num.replace(/\+/, "")}
-                          {stat.num.includes("+") && <span className="text-red-600">+</span>}
-                          </div>
-                          <div className="text-sm text-zinc-950">{stat.label}</div>
+                              <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
+                              {stat.num.replace(/\+/, "")}
+                              {stat.num.includes("+") && <span className="text-red-600">+</span>}
+                              </div>
+                              <div className="text-sm text-zinc-950">{stat.label}</div>
                           </div>
                       ))}
                     </div>
@@ -628,7 +619,7 @@ export default function PostgresqlDevelopmentCompanyPage() {
                 <span className="absolute left-0 top-0 h-6 w-6 rounded-tl-md border-l-2 border-t-2 border-white/70" />
                 <span className="absolute bottom-0 right-0 h-6 w-6 rounded-br-md border-b-2 border-r-2 border-white/70" />
 
-                <pre className="overflow-x-auto text-xs leading-7 md:text-sm" aria-label="Code preview">
+                <pre className="overflow-x-auto text-sm leading-7" aria-label="Code preview">
                   {aboutCodeLines.map((line, index) => {
                     if (line.type === "comment") {
                       return (
@@ -672,9 +663,9 @@ export default function PostgresqlDevelopmentCompanyPage() {
                 <Subheading variant="light">Why PostgreSQL With Us</Subheading>
                 <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">The PostgreSQL <span className="text-red-600">Database</span></h2>
                 
-                <p className="text-[15px] leading-[1.8] text-white"><strong className="text-white">PostgreSQL powers modern data-driven applications</strong>{" "} with advanced relational capabilities, ACID-compliant transactions, and high-performance query processing—ensuring your data remains consistent, secure, and reliable at scale.</p>
+                <p className="text-white/70"><strong>PostgreSQL powers modern data-driven applications</strong>{" "} with advanced relational capabilities, ACID-compliant transactions, and high-performance query processing—ensuring your data remains consistent, secure, and reliable at scale.</p>
 
-                <p className="text-[15px] leading-[1.8] text-white">We leverage <strong className="text-white">scalable database architecture, indexing strategies, and replication systems</strong>{" "} to deliver production-ready PostgreSQL solutions that handle complex workloads, optimize performance, and provide seamless data management across growing applications.</p>
+                <p className="text-white/70">We leverage <strong>scalable database architecture, indexing strategies, and replication systems</strong>{" "} to deliver production-ready PostgreSQL solutions that handle complex workloads, optimize performance, and provide seamless data management across growing applications.</p>
 
                 <div className="flex flex-wrap gap-2">
                   {technologies.map((item) => (
@@ -691,9 +682,7 @@ export default function PostgresqlDevelopmentCompanyPage() {
           steps={steps}
           label="PostgreSQL Database Process"
           title={
-            <>
-              YOU BUILD MODERN <span className="text-red-600">POSTGRESQL</span>
-            </>
+            <>You Build Modern <span className="text-red-600">PostgreSQL</span></>
           }
           description="From schema design to performance optimization, we build PostgreSQL systems with high availability, fast query performance, and scalable architecture—powering data-driven applications at any scale."
         />
@@ -703,11 +692,7 @@ export default function PostgresqlDevelopmentCompanyPage() {
           items={reasons}
           label="Why Choose PostgreSQL"
           title={
-            <>
-              REASONS TO CHOOSE US
-              <br />
-              <span className="text-red-600">POSTGRESQL</span>
-            </>
+            <>Reasons To Choose <span className="text-red-600">Miraculous Soft</span></>
           }
           description="10+ years of database engineering expertise, deep PostgreSQL knowledge, and a proven track record of building secure, high-performance, and scalable data systems."
         />
@@ -715,11 +700,7 @@ export default function PostgresqlDevelopmentCompanyPage() {
         {/* CTA STRIP */}
         <CtaStrip
             title={
-                <>
-                HAVE A DATA-DRIVEN
-                <br />
-                PROJECT <span className="text-black">IN MIND?</span>
-                </>
+                <>Ready To Build Your <span className="text-black">PostgreSQL Platform?</span></>
             }
             description="Build faster, scale smarter, and manage data with confidence. Our PostgreSQL experts deliver high-availability systems, lightning-fast queries, and rock-solid data integrity."
             buttonText="Get a Free Quote →"

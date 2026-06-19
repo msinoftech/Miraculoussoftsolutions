@@ -273,22 +273,22 @@ const steps = [
 
 const reasons = [
     {
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-user-star-icon lucide-user-star"><path d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"></path><path d="M8 15H7a4 4 0 0 0-4 4v2"></path><circle cx="10" cy="7" r="4"></circle></svg>`,
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-star-icon lucide-user-star"><path d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"></path><path d="M8 15H7a4 4 0 0 0-4 4v2"></path><circle cx="10" cy="7" r="4"></circle></svg>`,
         title: "Advanced Search & Relevance Expertise",
         body: "We build powerful OpenSearch solutions with optimized indexing, analyzers, and relevance tuning—ensuring accurate, fast, and intelligent search experiences across large datasets.",
     },
     {
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M14 15H9v-5"></path><path d="M16 3h5v5"></path><path d="M21 3 9 15"></path></svg>`,
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scaling-icon lucide-scaling"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M14 15H9v-5"></path><path d="M16 3h5v5"></path><path d="M21 3 9 15"></path></svg>`,
         title: "Scalable Distributed Architecture",
         body: "We design and manage OpenSearch clusters with efficient sharding and replication strategies—delivering high availability, fault tolerance, and seamless horizontal scaling.",
     },
     {
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-chart-spline-icon lucide-chart-spline"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7"/></svg>`,
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-spline-icon lucide-chart-spline"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7"/></svg>`,
         title: "Real-Time Analytics & Insights",
         body: "We enable near real-time data indexing and powerful aggregations—helping you gain instant insights from logs, events, and large-scale data streams.",
     },
     {
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-lock-icon lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock-icon lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
         title: "Secure & Production-Ready Deployments",
         body: "We implement enterprise-grade security, access control, and monitoring—ensuring your OpenSearch clusters are reliable, protected, and ready for mission-critical workloads.",
     },  
@@ -300,194 +300,194 @@ const schemaData = {
     {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
-      name: APP_NAME,
-      alternateName: APP_NAME,
-      url: BASE_URL,
-      logo: {
+      "name": APP_NAME,
+      "alternateName": APP_NAME,
+      "url": BASE_URL,
+      "logo": {
         "@type": "ImageObject",
-        url: `${BASE_URL}${contactInfo.logo}`,
-        width: 512,
-        height: 512,
+        "url": `${BASE_URL}${contactInfo.logo}`,
+        "width": 512,
+        "height": 512,
       },
-      image: `${BASE_URL}${contactInfo.logo}`,
-      description: `${APP_NAME} delivers expert OpenSearch development — full-text search, log analytics, distributed clusters, indexing pipelines, Query DSL, sharding, replication, relevance tuning, and secure cloud-native search for SaaS and enterprise platforms.`,
-      email: contactInfo.email,
-      address: {
+      "image": `${BASE_URL}${contactInfo.logo}`,
+      "description": `${APP_NAME} delivers expert OpenSearch development — full-text search, log analytics, distributed clusters, indexing pipelines, Query DSL, sharding, replication, relevance tuning, and secure cloud-native search for SaaS and enterprise platforms.`,
+      "email": contactInfo.email,
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: contactInfo.address,
-        addressLocality: "Mohali",
-        addressRegion: "Punjab",
-        postalCode: "160062",
-        addressCountry: "IN",
+        "streetAddress": contactInfo.address,
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "postalCode": "160062",
+        "addressCountry": "IN",
       },
-      sameAs: [
+      "sameAs": [
         "https://www.facebook.com/miraculoussoft",
         "https://twitter.com/miraculous_soft",
         "https://www.instagram.com/miraculous_soft",
         "https://www.pinterest.com/seomiraculoussoft",
       ],
-      contactPoint: [
+      "contactPoint": [
         {
           "@type": "ContactPoint",
-          contactType: "sales",
-          email: contactInfo.email,
-          availableLanguage: ["English", "Hindi", "Punjabi"],
-          areaServed: ["IN", "Worldwide"],
+          "contactType": "sales",
+          "email": contactInfo.email,
+          "availableLanguage": ["English", "Hindi", "Punjabi"],
+          "areaServed": ["IN", "Worldwide"],
         },
         {
           "@type": "ContactPoint",
-          contactType: "customer support",
-          email: contactInfo.email,
-          availableLanguage: ["English", "Hindi", "Punjabi"],
-          areaServed: "Worldwide",
+          "contactType": "customer support",
+          "email": contactInfo.email,
+          "availableLanguage": ["English", "Hindi", "Punjabi"],
+          "areaServed": "Worldwide",
         },
       ],
     },
     {
       "@type": "WebSite",
       "@id": `${BASE_URL}/#website`,
-      url: BASE_URL,
-      name: APP_NAME,
-      description: `${APP_NAME} provides OpenSearch development services — from search strategy and cluster setup through data indexing, sharding, replication, query optimization, and production monitoring.`,
-      inLanguage: "en",
-      publisher: { "@id": `${BASE_URL}/#organization` },
+      "url": BASE_URL,
+      "name": APP_NAME,
+      "description": `${APP_NAME} provides OpenSearch development services — from search strategy and cluster setup through data indexing, sharding, replication, query optimization, and production monitoring.`,
+      "inLanguage": "en",
+      "publisher": { "@id": `${BASE_URL}/#organization` },
     },
     {
       "@type": "BreadcrumbList",
       "@id": `${PAGE_URL}/#breadcrumb`,
-      itemListElement: [
+      "itemListElement": [
         {
           "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: BASE_URL,
+          "position": 1,
+          "name": "Home",
+          "item": BASE_URL,
         },
         {
           "@type": "ListItem",
-          position: 2,
-          name: "Technologies",
-          item: TECHNOLOGIES_URL,
+          "position": 2,
+          "name": "Technologies",
+          "item": TECHNOLOGIES_URL,
         },
         {
           "@type": "ListItem",
-          position: 3,
-          name: "OpenSearch Development",
-          item: PAGE_URL,
+          "position": 3,
+          "name": "OpenSearch Development",
+          "item": PAGE_URL,
         },
       ],
     },
     {
       "@type": "WebPage",
       "@id": `${PAGE_URL}/#webpage`,
-      url: PAGE_URL,
-      name: `OpenSearch Development Company | ${APP_NAME}`,
-      isPartOf: { "@id": `${BASE_URL}/#website` },
-      about: { "@id": `${PAGE_URL}/#opensearch-development` },
-      description: `Hire expert OpenSearch developers from ${APP_NAME}. Build full-text search, log analytics, and real-time insights with distributed clusters, indexing, and relevance-tuned queries.`,
-      inLanguage: "en",
-      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
-      mainEntity: { "@id": `${PAGE_URL}/#opensearch-development` },
+      "url": PAGE_URL,
+      "name": `OpenSearch Development Company | ${APP_NAME}`,
+      "isPartOf": { "@id": `${BASE_URL}/#website` },
+      "about": { "@id": `${PAGE_URL}/#opensearch-development` },
+      "description": `Hire expert OpenSearch developers from ${APP_NAME}. Build full-text search, log analytics, and real-time insights with distributed clusters, indexing, and relevance-tuned queries.`,
+      "inLanguage": "en",
+      "breadcrumb": { "@id": `${PAGE_URL}/#breadcrumb` },
+      "mainEntity": { "@id": `${PAGE_URL}/#opensearch-development` },
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#opensearch-technology-stack`,
-      name: `${APP_NAME} OpenSearch Technology Stack`,
-      numberOfItems: technologies.length,
-      itemListElement: technologies.map((tech, index) => ({
+      "name": `${APP_NAME} OpenSearch Technology Stack`,
+      "numberOfItems": technologies.length,
+      "itemListElement": technologies.map((tech, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#tech-${tech.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
-          name: tech,
-          description: `${tech} used in ${APP_NAME} OpenSearch development projects.`,
+          "name": tech,
+          "description": `${tech} used in ${APP_NAME} OpenSearch development projects.`,
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#opensearch-development-process`,
-      name: `${APP_NAME} OpenSearch Development Process`,
-      numberOfItems: steps.length,
-      itemListElement: steps.map((step, index) => ({
+      "name": `${APP_NAME} OpenSearch Development Process`,
+      "numberOfItems": steps.length,
+      "itemListElement": steps.map((step, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Service",
           "@id": `${PAGE_URL}/#step-${step.num}`,
-          name: `${step.num} — ${step.title}`,
-          description: step.body,
-          url: PAGE_URL,
-          provider: { "@id": `${BASE_URL}/#organization` },
-          areaServed: ["India", "Worldwide"],
-          category: "OpenSearch Development Process",
+          "name": `${step.num} — ${step.title}`,
+          "description": step.body,
+          "url": PAGE_URL,
+          "provider": { "@id": `${BASE_URL}/#organization` },
+          "areaServed": ["India", "Worldwide"],
+          "category": "OpenSearch Development Process",
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#why-opensearch`,
-      name: `Why Choose ${APP_NAME} for OpenSearch`,
-      numberOfItems: reasons.length,
-      itemListElement: reasons.map((reason, index) => ({
+      "name": `Why Choose ${APP_NAME} for OpenSearch`,
+      "numberOfItems": reasons.length,
+      "itemListElement": reasons.map((reason, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#reason-${String(index + 1).padStart(2, "0")}`,
-          name: reason.title,
-          description: reason.body,
+          "name": reason.title,
+          "description": reason.body,
         },
       })),
     },
     {
       "@type": "ProfessionalService",
       "@id": `${PAGE_URL}/#opensearch-development`,
-      name: `${APP_NAME} — OpenSearch Development Company`,
-      alternateName: "Hire OpenSearch Developers",
-      url: PAGE_URL,
-      description: `${APP_NAME} engineers production-grade OpenSearch platforms — intelligent full-text search, near real-time indexing, powerful aggregations, shard/replica HA, and relevance-tuned queries for search, observability, and analytics at scale.`,
-      image: `${BASE_URL}${contactInfo.logo}`,
-      email: contactInfo.email,
-      address: {
+      "name": `${APP_NAME} — OpenSearch Development Company`,
+      "alternateName": "Hire OpenSearch Developers",
+      "url": PAGE_URL,
+      "description": `${APP_NAME} engineers production-grade OpenSearch platforms — intelligent full-text search, near real-time indexing, powerful aggregations, shard/replica HA, and relevance-tuned queries for search, observability, and analytics at scale.`,
+      "image": `${BASE_URL}${contactInfo.logo}`,
+      "email": contactInfo.email,
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: contactInfo.address,
-        addressLocality: "Mohali",
-        addressRegion: "Punjab",
-        addressCountry: "IN",
+        "streetAddress": contactInfo.address,
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "addressCountry": "IN",
       },
-      areaServed: ["India", "Worldwide"],
-      provider: { "@id": `${BASE_URL}/#organization` },
-      serviceType: ["OpenSearch Development", ...technologies, ...marqueeItems],
-      hasOfferCatalog: {
+      "areaServed": ["India", "Worldwide"],
+      "provider": { "@id": `${BASE_URL}/#organization` },
+      "serviceType": ["OpenSearch Development", ...technologies, ...marqueeItems],
+      "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        name: "OpenSearch Development Services",
-        itemListElement: [
+        "name": "OpenSearch Development Services",
+        "itemListElement": [
           {
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: "OpenSearch Development",
-              description: `End-to-end OpenSearch development with search strategy, cluster setup, data indexing, sharding and replication, Query DSL, relevance tuning, aggregations, security, and production monitoring.`,
-              url: PAGE_URL,
+              "name": "OpenSearch Development",
+              "description": `End-to-end OpenSearch development with search strategy, cluster setup, data indexing, sharding and replication, Query DSL, relevance tuning, aggregations, security, and production monitoring.`,
+              "url": PAGE_URL,
             },
           },
           ...steps.map((step) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: step.title,
-              description: step.body,
-              url: PAGE_URL,
+              "name": step.title,
+              "description": step.body,
+              "url": PAGE_URL,
             },
           })),
           ...reasons.map((reason) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: reason.title,
-              description: reason.body,
-              url: PAGE_URL,
+              "name": reason.title,
+              "description": reason.body,
+              "url": PAGE_URL,
             },
           })),
         ],
@@ -499,12 +499,7 @@ const schemaData = {
 export default function OpensearchDevelopmentCompanyPage() {
     return (
     <>
-        <Script
-          id="opensearch-development-schema"
-          type="application/ld+json"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-        />
+        <Script id="opensearch-development-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}/>
 
        {/* HERO */}
        <section className="relative overflow-hidden bg-white py-16 sm:py-20">
@@ -516,27 +511,23 @@ export default function OpensearchDevelopmentCompanyPage() {
                 {/* Left Column */}
                 <div className="space-y-5">
                     <Subheading variant="default">OpenSearch Development Services</Subheading>
-
-                    <h1 className="uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
+                    <h1 className="flex flex-wrap uppercase leading-[0.84] tracking-wider text-[64px] text-zinc-950 sm:text-[96px] md:text-[118px] lg:text-[132px]">
                         <span>HIRE </span>
                         <span className="text-red-600">OPENSEARCH</span>
-                        <span className="hero-outline block outline-black">EXPERTS</span>
+                        <span className="hero-outline outline-black">EXPERTS</span>
                     </h1>
-
-                    <p className="text-[15px] leading-8 text-zinc-600">Build powerful search and analytics systems with OpenSearch—enabling real-time insights, lightning-fast queries, and scalable distributed search across massive datasets.</p>
-
+                    <p>Build powerful search and analytics systems with OpenSearch—enabling real-time insights, lightning-fast queries, and scalable distributed search across massive datasets.</p>
                     <div className="flex flex-wrap items-center gap-4">
                       <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
                     </div>
-
                     <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
                       {heroStats.map((stat) => (
                           <div key={stat.label}>
-                          <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
-                          {stat.num.replace(/\+/, "")}
-                          {stat.num.includes("+") && <span className="text-red-600">+</span>}
-                          </div>
-                          <div className="text-sm text-zinc-950">{stat.label}</div>
+                            <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
+                            {stat.num.replace(/\+/, "")}
+                            {stat.num.includes("+") && <span className="text-red-600">+</span>}
+                            </div>
+                            <div className="text-sm text-zinc-950">{stat.label}</div>
                           </div>
                       ))}
                     </div>
@@ -614,7 +605,7 @@ export default function OpensearchDevelopmentCompanyPage() {
                 <span className="absolute left-0 top-0 h-6 w-6 rounded-tl-md border-l-2 border-t-2 border-white/70" />
                 <span className="absolute bottom-0 right-0 h-6 w-6 rounded-br-md border-b-2 border-r-2 border-white/70" />
 
-                <pre className="overflow-x-auto text-xs leading-7 md:text-sm" aria-label="Code preview">
+                <pre className="overflow-x-auto text-sm leading-7" aria-label="Code preview">
                   {aboutCodeLines.map((line, index) => {
                     if (line.type === "comment") {
                       return (
@@ -658,9 +649,9 @@ export default function OpensearchDevelopmentCompanyPage() {
                 <Subheading variant="light">Why OpenSearch With Us</Subheading>
                 <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">The OpenSearch <span className="text-red-600">Platform</span></h2>
                 
-                <p className="text-[15px] leading-[1.8] text-white">OpenSearch powers modern search and analytics applications with distributed indexing, full-text search, and near real-time data processing—enabling fast, relevant, and scalable insights across massive datasets.</p>
+                <p className="text-white/70">OpenSearch powers modern search and analytics applications with distributed indexing, full-text search, and near real-time data processing—enabling fast, relevant, and scalable insights across massive datasets.</p>
 
-                <p className="text-[15px] leading-[1.8] text-white">We leverage optimized indexing strategies, shard-based architecture, and advanced query capabilities to build OpenSearch solutions that deliver high-performance search, real-time analytics, and seamless scalability for data-intensive applications.</p>
+                <p className="text-white/70">We leverage optimized indexing strategies, shard-based architecture, and advanced query capabilities to build OpenSearch solutions that deliver high-performance search, real-time analytics, and seamless scalability for data-intensive applications.</p>
 
                 <div className="flex flex-wrap gap-2">
                   {technologies.map((item) => (
@@ -677,9 +668,7 @@ export default function OpensearchDevelopmentCompanyPage() {
           steps={steps}
           label="OpenSearch Real-Time Data Deployment Process"
           title={
-            <>
-              HAVE A POWERFUL <span className="text-red-600">OPENSEARCH SYSTEMS</span>
-            </>
+            <>You Build Powerful <span className="text-red-600">OpenSearch Systems</span></>
           }
           description="From indexing strategy to distributed cluster setup, we build OpenSearch solutions with fast query performance, real-time analytics, and scalable search architecture—designed for high-volume data and instant insights."
         />
@@ -690,10 +679,7 @@ export default function OpensearchDevelopmentCompanyPage() {
           label="Why Choose OpenSearch"
           title={
             <>
-            WHY CHOOSE US
-            <br />
-            <span className="text-red-600">OPENSEARCH</span>
-            </>
+            Reasons To Choose <span className="text-red-600">Miraculous Soft</span></>
           }
           description="Deep expertise in search architecture, indexing strategies, and distributed systems—delivering high-performance OpenSearch solutions for real-time analytics, observability, and large-scale search applications."
         />
@@ -701,11 +687,7 @@ export default function OpensearchDevelopmentCompanyPage() {
         {/* CTA STRIP */}
         <CtaStrip
             title={
-                <>
-                HAVE A SMART SEARCH
-                <br />
-                SYSTEMS <span className="text-black">AT SCALE?</span>
-                </>
+              <>Ready To Build Your <span className="text-black">OpenSearch Platform?</span></>
             }
             description="Unlock the power of OpenSearch with lightning-fast queries, real-time insights, and scalable distributed architecture—perfect for search, analytics, and log monitoring platforms."
             buttonText="Get a Free Quote →"

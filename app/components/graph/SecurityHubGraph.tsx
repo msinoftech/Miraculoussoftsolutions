@@ -149,30 +149,12 @@ export default function SecurityControlPlane({ className = "" }: SecurityControl
   };
 
   return (
-    <div className={`security-glass-shell relative mx-auto w-full rounded-2xl`}>
+    <div className={`security-glass-shell relative mx-auto w-full rounded-2xl hidden lg:block`}>
       <div className="bg-white/50 relative overflow-hidden rounded-2xl p-4">
         
         <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/90 to-transparent" aria-hidden />
         <div className="pointer-events-none absolute -left-16 top-1/4 h-48 w-48 rounded-full bg-blue-400/20 blur-3xl" aria-hidden />
         <div className="pointer-events-none absolute -right-12 bottom-0 h-40 w-40 rounded-full bg-red-400/15 blur-3xl" aria-hidden />
-
-        <div className="relative flex flex-wrap items-start justify-between gap-3">
-          <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600">Zero-trust control plane</p>
-            <p className="font-bebas-neue text-[28px] leading-none tracking-wide text-zinc-950 sm:text-[34px]">
-              Identity <span className="text-red-600">Stack</span>
-            </p>
-          </div>
-          <div className="flex flex-col items-end gap-1.5">
-            <span className="flex items-center gap-2 rounded-full border border-white/70 bg-white/50 px-3 py-1 text-[9px] font-bold uppercase tracking-[0.1em] text-zinc-700 shadow-sm backdrop-blur-md">
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-40" />
-                <span className="relative h-1.5 w-1.5 rounded-full bg-emerald-500" />
-              </span>
-              Live routing
-            </span>
-          </div>
-        </div>
 
         <div className="relative">
           <div className="relative min-h-[320px] overflow-hidden rounded-2xl">

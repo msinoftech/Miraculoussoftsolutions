@@ -1,6 +1,8 @@
-import Link from "next/link";
 import Getintouch from "../components/Getintouch";
 import { contactInfo } from "../lib/config";
+import Subheading from "../components/ui/Subheading";
+import DefaultButton from "../components/ui/Button/defaultButton";
+import OutlineButton from "../components/ui/Button/outlineButton";
 
 const workflow = [
   {
@@ -30,12 +32,7 @@ export default function ContactUsPage() {
       href: `mailto:${contactInfo.email}`,
       icon: `<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 491.52 491.52" xml:space="preserve" width="50px" height="50px" fill="#000000"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect y="85.914" style="fill:#F6C358;" width="491.52" height="319.693"></rect> <polygon style="fill:#FCD462;" points="245.76,217.258 491.52,405.604 0,405.604 "></polygon> <polygon style="fill:#DC8744;" points="245.76,291.673 0,85.916 491.52,85.916 "></polygon> <polygon style="fill:#FCD462;" points="245.76,274.261 0,85.916 491.52,85.916 "></polygon> </g></svg>`,
     },
-    // {
-    //   label: "Call Direct",
-    //   value: `+91 ${contactInfo.phone}`,
-    //   href: `tel:${cleanedPhone}`,
-    //   icon: `<svg width="50px" height="50px" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M834.133333 149.333333h-78.933333C473.6 153.6 151.466667 514.133333 149.333333 755.2v78.933333c0 21.333333 17.066667 40.533333 40.533334 40.533334l160-2.133334c21.333333 0 40.533333-19.2 40.533333-40.533333l4.266667-174.933333-100.266667-85.333334c0-55.466667 224-279.466667 281.6-281.6l91.733333 100.266667 168.533334-4.266667c21.333333 0 40.533333-19.2 40.533333-40.533333L874.666667 189.866667c0-23.466667-17.066667-40.533333-40.533334-40.533334z" fill="#009688"></path></g></svg>`,
-    // },
+
     {
       label: "WhatsApp",
       value: "Quick Project Chat",
@@ -48,48 +45,33 @@ export default function ContactUsPage() {
     <div className="bg-[var(--bg)] text-zinc-900">
       <section className="border-b border-zinc-200 bg-gradient-to-b from-white via-zinc-50 to-zinc-100">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:py-20 lg:py-24">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-red-600">Contact Us</p>
-          <h1 className="mt-3 max-w-4xl text-4xl uppercase leading-[0.95] text-zinc-950 sm:text-6xl lg:text-7xl">
-            Let&apos;s Build Your
-            <span className="text-red-600"> Next Digital Product</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-base leading-7 text-zinc-600">
-            From SaaS platforms to enterprise automation, we design and engineer reliable digital products
-            that move your business forward.
-          </p>
-          <p className="mt-3 text-sm font-bold leading-6 text-zinc-600"><i>Based in {contactInfo.address}, we collaborate with clients across India and globally.</i></p>
+          <Subheading variant="default">Contact Us</Subheading>
+          <h1 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-zinc-950 sm:text-[72px] lg:text-[88px]">Let&apos;s Build Your <span className="text-red-600"> Next Digital Product</span></h1>
+          <p>From SaaS platforms to enterprise automation, we design and engineer reliable digital products that move your business forward.</p>
+          <p><i>Based in {contactInfo.address}, we collaborate with clients across India and globally.</i></p>
+
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link href="/services" className="inline-flex h-11 items-center justify-center bg-zinc-950 px-6 text-sm font-semibold tracking-[0.06em] text-white transition hover:bg-red-600">
-              EXPLORE SERVICES
-            </Link>
-            <a href={`mailto:${contactInfo.email}`} className="inline-flex h-11 items-center justify-center border border-zinc-300 bg-white px-6 text-sm font-semibold tracking-[0.06em] text-zinc-900 transition hover:border-zinc-900">
-              EMAIL OUR TEAM
-            </a>
+            <DefaultButton href="/services">EXPLORE SERVICES</DefaultButton>
+            <OutlineButton href={`mailto:${contactInfo.email}`}>EMAIL OUR TEAM</OutlineButton>
           </div>
         </div>
       </section>
 
       <section className="bg-gradient-to-b from-zinc-100 via-zinc-50 to-zinc-100 py-12 sm:py-16">
-        <div className="mx-auto grid max-w-7xl gap-4 px-4 md:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl gap-4 px-4 md:grid-cols-2">
           {contactWays.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              target={item.href.startsWith("https://") ? "_blank" : undefined}
-              rel={item.href.startsWith("https://") ? "noopener noreferrer" : undefined}
-              className="group relative overflow-hidden rounded-2xl border border-white/70 bg-white/55 p-6 shadow-[0_8px_28px_rgba(15,23,42,0.08)] backdrop-blur-xl transition duration-300 hover:-translate-y-1.5 hover:bg-white/65 hover:shadow-[0_14px_34px_rgba(15,23,42,0.12)]"
-            >
+            <a key={item.label} href={item.href} target={item.href.startsWith("https://") ? "_blank" : undefined} rel={item.href.startsWith("https://") ? "noopener noreferrer" : undefined} className="group relative overflow-hidden rounded-2xl bg-white/55 p-6 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-1.5 hover:bg-white/65">
               <span className={`absolute -right-10 -top-10 h-28 w-28 rounded-full bg-red-400/20 blur-2xl transition duration-300 group-hover:scale-110`} />
               <div className="relative">
                 <div className="mb-5 flex items-start justify-between">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/60 bg-white/70 text-xl">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/70 text-xl">
                     <span dangerouslySetInnerHTML={{ __html: item.icon }} />
                   </span>
-                  <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-zinc-600">Priority</span>
+                  <span className="text-sm uppercase font-semibold leading-tight tracking-wide text-red-600">Priority</span>
                 </div>
 
-                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-600">{item.label}</p>
-                <p className="mt-2 text-xl font-semibold leading-tight text-zinc-950">{item.value}</p>
+                <div className="text-sm font-bold uppercase leading-tight tracking-wide text-zinc-950">{item.label}</div>
+                <p>{item.value}</p>
 
                 <div className="mt-6 flex items-center justify-between border-t border-zinc-300/60 pt-4">
                   <span className="text-xs font-semibold uppercase tracking-[0.13em] text-zinc-600">Fast Response</span>
@@ -106,18 +88,16 @@ export default function ContactUsPage() {
 
       <section className="bg-zinc-950 py-14 sm:py-16">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-8 flex items-end justify-between gap-4">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/35">How We Work</p>
-              <h2 className="mt-2 text-3xl uppercase text-white sm:text-5xl">Simple, Transparent Process</h2>
-            </div>
+          <div className="mb-8">
+              <Subheading variant="light">How We Work</Subheading>
+              <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">Simple, Transparent Process</h2>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {workflow.map((item) => (
-              <article key={item.step} className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                <p className="text-xs font-bold tracking-[0.16em] text-red-500">{item.step}</p>
-                <h3 className="mt-2 text-2xl uppercase text-white">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-white/60">{item.description}</p>
+              <article key={item.step} className="rounded-2xl border border-white/10 bg-white/5 p-6 space-y-2">
+                <div className="text-sm font-bold uppercase leading-tight tracking-wide text-red-500">{item.step}</div>
+                <div className="text-[24px] font-bold leading-[1.2] tracking-wide text-white">{item.title}</div>
+                <p className="text-white/70">{item.description}</p>
               </article>
             ))}
           </div>

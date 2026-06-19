@@ -61,23 +61,20 @@ const aiStack = [
   {
     title: "OpenAI",
     href: "/technologies/openai-development-company",
-    description:
-      "GPT integrations, embeddings, fine-tuning, and production API patterns for assistants, copilots, and intelligent product features.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/><path d="M19 3v4"/><path d="M21 5h-4"/><path d="M6 17l-2 2"/><path d="M18 17l2 2"/></svg>`,
+    description: "GPT integrations, embeddings, fine-tuning, and production API patterns for assistants, copilots, and intelligent product features.",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/><path d="M19 3v4"/><path d="M21 5h-4"/><path d="M6 17l-2 2"/><path d="M18 17l2 2"/></svg>`,
   },
   {
     title: "AI Agents",
     href: "/technologies/agents-development-company",
-    description:
-      "Multi-step agents with tool calling, orchestration, guardrails, and workflow automation connected to your APIs and data.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>`,
+    description: "Multi-step agents with tool calling, orchestration, guardrails, and workflow automation connected to your APIs and data.",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>`,
   },
   {
     title: "RAG",
     href: "/technologies/rag-development-company",
-    description:
-      "Retrieval-augmented generation with vector stores, chunking strategies, and grounded answers from your documents and knowledge bases.",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="text-zinc-900 transition group-hover:text-white"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>`,
+    description: "Retrieval-augmented generation with vector stores, chunking strategies, and grounded answers from your documents and knowledge bases.",
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-900 transition group-hover:text-white"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>`,
   },
 ];
 
@@ -151,25 +148,25 @@ const steps = [
 const benefits = [
   {
     no: "01",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-brain"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M20.517 10.896a4 4 0 0 0-.585-.396"/><path d="M12 18v-2"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-brain"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M20.517 10.896a4 4 0 0 0-.585-.396"/><path d="M12 18v-2"/></svg>`,
     title: "Production AI, Not Prototypes",
     body: "Shippable OpenAI, agent, and RAG systems with clear SLAs, error handling, and ops visibility—not one-off chat demos that break in production.",
   },
   {
     no: "02",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-workflow"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-workflow"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>`,
     title: "Intelligent Automation",
     body: "Agents and workflows that take action—querying systems, triggering jobs, and completing multi-step tasks with human oversight where it matters.",
   },
   {
     no: "03",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-database"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>`,
     title: "Grounded, Trustworthy Answers",
     body: "RAG pipelines that cite your data—reducing hallucinations with retrieval quality, reranking, and domain-specific chunking strategies.",
   },
   {
     no: "04",
-    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="lucide lucide-line-chart"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>`,
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-line-chart"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>`,
     title: "Measurable Outcomes",
     body: "Eval metrics, cost tracking, and feedback loops so you can improve model behavior and automation ROI over time.",
   },
@@ -181,225 +178,225 @@ const schemaData = {
     {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
-      name: APP_NAME,
-      alternateName: APP_NAME,
-      url: BASE_URL,
-      logo: {
+      "name": `${APP_NAME}`,
+      "alternateName": APP_NAME,
+      "url": BASE_URL,
+      "logo": {
         "@type": "ImageObject",
-        url: `${BASE_URL}${contactInfo.logo}`,
-        width: 512,
-        height: 512,
+        "url": `${BASE_URL}${contactInfo.logo}`,
+        "width": 512,
+        "height": 512,
       },
-      image: `${BASE_URL}${contactInfo.logo}`,
-      description: `${APP_NAME} delivers AI and automation engineering for web apps — OpenAI integrations, AI agents, RAG pipelines, workflow orchestration, vector search, observability, and production-ready automation for SaaS and enterprise products.`,
-      email: contactInfo.email,
-      address: {
+      "image": `${BASE_URL}${contactInfo.logo}`,
+      "description": `${APP_NAME} delivers AI and automation engineering for web apps — OpenAI integrations, AI agents, RAG pipelines, workflow orchestration, vector search, observability, and production-ready automation for SaaS and enterprise products.`,
+      "email": contactInfo.email,
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: contactInfo.address,
-        addressLocality: "Mohali",
-        addressRegion: "Punjab",
-        postalCode: "160062",
-        addressCountry: "IN",
+        "streetAddress": contactInfo.address,
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "postalCode": "160062",
+        "addressCountry": "IN",
       },
-      sameAs: [
+      "sameAs": [
         "https://www.facebook.com/miraculoussoft",
         "https://twitter.com/miraculous_soft",
         "https://www.instagram.com/miraculous_soft",
         "https://www.pinterest.com/seomiraculoussoft",
       ],
-      contactPoint: [
+      "contactPoint": [
         {
           "@type": "ContactPoint",
-          contactType: "sales",
-          email: contactInfo.email,
-          availableLanguage: ["English", "Hindi", "Punjabi"],
-          areaServed: ["IN", "Worldwide"],
+          "contactType": "sales",
+          "email": contactInfo.email,
+          "availableLanguage": ["English", "Hindi", "Punjabi"],
+          "areaServed": ["IN", "Worldwide"],
         },
         {
           "@type": "ContactPoint",
-          contactType: "customer support",
-          email: contactInfo.email,
-          availableLanguage: ["English", "Hindi", "Punjabi"],
-          areaServed: "Worldwide",
+          "contactType": "customer support",
+          "email": contactInfo.email,
+          "availableLanguage": ["English", "Hindi", "Punjabi"],
+          "areaServed": "Worldwide",
         },
       ],
     },
     {
       "@type": "WebSite",
       "@id": `${BASE_URL}/#website`,
-      url: BASE_URL,
-      name: APP_NAME,
-      description: `${APP_NAME} provides AI and automation services — from use-case strategy and LLM architecture through agent orchestration, RAG implementation, model evaluation, and production operations.`,
-      inLanguage: "en",
-      publisher: { "@id": `${BASE_URL}/#organization` },
+      "url": BASE_URL,
+      "name": APP_NAME,
+      "description": `${APP_NAME} provides AI and automation services — from use-case strategy and LLM architecture through agent orchestration, RAG implementation, model evaluation, and production operations.`,
+      "inLanguage": "en",
+      "publisher": { "@id": `${BASE_URL}/#organization` },
     },
     {
       "@type": "BreadcrumbList",
       "@id": `${PAGE_URL}/#breadcrumb`,
-      itemListElement: [
+      "itemListElement": [
         {
           "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: BASE_URL,
+          "position": 1,
+          "name": "Home",
+          "item": BASE_URL,
         },
         {
           "@type": "ListItem",
-          position: 2,
-          name: "Technologies",
-          item: TECHNOLOGIES_URL,
+          "position": 2,
+          "name": "Technologies",
+          "item": TECHNOLOGIES_URL,
         },
         {
           "@type": "ListItem",
-          position: 3,
-          name: "AI & Automation Technologies",
-          item: PAGE_URL,
+          "position": 3,
+          "name": "AI & Automation Technologies",
+          "item": PAGE_URL,
         },
       ],
     },
     {
       "@type": "WebPage",
       "@id": `${PAGE_URL}/#webpage`,
-      url: PAGE_URL,
-      name: `AI & Automation Technologies | ${APP_NAME}`,
-      isPartOf: { "@id": `${BASE_URL}/#website` },
-      about: { "@id": `${PAGE_URL}/#ai-automation-technologies` },
-      description: `Hire expert AI and automation engineers from ${APP_NAME}. Build OpenAI-powered features, AI agents, and RAG systems with secure, observable workflows for production web applications.`,
-      inLanguage: "en",
-      breadcrumb: { "@id": `${PAGE_URL}/#breadcrumb` },
-      mainEntity: { "@id": `${PAGE_URL}/#ai-automation-technologies` },
+      "url": PAGE_URL,
+      "name": `AI & Automation Technologies | ${APP_NAME}`,
+      "isPartOf": { "@id": `${BASE_URL}/#website` },
+      "about": { "@id": `${PAGE_URL}/#ai-automation-technologies` },
+      "description": `Hire expert AI and automation engineers from ${APP_NAME}. Build OpenAI-powered features, AI agents, and RAG systems with secure, observable workflows for production web applications.`,
+      "inLanguage": "en",
+      "breadcrumb": { "@id": `${PAGE_URL}/#breadcrumb` },
+      "mainEntity": { "@id": `${PAGE_URL}/#ai-automation-technologies` },
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#ai-automation-technology-stack`,
-      name: `${APP_NAME} AI & Automation Technology Stack`,
-      numberOfItems: technologie.length,
-      itemListElement: technologie.map((tech, index) => ({
+      "name": `${APP_NAME} AI & Automation Technology Stack`,
+      "numberOfItems": technologie.length,
+      "itemListElement": technologie.map((tech, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#tech-${tech.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
-          name: tech,
-          description: `${tech} used in ${APP_NAME} AI and automation projects.`,
+          "name": tech,
+          "description": `${tech} used in ${APP_NAME} AI and automation projects.`,
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#ai-capabilities`,
-      name: `${APP_NAME} AI Capabilities`,
-      numberOfItems: aiStack.length,
-      itemListElement: aiStack.map((feature, index) => ({
+      "name": `${APP_NAME} AI Capabilities`,
+      "numberOfItems": aiStack.length,
+      "itemListElement": aiStack.map((feature, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#capability-${feature.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
-          name: feature.title,
-          description: feature.description,
-          url: `${BASE_URL}${feature.href}`,
+          "name": feature.title,
+          "description": feature.description,
+          "url": `${BASE_URL}${feature.href}`,
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#ai-automation-process`,
-      name: `${APP_NAME} AI Delivery Process`,
-      numberOfItems: steps.length,
-      itemListElement: steps.map((step, index) => ({
+      "name": `${APP_NAME} AI Delivery Process`,
+      "numberOfItems": steps.length,
+      "itemListElement": steps.map((step, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Service",
           "@id": `${PAGE_URL}/#step-${step.num}`,
-          name: `${step.num} — ${step.title}`,
-          description: step.body,
-          url: PAGE_URL,
-          provider: { "@id": `${BASE_URL}/#organization` },
-          areaServed: ["India", "Worldwide"],
-          category: "AI & Automation Process",
+          "name": `${step.num} — ${step.title}`,
+          "description": step.body,
+          "url": PAGE_URL,
+          "provider": { "@id": `${BASE_URL}/#organization` },
+          "areaServed": ["India", "Worldwide"],
+          "category": "AI & Automation Process",
         },
       })),
     },
     {
       "@type": "ItemList",
       "@id": `${PAGE_URL}/#ai-automation-benefits`,
-      name: `Why Choose ${APP_NAME} for AI & Automation`,
-      numberOfItems: benefits.length,
-      itemListElement: benefits.map((benefit, index) => ({
+      "name": `Why Choose ${APP_NAME} for AI & Automation`,
+      "numberOfItems": benefits.length,
+      "itemListElement": benefits.map((benefit, index) => ({
         "@type": "ListItem",
-        position: index + 1,
-        item: {
+        "position": index + 1,
+        "item": {
           "@type": "Thing",
           "@id": `${PAGE_URL}/#benefit-${benefit.no}`,
-          name: benefit.title,
-          description: benefit.body,
+          "name": benefit.title,
+          "description": benefit.body,
         },
       })),
     },
     {
       "@type": "ProfessionalService",
       "@id": `${PAGE_URL}/#ai-automation-technologies`,
-      name: `${APP_NAME} — AI & Automation Services`,
-      alternateName: "Hire AI & Automation Engineers",
-      url: PAGE_URL,
-      description: `${APP_NAME} engineers intelligent software systems for production platforms — OpenAI integrations, agent workflows, RAG pipelines, tool calling, evaluation frameworks, and robust observability for scalable automation.`,
-      image: `${BASE_URL}${contactInfo.logo}`,
-      email: contactInfo.email,
-      address: {
+      "name": `${APP_NAME} — AI & Automation Services`,
+      "alternateName": "Hire AI & Automation Engineers",
+      "url": PAGE_URL,
+      "description": `${APP_NAME} engineers intelligent software systems for production platforms — OpenAI integrations, agent workflows, RAG pipelines, tool calling, evaluation frameworks, and robust observability for scalable automation.`,
+      "image": `${BASE_URL}${contactInfo.logo}`,
+      "email": contactInfo.email,
+      "address": {
         "@type": "PostalAddress",
-        streetAddress: contactInfo.address,
-        addressLocality: "Mohali",
-        addressRegion: "Punjab",
-        addressCountry: "IN",
+        "streetAddress": contactInfo.address,
+        "addressLocality": "Mohali",
+        "addressRegion": "Punjab",
+        "addressCountry": "IN",
       },
-      areaServed: ["India", "Worldwide"],
-      provider: { "@id": `${BASE_URL}/#organization` },
-      serviceType: [
+      "areaServed": ["India", "Worldwide"],
+      "provider": { "@id": `${BASE_URL}/#organization` },
+      "serviceType": [
         "AI & Automation Services",
         ...technologie,
         ...aiStack.map((feature) => feature.title),
         ...marqueeItems,
       ],
-      hasOfferCatalog: {
+      "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        name: "AI & Automation Services",
-        itemListElement: [
+        "name": "AI & Automation Services",
+        "itemListElement": [
           {
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: "AI Product Engineering",
-              description: `End-to-end AI and automation development including OpenAI integration, multi-step agents, RAG implementation, guardrails, model evaluation, cost controls, and production monitoring.`,
-              url: PAGE_URL,
+              "name": "AI Product Engineering",
+              "description": `End-to-end AI and automation development including OpenAI integration, multi-step agents, RAG implementation, guardrails, model evaluation, cost controls, and production monitoring.`,
+              "url": PAGE_URL,
             },
           },
           ...aiStack.map((feature) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: feature.title,
-              description: feature.description,
-              url: `${BASE_URL}${feature.href}`,
+              "name": feature.title,
+              "description": feature.description,
+              "url": `${BASE_URL}${feature.href}`,
             },
           })),
           ...steps.map((step) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: step.title,
-              description: step.body,
-              url: PAGE_URL,
+              "name": step.title,
+              "description": step.body,
+              "url": PAGE_URL,
             },
           })),
           ...benefits.map((benefit) => ({
             "@type": "Offer",
-            itemOffered: {
+            "itemOffered": {
               "@type": "Service",
-              name: benefit.title,
-              description: benefit.body,
-              url: PAGE_URL,
+              "name": benefit.title,
+              "description": benefit.body,
+              "url": PAGE_URL,
             },
           })),
         ],
@@ -411,14 +408,8 @@ const schemaData = {
 export default function AiAndAutomationPage() {
   return (
     <>
-
       {/* Schema.org */}
-      <Script
-        id="ai-and-automation-schema"
-        type="application/ld+json"
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-      />
+      <Script id="ai-and-automation-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}/>
 
       {/* HERO */}
       <section className="relative overflow-hidden bg-white py-16 sm:py-20">
@@ -431,27 +422,23 @@ export default function AiAndAutomationPage() {
           {/* left column */}
           <div className="space-y-5">
             <Subheading variant="default">AI & Automation Technologies</Subheading>
-
-            <h1 className="uppercase leading-[0.84] tracking-wider text-[72px] sm:text-[92px] md:text-[120px] lg:text-[132px]">
+            <h1 className="flex flex-wrap uppercase leading-[0.84] tracking-wider text-[64px] text-zinc-950 sm:text-[96px] md:text-[118px] lg:text-[132px]">
               <span>HIRE </span>
               <span className="text-red-600">AI</span>
-              <span className="hero-outline block outline-black">Experts</span>
+              <span className="hero-outline outline-black">Experts</span>
             </h1>
-
-            <p className="text-[15px] leading-8 text-zinc-600">LLM integrations and intelligent automation for modern product workflows—OpenAI, custom agents, and RAG systems engineered for production scale.</p>
-
+            <p>LLM integrations and intelligent automation for modern product workflows—OpenAI, custom agents, and RAG systems engineered for production scale.</p>
             <div className="flex flex-wrap items-center gap-4">
               <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
             </div>
-
             <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
               {heroStats.map((stat) => (
                   <div key={stat.label}>
-                  <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
-                  {stat.num.replace(/\+/, "")}
-                  {stat.num.includes("+") && <span className="text-red-600">+</span>}
-                  </div>
-                  <div className="text-sm text-zinc-950">{stat.label}</div>
+                    <div className="font-bebas-neue text-3xl leading-none text-zinc-950">
+                    {stat.num.replace(/\+/, "")}
+                    {stat.num.includes("+") && <span className="text-red-600">+</span>}
+                    </div>
+                    <div className="text-sm text-zinc-950">{stat.label}</div>
                   </div>
               ))}
             </div>
@@ -484,7 +471,7 @@ export default function AiAndAutomationPage() {
                     <span className="h-3 w-3 rounded-full bg-yellow-500" />
                     <span className="h-3 w-3 rounded-full bg-green-500" />
                   </div>
-                  <span className="text-[11px] text-zinc-600">agent-pipeline.log</span>
+                  <span className="text-sm text-white/70">agent-pipeline.log</span>
                 </div>
 
                 <div className="grid md:grid-cols-2">
@@ -523,12 +510,9 @@ await observability.track(result);`}
             {/* right column */}    
             <div className="relative space-y-4">
               <Subheading variant="light">AI Overview</Subheading>
-              
               <h2 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-white sm:text-[72px] lg:text-[88px]">Intelligent <span className="text-red-600">Automation</span></h2>
-
-              <p className="text-[15px] leading-[1.8] text-white"><strong className="text-white">AI & automation technologies turn language models into product capabilities</strong>—assistants, copilots, and autonomous workflows that integrate with your stack.</p>
-
-              <p className="text-[15px] leading-[1.8] text-white">Our catalog covers <strong className="text-white">OpenAI for core LLM features</strong>,{" "} <strong className="text-white">AI agents for multi-step automation</strong>, and{" "} <strong className="text-white">RAG for knowledge-grounded responses</strong>—matching the AI & Automation layer on{" "} technologies.</p>
+              <p className="text-white/70"><strong>AI & automation technologies turn language models into product capabilities</strong>—assistants, copilots, and autonomous workflows that integrate with your stack.</p>
+              <p className="text-white/70">Our catalog covers <strong>OpenAI for core LLM features</strong>,{" "} <strong>AI agents for multi-step automation</strong>, and{" "} <strong>RAG for knowledge-grounded responses</strong>—matching the AI & Automation layer on{" "} technologies.</p>
 
               <div id="ai-technologies" className="mt-7 flex flex-wrap gap-2">
                 {technologie.map((item) => (
@@ -544,11 +528,7 @@ await observability.track(result);`}
       <Card
         label="Technologies"
         title={
-          <>
-            AI & Automation
-            <br />
-            <span className="text-red-600">Technologies</span>
-          </>
+          <>AI & Automation <span className="text-red-600">Technologies</span></>
         }
         description="Three pillars from our technology catalog—each links to a dedicated expertise page."
         items={aiStack}
@@ -560,9 +540,7 @@ await observability.track(result);`}
         steps={steps}
         label="AI Delivery Process"
         title={
-          <>
-            FROM IDEAS TO LIVE <span className="text-red-600">AUTOMATION</span>
-          </>
+          <>You Build Scalable <span className="text-red-600">Systems</span></>
         }
         description="A structured path from use-case discovery to production agents and RAG—so AI features stay reliable, measurable, and aligned with business outcomes."
       />
@@ -572,11 +550,7 @@ await observability.track(result);`}
         items={benefits}
         label="AI Benefits"
         title={
-          <>
-            WHY PRODUCTS NEED
-            <br />
-            <span className="text-red-600">INTELLIGENT SYSTEMS</span>
-          </>
+          <>Why Choose <span className="text-red-600">Us</span></>
         }
         description="We combine OpenAI expertise, agent orchestration, and retrieval quality so automation delivers real value—not experimental chat widgets."
         headerClassName="mb-12 text-left"
@@ -586,13 +560,9 @@ await observability.track(result);`}
       {/* CTA Strip Section */}
       <CtaStrip
         title={
-          <>
-            BUILD YOUR
-            <br />
-            AI STACK <span className="text-black">TODAY</span>
-          </>
+          <>Ready To Build <span className="text-black">With AI?</span></>
         }
-        description="Let's ship production OpenAI integrations, custom agents, and RAG pipelines—grounded answers, tool-connected workflows, and evals built in from the start."
+        description="Let&apos;s ship production OpenAI integrations, custom agents, and RAG pipelines—grounded answers, tool-connected workflows, and evals built in from the start."
         buttonText="Get a Free Quote →"
         buttonHref="/contact-us"
       />

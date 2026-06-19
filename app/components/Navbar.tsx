@@ -79,7 +79,7 @@ export default function Navbar() {
                 <li className={navLiClass(navActive.services)}>
                   <button type="button" className={navTriggerClass(navActive.services)} aria-current={navActive.services ? "true" : undefined}>
                     SERVICES
-                    <span className="text-[10px]">▼</span>
+                    <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg></span>
                   </button>
                   <div className="invisible absolute left-0 top-full z-40 w-[400px] translate-y-2 rounded-2xl border border-[#dadada] bg-white/95 p-6 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                     <div className="mb-3 border-b border-[#e0dbd2] pb-3">
@@ -113,7 +113,7 @@ export default function Navbar() {
                 <li className={navLiClass(navActive.technology)}>
                   <button type="button" className={navTriggerClass(navActive.technology)} aria-current={navActive.technology ? "true" : undefined}>
                     TECHNOLOGY
-                    <span className="text-[10px]">▼</span>
+                    <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg></span>
                   </button>
                   <div className="invisible absolute left-0 top-full z-40 w-[440px] translate-y-2 rounded-xl border border-[#dadada] bg-white/95 p-5 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                     <div className="mb-3 border-b border-[#e0dbd2] pb-3">
@@ -205,7 +205,7 @@ export default function Navbar() {
                 <li className={navLiClass(navActive.industries)}>
                   <button type="button" className={navTriggerClass(navActive.industries)} aria-current={navActive.industries ? "true" : undefined}>
                     INDUSTRIES
-                    <span className="text-[10px]">▼</span>
+                    <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg></span>
                   </button>
                   <div className="invisible absolute left-0 top-full z-40 w-[440px] translate-y-2 rounded-2xl border border-[#dadada] bg-white/95 p-6 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                     <div className="mb-3 border-b border-[#e0dbd2] pb-3">
@@ -287,7 +287,7 @@ export default function Navbar() {
           <li className={`border-b border-[#ededed] ${navActive.services ? "bg-red-50/50" : ""}`}>
             <button type="button" className={mobileSectionClass(navActive.services)} onClick={() => toggleMobileDropdown("services")}>
               SERVICES
-              <span className={`text-xs transition-transform ${mobileDropdown === "services" ? "rotate-180" : ""}`}>▼</span>
+              <span className={`text-xs transition-transform ${mobileDropdown === "services" ? "rotate-180" : ""}`}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg></span>
             </button>
             {mobileDropdown === "services" && (
               <div className="space-y-2 border-t border-[#f0f0f0] px-6 py-3">
@@ -316,7 +316,7 @@ export default function Navbar() {
           <li className={`border-b border-[#ededed] ${navActive.technology ? "bg-red-50/50" : ""}`}>
             <button type="button" className={mobileSectionClass(navActive.technology)} onClick={() => toggleMobileDropdown("technology")}>
               TECHNOLOGY
-              <span className={`text-xs transition-transform ${mobileDropdown === "technology" ? "rotate-180" : ""}`}>▼</span>
+              <span className={`text-xs transition-transform ${mobileDropdown === "technology" ? "rotate-180" : ""}`}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg></span>
             </button>
             {mobileDropdown === "technology" && (
               <div className="space-y-3 border-t border-[#f0f0f0] px-6 py-3">
@@ -399,7 +399,7 @@ export default function Navbar() {
           <li className={`border-b border-[#ededed] ${navActive.industries ? "bg-red-50/50" : ""}`}>
             <button type="button" className={mobileSectionClass(navActive.industries)} onClick={() => toggleMobileDropdown("industries")}>
               INDUSTRIES
-              <span className={`text-xs transition-transform ${mobileDropdown === "industries" ? "rotate-180" : ""}`}>▼</span>
+              <span className={`text-xs transition-transform ${mobileDropdown === "industries" ? "rotate-180" : ""}`}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg></span>
             </button>
             {mobileDropdown === "industries" && (
               <div className="space-y-2 border-t border-[#f0f0f0] px-6 py-3">
