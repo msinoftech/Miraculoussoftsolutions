@@ -51,61 +51,73 @@ export default function CommandCenterTopology() {
       active: false,
     };
 
-    const nodes: NodeDef[] = [
-      { id: "edgeA", label: "Ingress", x: 0.12, y: 0.24, radius: 11, color: "#ff6b57", critical: true },
-      { id: "edgeB", label: "Events", x: 0.12, y: 0.72, radius: 11, color: "#ff925c" },
+    // Brand palette (from globals.css)
+    const theme = {
+      red: "#e63322",
+      redLight: "#ff6a4d",
+      blue: "#1a56db",
+      blueBright: "#2563eb",
+      blueLight: "#3b82f6",
+      blueDeep: "#1d4ed8",
+      green: "#00875a",
+      greenBright: "#059669",
+    };
 
-      { id: "api", label: "API Gateway", x: 0.30, y: 0.18, radius: 10, color: "#7c8cff" },
-      { id: "auth", label: "Auth", x: 0.30, y: 0.40, radius: 10, color: "#63d7ff", ring: true },
-      { id: "queue", label: "Queue", x: 0.30, y: 0.68, radius: 10, color: "#36d6c8" },
+    const nodes: NodeDef[] = [
+      { id: "edgeA", label: "Ingress", x: 0.12, y: 0.24, radius: 11, color: theme.red, critical: true },
+      { id: "edgeB", label: "Events", x: 0.12, y: 0.72, radius: 11, color: theme.redLight },
+
+      { id: "api", label: "API Gateway", x: 0.30, y: 0.18, radius: 10, color: theme.redLight },
+      { id: "auth", label: "Auth", x: 0.30, y: 0.40, radius: 10, color: theme.blue, ring: true },
+      { id: "queue", label: "Queue", x: 0.30, y: 0.68, radius: 10, color: theme.green },
 
       { id: "orchestrator", label: "Control Plane", x: 0.50, y: 0.43, radius: 16, color: "#ffffff", ring: true, critical: true },
 
-      { id: "search", label: "Search", x: 0.68, y: 0.16, radius: 10, color: "#55a2ff" },
-      { id: "cache", label: "Cache", x: 0.68, y: 0.39, radius: 10, color: "#38bdf8", ring: true },
-      { id: "workers", label: "Workers", x: 0.68, y: 0.67, radius: 10, color: "#2f7cf6" },
+      { id: "search", label: "Search", x: 0.68, y: 0.16, radius: 10, color: theme.blueLight },
+      { id: "cache", label: "Cache", x: 0.68, y: 0.39, radius: 10, color: theme.blue, ring: true },
+      { id: "workers", label: "Workers", x: 0.68, y: 0.67, radius: 10, color: theme.redLight },
 
-      { id: "output", label: "Delivery", x: 0.86, y: 0.24, radius: 11, color: "#3b82f6", critical: true },
-      { id: "insights", label: "Insights", x: 0.86, y: 0.72, radius: 11, color: "#22c55e" },
+      { id: "output", label: "Delivery", x: 0.86, y: 0.24, radius: 11, color: theme.redLight, critical: true },
+      { id: "insights", label: "Insights", x: 0.86, y: 0.72, radius: 11, color: theme.green },
     ];
 
     const routes: RouteDef[] = [
-      { id: "r1", from: "edgeA", to: "api", color: "#ff6b57" },
-      { id: "r2", from: "edgeA", to: "auth", color: "#ff6b57" },
-      { id: "r3", from: "edgeB", to: "auth", color: "#ff925c" },
-      { id: "r4", from: "edgeB", to: "queue", color: "#ff925c" },
+      { id: "r1", from: "edgeA", to: "api", color: theme.red },
+      { id: "r2", from: "edgeA", to: "auth", color: theme.red },
+      { id: "r3", from: "edgeB", to: "auth", color: theme.redLight },
+      { id: "r4", from: "edgeB", to: "queue", color: theme.redLight },
 
-      { id: "r5", from: "api", to: "orchestrator", color: "#8aa0ff" },
-      { id: "r6", from: "auth", to: "orchestrator", color: "#63d7ff" },
-      { id: "r7", from: "queue", to: "orchestrator", color: "#36d6c8" },
+      { id: "r5", from: "api", to: "orchestrator", color: theme.redLight },
+      { id: "r6", from: "auth", to: "orchestrator", color: theme.blue },
+      { id: "r7", from: "queue", to: "orchestrator", color: theme.green },
 
-      { id: "r8", from: "orchestrator", to: "search", color: "#60a5fa" },
-      { id: "r9", from: "orchestrator", to: "cache", color: "#38bdf8" },
-      { id: "r10", from: "orchestrator", to: "workers", color: "#2563eb" },
+      { id: "r8", from: "orchestrator", to: "search", color: theme.redLight },
+      { id: "r9", from: "orchestrator", to: "cache", color: theme.blue },
+      { id: "r10", from: "orchestrator", to: "workers", color: theme.redLight },
 
-      { id: "r11", from: "search", to: "output", color: "#60a5fa" },
-      { id: "r12", from: "cache", to: "output", color: "#38bdf8" },
-      { id: "r13", from: "workers", to: "insights", color: "#2563eb" },
-      { id: "r14", from: "cache", to: "insights", color: "#22c55e" },
+      { id: "r11", from: "search", to: "output", color: theme.redLight },
+      { id: "r12", from: "cache", to: "output", color: theme.blue },
+      { id: "r13", from: "workers", to: "insights", color: theme.redLight },
+      { id: "r14", from: "cache", to: "insights", color: theme.green },
     ];
 
     const particles: Particle[] = [
-      { routeId: "r1", t: 0.12, speed: 0.0031, color: "#ff6b57", size: 2.3 },
-      { routeId: "r2", t: 0.58, speed: 0.0025, color: "#ff6b57", size: 2.4 },
-      { routeId: "r4", t: 0.34, speed: 0.0027, color: "#ff925c", size: 2.6 },
+      { routeId: "r1", t: 0.12, speed: 0.0031, color: theme.red, size: 2.3 },
+      { routeId: "r2", t: 0.58, speed: 0.0025, color: theme.red, size: 2.4 },
+      { routeId: "r4", t: 0.34, speed: 0.0027, color: theme.redLight, size: 2.6 },
 
-      { routeId: "r5", t: 0.18, speed: 0.003, color: "#8aa0ff", size: 2.4 },
-      { routeId: "r6", t: 0.47, speed: 0.0034, color: "#63d7ff", size: 2.7 },
-      { routeId: "r7", t: 0.76, speed: 0.0028, color: "#36d6c8", size: 2.5 },
+      { routeId: "r5", t: 0.18, speed: 0.003, color: theme.redLight, size: 2.4 },
+      { routeId: "r6", t: 0.47, speed: 0.0034, color: theme.blue, size: 2.7 },
+      { routeId: "r7", t: 0.76, speed: 0.0028, color: theme.green, size: 2.5 },
 
-      { routeId: "r8", t: 0.28, speed: 0.0032, color: "#60a5fa", size: 2.8 },
-      { routeId: "r9", t: 0.62, speed: 0.0033, color: "#38bdf8", size: 2.8 },
-      { routeId: "r10", t: 0.16, speed: 0.0029, color: "#2563eb", size: 2.9 },
+      { routeId: "r8", t: 0.28, speed: 0.0032, color: theme.redLight, size: 2.8 },
+      { routeId: "r9", t: 0.62, speed: 0.0033, color: theme.blue, size: 2.8 },
+      { routeId: "r10", t: 0.16, speed: 0.0029, color: theme.redLight, size: 2.9 },
 
-      { routeId: "r11", t: 0.49, speed: 0.0025, color: "#60a5fa", size: 2.4 },
-      { routeId: "r12", t: 0.22, speed: 0.0028, color: "#38bdf8", size: 2.4 },
-      { routeId: "r13", t: 0.72, speed: 0.0029, color: "#2563eb", size: 2.5 },
-      { routeId: "r14", t: 0.35, speed: 0.0026, color: "#22c55e", size: 2.5 },
+      { routeId: "r11", t: 0.49, speed: 0.0025, color: theme.redLight, size: 2.4 },
+      { routeId: "r12", t: 0.22, speed: 0.0028, color: theme.blue, size: 2.4 },
+      { routeId: "r13", t: 0.72, speed: 0.0029, color: theme.redLight, size: 2.5 },
+      { routeId: "r14", t: 0.35, speed: 0.0026, color: theme.green, size: 2.5 },
     ];
 
     const getNodePoint = (id: string): Point => {
@@ -145,9 +157,9 @@ export default function CommandCenterTopology() {
 
     const drawBackground = () => {
       const bg = ctx.createLinearGradient(0, 0, width, height);
-      bg.addColorStop(0, "#02050d");
-      bg.addColorStop(0.55, "#050a14");
-      bg.addColorStop(1, "#020611");
+      bg.addColorStop(0, "rgb(9, 9, 11)");
+      bg.addColorStop(0.55, "rgb(9, 9, 11)");
+      bg.addColorStop(1, "rgb(9, 9, 11)");
       ctx.fillStyle = bg;
       ctx.fillRect(0, 0, width, height);
 
@@ -170,27 +182,27 @@ export default function CommandCenterTopology() {
       }
 
       const leftGlow = ctx.createRadialGradient(width * 0.18, height * 0.25, 0, width * 0.18, height * 0.25, width * 0.26);
-      leftGlow.addColorStop(0, "rgba(255,90,90,0.08)");
-      leftGlow.addColorStop(1, "rgba(255,90,90,0)");
+      leftGlow.addColorStop(0, "rgba(230,51,34,0.10)");
+      leftGlow.addColorStop(1, "rgba(230,51,34,0)");
       ctx.fillStyle = leftGlow;
       ctx.fillRect(0, 0, width, height);
 
       const centerGlow = ctx.createRadialGradient(width * 0.52, height * 0.42, 0, width * 0.52, height * 0.42, width * 0.22);
-      centerGlow.addColorStop(0, "rgba(59,130,246,0.10)");
-      centerGlow.addColorStop(1, "rgba(59,130,246,0)");
+      centerGlow.addColorStop(0, "rgba(230,51,34,0.12)");
+      centerGlow.addColorStop(1, "rgba(230,51,34,0)");
       ctx.fillStyle = centerGlow;
       ctx.fillRect(0, 0, width, height);
 
       const rightGlow = ctx.createRadialGradient(width * 0.82, height * 0.68, 0, width * 0.82, height * 0.68, width * 0.28);
-      rightGlow.addColorStop(0, "rgba(34,197,94,0.08)");
-      rightGlow.addColorStop(1, "rgba(34,197,94,0)");
+      rightGlow.addColorStop(0, "rgba(230,51,34,0.10)");
+      rightGlow.addColorStop(1, "rgba(230,51,34,0)");
       ctx.fillStyle = rightGlow;
       ctx.fillRect(0, 0, width, height);
     };
 
     const drawFrame = () => {
       roundRect(18, 18, width - 36, height - 36, 28);
-      ctx.fillStyle = "rgba(5,10,18,0.78)";
+      ctx.fillStyle = "rgb(9, 9, 11)";
       ctx.fill();
       ctx.strokeStyle = "rgba(255,255,255,0.08)";
       ctx.lineWidth = 1.2;
@@ -201,28 +213,28 @@ export default function CommandCenterTopology() {
       ctx.stroke();
     };
 
-    const drawHeader = () => {
-      ctx.fillStyle = "rgba(255,255,255,0.92)";
-      ctx.font = "600 14px Inter, Arial, sans-serif";
-      ctx.fillText("Realtime Command Center", 48, 58);
+    // const drawHeader = () => {
+    //   ctx.fillStyle = "rgba(255,255,255,0.92)";
+    //   ctx.font = "600 14px Inter, Arial, sans-serif";
+    //   ctx.fillText("Realtime Command Center", 48, 58);
 
-      ctx.fillStyle = "rgba(148,163,184,0.88)";
-      ctx.font = "500 11px Inter, Arial, sans-serif";
-      ctx.fillText("Topology · Routing · Orchestration · State", 48, 76);
+    //   ctx.fillStyle = "rgba(148,163,184,0.88)";
+    //   ctx.font = "500 11px Inter, Arial, sans-serif";
+    //   ctx.fillText("Topology · Routing · Orchestration · State", 48, 76);
 
-      const lights = ["#22c55e", "#3b82f6", "#f59e0b"];
-      lights.forEach((color, i) => {
-        const x = width - 88 + i * 16;
-        const y = 57;
-        ctx.beginPath();
-        ctx.arc(x, y, 4.3, 0, Math.PI * 2);
-        ctx.fillStyle = color;
-        ctx.shadowColor = color;
-        ctx.shadowBlur = 12;
-        ctx.fill();
-        ctx.shadowBlur = 0;
-      });
-    };
+    //   const lights = ["#22c55e", "#3b82f6", "#f59e0b"];
+    //   lights.forEach((color, i) => {
+    //     const x = width - 88 + i * 16;
+    //     const y = 57;
+    //     ctx.beginPath();
+    //     ctx.arc(x, y, 4.3, 0, Math.PI * 2);
+    //     ctx.fillStyle = color;
+    //     ctx.shadowColor = color;
+    //     ctx.shadowBlur = 12;
+    //     ctx.fill();
+    //     ctx.shadowBlur = 0;
+    //   });
+    // };
 
     const drawZonePanels = () => {
       const zones = [
@@ -241,9 +253,9 @@ export default function CommandCenterTopology() {
           pointer.y <= z.y + z.h;
 
         roundRect(z.x, z.y, z.w, z.h, 18);
-        ctx.fillStyle = hovered ? "rgba(59,130,246,0.045)" : "rgba(255,255,255,0.015)";
+        ctx.fillStyle = hovered ? "rgba(230,51,34,0.05)" : "rgba(255,255,255,0.015)";
         ctx.fill();
-        ctx.strokeStyle = hovered ? "rgba(96,165,250,0.22)" : "rgba(255,255,255,0.04)";
+        ctx.strokeStyle = hovered ? "rgba(230,51,34,0.24)" : "rgba(255,255,255,0.04)";
         ctx.lineWidth = 1;
         ctx.stroke();
 
@@ -429,7 +441,7 @@ export default function CommandCenterTopology() {
         const r = 26 + i * 12 + Math.sin(time * 0.002 + i) * 1.6;
         ctx.beginPath();
         ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
-        ctx.strokeStyle = i === 0 ? "rgba(255,255,255,0.18)" : "rgba(96,165,250,0.10)";
+        ctx.strokeStyle = i === 0 ? "rgba(255,255,255,0.18)" : "rgba(37,99,235,0.12)";
         ctx.lineWidth = i === 0 ? 1.2 : 1;
         ctx.stroke();
       }
@@ -443,36 +455,36 @@ export default function CommandCenterTopology() {
 
         ctx.beginPath();
         ctx.arc(x, y, 2.3, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(147,197,253,0.95)";
-        ctx.shadowColor = "#93c5fd";
+        ctx.fillStyle = "rgba(230,51,34,0.9)";
+        ctx.shadowColor = theme.redLight;
         ctx.shadowBlur = 10;
         ctx.fill();
         ctx.shadowBlur = 0;
       }
     };
 
-    const drawScanSweep = () => {
-      const y = 100 + ((time * 0.05) % (height - 180));
-      const gradient = ctx.createLinearGradient(0, y - 18, 0, y + 18);
-      gradient.addColorStop(0, "rgba(59,130,246,0)");
-      gradient.addColorStop(0.5, "rgba(59,130,246,0.10)");
-      gradient.addColorStop(1, "rgba(59,130,246,0)");
-      ctx.fillStyle = gradient;
-      ctx.fillRect(34, y - 18, width - 68, 36);
-    };
+    // const drawScanSweep = () => {
+    //   const y = 100 + ((time * 0.05) % (height - 180));
+    //   const gradient = ctx.createLinearGradient(0, y - 18, 0, y + 18);
+    //   gradient.addColorStop(0, "rgba(230,51,34,0)");
+    //   gradient.addColorStop(0.5, "rgba(230,51,34,0.12)");
+    //   gradient.addColorStop(1, "rgba(230,51,34,0)");
+    //   ctx.fillStyle = gradient;
+    //   ctx.fillRect(34, y - 18, width - 68, 36);
+    // };
 
     const drawHudCards = () => {
       const cards = [
-        { x: width * 0.06, y: height * 0.83, w: 154, label: "Latency", value: "42ms", dot: "#22c55e" },
-        { x: width * 0.31, y: height * 0.83, w: 164, label: "Routes Active", value: "14", dot: "#3b82f6" },
-        { x: width * 0.60, y: height * 0.83, w: 176, label: "System Health", value: "Stable", dot: "#22c55e" },
+        { x: width * 0.06, y: height * 0.83, w: 154, label: "Latency", value: "42ms", dot: theme.green },
+        { x: width * 0.31, y: height * 0.83, w: 164, label: "Routes Active", value: "14", dot: theme.blue },
+        { x: width * 0.60, y: height * 0.83, w: 176, label: "System Health", value: "Stable", dot: theme.green },
       ];
 
       cards.forEach((card) => {
         roundRect(card.x, card.y, card.w, 46, 14);
-        ctx.fillStyle = "rgba(15,23,42,0.72)";
+        ctx.fillStyle = "rgba(255,255,255,0.015)";
         ctx.fill();
-        ctx.strokeStyle = "rgba(148,163,184,0.12)";
+        ctx.strokeStyle = "rgba(255,255,255,0.04)";
         ctx.lineWidth = 1;
         ctx.stroke();
 
@@ -494,20 +506,20 @@ export default function CommandCenterTopology() {
       });
     };
 
-    const drawPointerResponse = () => {
-      if (!pointer.active) return;
+    // const drawPointerResponse = () => {
+    //   if (!pointer.active) return;
 
-      ctx.beginPath();
-      ctx.arc(pointer.x, pointer.y, 18 + Math.sin(time * 0.01) * 1.5, 0, Math.PI * 2);
-      ctx.strokeStyle = "rgba(96,165,250,0.14)";
-      ctx.lineWidth = 1;
-      ctx.stroke();
+    //   ctx.beginPath();
+    //   ctx.arc(pointer.x, pointer.y, 18 + Math.sin(time * 0.01) * 1.5, 0, Math.PI * 2);
+    //   ctx.strokeStyle = "rgba(230,51,34,0.16)";
+    //   ctx.lineWidth = 1;
+    //   ctx.stroke();
 
-      ctx.beginPath();
-      ctx.arc(pointer.x, pointer.y, 3, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(147,197,253,0.9)";
-      ctx.fill();
-    };
+    //   ctx.beginPath();
+    //   ctx.arc(pointer.x, pointer.y, 3, 0, Math.PI * 2);
+    //   ctx.fillStyle = "rgba(230,51,34,0.9)";
+    //   ctx.fill();
+    // };
 
     const render = () => {
       time += 16;
@@ -516,9 +528,9 @@ export default function CommandCenterTopology() {
 
       drawBackground();
       drawFrame();
-      drawHeader();
+      //drawHeader();
       drawZonePanels();
-      drawScanSweep();
+      //drawScanSweep();
       drawRoutes();
       drawParticles();
       drawCoreField();
@@ -559,8 +571,7 @@ export default function CommandCenterTopology() {
   }, []);
 
   return (
-    <div className="relative h-[520px] w-full overflow-hidden rounded-[30px] border border-white/10 bg-[#020611] shadow-[0_30px_90px_rgba(0,0,0,0.45)]">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(255,107,87,0.08),transparent_24%),radial-gradient(circle_at_52%_40%,rgba(59,130,246,0.10),transparent_26%),radial-gradient(circle_at_82%_72%,rgba(34,197,94,0.08),transparent_26%)]" />
+    <div className="relative h-[520px] w-full overflow-hidden hidden lg:block rounded-2xl border border-white/10 bg-zinc-950/70">
       <canvas ref={canvasRef} className="h-full w-full" />
     </div>
   );

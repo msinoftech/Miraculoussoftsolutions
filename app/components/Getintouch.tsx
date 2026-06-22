@@ -18,7 +18,7 @@ export default function Getintouch() {
                 Whether you are shaping a new SaaS product, modernising a platform, or scaling operations — share context and we will respond with clear next steps.
               </p>
 
-              <div className="mt-6 space-y-1 border-t border-white/10 pt-6">
+              <div className="space-y-1 pt-6">
                 <a href={`mailto:${contactInfo.email}`} className="group flex items-start gap-3 rounded-lg border p-2 transition border-white/10 bg-white/[0.04]">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-white/10 bg-white/5 text-red-500 transition group-hover:border-red-600 group-hover:bg-red-600 group-hover:text-white"><svg className="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
                   </span>

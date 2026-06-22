@@ -464,7 +464,7 @@ export default function MiraculousSoftLandingPage() {
 
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
             <div className="order-2 lg:order-1">
-              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-2">
+              <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2">
                 {techGroups.map((group) => {
                   return (
                     <div key={group.title} className="group rounded-xl border border-[var(--border)] bg-white p-6 transition hover:-translate-y-1 hover:border-zinc-950 hover:shadow-[6px_6px_0_#0c0c0c]">
@@ -489,7 +489,7 @@ export default function MiraculousSoftLandingPage() {
               <div className="pt-6 text-sm font-semibold text-zinc-950">+ AI Integrations • Automation Workflows • Microservices Architecture • Enterprise Scaling</div>
             </div>
 
-            <div className="order-1 lg:order-2">
+            <div className="order-1 lg:order-2 hidden lg:block">
               <TechnologiesStack />
             </div>
           </div>
