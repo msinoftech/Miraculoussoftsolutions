@@ -102,7 +102,7 @@ export default function OpenaiModelHubGraph({ className = "" }: OpenaiModelHubGr
                 key={model.id}
                 type="button"
                 onClick={() => selectModel(i)}
-                className={`absolute z-50 max-w-[5.5rem] -translate-x-1/2 -translate-y-1/2 rounded-xl border px-2 py-2 text-left shadow-sm transition duration-300 sm:max-w-[6.25rem] sm:px-2.5 sm:py-2.5 ${
+                className={`absolute z-1 max-w-[5.5rem] -translate-x-1/2 -translate-y-1/2 rounded-xl border px-2 py-2 text-left shadow-sm transition duration-300 sm:max-w-[6.25rem] sm:px-2.5 sm:py-2.5 ${
                   isActive ? "scale-105 border-zinc-300 bg-white" : "border-zinc-200/90 bg-white/95 hover:border-zinc-300 hover:shadow-md"
                 }`}
                 style={{
@@ -127,7 +127,7 @@ export default function OpenaiModelHubGraph({ className = "" }: OpenaiModelHubGr
             );
           })}
 
-          <div className="absolute left-1/2 top-1/2 z-30 w-[250px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-xl border border-zinc-200 bg-zinc-950 shadow-xl">
+          <div className="absolute left-1/2 top-1/2 z-1 w-[250px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-xl border border-zinc-200 bg-zinc-950 shadow-xl">
             <div className="flex items-center justify-between border-b border-white/10 bg-zinc-900 px-3 py-2">
               <span className="text-sm text-white/70">openai-agent.log</span>
               <span className="rounded bg-emerald-500/20 px-1.5 py-0.5 text-xs font-bold uppercase text-emerald-400">run</span>

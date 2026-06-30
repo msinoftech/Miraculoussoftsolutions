@@ -323,7 +323,7 @@ export default function AboutUsPage() {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-white py-16 sm:py-20">
-        <div className="grid-bg absolute inset-0 opacity-45" />
+        <div className="grid-bg absolute inset-0 opacity-20" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_75%_55%_at_85%_45%,rgba(220,38,38,0.1)_0%,transparent_65%),radial-gradient(ellipse_50%_70%_at_15%_90%,rgba(37,99,235,0.08)_0%,transparent_60%)]" />
 
         <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">

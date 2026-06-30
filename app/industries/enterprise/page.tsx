@@ -284,7 +284,7 @@ export default function EnterprisePage() {
       {/* Hero section */}
       <section className="relative overflow-hidden bg-zinc-950 py-16 sm:py-20">
         
-          <div className="grid-bg absolute inset-0 opacity-10" />
+          <div className="grid-bg absolute inset-0 opacity-5" />
           <div className="absolute -right-28 top-28 z-10 h-[430px] w-[430px] rounded-full border border-red-500/20"/>
           <div className="absolute right-[-10rem] top-20 h-[30rem] w-[30rem] rounded-full bg-red-600/10 blur-3xl mss-float-reverse" />
 

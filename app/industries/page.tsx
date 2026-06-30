@@ -355,7 +355,7 @@ export default function IndustriesView() {
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-white py-16 sm:py-20">
-        <div className="grid-bg absolute inset-0 opacity-45" />
+        <div className="grid-bg absolute inset-0 opacity-20" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_78%_42%,rgba(26,86,219,0.11)_0%,transparent_65%),radial-gradient(ellipse_50%_75%_at_12%_88%,rgba(230,51,34,0.08)_0%,transparent_55%)]" />
 
         <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">

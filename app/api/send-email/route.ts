@@ -25,7 +25,7 @@ export async function POST(req: Request) {
     const mailOptions = {
       from: `"${name}" <${email}>`,
       to: process.env.SEND_TO,
-      subject: "New Inquiry via Contact Form",
+      subject: `New Inquiry via Contact Form - ${name}`,
       html: `
         <div style="margin:0;padding:24px;background:#f4f4f5;font-family:Arial,sans-serif;color:#18181b;">
           <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width:680px;margin:0 auto;background:#0b0b0d;border:1px solid #27272a;border-radius:14px;overflow:hidden;">
@@ -57,7 +57,7 @@ export async function POST(req: Request) {
                   </tr>
                 </table>
 
-                <div style="margin-top:14px;padding:14px;background:#18181b;border:1px solid #27272a;border-radius:10px;">
+                <div style="margin-top:10px;padding:14px;background:#18181b;border:1px solid #27272a;border-radius:10px;">
                   <div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#a1a1aa;font-weight:700;">Message</div>
                   <div style="margin-top:8px;font-size:14px;line-height:1.7;color:#f4f4f5;white-space:pre-wrap;">${message}</div>
                 </div>

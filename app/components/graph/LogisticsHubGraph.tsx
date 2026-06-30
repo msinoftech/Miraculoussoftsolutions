@@ -13,8 +13,9 @@ export default function LogisticsHubGraph() {
   );
 
   return (
-    <div className="relative mx-auto h-[520px] w-full hidden lg:block max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-black/55 p-5 shadow-2xl shadow-blue-950/40 backdrop-blur-xl">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(37,99,235,0.32),transparent_31%),radial-gradient(circle_at_82%_24%,rgba(220,38,38,0.28),transparent_30%),radial-gradient(circle_at_50%_85%,rgba(255,255,255,0.09),transparent_38%)]" />
+    <div className="relative mx-auto  w-full hidden lg:block max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-black/55 p-5 shadow-2xl shadow-blue-950/40 backdrop-blur-xl">
+      <div className="h-[450px]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(37,99,235,0.12),transparent_31%),radial-gradient(circle_at_82%_24%,rgba(220,38,38,0.18),transparent_30%),radial-gradient(circle_at_50%_85%,rgba(255,255,255,0.09),transparent_38%)]" />
   
         <div className="hero-spin-slow absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-white/10" />
         <div className="hero-spin-reverse absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-blue-400/10" />
@@ -38,12 +39,12 @@ export default function LogisticsHubGraph() {
           </defs>
         </svg>
   
-        <div className="absolute left-5 top-5 right-5 z-20 flex items-center justify-between rounded-2xl border border-white/10 bg-white/10 px-4 py-3 backdrop-blur-xl">
+        <div className="absolute left-5 top-5 right-5 z-20 flex items-center justify-between rounded-xl border border-white/10 bg-white/10 px-4 py-3 backdrop-blur-xl">
           <div className="flex items-center gap-3">
             <span className="relative flex h-3 w-3"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" /><span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-300" /></span>
-            <p className="text-sm font-black text-white">Live Logistics OS</p>
+            <div className="text-sm font-semibold text-white">Live Logistics OS</div>
           </div>
-          <p className="text-xs font-semibold text-white">Control Tower</p>
+          <div className="text-xs font-semibold text-white">Control Tower</div>
         </div>
   
         {nodes.map((node, index) => (
@@ -58,22 +59,23 @@ export default function LogisticsHubGraph() {
             </div>
           </div>
         ))}
-  
-        <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur-xl hero-fade-up">
-          <div className="mb-4 flex items-center justify-between text-white">
-            <div><p className="text-xs text-white/60">Active Network</p><p className="text-xl font-black">342 Shipments</p></div>
-            <div className="rounded-2xl bg-emerald-400/15 px-3 py-2 text-xs font-semibold text-emerald-200">98.4% SLA</div>
-          </div>
-          <div className="grid grid-cols-3 gap-3 text-center text-white">
-            {[
-              ["91%", "Fleet Usage"],
-              ["18m", "Avg Delay"],
-              ["4.8x", "ROI Focus"],
-            ].map(([value, label]) => (
-              <div key={label} className="rounded-2xl bg-black/30 p-3"><p className="text-lg font-black">{value}</p><p className="text-[10px] text-white/55">{label}</p></div>
-            ))}
-          </div>
+      </div>
+
+      <div className="relative mt-4 w-full max-w-2xl overflow-hidden">
+        <div className="mb-4 flex items-center justify-between text-white">
+          <div><p className="text-xs text-white/60">Active Network</p><p className="text-xl font-black">342 Shipments</p></div>
+          <div className="rounded-2xl bg-emerald-400/15 px-3 py-2 text-xs font-semibold text-emerald-200">98.4% SLA</div>
         </div>
-    </div>
+        <div className="grid grid-cols-3 gap-3 text-center text-white">
+          {[
+            ["91%", "Fleet Usage"],
+            ["18m", "Avg Delay"],
+            ["4.8x", "ROI Focus"],
+          ].map(([value, label]) => (
+            <div key={label} className="rounded-2xl bg-black/30 p-3"><p className="text-lg font-black">{value}</p><p className="text-[10px] text-white/55">{label}</p></div>
+          ))}
+        </div>
+      </div>
+  </div>
   );
 }

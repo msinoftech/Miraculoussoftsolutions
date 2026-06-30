@@ -42,14 +42,14 @@ export default function ContactUsPage() {
   ];
 
   return (
-    <div className="bg-[var(--bg)] text-zinc-900">
-      <section className="border-b border-zinc-200 bg-gradient-to-b from-white via-zinc-50 to-zinc-100">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:py-20 lg:py-24">
+    <>
+      <section className="relative overflow-hidden border-b border-zinc-200 bg-gradient-to-b from-white via-zinc-50 to-zinc-100">  
+        <div className="grid-bg absolute inset-0 opacity-20" />
+        <div className="relative mx-auto max-w-7xl px-4 py-16 sm:py-20 lg:py-24">
           <Subheading variant="default">Contact Us</Subheading>
           <h1 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-zinc-950 sm:text-[72px] lg:text-[88px]">Let&apos;s Build Your <span className="text-red-600"> Next Digital Product</span></h1>
           <p>From SaaS platforms to enterprise automation, we design and engineer reliable digital products that move your business forward.</p>
           <p><i>Based in {contactInfo.address}, we collaborate with clients across India and globally.</i></p>
-
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <DefaultButton href="/services">EXPLORE SERVICES</DefaultButton>
             <OutlineButton href={`mailto:${contactInfo.email}`}>EMAIL OUR TEAM</OutlineButton>
@@ -105,6 +105,6 @@ export default function ContactUsPage() {
       </section>
 
       <Getintouch />
-    </div>
+    </>
   );
 }

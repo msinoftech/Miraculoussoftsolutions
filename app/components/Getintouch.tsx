@@ -34,7 +34,7 @@ export default function Getintouch() {
           <div className="relative border-t border-white/10 bg-[#0a0a0c] p-8 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
             <div className="pointer-events-none absolute right-0 top-0 h-full w-40 bg-gradient-to-b from-red-600/15 to-transparent blur-3xl" aria-hidden />
             <div className="relative mb-4">
-              <Subheading variant="light">Secure intake</Subheading>
+              {/* <Subheading variant="light">Secure intake</Subheading> */}
               <div className="text-[20px] font-bold text-white">Send Your Brief</div>
               <p className="text-white/70">Fields marked required help us respond faster.</p>
             </div>

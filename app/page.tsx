@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { APP_NAME, BASE_URL, contactInfo } from "./lib/config";
+import { testimonials } from "./lib/testimonial";
 import { useMemo } from "react";
 import CommandCenterTopology from "./components/CommandCenterTopology";
 import Getintouch from "./components/Getintouch";
@@ -9,12 +10,10 @@ import DevelopmentProcess from "./components/DevelopmentProcess";
 import Card from "./components/Card";
 import IndustriesList from "./components/IndustriesList";
 import Subheading from "./components/ui/Subheading";
-import DefaultButton from "./components/ui/Button/defaultButton";
-import OutlineButton from "./components/ui/Button/outlineButton";
 import TechnologiesStack from "./components/tecnologiesStack";
 import WhyMiraculousSoft from "./components/WhyMiraculousSoft";
 import CardFloatGrid, { type CardFloatItem } from "./components/cardFloat";
-//import HeroBanner from "./components/HeroBanner";
+import HeroBanner from "./components/HeroBanner";
 
 export const metadata: Metadata = {
   title: "Top Website Design and Development Company - MiraculousSoftsolutions",
@@ -316,27 +315,6 @@ const capabilities: CardFloatItem[] = [
   },
 ];
 
-const testimonials = [
-  {
-    quote: "Miraculous Soft shaped our SaaS product from architecture to launch. Their decisions saved us months of rework and gave us a far stronger foundation.",
-    name: "Amir K.",
-    role: "CTO, FinOps SaaS Platform",
-    initials: "AK",
-  },
-  {
-    quote: "They understood both product thinking and engineering depth. We were not just handed code — we were given a scalable business system.",
-    name: "Nadia R.",
-    role: "Founder, Operations Platform",
-    initials: "NR",
-  },
-  {
-    quote: "From workflow automation to admin architecture, the team brought clarity, speed, and serious execution quality across the project lifecycle.",
-    name: "Daniel M.",
-    role: "Director, Enterprise Solutions",
-    initials: "DM",
-  },
-];
-
 const processSteps = [
   {
     num: "01",
@@ -380,31 +358,7 @@ export default function MiraculousSoftLandingPage() {
       <Script type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white py-16 sm:py-20">
-        <div className="grid-bg absolute inset-0 opacity-45" />
-        <div className="absolute bottom-0 right-[-120px] top-0 hidden w-[480px] bg-red-600 [clip-path:polygon(18%_0,100%_0,100%_100%,0_100%)] lg:block z-[1]" />
-
-        <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">
-          
-          <div className="relative">
-            <h1 className="flex flex-wrap text-[86px] sm:text-[118px] md:text-[140px] lg:text-[168px] uppercase leading-[0.84] tracking-[0.02em] text-zinc-900">
-              <span>We</span> <span className="text-red-600">Engineer</span> <span className="hero-outline outline-black">Digital</span> <span>Futures.</span>
-            </h1>
-          </div>
-
-          
-          <div className="relative z-10 space-y-5">
-            <Subheading variant="default">Enterprise Software Partner</Subheading>
-            <p>SaaS platforms, B2B systems, ERP automation, eCommerce products, and mobile applications — built to launch fast, scale hard, and last.</p>
-            <div className="flex flex-row flex-wrap lg:flex-col gap-3">
-              <DefaultButton href="/contact-us">Start Your Project</DefaultButton>
-              <OutlineButton href="/services">Explore Services</OutlineButton>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* <HeroBanner /> */}
+      <HeroBanner />
 
       {/* Ticker Section */}
       <section className="relative overflow-hidden border-t-2 border-zinc-950 bg-zinc-950">
@@ -529,24 +483,27 @@ export default function MiraculousSoftLandingPage() {
             <p>Trusted by product founders, leadership teams, and businesses building serious digital systems across multiple industries.</p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-4">
             {testimonials.map((item, index) => (
-              <div key={item.name} className="flex flex-col justify-between rounded-2xl border border-[var(--border)] bg-white p-8 transition hover:-translate-y-1 hover:border-zinc-950 hover:shadow-[6px_6px_0_#0c0c0c]">
+              <div key={index} className="break-inside-avoid mb-4 flex flex-col justify-between rounded-2xl border border-[var(--border)] bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_6px_0_#0c0c0c]">
                 <div>
-                  <div className="mb-5 flex gap-1 text-yellow-500 text-xl">
+                  <div className="mb-3 flex gap-1 text-xl text-yellow-500">
                     {Array.from({ length: 5 }).map((_, starIndex) => (
                       <span key={starIndex}>★</span>
                     ))}
                   </div>
-                  <p>“{item.quote}”</p>
+                  <p className="italic">“{item?.quote}”</p>
                 </div>
-                <div className="flex items-center gap-4 border-t border-zinc-200 pt-5 mt-5">
-                  <div className={`flex h-11 w-11 items-center justify-center rounded-full text-sm font-extrabold text-white ${index === 0 ? "bg-blue-600" : index === 1 ? "bg-red-600" : "bg-zinc-950"}`}>
-                    {item.initials}
+
+                {/* Author */}
+                <div className="mt-5 flex items-center gap-4 border-t border-zinc-200/50 pt-5">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-[10px] border border-[var(--border)] bg-[var(--off)] font-bold text-zinc-950">
+                    {item.name?.charAt(0)}
                   </div>
+
                   <div>
-                    <div className="text-[14px] font-bold text-zinc-950">{item.name}</div>
-                    <div className="text-xs text-zinc-600">{item.role}</div>
+                    <div className="text-sm font-bold text-zinc-950">{item?.name}</div>
+                    <div className="text-sm text-zinc-600">{item?.role}</div>
                   </div>
                 </div>
               </div>

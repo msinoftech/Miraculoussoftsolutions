@@ -424,7 +424,7 @@ export default function technologiesPage() {
 
     {/* Hero section */}
     <section className="relative overflow-hidden bg-white py-16 sm:py-20">
-      <div className="grid-bg absolute inset-0 opacity-45" />
+      <div className="grid-bg absolute inset-0 opacity-20" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_78%_58%_at_82%_42%,rgba(26,86,219,0.14)_0%,transparent_70%),radial-gradient(ellipse_54%_78%_at_18%_84%,rgba(224,32,32,0.08)_0%,transparent_60%)]" />
       
       <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-4 lg:grid-cols-2 lg:items-center lg:gap-12 xl:gap-14">

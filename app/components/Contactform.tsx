@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { contactInfo } from "../lib/config";
 
 type FormData = {
   name: string;
@@ -11,9 +10,6 @@ type FormData = {
 };
 
 const ContactForm = () => {
-  const { phone  } = contactInfo;
-
-  const phoneHref = `tel:${phone.replace(/[^+\d]/g, "")}`;
 
   const [formData, setFormData] = useState<FormData>({
     name: "",

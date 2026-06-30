@@ -294,6 +294,23 @@ h1, h2, h3, h4, h5, h6, .font-bebas-neue {
 }
 }
 
+/* Hero architecture — pulsing hub glow */
+.hero-node-glow {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: heroNodeGlow 2.6s ease-in-out infinite;
+}
+
+@keyframes heroNodeGlow {
+  0%, 100% { opacity: 0.2; transform: scale(0.92); }
+  50% { opacity: 0.7; transform: scale(1.06); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-sheen { animation: none; opacity: 0; }
+  .hero-node-glow { animation: none; }
+}
+
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
