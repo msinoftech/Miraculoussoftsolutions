@@ -88,7 +88,7 @@ const ContactForm = () => {
   return (
     <>
 
-    <form onSubmit={handleSubmit} className="space-y-4" aria-live="polite">
+    <form onSubmit={handleSubmit} className="space-y-4 relative" aria-live="polite">
       
       <input
         name="name"
@@ -97,7 +97,7 @@ const ContactForm = () => {
         placeholder="Full Name"
         value={formData.name}
         onChange={handleChange}
-        className="block w-full rounded-xl border border-white/15 bg-[#0b0b0d] px-4 py-3 text-white placeholder:text-white/45 outline-none transition focus:border-red-500/70 focus:bg-white/[0.07] focus:ring-2 focus:ring-red-500/30"
+        className="block w-full rounded-xl border border-zinc-300 bg-[var(--off)] px-4 py-3 placeholder:text-zinc-950/60 outline-none transition focus:border-red-500/70 focus:bg-[var(--off)] focus:ring-2 focus:ring-red-500/30"
       />
       
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-3">
@@ -108,7 +108,7 @@ const ContactForm = () => {
           placeholder="Phone"
           value={formData.phone}
           onChange={handleChange}
-          className="block w-full rounded-xl border border-white/15 bg-[#0b0b0d] px-4 py-3 text-white placeholder:text-white/45 outline-none transition focus:border-red-500/70 focus:bg-white/[0.07] focus:ring-2 focus:ring-red-500/30"
+          className="block w-full rounded-xl border border-zinc-300 bg-[var(--off)] px-4 py-3 placeholder:text-zinc-950/60 outline-none transition focus:border-red-500/70 focus:bg-[var(--off)] focus:ring-2 focus:ring-red-500/30"
         />
         <input
           name="email"
@@ -117,7 +117,7 @@ const ContactForm = () => {
           placeholder="Email"
           value={formData.email}
           onChange={handleChange}
-          className="block w-full rounded-xl border border-white/15 bg-[#0b0b0d] px-4 py-3 text-white placeholder:text-white/45 outline-none transition focus:border-red-500/70 focus:bg-white/[0.07] focus:ring-2 focus:ring-red-500/30"
+          className="block w-full rounded-xl border border-zinc-300 bg-[var(--off)] px-4 py-3 placeholder:text-zinc-950/60 outline-none transition focus:border-red-500/70 focus:bg-[var(--off)] focus:ring-2 focus:ring-red-500/30"
         />
       </div>
       
@@ -128,9 +128,9 @@ const ContactForm = () => {
           required
           value={formData.service}
           onChange={handleChange}
-          className={`block w-full rounded-xl border px-4 py-3 text-sm outline-none transition ${
-            formData.service ? "text-white" : "text-white/60"
-          } border-white/15 bg-[#0b0b0d] focus:border-red-500/70 focus:ring-1 focus:ring-red-500/30`}
+          className={`block w-full rounded-xl border px-4 py-3 outline-none transition ${
+            formData.service ? "text-zinc-950" : "text-zinc-950/60"
+          } border-zinc-300 bg-[var(--off)] focus:border-red-500/70 focus:ring-1 focus:ring-red-500/30`}
         >
           <option value="" disabled>Select Service</option>
           <option value="SaaS Development">SaaS Development</option>
@@ -151,7 +151,7 @@ const ContactForm = () => {
         placeholder="How can we help?"
         value={formData.message}
         onChange={handleChange}
-        className="block w-full rounded-xl border border-white/15 bg-[#0b0b0d] px-4 py-3 text-white placeholder:text-white/45 outline-none transition focus:border-red-500/70 focus:bg-white/[0.07] focus:ring-2 focus:ring-red-500/30"
+        className="block w-full rounded-xl border border-zinc-300 bg-[var(--off)] px-4 py-3 placeholder:text-zinc-950/60 outline-none transition focus:border-red-500/70 focus:bg-[var(--off)] focus:ring-2 focus:ring-red-500/30"
       />
       
       <div className="block sm:flex items-center justify-between gap-3">
@@ -167,15 +167,11 @@ const ContactForm = () => {
       </div>
 
       {status === "success" && (
-        <div className="mt-2 rounded-lg border border-emerald-400/30 bg-emerald-500/10 p-3 text-sm text-emerald-200">
-          ✓ Email sent successfully! We&apos;ll get back to you shortly.
-        </div>
+        <div className="mt-2 rounded-lg bg-emerald-600 p-3 text-sm text-white">✓ Email sent successfully! We&apos;ll get back to you shortly.</div>
       )}
       
       {status === "error" && (
-        <div className="mt-2 rounded-lg border border-red-400/30 bg-red-500/10 p-3 text-sm text-red-200">
-          ✗ {errorMessage || "Oops — something went wrong. Please try again or contact us directly."}
-        </div>
+        <div className="mt-2 rounded-lg border border-red-400/30 bg-red-500/10 p-3 text-sm text-red-200">✗ {errorMessage || "Oops — something went wrong. Please try again or contact us directly."}</div>
       )}
     </form>
     </>

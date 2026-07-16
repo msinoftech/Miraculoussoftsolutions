@@ -27,13 +27,6 @@ export default function ContactUsPage() {
 
   const contactWays = [
     {
-      label: "Email Us",
-      value: contactInfo.email,
-      href: `mailto:${contactInfo.email}`,
-      icon: `<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 491.52 491.52" xml:space="preserve" width="50px" height="50px" fill="#000000"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect y="85.914" style="fill:#F6C358;" width="491.52" height="319.693"></rect> <polygon style="fill:#FCD462;" points="245.76,217.258 491.52,405.604 0,405.604 "></polygon> <polygon style="fill:#DC8744;" points="245.76,291.673 0,85.916 491.52,85.916 "></polygon> <polygon style="fill:#FCD462;" points="245.76,274.261 0,85.916 491.52,85.916 "></polygon> </g></svg>`,
-    },
-
-    {
       label: "WhatsApp",
       value: "Quick Project Chat",
       href: `https://wa.me/${cleanedPhone.replace(/^\+/, "")}`,
@@ -43,48 +36,69 @@ export default function ContactUsPage() {
 
   return (
     <>
-      <section className="relative overflow-hidden border-b border-zinc-200 bg-gradient-to-b from-white via-zinc-50 to-zinc-100">  
+      <section className="relative overflow-hidden border-b border-zinc-200 bg-gradient-to-b from-white via-zinc-50 to-zinc-100 py-14 sm:py-20">  
         <div className="grid-bg absolute inset-0 opacity-20" />
-        <div className="relative mx-auto max-w-7xl px-4 py-16 sm:py-20 lg:py-24">
+        <div className="relative mx-auto max-w-7xl px-4">
           <Subheading variant="default">Contact Us</Subheading>
           <h1 className="text-[58px] uppercase leading-[0.94] tracking-[0.02em] text-zinc-950 sm:text-[72px] lg:text-[88px]">Let&apos;s Build Your <span className="text-red-600"> Next Digital Product</span></h1>
           <p>From SaaS platforms to enterprise automation, we design and engineer reliable digital products that move your business forward.</p>
           <p><i>Based in {contactInfo.address}, we collaborate with clients across India and globally.</i></p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <DefaultButton href="/services">EXPLORE SERVICES</DefaultButton>
-            <OutlineButton href={`mailto:${contactInfo.email}`}>EMAIL OUR TEAM</OutlineButton>
+          <div className="mt-10 overflow-hidden rounded-2xl border border-zinc-200/80 bg-white/75 shadow-[0_20px_50px_rgba(15,23,42,0.07)] backdrop-blur-xl">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_450px]">
+              <div className="flex flex-col justify-center gap-5 border-b border-zinc-200/70 p-6 sm:p-8 lg:border-b-0 lg:border-r">
+                <div>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-red-600">Get Started</p>
+                  <p className="mt-1 max-w-xl text-lg font-semibold leading-snug text-zinc-950">
+                    Explore our services or reach out directly — we typically respond within one business day.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                  <DefaultButton href="/services">EXPLORE SERVICES</DefaultButton>
+                  <OutlineButton href={`mailto:${contactInfo.email}`}>EMAIL OUR TEAM</OutlineButton>
+                </div>
+              </div>
+
+              {contactWays.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative w-full flex flex-col justify-between gap-5 overflow-hidden bg-gradient-to-br from-emerald-50/90 via-white to-zinc-50/50 p-6 sm:p-8 transition duration-300 hover:from-emerald-50"
+                >
+                  <span className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-emerald-400/20 blur-3xl transition duration-300 group-hover:scale-110" />
+
+                  <div className="relative flex items-start gap-4">
+                    <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center">
+                      <span dangerouslySetInnerHTML={{ __html: item.icon }} />
+                    </span>
+                    <div className="min-w-0">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="text-sm font-bold uppercase tracking-wide text-zinc-950">{item.label}</span>
+                        <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-emerald-700">
+                          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
+                          Online
+                        </span>
+                      </div>
+                      <p className="mt-1 text-sm text-zinc-600">{item.value}</p>
+                    </div>
+                  </div>
+
+                  <div className="relative flex items-center justify-between gap-3 border-t border-emerald-200/60 pt-4">
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-500">Avg. reply within 24 hours</span>
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-600 px-4 py-2 text-xs font-bold uppercase tracking-wide text-white shadow-sm transition group-hover:bg-emerald-700">
+                      Start Chat
+                      <span className="transition group-hover:translate-x-0.5">→</span>
+                    </span>
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-gradient-to-b from-zinc-100 via-zinc-50 to-zinc-100 py-12 sm:py-16">
-        <div className="mx-auto grid max-w-7xl gap-4 px-4 md:grid-cols-2">
-          {contactWays.map((item) => (
-            <a key={item.label} href={item.href} target={item.href.startsWith("https://") ? "_blank" : undefined} rel={item.href.startsWith("https://") ? "noopener noreferrer" : undefined} className="group relative overflow-hidden rounded-2xl bg-white/55 p-6 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-1.5 hover:bg-white/65">
-              <span className={`absolute -right-10 -top-10 h-28 w-28 rounded-full bg-red-400/20 blur-2xl transition duration-300 group-hover:scale-110`} />
-              <div className="relative">
-                <div className="mb-5 flex items-start justify-between">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/70 text-xl">
-                    <span dangerouslySetInnerHTML={{ __html: item.icon }} />
-                  </span>
-                  <span className="text-sm uppercase font-semibold leading-tight tracking-wide text-red-600">Priority</span>
-                </div>
-
-                <div className="text-sm font-bold uppercase leading-tight tracking-wide text-zinc-950">{item.label}</div>
-                <p>{item.value}</p>
-
-                <div className="mt-6 flex items-center justify-between border-t border-zinc-300/60 pt-4">
-                  <span className="text-xs font-semibold uppercase tracking-[0.13em] text-zinc-600">Fast Response</span>
-                  <span className="inline-flex items-center gap-1 rounded-full bg-zinc-950 px-3 py-1 text-xs font-semibold text-white transition group-hover:bg-red-600">
-                    Connect
-                    <span className="transition group-hover:translate-x-0.5">→</span>
-                  </span>
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
-      </section>
+      <Getintouch />      
 
       <section className="bg-zinc-950 py-14 sm:py-16">
         <div className="mx-auto max-w-7xl px-4">
@@ -104,7 +118,6 @@ export default function ContactUsPage() {
         </div>
       </section>
 
-      <Getintouch />
     </>
   );
 }

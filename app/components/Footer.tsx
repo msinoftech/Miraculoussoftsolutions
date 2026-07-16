@@ -71,10 +71,10 @@ export default function Footer() {
             </div>
 
             <div className="lg:col-span-2">
-              <div className="mb-4 text-xs font-bold uppercase tracking-wide text-zinc-700">Services</div>
+              <div className="mb-4 text-sm font-bold uppercase tracking-wide text-zinc-700">Services</div>
               <div className="flex flex-col gap-3">
                 {footerServices.map((item) => (
-                  <Link key={item.href} href={item.href} className="text-[13px] text-zinc-700 transition hover:text-zinc-900">
+                  <Link key={item.href} href={item.href} className="text-[15px] text-zinc-700 transition hover:text-red-600">
                     {item.label}
                   </Link>
                 ))}
@@ -82,10 +82,10 @@ export default function Footer() {
             </div>
 
             <div className="lg:col-span-2">
-              <div className="mb-4 text-xs font-bold uppercase tracking-wide text-zinc-700">Company</div>
+              <div className="mb-4 text-sm font-bold uppercase tracking-wide text-zinc-700">Company</div>
               <div className="flex flex-col gap-3">
                 {footerCompany.map((item) => (
-                  <Link key={item.href} href={item.href} className="text-[13px] text-zinc-700 transition hover:text-zinc-900">
+                  <Link key={item.href} href={item.href} className="text-[15px] text-zinc-700 transition hover:text-red-600">
                     {item.label}
                   </Link>
                 ))}
@@ -93,8 +93,8 @@ export default function Footer() {
             </div>
 
             <div className="sm:col-span-2 lg:col-span-4">
-              <div className="mb-4 text-xs font-bold uppercase tracking-wide text-zinc-700">Contact</div>
-              <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-1">
+              <div className="mb-4 text-sm font-bold uppercase tracking-wide text-zinc-700">Contact</div>
+              <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-1">
                 {footerContactItems.map((item) => {
                   const Icon = item.Icon;
                   const content = (
@@ -103,8 +103,8 @@ export default function Footer() {
                         <Icon />
                       </span>
                       <span className="min-w-0 pt-0.5">
-                        <span className="block text-[10px] font-bold uppercase tracking-[0.14em] text-zinc-700">{item.label}</span>
-                        <span className="mt-0.5 block break-words text-[13px] leading-snug text-zinc-700 transition group-hover:text-zinc-900">
+                        <span className="block text-[12px] font-bold uppercase tracking-[0.14em] text-zinc-700">{item.label}</span>
+                        <span className="mt-0.5 block break-words text-[15px] leading-snug text-zinc-700 transition group-hover:text-zinc-900">
                           {item.value}
                         </span>
                       </span>
@@ -114,24 +114,24 @@ export default function Footer() {
                   return (
                     <li key={item.id}>
                       {item.href ? (
-                        <a href={item.href} className="group flex items-start gap-3 rounded-lg border border-zinc-200 p-2 transition hover:border-zinc-300 bg-zinc-50">
+                        <a href={item.href} className="group flex items-start gap-3 rounded-lg border border-zinc-200 p-2 transition hover:border-red-600 bg-zinc-50">
                           {content}
                         </a>
                       ) : (
-                        <div className="group flex items-start gap-3 rounded-lg border border-zinc-200 p-2 transition hover:border-zinc-300 bg-zinc-50">{content}</div>
+                        <div className="group flex items-start gap-3 rounded-lg border border-zinc-200 p-2 transition hover:border-red-600 bg-zinc-50">{content}</div>
                       )}
                     </li>
                   );
                 })}
               </ul>
-              <Link href="/contact-us" className="mt-4 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-700 transition hover:text-red-500">
+              <Link href="/contact-us" className="mt-4 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.12em] text-zinc-700 transition hover:text-red-600">
                 Get in touch
                 <span aria-hidden>→</span>
               </Link>
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 border-t border-zinc-200 py-4 text-center text-sm text-zinc-700 sm:flex-row sm:items-center sm:justify-between sm:py-5 sm:text-left">
+          <div className="flex flex-col gap-4 border-t border-zinc-200 py-4 text-center text-base text-zinc-700 sm:flex-row sm:items-center sm:justify-between sm:py-5 sm:text-left">
             <div className="order-2 sm:order-1">© 2026 Miraculous Soft Solutions. All rights reserved.</div>
             <div className="order-1 flex justify-center gap-3 sm:order-2 sm:justify-end">
               {socialLinks.map((item) => (
