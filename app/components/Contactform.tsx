@@ -90,69 +90,108 @@ const ContactForm = () => {
 
     <form onSubmit={handleSubmit} className="space-y-4 relative" aria-live="polite">
       
-      <input
-        name="name"
-        type="text"
-        required
-        placeholder="Full Name"
-        value={formData.name}
-        onChange={handleChange}
-        className="block w-full rounded-xl border border-zinc-300 bg-[var(--off)] px-4 py-3 placeholder:text-zinc-950/60 outline-none transition focus:border-red-500/70 focus:bg-[var(--off)] focus:ring-2 focus:ring-red-500/30"
-      />
+      <div className="relative">
+        <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500">
+          <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M20 21a8 8 0 1 0-16 0" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        </span>
+        <input
+          name="name"
+          type="text"
+          required
+          placeholder="Full Name"
+          value={formData.name}
+          onChange={handleChange}
+          className="block w-full rounded-xl border border-zinc-300 bg-[var(--off)] py-3 pl-11 pr-4 placeholder:text-zinc-950/60 outline-none transition focus:border-red-500/70 focus:bg-[var(--off)] focus:ring-2 focus:ring-red-500/30"
+        />
+      </div>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-3">
-        <input
-          name="phone"
-          type="tel"
-          inputMode="tel"
-          placeholder="Phone"
-          value={formData.phone}
-          onChange={handleChange}
-          className="block w-full rounded-xl border border-zinc-300 bg-[var(--off)] px-4 py-3 placeholder:text-zinc-950/60 outline-none transition focus:border-red-500/70 focus:bg-[var(--off)] focus:ring-2 focus:ring-red-500/30"
-        />
-        <input
-          name="email"
-          type="email"
-          required
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-          className="block w-full rounded-xl border border-zinc-300 bg-[var(--off)] px-4 py-3 placeholder:text-zinc-950/60 outline-none transition focus:border-red-500/70 focus:bg-[var(--off)] focus:ring-2 focus:ring-red-500/30"
-        />
+        <div className="relative">
+          <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500">
+            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.61 2.61a2 2 0 0 1-.45 2.11L8 9.7a16 16 0 0 0 6.3 6.3l1.26-1.26a2 2 0 0 1 2.11-.45c.84.28 1.71.49 2.61.61A2 2 0 0 1 22 16.92z" />
+            </svg>
+          </span>
+          <input
+            name="phone"
+            type="tel"
+            inputMode="tel"
+            placeholder="Phone"
+            value={formData.phone}
+            onChange={handleChange}
+            className="block w-full rounded-xl border border-zinc-300 bg-[var(--off)] py-3 pl-11 pr-4 placeholder:text-zinc-950/60 outline-none transition focus:border-red-500/70 focus:bg-[var(--off)] focus:ring-2 focus:ring-red-500/30"
+          />
+        </div>
+        <div className="relative">
+          <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500">
+            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m3 7 9 6 9-6" />
+            </svg>
+          </span>
+          <input
+            name="email"
+            type="email"
+            required
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            className="block w-full rounded-xl border border-zinc-300 bg-[var(--off)] py-3 pl-11 pr-4 placeholder:text-zinc-950/60 outline-none transition focus:border-red-500/70 focus:bg-[var(--off)] focus:ring-2 focus:ring-red-500/30"
+          />
+        </div>
       </div>
       
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-3">
-        <select
-          aria-label="Select Service"
-          name="service"
-          required
-          value={formData.service}
-          onChange={handleChange}
-          className={`block w-full rounded-xl border px-4 py-3 outline-none transition ${
-            formData.service ? "text-zinc-950" : "text-zinc-950/60"
-          } border-zinc-300 bg-[var(--off)] focus:border-red-500/70 focus:ring-1 focus:ring-red-500/30`}
-        >
-          <option value="" disabled>Select Service</option>
-          <option value="SaaS Development">SaaS Development</option>
-          <option value="B2B Platform Engineering">B2B Platform Engineering</option>
-          <option value="ERP & Automation">ERP & Automation</option>
-          <option value="eCommerce Solutions">eCommerce Solutions</option>
-          <option value="Web & Mobile Apps">Web & Mobile Apps</option>
-          <option value="Digital Growth Strategy">Digital Growth Strategy</option>
-          <option value="API-First Engineering">API-First Engineering</option>
-          <option value="Cloud Infrastructure">Cloud Infrastructure</option>
-        </select>
+        <div className="relative">
+          <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500">
+            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M4 6h16" />
+              <path d="M4 12h12" />
+              <path d="M4 18h9" />
+            </svg>
+          </span>
+          <select
+            aria-label="Select Service"
+            name="service"
+            required
+            value={formData.service}
+            onChange={handleChange}
+            className={`block w-full rounded-xl border py-3 pl-11 pr-4 outline-none transition ${
+              formData.service ? "text-zinc-950" : "text-zinc-950/60"
+            } border-zinc-300 bg-[var(--off)] focus:border-red-500/70 focus:ring-1 focus:ring-red-500/30`}
+          >
+            <option value="" disabled>Select Service</option>
+            <option value="SaaS Development">SaaS Development</option>
+            <option value="B2B Platform Engineering">B2B Platform Engineering</option>
+            <option value="ERP & Automation">ERP & Automation</option>
+            <option value="eCommerce Solutions">eCommerce Solutions</option>
+            <option value="Web & Mobile Apps">Web & Mobile Apps</option>
+            <option value="Digital Growth Strategy">Digital Growth Strategy</option>
+            <option value="API-First Engineering">API-First Engineering</option>
+            <option value="Cloud Infrastructure">Cloud Infrastructure</option>
+          </select>
+        </div>
       </div>
 
-      <textarea
-        name="message"
-        rows={4}
-        required
-        placeholder="How can we help?"
-        value={formData.message}
-        onChange={handleChange}
-        className="block w-full rounded-xl border border-zinc-300 bg-[var(--off)] px-4 py-3 placeholder:text-zinc-950/60 outline-none transition focus:border-red-500/70 focus:bg-[var(--off)] focus:ring-2 focus:ring-red-500/30"
-      />
+      <div className="relative">
+        <span className="pointer-events-none absolute left-4 top-4 text-zinc-500">
+          <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+        </span>
+        <textarea
+          name="message"
+          rows={4}
+          required
+          placeholder="How can we help?"
+          value={formData.message}
+          onChange={handleChange}
+          className="block w-full rounded-xl border border-zinc-300 bg-[var(--off)] py-3 pl-11 pr-4 placeholder:text-zinc-950/60 outline-none transition focus:border-red-500/70 focus:bg-[var(--off)] focus:ring-2 focus:ring-red-500/30"
+        />
+      </div>
       
       <div className="block sm:flex items-center justify-between gap-3">
         <button
